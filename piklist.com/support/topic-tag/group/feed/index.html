@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>group &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/group/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 04 Feb 2020 13:49:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Conditional resets fields when hiding fields</title>
+		<link>https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Tue, 04 Feb 2020 13:49:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/</guid>
+
+					<description><![CDATA[<p>I have added &#8216;reset&#8217; =&#62; &#8216;false&#8217; to the fields, but when hiding and showing the fields (via &#8216;product_show_faq&#8217;) it still clears the very first field &#8216;product_faq_title&#8217; &#8211; not any of the other fields &#8211; not even a second (repeated) &#8216;product_faq_title&#8217;. A bug? &#60;?php /* Title: FAQ Post Type: product Priority: high Order: -1 */ piklist(&#039;field&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/">Conditional resets fields when hiding fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have added &#8216;reset&#8217; =&gt; &#8216;false&#8217; to the fields, but when hiding and showing the fields (via  &#8216;product_show_faq&#8217;) it still clears the very first field &#8216;product_faq_title&#8217; &#8211; not any of the other fields &#8211; not even a second (repeated) &#8216;product_faq_title&#8217;. A bug?</p>
+<pre><code>&lt;?php
+/*
+Title: FAQ
+Post Type: product
+Priority: high
+Order: -1
+*/
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;radio&#039;,
+	&#039;field&#039; =&gt; &#039;product_show_faq&#039;,
+	&#039;label&#039; =&gt; &#039;Show FAQ?&#039;,
+	&#039;attributes&#039; =&gt; array(
+		&#039;class&#039; =&gt; &#039;text&#039;,
+	),
+	&#039;choices&#039; =&gt; array(
+		&#039;yes&#039; =&gt; &#039;Yes&#039;,
+		&#039;no&#039; =&gt; &#039;No&#039;
+	),
+	&#039;value&#039; =&gt; &#039;no&#039;
+));
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;product_faq&#039;,
+	&#039;label&#039; =&gt; &#039;FAQ&#039;,
+	&#039;list&#039; =&gt; false,
+	&#039;reset&#039; =&gt; &#039;false&#039;,
+	&#039;conditions&#039; =&gt; array(
+		array(
+			&#039;field&#039; =&gt; &#039;product_show_faq&#039;,
+			&#039;value&#039; =&gt; &#039;yes&#039;
+		)
+	),
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;reset&#039; =&gt; &#039;false&#039;,
+			&#039;field&#039; =&gt; &#039;product_faq_title&#039;,
+			&#039;required&#039; =&gt; false,
+			&#039;columns&#039; =&gt; 12,
+			&#039;attributes&#039; =&gt; array(
+				&#039;placeholder&#039; =&gt; &#039;Type question&#039;
+			),
+		),
+
+		array(
+			&#039;type&#039; =&gt; &#039;editor&#039;,
+			&#039;reset&#039; =&gt; &#039;false&#039;,
+			&#039;field&#039; =&gt; &#039;product_faq_content&#039;, // &#039;post_content&#039; is the field name of the WordPress DEFAULT editor
+			&#039;value&#039; =&gt; &#039;&#039;,
+			//&#039;template&#039; =&gt; &#039;field&#039;, // Only display the field not the label
+			&#039;options&#039; =&gt; array( // Pass any option that is accepted by wp_editor()
+				&#039;wpautop&#039; =&gt; true,
+				&#039;media_buttons&#039; =&gt; false,
+				&#039;shortcode_buttons&#039; =&gt; false,
+				&#039;teeny&#039; =&gt; true,
+				&#039;dfw&#039; =&gt; false,
+				&#039;quicktags&#039; =&gt; true,
+				&#039;drag_drop_upload&#039; =&gt; false,
+				&#039;tinymce&#039; =&gt; array(
+					&#039;resize&#039; =&gt; false,
+					&#039;wp_autoresize_on&#039; =&gt; true,
+					&#039;toolbar1&#039; =&gt; &#039;bold,italic,underline,link,unlink&#039;,
+					&#039;toolbar2&#039; =&gt; &#039;&#039;,
+				)
+			)
+		)
+	)
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/">Conditional resets fields when hiding fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to send json response from piklist group with add more option</title>
+		<link>https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2016 17:45:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/</guid>
+
+					<description><![CDATA[<p>Hi, i just want to make my own api with piklist fields, is there any way to make this? i just have a piklist field //horarios $days = array(); $days[0] = &#8220;Choose an option&#8221;; $days[1] = &#8220;Monday&#8221;; $days[2] = &#8220;Tuesday&#8221;; $days[3] = &#8220;Wednesday&#8221;; $days[4] = &#8220;Thursday&#8221;; $days[5] = &#8220;Friday&#8221;; $days[6] = &#8220;Saturday&#8221;; $days[7] = &#8220;Sunday&#8221;; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/">How to send json response from piklist group with add more option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, i just want to make my own api with piklist fields, is there any way to make this?</p>
+<p>i just have a piklist field</p>
+<blockquote><p>//horarios<br />
+$days = array();</p>
+<p>$days[0] = &#8220;Choose an option&#8221;;<br />
+$days[1] = &#8220;Monday&#8221;;<br />
+$days[2] = &#8220;Tuesday&#8221;;<br />
+$days[3] = &#8220;Wednesday&#8221;;<br />
+$days[4] = &#8220;Thursday&#8221;;<br />
+$days[5] = &#8220;Friday&#8221;;<br />
+$days[6] = &#8220;Saturday&#8221;;<br />
+$days[7] = &#8220;Sunday&#8221;;</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+        &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 12<br />
+		,&#8217;label&#8217; =&gt; __(&#8216;Horarios de la parroquia&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;parroquia_horarios&#8217;<br />
+        ,&#8217;add_more&#8217; =&gt; true<br />
+        ,&#8217;fields&#8217; =&gt; array(<br />
+          array(<br />
+            &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;day&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 6<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+			  &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+		  ),<br />
+		  &#8216;choices&#8217; =&gt; $days,<br />
+		  &#8216;required&#8217; =&gt; true<br />
+          )<br />
+          ,array(<br />
+            &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;time&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 6<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+              &#8216;placeholder&#8217; =&gt; &#8217;09:00&#8242;<br />
+            )<br />
+          )<br />
+        )</p>
+<p>  ));</p></blockquote>
+<p>i want to request my endpoint and receive by answer something like this</p>
+<p>{<br />
+  &#8220;Monday&#8221; : [<br />
+     &#8220;00:09&#8243;,&#8221;12:00&#8243;,&#8221;15:00&#8221;, &#8230;and so on<br />
+  ],<br />
+  &#8220;Thursday&#8221; : [<br />
+    &#8230;<br />
+  ]<br />
+}</p>
+<blockquote>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/">How to send json response from piklist group with add more option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Group fields layout</title>
+		<link>https://piklist.com/support/topic/group-fields-layout/</link>
+		
+		<dc:creator><![CDATA[mrioa]]></dc:creator>
+		<pubDate>Sun, 04 Dec 2016 12:45:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/group-fields-layout/</guid>
+
+					<description><![CDATA[<p>Hello! I can&#8217;t seem to get my group fields using columns, e.g. to display two groups in a row using 6 colums each. Docs say colums are great to use within groups, but nothing specific about using colums for themselves. Though it&#8217;s also mentioned to use the &#8220;Piklist field parameters&#8221; to customize the field type [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-fields-layout/">Group fields layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>I can&#8217;t seem to get my group fields using columns, e.g. to display two groups in a row using 6 colums each.<br />
+Docs say colums are great to use within groups, but nothing specific about using colums for themselves. Though it&#8217;s also mentioned to use the &#8220;Piklist field parameters&#8221; to customize the field type &#8220;group&#8221;, so columns should work?</p>
+<p>Here&#8217;s my simplified code (irl there are more fields withing the groups, so groups are neccessary):</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	, &#039;field&#039; =&gt; &#039;map_details_section&#039;
+	, &#039;label&#039; =&gt; __(&#039;Map Details&#039;)
+	, &#039;add_more&#039; =&gt; true
+	, &#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			, &#039;field&#039; =&gt; &#039;map_name&#039;
+			, &#039;label&#039; =&gt; __(&#039;Map name&#039;)
+			, &#039;columns&#039; =&gt; 3
+		)
+		, array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			, &#039;field&#039; =&gt; &#039;map_regular_1st&#039;
+			, &#039;label&#039; =&gt; &#039;Regular 1st half&#039;
+			, &#039;columns&#039; =&gt; 6
+			, &#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;radio&#039;
+					, &#039;field&#039; =&gt; &#039;map_half_side1&#039;
+					, &#039;label&#039; =&gt; __(&#039;Team1 side&#039;)
+					, &#039;columns&#039; =&gt; 2
+					, &#039;choices&#039; =&gt; array(
+						&#039;ct&#039; =&gt; &#039;CT&#039;
+						, &#039;t&#039; =&gt; &#039;T&#039;
+					)
+				)
+			)
+		)
+		, array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			, &#039;field&#039; =&gt; &#039;map_regular_2nd&#039;
+			, &#039;label&#039; =&gt; &#039;Regular 2nd half&#039;
+			, &#039;columns&#039; =&gt; 6
+			, &#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;radio&#039;
+					, &#039;field&#039; =&gt; &#039;map_half_side1&#039;
+					, &#039;label&#039; =&gt; __(&#039;Team1 side&#039;)
+					, &#039;columns&#039; =&gt; 2
+					, &#039;choices&#039; =&gt; array(
+						&#039;ct&#039; =&gt; &#039;CT&#039;
+						, &#039;t&#039; =&gt; &#039;T&#039;
+					)
+				)
+			)
+		)
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-fields-layout/">Group fields layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to display nested addmore?</title>
+		<link>https://piklist.com/support/topic/how-to-display-nested-addmore/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Thu, 22 Sep 2016 21:07:49 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-display-nested-addmore/</guid>
+
+					<description><![CDATA[<p>Hello, i&#8217;m having hard times with this, i have 2 groups, this is my code&#8230; &#60;?php /* Title: Parroquias en las que se imparte este curso Post Type: cursos Priority : high Order : 1 Locked : true New : true Collapse : false Meta box : true */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-nested-addmore/">How to display nested addmore?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, i&#8217;m having hard times with this, i have 2 groups, this is my code&#8230;</p>
+<pre><code>&lt;?php
+/*
+Title: Parroquias en las que se imparte este curso
+Post Type: cursos
+Priority : high
+Order : 1
+Locked : true
+New : true
+Collapse : false
+Meta box : true
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;curso_parroquias&#039;
+    ,&#039;label&#039; =&gt; &#039;Parroquias que imparten el curso&#039;
+    ,&#039;value&#039; =&gt; &#039;none&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;parroquia&#039;
+        ,&#039;label&#039; =&gt; &#039;Parroquia&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; array(&#039;none&#039; =&gt; &#039;Elija una parroquia&#039;) + piklist(
+          get_posts(
+             array(
+              &#039;post_type&#039; =&gt; &#039;parroquias&#039;
+              ,&#039;posts_per_page&#039; =&gt; -1
+              ,&#039;orderby&#039; =&gt; &#039;title&#039;
+             )
+             ,&#039;objects&#039;
+           )
+           ,array(
+             &#039;ID&#039;
+             ,&#039;post_title&#039;
+           )
+        )
+        ,&#039;required&#039; =&gt; false
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;group&#039;
+        ,&#039;field&#039; =&gt; &#039;info_curso&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;add_more&#039; =&gt; true
+        ,&#039;fields&#039; =&gt; array(
+        	array(
+        		&#039;type&#039; =&gt; &#039;date&#039;
+        		,&#039;field&#039; =&gt; &#039;curso_date&#039;
+        		,&#039;label&#039; =&gt; &#039;Fecha&#039;
+       			,&#039;columns&#039; =&gt; 12
+       			,&#039;required&#039; =&gt; false
+        	),
+        	array(
+        		&#039;type&#039; =&gt; &#039;text&#039;
+        		,&#039;field&#039; =&gt; &#039;curso_hour&#039;
+        		,&#039;label&#039; =&gt; &#039;Hora&#039;
+       			,&#039;columns&#039; =&gt; 12
+       			,&#039;required&#039; =&gt; false
+        	)
+        )
+      )
+    
+    )
+  ));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;curso_material&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Material del curso&#039;) 
+    ,&#039;columns&#039; =&gt; 12
+  ));</code></pre>
+<p>how can i display this, in selects? im trying to use piklist template, but with no lucky&#8230;</p>
+<p>i want to click in one select and then show date (curso_date) and hour (curso_hour) related to my church (parroquia), like dependent combos</p>
+<p>| select a church  |  ==&gt;  |  date and hour of my course  |</p>
+<p>is this possible?</p>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-nested-addmore/">How to display nested addmore?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more and hidden field</title>
+		<link>https://piklist.com/support/topic/add_more-and-hidden-field/</link>
+		
+		<dc:creator><![CDATA[rharrigan]]></dc:creator>
+		<pubDate>Tue, 26 Jul 2016 20:23:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and-hidden-field/</guid>
+
+					<description><![CDATA[<p>This is not related to the problem here: https://piklist.com/support/topic/hidden-field-bugs/ The group add_more does not display correctly when a hidden field is included in a group. Here is my erroneous code &#8211; Title: Recipe Options Post Type: recipe Order: 1 Collapse: false */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;add_more&#039; =&#62; true ,&#039;scope&#039; =&#62; &#039;post_meta&#039; ,&#039;columns&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and-hidden-field/">add_more and hidden field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is not related to the problem here: https://piklist.com/support/topic/hidden-field-bugs/</p>
+<p>The group add_more does not display correctly when a hidden field is included in a group. </p>
+<p>Here is my erroneous code &#8211; </p>
+<pre><code>
+Title: Recipe Options
+Post Type: recipe
+Order: 1
+Collapse: false
+*/
+
+piklist(&#039;field&#039;, array(	
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;recipe_id&#039;
+      ,&#039;type&#039; =&gt; &#039;hidden&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;field&#039; =&gt; &#039;recipe_title&#039;
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;label&#039; =&gt; __(&#039;Recipe Title&#039;,&#039;ideas_solutions&#039;)
+      ,&#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;required&#039; =&gt; true
+      ,&#039;columns&#039; =&gt; 12
+    )	
+  )
+));
+</code></pre>
+<p>This is working code &#8211; </p>
+<pre><code>
+Title: Recipe Options
+Post Type: recipe
+Order: 1
+Collapse: false
+*/
+
+piklist(&#039;field&#039;, array(	
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(array(
+      &#039;field&#039; =&gt; &#039;recipe_title&#039;
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;label&#039; =&gt; __(&#039;Recipe Title&#039;,&#039;ideas_solutions&#039;)
+      ,&#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;required&#039; =&gt; true
+      ,&#039;columns&#039; =&gt; 12
+    )	
+  )
+));
+</code></pre>
+<p>It would be nice to have hidden fields in an add_more so I can filter the meta data on insert/update</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and-hidden-field/">add_more and hidden field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Radio inside nested groups</title>
+		<link>https://piklist.com/support/topic/radio-inside-nested-groups/</link>
+		
+		<dc:creator><![CDATA[rubenhak]]></dc:creator>
+		<pubDate>Fri, 20 May 2016 23:42:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/radio-inside-nested-groups/</guid>
+
+					<description><![CDATA[<p>Hi, I have two levels of group fields and radio buttons inside the second level group. Noticed that the radio values will be self-exclusive within top level grouping. I would expect selection to be exclusive within parent group. Am i doing something wrong or this is a bug? Thanks, Ruben piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-inside-nested-groups/">Radio inside nested groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have two levels of group fields and radio buttons inside the second level group.<br />
+Noticed that the radio values will be self-exclusive within top level grouping. I would expect selection to be exclusive within parent group. </p>
+<p>Am i doing something wrong or this is a bug? </p>
+<p>Thanks,<br />
+Ruben</p>
+<pre><code>
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;experiment&#039;
+    , &#039;columns&#039; =&gt; 12
+    , &#039;add_more&#039; =&gt; true
+    , &#039;fields&#039; =&gt; array(
+
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        , &#039;field&#039; =&gt; &#039;experimentName&#039;
+        , &#039;columns&#039; =&gt; 4
+      )
+
+      , array(
+        &#039;type&#039; =&gt; &#039;group&#039;
+        , &#039;field&#039; =&gt; &#039;nestedGroup&#039;
+        , &#039;add_more&#039; =&gt; true
+        , &#039;fields&#039; =&gt; array(
+
+          array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            , &#039;field&#039; =&gt; &#039;nestedName&#039;
+            , &#039;columns&#039; =&gt; 4
+          )
+
+          , array(
+            &#039;type&#039; =&gt; &#039;radio&#039;
+            , &#039;field&#039; =&gt; &#039;nestedChoice&#039;
+            , &#039;value&#039; =&gt; &#039;o1&#039;
+            , &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;text&#039;
+            )
+            , &#039;choices&#039; =&gt; array(
+              &#039;o1&#039; =&gt; &#039;O1&#039;,
+              &#039;o2&#039; =&gt; &#039;O2&#039;,
+              &#039;o3&#039; =&gt; &#039;O3&#039;,
+              &#039;o4&#039; =&gt; &#039;O4&#039;
+            )
+          )
+
+        )
+      )
+    )
+  ) );
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-inside-nested-groups/">Radio inside nested groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Group field are not saving correctly</title>
+		<link>https://piklist.com/support/topic/group-field-are-not-saving-correctly/</link>
+		
+		<dc:creator><![CDATA[slam]]></dc:creator>
+		<pubDate>Wed, 10 Feb 2016 21:13:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/group-field-are-not-saving-correctly/</guid>
+
+					<description><![CDATA[<p>Good day, piklist(&#039;field&#039;,array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; RECIPES_THEME_PREFIX . &#039;recipe_steps&#039;, &#039;label&#039; =&#62; __(&#039;Recipe Step-by-Step&#039;), &#039;position&#039; =&#62; &#039;start&#039;, &#039;columns&#039; =&#62; 12, &#039;add_more&#039; =&#62; true, &#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; RECIPES_THEME_PREFIX . &#039;recipe_step_image&#039;, &#039;label&#039; =&#62; __(&#039;Step Image&#039;) ), array( &#039;type&#039; =&#62; &#039;editor&#039;, &#039;field&#039; =&#62; RECIPES_THEME_PREFIX . &#039;recipe_step_description&#039;, &#039;label&#039; =&#62; __(&#039;Step Description&#039;), &#039;options&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-field-are-not-saving-correctly/">Group field are not saving correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Good day,</p>
+<pre><code>piklist(&#039;field&#039;,array(
+    &#039;type&#039;      =&gt; &#039;group&#039;,
+    &#039;field&#039;     =&gt; RECIPES_THEME_PREFIX . &#039;recipe_steps&#039;,
+    &#039;label&#039;     =&gt; __(&#039;Recipe Step-by-Step&#039;),
+    &#039;position&#039;  =&gt; &#039;start&#039;,
+    &#039;columns&#039;   =&gt; 12,
+    &#039;add_more&#039;  =&gt; true,
+    &#039;fields&#039;    =&gt; array(
+        array(
+            &#039;type&#039;  =&gt; &#039;file&#039;,
+            &#039;field&#039; =&gt; RECIPES_THEME_PREFIX . &#039;recipe_step_image&#039;,
+            &#039;label&#039; =&gt; __(&#039;Step Image&#039;)
+        ),
+        array(
+            &#039;type&#039;      =&gt; &#039;editor&#039;,
+            &#039;field&#039;     =&gt; RECIPES_THEME_PREFIX . &#039;recipe_step_description&#039;,
+            &#039;label&#039;     =&gt; __(&#039;Step Description&#039;),
+            &#039;options&#039;   =&gt; array (
+                &#039;wpautop&#039;       =&gt; true,
+                &#039;media_buttons&#039; =&gt; false,
+                &#039;tabindex&#039;      =&gt; &#039;&#039;,
+                &#039;editor_css&#039;    =&gt; &#039;&#039;,
+                &#039;editor_class&#039;  =&gt; &#039;&#039;,
+                &#039;teeny&#039;         =&gt; true,
+                &#039;dfw&#039;           =&gt; false,
+                &#039;tinymce&#039;       =&gt; true,
+                &#039;quicktags&#039;     =&gt; true,
+            )
+        )
+    )
+));</code></pre>
+<p>Unfortunately, the group of fields aren&#8217;t saved correctly. Also, the group of fields doesn&#8217;t repeat correctly. As I understand, TinyMCE must be reinitialized after cloning.</p>
+<p>For example, I create two rows with image and description. After save I got this on output</p>
+<p><code>Array ( [amot_recipe_step_image] =&gt; Array ( [0] =&gt; Array ( [0] =&gt; 13 [1] =&gt; undefined [2] =&gt; 20 ) ) [amot_recipe_step_description] =&gt; Array ( [%22 data-piklist-field-group=%22a6d7f6d] =&gt; test desc [0] =&gt; test desc 2 ) )</code></p>
+<p>Thank you in advance!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-field-are-not-saving-correctly/">Group field are not saving correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Grouping Fields &#8211; Noob Question</title>
+		<link>https://piklist.com/support/topic/grouping-fields-noob-question/</link>
+		
+		<dc:creator><![CDATA[conkid]]></dc:creator>
+		<pubDate>Sun, 01 Nov 2015 09:20:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/grouping-fields-noob-question/</guid>
+
+					<description><![CDATA[<p>Hi All, Thanks for great plugin. Just learning the ins and outs now and looking to replace a lot of my past plugin toolbox. I can&#8217;t believe I&#8217;m stuck here but if someone could tell me what I&#8217;m doing wrong. I want to group these two fields side by side, each taking up 6 columns. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouping-fields-noob-question/">Grouping Fields &#8211; Noob Question</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All,</p>
+<p>Thanks for great plugin.  Just learning the ins and outs now and looking to replace a lot of my past plugin toolbox.</p>
+<p>I can&#8217;t believe I&#8217;m stuck here but if someone could tell me what I&#8217;m doing wrong.  I want to group these two fields side by side, each taking up 6 columns.  I do not want to group them so values return in array, so not with grouping.  They keep stacking on top of each other.  Everything I&#8217;ve read leads me to believe I put two fields next to each other in my code and use &#8216;position&#8217; =&gt; &#8216;start&#8217; on the 1st and &#8216;position&#8217; =&gt; &#8216;end&#8217; on the 2nd and that this should wrap them together by length of columns.  Perhaps I&#8217;m missing something key?</p>
+<pre>
+piklist('field', array(
+'type' =&gt; 'select'
+,'scope' =&gt; 'post_meta' // Not used for settings sections
+,'field' =&gt; 'asset_type'
+,'label' =&gt; 'Select Asset Type'
+,'help' =&gt; __('Select the type of Asset being logged...')
+,'template' =&gt; 'post_meta_custom'
+,'position' =&gt; 'start'
+,'columns' =&gt; '6'
+,'attributes' =&gt; array(
+  'class' =&gt; 'text'
+)
+,'choices' =&gt; array(
+
+   'laptop' =&gt; 'Laptop'
+  ,'docking_station' =&gt; 'Docking Station'
+  ,'monitor' =&gt; 'Monitor'
+  ,'headset' =&gt; 'Headset'
+  ,'office_phone' =&gt; 'Office Phone'
+  ,'cell_phone' =&gt; 'Cell Phone'
+  ,'software' =&gt; 'Software'
+  ,'monitor' =&gt; 'Monitor'
+  ,'desktop' =&gt; 'Desktop'
+  ,'monitor' =&gt; 'Monitor'
+  ,'ram' =&gt; 'Ram'
+  ,'hard_drive' =&gt; 'Hard Drive'
+  ,'battery' =&gt; 'Battery'
+  ,'laptop_charger' =&gt; 'Laptop Charger'
+)
+));
+
+piklist('field', array(
+'type' =&gt; 'select'
+,'scope' =&gt; 'post_meta' // Not used for settings sections
+,'field' =&gt; 'manufacturer'
+,'label' =&gt; 'Select Manufacturer'
+,'help' =&gt; __('Select the manufacturer of Asset being logged...')
+,'template' =&gt; 'post_meta_custom'
+,'position' =&gt; 'end'
+,'columns' =&gt; '6'
+,'attributes' =&gt; array(
+  'class' =&gt; 'text'
+)
+,'choices' =&gt; array(
+
+   'hp' =&gt; 'HP'
+  ,'lenovo' =&gt; 'Lenovo'
+  ,'monitor' =&gt; 'Monitor'
+  ,'headset' =&gt; 'Headset'
+  ,'office_phone' =&gt; 'Office Phone'
+  ,'cell_phone' =&gt; 'Cell Phone'
+  ,'software' =&gt; 'Software'
+  ,'monitor' =&gt; 'Monitor'
+  ,'desktop' =&gt; 'Desktop'
+  ,'monitor' =&gt; 'Monitor'
+  ,'ram' =&gt; 'Ram'
+  ,'hard_drive' =&gt; 'Hard Drive'
+  ,'battery' =&gt; 'Battery'
+  ,'laptop_charger' =&gt; 'Laptop Charger'
+)
+));
+</pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouping-fields-noob-question/">Grouping Fields &#8211; Noob Question</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional Attached to Group Giving Error Message (v0.9.9.3)</title>
+		<link>https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/</link>
+		
+		<dc:creator><![CDATA[shayneol]]></dc:creator>
+		<pubDate>Fri, 16 Oct 2015 18:44:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/</guid>
+
+					<description><![CDATA[<p>Hello, I sent an email yesterday with my code for this issue, but I just figured out what really is going wrong. If I have a conditional attached to a group, I receive the below error message. For example, if I want to show the contents of a group when a specific option from a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/">Conditional Attached to Group Giving Error Message (v0.9.9.3)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I sent an email yesterday with my code for this issue, but I just figured out what really is going wrong. If I have a conditional attached to a group, I receive the below error message.  For example, if I want to show the contents of a group when a specific option from a select field is chosen, I receive an error message on the page.  If the content to show/hide is not within a group, everything works fine.  </p>
+<p>Error: Warning: array_push() expects parameter 1 to be array, string given in &#8230;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2534</p>
+<p>My Code:</p>
+<pre><code>  // Post Type
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;post_type&#039;
+    ,&#039;label&#039; =&gt; &#039;Post Type&#039;
+    ,&#039;value&#039; =&gt; &#039;choose&#039;
+	,&#039;columns&#039; =&gt; 12
+    ,&#039;choices&#039; =&gt; array(
+      &#039;choose&#039; =&gt; &#039;--CHOOSE POST TYPE--&#039;
+      ,&#039;teacher&#039; =&gt; &#039;Teacher Page&#039;
+      ,&#039;standards&#039; =&gt; &#039;Standards&#039;
+      ,&#039;lesson_long&#039; =&gt; &#039;Creativity Lesson&#039;
+      ,&#039;lesson_short&#039; =&gt; &#039;Skill Builder Lesson&#039;
+      ,&#039;glossary&#039; =&gt; &#039;Glossary&#039;
+    )
+  ));
+
+  // STANDARDS FIELDS
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;standards&#039;
+	,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; &#039;Add Section&#039;
+    ,&#039;description&#039; =&gt; &#039;To add more SECTIONS, the &quot;+&quot; button. Click and drag to rearrange the order.&#039;
+    ,&#039;conditions&#039; =&gt; array(
+      array(
+        &#039;field&#039; =&gt; &#039;post_type&#039;
+        ,&#039;value&#039; =&gt; &#039;standards&#039;
+      )
+    )
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;section_title&#039;
+        ,&#039;label&#039; =&gt; &#039;Section Title&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;large-text&#039;
+        )
+      )
+	  
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;section_anchor&#039;
+        ,&#039;label&#039; =&gt; &#039;Section Anchor ID&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;large-text&#039;
+        )
+      )
+      
+	  ,array(
+		&#039;type&#039; =&gt; &#039;editor&#039;
+		,&#039;field&#039; =&gt; &#039;section_content&#039;
+		,&#039;label&#039; =&gt; &#039;Section Content&#039;
+		,&#039;options&#039; =&gt; array(
+			&#039;wpautop&#039; =&gt; true
+			,&#039;media_buttons&#039; =&gt; true
+			,&#039;shortcode_buttons&#039; =&gt; true
+			,&#039;tabindex&#039; =&gt; &#039;&#039;
+			,&#039;editor_css&#039; =&gt; &#039;&#039;
+			,&#039;editor_class&#039; =&gt; &#039;&#039;
+			,&#039;teeny&#039; =&gt; false
+			,&#039;dfw&#039; =&gt; false
+			,&#039;tinymce&#039; =&gt; array(
+				&#039;resize&#039; =&gt; false
+				,&#039;wp_autoresize_on&#039; =&gt; true
+			)
+			,&#039;quicktags&#039; =&gt; true
+			,&#039;drag_drop_upload&#039; =&gt; true
+		)
+      )
+	  
+	  
+    )
+  ));
+</code></pre>
+<p>Thanks,<br />
+Shayne</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/">Conditional Attached to Group Giving Error Message (v0.9.9.3)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PikList WYSIWYG breaking format in PikList Group</title>
+		<link>https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/</link>
+		
+		<dc:creator><![CDATA[hyperarts]]></dc:creator>
+		<pubDate>Tue, 08 Sep 2015 18:52:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/</guid>
+
+					<description><![CDATA[<p>There appears to be a PikList Sentence and PikList Paragraph in a repeatable group. So it is structured like: Group 1 Sentence Paragraph Group 2 Sentence Paragraph But when I switch the Paragraph to a WYSIWYG, the WYSIWYG editor breaks out of the group div formatting. See attached image. It should be Title, Content, but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/">PikList WYSIWYG breaking format in PikList Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>There appears to be a PikList Sentence and PikList Paragraph in a repeatable group.</p>
+<p>So it is structured like:<br />
+Group 1<br />
+    Sentence<br />
+    Paragraph</p>
+<p>Group 2<br />
+    Sentence<br />
+    Paragraph</p>
+<p>But when I switch the Paragraph to a WYSIWYG, the WYSIWYG editor breaks out of the group div formatting.</p>
+<p>See attached image.  It should be Title, Content, but it looks like Title, Content/Title, Content/Title.  So this makes it look like the next title is right below the editor, and part of the editor. It also makes the repeater buttons oddly placed.</p>
+<p>TL/DR; WYSIWYG editor in repeating group breaks layout. How to fix?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/">PikList WYSIWYG breaking format in PikList Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

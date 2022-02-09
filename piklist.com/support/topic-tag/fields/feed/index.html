@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>fields &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/fields/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 27 Jul 2017 15:15:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Fields are auto-pupulated based on user selection</title>
+		<link>https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/</link>
+		
+		<dc:creator><![CDATA[samuelyip74]]></dc:creator>
+		<pubDate>Thu, 27 Jul 2017 15:15:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/</guid>
+
+					<description><![CDATA[<p>Hi, I have a requirement and don&#8217;t know how it can be achieved with piklist. I created a few fields for products cpt (SKU, Description, Price etc). In the order cpt, I managed to generate a dynamic choice field based on all the SKUs. When the user select the relevant SKU, I would like the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/">Fields are auto-pupulated based on user selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I have a requirement and don&#8217;t know how it can be achieved with piklist.</p>
+<p>I created a few fields for products cpt (SKU, Description, Price etc).  In the order cpt,<br />
+I managed to generate a dynamic choice field based on all the SKUs.  When the user select the relevant SKU, I would like the other fields in the order fields to be auto populated by the SKU.</p>
+<p>Example,<br />
+Product CPT<br />
+SKU1, Shampoo, $3.00<br />
+SKU2, Shampoo-go, $5.00</p>
+<p>Order CPT,<br />
+Select Field A, Field B, Field C<br />
+[SKU1, SKU2],   &#8221; &#8220;, &#8221; &#8221;</p>
+<p>When user select SKU1, I would like Field B and Field C to be auto-populated with Shampoo, and $3.00 automatically.</p>
+<p>Can this be done with piklist?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/">Fields are auto-pupulated based on user selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Is it possible to have a repeater with multiple text inputs?</title>
+		<link>https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/</link>
+		
+		<dc:creator><![CDATA[brianeoneill]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2017 18:07:05 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/</guid>
+
+					<description><![CDATA[<p>Hi. Just discovered Piklist, and I&#8217;m using it to create a theme for podcasters. I&#8217;m creating a custom meta box where users can enter details about the music that&#8217;s included in an episode. For each song, the user should be able to add the title, artist, and a URL. This should be a repeater, so [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/">Is it possible to have a repeater with multiple text inputs?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi. Just discovered Piklist, and I&#8217;m using it to create a theme for podcasters. I&#8217;m creating a custom meta box where users can enter details about the music that&#8217;s included in an episode. </p>
+<p>For each song, the user should be able to add the title, artist, and a URL. This should be a repeater, so the user can add as many songs as needed. </p>
+<p>I&#8217;m trying this, but it&#8217;s not working:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	
+	&#039;label&#039; =&gt; &#039;Music&#039;,
+	&#039;description&#039; =&gt; &#039;Add songs from this episode&#039;,
+	&#039;add_more&#039; =&gt; true,
+
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song title&#039;,
+			&#039;field&#039; =&gt; &#039;song_title&#039;
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song artist&#039;,
+			&#039;field&#039; =&gt; &#039;song_artist&#039;
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song url&#039;,
+			&#039;field&#039; =&gt; &#039;song_url&#039;
+		)
+	)
+
+));</code></pre>
+<p>Am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/">Is it possible to have a repeater with multiple text inputs?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields to Bulk/Quick Edit through Piklist?</title>
+		<link>https://piklist.com/support/topic/fields-to-bulkquick-edit-through-piklist/</link>
+		
+		<dc:creator><![CDATA[matrosero]]></dc:creator>
+		<pubDate>Tue, 21 Mar 2017 04:09:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-to-bulkquick-edit-through-piklist/</guid>
+
+					<description><![CDATA[<p>First of all, I&#8217;m just starting out with Piklist and I love it so far! It simplifies setting up custom fields so much! I want to be able to edit fields I&#8217;ve set up through Bulk/Quick Edit, I searched but couldn&#8217;t really find if there was a way to set that up through Piklist. Any [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-to-bulkquick-edit-through-piklist/">Fields to Bulk/Quick Edit through Piklist?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>First of all, I&#8217;m just starting out with Piklist and I love it so far! It simplifies setting up custom fields so much!</p>
+<p>I want to be able to edit fields I&#8217;ve set up through Bulk/Quick Edit, I searched but couldn&#8217;t really find if there was a way to set that up through Piklist. Any help would be greatly appreciated.</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-to-bulkquick-edit-through-piklist/">Fields to Bulk/Quick Edit through Piklist?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox disappears after dragging and dropping</title>
+		<link>https://piklist.com/support/topic/metabox-disappears-after-dragging-and-dropping/</link>
+		
+		<dc:creator><![CDATA[tirins007]]></dc:creator>
+		<pubDate>Wed, 21 Sep 2016 13:15:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-disappears-after-dragging-and-dropping/</guid>
+
+					<description><![CDATA[<p>Very strange behaviour here. I have one metabox assigned to Speaker content type like this: /* Title: Personal Details Post Type: speaker Order: 10 */ All worked fine, the fields showed and saved until I accidentally dragged and dropped the metabox, and boom goes the dynamite, the metabox disappeared. I refreshed the page, nothing. Tried [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-disappears-after-dragging-and-dropping/">Metabox disappears after dragging and dropping</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Very strange behaviour here. I have one metabox assigned to Speaker content type like this:<br />
+/*<br />
+Title: Personal Details<br />
+Post Type:  speaker<br />
+Order: 10<br />
+*/</p>
+<p>All worked fine, the fields showed and saved until I accidentally dragged and dropped the metabox, and boom goes the dynamite, the metabox disappeared. </p>
+<p>I refreshed the page, nothing.<br />
+Tried accessing another speaker post, nothing.<br />
+I tried renaming the meta box, nothing.</p>
+<p>Could you please help! I am pulling my hair!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-disappears-after-dragging-and-dropping/">Metabox disappears after dragging and dropping</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Embedding fields in a field&#8230;</title>
+		<link>https://piklist.com/support/topic/embedding-fields-in-a-field/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sat, 30 Jul 2016 05:36:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/embedding-fields-in-a-field/</guid>
+
+					<description><![CDATA[<p>Just wondering if the ability to embed fields, such as in the demos for checkboxes and radio inputs, is allowed for any other fields. Would love to use it in an html field: Such as: ,array ( &#039;type&#039; =&#62; &#039;html&#039; ,&#039;template&#039; =&#62; &#039;average&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;left10&#039; ) ,&#039;value&#039; =&#62; sprintf(__(&#039;Workout Length: %s&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/embedding-fields-in-a-field/">Embedding fields in a field&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just wondering if the ability to embed fields, such as in the demos for checkboxes and radio  inputs, is allowed for any other fields. </p>
+<p>Would love to use it in an html field:<br />
+Such as:</p>
+<pre><code>        ,array (
+            &#039;type&#039; =&gt; &#039;html&#039;
+            ,&#039;template&#039; =&gt; &#039;average&#039;
+            ,&#039;attributes&#039; =&gt; array(
+                &#039;class&#039; =&gt; &#039;left10&#039;
+            )
+            ,&#039;value&#039; =&gt; sprintf(__(&#039;Workout Length: %s&#039;, &#039;diet&#039;), &#039;&#039;)
+            ,&#039;fields&#039; =&gt; array(
+                array(
+                    &#039;type&#039; =&gt; &#039;text&#039;
+                    ,&#039;field&#039; =&gt; &#039;mae_pb_wl_nested&#039;
+                    ,&#039;value&#039; =&gt; &#039;1&#039;
+                    ,&#039;embed&#039; =&gt; true
+                    ,&#039;attributes&#039; =&gt; array(
+                        &#039;class&#039; =&gt; &#039;small-text&#039;
+                    )
+                )
+            )
+        )
+</code></pre>
+<p>Are there any other fields it works on, or just radios and checks?</p>
+<p>Thanks guys. </p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/embedding-fields-in-a-field/">Embedding fields in a field&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to rename a field</title>
+		<link>https://piklist.com/support/topic/how-to-rename-a-field/</link>
+		
+		<dc:creator><![CDATA[lalit]]></dc:creator>
+		<pubDate>Mon, 25 Jul 2016 15:30:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-rename-a-field/</guid>
+
+					<description><![CDATA[<p>How do I rename a field without losing data?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-rename-a-field/">How to rename a field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How do I rename a field without losing data?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-rename-a-field/">How to rename a field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>how to make a field of required fields optional?</title>
+		<link>https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/</link>
+		
+		<dc:creator><![CDATA[lalit]]></dc:creator>
+		<pubDate>Thu, 21 Jul 2016 16:58:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/</guid>
+
+					<description><![CDATA[<p>I have a piklist field called test &#8211; add_more is set to true and the fields attribute consists of multiple fields (some required). I want the user to be able to have 0 or more tests. In the case of zero I can&#8217;t save the form because there are required fields. Pressing the minus button [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/">how to make a field of required fields optional?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a piklist field called test &#8211; add_more is set to true and the fields attribute consists of multiple fields (some required).</p>
+<p>I want the user to be able to have 0 or more tests.</p>
+<p>In the case of zero I can&#8217;t save the form because there are required fields. Pressing the minus button doesn&#8217;t remove it either.</p>
+<p>How can I have zero tests? Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/">how to make a field of required fields optional?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields not updating, v0.9.9.9, default custom-fields unregistered</title>
+		<link>https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/</link>
+		
+		<dc:creator><![CDATA[tobiv]]></dc:creator>
+		<pubDate>Thu, 21 Jul 2016 13:10:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/</guid>
+
+					<description><![CDATA[<p>I&#8217;m unable to update fields. They save fine the first time, but after that Update does nothing. I have deactivated all other plugins and unregistered the default custom-fields as advised in similar posts, but nothing helps. Also I&#8217;m running WordPress in German, and Piklist seems to translate back the &#8216;Update&#8217;, &#8216;Move to Trash&#8217;, &#8216;Preview Changes&#8217; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/">Fields not updating, v0.9.9.9, default custom-fields unregistered</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m unable to update fields. They save fine the first time, but after that Update does nothing. I have deactivated all other plugins and unregistered the default custom-fields as advised in similar posts, but nothing helps.</p>
+<p>Also I&#8217;m running WordPress in German, and Piklist seems to translate back the &#8216;Update&#8217;, &#8216;Move to Trash&#8217;, &#8216;Preview Changes&#8217; back to English. Not sure if that&#8217;s related, just mentining in case&#8230;</p>
+<p>Piklist 0.9.9.9<br />
+Wordpress 4.5.3</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/">Fields not updating, v0.9.9.9, default custom-fields unregistered</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post types connection</title>
+		<link>https://piklist.com/support/topic/post-types-connection/</link>
+		
+		<dc:creator><![CDATA[unleashed]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2016 19:51:02 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-types-connection/</guid>
+
+					<description><![CDATA[<p>Is there a way to connect 2 different post types? I have a post type &#8220;players&#8221; with a taxonomy &#8220;teams&#8221;. I store there information about football players (1 post = 1 player). And of course I store information about teams in taxonomy (1 term = 1 team). This structure helps me to connect players with [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-types-connection/">Post types connection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to connect 2 different post types?<br />
+I have a post type &#8220;players&#8221; with a taxonomy &#8220;teams&#8221;. I store there information about football players (1 post = 1 player). And of course I store information about teams in taxonomy (1 term = 1 team). This structure helps me to connect players with their teams.<br />
+But right now I need to create one more post type &#8211; &#8220;matches&#8221;, where I&#8217;ll store all information about matches and I want to store information about players also. Right now with Piklist I can create few meta-boxes with simple repeatable textfield and save for example post links, which holds information about players. But it&#8217;s hard to do this for every match.<br />
+So, is there a way to show metabox with a dropdown list, which holds terms from another post type taxonomy (teams) and checkboxes with posts in this term (players). I think this is the easiest way to pick teams and players for every match.</p>
+<p>P.S. If this can be implemented in other way, I will be very appriciated for advice.  </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-types-connection/">Post types connection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields not updating</title>
+		<link>https://piklist.com/support/topic/fields-not-updating/</link>
+		
+		<dc:creator><![CDATA[lavok]]></dc:creator>
+		<pubDate>Sun, 19 Jun 2016 10:36:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-not-updating/</guid>
+
+					<description><![CDATA[<p>Hello, thanks for the great plugin. I have problems with new version 0.9.9.8 my fields are not updating after the first save. I&#8217;ve tried clean install and I don&#8217;t have any plugins installed. If I manually delete post meta in database I can again save fields but can&#8217;t update them. When I use the previous [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating/">Fields not updating</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, thanks for the great plugin.</p>
+<p>I have problems with new version 0.9.9.8 my fields are not updating after the first save. I&#8217;ve tried clean install and I don&#8217;t have any plugins installed. If I manually delete post meta in database I can again save fields but can&#8217;t update them. When I use the previous version 0.9.4.30 it updates without problems.</p>
+<p>Thanks for help.</p>
+<p>WordPress 4.5.2</p>
+<pre><code>&lt;?php
+/*
+Title: Dodatkowe pola na stronie głównej
+Post Type: page
+Template: front-page
+*/
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;front_head&#039;
+    ,&#039;label&#039; =&gt; &#039;Sekcja head&#039;
+    ,&#039;description&#039; =&gt; &#039;Head glownej&#039;
+    ,&#039;attributes&#039; =&gt; array(
+   &#039;rows&#039; =&gt; 10
+   ,&#039;cols&#039; =&gt; 50
+   ,&#039;class&#039; =&gt; &#039;large-text&#039;
+ )
+));
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;front_specialisation&#039;
+    ,&#039;label&#039; =&gt; &#039;Sekcja 1&#039;
+    ,&#039;description&#039; =&gt; &#039;Dodatkowy tekst - specjalizacje&#039;
+    ,&#039;attributes&#039; =&gt; array(
+   &#039;rows&#039; =&gt; 10
+   ,&#039;cols&#039; =&gt; 50
+   ,&#039;class&#039; =&gt; &#039;large-text&#039;
+ )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating/">Fields not updating</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

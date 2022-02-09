@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>bug &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/bug/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 25 Jul 2019 12:13:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Required number/text field BUG REPORT and fix?</title>
+		<link>https://piklist.com/support/topic/required-number-text-field-bug-report-and-fix/</link>
+		
+		<dc:creator><![CDATA[pouyanz]]></dc:creator>
+		<pubDate>Thu, 25 Jul 2019 12:13:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/required-number-text-field-bug-report-and-fix/</guid>
+
+					<description><![CDATA[<p>If you have a number field which has a range of 0-999999999 and &#8216;required&#8217; =&#62; true like so: &#8216;type&#8217; =&#62; &#8216;number&#8217;, &#8216;field&#8217; =&#62; zzz, &#8216;label&#8217; =&#62; xxxx, &#8216;description&#8217; =&#62; yyyy, &#8216;required&#8217; =&#62; true, &#8216;attributes&#8217; =&#62; array( &#8216;min&#8217; =&#62; 0 ,&#8217;max&#8217; =&#62; 999999999 ) you would think that 0 will pass the required if statement! but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/required-number-text-field-bug-report-and-fix/">Required number/text field BUG REPORT and fix?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If you have a number field which has a range of 0-999999999<br />
+and &#8216;required&#8217; =&gt; true<br />
+like so:</p>
+<p>            &#8216;type&#8217; =&gt; &#8216;number&#8217;,<br />
+            &#8216;field&#8217; =&gt; zzz,<br />
+            &#8216;label&#8217; =&gt; xxxx,<br />
+            &#8216;description&#8217; =&gt; yyyy,<br />
+            &#8216;required&#8217; =&gt; true,<br />
+            &#8216;attributes&#8217; =&gt; array(<br />
+	            &#8216;min&#8217; =&gt; 0<br />
+	            ,&#8217;max&#8217; =&gt; 999999999<br />
+            )</p>
+<p>you would think that 0 will pass the required if statement!<br />
+but it won&#8217;t:<br />
+in &#8220;class-piklist-validate.php&#8221; line 656 it says<br />
+&#8220;if (empty($required))&#8221;<br />
+0 is also empty so you will get this validation error no matter what<br />
+i changed it to &#8220;if (empty($required) &amp;&amp; !is_numeric($required) )&#8221;<br />
+and it does what i want it</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/required-number-text-field-bug-report-and-fix/">Required number/text field BUG REPORT and fix?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist Plugin Not Working Properly In WordPress 5.1.1 Version</title>
+		<link>https://piklist.com/support/topic/piklist-plugin-not-working-properly-in-wordpress-5-1-1-version/</link>
+		
+		<dc:creator><![CDATA[rubel]]></dc:creator>
+		<pubDate>Mon, 22 Jul 2019 12:32:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-plugin-not-working-properly-in-wordpress-5-1-1-version/</guid>
+
+					<description><![CDATA[<p>Please Update The Plugin For WordPress Latest Version. Piklist Not Working In WordPress 5.1.1. When Install The Plugin Showing A Link &#8220;Dependent plugins or theme Are active&#8221;. When Clicked The Link Showing Another Error. &#8220;( ! ) Notice: Undefined index: tab in C:\Program Files\Ampps\www\wp\wp-content\plugins\piklist\includes\class-piklist-setting.php on line 709 &#8221; . Please Update The Plugin.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-plugin-not-working-properly-in-wordpress-5-1-1-version/">Piklist Plugin Not Working Properly In WordPress 5.1.1 Version</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Please Update The Plugin For WordPress Latest Version. Piklist Not Working In WordPress 5.1.1. When Install The Plugin Showing A Link &#8220;Dependent plugins or theme Are active&#8221;. When Clicked The Link Showing Another Error. &#8220;( ! ) Notice: Undefined index: tab in C:\Program Files\Ampps\www\wp\wp-content\plugins\piklist\includes\class-piklist-setting.php on line 709<br />
+&#8221; . Please Update The Plugin. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-plugin-not-working-properly-in-wordpress-5-1-1-version/">Piklist Plugin Not Working Properly In WordPress 5.1.1 Version</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist + Divi are crashing the admin Pages in WP dashboard</title>
+		<link>https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/</link>
+		
+		<dc:creator><![CDATA[Alex Kladov]]></dc:creator>
+		<pubDate>Thu, 13 Dec 2018 03:49:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/</guid>
+
+					<description><![CDATA[<p>Hi, I have been trying to figure out why my Pages section was not being loaded correctly on my site and have narrowed it down to Piklist &#38; Divi combination. Disabling either one fixes the issue. I am running latest versions of everything: WordPress v5.0.1, Piklist v1.0.1 &#38; Divi v3.18.5. Here is what&#8217;s thrown in [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/">Piklist + Divi are crashing the admin Pages in WP dashboard</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have been trying to figure out why my Pages section was not being loaded correctly on my site and have narrowed it down to Piklist &amp; Divi combination. Disabling either one fixes the issue. I am running latest versions of everything: WordPress v5.0.1, Piklist v1.0.1 &amp; Divi v3.18.5.</p>
+<p>Here is what&#8217;s thrown in the error log:</p>
+<pre><code>[13-Dec-2018 03:38:18 UTC] PHP Warning:  array_search() expects parameter 2 to be array, string given in /Applications/MAMP/htdocs/dev/weltrade/wp-content/themes/Divi/includes/builder/feature/BlockEditorIntegration.php on line 299
+[13-Dec-2018 03:38:18 UTC] PHP Fatal error:  Uncaught Error: Cannot unset string offsets in /Applications/MAMP/htdocs/dev/weltrade/wp-content/themes/Divi/includes/builder/feature/BlockEditorIntegration.php:301
+Stack trace:
+#0 /Applications/MAMP/htdocs/dev/weltrade/wp-includes/class-wp-hook.php(286): ET_Builder_Block_Editor_Integration-&gt;display_post_states(&#039;&#039;, Object(WP_Post))
+#1 /Applications/MAMP/htdocs/dev/weltrade/wp-includes/plugin.php(203): WP_Hook-&gt;apply_filters(&#039;&#039;, Array)
+#2 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/template.php(1933): apply_filters(&#039;display_post_st...&#039;, Array, Object(WP_Post))
+#3 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/class-wp-posts-list-table.php(943): _post_states(Object(WP_Post))
+#4 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/class-wp-posts-list-table.php(857): WP_Posts_List_Table-&gt;column_title(Object(WP_Post))
+#5 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/class-wp-list-table.php(1245): WP_Posts_List_Table-&gt;_column_title(Object(WP_Post), &#039;title column-ti...&#039;, &#039;data-c in /Applications/MAMP/htdocs/dev/weltrade/wp-content/themes/Divi/includes/builder/feature/BlockEditorIntegration.php on line 301</code></pre>
+<p>what&#8217;s happening on the Pages section is only some of the lists of pages loads (8 in my case), and the rest of the page gets cutoff (WordPress crashes and does&#8217;t even add all closing footer tags, so the table is all messed up).</p>
+<p><img src="https://i.postimg.cc/Vv6JXBZk/Screen-Shot-2018-12-12-at-7-45-57-pm.png" alt="Pages section in WordPress dashboard" /></p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/">Piklist + Divi are crashing the admin Pages in WP dashboard</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload broken in 0.9.9.15</title>
+		<link>https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</link>
+		
+		<dc:creator><![CDATA[cddustin]]></dc:creator>
+		<pubDate>Fri, 13 Apr 2018 18:46:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</guid>
+
+					<description><![CDATA[<p>WP 4.9.5 Piklist 0.9.9.15 I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;_job_download&#039;, &#039;scope&#039; =&#62; &#039;post_meta&#039;, &#039;label&#039; =&#62; &#039;Downloadable Job Description&#039;, &#039;options&#039; =&#62; array( &#039;basic&#039; =&#62; true ) )); What I tried: Add new post Click file upload [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WP 4.9.5<br />
+Piklist 0.9.9.15</p>
+<p>I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;,
+	&#039;field&#039; =&gt; &#039;_job_download&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Downloadable Job Description&#039;,
+	&#039;options&#039; =&gt; array(
+		&#039;basic&#039; =&gt; true
+	)
+));</code></pre>
+<p><strong>What I tried:</strong></p>
+<ol>
+<li>Add new post</li>
+<li>Click file upload &#8220;Browse&#8230;&#8221; button, choose a file</li>
+<li>Save a draft of the post</li>
+</ol>
+<p><strong>What I expected:</strong></p>
+<p>I expected to see something representing the file I attached below the &#8220;Browse&#8230;&#8221; button, with the file name and a button to remove it.</p>
+<p><strong>What I got:</strong></p>
+<p>No indication that the file attachment was successful. With WP_DEBUG on, I get the following warnings after saving a draft, and they appear on a blank white page (no WP admin UI loads in this case):</p>
+<blockquote><p>Warning: Invalid argument supplied for foreach() in /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php on line 1533</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/includes/misc.php on line 1116</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/post.php on line 198</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-includes/pluggable.php on line 1216</p></blockquote>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Problem with non-english wordpress</title>
+		<link>https://piklist.com/support/topic/problem-with-non-english-wordpress/</link>
+		
+		<dc:creator><![CDATA[luizbills]]></dc:creator>
+		<pubDate>Sun, 14 Jan 2018 13:05:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-non-english-wordpress/</guid>
+
+					<description><![CDATA[<p>When I install piklist in my wordpress installations using the language pt-BR I can&#8217;t save posts. step-by-step: &#8211; Install a fresh wordpress &#8211; Change the language to &#8220;Português do Brasil&#8221; &#8211; create a new post/page, give it a title and save. The post status will save as &#8220;draft&#8221; (here the issue). Note¹: (Using pt-BR) I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-non-english-wordpress/">Problem with non-english wordpress</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I install piklist in my wordpress installations using the language pt-BR I can&#8217;t save posts. </p>
+<p>step-by-step:<br />
+&#8211; Install a fresh wordpress<br />
+&#8211; Change the language to &#8220;Português do Brasil&#8221;<br />
+&#8211; create a new post/page, give it a title and save. The post status will save as &#8220;draft&#8221; (here the issue).</p>
+<p>Note¹: (Using pt-BR) I can&#8217;t change &#8220;manually&#8221; post status from Rascunho (draft) to Publicado (published).<br />
+Note²: When I change to english, the posts save as publish (default/correct behavior).</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-non-english-wordpress/">Problem with non-english wordpress</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>&#039;compare&#039; =&#062; &#039;==&#039; doesn&#039;t work</title>
+		<link>https://piklist.com/support/topic/compare-doesnt-work/</link>
+		
+		<dc:creator><![CDATA[Khoa Liber]]></dc:creator>
+		<pubDate>Sun, 25 Jun 2017 10:40:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/compare-doesnt-work/</guid>
+
+					<description><![CDATA[<p>[Bug] When I was playing around with the field conditions, I noticed that the following code didn&#8217;t work properly: &#039;conditions&#039; =&#62; array( &#039;compare&#039; =&#62; &#039;==&#039;, // work the same way as: &#039;compare&#039; =&#62; &#039;!=&#039;, ),</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/compare-doesnt-work/">&#039;compare&#039; =&gt; &#039;==&#039; doesn&#039;t work</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>[Bug] When I was playing around with the field conditions, I noticed that the following code didn&#8217;t work properly:</p>
+<pre><code>&#039;conditions&#039; =&gt; array(
+  &#039;compare&#039; =&gt; &#039;==&#039;, // work the same way as: &#039;compare&#039; =&gt; &#039;!=&#039;, 
+),</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/compare-doesnt-work/">&#039;compare&#039; =&gt; &#039;==&#039; doesn&#039;t work</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>BUG when delete medium element in repeater</title>
+		<link>https://piklist.com/support/topic/bug-when-delete-medium-element-in-repeater/</link>
+		
+		<dc:creator><![CDATA[feliks]]></dc:creator>
+		<pubDate>Thu, 01 Dec 2016 10:16:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/bug-when-delete-medium-element-in-repeater/</guid>
+
+					<description><![CDATA[<p>Deleting medium element in repeater is ruin all next elements on edit screen. How to reproduce bug: 1. Add 4 rows in repeater 2. Delete second row. 3. Refresh edit screen 4. We have only first element in repeater.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-when-delete-medium-element-in-repeater/">BUG when delete medium element in repeater</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Deleting medium element in repeater is ruin all next elements on edit screen.<br />
+How to reproduce bug:<br />
+1. Add 4 rows in repeater<br />
+2. Delete second row.<br />
+3. Refresh edit screen<br />
+4. We have only first element in repeater.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-when-delete-medium-element-in-repeater/">BUG when delete medium element in repeater</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Hidden Field in Repeater Field Default Value Bug (with sample code)</title>
+		<link>https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/</link>
+		
+		<dc:creator><![CDATA[rick]]></dc:creator>
+		<pubDate>Thu, 27 Oct 2016 17:26:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/</guid>
+
+					<description><![CDATA[<p>Hi, I have been noticing this strange behavior when using a repeater field with a hidden field. In a nutshell, I created a settings page which is designed for a user to add in store locations (as many as they need). I have a location_id hidden field, which before saving to the database, I will [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/">Hidden Field in Repeater Field Default Value Bug (with sample code)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have been noticing this strange behavior when using a repeater field with a hidden field. In a nutshell, I created a settings page which is designed for a user to add in store locations (as many as they need). I have a location_id hidden field, which before saving to the database, I will programmatically fill in with a unique ID. When defining the field group, I specify a default value of &#8216;null&#8217; for the location_id field. Then, when the piklist_pre_update_option filter is fired, I will iterate through each location, check if the location_id field is null, and if it is, do what needs to be done to calculate the location ID. </p>
+<p>The first field, this works great and as expected. However, once a second field is created, the default &#8216;null&#8217; value does not occur&#8230; in fact, the default value appears to somehow get cloned from whatever the first location&#8217;s entry is, which should not be the case.</p>
+<p>To demonstrate this, I created a little demo bug plugin which you can try attached. To simulate the &#8220;generate location id&#8221; process, I replaced this with a wp_rand call, which is unlikely to product the same number back to back. </p>
+<p>To replicate this issue, do the following:</p>
+<p>1. Install Piklist and the &#8220;Hidden Field Bug&#8221; plugin (attached)<br />
+2. Navigate to the newly created &#8220;locations&#8221; settings page<br />
+3. Make up a location name – such as &#8220;Location 1&#8221; and press &#8220;Save Location Information&#8221;<br />
+4. Log into the WP Database (through phpMyAdmin or however you prefer).<br />
+5. Run SQL Query [code]SELECT * FROM <code>wp_options</code> WHERE <code>option_name</code>=&#8217;demo_store_locations'[/code] (make sure you set your specific wp_ prefix for tables)<br />
+6. Note the unique location_id generated in this serialized array. If you have trouble viewing the serialized data, use a site like https://www.functions-online.com/unserialize.html to unserialized this data.<br />
+7. Go back to the Locations page in the WP-Admin, add a new location such as Location 2.<br />
+8. Repeat the SQL query, and note that the location_id is the same for both locations. If you want to rule out the &#8216;possibility&#8217; that there was a number collision from the wp_rand() function used to generate location_id in this demo, keep adding in new locations and notice that the value is the same.</p>
+<p>Let me know if you have any questions, and looking forward to hearing back from you.</p>
+<p>Bug Demo Plugin: https://dl.dropboxusercontent.com/u/31824171/hidden-field-bug.zip </p>
+<p>Rick</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/">Hidden Field in Repeater Field Default Value Bug (with sample code)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields not updating, v0.9.9.9, default custom-fields unregistered</title>
+		<link>https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/</link>
+		
+		<dc:creator><![CDATA[tobiv]]></dc:creator>
+		<pubDate>Thu, 21 Jul 2016 13:10:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/</guid>
+
+					<description><![CDATA[<p>I&#8217;m unable to update fields. They save fine the first time, but after that Update does nothing. I have deactivated all other plugins and unregistered the default custom-fields as advised in similar posts, but nothing helps. Also I&#8217;m running WordPress in German, and Piklist seems to translate back the &#8216;Update&#8217;, &#8216;Move to Trash&#8217;, &#8216;Preview Changes&#8217; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/">Fields not updating, v0.9.9.9, default custom-fields unregistered</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m unable to update fields. They save fine the first time, but after that Update does nothing. I have deactivated all other plugins and unregistered the default custom-fields as advised in similar posts, but nothing helps.</p>
+<p>Also I&#8217;m running WordPress in German, and Piklist seems to translate back the &#8216;Update&#8217;, &#8216;Move to Trash&#8217;, &#8216;Preview Changes&#8217; back to English. Not sure if that&#8217;s related, just mentining in case&#8230;</p>
+<p>Piklist 0.9.9.9<br />
+Wordpress 4.5.3</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/">Fields not updating, v0.9.9.9, default custom-fields unregistered</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Minor bug with PHP 7 (E_DEPRECATED)</title>
+		<link>https://piklist.com/support/topic/minor-bug-with-php-7-e_deprecated/</link>
+		
+		<dc:creator><![CDATA[Nabil]]></dc:creator>
+		<pubDate>Sun, 17 Apr 2016 19:52:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/minor-bug-with-php-7-e_deprecated/</guid>
+
+					<description><![CDATA[<p>I&#8217;m using VVV (PHP 7.0.5-3&#8230;) I get this error: Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; Piklist_Universal_Widget has a deprecated constructor in /srv/www/bayn/htdocs/wp-content/plugins/piklist/includes/class-piklist-universal-widget.php on line 15</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/minor-bug-with-php-7-e_deprecated/">Minor bug with PHP 7 (E_DEPRECATED)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m using VVV (PHP 7.0.5-3&#8230;)</p>
+<p>I get this error:</p>
+<blockquote><p> Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; Piklist_Universal_Widget has a deprecated constructor in /srv/www/bayn/htdocs/wp-content/plugins/piklist/includes/class-piklist-universal-widget.php on line 15</p></blockquote>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/minor-bug-with-php-7-e_deprecated/">Minor bug with PHP 7 (E_DEPRECATED)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

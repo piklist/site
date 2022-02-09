@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist_admin_pages &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklist_admin_pages/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 02 Apr 2014 10:40:41 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Using Piklist list-table Field</title>
+		<link>https://piklist.com/support/topic/using-piklist-list-table-field/</link>
+		
+		<dc:creator><![CDATA[luminaire801]]></dc:creator>
+		<pubDate>Wed, 02 Apr 2014 10:40:41 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/using-piklist-list-table-field/</guid>
+
+					<description><![CDATA[<p>Hi guys, i&#8217;m trying to create a dashboard Menu Item for users with Subscriber user role. So far, I&#8217;ve created the menu using the piklist_admin_pages filter by following the Settings Pages guide. I wanted to have a list-table on that page so I copied the code from field-list-table.php. However the list-table&#8217;s css/html seems to be [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-piklist-list-table-field/">Using Piklist list-table Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys, i&#8217;m trying to create a dashboard Menu Item for users with Subscriber user role. So far, I&#8217;ve created the menu using the piklist_admin_pages filter by following the Settings Pages guide. I wanted to have a list-table on that page so I copied the code from  field-list-table.php. However the list-table&#8217;s css/html seems to be malformed. Am I missing something?</p>
+<p>This is the code I used for the Menu Item</p>
+<pre><code>//This adds a new Item Menu for the Customer-Portal
+add_filter(&#039;piklist_admin_pages&#039;, &#039;customer_portal_func&#039;);
+  function customer_portal_func($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Customer Portal&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Customer Portal&#039;, &#039;piklist&#039;)
+      ,&#039;capability&#039; =&gt; &#039;subscriber&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;customer_portal&#039;
+      ,&#039;setting&#039; =&gt; &#039;customer_portal&#039;
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+    );
+ 
+    return $pages;
+  }</code></pre>
+<p>This is the code I used for the Settings Page output</p>
+<pre><code>
+&lt;?php
+/*
+Title:
+Setting: customer_portal
+Order: 20
+*/
+
+global $wpdb;
+
+  $data = $wpdb-&gt;get_results($wpdb-&gt;prepare(&quot;SELECT * FROM $wpdb-&gt;posts WHERE post_type = %s AND post_status = %s&quot;, &#039;post&#039;, &#039;publish&#039;));
+  
+  foreach ($data as &amp;$row)
+  {
+    $user_data = get_userdata($row-&gt;post_author);
+    $row-&gt;post_author = $user_data-&gt;user_login;
+  }
+  
+  piklist(&#039;list_table&#039;, array(
+    &#039;name&#039; =&gt; &#039;Object Example&#039;
+    ,&#039;data&#039; =&gt; $data
+    ,&#039;per_page&#039; =&gt; 10
+    ,&#039;key&#039; =&gt; &#039;ID&#039;
+    ,&#039;column&#039; =&gt; &#039;post_title&#039;
+    ,&#039;columns&#039; =&gt; array(
+      &#039;post_title&#039; =&gt; &#039;Post title&#039;
+      ,&#039;post_date&#039; =&gt; &#039;Date&#039;
+      ,&#039;post_author&#039; =&gt; &#039;Author&#039;
+      ,&#039;comment_count&#039; =&gt; &#039;Comments&#039;
+    )
+  ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-piklist-list-table-field/">Using Piklist list-table Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

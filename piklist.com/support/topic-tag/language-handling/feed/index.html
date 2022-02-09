@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>language handling &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/language-handling/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 29 Jul 2014 13:21:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>piklist taking over post edit screen with bugs occuring</title>
+		<link>https://piklist.com/support/topic/piklist-taking-over-post-edit-screen-with-bugs-occuring/</link>
+		
+		<dc:creator><![CDATA[kalligator]]></dc:creator>
+		<pubDate>Mon, 14 Jul 2014 11:22:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-taking-over-post-edit-screen-with-bugs-occuring/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m still trying to get my head around the framework alas I haven&#8217;t delved in much yet but it sure looks exciting. However I can see that piklist is taking over the post edit screen. Firstly I would like to be able control this behavior and decide on a per post_type basis. OK on [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-taking-over-post-edit-screen-with-bugs-occuring/">piklist taking over post edit screen with bugs occuring</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, I&#8217;m still trying to get my head around the framework alas I haven&#8217;t delved in much yet but it sure looks exciting.</p>
+<p>However I can see that piklist is taking over the post edit screen.<br />
+Firstly I would like to be able control this behavior and decide on a per post_type basis.</p>
+<p>OK on to the bug.<br />
+Under includes/class-piklist-cpt.php @~750 there&#8217;s a messages array that handles messages like &#8220;Post updated. View post&#8221;, &#8220;Custom field updated&#8221; etc analogous to the native one found in wp-admin/edit-form-advanced.php.</p>
+<p>In piklist the <code>singular_name</code> (<code>$singular = $obj-&gt;labels-&gt;singular_name</code>) is used to compile the messages. </p>
+<p>Sometimes it is adjusted for lower case using <code>strtolower</code>. However when one uses a language with a different encoding strtolower outputs gibberish.<br />
+This is easily solved by using <code>mb_strtolower</code> instead. </p>
+<p>The real problem when using WP in a non-English language is that <code>$singular</code><br />
+is translated already and the created gettext messages such as: <code>__($singular.&#039; restored to revision from %s&#039;)</code> essentially is a mash-up of LanguageX + English.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-taking-over-post-edit-screen-with-bugs-occuring/">piklist taking over post edit screen with bugs occuring</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

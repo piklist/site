@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>wp &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/wp/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 11 Mar 2017 23:32:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Musik Theme V2.3.2</title>
+		<link>https://piklist.com/support/topic/musik-theme-v2-3-2/</link>
+		
+		<dc:creator><![CDATA[siemprerispido]]></dc:creator>
+		<pubDate>Sat, 11 Mar 2017 23:32:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/musik-theme-v2-3-2/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m having compatibility issue with the &#8220;Piklist&#8221; plugins and &#8220;Easy Digital Downloads&#8221;. I have WP 4.7.2 and I can not add new music, neither mp3 / ogg or URL. And I can not even listen it when I try to visualize. Could you help me?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/musik-theme-v2-3-2/">Musik Theme V2.3.2</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I&#8217;m having compatibility issue with the &#8220;Piklist&#8221; plugins and &#8220;Easy Digital Downloads&#8221;.</p>
+<p>I have WP 4.7.2 and I can not add new music, neither mp3 / ogg or URL. And I can not even listen it when I try to visualize.</p>
+<p>Could you help me?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/musik-theme-v2-3-2/">Musik Theme V2.3.2</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>wp query group field in piklist</title>
+		<link>https://piklist.com/support/topic/wp-query-group-field-in-piklist/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 14 Jul 2014 17:24:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/wp-query-group-field-in-piklist/</guid>
+
+					<description><![CDATA[<p>Hello every one, i have this code piklist(&#039;field&#039;,array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;muni&#039; ,&#039;label&#039; =&#62; __(&#039;Datos del servicio&#039;) ,&#039;position&#039; =&#62; &#039;wrap&#039;, &#039;columns&#039; =&#62; 12, &#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;ubicacion&#039;, &#039;label&#039; =&#62; &#039;Ubicación&#039;, &#039;columns&#039; =&#62; 12 ), array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;muni&#039; ,&#039;label&#039; =&#62; &#039;Seleccione un municipio&#039; ,&#039;columns&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wp-query-group-field-in-piklist/">wp query group field in piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello every one, i have this code</p>
+<pre><code>piklist(&#039;field&#039;,array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+,&#039;field&#039; =&gt; &#039;muni&#039;
+,&#039;label&#039; =&gt; __(&#039;Datos del servicio&#039;)
+,&#039;position&#039; =&gt; &#039;wrap&#039;,
+    &#039;columns&#039; =&gt; 12,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;ubicacion&#039;,
+            &#039;label&#039; =&gt; &#039;Ubicación&#039;,
+            &#039;columns&#039; =&gt; 12
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;select&#039;
+            ,&#039;field&#039; =&gt; &#039;muni&#039;
+            ,&#039;label&#039; =&gt; &#039;Seleccione un municipio&#039;
+            ,&#039;columns&#039; =&gt; 12
+            ,&#039;choices&#039; =&gt; piklist(
+                get_posts(
+                    array(
+                       &#039;numberposts&#039; =&gt; 20,
+                        &#039;post_status&#039; =&gt; &#039;any&#039;,
+                        &#039;post_type&#039; =&gt; &#039;municipios&#039;,
+                        &#039;orderby&#039; =&gt; &#039;DESC&#039;
+                    )
+                )
+                ,array(
+                    &#039;ID&#039;
+                    ,&#039;post_title&#039;
+                )
+            ),
+                &#039;attributes&#039; =&gt; array(
+                    &#039;cols&#039; =&gt; 3,
+                    &#039;rows&#039; =&gt; 3
+                ),
+
+         ),
+        array(
+            &#039;type&#039; =&gt; &#039;select&#039;,
+            &#039;field&#039; =&gt; &#039;tipo&#039;,
+            &#039;label&#039; =&gt; &#039;Tipo de Atractivo&#039;,
+            &#039;columns&#039; =&gt; 12,
+            &#039;choices&#039; =&gt; array(
+                &#039;sitio&#039; =&gt; &#039;Sitio Turístico&#039;,
+                &#039;cenote&#039; =&gt; &#039;Cenote / Gruta&#039;,
+                &#039;iglesia&#039; =&gt; &#039;Iglesia / Convento&#039;,
+                &#039;hacienda&#039; =&gt; &#039;Hacienda&#039;
+            )
+        )
+
+    )
+));</code></pre>
+<p>and i want to filter by &#8220;municipio&#8221; but how can i ?, im using wp query <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>thanks a lot!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wp-query-group-field-in-piklist/">wp query group field in piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>display theme setting in wp query_posts</title>
+		<link>https://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/</link>
+		
+		<dc:creator><![CDATA[civilz]]></dc:creator>
+		<pubDate>Tue, 24 Jun 2014 20:11:31 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/</guid>
+
+					<description><![CDATA[<p>how to use my code is : &#60;?php $theme_options = get_option(&#039;my_theme_settings&#039;); $count = $theme_options[&#039;count_nabz&#039;]; ?&#62; &#60;?php query_posts(&#039;cat=2&#38;posts_per_page=echo &#34;$count&#34; ; &#039;); ?&#62; &#60;?php while (have_posts()) : the_post(); ?&#62; . . . but this code not working &#8230; how to display theme setting in wp query_posts ( posts_per_page ) code.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/">display theme setting in wp query_posts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>how to use </p>
+<p>my code is :</p>
+<pre><code>
+&lt;?php 
+      $theme_options = get_option(&#039;my_theme_settings&#039;); 
+      $count = $theme_options[&#039;count_nabz&#039;];					 
+?&gt;
+
+&lt;?php query_posts(&#039;cat=2&amp;posts_per_page=echo &quot;$count&quot; ; &#039;); ?&gt;
+&lt;?php while (have_posts()) : the_post(); ?&gt;
+.
+.
+.
+</code></pre>
+<p>but this code not working &#8230;</p>
+<p>how to display theme setting in wp query_posts ( posts_per_page ) code.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/">display theme setting in wp query_posts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

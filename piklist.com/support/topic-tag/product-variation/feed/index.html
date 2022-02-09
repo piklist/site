@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>product variation &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/product-variation/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 04 Oct 2016 21:32:23 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Woocommerce Product Variations</title>
+		<link>https://piklist.com/support/topic/woocommerce-product-variations/</link>
+		
+		<dc:creator><![CDATA[sebastianmerk]]></dc:creator>
+		<pubDate>Tue, 04 Oct 2016 21:29:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/woocommerce-product-variations/</guid>
+
+					<description><![CDATA[<p>I use the example code of the piklist-demo to reference woocommerce products within my custom post type. For simple products this works right out of the box. But I can´t get my head around how to do this with product variations: array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;_&#039; . piklist::$prefix . &#039;item_contracted&#039; ,&#039;label&#039; =&#62; __(&#039;Contracted [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/woocommerce-product-variations/">Woocommerce Product Variations</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I use the example code of the piklist-demo to reference woocommerce products within my custom post type. For simple products this works right out of the box. But I can´t get my head around how to do this with product variations:</p>
+<pre><code> array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;_&#039; . piklist::$prefix . &#039;item_contracted&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Contracted Item&#039;, &#039;myinventory&#039;)
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; piklist(
+          get_posts(array(
+            &#039;post_type&#039; =&gt; &#039;product&#039;
+            ,&#039;numberposts&#039; =&gt; -1
+            ,&#039;orderby&#039; =&gt; &#039;title&#039;
+            ,&#039;order&#039; =&gt; &#039;ASC&#039;
+          ))
+          ,array(&#039;ID&#039;, &#039;post_title&#039;)
+        )
+        ,&#039;relate&#039; =&gt; array(
+          &#039;scope&#039; =&gt; &#039;post&#039;
+        )
+      ) </code></pre>
+<p>Would be great if someone could point me in the right direction.</p>
+<p>Thanks Sebastian</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/woocommerce-product-variations/">Woocommerce Product Variations</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

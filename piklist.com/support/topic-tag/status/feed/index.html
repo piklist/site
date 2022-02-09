@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>status &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/status/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 10 Aug 2021 16:27:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Additional post statuses for the default &#8216;post&#8217; post type</title>
+		<link>https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Tue, 10 Aug 2021 16:27:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/</guid>
+
+					<description><![CDATA[<p>I was looking through the documentation and tried to basically have Piklist take over the management of the default post-type &#8220;post.&#8221; Just trying to add archived as an additional post status to the defaults already in place. This is the code that I thought would get me there. I sense a big rookie mistake but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/">Additional post statuses for the default &#8216;post&#8217; post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I was looking through the documentation and tried to basically have Piklist take over the management of the default post-type &#8220;post.&#8221; Just trying to add archived as an additional post status to the defaults already in place. </p>
+<p>This is the code that I thought would get me there. I sense a big rookie mistake but I can&#8217;t seem to decipher where:</p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;post&#039;);
+ function demo_post_type($post_types)
+ {
+	$post_types[&#039;post&#039;] = array(
+		&#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Post&#039;)
+		,&#039;title&#039; =&gt; __(&#039;Enter a new Post Title&#039;)
+		,&#039;public&#039; =&gt; true
+		,&#039;rewrite&#039; =&gt; array(
+			&#039;slug&#039; =&gt; &#039;post&#039;
+		)
+		,&#039;supports&#039; =&gt; array(
+			&#039;author&#039;
+			,&#039;revisions&#039;
+		)
+
+		,&#039;status&#039; =&gt; array(
+				&#039;draft&#039; =&gt; array(
+					&#039;label&#039; =&gt; &#039;Draft&#039;
+				)
+				,&#039;pending&#039; =&gt; array(
+					&#039;label&#039; =&gt; &#039;Pending&#039;
+				)
+				,&#039;private&#039; =&gt; array(
+					&#039;label&#039; =&gt; &#039;Private&#039;
+				)
+				,&#039;inspection&#039; =&gt; array(
+					&#039;archive&#039; =&gt; &#039;Archive&#039;
+				)
+			)
+	);
+return $post_types;
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/">Additional post statuses for the default &#8216;post&#8217; post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom status and publish</title>
+		<link>https://piklist.com/support/topic/custom-status-and-publish/</link>
+		
+		<dc:creator><![CDATA[vayu]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 12:36:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-status-and-publish/</guid>
+
+					<description><![CDATA[<p>Hi. I have added custom statuses to a CPT. &#039;status&#039; =&#62; array( &#039;draft&#039; =&#62; array( &#039;label&#039; =&#62; &#039;Kladde&#039; ), &#039;processing&#039; =&#62; array( &#039;label&#039; =&#62; &#039;Afventer godkendelse&#039; ), &#039;completed&#039; =&#62; array( &#039;label&#039; =&#62; &#039;Godkendt&#039; ), &#039;rejected&#039; =&#62; array( &#039;label&#039; =&#62; &#039;Afvist&#039; ), &#039;rejected_completed&#039; =&#62; array( &#039;label&#039; =&#62; &#039;Afvist &#38; behandlet&#039; ) ) When I create a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-status-and-publish/">Custom status and publish</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi.<br />
+I have added custom statuses to a CPT.</p>
+<pre><code>&#039;status&#039; =&gt; array(
+	&#039;draft&#039; =&gt; array( &#039;label&#039; =&gt; &#039;Kladde&#039; ),
+	&#039;processing&#039; =&gt; array( &#039;label&#039; =&gt; &#039;Afventer godkendelse&#039; ),
+	&#039;completed&#039; =&gt; array( &#039;label&#039; =&gt; &#039;Godkendt&#039; ),
+	&#039;rejected&#039; =&gt; array( &#039;label&#039; =&gt; &#039;Afvist&#039; ),
+	&#039;rejected_completed&#039; =&gt; array( &#039;label&#039; =&gt; &#039;Afvist &amp; behandlet&#039; )
+)</code></pre>
+<p>When I create a new post and press the publish button, then it does not publish, but stays on draft. I would like for it to change state to processing.<br />
+Another thing I don&#8217;t understand, is that it reads &#8220;Save&#8221; on the publish button, even when it is not published. How come this has changed? Can I get it to read the standard text on the button?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-status-and-publish/">Custom status and publish</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>New attribute metabox</title>
+		<link>https://piklist.com/support/topic/new-attribute-metabox/</link>
+		
+		<dc:creator><![CDATA[irene]]></dc:creator>
+		<pubDate>Sun, 31 May 2015 19:37:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/new-attribute-metabox/</guid>
+
+					<description><![CDATA[<p>Hi, I have a metabox with the attribute New: true. What I want is to show this on the add-new page and hide it once saved on the edit page. The case is that the metabox appears on the edit page and not on the add-new page, even when I set the attribute to false. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/new-attribute-metabox/">New attribute metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I have a metabox with the attribute New: true.<br />
+What I want is to show this on the add-new page and hide it once saved on the edit page.<br />
+The case is that the metabox appears on the edit page and not on the add-new page, even when I set the attribute to false.<br />
+What am I doing wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/new-attribute-metabox/">New attribute metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to hook in &#038; replace/alter default blog-post statuses?</title>
+		<link>https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/</link>
+		
+		<dc:creator><![CDATA[catacaly]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 02:52:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/</guid>
+
+					<description><![CDATA[<p>It only states in the documentation how to do this while creating a new CPT. How do I alter the existing default blog post type statuses?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/">How to hook in &amp; replace/alter default blog-post statuses?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It only states in the documentation how to do this while creating a new CPT. How do I alter the existing default blog post type statuses?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/">How to hook in &amp; replace/alter default blog-post statuses?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Set post status by default</title>
+		<link>https://piklist.com/support/topic/set-post-status-by-default/</link>
+		
+		<dc:creator><![CDATA[wpkonsulterna]]></dc:creator>
+		<pubDate>Tue, 16 Sep 2014 10:44:37 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/set-post-status-by-default/</guid>
+
+					<description><![CDATA[<p>I want to set all posts of a custom type to have a status of private by default. To do this, I&#8217;ve added this line to the metabox responsible for editing the post type. //Force post to always be hidden piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;hidden&#039; ,&#039;field&#039; =&#62; &#039;post_status&#039; ,&#039;value&#039; =&#62; &#039;private&#039; )); But it doesn&#8217;t [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/set-post-status-by-default/">Set post status by default</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to set all posts of a custom type to have a status of private by default. To do this, I&#8217;ve added this line to the metabox responsible for editing the post type.</p>
+<pre><code>//Force post to always be hidden
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;hidden&#039;
+    ,&#039;field&#039; =&gt; &#039;post_status&#039;
+    ,&#039;value&#039; =&gt; &#039;private&#039;
+));
+</code></pre>
+<p>But it doesn&#8217;t seem to be changing the post status. Am I missing something here? Perhaps the setting for the post status in the publish metabox is overriding it?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/set-post-status-by-default/">Set post status by default</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

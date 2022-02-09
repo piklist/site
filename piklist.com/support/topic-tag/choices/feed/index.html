@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>choices &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/choices/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 02 Mar 2016 02:16:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Checkbox with only one choice</title>
+		<link>https://piklist.com/support/topic/checkbox-with-only-one-choice/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 19:22:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checkbox-with-only-one-choice/</guid>
+
+					<description><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked? I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked?</p>
+<p>I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;checkbox&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; &#039;1&#039;,
+     &#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;text&#039;
+      ),
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       &#039;1&#039; =&gt; &#039;Enable&#039;
+     )
+   )
+)</code></pre>
+<p>In the past, I&#8217;ve used the workaround of having radio buttons, but I&#8217;d really like to just have an enable checkbox.</p>
+<p>My workaround:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;radio&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; 1,
+     &#039;list&#039; =&gt; true,
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       1 =&gt; &#039;Enable&#039;,
+       0 =&gt; &#039;Disable&#039;
+      )
+   )
+ )</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>values of &#039;choices&#039;</title>
+		<link>https://piklist.com/support/topic/values-of-choices/</link>
+		
+		<dc:creator><![CDATA[sanderschat]]></dc:creator>
+		<pubDate>Fri, 29 Nov 2013 20:54:43 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/values-of-choices/</guid>
+
+					<description><![CDATA[<p>Hi, i think i still dont fully get this, hence my question: i have a user custom field created: piklist(&#039;field&#039;, array(&#039;type&#039; =&#62; &#039;select&#039;, &#039;field&#039; =&#62; &#039;user_school&#039;, &#039;label&#039; =&#62; &#039;School&#039;, &#039;choices&#039; =&#62; piklist(get_terms(&#039;school&#039;, array(&#039;hide_empty&#039; =&#62; FALSE)), array(&#34;term_id&#34;, &#34;name&#34;)))); But instead of the &#8216;term_id&#8217; i need to have a custom field of this given taxonomy &#8216;school&#8217;. i [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/values-of-choices/">values of &#039;choices&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+i think i still dont fully get this, hence my question:</p>
+<p>i have a user custom field created:</p>
+<pre><code>piklist(&#039;field&#039;, array(&#039;type&#039;    =&gt; &#039;select&#039;,
+                       &#039;field&#039;   =&gt; &#039;user_school&#039;,
+                       &#039;label&#039;   =&gt; &#039;School&#039;,
+                       &#039;choices&#039; =&gt; piklist(get_terms(&#039;school&#039;, array(&#039;hide_empty&#039; =&gt; FALSE)), array(&quot;term_id&quot;,
+                                                                                                     &quot;name&quot;))));</code></pre>
+<p>But instead of the &#8216;term_id&#8217; i need to have a custom field of this given taxonomy &#8216;school&#8217;. </p>
+<p>i think i need to use an sql-statement to get &#8216;name&#8217; and the value of the custom field.<br />
+But how to get this result into the &#8216;choices&#8217; field?</p>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/values-of-choices/">values of &#039;choices&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add extra choice to &#039;select&#039;</title>
+		<link>https://piklist.com/support/topic/add-extra-choice-to-select/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Fri, 09 Nov 2012 15:01:40 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/add-extra-choice-to-select/</guid>
+
+					<description><![CDATA[<p>hi! is there way to add an extra choice to the &#8216;select&#8217; dropdown when using it with a WP function, like so: piklist('field', array( 'type' =&#62; 'select' ,'field' =&#62; 'search' ,'label' =&#62; 'seach page' ,'attributes' =&#62; array( 'class' =&#62; 'text' ) ,'choices' =&#62; piklist( get_pages( array( 'sort_order' =&#62; 'ASC', 'sort_column' =&#62; 'post_title', 'post_type' =&#62; 'page', [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-extra-choice-to-select/">add extra choice to &#039;select&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hi!<br />
+is there way to add an extra choice to the &#8216;select&#8217; dropdown when using it with a WP function, like so:<br />
+<code><br />
+ piklist('field', array(<br />
+   'type' =&gt; 'select'<br />
+   ,'field' =&gt; 'search'<br />
+   ,'label' =&gt; 'seach page'<br />
+   ,'attributes' =&gt; array(<br />
+     'class' =&gt; 'text'<br />
+   )<br />
+   ,'choices' =&gt; piklist(<br />
+     get_pages(<br />
+       array(<br />
+        'sort_order' =&gt; 'ASC',<br />
+		'sort_column' =&gt; 'post_title',<br />
+		'post_type' =&gt; 'page',<br />
+		'post_status' =&gt; 'publish'<br />
+       )<br />
+       ,'objects'<br />
+     )<br />
+     ,array(<br />
+       'id'<br />
+       ,'post_title'<br />
+     )<br />
+    )<br />
+));<br />
+</code></p>
+<p>this gets the pages, but i would like to add the &#8216;first&#8217; option myself, to include it with a different text like &#8216;please select page&#8230;&#8217;</p>
+<p>Also, what does &#8216;objects&#8217; mean in this case?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-extra-choice-to-select/">add extra choice to &#039;select&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

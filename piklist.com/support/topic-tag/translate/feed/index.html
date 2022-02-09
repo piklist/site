@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>translate &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/translate/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 31 Aug 2016 06:35:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Translate bug</title>
+		<link>https://piklist.com/support/topic/translate-bug/</link>
+		
+		<dc:creator><![CDATA[vavakco]]></dc:creator>
+		<pubDate>Wed, 31 Aug 2016 06:33:49 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/translate-bug/</guid>
+
+					<description><![CDATA[<p>sprintf or other side project has problem for translate file for example piklist\includes\class-piklist-cpt.php:774 original : sprintf(__($singular.&#039; published. &#60;a href=&#34;%s&#34;&#62;View &#039; . $singular . &#039;&#60;/a&#62;&#039;), esc_url(get_permalink($post_ID))) but is not true true for translate : sprintf(__(&#039;%s published. &#60;a href=&#34;%s&#34;&#62;View %s&#60;/a&#62;&#039;, &#039;piklist&#039;), $singular, esc_url(get_permalink($post_ID)), $singular) &#8216;piklist&#8217; for key domain translate not include by this bug not translate this, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/translate-bug/">Translate bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>sprintf or other side project has problem for translate file for example</p>
+<p>piklist\includes\class-piklist-cpt.php:774</p>
+<p>original :</p>
+<pre><code>sprintf(__($singular.&#039; published. &lt;a href=&quot;%s&quot;&gt;View &#039; . $singular . &#039;&lt;/a&gt;&#039;),
+esc_url(get_permalink($post_ID)))</code></pre>
+<p>but is not true</p>
+<p>true for translate :</p>
+<pre><code>sprintf(__(&#039;%s published. &lt;a href=&quot;%s&quot;&gt;View %s&lt;/a&gt;&#039;, &#039;piklist&#039;),
+$singular, esc_url(get_permalink($post_ID)), $singular)</code></pre>
+<p>&#8216;piklist&#8217; for key domain translate not include<br />
+by this bug not translate this, please check and fix for future version</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/translate-bug/">Translate bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Suggestion for allow translation on Comment&#039;s header</title>
+		<link>https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/</link>
+		
+		<dc:creator><![CDATA[Darlan ten Caten]]></dc:creator>
+		<pubDate>Fri, 06 Mar 2015 23:12:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/</guid>
+
+					<description><![CDATA[<p>Hello! This is related to this post: https://piklist.com/support/topic/translate-tab-names-in-comments-header/ I was trying to translate the Metabox&#8217;s title but as Steve said they still aren&#8217;t ready to be translatable. So I wrote a code that allow it, and here is it: add_filter( 'piklist_get_file_data', 'allow_metabox_text_domain' ); function allow_text_domain( $data ) { $data['text_domain'] = 'Text Domain'; return $data; } [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/">Suggestion for allow translation on Comment&#039;s header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!<br />
+This is related to this post: https://piklist.com/support/topic/translate-tab-names-in-comments-header/</p>
+<p>I was trying to translate the Metabox&#8217;s title but as Steve said they still aren&#8217;t ready to be translatable.</p>
+<p>So I wrote a code that allow it, and here is it:</p>
+<p><code><br />
+add_filter( 'piklist_get_file_data', 'allow_metabox_text_domain' );<br />
+function allow_text_domain( $data ) {<br />
+    $data['text_domain'] = 'Text Domain';</p>
+<p>    return $data;<br />
+}</p>
+<p>add_filter( 'piklist_add_part', 'config_metabox_title_text_domain' );<br />
+function config_metabox_title_text_domain( $data ) {<br />
+    if ( !empty( $data['text_domain'] ) ) {<br />
+        $data['name'] = __( $data['name'], $data['text_domain'] );<br />
+    }</p>
+<p>    return $data;<br />
+}<br />
+</code></p>
+<p>Now just add the new option Text Domain in the comment header!<br />
+See the attached screenshot.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/">Suggestion for allow translation on Comment&#039;s header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Translate tab names in comments header</title>
+		<link>https://piklist.com/support/topic/translate-tab-names-in-comments-header/</link>
+		
+		<dc:creator><![CDATA[countryipblocks]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2014 16:55:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/translate-tab-names-in-comments-header/</guid>
+
+					<description><![CDATA[<p>In my arrays for example I am adding __(&#8221;) for localization to translate my plugin. Can tab names be localization-ready since they are named in the header comments? IE: &#60;?php /* Title: Countries Order: 20 Setting: cipb_settings Tab: Countries */</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/translate-tab-names-in-comments-header/">Translate tab names in comments header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In my arrays for example I am adding __(&#8221;) for localization to translate my plugin. Can tab names be localization-ready since they are named in the header comments? IE:</p>
+<pre><code>&lt;?php
+/*
+Title: Countries
+Order: 20
+Setting: cipb_settings
+Tab: Countries
+*/
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/translate-tab-names-in-comments-header/">Translate tab names in comments header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

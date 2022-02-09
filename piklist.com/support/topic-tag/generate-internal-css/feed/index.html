@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>generate internal css &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/generate-internal-css/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 24 Jun 2016 10:51:07 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Get Image upload url from settings file field and use it  for embedded css</title>
+		<link>https://piklist.com/support/topic/get-image-upload-url-from-settings-file-field-and-use-it-for-embedded-css/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Fri, 24 Jun 2016 10:47:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get-image-upload-url-from-settings-file-field-and-use-it-for-embedded-css/</guid>
+
+					<description><![CDATA[<p>While trying to solve the Image upload control bug that I get when the Customizer has an Image upload control and the Piklist is actived, I came across the piece of code below by Steve and I thought that I could help me dodge using the Customizer if it could write style info to the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-image-upload-url-from-settings-file-field-and-use-it-for-embedded-css/">Get Image upload url from settings file field and use it  for embedded css</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>While trying to solve the Image upload control bug that  I get when the Customizer has an Image upload control and the Piklist is actived, I came across the piece of code below by Steve and I thought that I could help me dodge using the Customizer if it could write style info to the head section of the page. This is the code:</p>
+<pre><code>add_action(&#039;wp_head&#039;, &#039;my_custom_css&#039;);
+function my_custom_css()
+{
+  $options = get_option(&#039;test_field&#039;);
+?&gt;
+ &lt;style type=&quot;text/css&quot;&gt;
+    html {
+      color: &lt;?php echo $options[&#039;color&#039;]; ?&gt;;
+    }
+  &lt;/style&gt;
+&lt;?php
+}</code></pre>
+<p><strong>N.B:</strong> The code above returns no error and neither data even though I have colorpicker field in my settings file saved with a color value.</p>
+<p>What I&#8217;m trying to do is this; I&#8217;m trying to upload an image and then  use its url for in an Internal style that is write in the head section of the page. So, for example in the code above, I&#8217;m trying to pull the value of a field in my settings file, preferrably an image url  and then pass it to the wp_head action hook so that it&#8217;s passed as a property value in the generated Internal css. I&#8217;ve also tried this code below but to no avail.</p>
+<pre><code>&lt;?php
+add_action(&#039;wp_head&#039;, &#039;my_custom_css&#039;);
+function my_custom_css()
+{
+  $options = get_option(&#039;test_field&#039;);
+  $theme_options = get_option(&#039;my_theme_settings&#039;);
+  $text_field = $theme_options[&#039;text&#039;];
+  $select_field = $theme_options[&#039;select&#039;];
+  $colorpicker_field = $theme_options[&#039;colorpicker&#039;];
+?&gt;
+ &lt;style type=&quot;text/css&quot;&gt;
+    html {
+      /*color: &lt;?php echo $options[&#039;color&#039;]; ?&gt;;*/
+      &lt;?php echo &#039;This is a text field&#039; . $text_field; ?&gt;
+    }
+  &lt;/style&gt;
+&lt;?php
+}
+?&gt;</code></pre>
+<p>None of the above fields/options returns anything apart from an error like the one below claiming the field to undefined.<br />
+<code>&lt;b&gt;Notice&lt;/b&gt;:  Undefined index: text in &lt;b&gt;C:\xampp\htdocs\lawyeah\wp-content\themes\JointsWP-CSS-master\functions.php&lt;/b&gt; on line &lt;b&gt;121&lt;/b&gt;&lt;br /&gt;</code><br />
+Note: Text, select and colorpicker are actual field names in the settings file and the code is placed in functions.php file. I&#8217;ve not used an image field here because I was just testing to see if actually anything was being returned. I&#8217;ve tried to run the code from a different place like the same directory level like that of the page templates; but still nothing works. Could you please help me solve this. How do I get the url of an image attached in the settings file show up as a property value in the Internal css in the head section? Thanks for the support.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-image-upload-url-from-settings-file-field-and-use-it-for-embedded-css/">Get Image upload url from settings file field and use it  for embedded css</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>on_post_status &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/on_post_status/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 20 Feb 2016 23:01:19 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>on_post_status when editing post with front end form</title>
+		<link>https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2016 19:15:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/</guid>
+
+					<description><![CDATA[<p>I have a form to submit new posts on front end. It has a field to select post status when submitting. I&#8217;d like to hide this post when editing a published post via /?_post[ID]=1234 Using: &#039;on_post_status&#039; =&#62; array( &#039;hide&#039; =&#62; &#039;publish&#039;, ), &#8230; doesn&#8217;t work when editing a post this way. I could hack something [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/">on_post_status when editing post with front end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a form to submit new posts on front end. It has a field to select post status when submitting. I&#8217;d like to hide this post when editing a published post via /?_post[ID]=1234</p>
+<p>Using:</p>
+<pre><code>&#039;on_post_status&#039; =&gt; array(
+      &#039;hide&#039; =&gt; &#039;publish&#039;,
+ ),</code></pre>
+<p>&#8230; doesn&#8217;t work when editing a post this way. I could hack something together to work, but would love Piklist core to handle this somehow if possible. Any thoughts?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/">on_post_status when editing post with front end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>CPT on_post_status failed switching when required=true : 0.9.9.7</title>
+		<link>https://piklist.com/support/topic/cpt-on_post_status-failed-switching-when-requiredtrue-0-9-9-7/</link>
+		
+		<dc:creator><![CDATA[ccjeagle]]></dc:creator>
+		<pubDate>Sat, 09 Jan 2016 01:28:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cpt-on_post_status-failed-switching-when-requiredtrue-0-9-9-7/</guid>
+
+					<description><![CDATA[<p>Hi, By following this tutorial and another one, my CPT uses custom status: draft, publish, lock-1, lock-2, lock-3. With plugin metabox text field called &#8220;First Name&#8221;, I set on_post_status to &#8220;lock-1&#8211;lock-3&#8221;. My issue happens when I switch the status from lock-1 to lock-2. With lock-1, the field does show value instead of a box. However, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cpt-on_post_status-failed-switching-when-requiredtrue-0-9-9-7/">CPT on_post_status failed switching when required=true : 0.9.9.7</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>By following <a href="https://piklist.com/user-guide/tutorials/creating-custom-post-statuses/" target="_blank">this tutorial</a> and <a href="https://piklist.com/user-guide/tutorials/lock-field-values-based-on-post-status/" target="_blank">another one</a>, my CPT uses custom status: draft, publish, lock-1, lock-2, lock-3.</p>
+<p>With plugin metabox text field called &#8220;First Name&#8221;, I set on_post_status to &#8220;lock-1&#8211;lock-3&#8221;.</p>
+<p>My issue happens when I switch the status from lock-1 to lock-2. With lock-1, the field does show value instead of a box. However, when I switch to lock-2 (from lock-1),<br />
+when the field value disappears, and shows a warning &#8220;Fist Name is required&#8221;.</p>
+<p>Another interesting this is, if it is not &#8220;required&#8221;, I can&#8217;t switch from lock-1 to lock-2. It will automatically go back to &#8220;published&#8221;, so that I can switch to lock-2.</p>
+<p>I would appreciate if any advise you may provide. Thanks.</p>
+<pre><code>    ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Draft&#039;
+        )
+        ,&#039;publish&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Published&#039;
+        )
+        ,&#039;lock-1&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Lock 1&#039;
+        )
+        ,&#039;lock-2&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Lock 2&#039;
+        )
+        ,&#039;lock-3&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Lock 3&#039;
+        )
+
+piklist(&#039;field&#039;, array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            ,&#039;field&#039; =&gt; &#039;contact_firstname&#039;
+            ,&#039;label&#039; =&gt; &#039;First Name&#039;
+            //,&#039;required&#039; =&gt; true
+            ,&#039;columns&#039; =&gt; 3
+            ,&#039;on_post_status&#039; =&gt; array(&#039;value&#039; =&gt; &#039;lock-1--lock-3&#039;)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cpt-on_post_status-failed-switching-when-requiredtrue-0-9-9-7/">CPT on_post_status failed switching when required=true : 0.9.9.7</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Interesting bug&#8230; Groups that show value on_post_status</title>
+		<link>https://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Wed, 08 Jan 2014 20:15:01 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/</guid>
+
+					<description><![CDATA[<p>I have created a group: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;add_more&#039; =&#62; false ,&#039;scope&#039; =&#62; &#039;post_meta&#039; ,&#039;label&#039; =&#62; &#039;Booking Misc.&#039; ,&#039;field&#039; =&#62; &#039;mae_sched_misc&#039; ,&#039;description&#039; =&#62; &#039;Cost, Max Students, Alerts&#039; ,&#039;columns&#039; =&#62; 12 ,&#039;attributes&#039; =&#62; array ( ) ,&#039;fields&#039; =&#62; array ( array ( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;mae_sched_cost&#039; ,&#039;label&#039; =&#62; &#039;Cost $&#039; ,&#039;value&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/">Interesting bug&#8230; Groups that show value on_post_status</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have created a group:</p>
+<pre><code>
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	,&#039;add_more&#039; =&gt; false
+	,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+	,&#039;label&#039; =&gt; &#039;Booking Misc.&#039;
+	,&#039;field&#039; =&gt; &#039;mae_sched_misc&#039;
+	,&#039;description&#039; =&gt; &#039;Cost, Max Students, Alerts&#039;
+	,&#039;columns&#039; =&gt; 12
+	,&#039;attributes&#039; =&gt; array (
+	)
+	,&#039;fields&#039; =&gt; array (
+		array (
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_cost&#039;
+			,&#039;label&#039; =&gt; &#039;Cost $&#039;
+			,&#039;value&#039; =&gt; &#039;&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;cost&#039;
+				)
+				,&#039;size&#039; =&gt; 10
+			)
+			,&#039;columns&#039; =&gt; 6
+			,&#039;on_post_status&#039; =&gt; array(
+			  &#039;value&#039; =&gt; &#039;publish&#039;
+			)
+		)
+		,array (
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_max_students&#039;
+			,&#039;label&#039; =&gt; &#039;Max Students &#039;
+			,&#039;value&#039; =&gt; &#039;&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;maxstudents&#039;
+				)
+				,&#039;size&#039; =&gt; 10
+			)
+			,&#039;columns&#039; =&gt; 6
+			,&#039;on_post_status&#039; =&gt; array(
+			  &#039;value&#039; =&gt; &#039;publish&#039;
+			)
+		)
+		,array (
+			&#039;type&#039; =&gt; &#039;checkbox&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_allow_overbook&#039;
+			,&#039;label&#039; =&gt; &#039;Overbooking&#039;
+			,&#039;value&#039; =&gt; &#039;y&#039;
+			,&#039;label_position&#039; =&gt; &#039;after&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;allowoverbook&#039;
+				)
+			)
+			  ,&#039;choices&#039; =&gt; array(
+			    &#039;y&#039;=&gt;&#039;Allow&#039;
+			  )
+			,&#039;columns&#039; =&gt; 6
+		)
+		,array (
+			&#039;type&#039; =&gt; &#039;checkbox&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_alert_full&#039;
+			,&#039;label&#039; =&gt; &#039;Camp is Full&#039;
+			,&#039;value&#039; =&gt; &#039;y&#039;
+			,&#039;label_position&#039; =&gt; &#039;after&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;alertonfull&#039;
+				)
+			)
+			  ,&#039;choices&#039; =&gt; array(
+			    &#039;y&#039;=&gt;&#039;Alert&#039;
+			  )
+			,&#039;columns&#039; =&gt; 6
+		)
+	)
+));
+</code></pre>
+<p>I have some of them set to show the value on publish: (so they are not editable)</p>
+<pre><code>
+,&#039;on_post_status&#039; =&gt; array(
+  &#039;value&#039; =&gt; &#039;publish&#039;
+)
+</code></pre>
+<p>But the last two (checkboxes) can be edited. (not using on_post_status on them)</p>
+<p>Here&#8217;s the bug. If you update either of these checkboxes, it affects the first two fields values. Probably because these first two are part of a group (array in post_meta) so the whole group gets updated even though only two fields are editable. </p>
+<p>In the function that updates the array, maybe it should load the other parts of the array as a double check when it posts to the post_meta table. Otherwise, it will rewrite over the array destroying the values for the on_post_status fields. (as we&#8217;ll always need to use groups for some things)</p>
+<p>I&#8217;ll try and find it myself, but Kevin may have already fixed it for the next release. </p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/">Interesting bug&#8230; Groups that show value on_post_status</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Make a field &#034;Read-only&#034;</title>
+		<link>https://piklist.com/support/topic/make-a-field-read-only/</link>
+		
+		<dc:creator><![CDATA[johnmcalester]]></dc:creator>
+		<pubDate>Thu, 03 Jan 2013 08:01:07 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/make-a-field-read-only/</guid>
+
+					<description><![CDATA[<p>I am pretty sure that I saw the ability to make a field &#8220;read-only&#8221; in your WordCamp NYC presentation but I cannot figure out how to implement it now. Is there a field parameter that can be set to make a field read only for a capability set or a role? Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/make-a-field-read-only/">Make a field &quot;Read-only&quot;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am pretty sure that I saw the ability to make a field &#8220;read-only&#8221; in your WordCamp NYC presentation but I cannot figure out how to implement it now.</p>
+<p>Is there a field parameter that can be set to make a field read only for a capability set or a role?</p>
+<p>Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/make-a-field-read-only/">Make a field &quot;Read-only&quot;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>validation &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/validation/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 07 Oct 2020 05:17:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Validation error highlights only works on the first entry of a group</title>
+		<link>https://piklist.com/support/topic/validation-error-highlights-only-works-on-the-first-entry-of-a-group/</link>
+		
+		<dc:creator><![CDATA[shoemaker]]></dc:creator>
+		<pubDate>Wed, 07 Oct 2020 05:15:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/validation-error-highlights-only-works-on-the-first-entry-of-a-group/</guid>
+
+					<description><![CDATA[<p>I have a group field with add_more and a validate that works. When an entry fails validation, piklist doesn&#8217;t highlight it unless it&#8217;s the first, or *top* entry in the group. By default, add_more adds *below* an existing entry, so when the data entry error is in the second entry, it&#8217;s not clear to the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validation-error-highlights-only-works-on-the-first-entry-of-a-group/">Validation error highlights only works on the first entry of a group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a group field with add_more and a validate that works. When an entry fails validation, piklist doesn&#8217;t highlight it unless it&#8217;s the first, or *top* entry in the group. By default, add_more adds *below* an existing entry, so when the data entry error is in the second entry, it&#8217;s not clear to the user which field failed. If I drag the entry to the top of the group, the correct field is highlighted.<br />
+Here&#8217;s the field definition and screen shots of the bad entry at its default position and dragged to the top to check again.</p>
+<p>How can we get the right field to highlight?<br />
+Piklist Version 1.0.10<br />
+I get the following error in the apache log:<br />
+[Tue Oct 06 22:08:58.799199 2020] [proxy_fcgi:error] [pid 1939:tid 140073965152000] [client 24.20.203.62:60450] AH01071: Got error &#8216;PHP message: PHP Warning:  count(): Parameter must be an array or an object that implements Countable in &lt;snip&gt;wp-content/plugins/piklist/includes/class-piklist-form.php on line 2944PHP message: PHP Warning:  count(): Parameter must be an array or an object that implements Countable in &lt;snip&gt;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2944PHP message: PHP Warning:  count(): Parameter must be an array or an object that implements Countable in &lt;snip&gt;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2944PHP message: PHP Warning:  count(): Parameter must be an array or an object that implements Countable in &lt;snip&gt;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2944PHP message: PHP Warning:  count(): Parameter must be an array or an object that implements Countable in &lt;snip&gt;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2944PHP message: PHP Warning:  count(): Parameter must be an array or an object that implements Countable in &lt;snip&gt;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2944&#8217;, referer: https://&lt;snip&gt;/wp-admin/post.php?post=NNNN&amp;action=edit&amp;_%5Binvalid%5D=6ca7417ef5</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;payments&#8217;<br />
+    ,&#8217;add_more&#8217; =&gt; true<br />
+    ,&#8217;fields&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Fiscal Year&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;fiscal_year&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 9<br />
+        ,&#8217;validate&#8217; =&gt; array(<br />
+                array( &#8216;type&#8217; =&gt; &#8216;fiscal_year_number&#8217;<br />
+                )<br />
+                )<br />
+          )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Amount&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;amount&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 9<br />
+        )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Check Number&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;check_number&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;datepicker&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Date Posted&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;date&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;options&#8217; =&gt; array(<br />
+          &#8216;dateFormat&#8217; =&gt; &#8216;M d, yy&#8217;<br />
+        )<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;size&#8217; =&gt; 18<br />
+        )<br />
+        ,&#8217;value&#8217; =&gt; date(&#8216;M d, Y&#8217;, time() + 604800)<br />
+       )<br />
+    )<br />
+  ));</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validation-error-highlights-only-works-on-the-first-entry-of-a-group/">Validation error highlights only works on the first entry of a group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Front end File Uploader &#8211; Problems with Required</title>
+		<link>https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/</link>
+		
+		<dc:creator><![CDATA[jrcreative]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2017 18:27:21 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/</guid>
+
+					<description><![CDATA[<p>Hi all, I&#8217;m in desperate need of a solution for this. I have a multi-page front end form with many different required file uploads. Piklist does a fine job of making sure you can&#8217;t move to the next page without submitting the required info. However, when you go back to that page after advancing in [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/">Front end File Uploader &#8211; Problems with Required</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi all,</p>
+<p>I&#8217;m in desperate need of a solution for this. I have a multi-page front end form with many different required file uploads.</p>
+<p>Piklist does a fine job of making sure you can&#8217;t move to the next page without submitting the required info. However, when you go back to that page after advancing in to process, you can see that the image is stored here&#8230;</p>
+<p><img src='https://s30.postimg.org/jlka8g89t/Screen_Shot_2017_01_26_at_10_10_37_AM.png' border='0' alt="Screen Shot 2017-01-26 at 10.10.37 AM" /></p>
+<p>But when you attempt to move on again, it acts as if it doesn&#8217;t know the file exists (despite the fact that you&#8217;re looking at a preview).</p>
+<p><img src="https://s28.postimg.org/mqvabaa7x/Screen_Shot_2017_01_26_at_10_29_33_AM.png" alt="" /></p>
+<p>I&#8217;ve been working at this for a while, looking for ways to even work around Piklist for this one input type, but I&#8217;m not having any luck getting it integrated back into the Piklist flow.</p>
+<p>HELP!!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/">Front end File Uploader &#8211; Problems with Required</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Parameters in custom validation rules callback returning 0 and empty array</title>
+		<link>https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/</link>
+		
+		<dc:creator><![CDATA[stham]]></dc:creator>
+		<pubDate>Mon, 05 Dec 2016 07:47:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/</guid>
+
+					<description><![CDATA[<p>Hi there, I am trying to add my own custom validation rules (using piklist_validation_rules filter) to validate that an option selected (whether checkboxes, radio or select fields) is a valid one from the choices available. Based on the docs, there are 3 parameters in the callback &#8211; $value, $field, $arguments. $field returns the chosen option. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/">Parameters in custom validation rules callback returning 0 and empty array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>I am trying to add my own custom validation rules (using <code>piklist_validation_rules</code> filter) to validate that an option selected (whether checkboxes, radio or select fields) is a valid one from the choices available.</p>
+<p>Based on the docs, there are 3 parameters in the callback &#8211; <code>$value</code>, <code>$field</code>, <code>$arguments</code>. <code>$field</code> returns the chosen option. However, no matter what I choose or not choose, <code>$value</code> always seems to pass an int 0 and <code>$arguments</code> always seems to be an empty array.</p>
+<p>My question is, what are those two parameters (<code>$value</code> and <code>$arguments</code>) supposed to represent?</p>
+<p>I have code for this that I&#8217;ve used with earlier versions of Piklist and it worked beautifully up until 0.9.4.31. I (finally) upgraded to v0.9.9.9 and it doesn&#8217;t work anymore. I don&#8217;t have any of the in-between versions.</p>
+<p>Here&#8217;s what I used to use:</p>
+<pre><code>function smm_validate_single_choice( $value, $field ) {
+
+	if ( is_array( $value ) ) {
+		$value = $value[0];
+	}
+	return ( array_key_exists( (string) $value, $field[&#039;choices&#039;] ) ) ? true : __( &#039;does not have a valid selection.&#039;, &#039;smm&#039; );
+
+}</code></pre>
+<p>Any help is greatly appreciated. Thank you very much!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/">Parameters in custom validation rules callback returning 0 and empty array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File field &#039;required&#039; error</title>
+		<link>https://piklist.com/support/topic/file-field-required-error/</link>
+		
+		<dc:creator><![CDATA[jrcreative]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2016 20:43:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-field-required-error/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to make a field type of &#8220;file&#8221; a required field. It works fine when I do the initial file upload and a save the post, but validation stops the save on post updates. Here&#8217;s my code for that field.. nothing fancy. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039; ,&#039;field&#039; =&#62; &#039;government_id&#039; ,&#039;label&#039; =&#62; __(&#039;Government Issued [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-required-error/">File field &#039;required&#039; error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to make a field type of &#8220;file&#8221; a required field. It works fine when I do the initial file upload and a save the post, but validation stops the save on post updates.</p>
+<p>Here&#8217;s my code for that field.. nothing fancy.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;
+  ,&#039;field&#039; =&gt; &#039;government_id&#039;
+  ,&#039;label&#039; =&gt; __(&#039;Government Issued ID&#039;)
+  ,&#039;options&#039; =&gt; array(
+    &#039;basic&#039; =&gt; true
+    )
+  ,&#039;required&#039; =&gt; true
+)</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-required-error/">File field &#039;required&#039; error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Is there a way to limit/control field entries?</title>
+		<link>https://piklist.com/support/topic/is-there-a-way-to-limitcontrol-field-entries/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 26 Apr 2016 13:55:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/is-there-a-way-to-limitcontrol-field-entries/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve just tested the demo text fields in the demo settings pages to see if there&#8217;s some sort of limit to how much can be entered into a single field and found that there&#8217;s none. Personally, I&#8217;d love to control how much a user can enter into any given field as a safe guard. I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-there-a-way-to-limitcontrol-field-entries/">Is there a way to limit/control field entries?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve just tested the demo text fields in the<em> demo settings</em> pages to see if there&#8217;s some sort of limit to how much can be entered into a single field and found that there&#8217;s none. Personally, I&#8217;d love to control how much a user can enter into any given field as a safe guard. I wouldn&#8217;t want a user to enter 200 characters into text field where I expect him/her to enter just about 15 characters. For example, I have text field for the Headline and I don&#8217;t want the user to enter more than 25 characters into this field, is there a way I can do this with Piklist? I don&#8217;t seem find it in the validation and field parameters tutorials in the documentation. Any help is highly appreciated.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-there-a-way-to-limitcontrol-field-entries/">Is there a way to limit/control field entries?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Required Field alert on front end</title>
+		<link>https://piklist.com/support/topic/required-field-alert-on-front-end/</link>
+		
+		<dc:creator><![CDATA[bshep]]></dc:creator>
+		<pubDate>Sun, 28 Feb 2016 17:06:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/required-field-alert-on-front-end/</guid>
+
+					<description><![CDATA[<p>On admin forms, setting &#8216;required&#8217; =&#62; true on a field causes the expected message to appear on submit. Is it possible to do the same on a frontend form?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/required-field-alert-on-front-end/">Required Field alert on front end</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>On admin forms, setting &#8216;required&#8217; =&gt; true on a field causes the expected message to appear on submit. Is it possible to do the same on a frontend form?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/required-field-alert-on-front-end/">Required Field alert on front end</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>ajax client side can work.</title>
+		<link>https://piklist.com/support/topic/ajax-client-side-can-work/</link>
+		
+		<dc:creator><![CDATA[rafi]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 08:48:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/ajax-client-side-can-work/</guid>
+
+					<description><![CDATA[<p>I can make ajax client side validation work. I just need the &#8220;required&#8221; keyword to be inside the input tag of any field. Is there any way to put it there?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ajax-client-side-can-work/">ajax client side can work.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I can make ajax client side validation work. I just need the &#8220;required&#8221; keyword to be inside the input tag of any field.</p>
+<p>Is there any way to put it there?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ajax-client-side-can-work/">ajax client side can work.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Javascript Validation</title>
+		<link>https://piklist.com/support/topic/javascript-validation/</link>
+		
+		<dc:creator><![CDATA[tatamata]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2016 12:12:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/javascript-validation/</guid>
+
+					<description><![CDATA[<p>Hello, There is a Javascript Validation setting within Piklist settings. You can choose whether to turn it on or off to allow forms to use client side validation using the same rules and methods as the built in server side validation. Can you please help how to use it? I would like to use http://jquerycreditcardvalidator.com [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-validation/">Javascript Validation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, </p>
+<p>There is a Javascript Validation setting within Piklist settings. You can choose whether to turn it on or off to allow forms to use client side validation using the same rules and methods as the built in server side validation.</p>
+<p>Can you please help how to use it?</p>
+<p>I would like to use http://jquerycreditcardvalidator.com to validate credit cards.</p>
+<p>Thanks </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-validation/">Javascript Validation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>required but conditional filed is validated</title>
+		<link>https://piklist.com/support/topic/required-but-conditional-filed-is-validated/</link>
+		
+		<dc:creator><![CDATA[tatamata]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2015 00:21:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/required-but-conditional-filed-is-validated/</guid>
+
+					<description><![CDATA[<p>Hello, I want to show required field only if condition is met. But even if condition is not met required field is still passed for validation. Any advice on how to work around this? piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;checkbox&#039;, &#039;field&#039; =&#62; &#039;alone&#039;, &#039;label&#039; =&#62; &#039;Alone?&#039;, &#039;choices&#039; =&#62; array( &#039;yes&#039; =&#62; &#039;Yes&#039; ) )); piklist(&#039;field&#039;, array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/required-but-conditional-filed-is-validated/">required but conditional filed is validated</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, </p>
+<p>I want to show required field only if condition is met. But even if condition is not met required field is still passed for validation. Any advice on how to work around this?</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;checkbox&#039;,
+	&#039;field&#039; =&gt; &#039;alone&#039;,
+	&#039;label&#039; =&gt; &#039;Alone?&#039;,
+	&#039;choices&#039; =&gt; array(
+		&#039;yes&#039; =&gt; &#039;Yes&#039;
+	)
+));
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;another_one&#039;,
+	&#039;required&#039; =&gt; true,
+	&#039;conditions&#039; =&gt; array(
+		array(
+			&#039;field&#039; =&gt; &#039;alone&#039;,
+			&#039;value&#039; =&gt; &#039;yes&#039;
+		)
+	)
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/required-but-conditional-filed-is-validated/">required but conditional filed is validated</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>validate [0.9.9.6]</title>
+		<link>https://piklist.com/support/topic/validate-0-9-9-6/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Fri, 06 Nov 2015 16:39:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/validate-0-9-9-6/</guid>
+
+					<description><![CDATA[<p>My custom validation broke with the upgrade. In the past, it seemed I was able to grab the value as it was before, and the new value submitted, so that I could determine if it was unique. Now, all I am getting in the $field variable is the new submitted value. How would I get [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validate-0-9-9-6/">validate [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>My custom validation broke with the upgrade. In the past, it seemed I was able to grab the value as it was before, and the new value submitted, so that I could determine if it was unique. Now, all I am getting in the $field variable is the new submitted value. How would I get the value that the field was before the change?</p>
+<p>This was my previous validation formula:</p>
+<pre><code>add_filter(&#039;piklist_validation_rules&#039;, &#039;check_if_unique&#039;, 11);
+function check_if_unique($validation_rules)
+{
+  $validation_rules[&#039;custom_unique&#039;] = array(
+	&#039;type&#039; =&gt; &#039;safe_text&#039;,
+    &#039;callback&#039; =&gt; &#039;my_validate_unique&#039;
+  );
+ 
+  return $validation_rules;
+}
+ 
+function my_validate_unique($file, $field, $arguments)
+{
+
+	$thereturned_field = $field[&#039;request_value&#039;][0];
+	 $duplicate_url = new WP_User_Query(  array(
+	 &#039;meta_key&#039; =&gt; &#039;user_custom_url&#039;,
+	 &#039;meta_value&#039; =&gt; $thereturned_field,
+	 &#039;exclude&#039; =&gt; $field[&#039;attributes&#039;][&#039;title&#039;]
+	 ) );
+	 $userscount = $duplicate_url-&gt;get_total();
+	 //return($field[&#039;attributes&#039;][&#039;title&#039;] . &quot; - total - &quot; . $userscount . &quot;search -&quot; . $thereturned_field);
+	 if($userscount == 0 )
+  {
+  return true;
+  }else{
+	  return __(&#039;is not unique and or used unsupported characters. ONLY letters and numbers.&#039;, &#039;Extreme&#039;);
+  }
+ 
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validate-0-9-9-6/">validate [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

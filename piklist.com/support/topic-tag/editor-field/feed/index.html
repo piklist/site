@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>editor field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/editor-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 08 Mar 2017 08:19:09 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Empty post_excerpt and post_content fields</title>
+		<link>https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/</link>
+		
+		<dc:creator><![CDATA[norboo]]></dc:creator>
+		<pubDate>Wed, 08 Mar 2017 08:19:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to replace &#8220;post_excerpt&#8221; and &#8220;post_content&#8221; with Piklist editor fields and everything seems to work fine with one exception: I can&#8217;t completly delete the content of either of these fields, I must have at least an empty space &#8221;&#160;&#8221; for the fields to save. &#60;?php /* Title: Content Post Type: page, post, tour (a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/">Empty post_excerpt and post_content fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to replace &#8220;post_excerpt&#8221; and &#8220;post_content&#8221; with Piklist editor fields and everything seems to work fine with one exception: I can&#8217;t completly delete the content of either of these fields, I must have at least an empty space &#8221;&nbsp;&#8221; for the fields to save.</p>
+<pre><code>
+&lt;?php
+/*
+Title: Content
+Post Type: page, post, tour (a CPT)
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;label&#039; =&gt; &#039;Content&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;description&#039; =&gt; &#039;This is a custom Content&#039;
+    ,&#039;value&#039; =&gt; &#039; &#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;shortcode_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; false
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+      ,&#039;quicktags&#039; =&gt; true
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+&lt;?php
+/*
+Title: Excerpt
+Post Type: post, page, tour (CPT)
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_excerpt&#039;
+    ,&#039;label&#039; =&gt; &#039;Excerpt&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;description&#039; =&gt; &#039;This is a custom Excerpt&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;shortcode_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; false
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+      ,&#039;quicktags&#039; =&gt; true
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+//functions.php
+function my_remove_post_type_support()
+{ 
+    remove_post_type_support(&#039;post&#039;, &#039;excerpt&#039;);
+    remove_post_type_support(&#039;post&#039;, &#039;editor&#039;);
+    remove_post_type_support(&#039;post&#039;, &#039;custom-fields&#039;);
+    
+    remove_post_type_support(&#039;page&#039;, &#039;editor&#039;);
+    remove_post_type_support(&#039;page&#039;, &#039;excerpt&#039;);
+    remove_post_type_support(&#039;page&#039;, &#039;custom-fields&#039;); 
+}
+add_action(&#039;init&#039;, &#039;my_remove_post_type_support&#039;,10);
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/">Empty post_excerpt and post_content fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shortcode button saving shortcode to wrong editor</title>
+		<link>https://piklist.com/support/topic/shortcode-button-saving-shortcode-to-wrong-editor/</link>
+		
+		<dc:creator><![CDATA[upside]]></dc:creator>
+		<pubDate>Wed, 13 Jul 2016 02:13:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortcode-button-saving-shortcode-to-wrong-editor/</guid>
+
+					<description><![CDATA[<p>Hey Guys, Huge fan of Piklist and really excited about all of the recent improvements, especially add-more related. I&#8217;m trying to add an editor field to a page template and want to be able to use shortcodes in the editor field. I currently have the following code for the editor field: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-button-saving-shortcode-to-wrong-editor/">Shortcode button saving shortcode to wrong editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey Guys, </p>
+<p>Huge fan of Piklist and really excited about all of the recent improvements, especially add-more related. I&#8217;m trying to add an editor field to a page template and want to be able to use shortcodes in the editor field. I currently have the following code for the editor field:</p>
+<pre><code> piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;,
+    &#039;field&#039; =&gt; &#039;tc_education_editor&#039;, // This is the field name of the WordPress default editor
+    &#039;label&#039; =&gt; &#039;Program Boxes&#039;,
+    &#039;scope&#039; =&gt; &#039;page&#039;,
+    &#039;template&#039; =&gt; &#039;field&#039;, // Only display the field not the label
+    &#039;options&#039; =&gt; array( // Pass any option that is accepted by wp_editor()
+      &#039;wpautop&#039; =&gt; true,
+      &#039;media_buttons&#039; =&gt; true,
+      &#039;shortcode_buttons&#039; =&gt; true,
+      &#039;teeny&#039; =&gt; false,
+      &#039;dfw&#039; =&gt; false,
+      &#039;quicktags&#039; =&gt; true,
+      &#039;drag_drop_upload&#039; =&gt; true,
+      &#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false,
+        &#039;wp_autoresize_on&#039; =&gt; true
+      )
+    )
+  ));</code></pre>
+<p>When I try to add a Piklist shortcode (using the shortcode button) the shortcode winds up saving to the standard page editor field and not the Piklist field. Any help you can give on this is greatly appreciated. Thanks!</p>
+<p>Also I originally had it set-up with the scope to Post and then changed to page to see if that would work. I&#8217;m pretty sure that it should always be post (unless its a CPT) but figured I&#8217;d try to cover all the bases.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-button-saving-shortcode-to-wrong-editor/">Shortcode button saving shortcode to wrong editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Editor field not wiorking</title>
+		<link>https://piklist.com/support/topic/editor-field-not-wiorking/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 10 May 2016 12:31:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/editor-field-not-wiorking/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve created my Editor fields and then show up just fine in the metaboxes; but they simply don&#8217;t post anything because no matter what try, I can&#8217;t any values stored by them. Even at the time of updating a page where I display those metaboxes in which they are, they show no previous content entered [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-field-not-wiorking/">Editor field not wiorking</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve created my Editor fields and then show up just fine in the metaboxes; but they simply don&#8217;t post anything because no matter what try, I can&#8217;t any values stored by them. Even at the time of updating a page where I display those metaboxes in which they are, they show no previous content entered in them like the rest of the fields do. I&#8217;ve tried copying and using some editor field code from the documentation itself and from the Piklist demo pages but still I get nothing when i try to access their values to show on the frontend. I&#8217;m confused and I feel burned out from trying them. Someone please help me out here because using a textarea isn&#8217;t in my best interest instead of an editor field because the content may carry some formatting that only the editor can allow.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-field-not-wiorking/">Editor field not wiorking</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Applying a condition to an editor field</title>
+		<link>https://piklist.com/support/topic/applying-a-condition-to-an-editor-field/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Thu, 05 May 2016 13:54:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/applying-a-condition-to-an-editor-field/</guid>
+
+					<description><![CDATA[<p>Hullo there, I&#8217;m in situation where I would want to use an editor field but put a condition on it like the rest so that it displays only when another field value is equal to the one specified; just like the normal conditionals. However, I&#8217;ve noticed that when I add a condition parameter to the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/applying-a-condition-to-an-editor-field/">Applying a condition to an editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hullo there, I&#8217;m in situation where I would want to use an editor field but put a condition on it like the rest so that it displays only when another field value is equal to the one specified; just like the normal conditionals. However, I&#8217;ve noticed that when I add a condition parameter to the editor field, it stops working and won&#8217;t show up in the metabox. Is there a way to do this or it&#8217;s just not possible with Piklist? Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/applying-a-condition-to-an-editor-field/">Applying a condition to an editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add-more, Editor Field, no Quicktags (Not Working)</title>
+		<link>https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/</link>
+		
+		<dc:creator><![CDATA[pablodmgz]]></dc:creator>
+		<pubDate>Wed, 08 Jul 2015 23:00:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m new to Piklist but I&#8217;m finding it incredibly helpful and fun to work with! I hope this precise issue hasn&#8217;t been posted before (did a quick search but I couldn&#8217;t find it). The problem is the following: I have an Editor Field, set to look like the WP Editor with &#039;template&#039; =&#62; &#039;field&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/">Add-more, Editor Field, no Quicktags (Not Working)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, I&#8217;m new to Piklist but I&#8217;m finding it incredibly helpful and fun to work with! I hope this precise issue hasn&#8217;t been posted before (did a quick search but I couldn&#8217;t find it). </p>
+<p>The problem is the following: I have an Editor Field, set to look like the WP Editor with <code>&#039;template&#039; =&gt; &#039;field&#039;</code>, and set to hide the editor tabs with <code>&#039;quicktags&#039; =&gt; false</code>. The problem is, if I try to make it a repeater field, the editor stops working after the first iteration. It won&#8217;t let you use the field for writing text and the text-editing tools don&#8217;t show (but it does appear to allow the insertion of media). Also, if I remove <code>&#039;quicktags&#039; =&gt; false</code>, everything works fine, so I&#8217;m assuming that&#8217;s the conflicting parameter. </p>
+<p>Here&#8217;s the full code of my &#8216;page-sections.php&#8217; file inside the &#8216;meta-boxes&#8217; folder:</p>
+<pre><code>
+&lt;?php
+/*
+Title: Page Sections
+Description: Repeater field for the page&#039;s sections.
+Post Type: page
+Lock: true
+Meta box: false
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;page_section&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;options&#039; =&gt; array (
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;quicktags&#039; =&gt; false
+    )
+));
+</code></pre>
+<p>Is this a known bug or am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/">Add-more, Editor Field, no Quicktags (Not Working)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Editor Field not saving data</title>
+		<link>https://piklist.com/support/topic/editor-field-not-saving-data/</link>
+		
+		<dc:creator><![CDATA[liquidws]]></dc:creator>
+		<pubDate>Mon, 20 Apr 2015 05:17:24 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/editor-field-not-saving-data/</guid>
+
+					<description><![CDATA[<p>Hello.. am I doing something wrong with the code below? The text field saves the data no problem, but the Editor Field will not save the data. Please help. Thank you in advance. &#60;?php /* Title: Careers Description: Description of Meta-Boxes for Careers Post Type: careers Priority: high Locked: true Order: 1 */ piklist(&#039;field&#039;, array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-field-not-saving-data/">Editor Field not saving data</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello.. am I doing something wrong with the code below? The text field saves the data no problem, but the Editor Field will not save the data. Please help. Thank you in advance.</p>
+<pre><code>&lt;?php
+/*
+Title: Careers
+Description: Description of Meta-Boxes for Careers
+Post Type: careers
+Priority: high
+Locked: true
+Order: 1
+*/
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; 		=&gt; &#039;text&#039;
+	,&#039;field&#039; 	=&gt; &#039;careers_accepting&#039;
+	,&#039;label&#039; 	=&gt; &#039;Accepting Applications Yes/No&#039;
+    ,&#039;columns&#039; 		=&gt; 10
+    ,&#039;attributes&#039; 	=&gt; array(
+      &#039;placeholder&#039; =&gt; &#039;Accepting Applications / Not Accepting Applications At This Time&#039;
+    )
+));
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; 			=&gt; &#039;editor&#039;
+	,&#039;scope&#039; 		=&gt; &#039;post&#039;
+	,&#039;field&#039; 		=&gt; &#039;careers_description&#039;
+	,&#039;label&#039; 		=&gt; __(&#039;Career Description&#039;)
+	,&#039;description&#039; 	=&gt; __(&#039;Enter the desciption of the Career.&#039;)
+	// ,&#039;value&#039; 		=&gt; &#039;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#039;
+	,&#039;options&#039; 		=&gt; array (
+		&#039;wpautop&#039; 			=&gt; true
+		,&#039;media_buttons&#039; 	=&gt; false
+		,&#039;tabindex&#039; 		=&gt; &#039;&#039;
+		,&#039;editor_css&#039; 		=&gt; &#039;&#039;
+		,&#039;editor_class&#039; 	=&gt; &#039;&#039;
+		,&#039;teeny&#039; 			=&gt; false
+		,&#039;dfw&#039; 				=&gt; false
+		,&#039;tinymce&#039; 			=&gt; true
+		,&#039;quicktags&#039; 		=&gt; true
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-field-not-saving-data/">Editor Field not saving data</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>No paragraphs or line breaks displaying from my editor field</title>
+		<link>https://piklist.com/support/topic/no-paragraphs-or-line-breaks-displaying-from-my-editor-field/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Wed, 10 Dec 2014 23:35:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/no-paragraphs-or-line-breaks-displaying-from-my-editor-field/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;ve set up a simple editor metafield: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;editor&#039; ,&#039;field&#039; =&#62; &#039;serving_suggestions&#039; ,&#039;label&#039; =&#62; __(&#039;Serving Suggestions&#039;) ,&#039;columns&#039; =&#62; 12 )); But in the front end, it displays with the text all run together, ignoring paragraphs and line breaks. Am I missing something in my code? Here&#8217;s how I&#8217;m grabbing the info: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/no-paragraphs-or-line-breaks-displaying-from-my-editor-field/">No paragraphs or line breaks displaying from my editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! I&#8217;ve set up a simple editor metafield:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;serving_suggestions&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Serving Suggestions&#039;)
+    ,&#039;columns&#039; =&gt; 12
+));
+</code></pre>
+<p>But in the front end, it displays with the text all run together, ignoring paragraphs and line breaks. Am I missing something in my code? Here&#8217;s how I&#8217;m grabbing the info:</p>
+<p><code>echo &#039;&lt;p id=&quot;productServingSuggestions&quot;&gt;&#039; . get_post_meta($post-&gt;ID, &#039;serving_suggestions&#039;, true) . &#039;&lt;/p&gt;&#039;;</code></p>
+<p>Many thanks!<br />
+Adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/no-paragraphs-or-line-breaks-displaying-from-my-editor-field/">No paragraphs or line breaks displaying from my editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

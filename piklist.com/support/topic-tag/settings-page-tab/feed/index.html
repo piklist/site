@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Settings page tab &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/settings-page-tab/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 13 Oct 2015 14:41:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Settings page Tabs broken: Piklist 0.9.9.1</title>
+		<link>https://piklist.com/support/topic/settings-page-tabs-broken-piklist-0-9-9-1/</link>
+		
+		<dc:creator><![CDATA[Mehdi Salem]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2015 22:39:23 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/settings-page-tabs-broken-piklist-0-9-9-1/</guid>
+
+					<description><![CDATA[<p>Hello Guys, so happy that Piklist is getting out beta soon!!! Here is the glitch while testing version 0.9.9.1: My Settings page tabs disappeared and my fields got all mixed pulled on the main&#8230; My code is working fine with Piklist 0.9.5.v Her is my code: &#60;?php /** * * Register custom settings pages * [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/settings-page-tabs-broken-piklist-0-9-9-1/">Settings page Tabs broken: Piklist 0.9.9.1</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello Guys, so happy that Piklist is getting out beta soon!!!</p>
+<p>Here is the glitch while testing version 0.9.9.1:<br />
+My Settings page tabs disappeared and my fields got all mixed pulled on the main&#8230;</p>
+<p>My code is working fine with Piklist 0.9.5.v</p>
+<p>Her is my code:<br />
+&lt;?php</p>
+<p>/**<br />
+ *<br />
+ * Register custom settings pages<br />
+ *<br />
+ */</p>
+<p>if( ! defined( &#8216;ABSPATH&#8217; ) ) exit; // Exit if accessed directly</p>
+<p>/**<br />
+ * Allow Editors to customize some of the theme&#8217;s frontend appearance<br />
+ */<br />
+function hdev_piklist_theme_setting_pages($pages)<br />
+{<br />
+   $pages[] = array(<br />
+         &#8216;page_title&#8217; =&gt; __(&#8216;Custom Theme Settings&#8217;, &#8216;piklist&#8217;)<br />
+   ,&#8217;menu_title&#8217; =&gt; __(&#8216;Settings&#8217;, &#8216;piklist&#8217;)<br />
+   ,&#8217;sub_menu&#8217; =&gt; &#8216;themes.php&#8217; //Under Appearance menu<br />
+   ,&#8217;capability&#8217; =&gt; &#8216;moderate_comments&#8217;<br />
+   ,&#8217;menu_slug&#8217; =&gt; &#8216;custom_theme_settings&#8217;<br />
+   ,&#8217;setting&#8217; =&gt; &#8216;stopping_the_world_settings&#8217;<br />
+   ,&#8217;menu_icon&#8217; =&gt; &#8216;dashicons-admin-settings&#8217;<br />
+   ,&#8217;page_icon&#8217; =&gt; plugins_url(&#8216;piklist/parts/img/piklist-page-icon-32.png&#8217;)<br />
+   ,&#8217;single_line&#8217; =&gt; true<br />
+   ,&#8217;default_tab&#8217; =&gt; &#8216;General&#8217;<br />
+   ,&#8217;save_text&#8217; =&gt; &#8216;Save Theme Settings&#8217;<br />
+   );<br />
+   return $pages;<br />
+}<br />
+add_filter(&#8216;piklist_admin_pages&#8217;, &#8216;hdev_piklist_theme_setting_pages&#8217;);<br />
+function hdev_custom_capability()<br />
+{<br />
+   return &#8216;moderate_comments&#8217;; // allow users with the capability of &#8220;moderate_comments&#8221; to SAVE this page.<br />
+}<br />
+add_filter(&#8216;option_page_capability_custom_theme_settings&#8217;, &#8216;hdev_custom_capability&#8217;);<br />
+?&gt;</p>
+<p>&lt;?php<br />
+/*<br />
+Title: &lt;br /&gt;&lt;span class=&#8221;hdev-setting-tab-inner-title&#8221;&gt;Theme Customization&lt;/span&gt;<br />
+Setting: stopping_the_world_settings<br />
+*/</p>
+<p>// Set default Values<br />
+$content_bg = &lt;&lt;&lt;&#8216;EOD&#8217;<br />
+background: #dbdbdb;<br />
+background: -moz-radial-gradient(center, ellipse cover, #dbdbdb 0%, #dbdbdb 25%, #808080 100%);<br />
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #dbdbdb), color-stop(25%, #dbdbdb), color-stop(100%, #808080));<br />
+background: -webkit-radial-gradient(center, ellipse cover, #dbdbdb 0%, #dbdbdb 25%, #808080 100%);<br />
+background: -o-radial-gradient(center, ellipse cover, #dbdbdb 0%, #dbdbdb 25%, #808080 100%);<br />
+background: -ms-radial-gradient(center, ellipse cover, #dbdbdb 0%, #dbdbdb 25%, #808080 100%);<br />
+background: radial-gradient(ellipse at center, #dbdbdb 0%, #dbdbdb 25%, #808080 100%);<br />
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#8217;#dbdbdb&#8217;, endColorstr=&#8217;#808080&#8242;, GradientType=1 );<br />
+EOD;</p>
+<p>// Register HTML background color picker field<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;colorpicker&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;html_bg&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;html background&#8217;<br />
+,&#8217;value&#8217; =&gt; &#8216;#262626&#8242;<br />
+,&#8217;description&#8217; =&gt; &#8216;&lt;span class=&#8221;hdev-desc-top&#8221;&gt;Click in the box to select a color.&lt;/span&gt;&#8217;<br />
+,&#8217;help&#8217; =&gt; &#8216;Sets the HTML css background color.&#8217;<br />
+,&#8217;attributes&#8217; =&gt; array(<br />
+            &#8216;class&#8217; =&gt; &#8216;html-bg&#8217;<br />
+            ,&#8217;placeholder&#8217; =&gt; &#8216;#262626&#8217;<br />
+      )<br />
+));</p>
+<p>// Register site-container-inner class background gradient color<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;textarea&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;content_bg&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Content background&#8217;<br />
+,&#8217;description&#8217; =&gt; &#8216;&lt;br /&gt;&nbsp;&nbsp;Enter any valid background css color or gradient code here, or generate one using this great online tool: <a title="Background Generator Tool" href="http://www.cssmatic.com/gradient-generator">http://www.cssmatic.com/gradient-generator</a>&#8216;<br />
+,&#8217;help&#8217; =&gt; &#8216;Sets the content css gradient background.&#8217;<br />
+,&#8217;value&#8217; =&gt; $content_bg<br />
+,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;rows&#8217; =&gt; 10<br />
+      ,&#8217;cols&#8217; =&gt; 120<br />
+      ,&#8217;class&#8217; =&gt; &#8216;content-bg&#8217;<br />
+      ,&#8217;placeholder&#8217; =&gt; $content_bg<br />
+      )<br />
+));<br />
+?&gt;</p>
+<p>&lt;?php<br />
+/*<br />
+Title: &lt;br /&gt;&lt;span class=&#8221;hdev-setting-tab-inner-title&#8221;&gt;Customize the Galleries Menu pages&lt;/span&gt;<br />
+Setting: stopping_the_world_settings<br />
+Tab: Galleries<br />
+Tab Order: 10<br />
+*/</p>
+<p>// Set default Values<br />
+$folder_info_box_bg = &lt;&lt;&lt;&#8216;EOD&#8217;<br />
+background: #ededed;<br />
+background: -moz-radial-gradient(center, ellipse cover, #ededed 0%, #ededed 1%, #e6e6e6 41%, #cccccc 100%);<br />
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #ededed), color-stop(1%, #ededed), color-stop(41%, #e6e6e6), color-stop(100%, #cccccc));<br />
+background: -webkit-radial-gradient(center, ellipse cover, #ededed 0%, #ededed 1%, #e6e6e6 41%, #cccccc 100%);<br />
+background: -o-radial-gradient(center, ellipse cover, #ededed 0%, #ededed 1%, #e6e6e6 41%, #cccccc 100%);<br />
+background: -ms-radial-gradient(center, ellipse cover, #ededed 0%, #ededed 1%, #e6e6e6 41%, #cccccc 100%);<br />
+background: radial-gradient(ellipse at center, #ededed 0%, #ededed 1%, #e6e6e6 41%, #cccccc 100%);<br />
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#8217;#ededed&#8217;, endColorstr=&#8217;#cccccc&#8217;, GradientType=1 );<br />
+EOD;</p>
+<p>// Register the folder info box field group<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;folder_info_box&#8217;<br />
+,&#8217;label&#8217; =&gt; __(&#8216;Folder Info Box&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+,&#8217;fields&#8217; =&gt; array(<br />
+            array( // Register the info spacing field<br />
+                  &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;folder_info_spacing&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Spacing between the Title and the Description&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;help&#8217; =&gt; __(&#8216;Sets the space between the Folder Title and its Description which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. The margin CSS unit used here will be a percentage of the width of the containing box to ensure mobile responsiveness.&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;value&#8217; =&gt; &#8216;1&#8217;<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+                  &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+            ,&#8217;placeholder&#8217; =&gt; &#8216;1.000&#8217;<br />
+            )<br />
+            ,&#8217;validate&#8217; =&gt; array(<br />
+                  array(<br />
+                        &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                  ,&#8217;options&#8217; =&gt; array(<br />
+                        &#8216;decimals&#8217; =&gt; 3<br />
+                  )<br />
+                  )<br />
+            ,array(<br />
+                        &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                  ,&#8217;options&#8217; =&gt; array(<br />
+                              &#8216;min&#8217; =&gt; 0<br />
+                        ,&#8217;max&#8217; =&gt; 25<br />
+                        )<br />
+                  )<br />
+            )<br />
+            )<br />
+      ,array( // Register the info background field<br />
+                  &#8216;type&#8217; =&gt; &#8216;textarea&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;folder_info_box_bg&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Background&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;help&#8217; =&gt; __(&#8216;Sets the listed gallery folders\&#8217; css gradient background.&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;value&#8217; =&gt; $folder_info_box_bg<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+                        &#8216;rows&#8217; =&gt; 10<br />
+                  ,&#8217;cols&#8217; =&gt; 120<br />
+                  ,&#8217;class&#8217; =&gt; &#8216;gallery-folder-bg&#8217;<br />
+                  ,&#8217;placeholder&#8217; =&gt; $folder_info_box_bg<br />
+                  )<br />
+            )<br />
+      )<br />
+));</p>
+<p>// Register the folder title field group<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+      ,&#8217;field&#8217; =&gt; &#8216;folder_title&#8217;<br />
+      ,&#8217;label&#8217; =&gt; __(&#8216;Folder Title&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+      ,&#8217;fields&#8217; =&gt; array(<br />
+            array( // Register the title font size field<br />
+                  &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+               ,&#8217;field&#8217; =&gt; &#8216;font_size&#8217;<br />
+               ,&#8217;label&#8217; =&gt; __(&#8216;Font Size &lt;span class=&#8221;hdev-label-comment&#8221;&gt;(3 decimals max.)&lt;/span&gt;&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+               ,&#8217;help&#8217; =&gt; &#8216;Sets the font size of the Folder Title which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. The CSS unit used here will be in \&#8217;em\&#8217; and thus will depend on the parent element font size.&#8217;<br />
+               ,&#8217;value&#8217; =&gt; &#8216;1.89&#8217;<br />
+               ,&#8217;columns&#8217; =&gt; 4<br />
+               ,&#8217;attributes&#8217; =&gt; array(<br />
+                     &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+                     ,&#8217;placeholder&#8217; =&gt; &#8216;1.890&#8217;<br />
+               )<br />
+               ,&#8217;validate&#8217; =&gt; array(<br />
+                     array(<br />
+                        &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                           &#8216;decimals&#8217; =&gt; 3<br />
+                        )<br />
+                     )<br />
+                     ,array(<br />
+                           &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                           ,&#8217;options&#8217; =&gt; array(<br />
+                                 &#8216;min&#8217; =&gt; 0<br />
+                                 ,&#8217;max&#8217; =&gt; 25<br />
+                           )<br />
+                     )<br />
+               )<br />
+            )<br />
+            ,array( // Register the title line height field<br />
+                        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;line_height&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;Line Height &lt;span class=&#8221;hdev-label-comment&#8221;&gt;(3 decimals max.)&lt;/span&gt;&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;help&#8217; =&gt; &#8216;Sets the line height of the Folder Title which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. No CSS unit is used here.&#8217;<br />
+                  ,&#8217;value&#8217; =&gt; &#8216;1.5&#8217;<br />
+                  ,&#8217;columns&#8217; =&gt; 4<br />
+                  ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+                        ,&#8217;placeholder&#8217; =&gt; &#8216;1.500&#8217;<br />
+                  )<br />
+                  ,&#8217;validate&#8217; =&gt; array(<br />
+                        array(<br />
+                                 &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                           ,&#8217;options&#8217; =&gt; array(<br />
+                                 &#8216;decimals&#8217; =&gt; 3<br />
+                           )<br />
+                        )<br />
+                        ,array(<br />
+                                    &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                              ,&#8217;options&#8217; =&gt; array(<br />
+                                          &#8216;min&#8217; =&gt; 0<br />
+                                    ,&#8217;max&#8217; =&gt; 25<br />
+                              )<br />
+                        )<br />
+                  )<br />
+            )<br />
+            ,array( // Register the title letter spacing field<br />
+                  &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;letter_spacing&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Letter spacing &lt;span class=&#8221;hdev-label-comment&#8221;&gt;(3 decimals max.)&lt;/span&gt;&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;help&#8217; =&gt; &#8216;Sets the letter spacing of the Folder Title which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. The CSS unit used here will be in \&#8217;em\&#8217; and thus will depend on the parent element font size.&#8217;<br />
+            ,&#8217;value&#8217; =&gt; &#8216;.24&#8242;<br />
+            ,&#8217;columns&#8217; =&gt; 4<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+                        &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+                  ,&#8217;placeholder&#8217; =&gt; &#8216;.240&#8242;<br />
+                  )<br />
+            ,&#8217;validate&#8217; =&gt; array(<br />
+                        array(<br />
+                              &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                              &#8216;decimals&#8217; =&gt; 3<br />
+                        )<br />
+                        )<br />
+                  ,array(<br />
+                              &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                                    &#8216;min&#8217; =&gt; 0<br />
+                              ,&#8217;max&#8217; =&gt; 10<br />
+                              )<br />
+                        )<br />
+                  )<br />
+            )<br />
+      )<br />
+));</p>
+<p>// Register the folder description field group<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;folder_desc&#8217;<br />
+,&#8217;label&#8217; =&gt; __(&#8216;Folder Description&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+,&#8217;fields&#8217; =&gt; array(<br />
+            array( // Register the description font size field<br />
+                  &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;font_size&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Font Size &lt;span class=&#8221;hdev-label-comment&#8221;&gt;(3 decimals max.)&lt;/span&gt;&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;help&#8217; =&gt; &#8216;Sets the font size of the Folder description which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. The CSS unit used here will be in \&#8217;em\&#8217; and thus will depend on the parent element font size.&#8217;<br />
+            ,&#8217;value&#8217; =&gt; &#8216;1.09&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 4<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+                  &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+            ,&#8217;placeholder&#8217; =&gt; &#8216;1.090&#8217;<br />
+            )<br />
+            ,&#8217;validate&#8217; =&gt; array(<br />
+                  array(<br />
+                        &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                  ,&#8217;options&#8217; =&gt; array(<br />
+                        &#8216;decimals&#8217; =&gt; 3<br />
+                  )<br />
+                  )<br />
+            ,array(<br />
+                        &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                  ,&#8217;options&#8217; =&gt; array(<br />
+                              &#8216;min&#8217; =&gt; 0<br />
+                        ,&#8217;max&#8217; =&gt; 25<br />
+                        )<br />
+                  )<br />
+            )<br />
+            )<br />
+      ,array( // Register the description line height field<br />
+                  &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;line_height&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Line Height &lt;span class=&#8221;hdev-label-comment&#8221;&gt;(3 decimals max.)&lt;/span&gt;&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;help&#8217; =&gt; &#8216;Sets the line height of the Folder description which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. No CSS unit is used here.&#8217;<br />
+            ,&#8217;value&#8217; =&gt; &#8216;1.5&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 4<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+                        &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+                  ,&#8217;placeholder&#8217; =&gt; &#8216;1.500&#8217;<br />
+                  )<br />
+            ,&#8217;validate&#8217; =&gt; array(<br />
+                        array(<br />
+                              &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                              &#8216;decimals&#8217; =&gt; 3<br />
+                        )<br />
+                        )<br />
+                  ,array(<br />
+                              &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                                    &#8216;min&#8217; =&gt; 0<br />
+                              ,&#8217;max&#8217; =&gt; 25<br />
+                              )<br />
+                        )<br />
+                  )<br />
+            )<br />
+      ,array( // Register the description letter spacing field<br />
+                  &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;letter_spacing&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Letter spacing &lt;span class=&#8221;hdev-label-comment&#8221;&gt;(3 decimals max.)&lt;/span&gt;&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;help&#8217; =&gt; &#8216;Sets the letter spacing of the Folder description which appear next to the folder\&#8217;s Cover Photo on the Galleries Menu pages. The CSS unit used here will be in \&#8217;em\&#8217; and thus will depend on the parent element font size.&#8217;<br />
+            ,&#8217;value&#8217; =&gt; &#8216;.1&#8242;<br />
+            ,&#8217;columns&#8217; =&gt; 4<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+                        &#8216;class&#8217; =&gt; &#8216;number&#8217;<br />
+                  ,&#8217;placeholder&#8217; =&gt; &#8216;.100&#8242;<br />
+                  )<br />
+            ,&#8217;validate&#8217; =&gt; array(<br />
+                        array(<br />
+                              &#8216;type&#8217; =&gt; &#8216;integer&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                              &#8216;decimals&#8217; =&gt; 3<br />
+                        )<br />
+                        )<br />
+                  ,array(<br />
+                              &#8216;type&#8217; =&gt; &#8216;range&#8217;<br />
+                        ,&#8217;options&#8217; =&gt; array(<br />
+                                    &#8216;min&#8217; =&gt; 0<br />
+                              ,&#8217;max&#8217; =&gt; 10<br />
+                              )<br />
+                        )<br />
+                  )<br />
+            )<br />
+      )<br />
+));<br />
+?&gt;</p>
+<p>&lt;?php<br />
+/*<br />
+Title: &lt;br /&gt;&lt;span class=&#8221;hdev-setting-tab-inner-title&#8221;&gt;Customize the Gallery Viewer pages&lt;/span&gt;<br />
+Setting: stopping_the_world_settings<br />
+Tab: Gallery<br />
+Tab Order: 20<br />
+*/</p>
+<p>// Register the Gallery Viewer Slider Photo field group<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+      ,&#8217;field&#8217; =&gt; &#8216;slider_photo&#8217;<br />
+      ,&#8217;label&#8217; =&gt; __(&#8216;Slider Photo&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+      ,&#8217;fields&#8217; =&gt; array(<br />
+               array(<br />
+                     &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;box_shadow&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;Outer Glow&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;add_more&#8217; =&gt; TRUE<br />
+                  ,&#8217;fields&#8217; =&gt; array(<br />
+                        array( // Register the outer glow field<br />
+                              &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                           ,&#8217;field&#8217; =&gt; &#8216;h_shadow&#8217;<br />
+                           ,&#8217;label&#8217; =&gt; __(&#8216;h-shadow&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                           ,&#8217;help&#8217; =&gt; &#8216;Required. The position of the horizontal shadow. Negative values are allowed. The default value is 0px if left empty.&#8217;<br />
+                           ,&#8217;value&#8217; =&gt; &#8216;0px&#8217;<br />
+                           ,&#8217;columns&#8217; =&gt; 2<br />
+                           ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-h-shadow&#8217;<br />
+                              ,&#8217;placeholder&#8217; =&gt; &#8216;0px&#8217;<br />
+                           )<br />
+                        )<br />
+                        ,array( // Register the outer glow field<br />
+                           &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                           ,&#8217;field&#8217; =&gt; &#8216;v_shadow&#8217;<br />
+                           ,&#8217;label&#8217; =&gt; __(&#8216;v-shadow&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                           ,&#8217;help&#8217; =&gt; &#8216;Required. The position of the vertical shadow. Negative values are allowed. The default value is 0px if left empty.&#8217;<br />
+                           ,&#8217;value&#8217; =&gt; &#8216;0px&#8217;<br />
+                           ,&#8217;columns&#8217; =&gt; 2<br />
+                           ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-v-shadow&#8217;<br />
+                              ,&#8217;placeholder&#8217; =&gt; &#8216;0px&#8217;<br />
+                           )<br />
+                        )<br />
+                        ,array( // Register the outer glow field<br />
+                           &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                           ,&#8217;field&#8217; =&gt; &#8216;blur&#8217;<br />
+                           ,&#8217;label&#8217; =&gt; __(&#8216;blur&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                           ,&#8217;help&#8217; =&gt; &#8216;Optional. The blur distance. The default value is 25px if left empty.&#8217;<br />
+                           ,&#8217;value&#8217; =&gt; &#8217;50px&#8217;<br />
+                           ,&#8217;columns&#8217; =&gt; 2<br />
+                           ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-blur&#8217;<br />
+                              ,&#8217;placeholder&#8217; =&gt; &#8217;50px&#8217;<br />
+                           )<br />
+                        )<br />
+                        ,array( // Register the outer glow field<br />
+                           &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                           ,&#8217;field&#8217; =&gt; &#8216;spread&#8217;<br />
+                           ,&#8217;label&#8217; =&gt; __(&#8216;spread&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                           ,&#8217;help&#8217; =&gt; &#8216;Optional. The size of shadow. Negative values are allowed. The default value is 5px if left empty.&#8217;<br />
+                           ,&#8217;value&#8217; =&gt; &#8216;5px&#8217;<br />
+                           ,&#8217;columns&#8217; =&gt; 2<br />
+                           ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-spread&#8217;<br />
+                              ,&#8217;placeholder&#8217; =&gt; &#8216;5px&#8217;<br />
+                           )<br />
+                        )<br />
+                        ,array( // Register the outer glow field<br />
+                           &#8216;type&#8217; =&gt; &#8216;colorpicker&#8217;<br />
+                           ,&#8217;field&#8217; =&gt; &#8216;color&#8217;<br />
+                           ,&#8217;label&#8217; =&gt; __(&#8216;color&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                           ,&#8217;help&#8217; =&gt; &#8216;Optional. The color of the shadow. The default value is white if left empty. Look at CSS Color Values for a complete list of possible color values.&#8217;<br />
+                           ,&#8217;value&#8217; =&gt; &#8216;#ffffff&#8217;<br />
+                           ,&#8217;columns&#8217; =&gt; 2<br />
+                           ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-color&#8217;<br />
+                              ,&#8217;placeholder&#8217; =&gt; &#8216;#ffffff&#8217;<br />
+                           )<br />
+                        )<br />
+                  )<br />
+               )<br />
+      )<br />
+));</p>
+<p>// Register the Gallery Viewer Thumbnail Photo field group<br />
+piklist(&#8216;field&#8217;, array(<br />
+      &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;thumb_photo&#8217;<br />
+,&#8217;label&#8217; =&gt; __(&#8216;Thumbnail Photo&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+,&#8217;fields&#8217; =&gt; array(<br />
+            array(<br />
+                  &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;box_shadow&#8217;<br />
+            ,&#8217;label&#8217; =&gt; __(&#8216;Outer Glow&#8217;,&#8217;stopping-the-world-admin&#8217;)<br />
+            ,&#8217;add_more&#8217; =&gt; TRUE<br />
+            ,&#8217;fields&#8217; =&gt; array(<br />
+                  array( // Register the outer glow field<br />
+                        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;h_shadow&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;h-shadow&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;help&#8217; =&gt; &#8216;Required. The position of the horizontal shadow. Negative values are allowed. The default value is 0px if left empty.&#8217;<br />
+                  ,&#8217;value&#8217; =&gt; &#8216;0px&#8217;<br />
+                  ,&#8217;columns&#8217; =&gt; 2<br />
+                  ,&#8217;attributes&#8217; =&gt; array(<br />
+                        &#8216;class&#8217; =&gt; &#8216;box-shadow-h-shadow&#8217;<br />
+                  ,&#8217;placeholder&#8217; =&gt; &#8216;0px&#8217;<br />
+                  )<br />
+                  )<br />
+            ,array( // Register the outer glow field<br />
+                        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;v_shadow&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;v-shadow&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;help&#8217; =&gt; &#8216;Required. The position of the vertical shadow. Negative values are allowed. The default value is 0px if left empty.&#8217;<br />
+                  ,&#8217;value&#8217; =&gt; &#8216;0px&#8217;<br />
+                  ,&#8217;columns&#8217; =&gt; 2<br />
+                  ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-v-shadow&#8217;<br />
+                        ,&#8217;placeholder&#8217; =&gt; &#8216;0px&#8217;<br />
+                        )<br />
+                  )<br />
+            ,array( // Register the outer glow field<br />
+                        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;blur&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;blur&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;help&#8217; =&gt; &#8216;Optional. The blur distance. The default value is 50px if left empty.&#8217;<br />
+                  ,&#8217;value&#8217; =&gt; &#8217;25px&#8217;<br />
+                  ,&#8217;columns&#8217; =&gt; 2<br />
+                  ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-blur&#8217;<br />
+                        ,&#8217;placeholder&#8217; =&gt; &#8217;25px&#8217;<br />
+                        )<br />
+                  )<br />
+            ,array( // Register the outer glow field<br />
+                        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;spread&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;spread&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;help&#8217; =&gt; &#8216;Optional. The size of shadow. Negative values are allowed. The default value is 5px if left empty.&#8217;<br />
+                  ,&#8217;value&#8217; =&gt; &#8216;5px&#8217;<br />
+                  ,&#8217;columns&#8217; =&gt; 2<br />
+                  ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-spread&#8217;<br />
+                        ,&#8217;placeholder&#8217; =&gt; &#8216;5px&#8217;<br />
+                        )<br />
+                  )<br />
+            ,array( // Register the outer glow field<br />
+                        &#8216;type&#8217; =&gt; &#8216;colorpicker&#8217;<br />
+                  ,&#8217;field&#8217; =&gt; &#8216;color&#8217;<br />
+                  ,&#8217;label&#8217; =&gt; __(&#8216;color&#8217;, &#8216;stopping-the-world-admin&#8217;)<br />
+                  ,&#8217;help&#8217; =&gt; &#8216;Optional. The color of the shadow. The default value is white if left empty. Look at CSS Color Values for a complete list of possible color values.&#8217;<br />
+                  ,&#8217;value&#8217; =&gt; &#8216;#ffffff&#8217;<br />
+                  ,&#8217;columns&#8217; =&gt; 2<br />
+                  ,&#8217;attributes&#8217; =&gt; array(<br />
+                              &#8216;class&#8217; =&gt; &#8216;box-shadow-color&#8217;<br />
+                        ,&#8217;placeholder&#8217; =&gt; &#8216;#ffffff&#8217;<br />
+                        )<br />
+                  )<br />
+            )<br />
+            )<br />
+      )<br />
+));<br />
+?&gt;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/settings-page-tabs-broken-piklist-0-9-9-1/">Settings page Tabs broken: Piklist 0.9.9.1</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

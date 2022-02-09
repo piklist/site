@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>add_more slowdown &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/add_more-slowdown/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 12 Mar 2018 14:37:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Dramatic slowdown using add_more with nested fields</title>
+		<link>https://piklist.com/support/topic/dramatic-slowdown-using-add_more-with-nested-fields/</link>
+		
+		<dc:creator><![CDATA[juxta]]></dc:creator>
+		<pubDate>Mon, 12 Mar 2018 14:37:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/dramatic-slowdown-using-add_more-with-nested-fields/</guid>
+
+					<description><![CDATA[<p>Hello I&#8217;m new to Piklist, and am trying to build something like the &#8216;flexible content&#8217; block of ACF (though not as complicated or with as many options), based partly on some code I found on the forum. As I&#8217;ve been adding more complexity, it&#8217;s got to the point where there&#8217;s a 5-10 second delay whenever [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dramatic-slowdown-using-add_more-with-nested-fields/">Dramatic slowdown using add_more with nested fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello</p>
+<p>I&#8217;m new to Piklist, and am trying to build something like the &#8216;flexible content&#8217; block of ACF (though not as complicated or with as many options), based partly on some code I found on the forum. As I&#8217;ve been adding more complexity, it&#8217;s got to the point where there&#8217;s a 5-10 second delay whenever I click the &#8216;+&#8217; button to add more &#8216;blocks&#8217;. I haven&#8217;t found anything in the forums that answered this specific issue and my concern is that even though it seems to work (i.e. save the data) it&#8217;s going to be unusable for the client. Hopefully it&#8217;s just something I&#8217;m doing wrong that&#8217;s easily fixable: I post the full code that I&#8217;m using below in case that helps.</p>
+<p>Thanks</p>
+<p>P.S. Piklist seems great, so I hope to be able to use it for what I&#8217;m trying to do.</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;field&#039; =&gt; &#039;flexible_content&#039;,
+  &#039;label&#039; =&gt; &#039;Sections&#039;,
+  &#039;value&#039; =&gt; &#039;none&#039;,
+  &#039;add_more&#039; =&gt; true,
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;,
+      &#039;field&#039; =&gt; &#039;module_select&#039;,
+      &#039;label&#039; =&gt; &#039;Select a Module&#039;,
+      &#039;columns&#039; =&gt; 12,
+      &#039;choices&#039; =&gt; array(
+        &#039;none&#039; =&gt; &#039;Select a Module to add&#039;,
+        &#039;module&#039; =&gt; &#039;WYSIWYG&#039;,
+        // &#039;module_image&#039; =&gt; &#039;Image&#039;,
+        &#039;module_link&#039; =&gt; &#039;Link&#039;,
+        &#039;module_pdf&#039; =&gt; &#039;PDF&#039;,
+      )
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;group&#039;,
+      &#039;field&#039; =&gt; &#039;module_editor&#039;,
+      &#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;editor&#039;,
+          &#039;field&#039; =&gt; &#039;wysiwyg&#039;,
+          &#039;columns&#039; =&gt; 12,
+          &#039;options&#039; =&gt; array(
+            &#039;wpautop&#039; =&gt; true,
+            &#039;media_buttons&#039; =&gt; true,
+            &#039;tabindex&#039; =&gt; &#039;&#039;,
+            &#039;editor_css&#039; =&gt; &#039;&#039;,
+            &#039;editor_class&#039; =&gt; true,
+            &#039;teeny&#039; =&gt; false,
+            &#039;dfw&#039; =&gt; false,
+            &#039;tinymce&#039; =&gt; true,
+            &#039;quicktags&#039; =&gt; true
+          ),
+        ), // WYSIWYG
+        array(
+          &#039;type&#039; =&gt; &#039;select&#039;,
+          &#039;field&#039; =&gt; &#039;quote_or_stat_select&#039;,
+          &#039;label&#039; =&gt; &#039;Add a quote or stat (optional)&#039;,
+          &#039;choices&#039; =&gt; array(
+            &#039;none&#039; =&gt; &#039;Select an option&#039;,
+            &#039;quote&#039; =&gt; &#039;Pullquote&#039;,
+            &#039;stat&#039; =&gt; &#039;Stat&#039;,
+          )
+        ), // Optional add QUOTE or STAT
+        array(
+          &#039;type&#039; =&gt; &#039;textarea&#039;,
+          &#039;field&#039; =&gt; &#039;quote&#039;,
+          &#039;label&#039; =&gt; &#039;Pullquote&#039;,
+          &#039;attributes&#039; =&gt; array(
+            &#039;rows&#039; =&gt; 2,
+            &#039;class&#039; =&gt; &#039;large-text&#039;
+          ),
+          &#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;flexible_content:module_editor:quote_or_stat_select&#039;,
+              &#039;value&#039; =&gt; &#039;quote&#039;
+            )
+          ),
+        ), // Quote
+        array(
+          &#039;type&#039; =&gt; &#039;group&#039;,
+          &#039;field&#039; =&gt; &#039;stat&#039;,
+          &#039;fields&#039; =&gt; array(
+            array(
+              &#039;type&#039; =&gt; &#039;text&#039;,
+              &#039;field&#039; =&gt; &#039;stat_title&#039;,
+              &#039;label&#039; =&gt; &#039;Title&#039;,
+              &#039;attributes&#039; =&gt; array(
+                &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class
+              )
+            ),
+            array(
+              &#039;type&#039; =&gt; &#039;textarea&#039;,
+              &#039;field&#039; =&gt; &#039;stat_text&#039;,
+              &#039;label&#039; =&gt; &#039;Text&#039;,
+              &#039;attributes&#039; =&gt; array(
+                &#039;rows&#039; =&gt; 2,
+                &#039;class&#039; =&gt; &#039;large-text&#039;
+              )
+            ),
+            array(
+              &#039;type&#039; =&gt; &#039;select&#039;,
+              &#039;field&#039; =&gt; &#039;stat_icon&#039;,
+              &#039;label&#039; =&gt; &#039;Choose an icon&#039;,
+              &#039;choices&#039; =&gt; array(
+                &#039;icon_a&#039; =&gt; &#039;Icon A&#039;,
+                &#039;icon_b&#039; =&gt; &#039;Icon B&#039;,
+                &#039;icon_c&#039; =&gt; &#039;Icon C&#039;,
+              )
+            ), // Optional add QUOTE or STAT
+          ),
+          &#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;flexible_content:module_editor:quote_or_stat_select&#039;,
+              &#039;value&#039; =&gt; &#039;stat&#039;
+            )
+          ),
+        ), // Stat
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;flexible_content:module_select&#039;,
+          &#039;value&#039; =&gt; &#039;module&#039;
+        )
+      ),
+    ), // WYSIWYG
+    array(
+      &#039;type&#039; =&gt; &#039;group&#039;,
+      &#039;label&#039; =&gt; &#039;&#039;,
+      &#039;field&#039; =&gt; &#039;module_link&#039;,
+      &#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;text&#039;,
+          &#039;field&#039; =&gt; &#039;link_title&#039;,
+          &#039;label&#039; =&gt; &#039;Title&#039;,
+          &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class
+          )
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;textarea&#039;,
+          &#039;field&#039; =&gt; &#039;link_text&#039;,
+          &#039;label&#039; =&gt; &#039;Text&#039;,
+          &#039;attributes&#039; =&gt; array(
+            &#039;rows&#039; =&gt; 2,
+            &#039;class&#039; =&gt; &#039;large-text&#039;
+          )
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;text&#039;,
+          &#039;field&#039; =&gt; &#039;link_button_title&#039;,
+          &#039;label&#039; =&gt; &#039;Button title&#039;,
+          &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class
+          )
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;select&#039;,
+          &#039;field&#039; =&gt; &#039;link_button_link&#039;,
+          &#039;label&#039; =&gt; &#039;Button link&#039;,
+          &#039;columns&#039; =&gt; 12,
+          &#039;choices&#039; =&gt; array(&#039;none&#039; =&gt; &#039;Choose a link to a post / page...&#039;) + piklist(
+            get_posts(
+              array(
+                &#039;post_type&#039; =&gt; Array(&#039;post&#039;,&#039;page&#039;),
+                &#039;orderby&#039; =&gt; &#039;post_title&#039;,
+                &#039;order&#039; =&gt; &#039;ASC&#039;
+              ),
+              &#039;objects&#039;
+            ),
+            array(
+              &#039;ID&#039;,
+              &#039;post_title&#039;
+            )
+          )
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;file&#039;,
+          &#039;field&#039; =&gt; &#039;link_thumb&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039; =&gt; &#039;Set thumbnail image&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; &#039;Add link image&#039;,
+            &#039;button&#039; =&gt; &#039;Add&#039;
+          ),
+          &#039;validate&#039; =&gt; array(
+            array(
+              &#039;type&#039; =&gt; &#039;image&#039;
+            )
+          )
+        )
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;flexible_content:module_select&#039;,
+          &#039;value&#039; =&gt; &#039;module_link&#039;
+        )
+      )
+    ), // Link
+    array(
+      &#039;type&#039; =&gt; &#039;group&#039;,
+      &#039;label&#039; =&gt; &#039;&#039;,
+      &#039;field&#039; =&gt; &#039;module_link&#039;,
+      &#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;text&#039;,
+          &#039;field&#039; =&gt; &#039;pdf_title&#039;,
+          &#039;label&#039; =&gt; &#039;Title&#039;,
+          &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class
+          )
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;textarea&#039;,
+          &#039;field&#039; =&gt; &#039;pdf_text&#039;,
+          &#039;label&#039; =&gt; &#039;Text&#039;,
+          &#039;attributes&#039; =&gt; array(
+            &#039;rows&#039; =&gt; 2,
+            &#039;class&#039; =&gt; &#039;large-text&#039;
+          )
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;file&#039;,
+          &#039;field&#039; =&gt; &#039;pdf_file&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039; =&gt; &#039;Choose file&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; &#039;Add file&#039;,
+            &#039;button&#039; =&gt; &#039;Add&#039;
+          ),
+        ),
+        array(
+          &#039;type&#039; =&gt; &#039;file&#039;,
+          &#039;field&#039; =&gt; &#039;pdf_thumb&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039; =&gt; &#039;Set thumbnail image&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; &#039;Add thumb&#039;,
+            &#039;button&#039; =&gt; &#039;Add&#039;
+          ),
+          &#039;validate&#039; =&gt; array(
+            array(
+              &#039;type&#039; =&gt; &#039;image&#039;
+            )
+          )
+        )
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;flexible_content:module_select&#039;,
+          &#039;value&#039; =&gt; &#039;module_pdf&#039;
+        )
+      )
+    ) // PDF
+  ) // end &#039;fields&#039;
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dramatic-slowdown-using-add_more-with-nested-fields/">Dramatic slowdown using add_more with nested fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

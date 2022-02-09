@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>revisions &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/revisions/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 25 Jul 2018 04:45:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Disable post meta revisions</title>
+		<link>https://piklist.com/support/topic/disable-post-meta-revisions/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Wed, 25 Jul 2018 04:45:51 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/disable-post-meta-revisions/</guid>
+
+					<description><![CDATA[<p>I saw this post by @dameer : An old, old, old issue which wasn&#039;t fixed although promised to be And I think about the original issue that I had with Events Calendar Pro, and recurring events, and corrupted data. maybe_serialize &#38; double-serialization of post_meta values What users need to be able to do is disable [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/disable-post-meta-revisions/">Disable post meta revisions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I saw this post by @dameer :</p>
+<blockquote class="wp-embedded-content" data-secret="tnVMavEkGx"><p><a href="https://piklist.com/support/topic/an-old-old-old-issue-which-wasnt-fixed-although-promised-to-be/">An old, old, old issue which wasn&#039;t fixed although promised to be</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://piklist.com/support/topic/an-old-old-old-issue-which-wasnt-fixed-although-promised-to-be/embed/#?secret=tnVMavEkGx" data-secret="tnVMavEkGx" width="500" height="282" title="&#8220;An old, old, old issue which wasn&#039;t fixed although promised to be&#8221; &#8212; Piklist Support" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>And I think about the original issue that I had with Events Calendar Pro, and recurring events, and corrupted data.</p>
+<blockquote class="wp-embedded-content" data-secret="Zv9gHcrJfW"><p><a href="https://piklist.com/support/topic/maybe_serialize-double-serialization-of-post_meta-values/">maybe_serialize &amp; double-serialization of post_meta values</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://piklist.com/support/topic/maybe_serialize-double-serialization-of-post_meta-values/embed/#?secret=Zv9gHcrJfW" data-secret="Zv9gHcrJfW" width="500" height="282" title="&#8220;maybe_serialize &amp; double-serialization of post_meta values&#8221; &#8212; Piklist Support" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>What users need to be able to do is disable the transparent revisioning of post meta values, as required, as sometimes, piklist&#8217;s versioning is in conflict with other plugins trying to do the same thing; in the case of the Events Calendar, even with the latest code optimisation to do this by a raw sql query, metadata is duplicated, because the Events Calendar is performing an analogous action.</p>
+<p><code>remove_action(&#039;save_post&#039;, array(&#039;piklist_revision&#039;, &#039;save_post&#039;), -1);</code></p>
+<p>is a brute-force way to disable it, globally, but what flow-on effects does this have on Piklist&#8217;s behaviour? There is scant documentation on this feature, it&#8217;s sitting in the background with the potential for conflict.</p>
+<p>Perhaps a filter to disable it on a per post type basis?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/disable-post-meta-revisions/">Disable post meta revisions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metadata not saved for initial revision</title>
+		<link>https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/</link>
+		
+		<dc:creator><![CDATA[torarnv]]></dc:creator>
+		<pubDate>Sat, 14 May 2016 16:29:37 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/</guid>
+
+					<description><![CDATA[<p>Hi, It seems that if I create a new (custom) post (using a front-end piklist form), the post is saved with all the meta-data that I specify in the form, but the same meta-data is not persisted in the initial revision that WP generates. Once I update the data from the admin UI, I see [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/">Metadata not saved for initial revision</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>It seems that if I create a new (custom) post (using a front-end piklist form), the post is saved with all the meta-data that I specify in the form, but the same meta-data is not persisted in the initial revision that WP generates. Once I update the data from the admin UI, I see a diff between revision 1 and 2 where all the custom metadata fields are set. Eg:</p>
+<p>Create new post, id 100. WP saves a revision, id 101. I update one of the fields (foo), save post. WP updates id 100, and creates a new revision, id 102. If I diff revision 101 and 102 in the admin UI, I would expect a diff for only the <code>foo</code> field, but I see that every meta field in the post goes from undefined/blank to the initial values that they had when first creating the post. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/">Metadata not saved for initial revision</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>All metadata saved for post revisions, not just piklist metadata</title>
+		<link>https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/</link>
+		
+		<dc:creator><![CDATA[torarnv]]></dc:creator>
+		<pubDate>Sat, 14 May 2016 15:59:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/</guid>
+
+					<description><![CDATA[<p>Hi, I noticed Piklist_Revision hooks into save_post and saves metadata for new revisions, but there doesn&#8217;t seem to be any guard for which fields are saves, so I end up with changes to _edit_last, _edit_lock, _post_restored_from, etc in my revision diffs. Perhaps piklist should go the way of e.g. https://wordpress.org/plugins/wp-post-meta-revisions/ and only save a white-listed [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/">All metadata saved for post revisions, not just piklist metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I noticed <code>Piklist_Revision</code> hooks into save_post and saves metadata for new revisions, but there doesn&#8217;t seem to be any guard for which fields are saves, so I end up with changes to <code>_edit_last</code>, <code>_edit_lock</code>, <code>_post_restored_from</code>, etc in my revision diffs. </p>
+<p>Perhaps piklist should go the way of e.g. <a href="https://wordpress.org/plugins/wp-post-meta-revisions/">https://wordpress.org/plugins/wp-post-meta-revisions/</a> and only save a white-listed list of meta fields, possibly defaulted to the ones defined by the piklist-generated meta-boxes of that post type?</p>
+<p>I&#8217;m also seeing that all my meta-data fields are cleared when WP does an auto-save, is there a particular reason for the <code>!wp_is_post_autosave($post_id)</code> condition in <code>save_post()</code>?</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/">All metadata saved for post revisions, not just piklist metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Saving Custom Meta Fields</title>
+		<link>https://piklist.com/support/topic/saving-custom-meta-fields/</link>
+		
+		<dc:creator><![CDATA[conkid]]></dc:creator>
+		<pubDate>Wed, 11 Nov 2015 05:04:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/saving-custom-meta-fields/</guid>
+
+					<description><![CDATA[<p>Hello, Looking for help from the community on this one. Adam Silverstein has put out a wordpress plugin: https://wordpress.org/plugins/wp-post-meta-revisions/ It&#8217;s called wp-post-meta-revisions and it saves post meta revisions by adding custom meta field names to a simple array. From what I can tell it is being developed to be implemented into core long-term. I&#8217;ve got [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/saving-custom-meta-fields/">Saving Custom Meta Fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>Looking for help from the community on this one.  Adam Silverstein has put out a wordpress plugin: https://wordpress.org/plugins/wp-post-meta-revisions/</p>
+<p>It&#8217;s called wp-post-meta-revisions and it saves post meta revisions by adding custom meta field names to a simple array.  From what I can tell it is being developed to be implemented into core long-term.</p>
+<p>I&#8217;ve got a field in my custom post type &#8216;assets&#8217; labeled &#8216;asset_type&#8217;.  I implement the following code:<br />
+/*Save Custom Meta for Revisions*/</p>
+<p>function add_meta_keys_to_revision( $keys ) {<br />
+    $keys[] = &#8216;asset_type&#8217;;<br />
+    return $keys;<br />
+}<br />
+add_filter( &#8216;wp_post_revision_meta_keys&#8217;, &#8216;add_meta_keys_to_revision&#8217; );</p>
+<p>When I look in the database I can see the entries being made successfully:<br />
+176	_wp_post_revision_meta_keys	a:2:{i:0;s:10:&#8221;asset_type&#8221;;i:1;s:10:&#8221;model_type&#8221;;}</p>
+<p>When I use built in revision viewer I only see the title.  Not sure if this is by design or not?  I love piklist but without a method to save revisions I&#8217;m going to have trouble bringing into my workflow.</p>
+<p>FYI I&#8217;m working on an converting an intranet theme I&#8217;ve built with advanced custom fields and several other plugins to piklist.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/saving-custom-meta-fields/">Saving Custom Meta Fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add Revisions Support for CPT metadata</title>
+		<link>https://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/</link>
+		
+		<dc:creator><![CDATA[luminaire801]]></dc:creator>
+		<pubDate>Wed, 02 Apr 2014 00:44:48 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/</guid>
+
+					<description><![CDATA[<p>Hi guys, been working with Piklist for a while now and it has been wonderful! I&#8217;m wondering if there is a way to add revisions support for CPT metadata using piklist? I found this post but it didn&#8217;t really help, http://piklist.com/support/topic/revisions-masterful-coding/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/">Add Revisions Support for CPT metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys, been working with Piklist for a while now and it has been wonderful!<br />
+I&#8217;m wondering if there is a way to add revisions support for CPT metadata using piklist?<br />
+I found this post but it didn&#8217;t really help, http://piklist.com/support/topic/revisions-masterful-coding/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/">Add Revisions Support for CPT metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Revisions: Masterful coding&#8230;</title>
+		<link>https://piklist.com/support/topic/revisions-masterful-coding/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Mon, 28 Oct 2013 07:04:16 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/revisions-masterful-coding/</guid>
+
+					<description><![CDATA[<p>I know that later down the project, I&#8217;m going to have to work with revisions and deal with all the meta data in my CPT&#8217;s. I started looking through your code Kevin, and I see your using add_metadata, instead of add_post_meta which allows for revisions. But what I didn&#8217;t realize is that you are doing [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/revisions-masterful-coding/">Revisions: Masterful coding&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I know that later down the project, I&#8217;m going to have to work with revisions and deal with all the meta data in my CPT&#8217;s.</p>
+<p>I started looking through your code Kevin, and I see your using add_metadata, instead of add_post_meta which allows for revisions. But what I didn&#8217;t realize is that you are doing this for all the meta fields automatically, which will make my job, so incredibly easy later, because all I have to do is mark &#8216;supports =&gt; array( &#8216;revisions&#8217; ) to a field to make sure its being recorded with revisions. </p>
+<p>Truly great coding bud. </p>
+<p>I haven&#8217;t tried it yet, but I was wondering if you have set it up to show the changed meta fields in the revisions?</p>
+<p>Thanks</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/revisions-masterful-coding/">Revisions: Masterful coding&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

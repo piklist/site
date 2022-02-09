@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>nested &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/nested/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 23 May 2017 23:02:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>add_more and</title>
+		<link>https://piklist.com/support/topic/add_more-and/</link>
+		
+		<dc:creator><![CDATA[strarsis]]></dc:creator>
+		<pubDate>Tue, 23 May 2017 23:02:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and/</guid>
+
+					<description><![CDATA[<p>Hi, I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code. Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. 🙂 I want a repeating/loop/&#8221;add more&#8221; field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code.<br />
+Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I want a repeating/loop/&#8221;add more&#8221; field with items that each have a post-relate field.</p>
+<p>I tried the following code (how sleek and beautiful Piklist code is!)</p>
+<pre><code>/*
+Title: Test
+Post Type: parent-post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;items&#039;
+  ,&#039;label&#039; =&gt; &#039;Items&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;field-1&#039;
+      ,&#039;label&#039; =&gt; &#039;Field 1&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;post-relate&#039;
+      ,&#039;scope&#039; =&gt; &#039;post&#039;
+      ,&#039;template&#039; =&gt; &#039;field&#039;
+    )
+  )
+));
+</code></pre>
+<p>While the normal text field is in each &#8220;add more&#8221; item, the post-relate field is shown only once below all the &#8220;add more&#8221; items.<br />
+What could be wrong with the code above &#8211; how can I have a post-relate field per &#8220;add more&#8221; item?</p>
+<p>I also attached a screenshot.</p>
+<p>Thanks in advance and<br />
+with best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Radio inside nested groups</title>
+		<link>https://piklist.com/support/topic/radio-inside-nested-groups/</link>
+		
+		<dc:creator><![CDATA[rubenhak]]></dc:creator>
+		<pubDate>Fri, 20 May 2016 23:42:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/radio-inside-nested-groups/</guid>
+
+					<description><![CDATA[<p>Hi, I have two levels of group fields and radio buttons inside the second level group. Noticed that the radio values will be self-exclusive within top level grouping. I would expect selection to be exclusive within parent group. Am i doing something wrong or this is a bug? Thanks, Ruben piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-inside-nested-groups/">Radio inside nested groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have two levels of group fields and radio buttons inside the second level group.<br />
+Noticed that the radio values will be self-exclusive within top level grouping. I would expect selection to be exclusive within parent group. </p>
+<p>Am i doing something wrong or this is a bug? </p>
+<p>Thanks,<br />
+Ruben</p>
+<pre><code>
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;experiment&#039;
+    , &#039;columns&#039; =&gt; 12
+    , &#039;add_more&#039; =&gt; true
+    , &#039;fields&#039; =&gt; array(
+
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        , &#039;field&#039; =&gt; &#039;experimentName&#039;
+        , &#039;columns&#039; =&gt; 4
+      )
+
+      , array(
+        &#039;type&#039; =&gt; &#039;group&#039;
+        , &#039;field&#039; =&gt; &#039;nestedGroup&#039;
+        , &#039;add_more&#039; =&gt; true
+        , &#039;fields&#039; =&gt; array(
+
+          array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            , &#039;field&#039; =&gt; &#039;nestedName&#039;
+            , &#039;columns&#039; =&gt; 4
+          )
+
+          , array(
+            &#039;type&#039; =&gt; &#039;radio&#039;
+            , &#039;field&#039; =&gt; &#039;nestedChoice&#039;
+            , &#039;value&#039; =&gt; &#039;o1&#039;
+            , &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;text&#039;
+            )
+            , &#039;choices&#039; =&gt; array(
+              &#039;o1&#039; =&gt; &#039;O1&#039;,
+              &#039;o2&#039; =&gt; &#039;O2&#039;,
+              &#039;o3&#039; =&gt; &#039;O3&#039;,
+              &#039;o4&#039; =&gt; &#039;O4&#039;
+            )
+          )
+
+        )
+      )
+    )
+  ) );
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-inside-nested-groups/">Radio inside nested groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nested add_more group with conditional</title>
+		<link>https://piklist.com/support/topic/nested-add_more-group-with-conditional/</link>
+		
+		<dc:creator><![CDATA[skytsunami]]></dc:creator>
+		<pubDate>Thu, 09 Jul 2015 10:24:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/nested-add_more-group-with-conditional/</guid>
+
+					<description><![CDATA[<p>Hi Guys, I am having a problem/bug with some nested repeater group fields that have conditionals. The space for the add_more group always shows even if the conditional is not met, take a look at the images bellow. Here is the code, am I doing something wrong? piklist('field', array( 'type' =&#62; 'group' ,'field' =&#62; 'cs_select_module_group' [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-add_more-group-with-conditional/">Nested add_more group with conditional</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Guys, </p>
+<p>I am having a problem/bug with some nested repeater group fields that have conditionals.<br />
+The space for the add_more group always shows even if the conditional is not met, take a look at the images bellow.</p>
+<p>Here is the code, am I doing something wrong?</p>
+<pre>
+piklist('field', array(
+'type' =&gt; 'group'
+,'field' =&gt; 'cs_select_module_group'
+,'label' =&gt; __('Your Page Modules')
+,'add_more' =&gt; true
+,'fields' =&gt; array(
+
+        /* This will show the initial selection of modules */
+
+        array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_module_select'
+        ,'label' =&gt; 'Select a Module'
+        ,'columns' =&gt; 12
+        ,'choices' =&gt; array(
+                'none' =&gt; 'Select a Module to add'
+                ,'module' =&gt; 'Simple Module'
+                ,'big_module' =&gt; 'Big Module'
+                ,'stats_module' =&gt; 'Stats Module'
+                ,'logos_module' =&gt; 'Logos Module'
+                ,'grid_module' =&gt; 'Grid Module'
+            )
+        )
+
+        /* Conditional for Simple Module */
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_module_backcolor'
+        ,'label' =&gt; 'Module back color:'
+        ,'columns' =&gt; 6
+        ,'choices' =&gt; array(
+                'white' =&gt; 'White'
+                ,'blue' =&gt; 'Blue'
+                ,'black' =&gt; 'Black'
+                ,'gray' =&gt; 'Gray'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                    'field' =&gt; 'cs_select_module_group:cs_module_select'
+                    ,'value' =&gt; 'module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_module_textcolor'
+        ,'label' =&gt; 'Module main text color:'
+        ,'columns' =&gt; 6
+        ,'choices' =&gt; array(
+            'white' =&gt; 'White'
+            ,'blue' =&gt; 'Blue'
+            ,'black' =&gt; 'Black'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'editor'
+        ,'field' =&gt; 'cs_module_text'
+        ,'label' =&gt; 'Module text'
+        ,'columns' =&gt; 12
+        ,'options' =&gt; array (
+            'wpautop' =&gt; true
+            ,'media_buttons' =&gt; false
+            ,'tabindex' =&gt; ''
+            ,'editor_css' =&gt; ''
+            ,'editor_class' =&gt; true
+            ,'teeny' =&gt; false
+            ,'dfw' =&gt; false
+            ,'tinymce' =&gt; true
+            ,'quicktags' =&gt; true
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'module'
+                ))
+        )
+
+        /* Conditional for Big Module */
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_bigmodule_backcolor'
+        ,'label' =&gt; 'Module back color:'
+        ,'columns' =&gt; 6
+        ,'choices' =&gt; array(
+            'white' =&gt; 'White'
+            ,'blue' =&gt; 'Blue'
+            ,'black' =&gt; 'Black'
+            ,'gray' =&gt; 'Gray'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'big_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_bigmodule_textcolor'
+        ,'label' =&gt; 'Module main text color:'
+        ,'columns' =&gt; 6
+        ,'choices' =&gt; array(
+            'white' =&gt; 'White'
+            ,'blue' =&gt; 'Blue'
+            ,'black' =&gt; 'Black'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'big_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_bigmodule_textalign'
+        ,'label' =&gt; 'Text Alignment:'
+        ,'columns' =&gt; 12
+        ,'choices' =&gt; array(
+            'right' =&gt; 'Right'
+            ,'left' =&gt; 'Left'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'big_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'editor'
+        ,'field' =&gt; 'cs_bigmodule_textarea'
+        ,'label' =&gt; 'Big Module text:'
+        ,'columns' =&gt; 12
+        ,'options' =&gt; array (
+            'wpautop' =&gt; true
+            ,'media_buttons' =&gt; false
+            ,'tabindex' =&gt; ''
+            ,'editor_css' =&gt; ''
+            ,'editor_class' =&gt; true
+            ,'teeny' =&gt; false
+            ,'dfw' =&gt; false
+            ,'tinymce' =&gt; true
+            ,'quicktags' =&gt; true
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'big_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'file'
+        ,'field' =&gt; 'cs_bigmodule_img'
+        ,'scope' =&gt; 'post_meta'
+        ,'label' =&gt; __('Select an Image (max 1)','piklist')
+        ,'columns' =&gt; 12
+        ,'options' =&gt; array(
+            'modal_title' =&gt; __('Add Image(s)','piklist')
+            ,'button' =&gt; __('Add','piklist')
+            )
+        ,'validate' =&gt; array(array(
+                'type' =&gt; 'limit'
+                ,'options' =&gt; array('max' =&gt; 1)
+            ))
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'big_module'
+                ))
+        )
+
+        /* Conditional for Stats Module */
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_statsmodule_backcolor'
+        ,'label' =&gt; 'Module back color:'
+        ,'columns' =&gt; 6
+        ,'choices' =&gt; array(
+            'white' =&gt; 'White'
+            ,'blue' =&gt; 'Blue'
+            ,'black' =&gt; 'Black'
+            ,'gray' =&gt; 'Gray'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                    'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'stats_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'select'
+        ,'field' =&gt; 'cs_statsmodule_textcolor'
+        ,'label' =&gt; 'Module main text color:'
+        ,'columns' =&gt; 6
+        ,'choices' =&gt; array(
+            'white' =&gt; 'White'
+            ,'blue' =&gt; 'Blue'
+            ,'black' =&gt; 'Black'
+            )
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'stats_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'textarea'
+        ,'field' =&gt; 'cs_statsmodule_title'
+        ,'label' =&gt; 'Stats Module title:'
+        ,'columns' =&gt; 12
+        ,'add_more' =&gt; true
+        ,'attributes' =&gt; array('class' =&gt; 'large-text', 'rows' =&gt; 2)
+        ,'validate' =&gt; array(array(
+            'type' =&gt; 'limit'
+            ,'options' =&gt; array('min' =&gt; 4,'max' =&gt; 4)
+            ))
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'stats_module'
+                ))
+        )
+
+        ,array(
+        'type' =&gt; 'textarea'
+        ,'field' =&gt; 'cs_statsmodule_text'
+        ,'label' =&gt; 'Stats Module text:'
+        ,'columns' =&gt; 12
+        ,'add_more' =&gt; true
+        ,'attributes' =&gt; array('class' =&gt; 'large-text', 'rows' =&gt; 3)
+        ,'validate' =&gt; array(array(
+            'type' =&gt; 'limit'
+            ,'options' =&gt; array('min' =&gt; 4,'max' =&gt; 4)
+            ))
+        ,'conditions' =&gt; array(
+                array(
+                'field' =&gt; 'cs_select_module_group:cs_module_select'
+                ,'value' =&gt; 'stats_module'
+                ))
+        )
+
+    ) /* End of fields array */
+));
+</pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-add_more-group-with-conditional/">Nested add_more group with conditional</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nested Add_more</title>
+		<link>https://piklist.com/support/topic/nested-add_more/</link>
+		
+		<dc:creator><![CDATA[ehoanshelt]]></dc:creator>
+		<pubDate>Tue, 01 Jan 2013 16:41:13 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/nested-add_more/</guid>
+
+					<description><![CDATA[<p>Loving the piklist plugin so far but I ran into an issue that I wanted to see if you could assist. I need to do nested add_more fields. I need something like this: Street_Name  &#8211; &#160;&#160;&#160;House _number &#8211; &#160;&#160;&#160;House_number &#8211; &#160;&#160;&#160;House Number + &#8211; Street_name + &#8211; &#160;&#160;&#160;House _number &#8211; &#160;&#160;&#160;House Number + &#8211; Basically, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-add_more/">Nested Add_more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Loving the piklist plugin so far but I ran into an issue that I wanted to see if you could assist. I need to do nested add_more fields. I need something like this:</p>
+<p>Street_Name  &#8211;</p>
+<p>&nbsp;&nbsp;&nbsp;House _number &#8211;</p>
+<p>&nbsp;&nbsp;&nbsp;House_number &#8211;</p>
+<p>&nbsp;&nbsp;&nbsp;House Number + &#8211;</p>
+<p>Street_name + &#8211;</p>
+<p>&nbsp;&nbsp;&nbsp;House _number &#8211;</p>
+<p>&nbsp;&nbsp;&nbsp;House Number + &#8211;</p>
+<p>Basically, I need the street_name to be a group that can be added and the house_numbers that can be added.</p>
+<p>The reason I&#8217;m doing this is so that user only have to type a street name once and then after that, only house numbers on the street instead of having to do the full address all the time.</p>
+<p>Any ideas on how to accomplish this?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-add_more/">Nested Add_more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>user meta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/user-meta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 06 Jan 2016 00:28:43 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>can&#039;t access file id uploaded via piklist</title>
+		<link>https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 00:28:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/</guid>
+
+					<description><![CDATA[<p>I am creating user profile pages on the front end of the site. I&#8217;m allowing them to upload a cover photo as a background image for their profile. i&#8217;m following this to get the profile image uploaded to the profile : https://piklist.com/user-guide/tutorials/displaying-images-upload-field/ I have the field in the user&#8217;s folder in a plugin. &#60;?php /* [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/">can&#039;t access file id uploaded via piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am creating user profile pages on the front end of the site. </p>
+<p>I&#8217;m allowing them to upload a cover photo as a background image for their profile. </p>
+<p>i&#8217;m following this to get the profile image uploaded to the profile<br />
+: https://piklist.com/user-guide/tutorials/displaying-images-upload-field/</p>
+<p>I have the field in the user&#8217;s folder in a plugin. </ul>
+<pre><code>&lt;?php
+/*
+Title: Profile Cover Photo
+Description: Displays on your profile as a background cover image
+Capability: manage_options
+*/
+ 
+// image upload
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;
+  ,&#039;field&#039; =&gt; &#039;cover_image&#039;
+  ,&#039;label&#039; =&gt; &#039;Upload image&#039;
+));
+
+?&gt;</code></pre>
+<p>I can upload the image just fine. </p>
+<p>However, when I go to get the data back, I can&#8217;t get the id.<br />
+($author code is not referenced below but is a valid variable in this instance)</p>
+<pre><code>$image_ids = get_user_meta($author-&gt;ID, &#039;cover_image&#039;);
+ print_r($image_ids);
+</code></pre>
+<p>I get on the page:</p>
+<p><code>Array ( )</code></p>
+<p>Any suggestions?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/">can&#039;t access file id uploaded via piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

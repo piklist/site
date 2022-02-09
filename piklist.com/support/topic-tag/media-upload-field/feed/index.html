@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>media upload field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/media-upload-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 23 Jan 2016 20:31:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Front end form, image field and validation</title>
+		<link>https://piklist.com/support/topic/front-end-form-image-field-and-validation/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Sat, 23 Jan 2016 20:31:49 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-image-field-and-validation/</guid>
+
+					<description><![CDATA[<p>My first post! New to Piklist, but years deep in ACF/CMB2. I&#8217;m becoming a convert 😉 I have a front end form to create a CPT. All works fine, including setting a featured image. The only thing not working is file upload field validation and default WP media uploader. My field is: piklist(&#039;field&#039;, array( &#039;type&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-image-field-and-validation/">Front end form, image field and validation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>My first post! New to Piklist, but years deep in ACF/CMB2. I&#8217;m becoming a convert <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I have a front end form to create a CPT. All works fine, including setting a featured image. The only thing not working is file upload field validation and default WP media uploader.</p>
+<p>My field is:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039;        =&gt; &#039;file&#039;,
+  &#039;scope&#039;       =&gt; &#039;post_meta&#039;,
+  &#039;field&#039;       =&gt; &#039;_thumbnail_id&#039;,
+  &#039;label&#039;       =&gt; __(&#039;Featured Image&#039;,&#039;piklist&#039;),
+  &#039;options&#039;     =&gt; array(
+    &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;),
+    &#039;button&#039;      =&gt; __(&#039;Add&#039;,&#039;piklist&#039;),
+  ),
+  &#039;validate&#039; =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;limit&#039;,
+      &#039;options&#039; =&gt; array(
+        &#039;min&#039;     =&gt; 1,
+        &#039;max&#039;     =&gt; 1,
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;image&#039;,
+    ),
+  ),
+));
+</code></pre>
+<p>It&#8217;s still showing the basic uploader and it&#8217;s still allowing me to upload zip and php (non-image) files.<br />
+I&#8217;m using version 0.9.9.7<br />
+Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-image-field-and-validation/">Front end form, image field and validation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

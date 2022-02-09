@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>str_replace &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/str_replace/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 10 Jan 2016 16:39:26 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>String replace on entire Piklist field content</title>
+		<link>https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/</link>
+		
+		<dc:creator><![CDATA[bubdev]]></dc:creator>
+		<pubDate>Sun, 10 Jan 2016 16:39:26 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m trying to replace the default quotes in WordPress (&#8221; &#8220;) with their german equivalents („ “). Adding a filter to the_content and doing a str_replace works fine for normal post and page content but of course not for custom fields. I found a solution using output buffering to do a string replace on [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/">String replace on entire Piklist field content</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;m trying to replace the default quotes in WordPress (&#8221; &#8220;) with their german equivalents („ “). Adding a filter to the_content and doing a str_replace works fine for normal post and page content but of course not for custom fields.</p>
+<p>I found a solution using output buffering to do a string replace on everything before a page is sent to to browser. Again it works fine everywhere but my Piklist fields. </p>
+<pre><code>ob_start();
+
+add_action(&#039;shutdown&#039;, function() {
+    
+    $final = &#039;&#039;;
+
+    $levels = ob_get_level();
+
+    for ($i = 0; $i &lt; $levels; $i++)
+    {
+        $final .= ob_get_clean();
+    }
+
+    // Apply any filters to the final output
+    echo apply_filters(&#039;final_output&#039;, $final);
+
+}, 0);
+
+add_filter(&#039;final_output&#039;, function($text) {
+
+  $text = str_replace( &#039;&#8220;&#039; , &#039;&#8222;&#039; , $text );
+  $text = str_replace( &#039;&#8221;&#039; , &#039;&#8220;&#039; , $text );
+  $text = str_replace( &#039;&#8216;&#039; , &#039;&#8218;&#039; , $text );
+  $text = str_replace( &#039;&#8217;&#039; , &#039;&#8216;&#039; , $text );
+  return $text;
+
+});</code></pre>
+<p>I&#8217;ve already tried different hooks to no avail. Can you think of another simple solution that would work with Piklist&#8217;s custom field content without having to deal with it on a field by field basis?</p>
+<p>Thank you<br />
+Stefan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/">String replace on entire Piklist field content</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

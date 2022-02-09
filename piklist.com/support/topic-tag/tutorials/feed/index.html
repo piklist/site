@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tutorials &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/tutorials/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 08 Nov 2016 00:36:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Workflows issue</title>
+		<link>https://piklist.com/support/topic/workflows-issue/</link>
+		
+		<dc:creator><![CDATA[jimdonoho]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 00:36:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/workflows-issue/</guid>
+
+					<description><![CDATA[<p>We&#8217;re having an issue following the tutorials for creating workflows and tabs. Here&#8217;s our code, if you can help that would be amazing. functions.php in themes folder: /** * Registering Piklist plugin */ add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;); function piklist_theme_setting_pages($pages) { $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;Cabinet Door Shop&#039;) ,&#039;menu_title&#039; =&#62; __(&#039;Cabinet Door Shop&#039;, &#039;CDS&#039;) ,&#039;capability&#039; =&#62; &#039;manage_options&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflows-issue/">Workflows issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;re having an issue following the tutorials for creating workflows and tabs.<br />
+Here&#8217;s our code, if you can help that would be amazing.</p>
+<p>functions.php in themes folder:</p>
+<pre><code>/**
+ * Registering Piklist plugin
+ */
+  add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Cabinet Door Shop&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Cabinet Door Shop&#039;, &#039;CDS&#039;)
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;custom_settings&#039;
+      ,&#039;setting&#039; =&gt; __(&#039;my_theme_settings&#039;)
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Materials&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Door Settings&#039;, &#039;Save CDS&#039;
+  );
+ 
+    return $pages;
+  }</code></pre>
+<p>my-setting-page:</p>
+<pre><code>&lt;?php
+/*
+ Title: Materials
+ Order: 10
+ Tab: Materials
+ Setting: my_theme_settings
+ Flow: Workflow
+ 
+ */
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 456&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));</code></pre>
+<p>my-setting-page1</p>
+<pre><code>&lt;?php
+/*
+ Title: Panels
+ Order: 30
+ Tab: Panels
+ Setting: my_theme_settings
+ Flow: Workflow
+ 
+ */
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 456&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));</code></pre>
+<p>workflow.php</p>
+<pre><code>&lt;?php
+/*
+Flow: Workflow
+Page: custom_settings.php
+Header: true
+Position: title
+*/
+</code></pre>
+<p>panels-tab.php</p>
+<pre><code>&lt;?php
+/*
+Title: Panels
+Order: 30
+Flow: Workflow
+*/</code></pre>
+<p>materials-tab.php</p>
+<pre><code>&lt;?php
+/*
+Title: Materials
+Order: 10
+Flow: Workflow
+*/</code></pre>
+<p>Let me know if you need additional information<br />
+Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflows-issue/">Workflows issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Display code examples?</title>
+		<link>https://piklist.com/support/topic/display-code-examples/</link>
+		
+		<dc:creator><![CDATA[davisdp]]></dc:creator>
+		<pubDate>Wed, 03 Jun 2015 17:23:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/display-code-examples/</guid>
+
+					<description><![CDATA[<p>Hello Piklist, Before I try ACF instead 🙂 &#8230; I&#8217;ve been reading every bit of the Piklist documentation available, and have watched every video out there, but being the newbie / non-programmer that I am (coming from the graphic design side of web dev), I&#8217;m confused. I know Piklist does display the WP way, but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-code-examples/">Display code examples?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello Piklist,</p>
+<p>Before I try ACF instead <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> &#8230;</p>
+<p>I&#8217;ve been reading every bit of the Piklist documentation available, and have watched every video out there, but being the newbie / non-programmer that I am (coming from the graphic design side of web dev), I&#8217;m confused. I know Piklist does display the WP way, but even just 2-3 examples of that PHP code would be a HUGE help to get me (and others?) started with using Piklist. There seems to be a strong bias in the documentation towards the backend UI building (which is understandable to a certain extent), but little to nothing on the display code side.</p>
+<p>I&#8217;ve taught myself the WP_Query class. How does Piklist work with it?</p>
+<p>As you continually say, Steve, &#8220;Yes, it&#8217;s just that easy!&#8221; OK. teach this newbie how easy it is to display a few standard fields, and a few groups of repeaters, one of which has a conditional display on the other.</p>
+<p>Thanks in advance,<br />
+Matt D</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-code-examples/">Display code examples?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>forms tutorial?</title>
+		<link>https://piklist.com/support/topic/forms-tutorial/</link>
+		
+		<dc:creator><![CDATA[joehark]]></dc:creator>
+		<pubDate>Sun, 16 Feb 2014 09:23:15 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/forms-tutorial/</guid>
+
+					<description><![CDATA[<p>I have read the support thread regarding forms using Piklist but the most recent posts are at least 6 months old and I know a lot has been happening (yeah!). Is there a tutorial on creating a form as this? http://gscoldstorage.com/docs/Receiving_Form_LC.pdf</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/forms-tutorial/">forms tutorial?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have read the support thread regarding forms using Piklist but the most recent posts are at least 6 months old and I know a lot has been happening (yeah!). </p>
+<p>Is there a tutorial on creating a form as this?  </p>
+<p> http://gscoldstorage.com/docs/Receiving_Form_LC.pdf</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/forms-tutorial/">forms tutorial?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

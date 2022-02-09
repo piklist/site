@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>taxonomies &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/taxonomies/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 09 Jun 2020 19:45:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Taxonomies not showing</title>
+		<link>https://piklist.com/support/topic/taxonomies-not-showing/</link>
+		
+		<dc:creator><![CDATA[guit4eva]]></dc:creator>
+		<pubDate>Tue, 09 Jun 2020 14:15:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomies-not-showing/</guid>
+
+					<description><![CDATA[<p>Hello again, I&#8217;m trying to get a custom taxonomy to show on a custom post type, but I can&#8217;t get it to display properly. This is my code so far: $post_types[&#039;package&#039;] = array( &#039;labels&#039; =&#62; piklist(&#039;post_type_labels&#039;, &#039;Packages&#039;) , &#039;title&#039; =&#62; __(&#039;Enter a new Package Title&#039;) , &#039;supports&#039; =&#62; array( &#039;title&#039; , &#039;editor&#039; , &#039;post-formats&#039; , [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-not-showing/">Taxonomies not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello again,</p>
+<p>I&#8217;m trying to get a custom taxonomy to show on a custom post type, but I can&#8217;t get it to display properly. This is my code so far:</p>
+<pre><code>    $post_types[&#039;package&#039;] = array(
+        &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Packages&#039;)
+        , &#039;title&#039; =&gt; __(&#039;Enter a new Package Title&#039;)
+        , &#039;supports&#039; =&gt; array(
+            &#039;title&#039;
+            , &#039;editor&#039;
+            , &#039;post-formats&#039;
+            , &#039;thumbnail&#039;,
+        )
+        , &#039;public&#039; =&gt; true
+        , &#039;admin_body_class&#039; =&gt; array(
+            &#039;custom-body-class&#039;,
+        )
+        , &#039;has_archive&#039; =&gt; true
+        , &#039;rewrite&#039; =&gt; array(
+            &#039;slug&#039; =&gt; &#039;package&#039;,
+        )
+        , &#039;capability_type&#039; =&gt; &#039;post&#039;
+        , &#039;hide_meta_box&#039; =&gt; array(
+            &#039;author&#039;,
+        ),
+    );
+    return $post_types;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;package_tax&#039;);
+function package_type_tax($taxonomies) {
+   $taxonomies[] = array(
+      &#039;post_type&#039; =&gt; &#039;package&#039;
+      ,&#039;name&#039; =&gt; &#039;package_type&#039;
+      ,&#039;show_admin_column&#039; =&gt; true
+      ,&#039;configuration&#039; =&gt; array(
+        &#039;hierarchical&#039; =&gt; false
+        ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Package Type&#039;)
+        ,&#039;hide_meta_box&#039; =&gt; true
+        ,&#039;show_ui&#039; =&gt; true
+        ,&#039;query_var&#039; =&gt; true
+        ,&#039;rewrite&#039; =&gt; array(
+          &#039;slug&#039; =&gt; &#039;package-type&#039;
+        )
+      )
+    );
+  return $taxonomies;
+}</code></pre>
+<p>If anyone can tell me where I&#8217;m going wrong, I&#8217;d really appreciate that!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-not-showing/">Taxonomies not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy Field in Group</title>
+		<link>https://piklist.com/support/topic/taxonomy-field-in-group/</link>
+		
+		<dc:creator><![CDATA[matari]]></dc:creator>
+		<pubDate>Fri, 07 Oct 2016 21:21:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomy-field-in-group/</guid>
+
+					<description><![CDATA[<p>Hi Is it possible to include taxonomy selects in group fields? if so can you provide an example? Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-field-in-group/">Taxonomy Field in Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi</p>
+<p>Is it possible to include taxonomy selects in group fields? if so can you provide an example?</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-field-in-group/">Taxonomy Field in Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomies on Forms&#8230;</title>
+		<link>https://piklist.com/support/topic/taxonomies-on-forms/</link>
+		
+		<dc:creator><![CDATA[Rob Hust]]></dc:creator>
+		<pubDate>Sun, 18 Sep 2016 21:24:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomies-on-forms/</guid>
+
+					<description><![CDATA[<p>Is this fixed yet? I&#8217;d love to stop using GravityForms&#8230; Not because it&#8217;s so bad, just would prefer a more Piklistian solution, and as it stands right now, taxonomies in forms are a real tussle and I&#8217;m using 0.9.9.9 I created a basic test case, and tried numerous permutations &#8211; clearing all caches. Taxonomies won&#8217;t [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-on-forms/">Taxonomies on Forms&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is this fixed yet? I&#8217;d love to stop using GravityForms&#8230; Not because it&#8217;s so bad, just would prefer a more Piklistian solution, and as it stands right now, taxonomies in forms are a real tussle and I&#8217;m using 0.9.9.9</p>
+<p>I created a basic test case, and tried numerous permutations &#8211; clearing all caches. Taxonomies won&#8217;t save. Here&#8217;s the code&#8230;</p>
+<p>https://gist.github.com/rhust/061ab49a5590fb8c43490d3d508a6937</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-on-forms/">Taxonomies on Forms&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Select fields with taxonomy in meta-box not saving.</title>
+		<link>https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/</link>
+		
+		<dc:creator><![CDATA[Rob Hust]]></dc:creator>
+		<pubDate>Fri, 19 Aug 2016 06:10:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/</guid>
+
+					<description><![CDATA[<p>The following code is not saving to the appropriate taxonomies (or anywhere). When the post-type is opened in wordpress, the fields are back to their default, and none of the taxonomy boxes are checked. It is saved in &#8220;meta-boxes&#8221; The first two fields are the issue. /* Title: Recipe Particulars Post Type: gw-recipe */ piklist( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/">Select fields with taxonomy in meta-box not saving.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The following code is not saving to the appropriate taxonomies (or anywhere). When the post-type is opened in wordpress, the fields are back to their default, and none of the taxonomy boxes are checked.</p>
+<p>It is saved in &#8220;meta-boxes&#8221;<br />
+The first two fields are the issue.</p>
+<pre><code>/*
+Title: Recipe Particulars
+Post Type: gw-recipe
+*/
+
+piklist( &#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;gw-cuisine&#039;
+      ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+      ,&#039;label&#039; =&gt; &#039;Choose Cuisine Type&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;american&#039; =&gt; &#039;American&#039;
+        ,&#039;chinese&#039; =&gt; &#039;Chinese&#039;
+        ,&#039;french&#039; =&gt; &#039;French&#039;
+        ,&#039;german&#039; =&gt; &#039;German&#039;
+        ,&#039;italian&#039; =&gt; &#039;Italian&#039;
+        ,&#039;japanese&#039; =&gt; &#039;Japanese&#039;
+        ,&#039;mexican&#039; =&gt; &#039;Mexican&#039;
+        ,&#039;spanish&#039; =&gt; &#039;Spanish&#039;
+        ,&#039;fusion&#039; =&gt; &#039;Fusion&#039;
+      	)
+      ,&#039;attributes&#039; =&gt; array(
+      	&#039;multiple&#039; =&gt; &#039;multiple&#039; // This changes a select field into a multi-select field
+      	)
+));
+
+piklist( &#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;gw-course&#039;
+      ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+      ,&#039;label&#039; =&gt; &#039;Choose Course&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;entree&#039; =&gt; &#039;Entree&#039;
+        ,&#039;side&#039; =&gt; &#039;Side&#039;
+        ,&#039;salad&#039; =&gt; &#039;Salad&#039;
+        ,&#039;appetizer&#039; =&gt; &#039;Appetizer&#039;
+        ,&#039;breakfast&#039; =&gt; &#039;Breakfast&#039;
+        ,&#039;lunch&#039; =&gt; &#039;Lunch&#039;
+        ,&#039;supper&#039; =&gt; &#039;Supper&#039;
+        ,&#039;snack&#039; =&gt; &#039;Snack&#039;
+        ,&#039;dessert&#039; =&gt; &#039;Dessert&#039;
+      	)
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;multiple&#039; =&gt; &#039;multiple&#039; // This changes a select field into a multi-select field
+      		)
+));
+
+piklist( &#039;field&#039;, array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;serves&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Serves&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 4
+    	,&#039;help&#039; =&gt; __(&#039;Number of servings in the recipe&#039;, &#039;gw-recipe&#039;)
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+    	));
+
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;ingredients-add-more&#039;
+    ,&#039;add_more&#039; =&gt; true
+    , &#039;columns&#039; =&gt; 12
+    ,&#039;fields&#039; =&gt; array(
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;quantity&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Quantity&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 2
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		),
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;measure&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Measure&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 3
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+    	),
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;ingredient&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Ingredient&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 7
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		)
+    )
+));
+
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;instruction-steps&#039;
+    ,&#039;add_more&#039; =&gt; true
+    , &#039;columns&#039; =&gt; 12
+    ,&#039;fields&#039; =&gt; array(
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;instruction_step_num&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Step #&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 2
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		),
+    	array(
+    	&#039;type&#039; =&gt; &#039;textarea&#039;,
+    	&#039;field&#039; =&gt; &#039;instruction&#039;,
+    	&#039;label&#039; =&gt; &#039;Instructions&#039;,
+    	&#039;columns&#039; =&gt; 10,
+    	&#039;attributes&#039; =&gt; array(
+      	&#039;rows&#039; =&gt; 10,
+      	&#039;class&#039; =&gt; &#039;large-text&#039;
+    		)
+  		)
+    )
+));</code></pre>
+<p>Here&#8217;s the definition of the post-type and the taxonomies.</p>
+<pre><code>/*
+Plugin Name: i824 Recipes
+Plugin URI: http://integr824.com/plugin
+Description: This adds recipes post types to WordPress
+Version: 0.1
+Author: Robert Hust
+Author URI: http://integr824.com
+Plugin Type: Piklist
+License: GPL2
+*/
+
+ if (!defined(&#039;ABSPATH&#039;))
+  {
+    exit;
+  }
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_cuisine&#039;);
+function recipe_cuisine($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-cuisine&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Cuisines&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-cuisine&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_course&#039;);
+function recipe_course($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-course&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Courses&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-course&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_tools&#039;);
+function recipe_tools($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-tools&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; false
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Tools&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-course&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_post_types&#039;, &#039;recipe_post_types&#039;);
+  function recipe_post_types($post_types)
+  {
+    $post_types[&#039;gw-recipe&#039;] = array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Recipe&#039;)
+      ,&#039;title&#039; =&gt; __(&#039;Enter Recipe Name&#039;)
+      ,&#039;menu_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-menu-icon.svg&#039;
+      ,&#039;page_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-page-icon-32.png&#039;
+      ,&#039;supports&#039; =&gt; array(
+        &#039;title&#039;
+        ,&#039;editor&#039;
+        ,&#039;excerpt&#039;
+        ,&#039;comments&#039;
+      )
+      ,&#039;public&#039; =&gt; true
+      ,&#039;admin_body_class&#039; =&gt; array(
+        &#039;custom-body-class&#039;
+      )
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-recipe&#039;
+      )
+      ,&#039;capability_type&#039; =&gt; &#039;post&#039;
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Recipe&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Assigned to&#039;)
+      )
+    );
+    return $post_types;
+  }</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/">Select fields with taxonomy in meta-box not saving.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>single taxonomy on multiple post types</title>
+		<link>https://piklist.com/support/topic/single-taxonomy-on-multiple-post-types/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Tue, 15 Dec 2015 22:55:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/single-taxonomy-on-multiple-post-types/</guid>
+
+					<description><![CDATA[<p>Is it possible to register taxonomies across multiple post types via piklist? I know it can be done in wordpress http://wordpress.stackexchange.com/questions/92430/can-multiple-custom-post-types-share-a-custom-taxonomy However, is there a piklist way of doing it?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/single-taxonomy-on-multiple-post-types/">single taxonomy on multiple post types</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is it possible to register taxonomies across multiple post types via piklist?</p>
+<p>I know it can be done in wordpress http://wordpress.stackexchange.com/questions/92430/can-multiple-custom-post-types-share-a-custom-taxonomy</p>
+<p>However, is there a piklist way of doing it?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/single-taxonomy-on-multiple-post-types/">single taxonomy on multiple post types</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dropdown with onchage again</title>
+		<link>https://piklist.com/support/topic/dropdown-with-onchage-again/</link>
+		
+		<dc:creator><![CDATA[bicho44]]></dc:creator>
+		<pubDate>Wed, 18 Nov 2015 21:42:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/dropdown-with-onchage-again/</guid>
+
+					<description><![CDATA[<p>Hi again: I made the change in my other ticket and is almost ok. I need the dropdown jump to the taxonomy URL like demo.com/product/[taxonomy-name], but its seems i cannot make the function work. There&#8217;s a WP function who have an example to make this, but do not respect my url settings (use the /?cat=xxx) [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dropdown-with-onchage-again/">Dropdown with onchage again</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi again:</p>
+<p>I made the change in my <a href="https://piklist.com/support/topic/drodown-with-onchage/">other ticket</a> and is almost ok.</p>
+<p>I need the dropdown jump to the taxonomy URL like demo.com/product/[taxonomy-name], but its seems i cannot make the function work.</p>
+<p>There&#8217;s a <a href="http://codex.wordpress.org/Template_Tags/wp_dropdown_categories" target="_blank">WP function</a> who have an example to make this, but do not respect my url settings (use the /?cat=xxx)</p>
+<p>Any idea?</p>
+<p>Thanks in advance.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dropdown-with-onchage-again/">Dropdown with onchage again</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to pull together post types by location but with a styled page?</title>
+		<link>https://piklist.com/support/topic/how-to-pull-together-post-types-by-location-but-with-a-styled-page/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Fri, 07 Aug 2015 01:25:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-pull-together-post-types-by-location-but-with-a-styled-page/</guid>
+
+					<description><![CDATA[<p>We have a site where we have hotels and tours &#8211; each as a CPT. We also need location pages like the following: Destinations (like this http://www.gogobot.com/destinations) Countries (like this: http://www.gogobot.com/south-africa ) Regions (aka cities/provinces) For example: http://www.gogobot.com/cape-town The kicker for these; we’ll need to allow subsite admins to customize the style of each of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-pull-together-post-types-by-location-but-with-a-styled-page/">How to pull together post types by location but with a styled page?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>We have a site where we have hotels and tours &#8211; each as a CPT. </p>
+<p>We also need location pages like the following:</p>
+<p>Destinations (like this http://www.gogobot.com/destinations)<br />
+Countries (like this: http://www.gogobot.com/south-africa )<br />
+Regions (aka cities/provinces) For example:  http://www.gogobot.com/cape-town </p>
+<p>The kicker for these;  we’ll need to allow subsite admins to customize the style of each of these using different template options that we’ll provide. </p>
+<p>These pages will then need to list the product custom post types (hotels, tours etc) if the product is in the area. (just the like the links above) </p>
+<p>Normally you&#8217;d just make a parent category of &#8220;Destinations&#8221; and children categories of &#8220;Countries&#8221; and &#8220;Regions&#8221; and just assign them to all CPT&#8217;s using something like post2post plugin. </p>
+<p>However, wp doesn&#8217;t really allow you to customize the category pages very well (that I know of).</p>
+<p>I noticed the following plugin might help:<br />
+https://wordpress.org/support/plugin/cpt-onomies/page/6 </p>
+<p>It seems to allow you to use a custom post type content peice as a taxonomy. The benefit being you can tie many CPTs together and probably style the page. </p>
+<p>However, is there a way to do this natively with piklist and what would be a good approach to test out?</p>
+<p>Any ideas are super-helpful as I&#8217;ve been racking my brain on this for literally days. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-pull-together-post-types-by-location-but-with-a-styled-page/">How to pull together post types by location but with a styled page?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Issues Registering Private Taxonomies</title>
+		<link>https://piklist.com/support/topic/issues-registering-private-taxonomies/</link>
+		
+		<dc:creator><![CDATA[ianmuscat]]></dc:creator>
+		<pubDate>Mon, 27 Apr 2015 17:39:18 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/issues-registering-private-taxonomies/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m trying to build a custom taxonomy that is private. The idea is that is exists in the WP admin interface but it is not available on the front-end (or to non-logged in users). I&#8217;m using the following code to register my taxonomy. I&#8217;d like to make particular reference to &#039;public&#039; =&#62; false &#8211; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/issues-registering-private-taxonomies/">Issues Registering Private Taxonomies</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;m trying to build a custom taxonomy that is private. The idea is that is exists in the WP admin interface but it is not available on the front-end (or to non-logged in users).</p>
+<p>I&#8217;m using the following code to register my taxonomy. I&#8217;d like to make particular reference to <code>&#039;public&#039; =&gt; false</code> &#8211; This is what does not seem to work. I&#8217;m using this based off this WP codex article &#8211; https://codex.wordpress.org/Function_Reference/register_taxonomy#Example_Private_Taxonomy</p>
+<pre><code>add_filter(&#039;piklist_taxonomies&#039;, &#039;example_products&#039;);
+function example_products($taxonomies)
+{
+	$taxonomies[] = array(
+	&#039;post_type&#039; =&gt; &#039;example&#039;
+	,&#039;name&#039; =&gt; &#039;example_products&#039;
+	,&#039;show_admin_column&#039; =&gt; true
+	,&#039;public&#039; =&gt; false
+	,&#039;configuration&#039; =&gt; array(
+		&#039;hide_meta_box&#039; =&gt; true
+		,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Products&#039;)
+        ,&#039;rewrite&#039; =&gt; array(
+			&#039;with_front&#039; =&gt; false
+			,&#039;slug&#039; =&gt; &#039;example/product&#039;
+		)
+	)
+  );
+return $taxonomies;
+}</code></pre>
+<p>Also, it&#8217;s not made clear in the documentation what the reason for the &#8216;configuration&#8217; array when setting up a taxonomy. I can&#8217;t find it in WP&#8217;s docs, so I&#8217;m assuming it is a Piklist thing, but it&#8217;s not clear when something should or shouldn&#8217;t go in the configuration array. Furthermore, this doesn&#8217;t seem to be in-line with registering post types (since registering post typed does not seem to require the use of the configuration array).</p>
+<p>Any help would be greatly appreciated!<br />
+Ian</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/issues-registering-private-taxonomies/">Issues Registering Private Taxonomies</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

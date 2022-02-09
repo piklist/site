@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>filter &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/filter/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 29 Jun 2016 15:14:26 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Search for information in the fields</title>
+		<link>https://piklist.com/support/topic/search-for-information-in-the-fields/</link>
+		
+		<dc:creator><![CDATA[Fernando Lourenço]]></dc:creator>
+		<pubDate>Thu, 16 Jun 2016 21:59:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/search-for-information-in-the-fields/</guid>
+
+					<description><![CDATA[<p>In a custom post type, I have several fields that have been created. I feel difficult to retrieve the information, the search field is only to search the title of the post. I would like to locate the post looking for information in any field. On my system the posts are private, so the location [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/search-for-information-in-the-fields/">Search for information in the fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In a custom post type, I have several fields that have been created.<br />
+I feel difficult to retrieve the information, the search field is only to search the title of the post. I would like to locate the post looking for information in any field. On my system the posts are private, so the location of the records is always done on the back end.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/search-for-information-in-the-fields/">Search for information in the fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Upload File Mime Type filter</title>
+		<link>https://piklist.com/support/topic/upload-file-mime-type-filter/</link>
+		
+		<dc:creator><![CDATA[cezarion]]></dc:creator>
+		<pubDate>Mon, 05 Oct 2015 12:19:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/upload-file-mime-type-filter/</guid>
+
+					<description><![CDATA[<p>Hello, I need to filter media type (application,video,image,&#8230;) when I use an upload field. It seems that this is not available in Piklist. With few modifications it&#8217;s available : in parts/fields/file.php &#8211; ligne 31 &#60;a href=&#34;#&#34; class=&#34;button piklist-upload-file-button piklist-field-part&#34; title=&#34;&#60;?php _e($options[&#039;modal_title&#039;]); ?&#62;&#34; data-type=&#34;&#60;?php echo isset($options[&#039;mime_type&#039;] ? $options[&#039;mime_type&#039;] : &#34;&#34;; ?&#62;&#34; &#62; in parts/js/piklists.js &#8211; ligne [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upload-file-mime-type-filter/">Upload File Mime Type filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, </p>
+<p>I need to filter media type (application,video,image,&#8230;) when I use an upload field.<br />
+It seems that this is not available in Piklist.<br />
+With few modifications it&#8217;s available :<br />
+in parts/fields/file.php &#8211; ligne 31</p>
+<pre><code>
+ &lt;a
+      href=&quot;#&quot;
+      class=&quot;button piklist-upload-file-button piklist-field-part&quot;
+      title=&quot;&lt;?php _e($options[&#039;modal_title&#039;]); ?&gt;&quot;
+      data-type=&quot;&lt;?php echo isset($options[&#039;mime_type&#039;] ? $options[&#039;mime_type&#039;] : &quot;&quot;; ?&gt;&quot;
+    &gt;
+</code></pre>
+<p>in parts/js/piklists.js &#8211; ligne 1728</p>
+<pre><code>
+var media_frame = wp.media.frames.file_frame = wp.media({
+  title: button.attr(&#039;title&#039;),
+  button: {
+    text: button.text(),
+  },
+  multiple: true,
+  library:{ type: button.data(&#039;type&#039;) }
+);
+</code></pre>
+<p>I don&#8217;t know if it&#8217;s the good way, if not I&#8217;m interesting in your return.<br />
+I think it would be a nice feature.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upload-file-mime-type-filter/">Upload File Mime Type filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Filter Posts by custom field value</title>
+		<link>https://piklist.com/support/topic/filter-posts-by-custom-field-value/</link>
+		
+		<dc:creator><![CDATA[waterschaats]]></dc:creator>
+		<pubDate>Wed, 07 Jan 2015 11:02:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/filter-posts-by-custom-field-value/</guid>
+
+					<description><![CDATA[<p>I have a custom post-type with a custom field (piklist field select ). is there a way to filter my post by this field in the post overview pages?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filter-posts-by-custom-field-value/">Filter Posts by custom field value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a custom post-type with a custom field (piklist field select ). is there a way to filter my post by this field in the post overview pages?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filter-posts-by-custom-field-value/">Filter Posts by custom field value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Actions or Filters after saving Settings page?</title>
+		<link>https://piklist.com/support/topic/actions-or-filters-after-saving-settings-page/</link>
+		
+		<dc:creator><![CDATA[tripflex]]></dc:creator>
+		<pubDate>Tue, 27 May 2014 15:23:36 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/actions-or-filters-after-saving-settings-page/</guid>
+
+					<description><![CDATA[<p>The open source plugin i&#8217;m working on will be adding rewrite rules and then flushing them after being saved. Are there any actions or filters I can use to know when my custom page has been saved/updated so I can run those functions? I know the $_GET[&#8216;settings-updated&#8217;] is equal to true when settings are updated, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/actions-or-filters-after-saving-settings-page/">Actions or Filters after saving Settings page?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The open source plugin i&#8217;m working on will be adding rewrite rules and then flushing them after being saved. </p>
+<p>Are there any actions or filters I can use to know when my custom page has been saved/updated so I can run those functions?  I know the $_GET[&#8216;settings-updated&#8217;] is equal to true when settings are updated, but with using the custom piklist generated pages i&#8217;m not sure how I should go about this.</p>
+<p>Thanks in advance!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/actions-or-filters-after-saving-settings-page/">Actions or Filters after saving Settings page?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

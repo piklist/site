@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>settiings &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/settiings/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 12 Mar 2014 21:10:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add-More group on settings page odd behavior</title>
+		<link>https://piklist.com/support/topic/add-more-group-on-settings-page-odd-behavior/</link>
+		
+		<dc:creator><![CDATA[taishiziyi]]></dc:creator>
+		<pubDate>Wed, 12 Mar 2014 21:09:23 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/add-more-group-on-settings-page-odd-behavior/</guid>
+
+					<description><![CDATA[<p>I have created a settings page using piklist and have two groups of fields that are add-more groups. Screenshot 1 When I add information into either of the groups and then save the settings it duplicates the info from the first field in the group into the second field, creates a new (add-more) instance of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-group-on-settings-page-odd-behavior/">Add-More group on settings page odd behavior</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have created a settings page using piklist and have two groups of fields that are add-more groups.</p>
+<p><a href="http://imgur.com/JaO3Gd9" title="Screenshot 1">Screenshot 1</a></p>
+<p>When I add information into either of the groups and then save the settings it duplicates the info from the first field in the group into the second field, creates a new (add-more) instance of the group and populates both of those fields with the data from the second field.  It also makes two new instances of the second group, and populates one of them with the text &#8220;none&#8221;.</p>
+<p><a href="http://imgur.com/Ub0fILl" title="Screenshot 2">Screenshot 2</a></p>
+<p>Here is the code used to create the fields:</p>
+<pre><code>piklist( &#039;field&#039;, array(
+	&#039;type&#039;         =&gt; &#039;group&#039;,
+	&#039;field&#039;        =&gt; &#039;related_links&#039;,
+	&#039;label&#039;        =&gt; __( &#039;Related Links&#039;, &#039;cbts&#039; ),
+	&#039;columns&#039;      =&gt; 6,
+	&#039;add_more&#039;     =&gt; true,
+	&#039;fields&#039;       =&gt; array(
+		array(
+			&#039;type&#039;       =&gt; &#039;text&#039;,
+			&#039;field&#039;      =&gt; &#039;link_text&#039;,
+			&#039;label&#039;      =&gt; __( &#039;Link Text&#039;, &#039;cbts&#039; ),
+			&#039;columns&#039;    =&gt; 3
+		),
+		array(
+			&#039;type&#039;       =&gt; &#039;text&#039;,
+			&#039;field&#039;      =&gt; &#039;link_url&#039;,
+			&#039;label&#039;      =&gt; __( &#039;Link URL&#039;, &#039;cbts&#039; ),
+			&#039;columns&#039;    =&gt; 3
+		)
+	)
+));
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;             =&gt; &#039;group&#039;,
+	&#039;field&#039;            =&gt; &#039;selected_feeds&#039;,
+	&#039;label&#039;            =&gt; __( &#039;Selected Feeds&#039;, &#039;cbts&#039; ),
+	&#039;columns&#039;          =&gt; 6,
+	&#039;add_more&#039;         =&gt; true,
+	&#039;fields&#039;           =&gt; array(
+		array(
+			&#039;type&#039;           =&gt; &#039;text&#039;,
+			&#039;field&#039;          =&gt; &#039;feed_title&#039;,
+			&#039;label&#039;          =&gt; __( &#039;Feed Title&#039; ),
+			&#039;columns&#039;        =&gt; 3
+		),
+		array(
+			&#039;type&#039;           =&gt; &#039;text&#039;,
+			&#039;field&#039;          =&gt; &#039;feed_url&#039;,
+			&#039;label&#039;          =&gt; __( &#039;Feed URL&#039; ),
+			&#039;columns&#039;        =&gt; 3
+		),
+		array(
+			&#039;type&#039;           =&gt; &#039;select&#039;,
+			&#039;field&#039;          =&gt; &#039;feed_source&#039;,
+			&#039;label&#039;          =&gt; __( &#039;Feed Source&#039; ),
+			&#039;columns&#039;        =&gt; 3,
+			&#039;choices&#039;        =&gt; array(
+				&#039;none&#039;          =&gt; &#039;None&#039;,
+				&#039;abp&#039;           =&gt; &#039;ABP News&#039;,
+				&#039;cong_health&#039;   =&gt; &#039;Congregational Health&#039;,
+				&#039;christ_cent&#039;   =&gt; &#039;Christian Century&#039;,
+				&#039;eth_daily&#039;     =&gt; &#039;Ethics Daily&#039;,
+				&#039;sojourn&#039;       =&gt; &#039;Sojourners&#039;,
+				&#039;fellowship&#039;    =&gt; &#039;The Fellowship&#039;,
+				&#039;am_bap_church&#039; =&gt; &#039;American Baptist Church&#039;,
+				&#039;cnn&#039;           =&gt; &#039;CNN&#039;,
+				&#039;word&#039;          =&gt; &#039;Word &amp; Way&#039;,
+				&#039;intl_min&#039;      =&gt; &#039;International Ministries&#039;,
+				&#039;natl_min&#039;      =&gt; &#039;National Ministries&#039;,
+			)
+		)
+	)
+));
+</code></pre>
+<p>Any thoughts on what could be going on here?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-group-on-settings-page-odd-behavior/">Add-More group on settings page odd behavior</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

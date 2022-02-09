@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>meta-box &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/meta-box/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 23 Dec 2020 19:50:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>get all custom fields of a custom post</title>
+		<link>https://piklist.com/support/topic/get-all-custom-fields-of-a-custom-post/</link>
+		
+		<dc:creator><![CDATA[pozzerfield]]></dc:creator>
+		<pubDate>Fri, 20 Nov 2020 09:02:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get-all-custom-fields-of-a-custom-post/</guid>
+
+					<description><![CDATA[<p>There&#8217;s a function or whatever that give me all custom fields (not only the fields filled with a value in a specific post) of a specific custom post type ? Maybe it&#8217;s more simple that it&#8217;s seems but I cant find how to do that. Please help me!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-all-custom-fields-of-a-custom-post/">get all custom fields of a custom post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>There&#8217;s a function or whatever that give me all custom fields (not only the fields filled with a value in a specific post) of a specific custom post type ?<br />
+Maybe it&#8217;s more simple that it&#8217;s seems but I cant find how to do that.<br />
+Please help me!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-all-custom-fields-of-a-custom-post/">get all custom fields of a custom post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PiKList Error after update</title>
+		<link>https://piklist.com/support/topic/piklist-error-after-update/</link>
+		
+		<dc:creator><![CDATA[naurojr]]></dc:creator>
+		<pubDate>Fri, 11 May 2018 18:58:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-error-after-update/</guid>
+
+					<description><![CDATA[<p>After some struggle to update from 0.9.4.28 to 0.11.1 I&#8217;m down to two errors that I&#8217;m not sure why they are happening. Warning: sprintf(): Too few arguments in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 1992 Warning: strstr(): Empty needle in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2536 The code works fine on 0.9 but it crashes on the new versions. I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-after-update/">PiKList Error after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>After some struggle to update from 0.9.4.28 to 0.11.1 I&#8217;m down to two errors that I&#8217;m not sure why they are happening. </p>
+<p>Warning: sprintf(): Too few arguments in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 1992</p>
+<p>Warning: strstr(): Empty needle in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2536</p>
+<p>The code works fine on 0.9 but it crashes on the new versions. </p>
+<p>I have 4 meta-boxes on the same page, the first two works, the third and fourth no.<br />
+See code below and attached screenshots. Can you guys give me some guidance on what is wrong?</p>
+<p>&lt;?php<br />
+/*<br />
+Title: Items<br />
+Post Type: salesorder<br />
+Collapse: false<br />
+Order: 3<br />
+Locked: true<br />
+*/</p>
+<p>  $manufacturers_id = get_manufacturers_list();<br />
+  $collections_id = get_collections_list();</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Add Products to the Order&#8217;)<br />
+    ,&#8217;template&#8217;=&gt;&#8217;order_items&#8217;<br />
+    ,&#8217;add_more&#8217; =&gt; true<br />
+    ,&#8217;fields&#8217; =&gt; array(<br />
+      array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_qnty&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Qnty&#8217;<br />
+		  ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 1<br />
+       )<br />
+      ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+		  ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_pd&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Pd&#8217;<br />
+	      ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 3<br />
+		  ,&#8217;choices&#8217; =&gt; $collections_id<br />
+        ,&#8217;validate&#8217; =&gt; array(array(&#8216;type&#8217; =&gt; &#8216;collections_select&#8217;))<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;order_item_manufacturer_id&#8217;<br />
+	    , &#8216;required&#8217; =&gt; true<br />
+        ,&#8217;label&#8217; =&gt; &#8216;Manufacturer&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 3<br />
+        ,&#8217;choices&#8217; =&gt; $manufacturers_id<br />
+        ,&#8217;validate&#8217; =&gt; array(array(&#8216;type&#8217; =&gt; &#8216;manufacturer_select&#8217;))<br />
+        )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_unit_price&#8217;<br />
+		  , &#8216;required&#8217; =&gt; true<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Unit Price&#8217;<br />
+          ,&#8217;value&#8217;=&gt;number_format(0,2)<br />
+          ,&#8217;columns&#8217; =&gt; 2<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217;=&gt;&#8217;text-right readonly&#8217;)<br />
+       )<br />
+      ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;number&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_discount&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Setoff&#8217;<br />
+          ,&#8217;value&#8217;=&gt;&#8217;0&#8242;<br />
+          ,&#8217;columns&#8217; =&gt; 1<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217;=&gt;&#8217;text-right readonly&#8217;, &#8216;maxlenght&#8217;=&gt;&#8217;3&#8217;, &#8216;min&#8217;=&gt;&#8217;0&#8217;, &#8216;max&#8217;=&gt;&#8217;100&#8217;)<br />
+       )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_total&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Total&#8217;<br />
+          ,&#8217;value&#8217; =&gt; &#8216;0&#8217;<br />
+          ,&#8217;columns&#8217; =&gt; 2<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217;=&gt;&#8217;text-right readonly&#8217;, &#8216;readonly&#8217;=&gt;&#8217;true&#8217;)<br />
+       )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_code&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Code&#8217;<br />
+	      ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 7<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;maxlength&#8217;=&gt;&#8217;30&#8217;, &#8216;autocomplete&#8217;=&gt;&#8217;off&#8217;)<br />
+      	)<br />
+        ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_description&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Description&#8217;<br />
+          , &#8216;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 3<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;maxlength&#8217;=&gt;&#8217;20&#8217;, &#8216;autocomplete&#8217;=&gt;&#8217;off&#8217;)<br />
+        )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_stock_status&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Stock Status&#8217;<br />
+	      ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 2<br />
+          ,&#8217;choices&#8217; =&gt; array(&#8216;na&#8217;=&gt;&#8221;, &#8216;st&#8217;=&gt;&#8217;Stock&#8217;, &#8216;fs&#8217;=&gt;&#8217;Floor Sample&#8217;, &#8216;so&#8217;=&gt;&#8217;Special Order&#8217;)<br />
+      	)<br />
+    )<br />
+  ));<br />
+?&gt;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-after-update/">PiKList Error after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>change submitdiv metabox position</title>
+		<link>https://piklist.com/support/topic/change-submitdiv-metabox-position/</link>
+		
+		<dc:creator><![CDATA[manutiedra]]></dc:creator>
+		<pubDate>Tue, 26 Dec 2017 13:31:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/change-submitdiv-metabox-position/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve been trying to put my metaboxes before the submitdiv one but I was not able to do it. After a quick check to the source code, It seems that submitdiv is set with context &#8216;side&#8217; and priority &#8216;high&#8217; but I was not able to place my metaboxes on top of it. I&#8217;m asking [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/change-submitdiv-metabox-position/">change submitdiv metabox position</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;ve been trying to put my metaboxes before the submitdiv one but I was not able to do it. After a quick check to the source code, It seems that submitdiv is set with context &#8216;side&#8217; and priority &#8216;high&#8217; but I was not able to place my metaboxes on top of it. </p>
+<p>I&#8217;m asking this because if I edit a post in a mobile phone or with any device with small window size, the submitdiv meta box gets placed after the title (and between the other metaboxes), so it is not user friendly. </p>
+<p>Is there any way to change that behaviour with Piklist?</p>
+<p>Thank you</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/change-submitdiv-metabox-position/">change submitdiv metabox position</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Is it possible to have a repeater with multiple text inputs?</title>
+		<link>https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/</link>
+		
+		<dc:creator><![CDATA[brianeoneill]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2017 18:07:05 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/</guid>
+
+					<description><![CDATA[<p>Hi. Just discovered Piklist, and I&#8217;m using it to create a theme for podcasters. I&#8217;m creating a custom meta box where users can enter details about the music that&#8217;s included in an episode. For each song, the user should be able to add the title, artist, and a URL. This should be a repeater, so [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/">Is it possible to have a repeater with multiple text inputs?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi. Just discovered Piklist, and I&#8217;m using it to create a theme for podcasters. I&#8217;m creating a custom meta box where users can enter details about the music that&#8217;s included in an episode. </p>
+<p>For each song, the user should be able to add the title, artist, and a URL. This should be a repeater, so the user can add as many songs as needed. </p>
+<p>I&#8217;m trying this, but it&#8217;s not working:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	
+	&#039;label&#039; =&gt; &#039;Music&#039;,
+	&#039;description&#039; =&gt; &#039;Add songs from this episode&#039;,
+	&#039;add_more&#039; =&gt; true,
+
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song title&#039;,
+			&#039;field&#039; =&gt; &#039;song_title&#039;
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song artist&#039;,
+			&#039;field&#039; =&gt; &#039;song_artist&#039;
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song url&#039;,
+			&#039;field&#039; =&gt; &#039;song_url&#039;
+		)
+	)
+
+));</code></pre>
+<p>Am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/">Is it possible to have a repeater with multiple text inputs?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Error when upload and remove upload</title>
+		<link>https://piklist.com/support/topic/error-when-upload-and-remove-upload/</link>
+		
+		<dc:creator><![CDATA[zrmedia]]></dc:creator>
+		<pubDate>Sat, 25 Feb 2017 10:53:35 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-when-upload-and-remove-upload/</guid>
+
+					<description><![CDATA[<p>As same title. I try add a custom meta box (Upload) and add new post success but when i try edit remove file list it has problem data in metabox not remove or change. Its auto add new item array. You can see more in Attachments. Sorry for my bad english. Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-when-upload-and-remove-upload/">Error when upload and remove upload</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>As same title. I try add a custom meta box (Upload) and add new post success but when i try edit remove file list it has problem data in metabox not remove or change. Its auto add new item array. You can see more in Attachments.</p>
+<p>Sorry for my bad english.<br />
+Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-when-upload-and-remove-upload/">Error when upload and remove upload</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to add meta box to nav menus? (on nav_menu.php)</title>
+		<link>https://piklist.com/support/topic/how-to-add-meta-box-to-nav-menus-on-nav_menu-php/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Thu, 18 Aug 2016 16:59:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-add-meta-box-to-nav-menus-on-nav_menu-php/</guid>
+
+					<description><![CDATA[<p>I&#8217;m not taking about custom taxonomies that I can add to menu. But I want to have a custom field for the &#8220;Menu Settings&#8221;, you know &#8211; the place where &#8220;Automatically add new top-level pages to this menu&#8221;, &#8220;Theme locations&#8221; etc. are located.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-add-meta-box-to-nav-menus-on-nav_menu-php/">How to add meta box to nav menus? (on nav_menu.php)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m not taking about custom taxonomies that I can add to menu. But I want to have a custom field for the &#8220;Menu Settings&#8221;, you know &#8211; the place where &#8220;Automatically add new top-level pages to this menu&#8221;, &#8220;Theme locations&#8221; etc. are located.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-add-meta-box-to-nav-menus-on-nav_menu-php/">How to add meta box to nav menus? (on nav_menu.php)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy fields not showing up any more</title>
+		<link>https://piklist.com/support/topic/taxonomy-fields-not-showing-up-any-more/</link>
+		
+		<dc:creator><![CDATA[dameer]]></dc:creator>
+		<pubDate>Tue, 21 Jun 2016 13:48:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomy-fields-not-showing-up-any-more/</guid>
+
+					<description><![CDATA[<p>Hi! I just updated to Piklist 0.9.9.9 and have lost taxonomy options. They just don&#8217;t show up any more even though nothing has been changed in code. Is there anything wrong with header? Here it is: /* Title: Upload Featured Image Description: The following will help you to upload featured image with the current Term. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-fields-not-showing-up-any-more/">Taxonomy fields not showing up any more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!</p>
+<p>I just updated to Piklist 0.9.9.9 and have lost taxonomy options. They just don&#8217;t show up any more even though nothing has been changed in code. Is there anything wrong with header? Here it is:</p>
+<pre><code>/*
+Title: Upload Featured Image
+Description: The following will help you to upload featured image with the current Term.
+Taxonomy: category
+Capability: manage_options
+Locked: true
+New: true
+Collapse: true
+*/</code></pre>
+<p>Thanks for any tip!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-fields-not-showing-up-any-more/">Taxonomy fields not showing up any more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>meta-box for selecting navigation menu?</title>
+		<link>https://piklist.com/support/topic/meta-box-for-selecting-navigation-menu/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Wed, 15 Jun 2016 19:23:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/meta-box-for-selecting-navigation-menu/</guid>
+
+					<description><![CDATA[<p>WordPress&#8217; post types include navigation menu (Post Type: &#8216;nav_menu_item&#8217;). I know I can add these &#8220;single menu items&#8221; like this: piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;post-relate&#8217; ,&#8217;scope&#8217; =&#62; &#8216;nav_menu_item&#8217; ,&#8217;template&#8217; =&#62; &#8216;field&#8217; )); This gives me all menu posts (single menu items)&#8230; But how can I get each menu (e.g. the whole menu system, not only [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/meta-box-for-selecting-navigation-menu/">meta-box for selecting navigation menu?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WordPress&#8217; post types include navigation menu (Post Type: &#8216;nav_menu_item&#8217;).<br />
+I know I can add these &#8220;single menu items&#8221; like this:<br />
+ piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;post-relate&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;nav_menu_item&#8217;<br />
+    ,&#8217;template&#8217; =&gt; &#8216;field&#8217;<br />
+  ));</p>
+<p>This gives me all menu posts (single menu items)&#8230;</p>
+<p>But how can I get each menu (e.g. the whole menu system, not only items) instead?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/meta-box-for-selecting-navigation-menu/">meta-box for selecting navigation menu?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Possible to add meta-box in Media Library (post type &#034;attachment&#034;)?</title>
+		<link>https://piklist.com/support/topic/possible-to-add-meta-box-in-media-library-post-type-attachment/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2016 15:24:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/possible-to-add-meta-box-in-media-library-post-type-attachment/</guid>
+
+					<description><![CDATA[<p>Is it possible to have it shown in the Thickbox view (the Attachment Details), that you meet first? Instead of having to to into &#8220;Media&#8221; -&#62; select an image -&#62; &#8220;Edit more details&#8221;. I know ACF has that feature, at it would really makes it more accessible for my client .. and make me stick [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/possible-to-add-meta-box-in-media-library-post-type-attachment/">Possible to add meta-box in Media Library (post type &quot;attachment&quot;)?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is it possible to have it shown in the Thickbox view (the Attachment Details), that you meet first? <em>Instead of</em> having to to into &#8220;Media&#8221; -&gt; select an image -&gt; &#8220;Edit more details&#8221;.</p>
+<p>I know ACF has that feature, at it would really makes it more accessible for my client</p>
+<p>.. and make me stick to piklist <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/possible-to-add-meta-box-in-media-library-post-type-attachment/">Possible to add meta-box in Media Library (post type &quot;attachment&quot;)?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Updating file metabox error &#039;trying to get property of non-object&#039;</title>
+		<link>https://piklist.com/support/topic/updating-file-metabox-error-trying-to-get-property-of-non-object/</link>
+		
+		<dc:creator><![CDATA[hyfyn]]></dc:creator>
+		<pubDate>Sat, 21 Nov 2015 03:25:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/updating-file-metabox-error-trying-to-get-property-of-non-object/</guid>
+
+					<description><![CDATA[<p>I am using meta-boxes to upload files then looping through them and displaying them on the front-end. When I remove a file from the meta-box it is still in the loop and results in a Notice: Trying to get property of non-object. here is my code //the piklist meta-box piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/updating-file-metabox-error-trying-to-get-property-of-non-object/">Updating file metabox error &#039;trying to get property of non-object&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am using meta-boxes to upload files then looping through them and displaying them on the front-end. When I remove a file from the meta-box it is still in the loop and results in a Notice: Trying to get property of non-object.</p>
+<p>here is my code<br />
+//the piklist meta-box</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;,
+  &#039;field&#039; =&gt; &#039;services_media&#039;,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;label&#039; =&gt; __(&#039;Add Services Pictures&#039;,&#039;piklist&#039;),
+  &#039;description&#039; =&gt; __(&#039;Upload Pictures for Services.&#039;,&#039;piklist&#039;),
+  &#039;help&#039; =&gt; &#039;Upload image(s) to feature in the services section.&#039;,
+  &#039;options&#039; =&gt; array(
+    &#039;modal_title&#039; =&gt; __(&#039;Add Logos&#039;,&#039;piklist&#039;),
+    &#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+  ),
+  &#039;add_more&#039; =&gt; false
+));</code></pre>
+<p>//the loop</p>
+<pre><code>$image_ids = get_post_meta($post-&gt;ID, &#039;services_media&#039;);
+// loop through images and display them
+foreach ($image_ids as $image) {
+// get values of image
+  $img = get_post($image);
+  $title = $img-&gt;post_title;
+  $caption = $img-&gt;post_excerpt;
+  $alttext = trim(strip_tags( get_post_meta($image, &#039;_wp_attachment_image_alt&#039;, true) ));
+  $description = $img-&gt;post_content;
+// print out image
+  echo &#039;&lt;div class=&quot;small-12 medium-4 column &#039;.$caption.&#039;&quot;&gt;&lt;img src=&quot;&#039; . wp_get_attachment_url($image) . &#039;&quot; alt=&quot;&#039;. $alttext . &#039;&quot; /&gt;&lt;p&gt;&#039;.$caption.&#039;&lt;/p&gt;&lt;/div&gt;&#039;;
+					}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/updating-file-metabox-error-trying-to-get-property-of-non-object/">Updating file metabox error &#039;trying to get property of non-object&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

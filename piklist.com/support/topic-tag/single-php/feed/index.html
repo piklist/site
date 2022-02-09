@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>single.php &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/single-php/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 30 Nov 2015 20:26:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Basic front end help</title>
+		<link>https://piklist.com/support/topic/basic-front-end-help/</link>
+		
+		<dc:creator><![CDATA[nadia]]></dc:creator>
+		<pubDate>Sat, 22 Mar 2014 09:19:30 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/basic-front-end-help/</guid>
+
+					<description><![CDATA[<p>Hi there, I&#8217;m really stuck. I just can&#8217;t seem to get my Piklist editor values to show in replace of the default WordPress values. Have looked through the forums which point me to the get_post_meta in WordPress help, but it&#8217;s just not helping. I have created my demo_metabox.php file. And within it have created a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/basic-front-end-help/">Basic front end help</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>I&#8217;m really stuck. I just can&#8217;t seem to get my Piklist editor values to show in replace of the default WordPress values. Have looked through the forums which point me to the get_post_meta in WordPress help, but it&#8217;s just not helping.</p>
+<p>I have created my demo_metabox.php file.<br />
+And within it have created a text field:<br />
+piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;subtitle&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Subtitle Text Box&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Enter the year of birth here&#8217;<br />
+    ,&#8217;value&#8217; =&gt; &#8216;Default text&#8217;<br />
+    ,&#8217;help&#8217; =&gt; &#8216;Example: b.1940&#8242;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+  ));<br />
+This is working, it now shows in the editor.<br />
+Great. Happy with this.</p>
+<p>In single.php I have called my custom fields in the same way I would normally.</p>
+<p>&lt;?php<br />
+$subtitle= get_post_meta($post-&gt;ID, &#8216;demo_subtitle&#8217;, true);<br />
+?&gt;</p>
+<p>&lt;?php if($subtitle){?&gt;<br />
+   &lt;h3&gt;&lt;?php echo $subtitle;?&gt;&lt;/h3&gt;<br />
+&lt;?php } ?&gt;</p>
+<p>This returns nothing.<br />
+I just can&#8217;t move forward until I figure out how to get the values coming through.</p>
+<p>Please help!<br />
+Cheers.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/basic-front-end-help/">Basic front end help</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

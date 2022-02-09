@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>editor_css &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/editor_css/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 22 Oct 2015 01:11:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>how to use editor_css?</title>
+		<link>https://piklist.com/support/topic/how-to-use-editor_css/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 21 Oct 2015 20:45:05 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-use-editor_css/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve never used the editor_css option before. It&#8217;s defined on https://piklist.com/user-guide/docs/fields/editor/ as &#8220;Additional CSS styling applied for both visual and HTML editors buttons, needs to include style tags, can use “scoped”.&#8221; So, being in a hurry to test something, I tried it: array( &#039;type&#039; =&#62; &#039;editor&#039;, &#039;field&#039; =&#62; &#039;newsletter_highlights&#039;, &#039;label&#039; =&#62; __( &#039;Highlights of this [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-use-editor_css/">how to use editor_css?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve never used the <code>editor_css</code> option before. It&#8217;s defined on https://piklist.com/user-guide/docs/fields/editor/ as &#8220;Additional CSS styling applied for both visual and HTML editors buttons, needs to include style tags, can use “scoped”.&#8221;</p>
+<p>So, being in a hurry to test something, I tried it: </p>
+<pre><code>array(
+	&#039;type&#039; =&gt; &#039;editor&#039;,
+	&#039;field&#039; =&gt; &#039;newsletter_highlights&#039;,
+	&#039;label&#039; =&gt; __( &#039;Highlights of this issue&#039; ),
+	&#039;columns&#039; =&gt; 12,
+	&#039;options&#039; =&gt; array (
+		&#039;media_buttons&#039; =&gt; false,
+		&#039;editor_css&#039; =&gt; &#039;style=&quot;height: 240px;&quot;&#039;,
+		&#039;teeny&#039; =&gt; true,
+	),
+),
+</code></pre>
+<p>But the <code>editor_css</code> value is output between the elements: </p>
+<pre><code>&lt;div id=&quot;wp-_post_meta_newsletter_archive_0_newsletter_highlights_0-wrap&quot; class=&quot;wp-core-ui wp-editor-wrap tmce-active&quot; style=&quot;width: 100%;&quot;&gt;
+    style=&quot;height: 240px;&quot;
+    &lt;div id=&quot;wp-_post_meta_newsletter_archive_0_newsletter_highlights_0-editor-container&quot; class=&quot;wp-editor-container&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;uploader-editor&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Am I misunderstanding the usage, or is this a bug? </p>
+<p>Thanks,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-use-editor_css/">how to use editor_css?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>wysiwyg &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/wysiwyg/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 15 Oct 2015 20:30:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>No line breaks in admin &#062; add more group &#062; textarea and wysiwyg</title>
+		<link>https://piklist.com/support/topic/no-line-breaks-in-admin-add-more-group-textarea-and-wysiwyg/</link>
+		
+		<dc:creator><![CDATA[kplaneta]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2015 15:53:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/no-line-breaks-in-admin-add-more-group-textarea-and-wysiwyg/</guid>
+
+					<description><![CDATA[<p>Hi, At the begining I would like to thank you for the plugin and your fantastic work 🙂 And now, the problem. I&#8217;m running WP 4.3.1 in multisite mode with piklist 0.9.9.2 installed. The problem I&#8217;m seeing is in admin panel (not user visible site) with the missing line breaks in the content of editor [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/no-line-breaks-in-admin-add-more-group-textarea-and-wysiwyg/">No line breaks in admin &gt; add more group &gt; textarea and wysiwyg</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>At the begining I would like to thank you for the plugin and your fantastic work <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>And now, the problem.</p>
+<p>I&#8217;m running WP 4.3.1 in multisite mode with piklist 0.9.9.2 installed.</p>
+<p>The problem I&#8217;m seeing is in admin panel (not user visible site) with the missing line breaks in the content of editor and textarea in &#8220;add more&#8221; group.</p>
+<p>My best guess is that when textarea or text editor are withing an &#8220;add more&#8221; group, the the content from database gets returned to those fields without the nl2br and wpautop respectively.</p>
+<p>Explanation.</p>
+<p>When I enter a text in either a textarea or editor that are in &#8220;add more&#8221; group and save the page, after reload I see no line breaks in the text in these boxes. Everything is in one line. Everything is ok with the saved values though and they look just fine on the site (of course when I output the code with nl2br(esc_textarea( $textarea_content )) and wpautop( $text_editor_content )). The problem is only visible in the admin panel.</p>
+<p>See the attached images before and after saving text in textarea and text editor. The textrea and texteditor on top are on their own whereas the ones below are in the repeatable group.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/no-line-breaks-in-admin-add-more-group-textarea-and-wysiwyg/">No line breaks in admin &gt; add more group &gt; textarea and wysiwyg</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PikList WYSIWYG breaking format in PikList Group</title>
+		<link>https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/</link>
+		
+		<dc:creator><![CDATA[hyperarts]]></dc:creator>
+		<pubDate>Tue, 08 Sep 2015 18:52:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/</guid>
+
+					<description><![CDATA[<p>There appears to be a PikList Sentence and PikList Paragraph in a repeatable group. So it is structured like: Group 1 Sentence Paragraph Group 2 Sentence Paragraph But when I switch the Paragraph to a WYSIWYG, the WYSIWYG editor breaks out of the group div formatting. See attached image. It should be Title, Content, but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/">PikList WYSIWYG breaking format in PikList Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>There appears to be a PikList Sentence and PikList Paragraph in a repeatable group.</p>
+<p>So it is structured like:<br />
+Group 1<br />
+    Sentence<br />
+    Paragraph</p>
+<p>Group 2<br />
+    Sentence<br />
+    Paragraph</p>
+<p>But when I switch the Paragraph to a WYSIWYG, the WYSIWYG editor breaks out of the group div formatting.</p>
+<p>See attached image.  It should be Title, Content, but it looks like Title, Content/Title, Content/Title.  So this makes it look like the next title is right below the editor, and part of the editor. It also makes the repeater buttons oddly placed.</p>
+<p>TL/DR; WYSIWYG editor in repeating group breaks layout. How to fix?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/">PikList WYSIWYG breaking format in PikList Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>WYSIWYG post excerpts?</title>
+		<link>https://piklist.com/support/topic/wysiwyg-post-excerpts/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 20 May 2015 20:31:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/wysiwyg-post-excerpts/</guid>
+
+					<description><![CDATA[<p>From the answer at https://piklist.com/support/topic/editor-field-not-saving-data/ I got the impression that I could override the WordPress textarea meta box for post excerpts with a Piklist editor meta box. Here&#8217;s my metabox file: &#60;?php /* Title: WYSIWYG Post Type: post Description: enables TinyMCE editor for excerpts Priority: high */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;editor&#039; ,&#039;scope&#039; =&#62; &#039;post&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wysiwyg-post-excerpts/">WYSIWYG post excerpts?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>From the answer at https://piklist.com/support/topic/editor-field-not-saving-data/ I got the impression that I could override the WordPress textarea meta box for post excerpts with a Piklist editor meta box. </p>
+<p>Here&#8217;s my metabox file: </p>
+<pre><code>&lt;?php
+/*
+Title: WYSIWYG
+Post Type: post
+Description: enables TinyMCE editor for excerpts
+Priority: high
+*/
+  
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;editor&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_excerpt&#039;
+	,&#039;label&#039; =&gt; &#039;Excerpt&#039;
+	,&#039;options&#039; =&gt; array (
+		&#039;media_buttons&#039; =&gt; false
+		,&#039;teeny&#039; =&gt; true
+	)
+));
+</code></pre>
+<p>Unfortunately it doesn&#8217;t change the Excerpt box. I tried removing post type support for excerpts in hopes that would remove the WP box &#8230; which it does. But it also evidently prevents Piklist from creating its box. </p>
+<pre><code>add_action( &#039;init&#039;, &#039;remove_post_excerpt&#039; );
+function remove_post_excerpt () {
+	remove_post_type_support( &#039;post&#039;, &#039;excerpt&#039; );
+}
+</code></pre>
+<p>Suggestions? Thanks!</p>
+<p>p.s. tried this on 0.9.4.26 and on beta 0.9.5v</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wysiwyg-post-excerpts/">WYSIWYG post excerpts?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

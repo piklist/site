@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>table errors &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/table-errors/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 10 Apr 2015 14:20:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Database Error when adding plugin</title>
+		<link>https://piklist.com/support/topic/database-error-when-adding-plugin/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Tue, 07 Apr 2015 17:29:37 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/database-error-when-adding-plugin/</guid>
+
+					<description><![CDATA[<p>Not sure if this is a major problem, but when I just added Gravity Forms plugin to my wordpress installation, I received the following errors. I am currently running the 9.5u beta version. WordPress database error: [Table &#039;extreme_piklist.xs_rg_form&#039; doesn&#039;t exist] SELECT f.id, f.title, f.date_created, f.is_active, 0 as lead_count, 0 view_count FROM xs_rg_form f WHERE is_trash=0 [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/database-error-when-adding-plugin/">Database Error when adding plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Not sure if this is a major problem, but when I just added Gravity Forms plugin to my wordpress installation, I received the following errors. I am currently running the 9.5u beta version.</p>
+<pre><code>
+WordPress database error: [Table &#039;extreme_piklist.xs_rg_form&#039; doesn&#039;t exist]
+SELECT f.id, f.title, f.date_created, f.is_active, 0 as lead_count, 0 view_count FROM xs_rg_form f WHERE is_trash=0 AND is_active=1 ORDER BY title ASC
+
+WordPress database error: [Table &#039;extreme_piklist.xs_rg_lead&#039; doesn&#039;t exist]
+SELECT form_id, count(id) as lead_count FROM xs_rg_lead l WHERE status=&#039;active&#039; GROUP BY form_id
+
+WordPress database error: [Table &#039;extreme_piklist.xs_rg_form_view&#039; doesn&#039;t exist]
+SELECT form_id, sum(count) as view_count FROM xs_rg_form_view GROUP BY form_id
+</code></pre>
+<p>I also got this error when I installed the Gravity forms User registration Add-on</p>
+<pre><code>
+WordPress database error: [Table &#039;extreme_piklist.xs_signups&#039; doesn&#039;t exist]
+DESCRIBE xs_signups;
+</code></pre>
+<p>It looks like piklist is trying to verify a table exists for piklist that a new plugin just created for itself.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/database-error-when-adding-plugin/">Database Error when adding plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

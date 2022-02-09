@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Workflows &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/workflows/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 08 Nov 2016 00:36:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Workflows issue</title>
+		<link>https://piklist.com/support/topic/workflows-issue/</link>
+		
+		<dc:creator><![CDATA[jimdonoho]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 00:36:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/workflows-issue/</guid>
+
+					<description><![CDATA[<p>We&#8217;re having an issue following the tutorials for creating workflows and tabs. Here&#8217;s our code, if you can help that would be amazing. functions.php in themes folder: /** * Registering Piklist plugin */ add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;); function piklist_theme_setting_pages($pages) { $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;Cabinet Door Shop&#039;) ,&#039;menu_title&#039; =&#62; __(&#039;Cabinet Door Shop&#039;, &#039;CDS&#039;) ,&#039;capability&#039; =&#62; &#039;manage_options&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflows-issue/">Workflows issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;re having an issue following the tutorials for creating workflows and tabs.<br />
+Here&#8217;s our code, if you can help that would be amazing.</p>
+<p>functions.php in themes folder:</p>
+<pre><code>/**
+ * Registering Piklist plugin
+ */
+  add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Cabinet Door Shop&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Cabinet Door Shop&#039;, &#039;CDS&#039;)
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;custom_settings&#039;
+      ,&#039;setting&#039; =&gt; __(&#039;my_theme_settings&#039;)
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Materials&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Door Settings&#039;, &#039;Save CDS&#039;
+  );
+ 
+    return $pages;
+  }</code></pre>
+<p>my-setting-page:</p>
+<pre><code>&lt;?php
+/*
+ Title: Materials
+ Order: 10
+ Tab: Materials
+ Setting: my_theme_settings
+ Flow: Workflow
+ 
+ */
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 456&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));</code></pre>
+<p>my-setting-page1</p>
+<pre><code>&lt;?php
+/*
+ Title: Panels
+ Order: 30
+ Tab: Panels
+ Setting: my_theme_settings
+ Flow: Workflow
+ 
+ */
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 456&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));</code></pre>
+<p>workflow.php</p>
+<pre><code>&lt;?php
+/*
+Flow: Workflow
+Page: custom_settings.php
+Header: true
+Position: title
+*/
+</code></pre>
+<p>panels-tab.php</p>
+<pre><code>&lt;?php
+/*
+Title: Panels
+Order: 30
+Flow: Workflow
+*/</code></pre>
+<p>materials-tab.php</p>
+<pre><code>&lt;?php
+/*
+Title: Materials
+Order: 10
+Flow: Workflow
+*/</code></pre>
+<p>Let me know if you need additional information<br />
+Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflows-issue/">Workflows issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metaboxes in tabbed Settings Pages not showing</title>
+		<link>https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 10:26:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</guid>
+
+					<description><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version of 0.9.9.9. I&#8217;ve created the tabs using the old method i.e., without using workflows and they seem to work; but only with one problem. When I use two or more words separated by space, it changes the name to a single word in sentence case joining the two words with an underscore. Now this is not the most challenging since I can choose to use only one word for the tab name. The actual problem however is that metaboxes themselves and fields on the settings pages designated to show on particular don&#8217;t show up at all. Using the workflows worsens the problem as that makes even the tabs disappear altogether. I&#8217;ve been stuck with this problem for the last two or so weeks. I feel  I&#8217;m burning out. Does somebody there no how I can make this work?</p>
+<p>I have this code in one of my settings files named <em>footer-settings.php</em>:</p>
+<pre><code>/*
+Title: Footer Setting
+setting: libra_custom_settings
+Tab: Footer
+*/</code></pre>
+<p>I have this code in another settings file named <em>basic-settings.php</em>:</p>
+<pre><code>/*
+Title: Basic
+Setting: libra_custom_settings
+*/</code></pre>
+<p>I have this code in my <em>functions.php</em> file:</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Libra Settings&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Theme Settings&#039;, &#039;piklist&#039;)
+      ,&#039;sub_menu&#039; =&gt; &#039;themes.php&#039; //Under Appearance menu
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;libra_custom_settings&#039;
+      ,&#039;setting&#039; =&gt; &#039;my_theme_settings&#039;
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Demo Settings&#039;
+    );
+ 
+    return $pages;
+  }</code></pre>
+<p>I have this code in the comment block of another settings file that displays the General tab:</p>
+<pre><code>/*
+Title: Component visibility Settings Section
+setting: lawyeah_custom_settings
+Tab: General
+*/</code></pre>
+<p>I have this code in the comment block of another settings file that displays the Social Options tab:</p>
+<pre><code>/*
+Title: Social Media Settings
+Setting: libra_custom_settings
+Tab: Social-Options
+*/</code></pre>
+<p>I wonder what exactly I&#8217;m doing wrong. The attached snip shows what I already have with everything as it is right now. Any help is very much appreciated. Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Retain Field Values When Switching Workflow Tabs</title>
+		<link>https://piklist.com/support/topic/retain-field-values-when-switching-workflow-tabs/</link>
+		
+		<dc:creator><![CDATA[Carla Chalmers]]></dc:creator>
+		<pubDate>Mon, 16 Nov 2015 15:06:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/retain-field-values-when-switching-workflow-tabs/</guid>
+
+					<description><![CDATA[<p>Has anyone figured out how to retain the field values when switching between Workflow tabs? My product is in beta and users are having difficulty understanding that they need to save the CPT before switching tabs. This also causes a problem with Jetpack social publishing as the post is auto published on the first save [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/retain-field-values-when-switching-workflow-tabs/">Retain Field Values When Switching Workflow Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Has anyone figured out how to retain the field values when switching between Workflow tabs?  My product is in beta and users are having difficulty understanding that they need to save the CPT before switching tabs.  This also causes a problem with Jetpack social publishing as the post is auto published on the first save and not the final.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/retain-field-values-when-switching-workflow-tabs/">Retain Field Values When Switching Workflow Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Default workflow tab not working correctly</title>
+		<link>https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/</link>
+		
+		<dc:creator><![CDATA[vagelis]]></dc:creator>
+		<pubDate>Mon, 24 Aug 2015 15:09:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/</guid>
+
+					<description><![CDATA[<p>Hi again. I&#8217;ve made some workflows using piklist and despite the fact that I&#8217;ve set one of them as default when I attempt to make a new post it does not being selected and I cannot figure out why. Below is my code (some of it cause the metaboxes contain many fields) workflow.php &#60;?php /* [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/">Default workflow tab not working correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi again. I&#8217;ve made some workflows using piklist and despite the fact that I&#8217;ve set one of them as default when I attempt to make a new post it does not being selected and I cannot figure out why.</p>
+<p>Below is my code (some of it cause the metaboxes contain many fields)</p>
+<p>workflow.php</p>
+<pre><code>&lt;?php
+/*
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+Post Type: yacht
+Header: true
+Position: title
+*/
+?&gt;</code></pre>
+<p>Default tab:</p>
+<pre><code>
+&lt;?php
+/*
+Title: Μηχανοκίνητα &lt; 25ft
+Default: true
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+*/
+
+// WordPress Core Meta Boxes
+piklist(&#039;include_meta_boxes&#039;, array(
+  &#039;categorydiv&#039;
+  ,&#039;slugdiv&#039;
+  ,&#039;postcustom&#039;
+  ,&#039;pageparentdiv&#039;
+  ,&#039;postimagediv&#039;
+  ,&#039;excerpt&#039;
+  ,&#039;wpseo_meta&#039;
+  ,&#039;richtext_excerpt_editor_metabox&#039;
+  ,&#039;piklist_meta_motors_max_25ft&#039;
+  // Add your custom meta boxes here
+));
+?&gt;</code></pre>
+<p>2nd Tab:</p>
+<pre><code>&lt;?php
+/*
+Title: Μηχανοκίνητα &gt; 25ft
+Order: 1
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+*/
+
+// WordPress Core Meta Boxes
+piklist(&#039;include_meta_boxes&#039;, array(
+  &#039;categorydiv&#039;
+  ,&#039;slugdiv&#039;
+  ,&#039;postcustom&#039;
+  ,&#039;pageparentdiv&#039;
+  ,&#039;postimagediv&#039;
+  ,&#039;excerpt&#039;
+  ,&#039;wpseo_meta&#039;
+  ,&#039;richtext_excerpt_editor_metabox&#039;
+  ,&#039;piklist_meta_motors_min_25ft&#039;
+  // Add your custom meta boxes here
+));
+?&gt;</code></pre>
+<p>3rd Tab:</p>
+<pre><code>&lt;?php
+/*
+Title: Φουσκωτά / Ιστιοπλοϊκά
+Order: 2
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+*/
+
+// WordPress Core Meta Boxes
+piklist(&#039;include_meta_boxes&#039;, array(
+  &#039;categorydiv&#039;
+  ,&#039;slugdiv&#039;
+  ,&#039;postcustom&#039;
+  ,&#039;pageparentdiv&#039;
+  ,&#039;postimagediv&#039;
+  ,&#039;excerpt&#039;
+  ,&#039;wpseo_meta&#039;
+  ,&#039;richtext_excerpt_editor_metabox&#039;
+  ,&#039;piklist_meta_sails&#039;
+  // Add your custom meta boxes here
+));
+?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/">Default workflow tab not working correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Various problems with workflows in 0.9.4.21</title>
+		<link>https://piklist.com/support/topic/various-problems-with-workflows-in-0-9-4-21/</link>
+		
+		<dc:creator><![CDATA[jonian]]></dc:creator>
+		<pubDate>Thu, 04 Dec 2014 12:57:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/various-problems-with-workflows-in-0-9-4-21/</guid>
+
+					<description><![CDATA[<p>Hello. After updating to piklist 0.9.4.21 I have the following problems whith post workflows: 1) Tab not changing if Page: post.php etc.. is not set on every workflow 2) If I set the Page: post.php etc.. on every workflow, when create or edit a post there is no workflow selected by default but the last [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/various-problems-with-workflows-in-0-9-4-21/">Various problems with workflows in 0.9.4.21</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello.</p>
+<p>After updating to piklist 0.9.4.21 I have the following problems whith post workflows:</p>
+<p>1) Tab not changing if Page: post.php etc.. is not set on every workflow<br />
+2) If I set the Page: post.php etc.. on every workflow, when create or edit a post there is no workflow selected by default but the last workflow is showing. I also tried setting Default: false to the other workflows.</p>
+<p>My code in workflows:</p>
+<p>header.php<br />
+/*<br />
+Title: Default<br />
+Flow: Edit Default<br />
+Page: post.php, post-new.php, post-edit.php<br />
+Header: true<br />
+Position: title<br />
+*/</p>
+<p>basic.php<br />
+/*<br />
+Title: Basic<br />
+Flow: Edit Default<br />
+Page: post.php, post-new.php, post-edit.php<br />
+Default: true<br />
+Order: 10<br />
+*/</p>
+<p>advanced.php<br />
+/*<br />
+Title: Advanced<br />
+Flow: Edit Default<br />
+Page: post.php, post-new.php, post-edit.php<br />
+Default: false<br />
+Order: 20<br />
+*/</p>
+<p>seo.php<br />
+/*<br />
+Title: SEO<br />
+Flow: Edit Default<br />
+Page: post.php, post-new.php, post-edit.php<br />
+Default: false<br />
+Order: 30<br />
+*/</p>
+<p>I have not set the post type because I use the three workflows above on every post type.</p>
+<p>Thanks in advance.</p>
+<p>PS: Please try to not include major changes in minor updates. Many people like me may use Piklist in large projects and keeping up with undocumented changes is hard. Thank you for your great work.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/various-problems-with-workflows-in-0-9-4-21/">Various problems with workflows in 0.9.4.21</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Maintain State Between Workflow Tabs</title>
+		<link>https://piklist.com/support/topic/maintain-state-between-workflow-tabs/</link>
+		
+		<dc:creator><![CDATA[johnmcalester]]></dc:creator>
+		<pubDate>Tue, 31 Dec 2013 18:53:12 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/maintain-state-between-workflow-tabs/</guid>
+
+					<description><![CDATA[<p>I have set up a nice set of Workflow tabs that require the user to go through them one by one. The issue that I am having is that the data in a field is lost when the user clicks the next tab and the page reloads. Anyone know of a way to maintain the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/maintain-state-between-workflow-tabs/">Maintain State Between Workflow Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have set up a nice set of Workflow tabs that require the user to go through them one by one.  The issue that I am having is that the data in a field is lost when the user clicks the next tab and the page reloads.  </p>
+<p>Anyone know of a way to maintain the data in each field when a workflow tab is clicked? or is there a good way to ask the user to update the post before clicking a new tab and/or popping up a dialogue box to remind them to save that field set before moving on?</p>
+<p>This may have to be done via some AJAX.</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/maintain-state-between-workflow-tabs/">Maintain State Between Workflow Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

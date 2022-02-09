@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>add-ons &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/add-ons/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 21 Oct 2015 22:31:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>getting URL for add-ons</title>
+		<link>https://piklist.com/support/topic/getting-url-for-add-ons/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 21 Oct 2015 22:31:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/getting-url-for-add-ons/</guid>
+
+					<description><![CDATA[<p>I was trying to activate the custom stylesheet I defined for one of my Piklist add-ons. My plugin is in plugins/mcw-piklist-custom. Under that I have an add-ons directory. The only activated add-on is mcw-post-custom. I looked at the way Piklist Demos does it and found the following function: add_filter(&#039;piklist_assets&#039;, &#039;piklist_demo_assets&#039;); function piklist_demo_assets($assets) { array_push($assets[&#039;styles&#039;], array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/getting-url-for-add-ons/">getting URL for add-ons</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I was trying to activate the custom stylesheet I defined for one of my Piklist add-ons. My plugin is in <code>plugins/mcw-piklist-custom</code>. Under that I have an <code>add-ons</code> directory. The only activated add-on is <code>mcw-post-custom</code>.</p>
+<p>I looked at the way Piklist Demos does it and found the following function: </p>
+<pre><code>  add_filter(&#039;piklist_assets&#039;, &#039;piklist_demo_assets&#039;);
+  function piklist_demo_assets($assets)
+  {
+    array_push($assets[&#039;styles&#039;], array(
+      &#039;handle&#039; =&gt; &#039;piklist-demos&#039;
+      ,&#039;src&#039; =&gt; piklist::$addons[&#039;piklist&#039;][&#039;url&#039;] . &#039;/add-ons/piklist-demos/parts/css/piklist-demo.css&#039;
+      ,&#039;media&#039; =&gt; &#039;screen, projection&#039;
+      ,&#039;enqueue&#039; =&gt; true
+      ,&#039;admin&#039; =&gt; true
+    ));
+
+    return $assets;
+  }
+</code></pre>
+<p>I found it curious the way it&#8217;s using the piklist::$addons array to pick up the URL. Looked at that array, and here&#8217;s what I saw: </p>
+<pre><code>Array
+(
+    [piklist] =&gt; Array
+        (
+            [path] =&gt; /Users/donna/Sites/marys/wp-content/plugins/piklist
+            [url] =&gt; http://marys.dev/wp-content/plugins/piklist
+        )
+
+    [theme] =&gt; Array
+        (
+            [path] =&gt; /Users/donna/Sites/marys/wp-content/themes/marysriver/piklist
+            [url] =&gt; http://marys.dev/wp-content/themes/marysriver/piklist
+        )
+
+    [mcw-piklist-custom] =&gt; Array
+        (
+            [path] =&gt; /Users/donna/Sites/marys/wp-content/plugins/mcw-piklist-custom
+            [url] =&gt; http://marys.dev/wp-content/plugins/mcw-piklist-custom
+        )
+
+    [wp-helpers] =&gt; Array
+        (
+            [path] =&gt; /Users/donna/Sites/marys/wp-content/plugins/wp-helpers
+            [url] =&gt; http://marys.dev/wp-content/plugins/wp-helpers
+        )
+
+    [piklist-demos] =&gt; Array
+        (
+            [path] =&gt; /Users/donna/Sites/marys/wp-content/plugins/piklist/add-ons/piklist-demos
+            [url] =&gt; http://marys.dev/wp-content/plugins/add-ons
+        )
+
+    [mcw-post-custom] =&gt; Array
+        (
+            [path] =&gt; /Users/donna/Sites/marys/wp-content/plugins/mcw-piklist-custom/add-ons/mcw-post-custom
+            [url] =&gt; http://marys.dev/wp-content/plugins/add-ons
+        )
+
+)</code></pre>
+<p>I have two thoughts: </p>
+<p>1. I am uncomfortable accessing a class variable like this; would rather call a function to return a value. (data hiding) E.g., <code>piklist::add_on_data( &#039;mcw-post-custom&#039;, &#039;url&#039; )</code></p>
+<p>2. I&#8217;m curious as to why the add-on URLs do not have the correct path. E.g., for <code>piklist-demos</code> it should be <code>http://marys.dev/wp-content/plugins/piklist/add-ons/piklist-demos</code>. </p>
+<p>Thanks,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/getting-url-for-add-ons/">getting URL for add-ons</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

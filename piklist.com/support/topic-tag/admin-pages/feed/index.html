@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Admin Pages &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/admin-pages/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 24 May 2018 14:54:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add admin page: just not working</title>
+		<link>https://piklist.com/support/topic/add-admin-page-just-not-working/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Fri, 11 May 2018 17:33:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-admin-page-just-not-working/</guid>
+
+					<description><![CDATA[<p>Hi! I saw what seemed to be a very similar issue to mine, posted quite recently: https://piklist.com/support/topic/changing-admin-menu-for-custom-admin-pages/ I&#8217;m having the same issue though I am following the documentation to the letter. No extra commas or anything&#8230; 8^) Here&#8217;s the code in my functions.php file: /* Add a page in the Dashboard where we can add [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-admin-page-just-not-working/">Add admin page: just not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! I saw what seemed to be a very similar issue to mine, posted quite recently:</p>
+<p>https://piklist.com/support/topic/changing-admin-menu-for-custom-admin-pages/</p>
+<p>I&#8217;m having the same issue though I am following the documentation to the letter. No extra commas or anything&#8230;  8^)</p>
+<p>Here&#8217;s the code in my functions.php file:</p>
+<pre><code>/* Add a page in the Dashboard where we can add custom code for a web ad  */
+
+add_filter(&#039;piklist_admin_pages&#039;, &#039;my_admin_pages&#039;);
+
+function my_admin_pages($pages) {
+
+    $pages[] = array(
+      &#039;page_title&#039; =&gt; &#039;Banner ad&#039;
+      ,&#039;menu_title&#039; =&gt; &#039;Manage&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;manage_ad_html&#039;
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+    );
+
+    return $pages;
+  }</code></pre>
+<p>&#8230;but no &#8220;Banner ad&#8221; menu appears in my Dashboard.</p>
+<p>Can you advise? Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-admin-page-just-not-working/">Add admin page: just not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom admin page for a plugin, menu_slug doesn&#039;t work.</title>
+		<link>https://piklist.com/support/topic/custom-admin-page-for-a-plugin-menu_slug-doesnt-work/</link>
+		
+		<dc:creator><![CDATA[efegue]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 17:25:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-admin-page-for-a-plugin-menu_slug-doesnt-work/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m creating a sub-menu admin page like this: $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;Custom Settings&#039;) ,&#039;menu_title&#039; =&#62; __(&#039;Settings&#039;, &#039;piklist&#039;) ,&#039;sub_menu&#039; =&#62; &#039;plugin_parent_slug&#039; ,&#039;capability&#039; =&#62; &#039;manage_options&#039; ,&#039;menu_slug&#039; =&#62; &#039;my-plugin-settings&#039; ,&#039;setting&#039; =&#62; &#039;plugin_settings&#039; ,&#039;menu_icon&#039; =&#62; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;) ,&#039;page_icon&#039; =&#62; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;) ,&#039;single_line&#039; =&#62; true ,&#039;default_tab&#039; =&#62; &#039;Basic&#039; ,&#039;save_text&#039; =&#62; &#039;Save Demo Settings&#039; ); The sub-menu is showing up [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-admin-page-for-a-plugin-menu_slug-doesnt-work/">Custom admin page for a plugin, menu_slug doesn&#039;t work.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I&#8217;m creating a sub-menu admin page like this:</p>
+<pre><code>   	$pages[] = array(
+		&#039;page_title&#039; =&gt; __(&#039;Custom Settings&#039;)
+		,&#039;menu_title&#039; =&gt; __(&#039;Settings&#039;, &#039;piklist&#039;)
+		,&#039;sub_menu&#039; =&gt; &#039;plugin_parent_slug&#039;
+		,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+		,&#039;menu_slug&#039; =&gt; &#039;my-plugin-settings&#039;
+		,&#039;setting&#039; =&gt; &#039;plugin_settings&#039;
+		,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+		,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+		,&#039;single_line&#039; =&gt; true
+		,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+		,&#039;save_text&#039; =&gt; &#039;Save Demo Settings&#039;
+	);</code></pre>
+<p>The sub-menu is showing up correctly, the problem is that the menu link generated by this is wrong, it&#8217;s something like http://wordpress.dev/wp-admin/my-plugin-settings. It should be http://wordpress.dev/wp-admin/admin.php?page=my-plugin-settings, correct?</p>
+<p>If I add it under let&#8217;s say &#8220;themes.php&#8221; submenu, it works perfectly, but in a custom admin_menu, it doesn&#8217;t.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-admin-page-for-a-plugin-menu_slug-doesnt-work/">Custom admin page for a plugin, menu_slug doesn&#039;t work.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>form action url for admin pages</title>
+		<link>https://piklist.com/support/topic/form-action-url-for-admin-pages/</link>
+		
+		<dc:creator><![CDATA[ajayphp]]></dc:creator>
+		<pubDate>Mon, 10 Nov 2014 08:35:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/form-action-url-for-admin-pages/</guid>
+
+					<description><![CDATA[<p>Hi, I created a plugin with custom fields for non any post type. only few fields to save in db, independent of any wp tables etc. fields code: ++++++++++++++ piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;text&#8217; ,&#8217;field&#8217; =&#62; &#8216;text&#8217; ,&#8217;label&#8217; =&#62; &#8216;Text Box&#8217; ,&#8217;description&#8217; =&#62; &#8216;Field Description&#8217; ,&#8217;help&#8217; =&#62; &#8216;This is help text.&#8217; ,&#8217;value&#8217; =&#62; &#8216;Default text&#8217; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/form-action-url-for-admin-pages/">form action url for admin pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, </p>
+<p>I created a plugin with custom fields for non any post type.</p>
+<p>only few fields to save in db, independent of any wp tables etc.</p>
+<p>fields code:<br />
+++++++++++++++<br />
+piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Text Box&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Field Description&#8217;<br />
+    ,&#8217;help&#8217; =&gt; &#8216;This is help text.&#8217;<br />
+    ,&#8217;value&#8217; =&gt; &#8216;Default text&#8217;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+  ));</p>
+<p>   piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;select&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Select Box&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Choose from the drop-down.&#8217;<br />
+    ,&#8217;help&#8217; =&gt; &#8216;This is help text.&#8217;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+    ,&#8217;choices&#8217; =&gt; array(<br />
+      &#8216;option1&#8217; =&gt; &#8216;Option 1&#8242;<br />
+      ,&#8217;option2&#8217; =&gt; &#8216;Option 2&#8242;<br />
+      ,&#8217;option3&#8217; =&gt; &#8216;Option 3&#8242;<br />
+    )<br />
+  ));<br />
+++++++++++</p>
+<p>I do ,&#8217;save&#8217; =&gt; true then form action url was:<br />
+&#8220;http://192.168.1.5/piklist/wp-admin/options.php&#8221;</p>
+<p>so how could i access post data on submit , or how to change the action url of admin page or etc. Please advice here &#8230;?</p>
+<p>===========<br />
+BUG: if we do not want save button &#8220;&#8216;save&#8217; =&gt; false&#8221; ,  then js files not loaded<br />
+and colorpicket etc not working in that case.<br />
+============</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/form-action-url-for-admin-pages/">form action url for admin pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Having issues creating a admin page with workflow tabs for forms</title>
+		<link>https://piklist.com/support/topic/having-issues-creating-a-admin-page-with-workflow-tabs-for-forms/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Sat, 05 Jul 2014 19:15:50 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/having-issues-creating-a-admin-page-with-workflow-tabs-for-forms/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to create an admin menu page with multiple tabs each with forms. I have followed the tutorials on adding tabs to a sub-menu page and that worked but I can&#8217;t seem to figure out how to get it to work for my page. Here is my function.php code: add_filter(&#039;piklist_admin_pages&#039;, &#039;client_forms_admin_pages&#039;); function client_forms_admin_pages($pages) { [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/having-issues-creating-a-admin-page-with-workflow-tabs-for-forms/">Having issues creating a admin page with workflow tabs for forms</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to create an admin menu page with multiple tabs each with forms. I have followed the tutorials on adding tabs to a sub-menu page and that worked but I can&#8217;t seem to figure out how to get it to work for my page. Here is my function.php code:</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;client_forms_admin_pages&#039;);
+function client_forms_admin_pages($pages) {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Client Forms&#039;, &#039;piklist&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Client Forms&#039;, &#039;piklist&#039;)
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;client-forms&#039;
+      ,&#039;setting&#039; =&gt; &#039;custom_settings&#039;
+      ,&#039;menu_icon&#039; =&gt; &#039;dashicons-welcome-write-blog&#039;
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;default_tab&#039; =&gt; &#039;General&#039;
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;save_text&#039; =&gt; &#039;Save Forms&#039;
+    );
+
+    return $pages;
+  }</code></pre>
+<p>And I have a piklist/parts/workflow/header.php:</p>
+<pre><code>&lt;?php
+/*
+Flow: Client Forms
+Page: admin.php
+Post Type: client_forms
+Header: true
+Position: title
+*/
+?&gt;</code></pre>
+<p>And also a piklist/parts/workflow/tab.php:</p>
+<pre><code>&lt;?php
+/*
+Title: List of Participants
+Order: 10
+Flow: Client Forms
+*/
+
+piklist(&#039;include_meta_boxes&#039;, array(
+    &#039;piklist_meta_help&#039;
+    ,&#039;piklist_meta_field_text&#039;
+    ,&#039;piklist_meta_field_select&#039;
+    ,&#039;piklist_meta_field_radio&#039;
+    ,&#039;piklist_meta_field_checkbox&#039;
+    ,&#039;piklist_meta_field_upload&#039;
+    ,&#039;piklist_meta_field_taxonomies&#039;
+    ,&#039;piklist_meta_field_featured_image&#039;
+    ,&#039;piklist_meta_field_relate&#039;
+    ,&#039;piklist_meta_field_comments&#039;
+  ));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;workout_schedule&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Tasks&#039;)
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;day&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; array(
+          &#039;monday&#039; =&gt; &#039;Monday&#039;
+          ,&#039;tuesday&#039; =&gt; &#039;Tuesday&#039;
+          ,&#039;wednesday&#039; =&gt; &#039;Wednesday&#039;
+          ,&#039;thursday&#039; =&gt; &#039;Thursday&#039;
+          ,&#039;friday&#039; =&gt; &#039;Friday&#039;
+          ,&#039;saturday&#039; =&gt; &#039;Saturday&#039;
+          ,&#039;sunday&#039; =&gt; &#039;Sunday&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;group&#039;
+        ,&#039;field&#039; =&gt; &#039;excercise_day&#039;
+        ,&#039;add_more&#039; =&gt; true
+        ,&#039;fields&#039; =&gt; array(
+          array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            ,&#039;field&#039; =&gt; &#039;excercise&#039;
+            ,&#039;columns&#039; =&gt; 8
+            ,&#039;attributes&#039; =&gt; array(
+              &#039;placeholder&#039; =&gt; &#039;Exercise&#039;
+            )
+          )
+          ,array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            ,&#039;field&#039; =&gt; &#039;excercise_reps&#039;
+            ,&#039;columns&#039; =&gt; 2
+            ,&#039;attributes&#039; =&gt; array(
+              &#039;placeholder&#039; =&gt; &#039;Reps&#039;
+            )
+          )
+          ,array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            ,&#039;field&#039; =&gt; &#039;excercise_sets&#039;
+            ,&#039;columns&#039; =&gt; 2
+            ,&#039;attributes&#039; =&gt; array(
+              &#039;placeholder&#039; =&gt; &#039;Sets&#039;
+            )
+          )
+        )
+      )
+    )
+  ));
+?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/having-issues-creating-a-admin-page-with-workflow-tabs-for-forms/">Having issues creating a admin page with workflow tabs for forms</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

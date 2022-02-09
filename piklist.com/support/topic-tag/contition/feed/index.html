@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>contition &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/contition/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 04 Aug 2017 08:38:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Conditionally Shown Fields: Saved value reset when condition changes</title>
+		<link>https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/</link>
+		
+		<dc:creator><![CDATA[riotxoa]]></dc:creator>
+		<pubDate>Fri, 04 Aug 2017 08:38:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/</guid>
+
+					<description><![CDATA[<p>Hi Piklist team, I&#8217;m implementing some conditions to show or hide fields when those conditions&#8217; values changes. The conditions are implemented through radio buttons and simple select lists. Showing and hiding works fine, but i&#8217;m having troubles when i&#8217;m consulting a saved post with conditional values saved. If I change the value of a radio [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/">Conditionally Shown Fields: Saved value reset when condition changes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Piklist team,</p>
+<p>I&#8217;m implementing some conditions to show or hide fields when those conditions&#8217; values changes. The conditions are implemented through radio buttons and simple select lists.</p>
+<p>Showing and hiding works fine, but i&#8217;m having troubles when i&#8217;m consulting a saved post with conditional values saved. If I change the value of a radio button, then the shown fields change correctly, but if I change back the radio button to its original status, then the value of the conditionally shown (and saved) field disappear (it appears blank).</p>
+<p>Here is my code. If I change de first radio status to &#8216;No&#8217;, and then go back to &#8216;Sí&#8217; (Yes), the others fields&#8217; values reset:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;radio&#039;,
+    &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+    &#039;label&#039; =&gt; &#039;¿Botón de enlace?&#039;,
+    &#039;list&#039; =&gt; false,
+    &#039;value&#039; =&gt; 0, // set default value
+    &#039;choices&#039; =&gt; array(
+        0 =&gt; &#039;No&#039;,
+        1 =&gt; &#039;Sí&#039;,
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_text&#039;,
+    &#039;label&#039; =&gt; &#039;Texto del botón de enlace&#039;,
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+    &#039;label&#039; =&gt; &#039;Tipo de enlace&#039;,
+    &#039;value&#039; =&gt; &#039;url&#039;,
+    &#039;choices&#039; =&gt; array(
+        &#039;url&#039; =&gt; &#039;URL Externa&#039;,
+        &#039;post&#039; =&gt; &#039;Entrada de Blog&#039;,
+        &#039;portfolio&#039; =&gt; &#039;Portfolio&#039;,
+        &#039;page&#039; =&gt; &#039;Página&#039;
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;url&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_url_url&#039;,
+    &#039;label&#039; =&gt; &#039;URL enlazada&#039;,
+    &#039;columns&#039; =&gt; 12,
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;url&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_post_url&#039;,
+    &#039;label&#039; =&gt; &#039;Entrada de Blog enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;post&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;post&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_portfolio_url&#039;,
+    &#039;label&#039; =&gt; &#039;Entrada de Portfolio enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;avada_portfolio&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;portfolio&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_page_url&#039;,
+    &#039;label&#039; =&gt; &#039;Página enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;page&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;page&#039;
+        )
+    )
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/">Conditionally Shown Fields: Saved value reset when condition changes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

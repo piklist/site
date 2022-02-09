@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>hierarchical &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/hierarchical/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 08 Mar 2016 03:10:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>post to post hierarchical relationships</title>
+		<link>https://piklist.com/support/topic/post-to-post-hierarchical-relationships/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2016 03:10:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-to-post-hierarchical-relationships/</guid>
+
+					<description><![CDATA[<p>Q: Does post to post support hierarchical relationships? for example: If I create a connection type between &#8220;Continent &#38; Country&#8221;, &#8220;Country &#38; State&#8221;, &#8220;State &#38; City&#8221; and then access a city post, will I have access to the data for all the parents?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-post-hierarchical-relationships/">post to post hierarchical relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Q: Does post to post support hierarchical relationships?</p>
+<p>for example: If I create a connection type between &#8220;Continent &amp; Country&#8221;, &#8220;Country &amp; State&#8221;, &#8220;State &amp; City&#8221; and then access a city post, will I have access to the data for all the parents?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-post-hierarchical-relationships/">post to post hierarchical relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy metabox and widget</title>
+		<link>https://piklist.com/support/topic/taxonomy-metabox-and-widget/</link>
+		
+		<dc:creator><![CDATA[redywebs]]></dc:creator>
+		<pubDate>Mon, 24 Aug 2015 08:38:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomy-metabox-and-widget/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m new to Piklist and I&#8217;ve made a hierarchical taxonomy for a custom post type, but want editors to only be able to select child terms. Can this be done with default metabox created or do I have to make a custom one and how? I&#8217;m also trying to create a shortcode or a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-metabox-and-widget/">Taxonomy metabox and widget</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I&#8217;m new to Piklist and I&#8217;ve made a hierarchical taxonomy for a custom post type, but want editors to only be able to select child terms. Can this be done with default metabox created or do I have to make a custom one and how?</p>
+<p>I&#8217;m also trying to create a shortcode or a widget to display on front-end a list of that taxonomy.</p>
+<p>Here is what I have</p>
+<pre><code> $genreslabels = array(
+    &#039;name&#039;              =&gt; __( &#039;Genres&#039;, &#039;redywebs&#039; ),
+    &#039;singular_name&#039;     =&gt; __( &#039;Genre&#039;, &#039;redywebs&#039; ),
+    &#039;search_items&#039;      =&gt; __( &#039;Search Genres&#039;, &#039;redywebs&#039; ),
+    &#039;all_items&#039;         =&gt; __( &#039;All Genres&#039;, &#039;redywebs&#039; ),
+    &#039;parent_item&#039;       =&gt; __( &#039;Parent Genre&#039;, &#039;redywebs&#039; ),
+    &#039;parent_item_colon&#039; =&gt; __( &#039;Parent Genre:&#039;, &#039;redywebs&#039; ),
+    &#039;edit_item&#039;         =&gt; __( &#039;Edit Genre&#039;, &#039;redywebs&#039; ),
+    &#039;update_item&#039;       =&gt; __( &#039;Update Genre&#039;, &#039;redywebs&#039; ),
+    &#039;add_new_item&#039;      =&gt; __( &#039;Add New Genre&#039;, &#039;redywebs&#039; ),
+    &#039;new_item_name&#039;     =&gt; __( &#039;New Genre Name&#039;, &#039;redywebs&#039; ),
+    &#039;not_found&#039;         =&gt; __( &#039;No Genres found.&#039;, &#039;redywebs&#039; ),
+    &#039;menu_name&#039;         =&gt; __( &#039;Genres&#039;, &#039;redywebs&#039; ),
+  );
+
+    $taxonomies[] = array(
+      &#039;post_type&#039; =&gt; &#039;catalog&#039;
+      ,&#039;name&#039; =&gt; &#039;colections&#039;
+      ,&#039;configuration&#039; =&gt; array(
+        &#039;hierarchical&#039; =&gt; true
+        ,&#039;labels&#039; =&gt; $genreslabels
+        ,&#039;show_ui&#039; =&gt; true
+        ,&#039;query_var&#039; =&gt; true
+        ,&#039;rewrite&#039; =&gt; array( 
+          &#039;slug&#039; =&gt; __(&#039;colection&#039;),
+        )
+        ,&#039;show_admin_column&#039; =&gt; true
+        ,&#039;comments&#039; =&gt; false
+      )
+    );</code></pre>
+<p>And this code would show a checkbox list with parents disable, but I&#8217;m not sure how and where it should go to achieve what I want:</p>
+<pre><code>$parents = get_terms(&#039;colections&#039;, array(&#039;hide_empty&#039; =&gt; false,&#039;parent&#039; =&gt; 0 ));
+    foreach ($parents as $parent =&gt; $value) {
+     
+      piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;,
+        &#039;scope&#039; =&gt; &#039;taxonomy&#039;,
+        &#039;field&#039; =&gt; &#039;colections&#039;,
+        &#039;label&#039; =&gt; $value-&gt;name,
+        &#039;choices&#039; =&gt; piklist(
+            get_terms(&#039;colections&#039;, array(
+              &#039;hide_empty&#039; =&gt; false,
+              &#039;child_of&#039; =&gt; $value-&gt;term_id
+            )),
+            array(
+              &#039;term_id&#039;,
+              &#039;name&#039;
+            )
+        )
+      ));
+    }</code></pre>
+<p>Could you please help me?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-metabox-and-widget/">Taxonomy metabox and widget</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

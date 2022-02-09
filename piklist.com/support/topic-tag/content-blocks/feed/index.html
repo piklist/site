@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Content Blocks &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/content-blocks/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 25 Jan 2016 17:12:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>I need help creating reusable content blocks and showing them on the frontend</title>
+		<link>https://piklist.com/support/topic/i-need-help-creating-reusable-content-blocks-and-showing-them-on-the-frontend/</link>
+		
+		<dc:creator><![CDATA[pwwwpwww]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2016 16:02:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/i-need-help-creating-reusable-content-blocks-and-showing-them-on-the-frontend/</guid>
+
+					<description><![CDATA[<p>I&#8217;m new PHP / wordpress and I have to admit I&#8217;m struggling. The idea is to be able to create a bunch of reusable content aka content blocks. When creating a new post or page I want to be able to select which content blocks to display along side it. So far I&#8217;ve created the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/i-need-help-creating-reusable-content-blocks-and-showing-them-on-the-frontend/">I need help creating reusable content blocks and showing them on the frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m new PHP / wordpress and I have to admit I&#8217;m struggling. The idea is to be able to create a bunch of reusable content aka content blocks. When creating a new post or page I want to be able to select which content blocks to display along side it.</p>
+<p>So far I&#8217;ve created the CPT:</p>
+<pre><code>&#039;content_blocks&#039; =&gt; array(
+&#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Content Block&#039;)
+,&#039;supports&#039; =&gt; array(
+&#039;title&#039;
+)
+,&#039;public&#039; =&gt; false
+,&#039;show_ui&#039; =&gt; true
+,&#039;publicly_queryable&#039; =&gt; false
+,&#039;exclude_from_search&#039; =&gt; true
+,&#039;has_archive&#039; =&gt; false
+,&#039;hide_screen_options&#039; =&gt; true
+)</code></pre>
+<p>And I&#8217;ve attached some fields to it like:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;file&#039;
+,&#039;field&#039; =&gt; &#039;block_img&#039;
+));</code></pre>
+<p>And</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;editor&#039;
+,&#039;scope&#039; =&gt; &#039;post&#039;
+,&#039;field&#039; =&gt; &#039;post_content&#039;
+,&#039;template&#039; =&gt; &#039;field&#039;
+));</code></pre>
+<p>I&#8217;ve also created an addmore select field that lists the published content block CPTs. It allows me to choose multiple content blocks and arrange their order. I have attached it to posts and pages:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;select&#039;
+,&#039;field&#039; =&gt; &#039;attach_blocks&#039;
+,&#039;label&#039; =&gt; &#039;Add content blocks&#039;
+,&#039;add_more&#039; =&gt; true
+,&#039;choices&#039; =&gt; piklist(
+get_posts(
+array(
+&#039;post_type&#039; =&gt; &#039;content_blocks&#039;
+,&#039;orderby&#039; =&gt; &#039;ID&#039;
+,&#039;order&#039; =&gt; &#039;asc&#039;
+)
+,&#039;objects&#039;
+)
+,array(
+&#039;ID&#039;
+,&#039;post_title&#039;
+)
+)
+));</code></pre>
+<p>So far so good. Now I&#8217;m struggling to figure out how to display the content blocks in my theme&#8217;s sidebar (outside the post&#8217;s loop). It needs to display the title, main content and associated meta fields. Does anyone have any tips or code examples that might help me get started? Is this even the best way to go about it?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/i-need-help-creating-reusable-content-blocks-and-showing-them-on-the-frontend/">I need help creating reusable content blocks and showing them on the frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

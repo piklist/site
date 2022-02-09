@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>usermeta field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/usermeta-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 09 Oct 2015 13:55:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Using Setting page Repeat fields data on user profile page to select.</title>
+		<link>https://piklist.com/support/topic/using-setting-page-repeat-fields-data-on-user-profile-page-to-select/</link>
+		
+		<dc:creator><![CDATA[rcreators]]></dc:creator>
+		<pubDate>Fri, 09 Oct 2015 13:55:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/using-setting-page-repeat-fields-data-on-user-profile-page-to-select/</guid>
+
+					<description><![CDATA[<p>Hello Piklist, I created one setting page in which i can add departments with text field add more true function. Below is a code i used for it. /* Title: Departments Setting: wp_hr_departments Order: 10 Tab Order: 10 */ piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;text&#8217; ,&#8217;field&#8217; =&#62; &#8216;departments&#8217; ,&#8217;label&#8217; =&#62; __(&#8216;Departments&#8217;) ,&#8217;description&#8217; =&#62; __(&#8216;Add as many [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-setting-page-repeat-fields-data-on-user-profile-page-to-select/">Using Setting page Repeat fields data on user profile page to select.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello Piklist,</p>
+<p>I created one setting page in which i can add departments with text field add more true function. Below is a code i used for it.</p>
+<p>/*<br />
+Title: Departments<br />
+Setting: wp_hr_departments<br />
+Order: 10<br />
+Tab Order: 10<br />
+*/</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+   &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+   ,&#8217;field&#8217; =&gt; &#8216;departments&#8217;<br />
+   ,&#8217;label&#8217; =&gt; __(&#8216;Departments&#8217;)<br />
+   ,&#8217;description&#8217; =&gt; __(&#8216;Add as many departments you want.&#8217;)<br />
+   ,&#8217;columns&#8217; =&gt; &#8217;12&#8217;<br />
+   ,&#8217;required&#8217; =&gt; true<br />
+   ,&#8217;add_more&#8217; =&gt; true<br />
+   ,&#8217;attributes&#8217; =&gt; array(<br />
+     &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+   )<br />
+));</p>
+<p>This what above code generates: http://prntscr.com/8pgrhs</p>
+<p>Now i am trying to get this department in user profile page. so i created users meta field for same. below is a code.</p>
+<p>/*<br />
+Title: User Department<br />
+Description: Select department for user.<br />
+Capability: manage_wp_hr<br />
+*/</p>
+<p>$user_department = get_option(&#8216;wp_hr_departments&#8217;);</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+	&#8216;type&#8217; =&gt; &#8216;checkbox&#8217;<br />
+	,&#8217;field&#8217; =&gt; &#8216;user_department&#8217;<br />
+	,&#8217;label&#8217; =&gt; &#8216;User Department&#8217;<br />
+	,&#8217;attributes&#8217; =&gt; array(<br />
+		&#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+	)<br />
+	,&#8217;choices&#8217; =&gt; $user_department[&#8216;departments&#8217;]<br />
+));</p>
+<p>This what above code generates: http://prntscr.com/8pgs8x</p>
+<p>Everything works fine but find one issue. As in setting data is stored as serialized, first field value stored as &#8216;0&#8217;. Now when i select first option in user meta box, it don&#8217;t store &#8216;0&#8217; value. so can&#8217;t select first option.</p>
+<p>After data saved for usermeta, if i change order of department in setting page, order in usermeta also changed but usermeta selection value also change as serialize value 0,1,2 assigned to new order. So can we have options to have fix value for add more fields and it stays with it whether we change order.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-setting-page-repeat-fields-data-on-user-profile-page-to-select/">Using Setting page Repeat fields data on user profile page to select.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

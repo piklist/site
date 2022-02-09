@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get_post language WPML query suppress_filters &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get_post-language-wpml-query-suppress_filters/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 17 Jan 2017 21:41:59 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Filter by leanguage</title>
+		<link>https://piklist.com/support/topic/filter-by-leanguage/</link>
+		
+		<dc:creator><![CDATA[Juan]]></dc:creator>
+		<pubDate>Sun, 15 Jan 2017 23:15:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/filter-by-leanguage/</guid>
+
+					<description><![CDATA[<p>Hey! first of all i want to say that using Piklist is great. I managed to create a &#8216;pseudo&#8217; page builder so i can add different section content blocks on any page or post. At first the page was only in english, but now i have 3 other languages. The first problem im having is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filter-by-leanguage/">Filter by leanguage</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey! first of all i want to say that using Piklist is great.<br />
+I managed to create a &#8216;pseudo&#8217; page builder so i can add different section content blocks on any page or post. </p>
+<p>At first the page was only in english, but now i have 3 other languages.</p>
+<p>The first problem im having is with Custom post type.<br />
+I have different Custom post types, for example &#8216;Staff members&#8217;.<br />
+I managed to list all the &#8216;Staff members&#8217; on a Select (code below), then i can choose which members to show according to my page.</p>
+<p>My problem is this (image attached):<br />
+I want to translate a page and add some &#8216;Staff members&#8217; in the actual language but, when I toggle/expand the select i see the members of other language (English, Spanish, Chinese, etc…) listed on it. Ideally, it would be possible to select only the members that have been translated into the current language. </p>
+<p>In the image attached my current language is chinese. You will see the name of a member called &#8216;Ye Yansong&#8217; repeated. Each repetition corresponds to the other languages.</p>
+<p>My question is:<br />
+Is there any way to show or filter only the translated members on the select, or at least, show the members with a language identifier next to it. For Example: <em>Member Name (ENG)</em> </p>
+<p>I using WPML(WordPress Multilingual Plugin).</p>
+<pre><code>&lt;?php
+/*
+Title: Staff
+Post Type: page
+Template: About
+Meta box: true
+Order: 100
+*/
+
+piklist(&#039;field&#039;, array(
+   &#039;type&#039; =&gt; &#039;text&#039;,
+   &#039;field&#039; =&gt; &#039;section_title&#039;,
+   &#039;label&#039; =&gt; &#039;Title&#039;,
+   &#039;attributes&#039; =&gt; array(
+     &#039;class&#039; =&gt; &#039;regular-text&#039; // WordPress css class 
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;      =&gt; &#039;select&#039;,
+  &#039;field&#039;     =&gt; &#039;staff_member&#039;,
+  &#039;label&#039;     =&gt; &#039;Add Staff Members&#039;,
+  &#039;columns&#039;   =&gt; 12,
+  &#039;value&#039;     =&gt; &#039;&#039;,
+  &#039;add_more&#039;  =&gt; true,
+  &#039;choices&#039;   =&gt; array(&#039;&#039; =&gt; &#039;— Select one —&#039;) + piklist(get_posts(array(
+    &#039;post_type&#039;   =&gt; &#039;staff&#039;,
+    &#039;numberposts&#039; =&gt; -1
+  )), array(&#039;ID&#039;, &#039;post_title&#039;))
+));</code></pre>
+<p>Thanks in advance!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filter-by-leanguage/">Filter by leanguage</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>localization &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/localization/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 05 Apr 2017 22:51:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Can&#039;t save when Argentinian Spanish is enabled</title>
+		<link>https://piklist.com/support/topic/cant-save-when-argentinian-spanish-is-enabled/</link>
+		
+		<dc:creator><![CDATA[matrosero]]></dc:creator>
+		<pubDate>Wed, 05 Apr 2017 22:51:24 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cant-save-when-argentinian-spanish-is-enabled/</guid>
+
+					<description><![CDATA[<p>I just found a really weird issue. I&#8217;m making a client for a Spanish speaking client, and I noticed that I could no longer publish custom post types: when I clicked &#8220;Publish&#8221;, it saved as draft, and the &#8220;Save&#8221; button was gone. I spent a few hours testing, and I realized that the issue appears [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-save-when-argentinian-spanish-is-enabled/">Can&#039;t save when Argentinian Spanish is enabled</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I just found a really weird issue. I&#8217;m making a client for a Spanish speaking client, and I noticed that I could no longer publish custom post types: when I clicked &#8220;Publish&#8221;, it saved as draft, and the &#8220;Save&#8221; button was gone. I spent a few hours testing, and I realized that the issue appears when I switch the site to Argentinian Spanish (es_AR). I tested other languages (Catalan, Japanese and Mexican Spanish) and there is no problem with them, just with Argentinian Spanish.</p>
+<p>Here is a screencap of how the edit screen looks: http://jmp.sh/NNSFfgY</p>
+<p>I also tested with a custom post type that I coded the regular WordPress way. If Piklist is enabled, the issue is also present when trying to publish this post type, but as soon as I disable Piklist, everything is fine. So the problem seems to be Piklist + Argentianian Spanish.</p>
+<p>I realize that this is a really strange issue, but I would really appreciate help debugging and figuring out what is wrong.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-save-when-argentinian-spanish-is-enabled/">Can&#039;t save when Argentinian Spanish is enabled</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>String replace on entire Piklist field content</title>
+		<link>https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/</link>
+		
+		<dc:creator><![CDATA[bubdev]]></dc:creator>
+		<pubDate>Sun, 10 Jan 2016 16:39:26 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m trying to replace the default quotes in WordPress (&#8221; &#8220;) with their german equivalents („ “). Adding a filter to the_content and doing a str_replace works fine for normal post and page content but of course not for custom fields. I found a solution using output buffering to do a string replace on [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/">String replace on entire Piklist field content</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;m trying to replace the default quotes in WordPress (&#8221; &#8220;) with their german equivalents („ “). Adding a filter to the_content and doing a str_replace works fine for normal post and page content but of course not for custom fields.</p>
+<p>I found a solution using output buffering to do a string replace on everything before a page is sent to to browser. Again it works fine everywhere but my Piklist fields. </p>
+<pre><code>ob_start();
+
+add_action(&#039;shutdown&#039;, function() {
+    
+    $final = &#039;&#039;;
+
+    $levels = ob_get_level();
+
+    for ($i = 0; $i &lt; $levels; $i++)
+    {
+        $final .= ob_get_clean();
+    }
+
+    // Apply any filters to the final output
+    echo apply_filters(&#039;final_output&#039;, $final);
+
+}, 0);
+
+add_filter(&#039;final_output&#039;, function($text) {
+
+  $text = str_replace( &#039;&#8220;&#039; , &#039;&#8222;&#039; , $text );
+  $text = str_replace( &#039;&#8221;&#039; , &#039;&#8220;&#039; , $text );
+  $text = str_replace( &#039;&#8216;&#039; , &#039;&#8218;&#039; , $text );
+  $text = str_replace( &#039;&#8217;&#039; , &#039;&#8216;&#039; , $text );
+  return $text;
+
+});</code></pre>
+<p>I&#8217;ve already tried different hooks to no avail. Can you think of another simple solution that would work with Piklist&#8217;s custom field content without having to deal with it on a field by field basis?</p>
+<p>Thank you<br />
+Stefan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/string-replace-on-entire-piklist-field-content/">String replace on entire Piklist field content</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Translate tab names in comments header</title>
+		<link>https://piklist.com/support/topic/translate-tab-names-in-comments-header/</link>
+		
+		<dc:creator><![CDATA[countryipblocks]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2014 16:55:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/translate-tab-names-in-comments-header/</guid>
+
+					<description><![CDATA[<p>In my arrays for example I am adding __(&#8221;) for localization to translate my plugin. Can tab names be localization-ready since they are named in the header comments? IE: &#60;?php /* Title: Countries Order: 20 Setting: cipb_settings Tab: Countries */</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/translate-tab-names-in-comments-header/">Translate tab names in comments header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In my arrays for example I am adding __(&#8221;) for localization to translate my plugin. Can tab names be localization-ready since they are named in the header comments? IE:</p>
+<pre><code>&lt;?php
+/*
+Title: Countries
+Order: 20
+Setting: cipb_settings
+Tab: Countries
+*/
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/translate-tab-names-in-comments-header/">Translate tab names in comments header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

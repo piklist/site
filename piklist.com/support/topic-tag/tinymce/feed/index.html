@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tinyMCE &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/tinymce/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 12 Oct 2020 07:11:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add TinyMCE button to editor field</title>
+		<link>https://piklist.com/support/topic/add-tinymce-button-to-editor-field/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Mon, 12 Oct 2020 07:11:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-tinymce-button-to-editor-field/</guid>
+
+					<description><![CDATA[<p>How can I add a button to the editor? I need the &#8220;anchor&#8221; button back in WordPress. If it is added like this: https://codex.wordpress.org/TinyMCE_Custom_Buttons it appeats fint in the normal wp-editor. Not in the Piklist field, however. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;editor&#039;, &#039;field&#039; =&#62; &#039;intro_content&#039;, &#039;label&#039; =&#62; &#039;Intro text&#039;, &#039;template&#039; =&#62; &#039;field&#039;, &#039;options&#039; =&#62; array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-tinymce-button-to-editor-field/">Add TinyMCE button to editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How can I add a button to the editor? I need the &#8220;anchor&#8221; button back in WordPress. If it is added like this: https://codex.wordpress.org/TinyMCE_Custom_Buttons it appeats fint in the normal wp-editor. Not in the Piklist field, however.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;editor&#039;,
+	&#039;field&#039; =&gt; &#039;intro_content&#039;,
+	&#039;label&#039; =&gt; &#039;Intro text&#039;,
+	&#039;template&#039; =&gt; &#039;field&#039;,
+	&#039;options&#039; =&gt; array( // Pass any option that is accepted by wp_editor()
+		&#039;wpautop&#039; =&gt; true,
+		&#039;media_buttons&#039; =&gt; false,
+		&#039;shortcode_buttons&#039; =&gt; false,
+		&#039;teeny&#039; =&gt; true,
+		&#039;dfw&#039; =&gt; false,
+		&#039;quicktags&#039; =&gt; true,
+		&#039;drag_drop_upload&#039; =&gt; false,
+		&#039;tinymce&#039; =&gt; array(
+			&#039;resize&#039; =&gt; false,
+			&#039;wp_autoresize_on&#039; =&gt; true,
+			&#039;toolbar1&#039; =&gt; &#039;bold,italic,underline,link,unlink&#039;,
+			&#039;toolbar2&#039; =&gt; &#039;anchor&#039;,
+		),
+		&#039;textarea_rows&#039; =&gt; 10,
+	),
+	&#039;columns&#039; =&gt; 12,
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-tinymce-button-to-editor-field/">Add TinyMCE button to editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>May have found a bug with shortcodes</title>
+		<link>https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 06:39:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/</guid>
+
+					<description><![CDATA[<p>It&#8217;s similar to what&#8217;s described here in an issue report for tinymce, but it seems sort of different. Basically when I click to edit a shortcode in the editor (with preview not enabled, but that doesn&#8217;t seem to make a difference), and then click on another shortcode in the editor, it immediately jumps to the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/">May have found a bug with shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s similar to what&#8217;s described <a href="https://github.com/tinymce/tinymce/issues/2776">here</a> in an issue report for tinymce, but it seems sort of different. Basically when I click to edit a shortcode in the editor (with preview not enabled, but that doesn&#8217;t seem to make a difference), and then click on another shortcode in the editor, it immediately jumps to the top of the editor.</p>
+<p>Here&#8217;s a screen recording of the behavior:</p>
+<p><iframe width="500" height="375" src="https://www.youtube.com/embed/04QWpqiQPj0?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/">May have found a bug with shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to remove TinyMCE buttons in the editor field?</title>
+		<link>https://piklist.com/support/topic/how-to-remove-tinymce-buttons-in-the-editor-field/</link>
+		
+		<dc:creator><![CDATA[kattagami]]></dc:creator>
+		<pubDate>Thu, 30 Jul 2015 08:34:52 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-remove-tinymce-buttons-in-the-editor-field/</guid>
+
+					<description><![CDATA[<p>Hello, I use the editor field in a widget and I would like to remove some buttons from TinyMCE. The Piklist documentation said: &#8220;tinymce (array) (optional) Load TinyMCE, can be used to pass settings directly to TinyMCE using an array. Pass false to remove the Visual Editor. Default: true&#8221; I have tested this: piklist(&#039;field&#039;, array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-remove-tinymce-buttons-in-the-editor-field/">How to remove TinyMCE buttons in the editor field?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I use the editor field in a widget and I would like to remove some buttons from TinyMCE.</p>
+<p>The Piklist documentation said:<br />
+&#8220;tinymce (array) (optional) Load TinyMCE, can be used to pass settings directly to TinyMCE using an array. Pass false to remove the Visual Editor.<br />
+Default: true&#8221;</p>
+<p>I have tested this:</p>
+<pre><code>piklist(&#039;field&#039;, 
+array(
+    &#039;type&#039;              =&gt; &#039;editor&#039;,
+    &#039;scope&#039;             =&gt; &#039;post&#039;,
+    &#039;field&#039;             =&gt; &#039;widget_editor_content&#039;,
+    &#039;label&#039;             =&gt; __( &#039;Custom content&#039; , &#039;katt&#039; ),
+    &#039;options&#039;           =&gt; array (
+                        &#039;wpautop&#039;         =&gt; true,
+                        &#039;media_buttons&#039;   =&gt; false,
+                        &#039;tabindex&#039;        =&gt; &#039;&#039;,
+                        &#039;editor_css&#039;      =&gt; &#039;&#039;,
+                        &#039;editor_class&#039;    =&gt; &#039;&#039;,
+                        &#039;teeny&#039;           =&gt; false,
+                        &#039;dfw&#039;             =&gt; false,
+                        &#039;tinymce&#039;         =&gt; array(
+                                                &#039;bold&#039;,
+                                                &#039;italic&#039;,
+                                                &#039;bullist&#039;,
+                                                &#039;numlist&#039;,
+                                                ),
+                        &#039;quicktags&#039;       =&gt; false,
+                              )
+)
+);</code></pre>
+<p>But it doesn&#8217;t work &#8230;</p>
+<p>Does someone could show me a code example to achieve this? For instance remove the fullscreen button?</p>
+<p>Thanks in advance</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-remove-tinymce-buttons-in-the-editor-field/">How to remove TinyMCE buttons in the editor field?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

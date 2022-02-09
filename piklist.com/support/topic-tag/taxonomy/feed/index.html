@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>taxonomy &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/taxonomy/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 04 Jun 2018 20:31:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Custom Taxonomy Select Box Missing in Editor</title>
+		<link>https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/</link>
+		
+		<dc:creator><![CDATA[achowell]]></dc:creator>
+		<pubDate>Thu, 24 May 2018 18:36:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/</guid>
+
+					<description><![CDATA[<p>So I followed the tutorial to set up a selection box that has my custom taxonomy values, but its not appearing for some reason. The taxonomy is Project Status and the options I added are Open and Close. Here is the code used to create the taxonomy and hide the original metabox //Create Project Status [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/">Custom Taxonomy Select Box Missing in Editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So I followed the tutorial to set up a selection box that has my custom taxonomy values, but its not appearing for some reason. The taxonomy is <strong>Project Status</strong> and the options I added are <strong>Open</strong> and <strong>Close</strong>.</p>
+<p>Here is the code used to create the taxonomy and hide the original metabox</p>
+<pre><code>//Create Project Status Taxonomy
+add_filter(&#039;piklist_taxonomies&#039;, &#039;project_status&#039;);
+  function project_status($taxonomies) {
+     $taxonomies[] = array(
+        &#039;post_type&#039; =&gt; &#039;mro_project&#039;
+        ,&#039;name&#039; =&gt; &#039;project_status&#039;
+        ,&#039;show_admin_column&#039; =&gt; true
+        ,&#039;configuration&#039; =&gt; array(
+          &#039;hierarchical&#039; =&gt; true
+          ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Project State&#039;)
+          ,&#039;hide_meta_box&#039; =&gt; true
+          ,&#039;show_ui&#039; =&gt; true
+          ,&#039;query_var&#039; =&gt; true
+          ,&#039;rewrite&#039; =&gt; array(
+            &#039;slug&#039; =&gt; &#039;project-status&#039;
+          )
+        )
+      );
+    return $taxonomies;
+  }</code></pre>
+<p>Here is what is in the file for the selection/dropdown version that is not appearing. This is the only thing in the php file, exactly as is and is located in <strong>parts/terms</strong>.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;field&#039; =&gt; &#039;project_status&#039;
+  ,&#039;label&#039; =&gt; &#039;Project Status&#039;
+  ,&#039;description&#039; =&gt; &#039;Change status of project based on amount of people registered&#039;
+  ,&#039;choices&#039; =&gt; array(
+      &#039;&#039; =&gt; &#039;Open&#039;
+    )
+    + piklist(get_terms(array(
+      &#039;taxonomy&#039; =&gt; &#039;project_status&#039;
+      ,&#039;hide_empty&#039; =&gt; false
+    ))
+    ,array(
+      &#039;term_id&#039;
+      ,&#039;name&#039;
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/">Custom Taxonomy Select Box Missing in Editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Multiple Tags for CPT</title>
+		<link>https://piklist.com/support/topic/multiple-tags-for-cpt/</link>
+		
+		<dc:creator><![CDATA[Dan]]></dc:creator>
+		<pubDate>Sat, 14 Apr 2018 10:37:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/multiple-tags-for-cpt/</guid>
+
+					<description><![CDATA[<p>Hi There, Struggling to save multiple tags for a CPT with a custom taxonomy. It only saves the latest value selected rather than all the values selected. Please help! Taxonomy: function register_event_type($taxonomies) { $taxonomies[] = array( &#039;post_type&#039; =&#62; &#039;mrc_event&#039; ,&#039;name&#039; =&#62; &#039;mrc_event_type&#039; ,&#039;show_admin_column&#039; =&#62; true ,&#039;configuration&#039; =&#62; array( &#039;hierarchical&#039; =&#62; false ,&#039;labels&#039; =&#62; piklist(&#039;taxonomy_labels&#039;, &#039;Event [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiple-tags-for-cpt/">Multiple Tags for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi There,</p>
+<p>Struggling to save multiple tags for a CPT with a custom taxonomy.<br />
+It only saves the latest value selected rather than all the values selected.<br />
+Please help!</p>
+<p>Taxonomy:</p>
+<pre><code>function register_event_type($taxonomies) 
+    {
+        $taxonomies[] = array(
+            &#039;post_type&#039; =&gt; &#039;mrc_event&#039;
+            ,&#039;name&#039; =&gt; &#039;mrc_event_type&#039;
+            ,&#039;show_admin_column&#039; =&gt; true
+            ,&#039;configuration&#039; =&gt; array(
+              &#039;hierarchical&#039; =&gt; false
+              ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Event Type&#039;)
+              ,&#039;hide_meta_box&#039; =&gt; false
+              ,&#039;show_ui&#039; =&gt; false
+              ,&#039;query_var&#039; =&gt; true
+              ,&#039;rewrite&#039; =&gt; array( 
+                &#039;slug&#039; =&gt; &#039;event-type&#039; 
+            )
+            ));
+        return $taxonomies;
+    }</code></pre>
+<p>Taxonomy select field on metabox:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039; 
+  ,&#039;field&#039; =&gt; &#039;mrc_event_type&#039;
+  ,&#039;label&#039; =&gt; &#039;Categories&#039;
+  ,&#039;description&#039; =&gt; &#039;Terms will appear when they are added to this taxonomy.&#039;
+  ,&#039;choices&#039; =&gt; piklist(get_terms(array(
+      &#039;taxonomy&#039; =&gt; &#039;mrc_event_type&#039;
+      ,&#039;hide_empty&#039; =&gt; false
+    ))
+    ,array(
+      &#039;term_id&#039;
+      ,&#039;name&#039;
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiple-tags-for-cpt/">Multiple Tags for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Want to allow users to place themselves into existing category/tax</title>
+		<link>https://piklist.com/support/topic/want-to-allow-users-to-place-themselves-into-existing-category-tax/</link>
+		
+		<dc:creator><![CDATA[dprophitjr]]></dc:creator>
+		<pubDate>Fri, 22 Dec 2017 13:47:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/want-to-allow-users-to-place-themselves-into-existing-category-tax/</guid>
+
+					<description><![CDATA[<p>1. Use same tax/cat on pages. 2. User Editor a. User can checkmark cats/tax of interest 3. UI is within the user and role subscriber to edit. Related: https://piklist.com/learn/doc/getting-started-taxonomies-piklist/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/want-to-allow-users-to-place-themselves-into-existing-category-tax/">Want to allow users to place themselves into existing category/tax</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>1. Use same tax/cat on pages.<br />
+2. User Editor<br />
+    a. User can checkmark cats/tax of interest<br />
+3. UI is within the user and role subscriber to edit.</p>
+<p>Related: https://piklist.com/learn/doc/getting-started-taxonomies-piklist/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/want-to-allow-users-to-place-themselves-into-existing-category-tax/">Want to allow users to place themselves into existing category/tax</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post type workflow changing on taxonomy selection</title>
+		<link>https://piklist.com/support/topic/post-type-workflow-changing-on-taxonomy-selection/</link>
+		
+		<dc:creator><![CDATA[razeel]]></dc:creator>
+		<pubDate>Thu, 07 Dec 2017 09:35:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-type-workflow-changing-on-taxonomy-selection/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve post type called &#8216;user_profiles&#8217; and attached to a taxonomy &#8216;user_profile_types&#8217;. I&#8217;ve setup workflows and tabs. I need to show different set up tabs once I switch between &#8216;user_profile_types&#8217; taxonomy. please provide me some ideas and samples. Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-type-workflow-changing-on-taxonomy-selection/">Post type workflow changing on taxonomy selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I&#8217;ve post type called &#8216;user_profiles&#8217; and attached to a taxonomy &#8216;user_profile_types&#8217;. I&#8217;ve setup workflows and tabs.</p>
+<p>I need to show different set up tabs once I switch between &#8216;user_profile_types&#8217; taxonomy.</p>
+<p>please provide me some ideas and samples.</p>
+<p>Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-type-workflow-changing-on-taxonomy-selection/">Post type workflow changing on taxonomy selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Customize Taxonomy Admin UI – Add permissions, fields and other functionality</title>
+		<link>https://piklist.com/support/topic/customize-taxonomy-admin-ui-add-permissions-fields-and-other-functionality/</link>
+		
+		<dc:creator><![CDATA[kevinschmidt]]></dc:creator>
+		<pubDate>Sat, 23 Sep 2017 22:22:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/customize-taxonomy-admin-ui-add-permissions-fields-and-other-functionality/</guid>
+
+					<description><![CDATA[<p>The Taxonomy Admin UI is not very user friendly and is cumbersome. It is also difficult to add a large category with many terms. Further, it is not designed for use by anyone but admins. I want to create a separate customized taxonomy UI that enables: different permissions, users can collaborate and add terms to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/customize-taxonomy-admin-ui-add-permissions-fields-and-other-functionality/">Customize Taxonomy Admin UI – Add permissions, fields and other functionality</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The Taxonomy Admin UI is not very user friendly and is cumbersome. It is also difficult to add a large category with many terms. Further, it is not designed for use by anyone but admins.</p>
+<p>I want to create a separate customized taxonomy UI that enables:<br />
+different permissions,<br />
+users can collaborate and add terms to create a category taxonomy,<br />
+moderators can edit terms and parent/child relationships,<br />
+and creators can create new taxonomy categories, and assign permissions.</p>
+<p>Examples: Users collaborate to create a category of music genres, with multiple sub genres.<br />
+Users create a category of auto manufactures, with &#8220;make&#8221; children, who have &#8220;model&#8221; children</p>
+<p>As you can see by the examples, the main emphasis and center of attention is the admin UI, and not any posts or pages.</p>
+<p>Most of the documentation I read involves customizing taxonomy posts and pages, and not the admin UI itself.</p>
+<p>Is it possible to modify the Taxonomy Admin UI? And if so, how do I do it?</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/customize-taxonomy-admin-ui-add-permissions-fields-and-other-functionality/">Customize Taxonomy Admin UI – Add permissions, fields and other functionality</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Back End Form Taxonomy Not Saving</title>
+		<link>https://piklist.com/support/topic/back-end-form-taxonomy-not-saving/</link>
+		
+		<dc:creator><![CDATA[pierre]]></dc:creator>
+		<pubDate>Tue, 23 May 2017 15:28:18 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/back-end-form-taxonomy-not-saving/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m trying to make a custom taxonomy form for my custom post type but this one is not saving anymore&#8230; Is it the same known bug as the Front End taxonomy form ? Furthermore, actually, my form doesn&#8217;t care about parents and children &#8211; every items are displayed on the same level. Is it [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/back-end-form-taxonomy-not-saving/">Back End Form Taxonomy Not Saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;m trying to make a custom taxonomy form for my custom post type but this one is not saving anymore&#8230;<br />
+Is it the same known bug as the <a href="https://piklist.com/support/topic/front-end-form-taxonomy-not-saving/">Front End taxonomy form</a> ?</p>
+<p>Furthermore, actually, my form doesn&#8217;t care about parents and children &#8211; every items are displayed on the same level. Is it possible to modify that ?</p>
+<p>Thank you in advance for your help.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/back-end-form-taxonomy-not-saving/">Back End Form Taxonomy Not Saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom Taxonomy Count always shows 0 items in admin</title>
+		<link>https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/</link>
+		
+		<dc:creator><![CDATA[workvista]]></dc:creator>
+		<pubDate>Sat, 23 Jul 2016 20:52:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/</guid>
+
+					<description><![CDATA[<p>I have a custom taxonomy and I use it in a custom post. The taxonomy admin UI page always show 0 items. This happens even for the piklist demo taxonomies. See the count = 0 in the attached image. When I click it it does show posts grouped in that taxonomy. See the 2nd attachment.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/">Custom Taxonomy Count always shows 0 items in admin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a custom taxonomy and I use it in a custom post.<br />
+The taxonomy admin UI page always show 0 items. This happens even for the piklist demo taxonomies. See the count = 0 in the attached image.</p>
+<p>When I click it it does show posts grouped in that taxonomy. See the 2nd attachment.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/">Custom Taxonomy Count always shows 0 items in admin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Display Taxonomy fields in template</title>
+		<link>https://piklist.com/support/topic/display-taxonomy-fields-in-template/</link>
+		
+		<dc:creator><![CDATA[amristar]]></dc:creator>
+		<pubDate>Fri, 08 Jul 2016 17:41:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/display-taxonomy-fields-in-template/</guid>
+
+					<description><![CDATA[<p>Hi! To output fields of a post I use the function get_post_meta(). How can I display the custom piklist fields of the taxonomy in template taxonomy.php?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-taxonomy-fields-in-template/">Display Taxonomy fields in template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!</p>
+<p>To output fields of a post I use the function get_post_meta(). How can I display the custom piklist fields of the taxonomy in template taxonomy.php?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-taxonomy-fields-in-template/">Display Taxonomy fields in template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post types connection</title>
+		<link>https://piklist.com/support/topic/post-types-connection/</link>
+		
+		<dc:creator><![CDATA[unleashed]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2016 19:51:02 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-types-connection/</guid>
+
+					<description><![CDATA[<p>Is there a way to connect 2 different post types? I have a post type &#8220;players&#8221; with a taxonomy &#8220;teams&#8221;. I store there information about football players (1 post = 1 player). And of course I store information about teams in taxonomy (1 term = 1 team). This structure helps me to connect players with [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-types-connection/">Post types connection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to connect 2 different post types?<br />
+I have a post type &#8220;players&#8221; with a taxonomy &#8220;teams&#8221;. I store there information about football players (1 post = 1 player). And of course I store information about teams in taxonomy (1 term = 1 team). This structure helps me to connect players with their teams.<br />
+But right now I need to create one more post type &#8211; &#8220;matches&#8221;, where I&#8217;ll store all information about matches and I want to store information about players also. Right now with Piklist I can create few meta-boxes with simple repeatable textfield and save for example post links, which holds information about players. But it&#8217;s hard to do this for every match.<br />
+So, is there a way to show metabox with a dropdown list, which holds terms from another post type taxonomy (teams) and checkboxes with posts in this term (players). I think this is the easiest way to pick teams and players for every match.</p>
+<p>P.S. If this can be implemented in other way, I will be very appriciated for advice.  </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-types-connection/">Post types connection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Replacing &#039;Name&#039; field for taxonomy with a piklist field</title>
+		<link>https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Tue, 28 Jun 2016 21:09:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been trying to add a custom taxonomy, that in lieu of the required &#8216;Name&#8217; field, using say, a piklist drop down. I&#8217;ve tried variations of the following to no success. Is this something that&#8217;s supported the way &#039;scope&#039; =&#62; &#039;post&#039;, &#039;field&#039; =&#62; &#039;post_title&#039; is? piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039;, &#039;field&#039; =&#62; &#039;name&#039;, &#039;scope&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/">Replacing &#039;Name&#039; field for taxonomy with a piklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been trying to add a custom taxonomy, that in lieu of the required &#8216;Name&#8217; field, using say, a piklist drop down. I&#8217;ve tried variations of the following to no success. Is this something that&#8217;s supported the way <code>&#039;scope&#039; =&gt; &#039;post&#039;, &#039;field&#039; =&gt; &#039;post_title&#039;</code> is?</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039;      =&gt; &#039;select&#039;,
+  &#039;field&#039;     =&gt; &#039;name&#039;,
+  &#039;scope&#039;     =&gt; &#039;taxonomy&#039;,
+  &#039;choices&#039; =&gt; piklist_get_states_and_slugs(true),
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/">Replacing &#039;Name&#039; field for taxonomy with a piklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

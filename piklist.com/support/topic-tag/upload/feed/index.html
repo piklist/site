@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>upload &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/upload/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 12 Jul 2018 00:46:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>media upload / file system / membership</title>
+		<link>https://piklist.com/support/topic/media-upload-file-system-membership/</link>
+		
+		<dc:creator><![CDATA[courtens]]></dc:creator>
+		<pubDate>Thu, 12 Jul 2018 00:46:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/media-upload-file-system-membership/</guid>
+
+					<description><![CDATA[<p>I am curious if Piklist would be able to do this, &#8212; or am I pushing the envelop? I need a mp4 file upload and file manager tool, where a member can upload large files, and large amount of files, and where I can retrieve these files from one dedicated member folder. It would be [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-upload-file-system-membership/">media upload / file system / membership</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am curious if Piklist would be able to do this, &#8212; or am I pushing the envelop?</p>
+<p>I need a mp4 file upload and file manager tool, where a member can upload large files, and large amount of files, and where I can retrieve these files from one dedicated member folder. It would be some file management system with set privileges for a set locations.</p>
+<p>I am sure someone must have coded this already.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-upload-file-system-membership/">media upload / file system / membership</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload broken in 0.9.9.15</title>
+		<link>https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</link>
+		
+		<dc:creator><![CDATA[cddustin]]></dc:creator>
+		<pubDate>Fri, 13 Apr 2018 18:46:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</guid>
+
+					<description><![CDATA[<p>WP 4.9.5 Piklist 0.9.9.15 I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;_job_download&#039;, &#039;scope&#039; =&#62; &#039;post_meta&#039;, &#039;label&#039; =&#62; &#039;Downloadable Job Description&#039;, &#039;options&#039; =&#62; array( &#039;basic&#039; =&#62; true ) )); What I tried: Add new post Click file upload [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WP 4.9.5<br />
+Piklist 0.9.9.15</p>
+<p>I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;,
+	&#039;field&#039; =&gt; &#039;_job_download&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Downloadable Job Description&#039;,
+	&#039;options&#039; =&gt; array(
+		&#039;basic&#039; =&gt; true
+	)
+));</code></pre>
+<p><strong>What I tried:</strong></p>
+<ol>
+<li>Add new post</li>
+<li>Click file upload &#8220;Browse&#8230;&#8221; button, choose a file</li>
+<li>Save a draft of the post</li>
+</ol>
+<p><strong>What I expected:</strong></p>
+<p>I expected to see something representing the file I attached below the &#8220;Browse&#8230;&#8221; button, with the file name and a button to remove it.</p>
+<p><strong>What I got:</strong></p>
+<p>No indication that the file attachment was successful. With WP_DEBUG on, I get the following warnings after saving a draft, and they appear on a blank white page (no WP admin UI loads in this case):</p>
+<blockquote><p>Warning: Invalid argument supplied for foreach() in /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php on line 1533</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/includes/misc.php on line 1116</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/post.php on line 198</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-includes/pluggable.php on line 1216</p></blockquote>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Reordering not working on images with update</title>
+		<link>https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</link>
+		
+		<dc:creator><![CDATA[bobstew]]></dc:creator>
+		<pubDate>Fri, 21 Oct 2016 09:31:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</guid>
+
+					<description><![CDATA[<p>The reordering of &#8216;field&#8217; &#8216;type&#8217; =&#62; &#8216;upload&#8217; was working fine. But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think). Here is my code for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The reordering of &#8216;field&#8217;  &#8216;type&#8217; =&gt; &#8216;upload&#8217; was working fine.<br />
+But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 </p>
+<p>I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think).</p>
+<p>Here is my code for the media upload:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;file&#039;
+,&#039;field&#039; =&gt; &#039;upload_media&#039;
+,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+,&#039;description&#039; =&gt; __(&#039;Add images to a Report.&#039;,&#039;piklist&#039;)
+,&#039;options&#039; =&gt; array(
+  &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+  ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+)
+));</code></pre>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Media Upload (issue with empty strings)</title>
+		<link>https://piklist.com/support/topic/media-upload-issue-with-empty-strings/</link>
+		
+		<dc:creator><![CDATA[tiberiur]]></dc:creator>
+		<pubDate>Sun, 21 Feb 2016 18:55:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/media-upload-issue-with-empty-strings/</guid>
+
+					<description><![CDATA[<p>Hi guys, First of all, Piklist rocks! I&#8217;m facing with some issue on file/upload_media field. 1) When you delete all items from gallery, it still remains an empty string instead of NULL array(1) { [0]=&#62; string(0) &#8220;&#8221; } With the basic file type, it&#8217;s work well. 2. You make a condition for file field based [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-upload-issue-with-empty-strings/">Media Upload (issue with empty strings)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys,</p>
+<p>First of all, Piklist rocks! I&#8217;m facing with some issue on file/upload_media field.</p>
+<p>1) When you delete all items from gallery, it still remains an empty string instead of NULL<br />
+array(1) { [0]=&gt; string(0) &#8220;&#8221; }</p>
+<p>With the basic file type, it&#8217;s work well.</p>
+<p>2. You make a condition for file field based on select field. You upload some picture and then you hide the file field. All string become empty and remains there.</p>
+<p>I use metaboxes on pages.</p>
+<p>Thanks,</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-upload-issue-with-empty-strings/">Media Upload (issue with empty strings)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox, file upload field with custom scope error</title>
+		<link>https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2016 05:02:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/</guid>
+
+					<description><![CDATA[<p>Still moving along with 0.9.9.7 beta, it rocks. I have a metabox with a group field that includes a file field. I&#8217;m using a custom scope for the group and all the fields. Debugging the $fields values when testing all works well as long as the file upload field uses the Media Uploader. If basic: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/">Metabox, file upload field with custom scope error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Still moving along with 0.9.9.7 beta, it rocks.</p>
+<p>I have a metabox with a group field that includes a file field. I&#8217;m using a custom scope for the group and all the fields. Debugging the $fields values when testing all works well as long as the file upload field uses the Media Uploader. If basic: false, that field does not show any value at all during debugging. Very strange.</p>
+<p>Is this a bug, or a limitation in the basic uploader inside WP?</p>
+<p>Here&#8217;s the whole group:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039;        =&gt; &#039;group&#039;,
+    &#039;scope&#039;       =&gt; &#039;connect_resource_to_lesson&#039;,
+    &#039;field&#039;       =&gt; &#039;add_resource&#039;,
+    &#039;template&#039;    =&gt; &#039;theme&#039;,
+    &#039;add_more&#039;    =&gt; true,
+    &#039;label&#039;       =&gt; __(&#039;Add New Resources&#039;, &#039;wampum&#039;),
+    &#039;description&#039; =&gt; __(&#039;Add resources now, or you can always attach resources later.&#039;, &#039;wampum&#039;),
+    &#039;fields&#039;      =&gt; array(
+        array(
+            &#039;type&#039;    =&gt; &#039;text&#039;,
+            &#039;scope&#039;   =&gt; &#039;connect_resource_to_lesson&#039;,
+            &#039;field&#039;   =&gt; &#039;post_title&#039;,
+            &#039;label&#039;   =&gt; __(&#039;Title&#039;, &#039;wampum&#039;),
+            &#039;columns&#039; =&gt; &#039;12&#039;,
+        ),
+        array(
+            &#039;type&#039;    =&gt; &#039;editor&#039;,
+            &#039;scope&#039;   =&gt; &#039;connect_resource_to_lesson&#039;,
+            &#039;field&#039;   =&gt; &#039;post_content&#039;,
+            &#039;label&#039;   =&gt; __(&#039;Content&#039;, &#039;wampum&#039;),
+            &#039;columns&#039; =&gt; &#039;12&#039;,
+        ),
+        array(
+            &#039;type&#039;     =&gt; &#039;file&#039;,
+            &#039;scope&#039;    =&gt; &#039;connect_resource_to_lesson&#039;,
+            &#039;field&#039;    =&gt; &#039;resource_file&#039;,
+            &#039;label&#039;    =&gt; __(&#039;Upload File&#039;, &#039;wampum&#039;),
+            &#039;options&#039; =&gt; array(
+                &#039;basic&#039; =&gt; true,
+            ),
+        ),
+    ),
+));</code></pre>
+<p>And here is my filter:</p>
+<pre><code>add_action( &#039;piklist_save_field-connect_resource_to_lesson&#039;, &#039;jivedig_debut_this_scope&#039;, 10, 1 );
+function jivedig_debut_this_scope($fields) {
+	// My debugger from DesktopServer
+	trace($fields);
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/">Metabox, file upload field with custom scope error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload options</title>
+		<link>https://piklist.com/support/topic/file-upload-options/</link>
+		
+		<dc:creator><![CDATA[vayu]]></dc:creator>
+		<pubDate>Tue, 29 Dec 2015 11:10:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-options/</guid>
+
+					<description><![CDATA[<p>Hi, I was wondering what options there are with the file upload filed? I would like to be able to set a limit on the number of files. I would like to set limit to 1. Is it possible to limit to what type of files?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-options/">File upload options</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I was wondering what options there are with the file upload filed? I would like to be able to set a limit on the number of files. I would like to set limit to 1. Is it possible to limit to what type of files?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-options/">File upload options</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Upload File Mime Type filter</title>
+		<link>https://piklist.com/support/topic/upload-file-mime-type-filter/</link>
+		
+		<dc:creator><![CDATA[cezarion]]></dc:creator>
+		<pubDate>Mon, 05 Oct 2015 12:19:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/upload-file-mime-type-filter/</guid>
+
+					<description><![CDATA[<p>Hello, I need to filter media type (application,video,image,&#8230;) when I use an upload field. It seems that this is not available in Piklist. With few modifications it&#8217;s available : in parts/fields/file.php &#8211; ligne 31 &#60;a href=&#34;#&#34; class=&#34;button piklist-upload-file-button piklist-field-part&#34; title=&#34;&#60;?php _e($options[&#039;modal_title&#039;]); ?&#62;&#34; data-type=&#34;&#60;?php echo isset($options[&#039;mime_type&#039;] ? $options[&#039;mime_type&#039;] : &#34;&#34;; ?&#62;&#34; &#62; in parts/js/piklists.js &#8211; ligne [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upload-file-mime-type-filter/">Upload File Mime Type filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, </p>
+<p>I need to filter media type (application,video,image,&#8230;) when I use an upload field.<br />
+It seems that this is not available in Piklist.<br />
+With few modifications it&#8217;s available :<br />
+in parts/fields/file.php &#8211; ligne 31</p>
+<pre><code>
+ &lt;a
+      href=&quot;#&quot;
+      class=&quot;button piklist-upload-file-button piklist-field-part&quot;
+      title=&quot;&lt;?php _e($options[&#039;modal_title&#039;]); ?&gt;&quot;
+      data-type=&quot;&lt;?php echo isset($options[&#039;mime_type&#039;] ? $options[&#039;mime_type&#039;] : &quot;&quot;; ?&gt;&quot;
+    &gt;
+</code></pre>
+<p>in parts/js/piklists.js &#8211; ligne 1728</p>
+<pre><code>
+var media_frame = wp.media.frames.file_frame = wp.media({
+  title: button.attr(&#039;title&#039;),
+  button: {
+    text: button.text(),
+  },
+  multiple: true,
+  library:{ type: button.data(&#039;type&#039;) }
+);
+</code></pre>
+<p>I don&#8217;t know if it&#8217;s the good way, if not I&#8217;m interesting in your return.<br />
+I think it would be a nice feature.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upload-file-mime-type-filter/">Upload File Mime Type filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>displaying widget upload field front-end</title>
+		<link>https://piklist.com/support/topic/displaying-widget-upload-field-front-end/</link>
+		
+		<dc:creator><![CDATA[upside]]></dc:creator>
+		<pubDate>Fri, 14 Aug 2015 02:35:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/displaying-widget-upload-field-front-end/</guid>
+
+					<description><![CDATA[<p>I&#8217;m working on creating a widget that will have a photo and some text and a title. I&#8217;ve set-up the fields like so: &#60;?php /* Width: 420 */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;tc_widget_title&#039; ,&#039;label&#039; =&#62; &#039;Text&#039; ,&#039;value&#039; =&#62; &#039;&#039; ,&#039;help&#039; =&#62; &#039;add the title of the widget area here i.e. Guild Quality [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-widget-upload-field-front-end/">displaying widget upload field front-end</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m working on creating a widget that will have a photo and some text and a title. I&#8217;ve set-up the fields like so:</p>
+<pre><code>&lt;?php
+/*
+Width: 420
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;tc_widget_title&#039;
+    ,&#039;label&#039; =&gt; &#039;Text&#039;
+    ,&#039;value&#039; =&gt; &#039;&#039;
+    ,&#039;help&#039; =&gt; &#039;add the title of the widget area here i.e. Guild Quality or Houzz&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;tc_widget_text_area&#039;
+    ,&#039;label&#039; =&gt; &#039;Large Code&#039;
+    ,&#039;description&#039; =&gt; &#039;class=&quot;large-text code&quot; rows=&quot;10&quot; columns=&quot;50&quot;&#039;
+    ,&#039;value&#039; =&gt; &#039;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;rows&#039; =&gt; 10
+      ,&#039;cols&#039; =&gt; 50
+      ,&#039;class&#039; =&gt; &#039;large-text code&#039;
+    )
+ 
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;tc_logo_widget&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;This is the uploader seen in the admin by default.&#039;, &#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;, &#039;piklist-demo&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;piklist-demo&#039;)
+    )
+    ,&#039;validate&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;limit&#039;
+        ,&#039;options&#039; =&gt; array(
+          &#039;min&#039; =&gt; 0
+          ,&#039;max&#039; =&gt; 2
+        )
+      )
+    )
+  ));
+</code></pre>
+<p>Following the user guide I&#8217;ve set-up the display like so </p>
+<pre><code>&lt;?php
+/*  
+Title: Testimonials
+*/
+?&gt;
+
+&lt;?php echo $before_widget; ?&gt;
+
+  &lt;?php echo $before_title; ?&gt;
+
+  &lt;?php echo $settings[&#039;tc_widget_title&#039;]; ?&gt;!
+  
+  &lt;?php echo $after_title; ?&gt;
+
+  &lt;?php echo $settings[&#039;tc_widget_text_area&#039;]; ?&gt;!
+
+  &lt;?php echo $settings[&#039;tc_logo_widget&#039;]; ?&gt;!
+
+    
+&lt;?php echo $after_widget; ?&gt;
+</code></pre>
+<p>I&#8217;m getting an undefined index error for the upload field. Is there some added trick for displaying image fields on the front-end? </p>
+<p>Thanks for your help!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-widget-upload-field-front-end/">displaying widget upload field front-end</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File Limit Exactly 1 Error</title>
+		<link>https://piklist.com/support/topic/file-limit-exactly-1-error/</link>
+		
+		<dc:creator><![CDATA[Gregg]]></dc:creator>
+		<pubDate>Mon, 06 Jul 2015 15:00:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-limit-exactly-1-error/</guid>
+
+					<description><![CDATA[<p>Hi Steve I updated a settings function to impose a limit of 1 file upload for the site logo as you can see in the attached. However, on save, I keep getting the error &#8220;Add File must have exactly 1 items added.&#8221; even though I&#8217;ve only selected one image. I checked the database and I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-limit-exactly-1-error/">File Limit Exactly 1 Error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Steve</p>
+<p>I updated a settings function to impose a limit of 1 file upload for the site logo as you can see in the attached.</p>
+<p>However, on save, I keep getting the error &#8220;Add File must have exactly 1 items added.&#8221; even though I&#8217;ve only selected one image.</p>
+<p>I checked the database and I don&#8217;t see any settings for this field so I can&#8217;t find any conflicts in the DB. </p>
+<p>Prior to this, I ran into a problem when I replaced the image with another and the setting created an array on the backend. The image wasn&#8217;t displayed on the front-end given that it was referencing the first instance in the array if that makes sense.</p>
+<p>Any thoughts?</p>
+<p>Here&#8217;s the settings code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;checkbox&#039;
+    ,&#039;field&#039; =&gt; &#039;gwfg_use_image_for_logo&#039;
+    ,&#039;value&#039; =&gt; &#039;&#039; //
+    ,&#039;label&#039; =&gt; &#039;Use image for logo?&#039;
+    ,&#039;description&#039; =&gt; &#039;If left unchecked, plain text will be used instead (generated from site name).&#039;
+    ,&#039;choices&#039; =&gt; array(
+      &#039;use-logo&#039; =&gt; &#039;Yes&#039;
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;gwfg_site_logo&#039;
+    ,&#039;label&#039; =&gt; &#039;Add File&#039;,&#039;piklist&#039;
+    ,&#039;description&#039; =&gt; __(&#039;Upload your movie logo.&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039;          =&gt; array(
+      &#039;modal_title&#039;   =&gt; __(&#039;Add File&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039;       =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+  )
+  ,&#039;validate&#039;         =&gt; array(
+    array(
+      &#039;type&#039;          =&gt; &#039;limit&#039;
+      ,&#039;options&#039;      =&gt; array(
+        &#039;min&#039;         =&gt; 1
+        ,&#039;max&#039;        =&gt; 1
+      )
+    )
+  )
+  ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-limit-exactly-1-error/">File Limit Exactly 1 Error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Upload field seemingly not functioning&#8230;</title>
+		<link>https://piklist.com/support/topic/upload-field-seemingly-not-functioning/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Thu, 09 Apr 2015 18:10:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/upload-field-seemingly-not-functioning/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;ve just added a file upload field so I can add a custom header to certain posts. Here&#8217;s my code (I&#8217;m using Genesis but that doesn&#8217;t seem to (hopefully) have anything to do with the issue at hand&#8230;) add_action ( &#039;genesis_before_content&#039;, &#039;aadc_casestudy_header&#039; ); function aadc_casestudy_header() { $image_ids = get_post_meta($post-&#62;ID, &#039;case-study-header-image&#039;); print_r($image_ids); echo &#039;&#60;div style=&#34;color:white;&#34;&#62;.&#60;/div&#62;&#039;; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upload-field-seemingly-not-functioning/">Upload field seemingly not functioning&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! I&#8217;ve just added a file upload field so I can add a custom header to certain posts. Here&#8217;s my code (I&#8217;m using Genesis but that doesn&#8217;t seem to (hopefully) have anything to do with the issue at hand&#8230;)</p>
+<pre><code>add_action ( &#039;genesis_before_content&#039;, &#039;aadc_casestudy_header&#039; ); 
+
+function aadc_casestudy_header() {
+
+	$image_ids = get_post_meta($post-&gt;ID, &#039;case-study-header-image&#039;);
+
+	print_r($image_ids);
+	
+	echo &#039;&lt;div style=&quot;color:white;&quot;&gt;.&lt;/div&gt;&#039;;
+	
+	if ($image_ids) {
+ 
+		foreach ($image_ids as $image)
+		{
+		  $myupload = get_post($image); 
+		  $title = $myupload-&gt;post_title;
+		  $description = $myupload-&gt;post_content;
+		  $caption = $myupload-&gt;post_excerpt;
+ 
+		  echo &#039;title:&#039; . $title;
+		  echo &#039;description:&#039; . $description;
+		  echo &#039;caption:&#039; . $caption;
+ 
+		 echo &#039;&lt;img src=&quot;&#039; . wp_get_attachment_url($image) . &#039;&quot;/&gt;&#039;;
+ 
+		  print_r($myupload); // Displays all data
+		}
+	}
+}
+</code></pre>
+<p>The $image_ids variable seems to be empty even though I&#8217;ve added an image using the file upload field. </p>
+<p>I added the <code>echo &#039;&lt;div style=&quot;color:white;&quot;&gt;.&lt;/div&gt;&#039;;</code> line to make sure the function was even working, and that white dot above the content area does indeed display. But the print_r and of course the three &#8220;echo&#8221; lines produce nothing. (See attached screen shot).</p>
+<p>Hope you can point me in the right direction &#8211; or suggest something obvious I&#8217;m missing!</p>
+<p>Thanks!<br />
+adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upload-field-seemingly-not-functioning/">Upload field seemingly not functioning&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

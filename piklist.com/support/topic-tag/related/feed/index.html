@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>related &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/related/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 05 Apr 2017 04:55:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Related posts vs postmeta?</title>
+		<link>https://piklist.com/support/topic/related-posts-vs-postmeta/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Wed, 05 Apr 2017 04:51:08 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/related-posts-vs-postmeta/</guid>
+
+					<description><![CDATA[<p>Hi, I have a fairly complicated site built atop Piklist. I have been storing repeating groups of (add more) data (in the postmeta table) along with the custom post types I have built. And I need a more reliable way than index to get at these groups for editing and updating. I would have liked [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/related-posts-vs-postmeta/">Related posts vs postmeta?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I have a fairly complicated site built atop Piklist. I have been storing repeating groups of (add more) data (in the postmeta table) along with the custom post types I have built. And I need a more reliable way than index to get at these groups for editing and updating. I would have liked to have used grouped fields (serialized in the db), but because my groupings have many conditional values, this won&#8217;t currently work in Piklist (<a href="https://piklist.com/support/topic/grouped-conditionals-not-working/">see this link</a>).</p>
+<p>So here are my questions to solve this:<br />
+1. Could I store these groups in their own post type and relate them to the parent CPT?<br />
+2. If so, is there a way to allow these child posts to both display AND be editable from within the parent in admin?</p>
+<p>Thanks for any advice or help!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/related-posts-vs-postmeta/">Related posts vs postmeta?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Get posts related from user and vice versa</title>
+		<link>https://piklist.com/support/topic/get-posts-related-from-user-and-vice-versa/</link>
+		
+		<dc:creator><![CDATA[luxdelux]]></dc:creator>
+		<pubDate>Thu, 01 Sep 2016 10:25:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get-posts-related-from-user-and-vice-versa/</guid>
+
+					<description><![CDATA[<p>Howdy. Been testing relationship fields and have stumbled a bit. Use case: I&#8217;ve got a custom post type &#8216;workshop&#8217; and I made the posts available on the user edit screen as a relationship which works: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;user_relate_post&#039; ,&#039;label&#039; =&#62; __(&#039;Relate Posts&#039;, &#039;piklist-demo&#039;) ,&#039;attributes&#039; =&#62; array( &#039;multiple&#039; =&#62; &#039;multiple&#039; // [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-posts-related-from-user-and-vice-versa/">Get posts related from user and vice versa</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Howdy. Been testing relationship fields and have stumbled a bit. </p>
+<p>Use case:</p>
+<p>I&#8217;ve got a custom post type &#8216;workshop&#8217; and I made the posts available on the user edit screen as a relationship which works:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;user_relate_post&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Relate Posts&#039;, &#039;piklist-demo&#039;)
+	,&#039;attributes&#039; =&gt; array(
+      &#039;multiple&#039; =&gt; &#039;multiple&#039; // Allow a select field to accept multiple selections
+    )
+    ,&#039;choices&#039; =&gt; piklist(
+      get_posts(array(
+        &#039;post_type&#039; =&gt; &#039;workshop&#039;
+        ,&#039;numberposts&#039; =&gt; -1
+        ,&#039;orderby&#039; =&gt; &#039;title&#039;
+        ,&#039;order&#039; =&gt; &#039;ASC&#039;
+      ))
+      ,array(&#039;ID&#039;, &#039;post_title&#039;)
+    )
+    ,&#039;relate&#039; =&gt; array(
+      &#039;scope&#039; =&gt; &#039;post&#039;
+    )
+  ));</code></pre>
+<p>What I&#8217;d like to do now is display all users for a specific workshop. For example if a few users have &#8216;workshop 101&#8217; selected on their pages -&gt; show those users on the &#8216;workshop 101&#8217; page. And vice versa.</p>
+<p>I&#8217;ve tried the basic functions but can&#8217;t seem to figure it out. Anyone have ideas? Is it possible?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-posts-related-from-user-and-vice-versa/">Get posts related from user and vice versa</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

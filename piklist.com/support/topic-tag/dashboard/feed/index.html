@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dashboard &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/dashboard/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 01 Feb 2017 06:24:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>QuickPress for CPT</title>
+		<link>https://piklist.com/support/topic/quickpress-for-cpt/</link>
+		
+		<dc:creator><![CDATA[solace]]></dc:creator>
+		<pubDate>Wed, 01 Feb 2017 06:22:51 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/quickpress-for-cpt/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;d like to be able to create a Dashboard QuickPress/Add New Post widget equivalent for a CPT that I have created with Piklist. From the looks of it I&#8217;ll need to create a forms/ part for the form, and use a shortcode in a dashboard/ part to load it. Is this correct? I essentially [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/quickpress-for-cpt/">QuickPress for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;d like to be able to create a Dashboard QuickPress/Add New Post widget equivalent for a CPT that I have created with Piklist.</p>
+<p>From the looks of it I&#8217;ll need to create a <code>forms/</code> part for the form, and use a shortcode in a <code>dashboard/</code> part to load it. Is this correct?</p>
+<p>I essentially want it to be handled in the same way as a standard Add New post submission where it submits to <code>post-new.php</code>, only from a widget, which means I&#8217;ll need the standard hidden fields that are populated on the standard form (ie. nonce, user-id, post-author etc). Is there a quick way to build these or do I need invoke <code>field()</code> for each?</p>
+<p>I&#8217;ve gotten as far as:</p>
+<pre><code>/*
+Action: post-new.php
+Capability: edit_posts
+Network: false
+*/
+
+piklist( &#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;text&#039;,
+  &#039;field&#039;   =&gt; &#039;post_title&#039;,
+  &#039;scope&#039;   =&gt; &#039;post&#039;,
+  &#039;label&#039;   =&gt; &#039;Title&#039;
+) );
+
+&lt;the same custom fields I have in my CPT metaboxes&gt;
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;submit&#039;,
+  &#039;field&#039; =&gt; &#039;submit&#039;,
+  &#039;value&#039; =&gt; &#039;Submit&#039;
+));</code></pre>
+<p>My apologies if I have missed the documentation for this somewhere.</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/quickpress-for-cpt/">QuickPress for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Ordering dashboard widgets?</title>
+		<link>https://piklist.com/support/topic/ordering-dashboard-widgets/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Thu, 29 Dec 2016 14:43:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/ordering-dashboard-widgets/</guid>
+
+					<description><![CDATA[<p>Is there a way to order dashboard widgets? Or designate which side they fall on (right/left)?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ordering-dashboard-widgets/">Ordering dashboard widgets?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to order dashboard widgets? Or designate which side they fall on (right/left)?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ordering-dashboard-widgets/">Ordering dashboard widgets?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist error triggered by Roots code [0.9.9.4]</title>
+		<link>https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 21 Oct 2015 23:29:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>This site is running a Roots child theme. The Roots code is from 2014; not sure whether it would still be a problem with the current build. I&#8217;ve been using Piklist with Roots for a couple of years; this error just started showing up in the last week or two. (I&#8217;m guessing it first appeared [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/">Piklist error triggered by Roots code [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This site is running a Roots child theme. The Roots code is from 2014; not sure whether it would still be a problem with the current build. I&#8217;ve been using Piklist with Roots for a couple of years; this error just started showing up in the last week or two. (I&#8217;m guessing it first appeared with 0.9.9.) </p>
+<p>The error messages show up only on the admin dashboard page, and are 16 repetitions of the following: </p>
+<pre><code>Warning: in_array() expects parameter 2 to be array, null given in 
+/Users/donna/Sites/marys/wp-content/plugins/piklist/includes/class-piklist-meta.php 
+on line 340</code></pre>
+<p>I finally narrowed it down to the following code in the Roots theme. If I comment out the admin_init action, the error messages go away. </p>
+<pre><code>/**
+ * Remove unnecessary dashboard widgets
+ *
+ * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
+ */
+function roots_remove_dashboard_widgets() {
+  remove_meta_box(&#039;dashboard_incoming_links&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+  remove_meta_box(&#039;dashboard_plugins&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+  remove_meta_box(&#039;dashboard_primary&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+  remove_meta_box(&#039;dashboard_secondary&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+}
+add_action(&#039;admin_init&#039;, &#039;roots_remove_dashboard_widgets&#039;);
+</code></pre>
+<p>HTH,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/">Piklist error triggered by Roots code [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Bug Report: WordPress 3.8 dashboard widget bug</title>
+		<link>https://piklist.com/support/topic/bug-report-wordpress-3-8-dashboard-widget-bug/</link>
+		
+		<dc:creator><![CDATA[mark salvadore]]></dc:creator>
+		<pubDate>Sun, 09 Feb 2014 04:56:23 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/bug-report-wordpress-3-8-dashboard-widget-bug/</guid>
+
+					<description><![CDATA[<p>When Piklist Version 0.9.1 is activated in WordPress 3.8.1 trying to drag a dashboard widget from the first column into another column (or in any direction for that matter) doesn&#8217;t work. Instead, a div with a &#8220;sortable-placeholder&#8221; class continues to append to the first column pushing the widget down. This also renders the screen unusable [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-report-wordpress-3-8-dashboard-widget-bug/">Bug Report: WordPress 3.8 dashboard widget bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When Piklist Version 0.9.1 is activated in WordPress 3.8.1 trying to drag a dashboard widget from the first column into another column (or in any direction for that matter) doesn&#8217;t work.</p>
+<p>Instead, a div with a &#8220;sortable-placeholder&#8221; class continues to append to the first column pushing the widget down. This also renders the screen unusable until navigating elsewhere or refreshing.</p>
+<p>The following javascript error is thrown from <strong>/piklist/parts/js/piklist.js</strong> (line 27):<br />
+<strong>ReferenceError: switchEditors is not defined</strong></p>
+<p>This has been tested in:<br />
+Chrome Version 32.0.1700.107 m<br />
+Firefox 26.0</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-report-wordpress-3-8-dashboard-widget-bug/">Bug Report: WordPress 3.8 dashboard widget bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dashboard layout</title>
+		<link>https://piklist.com/support/topic/dashboard-layout/</link>
+		
+		<dc:creator><![CDATA[sanderschat]]></dc:creator>
+		<pubDate>Tue, 01 Oct 2013 08:30:40 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/dashboard-layout/</guid>
+
+					<description><![CDATA[<p>Hi! I noticed that if i have the Piklist-plugin turned on, that the dashboard layout is not &#8216;remembered&#8217;. It just shows one column with all widgets under each other.and the other column empty. After organizing it, and a refresh of the page, it is put back into this stat again. But when i turn off [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dashboard-layout/">Dashboard layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+I noticed that if i have the Piklist-plugin turned on, that the dashboard layout is not &#8216;remembered&#8217;. It just shows one column with all widgets under each other.and the other column empty.<br />
+After organizing it, and a refresh of the page, it is put back into this stat again.</p>
+<p>But when i turn off the plugin, the dashboard DOES remember my new layouts.</p>
+<p>What to do? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dashboard-layout/">Dashboard layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

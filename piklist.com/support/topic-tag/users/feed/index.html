@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>users &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/users/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 10 May 2018 10:47:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>user-edit.php &#8211; show meta fields only author profiles</title>
+		<link>https://piklist.com/support/topic/user-edit-php-show-meta-fields-only-author-profiles/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Thu, 10 May 2018 10:47:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/user-edit-php-show-meta-fields-only-author-profiles/</guid>
+
+					<description><![CDATA[<p>I have added some meta in the /users folder. I works fine. But how can I have meta fields only show on &#8220;author&#8221; users and not &#8220;admins&#8221;. So it has nothing to do with the current user but the user being edited, thus not a case of comment arguments with &#8220;Role&#8221; og &#8220;Capabilities&#8221;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-edit-php-show-meta-fields-only-author-profiles/">user-edit.php &#8211; show meta fields only author profiles</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have added some meta in the /users folder. I works fine. But how can I have meta fields only show on &#8220;author&#8221; users and not &#8220;admins&#8221;.<br />
+So it has nothing to do with the current user but the user being edited, thus not a case of comment arguments with &#8220;Role&#8221; og &#8220;Capabilities&#8221; </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-edit-php-show-meta-fields-only-author-profiles/">user-edit.php &#8211; show meta fields only author profiles</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Register Taxonomy for a user and a post type?</title>
+		<link>https://piklist.com/support/topic/register-taxonomy-for-a-user-and-a-post-type/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 03:28:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/register-taxonomy-for-a-user-and-a-post-type/</guid>
+
+					<description><![CDATA[<p>Hi, we spoke about how to register a taxonomy for users here: https://piklist.com/support/topic/register-taxonomy-for-a-user-via-piklist/ however, I didn&#8217;t notice at the time that you said &#8220;You can&#8217;t register taxonomies for post types AND users.&#8221; Is this really true and is there any way around it? Or, better yet, is there a good reason NOT to register for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/register-taxonomy-for-a-user-and-a-post-type/">Register Taxonomy for a user and a post type?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>we spoke about how to register a taxonomy for users here: https://piklist.com/support/topic/register-taxonomy-for-a-user-via-piklist/</p>
+<p>however, I didn&#8217;t notice at the time that you said &#8220;You can&#8217;t register taxonomies for post types AND users.&#8221;</p>
+<p>Is this really true and is there any way around it? Or, better yet, is there a good reason NOT to register for both?</p>
+<p>I have taxonomies that I&#8217;d hate to manage individually across types since they all need to be the same. </p>
+<p>I registered one for users and tried to then reassign it using </p>
+<pre><code>function my_register_taxonomy_for_cpts()
+{
+  register_taxonomy_for_object_type(&#039;user_tax&#039;, &#039;posts&#039;);
+  register_taxonomy_for_object_type(&#039;user_tax&#039;, &#039;page&#039;);
+}
+add_action(&#039;plugins_loaded&#039;, &#039;my_register_taxonomy_for_cpts&#039;);</code></pre>
+<p>But no go. I have confirmed that user_tax shows up for users (registered via a piklist plugin). </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/register-taxonomy-for-a-user-and-a-post-type/">Register Taxonomy for a user and a post type?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Register Taxonomy for a user via piklist</title>
+		<link>https://piklist.com/support/topic/register-taxonomy-for-a-user-via-piklist/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Tue, 22 Dec 2015 14:56:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/register-taxonomy-for-a-user-via-piklist/</guid>
+
+					<description><![CDATA[<p>I have this in my piklist plugin add_filter(&#039;piklist_taxonomies&#039;, &#039;test_tax&#039;); function test_tax($taxonomies){ $taxonomies[] = array( &#039;post_type&#039; =&#62; array(&#039;post&#039;,&#039;page&#039;, &#039;user&#039;) // multiple CPTs and Users? ,&#039;name&#039; =&#62; &#039;testtax&#039; ,&#039;show_admin_column&#039; =&#62; true ,&#039;configuration&#039; =&#62; array( &#039;hierarchical&#039; =&#62; true ,&#039;labels&#039; =&#62; piklist(&#039;taxonomy_labels&#039;, &#039;testtax&#039;) ,&#039;hide_meta_box&#039; =&#62; false ,&#039;show_ui&#039; =&#62; true ,&#039;query_var&#039; =&#62; true ) ); return $taxonomies; } Thought it [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/register-taxonomy-for-a-user-via-piklist/">Register Taxonomy for a user via piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have this in my piklist plugin</p>
+<pre><code> 
+add_filter(&#039;piklist_taxonomies&#039;, &#039;test_tax&#039;);
+ function test_tax($taxonomies){
+    $taxonomies[] = array(
+     &#039;post_type&#039; =&gt; array(&#039;post&#039;,&#039;page&#039;, &#039;user&#039;) // multiple CPTs and Users?
+     ,&#039;name&#039; =&gt; &#039;testtax&#039;
+      ,&#039;show_admin_column&#039; =&gt; true
+      ,&#039;configuration&#039; =&gt; array(
+        &#039;hierarchical&#039; =&gt; true
+        ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;testtax&#039;)
+        ,&#039;hide_meta_box&#039; =&gt; false
+        ,&#039;show_ui&#039; =&gt; true
+        ,&#039;query_var&#039; =&gt; true
+
+      )
+    );
+return $taxonomies;
+}</code></pre>
+<p>Thought it might work since I know they can be registered on users but it doesn&#8217;t. </p>
+<p>I saw <a href="https://piklist.com/user-guide/tutorials/creating-separate-taxonomies-user/">this</a> tutorial on registering a tax when a user logged in but it&#8217;s not really what I need. I just want to be able to assign terms from across different post types to a user too. </p>
+<p>Any ideas?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/register-taxonomy-for-a-user-via-piklist/">Register Taxonomy for a user via piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>custom users column</title>
+		<link>https://piklist.com/support/topic/custom-users-column/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2015 09:13:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-users-column/</guid>
+
+					<description><![CDATA[<p>Goodday! i have found a &#8216;feature&#8217;&#8230; When adding a new custom column for the &#8216;users&#8217; table, i couldnt get this column to show any results. After some research i found the cause: In the helpers-plugin there is the option : &#8216;Show ID&#8217;s on edit screens for Posts, Pages, Users, etc.&#8217; When enabled: my custom column [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-users-column/">custom users column</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Goodday!</p>
+<p>i have found a &#8216;feature&#8217;&#8230;<br />
+When adding a new custom column for the &#8216;users&#8217; table, i couldnt get this column to show any results.<br />
+After some research i found the cause:<br />
+In the helpers-plugin there is the option : &#8216;Show ID&#8217;s on edit screens for Posts, Pages, Users, etc.&#8217;</p>
+<p>When enabled: my custom column exists, but empty.<br />
+When disabled: the new custom column is working fine</p>
+<p>So, for now, i have disabled this feature. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-users-column/">custom users column</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist 0.6.7 Demo &#8212; Users</title>
+		<link>https://piklist.com/support/topic/piklist-0-6-7-demo-users/</link>
+		
+		<dc:creator><![CDATA[Carla Chalmers]]></dc:creator>
+		<pubDate>Mon, 12 Nov 2012 21:44:42 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-0-6-7-demo-users/</guid>
+
+					<description><![CDATA[<p>I have just updated to the new release. The Demo plugin was already installed. I&#8217;m not seeing the new user stuff in the backend.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-6-7-demo-users/">Piklist 0.6.7 Demo &#8212; Users</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have just updated to the new release.  The Demo plugin was already installed.  I&#8217;m not seeing the new user stuff in the backend. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-6-7-demo-users/">Piklist 0.6.7 Demo &#8212; Users</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

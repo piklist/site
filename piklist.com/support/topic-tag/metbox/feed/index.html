@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>metbox &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/metbox/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 30 Jul 2014 13:31:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>dont display value in metabox</title>
+		<link>https://piklist.com/support/topic/dont-display-value-in-metabox/</link>
+		
+		<dc:creator><![CDATA[civilz]]></dc:creator>
+		<pubDate>Tue, 10 Jun 2014 15:07:52 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/dont-display-value-in-metabox/</guid>
+
+					<description><![CDATA[<p>hi my code : piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;j_select&#039; ,&#039;label&#039; =&#62; &#039;Select Box&#039; ,&#039;description&#039; =&#62; &#039;Choose from the drop-down.&#039; ,&#039;help&#039; =&#62; &#039;This is help text.&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) ,&#039;choices&#039; =&#62; array( &#039;option1&#039; =&#62; &#039;red&#039; ,&#039;option2&#039; =&#62; &#039;blue&#039; ,&#039;option3&#039; =&#62; &#039;yellow&#039; ) )); and use in loop (single.php) : [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dont-display-value-in-metabox/">dont display value in metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hi<br />
+my code :</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;j_select&#039;
+    ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+    ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+    ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+    ,&#039;choices&#039; =&gt; array(
+      &#039;option1&#039; =&gt; &#039;red&#039;
+      ,&#039;option2&#039; =&gt; &#039;blue&#039;
+      ,&#039;option3&#039; =&gt; &#039;yellow&#039;
+    )
+  ));</code></pre>
+<p>and use in loop (single.php) :</p>
+<pre><code>
+color : &lt;?php  echo get_post_meta($post-&gt;ID,&#039;j_select&#039;, true);?&gt;
+</code></pre>
+<p>but result :<br />
+<code>color : option1</code></p>
+<p>text feild is work good but select and checkbox dont work !!!</p>
+<p>please help me &#8230;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dont-display-value-in-metabox/">dont display value in metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

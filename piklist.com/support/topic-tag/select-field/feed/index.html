@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Select field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/select-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 09 Sep 2014 15:41:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Using get_terms to pull in menus into select field</title>
+		<link>https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Sun, 31 Aug 2014 03:03:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to pull in all menus that the user has created in a select field. Can anyone tell me why this isn&#8217;t working? Thanks in advance! piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;submenu_selection&#039; ,&#039;value&#039; =&#62; &#039;option1&#039; // Sets default to Option 2 ,&#039;label&#039; =&#62; &#039;Sub Menu&#039; ,&#039;description&#039; =&#62; &#039;This is where to select [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/">Using get_terms to pull in menus into select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to pull in all menus that the user has created in a select field. Can anyone tell me why this isn&#8217;t working? Thanks in advance!</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+  ,&#039;field&#039; =&gt; &#039;submenu_selection&#039;
+  ,&#039;value&#039; =&gt; &#039;option1&#039; // Sets default to Option 2
+  ,&#039;label&#039; =&gt; &#039;Sub Menu&#039;
+  ,&#039;description&#039; =&gt; &#039;This is where to select what sub menu you need.&#039;
+  ,&#039;attributes&#039; =&gt; array(
+    &#039;class&#039; =&gt; &#039;text&#039;
+  )
+  ,&#039;choices&#039; =&gt; array(
+      piklist( return get_terms( &#039;nav_menu&#039;, array( &#039;hide_empty&#039; =&gt; true ) ) );
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/">Using get_terms to pull in menus into select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nested Select Inputs</title>
+		<link>https://piklist.com/support/topic/nested-select-inputs/</link>
+		
+		<dc:creator><![CDATA[johnmcalester]]></dc:creator>
+		<pubDate>Mon, 17 Jun 2013 17:05:06 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/nested-select-inputs/</guid>
+
+					<description><![CDATA[<p>I have a need to create a drop down select input that has multiple nested levels. Does anyone have a suggestion on how this might be accomplished with PikList or do you know of a plugin that can do this which plays well with PikList? Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-select-inputs/">Nested Select Inputs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a need to create a drop down select input that has multiple nested levels.  Does anyone have a suggestion on how this might be accomplished with PikList or do you know of a plugin that can do this which plays well with PikList?  </p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-select-inputs/">Nested Select Inputs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

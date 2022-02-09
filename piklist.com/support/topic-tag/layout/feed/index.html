@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>layout &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/layout/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 04 Dec 2016 12:45:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Group fields layout</title>
+		<link>https://piklist.com/support/topic/group-fields-layout/</link>
+		
+		<dc:creator><![CDATA[mrioa]]></dc:creator>
+		<pubDate>Sun, 04 Dec 2016 12:45:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/group-fields-layout/</guid>
+
+					<description><![CDATA[<p>Hello! I can&#8217;t seem to get my group fields using columns, e.g. to display two groups in a row using 6 colums each. Docs say colums are great to use within groups, but nothing specific about using colums for themselves. Though it&#8217;s also mentioned to use the &#8220;Piklist field parameters&#8221; to customize the field type [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-fields-layout/">Group fields layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>I can&#8217;t seem to get my group fields using columns, e.g. to display two groups in a row using 6 colums each.<br />
+Docs say colums are great to use within groups, but nothing specific about using colums for themselves. Though it&#8217;s also mentioned to use the &#8220;Piklist field parameters&#8221; to customize the field type &#8220;group&#8221;, so columns should work?</p>
+<p>Here&#8217;s my simplified code (irl there are more fields withing the groups, so groups are neccessary):</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	, &#039;field&#039; =&gt; &#039;map_details_section&#039;
+	, &#039;label&#039; =&gt; __(&#039;Map Details&#039;)
+	, &#039;add_more&#039; =&gt; true
+	, &#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			, &#039;field&#039; =&gt; &#039;map_name&#039;
+			, &#039;label&#039; =&gt; __(&#039;Map name&#039;)
+			, &#039;columns&#039; =&gt; 3
+		)
+		, array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			, &#039;field&#039; =&gt; &#039;map_regular_1st&#039;
+			, &#039;label&#039; =&gt; &#039;Regular 1st half&#039;
+			, &#039;columns&#039; =&gt; 6
+			, &#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;radio&#039;
+					, &#039;field&#039; =&gt; &#039;map_half_side1&#039;
+					, &#039;label&#039; =&gt; __(&#039;Team1 side&#039;)
+					, &#039;columns&#039; =&gt; 2
+					, &#039;choices&#039; =&gt; array(
+						&#039;ct&#039; =&gt; &#039;CT&#039;
+						, &#039;t&#039; =&gt; &#039;T&#039;
+					)
+				)
+			)
+		)
+		, array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			, &#039;field&#039; =&gt; &#039;map_regular_2nd&#039;
+			, &#039;label&#039; =&gt; &#039;Regular 2nd half&#039;
+			, &#039;columns&#039; =&gt; 6
+			, &#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;radio&#039;
+					, &#039;field&#039; =&gt; &#039;map_half_side1&#039;
+					, &#039;label&#039; =&gt; __(&#039;Team1 side&#039;)
+					, &#039;columns&#039; =&gt; 2
+					, &#039;choices&#039; =&gt; array(
+						&#039;ct&#039; =&gt; &#039;CT&#039;
+						, &#039;t&#039; =&gt; &#039;T&#039;
+					)
+				)
+			)
+		)
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-fields-layout/">Group fields layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Isotope Masonry (Pinterest) Layouts</title>
+		<link>https://piklist.com/support/topic/isotope-masonry-pinterest-layouts/</link>
+		
+		<dc:creator><![CDATA[4michaelcoleman]]></dc:creator>
+		<pubDate>Tue, 17 May 2016 23:17:35 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/isotope-masonry-pinterest-layouts/</guid>
+
+					<description><![CDATA[<p>Was looking to create a masonry type layout and wanted to know if anyone has used one of the plugins with Piklist?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/isotope-masonry-pinterest-layouts/">Isotope Masonry (Pinterest) Layouts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Was looking to create a masonry type layout and wanted to know if anyone has used one of the plugins with Piklist?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/isotope-masonry-pinterest-layouts/">Isotope Masonry (Pinterest) Layouts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

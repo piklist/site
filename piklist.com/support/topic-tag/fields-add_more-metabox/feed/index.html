@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>fields add_more metabox &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/fields-add_more-metabox/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 23 Oct 2016 19:02:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Metabox saving issues</title>
+		<link>https://piklist.com/support/topic/metabox-saving-issues/</link>
+		
+		<dc:creator><![CDATA[trosario]]></dc:creator>
+		<pubDate>Sun, 23 Oct 2016 19:00:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-saving-issues/</guid>
+
+					<description><![CDATA[<p>I have the following field structure, but for some reason the fields will not save correctly. You&#8217;ll also notice (in the screenshot) the &#8216;Menu Addons&#8217; is not properly displayed. It should be show as it&#8217;s own grouping. Any ideas? Here is sample code: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;menu_group&#039; ,&#039;label&#039; =&#62; &#039;Menu Group&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-saving-issues/">Metabox saving issues</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have the following field structure, but for some reason the fields will not save correctly.  You&#8217;ll also notice (in the screenshot) the &#8216;Menu Addons&#8217; is not properly displayed.  It should be show as it&#8217;s own grouping.  Any ideas?</p>
+<p>Here is sample code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;menu_group&#039;
+  ,&#039;label&#039; =&gt; &#039;Menu Group&#039;
+  ,&#039;description&#039; =&gt; &#039;Menu fields&#039;
+  ,&#039;add_more&#039; =&gt; false
+  ,&#039;fields&#039; =&gt; array(
+
+    // category
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;menu_category&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Menu Category&#039;)
+      ,&#039;required&#039; =&gt; false
+      ,&#039;columns&#039; =&gt; 8
+      ,&#039;attributes&#039; =&gt; array(
+        &#039;placeholder&#039; =&gt; &#039;e.g. - Flame Grilled Burgers&#039;
+      )
+    )
+
+    // serving sizes
+    ,array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;menu_serving_sizes&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Serving Sizes&#039;)
+      ,&#039;choices&#039; =&gt; array(
+        &#039;serving_size_3&#039; =&gt; &#039;6oz&#039;,
+        &#039;serving_size_4&#039; =&gt; &#039;12oz&#039;,
+        &#039;serving_size_5&#039; =&gt; &#039;16oz&#039;,
+        &#039;serving_size_6&#039; =&gt; &#039;24oz&#039;,
+        &#039;serving_size_7&#039; =&gt; &#039;Gls&#039;,
+        &#039;serving_size_8&#039; =&gt; &#039;Bottle&#039;,
+        &#039;serving_size_1&#039; =&gt; &#039;Glass 16oz&#039;,
+        &#039;serving_size_2&#039; =&gt; &#039;Growler 32oz | 64oz&#039;
+      )
+      ,&#039;required&#039; =&gt; false
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;attributes&#039; =&gt; array(
+        &#039;multiple&#039; =&gt; &#039;multiple&#039;
+      )
+    )
+
+    // menu items
+    ,array(
+      &#039;type&#039; =&gt; &#039;group&#039;
+      ,&#039;field&#039; =&gt; &#039;menu_item_group&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Menu Items&#039;)
+      ,&#039;required&#039; =&gt; false
+      ,&#039;add_more&#039; =&gt; true
+      ,&#039;fields&#039; =&gt; array(
+
+        array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;menu_item_name&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Name&#039;)
+          ,&#039;required&#039; =&gt; false
+          ,&#039;columns&#039; =&gt; 12
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; &#039;e.g. - Kingsboro Burger&#039;
+          )
+        )
+
+        ,array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;menu_item_description&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Description&#039;)
+          ,&#039;required&#039; =&gt; false
+          ,&#039;columns&#039; =&gt; 12
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; &#039;e.g. - Local beef topped with your choice of cheese.&#039;
+          )
+        )
+
+        ,array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;menu_item_price&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Price&#039;)
+          ,&#039;required&#039; =&gt; false
+          ,&#039;columns&#039; =&gt; 6
+          ,&#039;add_more&#039; =&gt; true
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; &#039;e.g. - $12.99&#039;
+          )
+        )
+      )
+    )
+
+    // menu addons
+    ,array(
+      &#039;type&#039; =&gt; &#039;group&#039;
+      ,&#039;field&#039; =&gt; &#039;menu_addon_group&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Menu Addons&#039;)
+      ,&#039;required&#039; =&gt; false
+      ,&#039;add_more&#039; =&gt; true
+      ,&#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;menu_addon_name&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Name&#039;)
+          ,&#039;required&#039; =&gt; false
+          ,&#039;columns&#039; =&gt; 6
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; &#039;e.g. - Applewood-Smoked Bacon&#039;
+          )
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;menu_addon_price&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Price&#039;)
+          ,&#039;required&#039; =&gt; false
+          ,&#039;columns&#039; =&gt; 6
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; &#039;e.g. - $1.99&#039;
+          )
+        )
+      )
+    )
+
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-saving-issues/">Metabox saving issues</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

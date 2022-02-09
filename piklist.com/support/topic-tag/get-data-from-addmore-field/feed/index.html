@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get data from addmore field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get-data-from-addmore-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 18 May 2016 08:32:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>How to show images from addmore image fields</title>
+		<link>https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Wed, 18 May 2016 08:32:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/</guid>
+
+					<description><![CDATA[<p>Hullo there everybody, This is a long post but I kindly and politely ask that you bear with me. I&#8217;m working on an image addmore field but I&#8217;m failing to make it work. I&#8217;ve followed and used the sample code in the Piklist documentation and changed the fetched field name as required and the template [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/">How to show images from addmore image fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hullo there everybody, This is a long post but I kindly and politely ask that you bear with me. I&#8217;m working on an image addmore field but I&#8217;m failing to make it work. I&#8217;ve followed and used the sample code in the Piklist documentation and  changed the fetched field name as required and the template part file path as neccessary but nothing seems to work. I also honestly think that most times it&#8217;s a good thing to indicate explicitly in the documentation where you expect the user to place the sample documentation provided other than assuming that everybody knows exactly where the code has to go.  Many times things fail to workout simply because the right thing is being implemented wrongly; and then that adds on to the load of questions that have to come here on the forum. How I wish Piklist would work around this weakness. Personally, for my current challenge with the addmore I&#8217;m working on, I&#8217;ve had a tough time figuring out where the sample code provided in the Piklist documentation goes. I&#8217;ve read the WordPress Codex referenced to get insights but unfortunately the Codex as well assumes that everyone knows where to put the code; So it&#8217;s been of a little help. I&#8217;ve swapped the code several times between my template file and the template part trying to make it workout but still without any success. My workflow is like this; I have a template page called page-home.php which lays out the homepage on the frontend and as well makes usage of all my piklist field values by requiring variables.php. Then I have another file called variables.php where I make all my variable definitions and data calls so as to use them in page-home.php. I created a template part file called addmore-home.php as advised in the documentation. I wonder what code goes into the created template part i.e., addmore.php and which code goes into the page template file i.e., page-home.php that lays out the actual page? The closest I&#8217;ve come to making it work, the frontend page source shows this error:<br />
+<code>&lt;b&gt;Warning&lt;/b&gt;:  Illegal string offset &#039;clientele_logo&#039; in &lt;b&gt;C:\xampp\htdocs\lawyeah\wp-content\themes\JointsWP-CSS-master\parts\addmore-home.php&lt;/b&gt; on line &lt;b&gt;2&lt;/b&gt;&lt;br /&gt;</code><br />
+It&#8217;s complaining about this line in of code in the addmore-home.php file:<br />
+<code>&lt;?php echo $data[&#039;clientele_logo&#039;];?&gt;</code></p>
+<p>And I have this code in my page-home.php file:</p>
+<pre><code>&lt;?php
+                      // Get field data
+                        $clientele_logo = get_post_meta($post-&gt;ID, &#039;clientele_logo&#039;, true);
+ 
+                      // Get your custom template part: addmore-workout-template.php
+                    piklist(get_stylesheet_directory() . &#039;parts/addmore-home&#039;, array(&#039;data&#039; =&gt; $clientele_logo, &#039;loop&#039; =&gt; &#039;data&#039;)); ?&gt;</code></pre>
+<p>If you take notice, you understand that one can add multiple files especially images from the WordPress uploader all at once. This then means that the addmore created will have child elements of images within it and not just one image. This kind of working is a really big time-saver in a scenario where the user is expected to add many images to the section e.g., a gallery because if they have all these images prepared in one location, they can upload all of them at once and attach them at once instead just clicking on each individual image; which is time wasting and tiring. I&#8217;d love to take advantage of this ability so that my ddmore field is very effective. And by the way, it also saves you working space in the backend since the added images are tiled in a single addmore field instead of adding more addmore field rows down and with just a single image each. May someone help me figure out how I do this with Piklist&#8217;s addmore field? Please refer to the attached image for more insight into what I&#8217;m saying.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/">How to show images from addmore image fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

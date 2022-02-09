@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>form action &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/form-action/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 16 Apr 2019 01:36:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>FEF logic</title>
+		<link>https://piklist.com/support/topic/fef-logic/</link>
+		
+		<dc:creator><![CDATA[devr52]]></dc:creator>
+		<pubDate>Tue, 16 Apr 2019 01:36:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fef-logic/</guid>
+
+					<description><![CDATA[<p>If I submit an FEF with a field that fails validation it returns w/the form and the error message. But, it also displays the &#8220;Message:&#8221; header text as well. Also, there doesn&#8217;t seem to be an obvious way of intercepting the form submission to employ some logic for navigation afterwards&#8211;eg depending on it succeeding redirect [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fef-logic/">FEF logic</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If I submit an FEF with a field that fails validation it returns w/the form and the error message. But, it also displays the &#8220;Message:&#8221; header text as well.</p>
+<p>Also, there doesn&#8217;t seem to be an obvious way of intercepting the form submission to employ some logic for navigation afterwards&#8211;eg depending on it succeeding redirect it somewhere based on the data submitted (eg if it&#8217;s a cpt submit, go view that cpt w/it&#8217;s ID)</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fef-logic/">FEF logic</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>front-end form &#034;action&#034; parameter</title>
+		<link>https://piklist.com/support/topic/front-end-form-action-parameter/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Sun, 24 Jun 2018 21:41:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-action-parameter/</guid>
+
+					<description><![CDATA[<p>I have a page that generates reports. It has a form asking for start date and number of weeks. When input is received, it prints the report and below the report shows the form again with the h2 heading &#8220;Generate Another Report.&#8221; See example at https://pik.redpup.net/reports/. Because the reports can be very long, when I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-action-parameter/">front-end form &quot;action&quot; parameter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a page that generates reports. It has a form asking for start date and number of weeks. When input is received, it prints the report and below the report shows the form again with the h2 heading &#8220;Generate Another Report.&#8221; See example at https://pik.redpup.net/reports/. </p>
+<p>Because the reports can be very long, when I display a report I put a button at the top that says &#8220;generate another report&#8221; and links to &#8220;#generate&#8221; which is the ID for the h2 at the bottom of the page. Saves people from scrolling all the way. </p>
+<p>But when the form is posted, it retains &#8220;#generate&#8221; as part of its action URL and so if the user posts another form, they are scrolled past the new report back to the generate form. This is the case whether method is post or get. </p>
+<p>The piklist/parts/fields/form.php file starts with: </p>
+<pre><code>&lt;form 
+  method=&quot;&lt;?php echo strtolower($data[&#039;method&#039;]); ?&gt;&quot; 
+  action=&quot;&lt;?php echo $data[&#039;filter&#039;] ? home_url() . $data[&#039;action&#039;] : null; ?&gt;&quot; </code></pre>
+<p>So I tried adding an &#8220;Action&#8221; parameter to the parts/forms file: </p>
+<pre><code>/*  
+Title: Choose Report
+Method: post
+Action: /reports/
+Message: 
+*/
+</code></pre>
+<p>But it has no effect. Is there a way to override the default action?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-action-parameter/">front-end form &quot;action&quot; parameter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

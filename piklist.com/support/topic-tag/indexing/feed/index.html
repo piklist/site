@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>indexing &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/indexing/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 21 Mar 2019 19:31:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>File/Media Field</title>
+		<link>https://piklist.com/support/topic/file-media-field/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sun, 03 Mar 2019 07:44:21 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-media-field/</guid>
+
+					<description><![CDATA[<p>Weird, but maybe you guys can help. I&#8217;m having a problem with the media upload field using add_more (not basic) but because its mixed with basic, I&#8217;m thinking this may be the issue, but the problem is, the media upload field is indexing the array of files I add to it, above an index of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-media-field/">File/Media Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Weird, but maybe you guys can help. </p>
+<p>I&#8217;m having a problem with the media upload field using add_more (not basic) but because its mixed with basic, I&#8217;m thinking this may be the issue, but the problem is, the media upload field is indexing the array of files I add to it, above an index of 0, so when I view the get_post_meta array, it starts its indexing at [2] instead of [0]<br />
+Which means when I look at the meta box in wordpress, the media files won&#8217;t show up because the array isn&#8217;t starting with [0].</p>
+<p>Here is the code for my grouped piklist meta box:</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;mae_products&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;label&#039; =&gt; __(&#039;Products&#039;, &#039;mae-eng&#039;)
+  ,&#039;list&#039; =&gt; false
+  ,&#039;description&#039; =&gt; __(&#039;Create your products, enter a name for the product, a price, a description and then choose images and/or videos.&#039;, &#039;mae-eng&#039;)
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;title&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Product Title&#039;, &#039;mae-eng&#039;)
+      ,&#039;attributes&#039; =&gt; array (
+        &#039;placeholder&#039; =&gt; &#039;title&#039;
+      )
+      ,&#039;value&#039; =&gt; &#039;&#039;
+      ,&#039;columns&#039; =&gt; 9
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;price&#039;
+      ,&#039;label&#039; =&gt; __(&#039;$&#039;, &#039;mae-eng&#039;)
+      ,&#039;help&#039; =&gt; __(&#039;Enter the price only in numbers, with a decimal if you need it, but no other characters, just numbers.&#039;, &#039;mae-eng&#039;)
+      ,&#039;attributes&#039; =&gt; array (
+        &#039;placeholder&#039; =&gt; &#039;0.00&#039;
+      )
+      ,&#039;value&#039; =&gt; &#039;&#039;
+      ,&#039;columns&#039; =&gt; 3
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;editor&#039;
+      ,&#039;field&#039; =&gt; &#039;description&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Description of the product.&#039;, &#039;mae-eng&#039;)
+      ,&#039;options&#039; =&gt; array(
+        &#039;drag_drop_upload&#039; =&gt; true
+        ,&#039;editor_height&#039; =&gt; 100
+        ,&#039;media_buttons&#039; =&gt; false
+        ,&#039;teeny&#039; =&gt; true
+        ,&#039;quicktags&#039; =&gt; true
+        ,&#039;tinymce&#039; =&gt; array(
+          &#039;autoresize_min_height&#039; =&gt; 100
+          ,&#039;resize&#039; =&gt; true
+          ,&#039;wp_autoresize_on&#039; =&gt; true
+        )
+      )
+      ,&#039;value&#039; =&gt; &#039;&#039;
+      ,&#039;columns&#039; =&gt; 12
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;group&#039;
+      ,&#039;field&#039; =&gt; &#039;filedownloads&#039;
+      ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+      ,&#039;add_more&#039; =&gt; true
+      ,&#039;list&#039; =&gt; false
+      ,&#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;file&#039;
+          ,&#039;field&#039; =&gt; &#039;filedownload&#039;
+          ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+          ,&#039;options&#039; =&gt; array(
+            &#039;basic&#039; =&gt; true
+          )
+          ,&#039;label&#039; =&gt; __(&#039;Product File&#039;, &#039;mae-eng&#039;)
+          ,&#039;help&#039; =&gt; &#039;This is the file that they are purchasing. (XLS and PDF or any other file type(s) can be included)&#039;
+          ,&#039;columns&#039; =&gt; 12
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;filedowndesc&#039;
+          ,&#039;label&#039; =&gt; __(&#039;File Title&#039;, &#039;mae-eng&#039;)
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; __(&#039;title&#039;, &#039;mae-eng&#039;)
+          )
+          ,&#039;columns&#039; =&gt; 12
+        )
+      )
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;group&#039;
+      ,&#039;field&#039; =&gt; &#039;mae_media&#039;
+      ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+      ,&#039;add_more&#039; =&gt; true
+      ,&#039;list&#039; =&gt; false
+      ,&#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;file&#039;
+          ,&#039;field&#039; =&gt; &#039;mediaupload&#039;
+          ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Upload Video/Image&#039;, &#039;mae-eng&#039;)
+          ,&#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; __(&#039;Add Video/Image&#039;, &#039;mae-eng&#039;)
+            ,&#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;mae-eng&#039;)
+          )
+          ,&#039;preview_size&#039; =&gt; &#039;medium&#039;
+          ,&#039;columns&#039; =&gt; 12
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;mediaurl&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Enter Video URL&#039;, &#039;mae-eng&#039;)
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; __(&#039;YouTube/Vimeo URL&#039;, &#039;mae-eng&#039;)
+          )
+          ,&#039;columns&#039; =&gt; 12
+        )
+      )
+    )
+  )
+));
+</code></pre>
+<p>AS you can see, I have two grouped add_mores, one for filedownloads and one for media (mae_media)<br />
+The group for filedownloads, is just a basic file field.<br />
+And the one for media (mae_media) is for the wordpress media uploader. </p>
+<p>Heres what I did, so you can reproduce it.<br />
+I added two files to the BASIC filedownloads add_more, then I added 3 files to the media (mae_media) add_more.<br />
+After clicking submit, the post_meta array that is built, has an index for the mae_media array that starts at [2] instead of [0].</p>
+<p>The post meta looks like this:</p>
+<blockquote><p>a:1:{i:0;a:5:{s:5:&#8221;title&#8221;;s:15:&#8221;Diet Calculator&#8221;;s:5:&#8221;price&#8221;;s:6:&#8221;299.00&#8243;;s:11:&#8221;description&#8221;;s:248:&#8221;The majority of people know how important it is to maintain the right amount of carbs/protein and other important nutrients in your everyday diet, but I personally hate counting them up day in and day out. My spreadsheet makes it much much simpler.&#8221;;s:13:&#8221;filedownloads&#8221;;a:2:{i:0;a:2:{s:12:&#8221;filedowndesc&#8221;;s:15:&#8221;Diet Calculator&#8221;;s:12:&#8221;filedownload&#8221;;a:1:{i:0;i:5463;}}i:1;a:2:{s:12:&#8221;filedowndesc&#8221;;s:19:&#8221;Supporting Document&#8221;;s:12:&#8221;filedownload&#8221;;a:1:{i:0;i:5464;}}}s:9:&#8221;mae_media&#8221;;a:3:{i:2;a:2:{s:11:&#8221;mediaupload&#8221;;a:1:{i:0;s:4:&#8221;5454&#8243;;}s:8:&#8221;mediaurl&#8221;;s:0:&#8221;&#8221;;}i:3;a:2:{s:11:&#8221;mediaupload&#8221;;a:1:{i:0;s:4:&#8221;5455&#8243;;}s:8:&#8221;mediaurl&#8221;;s:0:&#8221;&#8221;;}i:4;a:2:{s:11:&#8221;mediaupload&#8221;;a:1:{i:0;s:4:&#8221;5456&#8243;;}s:8:&#8221;mediaurl&#8221;;s:0:&#8221;&#8221;;}}}}</p></blockquote>
+<p>If I change the post_meta near the end where it says &#8220;mae_media&#8221; and I change the indexes from i:2, i:3, i:4 to i:0, i:1, i:2</p>
+<p>Then the media shows up in the wordpress metabox.<br />
+But when I click update or save and change something, the array is reindexed incorrectly again. </p>
+<p>Hope that explains it.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-media-field/">File/Media Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

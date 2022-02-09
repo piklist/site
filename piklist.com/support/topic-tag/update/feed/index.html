@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>update &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/update/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 08 Dec 2018 22:47:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>update to 1.0.1 dumped my code</title>
+		<link>https://piklist.com/support/topic/update-to-1-0-1-dumped-my-code/</link>
+		
+		<dc:creator><![CDATA[courtens]]></dc:creator>
+		<pubDate>Sat, 08 Dec 2018 22:47:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/update-to-1-0-1-dumped-my-code/</guid>
+
+					<description><![CDATA[<p>Is it normal for an update to dump all the code inside the plugin folder (wp-content\plugins\piklist\add-ons)? All my code is now gone. This is really bad, or am I missing something? There was no warning or &#8220;backup plugin folder prior to install&#8221; prompt during auto-update. Is there I copy of the prior version somewhere?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/update-to-1-0-1-dumped-my-code/">update to 1.0.1 dumped my code</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is it normal for an update to dump all the code inside the plugin folder (wp-content\plugins\piklist\add-ons)?</p>
+<p>All my code is now gone. This is really bad, or am I missing something? </p>
+<p>There was no warning or &#8220;backup plugin folder prior to install&#8221; prompt during auto-update.</p>
+<p>Is there I copy of the prior version somewhere? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/update-to-1-0-1-dumped-my-code/">update to 1.0.1 dumped my code</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PiKList Error after update</title>
+		<link>https://piklist.com/support/topic/piklist-error-after-update/</link>
+		
+		<dc:creator><![CDATA[naurojr]]></dc:creator>
+		<pubDate>Fri, 11 May 2018 18:58:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-error-after-update/</guid>
+
+					<description><![CDATA[<p>After some struggle to update from 0.9.4.28 to 0.11.1 I&#8217;m down to two errors that I&#8217;m not sure why they are happening. Warning: sprintf(): Too few arguments in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 1992 Warning: strstr(): Empty needle in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2536 The code works fine on 0.9 but it crashes on the new versions. I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-after-update/">PiKList Error after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>After some struggle to update from 0.9.4.28 to 0.11.1 I&#8217;m down to two errors that I&#8217;m not sure why they are happening. </p>
+<p>Warning: sprintf(): Too few arguments in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 1992</p>
+<p>Warning: strstr(): Empty needle in /nas/content/staging/orderdesigndpt/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2536</p>
+<p>The code works fine on 0.9 but it crashes on the new versions. </p>
+<p>I have 4 meta-boxes on the same page, the first two works, the third and fourth no.<br />
+See code below and attached screenshots. Can you guys give me some guidance on what is wrong?</p>
+<p>&lt;?php<br />
+/*<br />
+Title: Items<br />
+Post Type: salesorder<br />
+Collapse: false<br />
+Order: 3<br />
+Locked: true<br />
+*/</p>
+<p>  $manufacturers_id = get_manufacturers_list();<br />
+  $collections_id = get_collections_list();</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Add Products to the Order&#8217;)<br />
+    ,&#8217;template&#8217;=&gt;&#8217;order_items&#8217;<br />
+    ,&#8217;add_more&#8217; =&gt; true<br />
+    ,&#8217;fields&#8217; =&gt; array(<br />
+      array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_qnty&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Qnty&#8217;<br />
+		  ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 1<br />
+       )<br />
+      ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+		  ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_pd&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Pd&#8217;<br />
+	      ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 3<br />
+		  ,&#8217;choices&#8217; =&gt; $collections_id<br />
+        ,&#8217;validate&#8217; =&gt; array(array(&#8216;type&#8217; =&gt; &#8216;collections_select&#8217;))<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;order_item_manufacturer_id&#8217;<br />
+	    , &#8216;required&#8217; =&gt; true<br />
+        ,&#8217;label&#8217; =&gt; &#8216;Manufacturer&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 3<br />
+        ,&#8217;choices&#8217; =&gt; $manufacturers_id<br />
+        ,&#8217;validate&#8217; =&gt; array(array(&#8216;type&#8217; =&gt; &#8216;manufacturer_select&#8217;))<br />
+        )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_unit_price&#8217;<br />
+		  , &#8216;required&#8217; =&gt; true<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Unit Price&#8217;<br />
+          ,&#8217;value&#8217;=&gt;number_format(0,2)<br />
+          ,&#8217;columns&#8217; =&gt; 2<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217;=&gt;&#8217;text-right readonly&#8217;)<br />
+       )<br />
+      ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;number&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_discount&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Setoff&#8217;<br />
+          ,&#8217;value&#8217;=&gt;&#8217;0&#8242;<br />
+          ,&#8217;columns&#8217; =&gt; 1<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217;=&gt;&#8217;text-right readonly&#8217;, &#8216;maxlenght&#8217;=&gt;&#8217;3&#8217;, &#8216;min&#8217;=&gt;&#8217;0&#8217;, &#8216;max&#8217;=&gt;&#8217;100&#8217;)<br />
+       )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_total&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Total&#8217;<br />
+          ,&#8217;value&#8217; =&gt; &#8216;0&#8217;<br />
+          ,&#8217;columns&#8217; =&gt; 2<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217;=&gt;&#8217;text-right readonly&#8217;, &#8216;readonly&#8217;=&gt;&#8217;true&#8217;)<br />
+       )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_code&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Code&#8217;<br />
+	      ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 7<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;maxlength&#8217;=&gt;&#8217;30&#8217;, &#8216;autocomplete&#8217;=&gt;&#8217;off&#8217;)<br />
+      	)<br />
+        ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_description&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Description&#8217;<br />
+          , &#8216;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 3<br />
+          ,&#8217;attributes&#8217; =&gt; array(&#8216;maxlength&#8217;=&gt;&#8217;20&#8217;, &#8216;autocomplete&#8217;=&gt;&#8217;off&#8217;)<br />
+        )<br />
+       ,array(<br />
+          &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+          ,&#8217;field&#8217; =&gt; &#8216;order_item_stock_status&#8217;<br />
+          ,&#8217;label&#8217; =&gt; &#8216;Stock Status&#8217;<br />
+	      ,&#8217;required&#8217; =&gt; true<br />
+          ,&#8217;columns&#8217; =&gt; 2<br />
+          ,&#8217;choices&#8217; =&gt; array(&#8216;na&#8217;=&gt;&#8221;, &#8216;st&#8217;=&gt;&#8217;Stock&#8217;, &#8216;fs&#8217;=&gt;&#8217;Floor Sample&#8217;, &#8216;so&#8217;=&gt;&#8217;Special Order&#8217;)<br />
+      	)<br />
+    )<br />
+  ));<br />
+?&gt;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-after-update/">PiKList Error after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Only one image is saved</title>
+		<link>https://piklist.com/support/topic/only-one-image-is-saved/</link>
+		
+		<dc:creator><![CDATA[nnovosad]]></dc:creator>
+		<pubDate>Tue, 10 Apr 2018 11:05:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/only-one-image-is-saved/</guid>
+
+					<description><![CDATA[<p>Hello. I updated the plugin according to the instructions &#8211; https://piklist.com/support/topic/9-9-data-update-script-not-triggered/#post-8808 My code for the field. /* Title: Images Post Type: service Lock: true Order: 15 */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;services_images&#039;, &#039;label&#039; =&#62; __(&#039;Upload or choose an images&#039;, &#039;vts&#039;), &#039;columns&#039; =&#62; 12, &#039;options&#039; =&#62; array( &#039;modal_title&#039; =&#62; __(&#039;Add File&#039;, &#039;vts&#039;), &#039;button&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/only-one-image-is-saved/">Only one image is saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello.<br />
+I updated the plugin according to the instructions &#8211; https://piklist.com/support/topic/9-9-data-update-script-not-triggered/#post-8808<br />
+My code for the field.</p>
+<pre><code>/*
+Title: Images
+Post Type: service
+Lock: true
+Order: 15
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;,
+    &#039;field&#039; =&gt; &#039;services_images&#039;,
+    &#039;label&#039; =&gt; __(&#039;Upload or choose an images&#039;, &#039;vts&#039;),
+    &#039;columns&#039; =&gt; 12,
+    &#039;options&#039; =&gt; array(
+        &#039;modal_title&#039; =&gt; __(&#039;Add File&#039;, &#039;vts&#039;),
+        &#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;vts&#039;)
+    ),
+    &#039;attributes&#039; =&gt; array(
+        &#039;data-multiple&#039; =&gt; &#039;true&#039;,
+    )
+));</code></pre>
+<p>I select several pictures but after saving only one last picture remains.<br />
+Also after the update, this output of the image does not work <code>&lt;?php echo wp_get_attachment_url($item[&#039;img&#039;][0]); ?&gt;</code><br />
+Works like this &#8211; <code>&lt;?php echo wp_get_attachment_url($item[&#039;img&#039;]); ?&gt;</code></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/only-one-image-is-saved/">Only one image is saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional Updates based on Select option</title>
+		<link>https://piklist.com/support/topic/conditional-updates-based-on-select-option/</link>
+		
+		<dc:creator><![CDATA[mattkl]]></dc:creator>
+		<pubDate>Tue, 13 Sep 2016 20:14:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-updates-based-on-select-option/</guid>
+
+					<description><![CDATA[<p>I had this working. Now, it isn&#8217;t. I&#8217;ve tried stripping everything out but this one group field. I have tried breaking each field out of the group. While I am sure there is a bug in how I have this set up, I am at a loss as to what the bug might be. The [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-updates-based-on-select-option/">Conditional Updates based on Select option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I had this working. Now, it isn&#8217;t. I&#8217;ve tried stripping everything out but this one group field. I have tried breaking each field out of the group. While I am sure there is a bug in how I have this set up, I am at a loss as to what the bug might be. The demo page for conditional field updates works fine (the demo in the Piklist Add-Ons).</p>
+<p>At one point it was working, and now for reasons I cannot identify, the updates are not working. No errors (that I can see, anyway). The number fields just don&#8217;t get updated when the selection changes.</p>
+<p>Am I doing something wrong?</p>
+<p>Here is the code of the select and number fields I am trying to manipulate using conditional updates:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	,&#039;label&#039; =&gt; &#039;Conditions Test&#039;
+	,&#039;description&#039; =&gt; &#039;Select an option.&#039;
+	,&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;select&#039;
+			,&#039;field&#039; =&gt; &#039;ddlOptions&#039;
+			,&#039;label&#039; =&gt; &#039;Select an option&#039;
+			,&#039;choices&#039; =&gt; array(
+				&#039;empty&#039; =&gt; &#039;Choose&#039;
+				,&#039;option1&#039; =&gt; &#039;option 1&#039;
+				,&#039;option2&#039; =&gt; &#039;option 2&#039;
+			)
+			,&#039;value&#039; =&gt; &#039;empty&#039;
+			,&#039;conditions&#039; =&gt; array(
+				//option1
+				array(
+					&#039;field&#039; =&gt; &#039;numOne&#039;
+					,&#039;value&#039; =&gt; &#039;option1&#039;
+					,&#039;update&#039; =&gt; 1.00
+					,&#039;type&#039; =&gt; &#039;update&#039;
+				)
+				,array(
+					&#039;field&#039; =&gt; &#039;numTwo&#039;
+					,&#039;value&#039; =&gt; &#039;option1&#039;
+					,&#039;update&#039; =&gt; 2.00
+					,&#039;type&#039; =&gt; &#039;update&#039;
+				)
+				,array(
+					&#039;field&#039; =&gt; &#039;numThree&#039;
+					,&#039;value&#039; =&gt; &#039;option1&#039;
+					,&#039;update&#039; =&gt; 3.00
+					,&#039;type&#039; =&gt; &#039;update&#039;
+				)
+				//option2
+				,array(
+					&#039;field&#039; =&gt; &#039;numOne&#039;
+					,&#039;value&#039; =&gt; &#039;option2&#039;
+					,&#039;update&#039; =&gt; 4.00
+					,&#039;type&#039; =&gt; &#039;update&#039;
+				)
+				,array(
+					&#039;field&#039; =&gt; &#039;numTwo&#039;
+					,&#039;value&#039; =&gt; &#039;option2&#039;
+					,&#039;update&#039; =&gt; 5.00
+					,&#039;type&#039; =&gt; &#039;update&#039;
+				)
+				,array(
+					&#039;field&#039; =&gt; &#039;numThree&#039;
+					,&#039;value&#039; =&gt; &#039;option2&#039;
+					,&#039;update&#039; =&gt; 6.00
+					,&#039;type&#039; =&gt; &#039;update&#039;
+				)
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;number&#039;
+			,&#039;field&#039; =&gt; &#039;numOne&#039;
+			,&#039;value&#039; =&gt; 0
+			,&#039;label&#039; =&gt; &#039;Minimum&#039;
+			,&#039;columns&#039; =&gt; 3
+			,&#039;attributes&#039; =&gt; array(
+				&#039;min&#039; =&gt; 0
+				,&#039;step&#039; =&gt;.01
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;number&#039;
+			,&#039;field&#039; =&gt; &#039;numTwo&#039;
+			,&#039;value&#039; =&gt; 0
+			,&#039;label&#039; =&gt; &#039;Percentage&#039;
+			,&#039;columns&#039; =&gt; 3
+			,&#039;attributes&#039; =&gt; array(
+				&#039;min&#039; =&gt; 0
+				,&#039;step&#039; =&gt;.01
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;number&#039;
+			,&#039;field&#039; =&gt; &#039;numThree&#039;
+			,&#039;value&#039; =&gt; 0
+			,&#039;label&#039; =&gt; &#039;Flat Rate&#039;
+			,&#039;columns&#039; =&gt; 3
+			,&#039;attributes&#039; =&gt; array(
+				&#039;min&#039; =&gt; 0
+				,&#039;step&#039; =&gt;.01
+			)
+		)
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-updates-based-on-select-option/">Conditional Updates based on Select option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields not updating, v0.9.9.9, default custom-fields unregistered</title>
+		<link>https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/</link>
+		
+		<dc:creator><![CDATA[tobiv]]></dc:creator>
+		<pubDate>Thu, 21 Jul 2016 13:10:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/</guid>
+
+					<description><![CDATA[<p>I&#8217;m unable to update fields. They save fine the first time, but after that Update does nothing. I have deactivated all other plugins and unregistered the default custom-fields as advised in similar posts, but nothing helps. Also I&#8217;m running WordPress in German, and Piklist seems to translate back the &#8216;Update&#8217;, &#8216;Move to Trash&#8217;, &#8216;Preview Changes&#8217; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/">Fields not updating, v0.9.9.9, default custom-fields unregistered</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m unable to update fields. They save fine the first time, but after that Update does nothing. I have deactivated all other plugins and unregistered the default custom-fields as advised in similar posts, but nothing helps.</p>
+<p>Also I&#8217;m running WordPress in German, and Piklist seems to translate back the &#8216;Update&#8217;, &#8216;Move to Trash&#8217;, &#8216;Preview Changes&#8217; back to English. Not sure if that&#8217;s related, just mentining in case&#8230;</p>
+<p>Piklist 0.9.9.9<br />
+Wordpress 4.5.3</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-updating-v0-9-9-9-default-custom-fields-unregistered/">Fields not updating, v0.9.9.9, default custom-fields unregistered</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>update problem 500 error</title>
+		<link>https://piklist.com/support/topic/update-problem-500-error/</link>
+		
+		<dc:creator><![CDATA[vavakco]]></dc:creator>
+		<pubDate>Sat, 25 Jun 2016 05:28:26 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/update-problem-500-error/</guid>
+
+					<description><![CDATA[<p>hello when step by step update run after &#8220;Active Plugin Versions Updated&#8230;&#8221;, &#8220;Legacy post_relationships Table Deleted&#8230;&#8221;, &#8220;widgets&#8221;, &#8220;settings&#8221; is done and ok but when start below : action : piklist_update_0_9_9 method : meta-boxes in my console show 500 internal server error. actually system run code in updates/0.9.9.php:285 but show error please help me for this [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/update-problem-500-error/">update problem 500 error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hello<br />
+when step by step update run after &#8220;Active Plugin Versions Updated&#8230;&#8221;, &#8220;Legacy post_relationships Table Deleted&#8230;&#8221;, &#8220;widgets&#8221;, &#8220;settings&#8221; is done and ok but when start below :</p>
+<p>action : piklist_update_0_9_9<br />
+method : meta-boxes</p>
+<p>in my console show 500 internal server error.<br />
+actually system run code in updates/0.9.9.php:285 but show error</p>
+<p>please help me for this error</p>
+<p>piklist_update_0_9_9</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/update-problem-500-error/">update problem 500 error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>must press &#034;Update&#034; twice to save post</title>
+		<link>https://piklist.com/support/topic/must-press-update-twice-to-save-post/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 22 Jun 2016 23:56:37 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/must-press-update-twice-to-save-post/</guid>
+
+					<description><![CDATA[<p>The symptom is that when you press &#8220;Publish&#8221; or &#8220;Update&#8221; to save a page, nothing happens on the first press. You have to press again to get the page to save. I saw it only on one site, and was able to distill it to this case: &#8211; Twenty Fifteen theme &#8211; Only two plugins: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/must-press-update-twice-to-save-post/">must press &quot;Update&quot; twice to save post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The symptom is that when you press &#8220;Publish&#8221; or &#8220;Update&#8221; to save a page, nothing happens on the first press. You have to press again to get the page to save. </p>
+<p>I saw it only on one site, and was able to distill it to this case:<br />
+&#8211; Twenty Fifteen theme<br />
+&#8211; Only two plugins: Piklist 0.9.9.9 and my Piklist add-on<br />
+&#8211; Piklist add-on has one editor metabox that shows up on every page<br />
+&#8211; Piklist settings have &#8220;Accelerate meta queries&#8221; and &#8220;Javascript Validation&#8221; enabled</p>
+<p>This happens with any post type that has a metabox with an editor field. </p>
+<p>I was able to reproduce this behavior on a different site with completely different database. </p>
+<p>It sometimes also fails even if Javascript Validation is not enabled, but I can&#8217;t make that happen consistently so it may be pilot error. </p>
+<p>Let me know if you want access to my Piklist testbed. </p>
+<p>HTH,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/must-press-update-twice-to-save-post/">must press &quot;Update&quot; twice to save post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Meta box does not update when post is Published</title>
+		<link>https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/</link>
+		
+		<dc:creator><![CDATA[wdrescher]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2016 17:35:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/</guid>
+
+					<description><![CDATA[<p>I am not sure if this is a Piklist issue but I figured I would explain it and see if I have any help or suggestions as I am really stuck. I used FeedWordpress to pull an RSS feed item in and place it in a metabox inside the post. I am using a theme [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/">Meta box does not update when post is Published</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am not sure if this is a Piklist issue but I figured I would explain it and see if I have any help or suggestions as I am really stuck.</p>
+<p>I used FeedWordpress to pull an RSS feed item in and place it in a metabox inside the post. I am using a theme called &#8220;Musik&#8221; that uses Piklist and East Digital Downloads to allow music files to be bought and played in a mp3 player.</p>
+<p>Right now FeedWordpress sends the mp3 url to the correct field called &#8220;preview mp3&#8221; and then it publishes the post. When I go to the post it doesn&#8217;t find any mp3 url. If I hit update on the post it fixes it and the mp3 can be previewed. </p>
+<p>It seems that the field is not saving when it is published and only when it is updated.</p>
+<p>I am wondering if this is an issue with how the theme dev wrote the piklist field in or not. Any help would be much appreciated!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/">Meta box does not update when post is Published</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Workflow update button</title>
+		<link>https://piklist.com/support/topic/workflow-update-button/</link>
+		
+		<dc:creator><![CDATA[irene]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2016 09:32:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/workflow-update-button/</guid>
+
+					<description><![CDATA[<p>Hello, I have been searching on the internet and on this forum for an answer to the following: I would like to have an update button below each workflow page. I have seen here on the forum that some have already realised such a button, but I can not find an example of how to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflow-update-button/">Workflow update button</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I have been searching on the internet and on this forum for an answer to the following:<br />
+I would like to have an update button below each workflow page. I have seen here on the forum that some have already realised such a button, but I can not find an example of how to do this without creating any conflicts.<br />
+Could someone please help me out with an example or maybe point me to the right direction?<br />
+Thanks,<br />
+Irene</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflow-update-button/">Workflow update button</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>IMPORTANT MESSAGE FROM PIKLIST 0.9.9.6 stays after update</title>
+		<link>https://piklist.com/support/topic/important-message-from-piklist-0-9-9-6-stays-after-update/</link>
+		
+		<dc:creator><![CDATA[tatamata]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 15:46:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/important-message-from-piklist-0-9-9-6-stays-after-update/</guid>
+
+					<description><![CDATA[<p>i did an update but the message remains.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/important-message-from-piklist-0-9-9-6-stays-after-update/">IMPORTANT MESSAGE FROM PIKLIST 0.9.9.6 stays after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>i did an update but the message remains.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/important-message-from-piklist-0-9-9-6-stays-after-update/">IMPORTANT MESSAGE FROM PIKLIST 0.9.9.6 stays after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

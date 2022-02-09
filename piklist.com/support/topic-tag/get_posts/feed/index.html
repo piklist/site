@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get_posts &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get_posts/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 31 Oct 2015 02:33:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Creating conditional field for something not equal to &#039;none&#039;</title>
+		<link>https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Thu, 15 Oct 2015 15:17:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to create a conditional field for a settings page that will display a preview of the post chosen, but couldn&#8217;t find a way to add a condition for something != none. Here&#8217;s what I have: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;featured_post_id&#039; ,&#039;label&#039; =&#62; &#039;Choose post to feature&#039; ,&#039;columns&#039; =&#62; 6 ,&#039;choices&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/">Creating conditional field for something not equal to &#039;none&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to create a conditional field for a settings page that will display a preview of the post chosen, but couldn&#8217;t find a way to add a condition for something != none.</p>
+<p>Here&#8217;s what I have:</p>
+<pre><code>   piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;select&#039;
+     ,&#039;field&#039; =&gt; &#039;featured_post_id&#039;
+     ,&#039;label&#039; =&gt; &#039;Choose post to feature&#039;
+     ,&#039;columns&#039; =&gt; 6
+     ,&#039;choices&#039; =&gt; array(&#039;none&#039; =&gt; &#039;-&#039;) + piklist(
+       get_posts(
+          array(
+           &#039;post_type&#039; =&gt; &#039;post&#039;
+           ,&#039;orderby&#039; =&gt; &#039;post_date&#039;
+          )
+          ,&#039;objects&#039;
+        )
+        ,array(
+          &#039;ID&#039;
+          ,&#039;post_title&#039;
+        )
+     )
+   ));
+
+   piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;html&#039;
+     ,&#039;label&#039; =&gt; &#039;Post Selected&#039;
+     ,&#039;field&#039; =&gt; &#039;featured_post_preview&#039;
+     ,&#039;description&#039; =&gt; &#039;The selected post to be featured&#039;
+     ,&#039;value&#039; =&gt; &#039;&lt;img src=&quot;Post image&quot;/&gt;&lt;h2&gt;Post Title&lt;/h2&gt;&lt;p&gt;Excerpt&lt;/p&gt;&#039; // How do I access these fields from the get_posts for the chosen featured_post_id?
+     ,&#039;conditions&#039; =&gt; array(
+       array(
+         &#039;field&#039; =&gt; &#039;featured_post_id&#039;
+         ,&#039;value&#039; =&gt; !&#039;none&#039; // how do I conditionally display based on when the value is not equal to none?
+       )
+     )
+   ));
+</code></pre>
+<p>Thank you for any help you can provide!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/">Creating conditional field for something not equal to &#039;none&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dropdown / Select with all pages problem</title>
+		<link>https://piklist.com/support/topic/dropdown-select-with-all-pages/</link>
+		
+		<dc:creator><![CDATA[alex poslavsky]]></dc:creator>
+		<pubDate>Tue, 05 Mar 2013 16:02:19 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/dropdown-select-with-all-pages/</guid>
+
+					<description><![CDATA[<p>I am trying to create a drop-down page containing all pages, I tried: &#8216;select&#8217; ,&#8217;field&#8217; =&#62; &#8216;mypage&#8217; ,&#8217;label&#8217; =&#62; &#8216;Select a page&#8217; ,&#8217;attributes&#8217; =&#62; array(&#8216;class&#8217; =&#62; &#8216;text&#8217;) ,&#8217;choices&#8217; =&#62; piklist( get_pages( array( &#8216;sort_order&#8217; =&#62; &#8216;ASC&#8217;, &#8216;sort_column&#8217; =&#62; &#8216;post_title&#8217;, &#8216;hierarchical&#8217; =&#62; 1, &#8216;post_type&#8217; =&#62; &#8216;page&#8217;, &#8216;post_status&#8217; =&#62; &#8216;publish&#8217; ) ,&#8217;objects&#8217; ) ,array(&#8216;id&#8217;,&#8217;post_title&#8217;) ) )); but it [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dropdown-select-with-all-pages/">Dropdown / Select with all pages problem</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to create a drop-down page containing all pages, I tried:</p>
+<p> &#8216;select&#8217;<br />
+	,&#8217;field&#8217; =&gt; &#8216;mypage&#8217;<br />
+	,&#8217;label&#8217; =&gt; &#8216;Select a page&#8217;<br />
+	,&#8217;attributes&#8217; =&gt; array(&#8216;class&#8217; =&gt; &#8216;text&#8217;)<br />
+	,&#8217;choices&#8217; =&gt; piklist(<br />
+		get_pages(<br />
+			array(<br />
+				&#8216;sort_order&#8217; =&gt; &#8216;ASC&#8217;,<br />
+				&#8216;sort_column&#8217; =&gt; &#8216;post_title&#8217;,<br />
+				&#8216;hierarchical&#8217; =&gt; 1,<br />
+				&#8216;post_type&#8217; =&gt; &#8216;page&#8217;,<br />
+				&#8216;post_status&#8217; =&gt; &#8216;publish&#8217;<br />
+			)<br />
+			,&#8217;objects&#8217;<br />
+		)<br />
+		,array(&#8216;id&#8217;,&#8217;post_title&#8217;)<br />
+	)<br />
+));</p>
+<p>but it only shows one page in the dropdown. This is the only file in my plugin. What am I doing wrong? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dropdown-select-with-all-pages/">Dropdown / Select with all pages problem</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

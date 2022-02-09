@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post-relate &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post-relate/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 27 Jul 2017 15:15:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Fields are auto-pupulated based on user selection</title>
+		<link>https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/</link>
+		
+		<dc:creator><![CDATA[samuelyip74]]></dc:creator>
+		<pubDate>Thu, 27 Jul 2017 15:15:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/</guid>
+
+					<description><![CDATA[<p>Hi, I have a requirement and don&#8217;t know how it can be achieved with piklist. I created a few fields for products cpt (SKU, Description, Price etc). In the order cpt, I managed to generate a dynamic choice field based on all the SKUs. When the user select the relevant SKU, I would like the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/">Fields are auto-pupulated based on user selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I have a requirement and don&#8217;t know how it can be achieved with piklist.</p>
+<p>I created a few fields for products cpt (SKU, Description, Price etc).  In the order cpt,<br />
+I managed to generate a dynamic choice field based on all the SKUs.  When the user select the relevant SKU, I would like the other fields in the order fields to be auto populated by the SKU.</p>
+<p>Example,<br />
+Product CPT<br />
+SKU1, Shampoo, $3.00<br />
+SKU2, Shampoo-go, $5.00</p>
+<p>Order CPT,<br />
+Select Field A, Field B, Field C<br />
+[SKU1, SKU2],   &#8221; &#8220;, &#8221; &#8221;</p>
+<p>When user select SKU1, I would like Field B and Field C to be auto-populated with Shampoo, and $3.00 automatically.</p>
+<p>Can this be done with piklist?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/">Fields are auto-pupulated based on user selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more and</title>
+		<link>https://piklist.com/support/topic/add_more-and/</link>
+		
+		<dc:creator><![CDATA[strarsis]]></dc:creator>
+		<pubDate>Tue, 23 May 2017 23:02:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and/</guid>
+
+					<description><![CDATA[<p>Hi, I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code. Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. 🙂 I want a repeating/loop/&#8221;add more&#8221; field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code.<br />
+Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I want a repeating/loop/&#8221;add more&#8221; field with items that each have a post-relate field.</p>
+<p>I tried the following code (how sleek and beautiful Piklist code is!)</p>
+<pre><code>/*
+Title: Test
+Post Type: parent-post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;items&#039;
+  ,&#039;label&#039; =&gt; &#039;Items&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;field-1&#039;
+      ,&#039;label&#039; =&gt; &#039;Field 1&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;post-relate&#039;
+      ,&#039;scope&#039; =&gt; &#039;post&#039;
+      ,&#039;template&#039; =&gt; &#039;field&#039;
+    )
+  )
+));
+</code></pre>
+<p>While the normal text field is in each &#8220;add more&#8221; item, the post-relate field is shown only once below all the &#8220;add more&#8221; items.<br />
+What could be wrong with the code above &#8211; how can I have a post-relate field per &#8220;add more&#8221; item?</p>
+<p>I also attached a screenshot.</p>
+<p>Thanks in advance and<br />
+with best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post Relate Question</title>
+		<link>https://piklist.com/support/topic/post-relate-question/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Wed, 15 Feb 2017 21:09:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-relate-question/</guid>
+
+					<description><![CDATA[<p>I need to create the following data structure in wp: { &#34;type&#34;: &#34;log&#34;, &#34;id&#34;: 21, &#34;log_day_1&#34;: { // what does this object represent in piklist? a CPT or field? &#34;log_day_activity&#34;: [ // this is just the array of associated posts objects via piklist { &#34;id&#34;: &#34;25213&#34;, &#34;desc&#34;: &#34;I did this on this day and time&#34; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-question/">Post Relate Question</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I need to create the following data structure in wp:</p>
+<pre><code>{
+	&quot;type&quot;: &quot;log&quot;,
+	&quot;id&quot;: 21,
+        &quot;log_day_1&quot;: { // what does this object represent in piklist? a CPT or field?
+
+	         &quot;log_day_activity&quot;: [ // this is just the array of associated posts objects via piklist 
+			{
+			    &quot;id&quot;: &quot;25213&quot;,
+                            &quot;desc&quot;: &quot;I did this on this day and time&quot;
+                        },
+                      ]
+}</code></pre>
+<p>as you can see from the comments in the object, I&#8217;m struggling a bit. Should I use a custom repeatable field for days or create it&#8217;s own post type.</p>
+<p>Can piklist associate posts to a custom field and do it more than one on a post? If so, how? And are there any guides in terms of querying the post and it&#8217;s activities for any particular day?</p>
+<p>Or do I need to create a post called &#8220;Log&#8221; Then a post called &#8220;days&#8221; and associate &#8220;log&#8221; with &#8220;days&#8221; and then &#8220;days with it&#8217;s respective activities? </p>
+<p>The second option seems laborious but will do it if it&#8217;s the only way. Let me know what you recommend!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-question/">Post Relate Question</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Autocomplete select field</title>
+		<link>https://piklist.com/support/topic/autocomplete-select-field/</link>
+		
+		<dc:creator><![CDATA[sajonara]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2016 06:26:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/autocomplete-select-field/</guid>
+
+					<description><![CDATA[<p>Hello, I am preparing a new website and wanted to make extensive use of *piklist*. I searched for a solution to add an autocomplete field in this support forum and on Google. I need it as an opportunity to exchange the type of post-relate, as it only adds dozens of checkboxes which is not helpful [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/autocomplete-select-field/">Autocomplete select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I am preparing a new website and wanted to make extensive use of *piklist*. I searched for a solution to add an autocomplete field in this support forum and on Google. I need it as an opportunity to exchange the type of <code>post-relate</code>, as it only adds dozens of checkboxes which is not helpful the more posts are produced.</p>
+<p>I found a support post whose writer probably had a similar interest but it was closed already and no solution provided (cf. https://piklist.com/support/topic/custom-field-tutorial-or-template-repo/).</p>
+<p>As I inspected the source code I found some tidbits, like this <code>&lt;!-- TODO: Ajax Search --&gt;</code>. Hence I guess you already have plans on integrating kind of an autocompletion to this feature. Do you already have a beta version or preliminary source code, which I could stick to?</p>
+<p>As I understood the <code>piklist_field_templates</code> filter for the functions.php is not for that, because you can only change the outward appearance but not the innards which would be necessary to make use of jQueryUI for example.</p>
+<p>Kind regards,</p>
+<p>Alexander</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/autocomplete-select-field/">Autocomplete select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>post relationships not preserved in upgrade</title>
+		<link>https://piklist.com/support/topic/post-relationships-not-preserved-in-upgrade/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Sat, 31 Oct 2015 04:50:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-relationships-not-preserved-in-upgrade/</guid>
+
+					<description><![CDATA[<p>I just realized that a site I upgraded to Piklist about a week ago lost all its post relationships. I know that I went through the upgrade script as all of the add-more arrays were converted. There is still a wp_post_relationships table with 224 entries. It won&#8217;t be difficult to write a script to convert [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relationships-not-preserved-in-upgrade/">post relationships not preserved in upgrade</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I just realized that a site I upgraded to Piklist about a week ago lost all its post relationships. I know that I went through the upgrade script as all of the add-more arrays were converted. </p>
+<p>There is still a wp_post_relationships table with 224 entries. It won&#8217;t be difficult to write a script to convert these to postmeta entries. So that&#8217;s my plan unless you have a better suggestion. </p>
+<p>Hope NYC is treating you well! </p>
+<p>Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relationships-not-preserved-in-upgrade/">post relationships not preserved in upgrade</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How are post relationships stored?</title>
+		<link>https://piklist.com/support/topic/how-are-post-relationships-stored/</link>
+		
+		<dc:creator><![CDATA[wpforchurch]]></dc:creator>
+		<pubDate>Thu, 30 Apr 2015 22:57:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-are-post-relationships-stored/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to relate posts in my own function, but can&#8217;t figure out how to do it. Here&#8217;s the scenario. I&#8217;m building a simple system to manage church families. I have two CPT: contacts and households. I&#8217;m using a check box on the contact CPT to indicate whether a new household CPT should be created [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-are-post-relationships-stored/">How are post relationships stored?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to relate posts in my own function, but can&#8217;t figure out how to do it. </p>
+<p>Here&#8217;s the scenario. I&#8217;m building a simple system to manage church families. I have two CPT: contacts and households.</p>
+<p>I&#8217;m using a check box on the contact CPT to indicate whether a new household CPT should be created for the contact. This is used if the household isn&#8217;t already in existence. I&#8217;ve hooked into <code>piklist_save_field</code> to look for the checkbox and create the household.</p>
+<p>However, I&#8217;m not sure how to relate the contact to the newly created household. Can you point me in the right direction?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-are-post-relationships-stored/">How are post relationships stored?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Feature Request: Relate Field Choices</title>
+		<link>https://piklist.com/support/topic/feature-request-relate-field-choices/</link>
+		
+		<dc:creator><![CDATA[Jason]]></dc:creator>
+		<pubDate>Mon, 10 Nov 2014 21:37:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/feature-request-relate-field-choices/</guid>
+
+					<description><![CDATA[<p>I&#8217;m coming up on a situation wherein I&#8217;d want to, in a single relate field, relate a post type to another post type as well as specific pages. It&#8217;s all posts, so I know it works in theory, but presently you simply provide the post type to the relate field and that&#8217;s that. It&#8217;d be [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/feature-request-relate-field-choices/">Feature Request: Relate Field Choices</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m coming up on a situation wherein I&#8217;d want to, in a single relate field, relate a post type to another post type as well as specific pages. It&#8217;s all posts, so I know it works in theory, but presently you simply provide the post type to the relate field and that&#8217;s that. It&#8217;d be really nice if there the ability to provide specific posts to a relate field.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/feature-request-relate-field-choices/">Feature Request: Relate Field Choices</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>post-relate user &#8211; post</title>
+		<link>https://piklist.com/support/topic/post-relate-user-post/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Tue, 29 Jul 2014 20:43:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-relate-user-post/</guid>
+
+					<description><![CDATA[<p>Hi! i was just wondering if it was possible to link/relate a post_type to a user? if i select a user (dropdown), when i am in a post_type, will it then be possible to show this &#8216;link&#8217; in the user settings? and then do the same viceversa? thanks for your time</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-user-post/">post-relate user &#8211; post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+i was just wondering if it was possible to link/relate a post_type to a user?</p>
+<p>if i select a user (dropdown), when i am in a post_type, will it then be possible to show this &#8216;link&#8217; in the user settings?<br />
+and then do the same viceversa?</p>
+<p>thanks for your time</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-user-post/">post-relate user &#8211; post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post-Relate question/bug</title>
+		<link>https://piklist.com/support/topic/post-relate-questionbug/</link>
+		
+		<dc:creator><![CDATA[pupppet]]></dc:creator>
+		<pubDate>Sat, 26 Apr 2014 20:44:26 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/post-relate-questionbug/</guid>
+
+					<description><![CDATA[<p>Two questions on post-relate: &#8211; Is conditionally showing/hiding a post-relate field unsupported? Adding a condition to it doesn&#8217;t do anything, it always remains visible. &#8211; Is it possible to include multiple post types in the scope?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-questionbug/">Post-Relate question/bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Two questions on post-relate:</p>
+<p>&#8211; Is conditionally showing/hiding a post-relate field unsupported?  Adding a condition to it doesn&#8217;t do anything, it always remains visible.<br />
+&#8211; Is it possible to include multiple post types in the scope? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-questionbug/">Post-Relate question/bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Determining How a Post is Related</title>
+		<link>https://piklist.com/support/topic/determining-how-a-post-is-related/</link>
+		
+		<dc:creator><![CDATA[Jason]]></dc:creator>
+		<pubDate>Thu, 20 Feb 2014 22:25:17 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/determining-how-a-post-is-related/</guid>
+
+					<description><![CDATA[<p>I have an interesting situation: There are two post types: &#8211; People &#8211; Stories Please ignore suggestions such as using Users and Post instead. There&#8217;s a reason I&#8217;m doing it this way; I&#8217;m not providing the whole picture. Stories has two fields that point to people: Author and People Involved. What&#8217;s interesting is that when [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/determining-how-a-post-is-related/">Determining How a Post is Related</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have an interesting situation:</p>
+<p>There are two post types:<br />
+ &#8211; People<br />
+ &#8211; Stories</p>
+<p>Please ignore suggestions such as using Users and Post instead. There&#8217;s a reason I&#8217;m doing it this way; I&#8217;m not providing the whole picture.</p>
+<p>Stories has two fields that point to people: Author and People Involved.</p>
+<p>What&#8217;s interesting is that when I do a get_posts for people involved in the story, I get all the people related (author and people involved). The question is, how would I discern between whether a person was related via the author field or the people involved field?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/determining-how-a-post-is-related/">Determining How a Post is Related</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

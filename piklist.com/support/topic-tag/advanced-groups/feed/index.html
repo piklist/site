@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>advanced groups &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/advanced-groups/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 21 Mar 2014 02:14:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Displaying post meta from advanced add_more grouped fields</title>
+		<link>https://piklist.com/support/topic/displaying-post-meta-from-advanced-add_more-grouped-fields/</link>
+		
+		<dc:creator><![CDATA[cjwebdesigntt]]></dc:creator>
+		<pubDate>Fri, 21 Mar 2014 02:08:35 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/displaying-post-meta-from-advanced-add_more-grouped-fields/</guid>
+
+					<description><![CDATA[<p>I&#8217;m having a hard time with this one. I have a Custom Post Type Product with the following metabox: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;pricing_tier_group&#039;, &#039;label&#039; =&#62; __(&#039;Pricing Tier&#039;), &#039;template&#039; =&#62; &#039;field&#039;, &#039;add_more&#039; =&#62; true, &#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;tier_name&#039;, &#039;label&#039; =&#62; &#039;Tier Name&#039;, &#039;columns&#039; =&#62; 8, ), [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-post-meta-from-advanced-add_more-grouped-fields/">Displaying post meta from advanced add_more grouped fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m having a hard time with this one.<br />
+I have a Custom Post Type Product with the following metabox:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;,
+    &#039;field&#039; =&gt; &#039;pricing_tier_group&#039;,
+    &#039;label&#039; =&gt; __(&#039;Pricing Tier&#039;),
+    &#039;template&#039; =&gt; &#039;field&#039;,
+    &#039;add_more&#039; =&gt; true,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;tier_name&#039;,
+            &#039;label&#039; =&gt; &#039;Tier Name&#039;,
+            &#039;columns&#039; =&gt; 8,
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;tier_price&#039;,
+            &#039;label&#039; =&gt; __(&#039;Price&#039;),
+            &#039;value&#039; =&gt; &#039;$&#039;,
+            &#039;columns&#039; =&gt; 4,
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;example_url&#039;,
+            &#039;label&#039; =&gt; __(&#039;Example URL&#039;),
+            &#039;columns&#039; =&gt; 12,
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;group&#039;,
+            &#039;field&#039; =&gt; &#039;tier_features&#039;,
+            &#039;add_more&#039; =&gt; true,
+            &#039;fields&#039; =&gt; array(
+                array(
+                    &#039;type&#039; =&gt; &#039;text&#039;,
+                    &#039;field&#039; =&gt; &#039;feature_name&#039;,
+                    &#039;label&#039; =&gt; __(&#039;Feature name&#039;),
+                    &#039;columns&#039; =&gt; 12
+                ),
+            ),
+        ),
+        
+    )
+    
+));</code></pre>
+<p>I would like to display it in the following template:</p>
+<pre><code>&lt;footer class=&quot;product-footer product-tiers&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;div class=&quot;grid__item one-whole desk-one-half&quot;&gt;
+                &lt;div class=&quot;product-tier first&quot;&gt;
+                    &lt;div class=&quot;grid__item one-half&quot;&gt;
+                        &lt;h3 class=&quot;product-tier-name&quot;&gt; TIER NAME &lt;/h3&gt;
+                        &lt;span class=&quot;tier-price&quot;&gt; TIER PRICE &lt;/span&gt;
+                        &lt;a href= EXAMPLE URL&gt; View Example &lt;/a&gt;
+                    &lt;/div&gt;&lt;!--
+                    --&gt;&lt;div class=&quot;grid__item one-half&quot;&gt;
+                        &lt;ul class=&quot;check-list&quot;&gt;
+                            &lt;li&gt; FEATURE 1 &lt;/li&gt;
+                            &lt;li&gt; FEATURE 2 &lt;/li&gt;
+                            &lt;li&gt; FEATURE 3 &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt; &lt;!-- end product-tier --&gt;
+            &lt;/div&gt;&lt;!--
+        --&gt;
+        &lt;/div&gt; &lt;!-- end grid row --&gt;
+    &lt;/footer&gt;</code></pre>
+<p>This represents a template part to the main product display template which has the WordPress Loop<br />
+with the Product Title (the_title()) and Product Description (the_content()).</p>
+<p>I having trouble accessing the values especially of the tier_features nested add_more group. The documentation only provides help with simple single field add_more display. When I tried using this code nothing shows.</p>
+<p>So to be clear, the Front end should should display the following:<br />
+Products</p>
+<p><strong>Product One</strong><br />
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br />
+Basic (Tier 1)&#8212;&#8212;&#8211;Feature 1 &#8212;&#8212;&#8212;&#8212;&#8212; Pro(Tier 2)&#8212;&#8212;&#8212;Feature 1<br />
+$0000.000&#8212;&#8212;&#8212;&#8212;-Feature 2 &#8212;&#8212;&#8212;&#8212;&#8212; $0000.000&#8212;&#8212;&#8212;&#8211;Feature 2<br />
+View Example&#8212;&#8212;&#8212;-Feature 3 &#8212;&#8212;&#8212;&#8212;&#8212; View Example&#8212;&#8212;&#8211;Feature 3<br />
+<strong><br />
+Product Two</strong><br />
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br />
+Basic (Tier 1)&#8212;&#8212;&#8211;Feature 1 &#8212;&#8212;&#8212;&#8212;&#8212; Pro(Tier 2)&#8212;&#8212;&#8212;Feature 1<br />
+$0000.000&#8212;&#8212;&#8212;&#8212;-Feature 2 &#8212;&#8212;&#8212;&#8212;&#8212; $0000.000&#8212;&#8212;&#8212;&#8211;Feature 2<br />
+View Example&#8212;&#8212;&#8212;-Feature 3 &#8212;&#8212;&#8212;&#8212;&#8212; View Example&#8212;&#8212;&#8211;Feature 3</p>
+<p><strong><br />
+Product Three</strong><br />
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br />
+Basic (Tier 1)&#8212;&#8212;&#8211;Feature 1 &#8212;&#8212;&#8212;&#8212;&#8212; Pro (Tier 2)&#8212;&#8212;&#8212;Feature 1<br />
+$0000.000&#8212;&#8212;&#8212;&#8212;-Feature 2 &#8212;&#8212;&#8212;&#8212;&#8212; $0000.000&#8212;&#8212;&#8212;&#8211;Feature 2<br />
+View Example&#8212;&#8212;&#8212;-Feature 3 &#8212;&#8212;&#8212;&#8212;&#8212; View Example&#8212;&#8212;&#8211;Feature 3</p>
+<p>etc.<br />
+Thanks for any help.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-post-meta-from-advanced-add_more-grouped-fields/">Displaying post meta from advanced add_more grouped fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

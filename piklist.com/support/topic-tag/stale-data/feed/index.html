@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Stale Data &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/stale-data/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 19 Sep 2016 01:34:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Relation Field is Creating Stale Data</title>
+		<link>https://piklist.com/support/topic/relation-field-is-creating-stale-data/</link>
+		
+		<dc:creator><![CDATA[rick]]></dc:creator>
+		<pubDate>Mon, 19 Sep 2016 01:34:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/relation-field-is-creating-stale-data/</guid>
+
+					<description><![CDATA[<p>Hi Steve, We&#8217;re using Piklist for a WooCommerce site and created a new &#8216;locations&#8217; post-type to represent where a product ships from. We then created a meta-box for the WooCommerce &#8216;product&#8217; type which allows a user to select from a drop down and assign which physical store the item is located in. From my understanding, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/relation-field-is-creating-stale-data/">Relation Field is Creating Stale Data</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Steve,</p>
+<p>We&#8217;re using Piklist for a WooCommerce site and created a new &#8216;locations&#8217; post-type to represent where a product ships from. We then created a meta-box for the WooCommerce &#8216;product&#8217; type which allows a user to select from a drop down and assign which physical store the item is located in. From my understanding, this should simply add a new meta key in the postmeta table for this particular post_id. We then created a shortcode which conducts a custom query for items on a per-location level, and outputs products grouped by this meta key (the store location &#8211; <em>store_location</em>). </p>
+<p>All appears to be working with this when new products are added in, and the queries successfully work. However, my client reported to me that they had at first listed a few products in the wrong location, and went into the wp-admin to update the location. They were able to do this, but the front-end of the site did not update; the product was still listed in the old location. I investigated page caching issues, but even with all page caching disabled the problem persisted across several products. I even looked into our server mem_cache with no avail.</p>
+<p>I dug deeper into the database, and manually into the postmeta table to see what the <em>store_location</em> value was for the corresponding post_id. Surprisingly, the store_location value was the stale value that had originally been posted. Subsequent product updates did not modify this value. What is strange, however, is that in the WP admin product page appears to be saving the value as when the page is reloaded, the correct drop-down setting is selected so something is being saved, just not in the right place from what I can tell. </p>
+<p>Please advise and thanks in advance.</p>
+<p>Here&#8217;s my PHP code for the related fields meta-box.</p>
+<pre><code>&lt;?php
+/*
+Title: Ships from Location
+Post Type: product
+Order: 2
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;store_location&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Select which location this item ships from.&#039;, &#039;piklist&#039;)
+    ,&#039;choices&#039; =&gt; piklist(
+      get_posts(array(
+        &#039;post_type&#039; =&gt; &#039;store_location&#039;
+        ,&#039;numberposts&#039; =&gt; -1
+        ,&#039;orderby&#039; =&gt; &#039;title&#039;
+        ,&#039;order&#039; =&gt; &#039;ASC&#039;
+      ))
+      ,array(&#039;ID&#039;, &#039;post_title&#039;)
+    )
+    ,&#039;relate&#039; =&gt; array(
+      &#039;scope&#039; =&gt; &#039;post&#039;
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/relation-field-is-creating-stale-data/">Relation Field is Creating Stale Data</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

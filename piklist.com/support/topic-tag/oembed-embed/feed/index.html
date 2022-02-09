@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>oembed embed &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/oembed-embed/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 13 Aug 2015 15:03:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>How to enable oEmbed for CPTs developed using Piklist?</title>
+		<link>https://piklist.com/support/topic/how-to-enable-oembed-for-cpts-developed-using-piklist/</link>
+		
+		<dc:creator><![CDATA[fredrikcarlen]]></dc:creator>
+		<pubDate>Thu, 13 Aug 2015 12:10:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-enable-oembed-for-cpts-developed-using-piklist/</guid>
+
+					<description><![CDATA[<p>I want to enable oEmbed for Wistia for my CPT developed using standard Piklist stuff. I have enabled embeds for Wistia using a plugin, which works&#8230;for standard posts/pages. In my CPT, I don&#8217;t use the standard genesis loop (so yes, using Genesis). It looks like this: function user_guide_setup() { //* Remove the default Genesis loop [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-enable-oembed-for-cpts-developed-using-piklist/">How to enable oEmbed for CPTs developed using Piklist?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to enable oEmbed for Wistia for my CPT developed using standard Piklist stuff. I have enabled embeds for Wistia using a plugin, which works&#8230;for standard posts/pages. In my CPT, I don&#8217;t use the standard <code>genesis</code> loop (so yes, using Genesis). It looks like this:</p>
+<pre><code>
+function user_guide_setup() {
+
+		//* Remove the default Genesis loop
+		remove_action( &#039;genesis_loop&#039;, &#039;genesis_do_loop&#039; );
+
+		//* Add user guides
+		add_action( &#039;genesis_loop&#039;, &#039;display_user_guide_items&#039; );
+
+}
+
+function display_user_guide_items() {
+  $postId = get_the_ID();
+  $guide_items = get_post_meta($postId, &#039;user_guide_item&#039;, false);
+  piklist(get_stylesheet_directory() . &#039;/piklist/addmore-templates/user_guide_item&#039;, array(&#039;data&#039; =&gt; $guide_items, &#039;loop&#039; =&gt; &#039;data&#039;));
+}
+
+genesis();
+</code></pre>
+<p>This works, except for the embed. I followed the guide on this page http://www.kevinleary.net/oembed-excerpts-custom-fields/, but this does not work.</p>
+<p>I have no idea how to get the result that <code>piklist</code> spits out to be able to filter it, so what do I do?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-enable-oembed-for-cpts-developed-using-piklist/">How to enable oEmbed for CPTs developed using Piklist?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

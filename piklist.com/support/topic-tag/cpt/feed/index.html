@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CPT &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/cpt/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 18 Jan 2018 03:38:09 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Cannot create multiple custom post type</title>
+		<link>https://piklist.com/support/topic/cannot-create-multiple-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[bimbaim]]></dc:creator>
+		<pubDate>Thu, 18 Jan 2018 03:38:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cannot-create-multiple-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Hi, I recently use piklist for my big project, and this plugin is very good, but I have some issue when I create two plugin with piklist after that I create custom post type for those two separately use filter `piklist_post_types for both plugin one of custom post type do not create it, only the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cannot-create-multiple-custom-post-type/">Cannot create multiple custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I recently use piklist for my big project, and this plugin is very good, but I have some issue when I create two plugin with piklist after that I create custom post type for those two separately  use filter `piklist_post_types for both plugin one of custom post type do not create it, only the first one I made successfully create the other one is not. I do not know what I made it wrong is it because those filter only can be use once even we create two different plugin. (Sorry for my english). I hope there is a solution for this.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cannot-create-multiple-custom-post-type/">Cannot create multiple custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Cannot Access empty Property?</title>
+		<link>https://piklist.com/support/topic/cannot-access-empty-property/</link>
+		
+		<dc:creator><![CDATA[achowell]]></dc:creator>
+		<pubDate>Tue, 18 Apr 2017 18:41:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cannot-access-empty-property/</guid>
+
+					<description><![CDATA[<p>For some reason, some of my Piklist post types keep crashing my websites if both the plugin that creates the post type and the piklist plugin are on. Below is a simple plugin that creates a post type that breaks the site with the FATAL error if used with Piklist. &#60;?php //ADD SPOTLIGHT POST TYPE [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cannot-access-empty-property/">Cannot Access empty Property?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>For some reason, some of my Piklist post types keep crashing my websites if both the plugin that creates the post type and the piklist plugin are on. Below is a simple plugin that creates a post type that breaks the site with the FATAL error if used with Piklist.</p>
+<pre><code>
+&lt;?php
+//ADD SPOTLIGHT POST TYPE
+add_filter(&#039;piklist_post_types&#039;, &#039;spotlight_videos_post_type&#039;);
+ function spotlight_videos_post_type($post_types)
+ {
+  $post_types[&#039;spotlight_videos&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Spotlight Video&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Enter a new Spotlight Video&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;menu_icon&#039; =&gt; &#039;dashicons-video-alt2&#039;
+    ,&#039;capability_type&#039; =&gt; &#039;spotlight_videos&#039;
+  ,&#039;capabilities&#039; =&gt; array(
+    &#039;publish_posts&#039; =&gt; &#039;publish_spotlight_video&#039;
+    ,&#039;edit_posts&#039; =&gt; &#039;edit_spotlight_video&#039;
+    ,&#039;edit_others_posts&#039; =&gt; &#039;edit_others_spotlight_videos&#039;
+    ,&#039;delete_posts&#039; =&gt; &#039;delete_spotlight_videos&#039;
+    ,&#039;delete_others_posts&#039; =&gt; &#039;delete_others_spotlight_videos&#039;
+    ,&#039;read_private_posts&#039; =&gt; &#039;read_private_spotlight_videos&#039;
+    ,&#039;edit_post&#039; =&gt; &#039;edit_spotlight_video&#039;
+    ,&#039;delete_post&#039; =&gt; &#039;delete_spotlight_video&#039;
+    ,&#039;read_post&#039; =&gt; &#039;read_spotlight_video&#039;
+  )
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;spotlight_videos&#039;
+    )
+    ,map_meta_cap =&gt; true
+    ,&#039;supports&#039; =&gt; array(
+      &#039;title&#039;
+      ,&#039;editor&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;thumbnail&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;slug&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}
+?&gt;
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cannot-access-empty-property/">Cannot Access empty Property?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>REST API problem with post_content field</title>
+		<link>https://piklist.com/support/topic/rest-api-problem-with-post_content-field/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Tue, 07 Mar 2017 20:57:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/rest-api-problem-with-post_content-field/</guid>
+
+					<description><![CDATA[<p>Hi, using your examples, I set up a CPT that is using the post content field in the posts table, but displayed using piklist among my other meta fields. The problem with this (I just discovered) is that unless I put it into the &#8220;support&#8221; array in the register post type command, it will NOT [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/rest-api-problem-with-post_content-field/">REST API problem with post_content field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, using your examples, I set up a CPT that is using the post content field in the posts table, but displayed using piklist among my other meta fields. The problem with this (I just discovered) is that unless I put it into the &#8220;support&#8221; array in the register post type command, it will NOT show in the REST response. Any idea how to include it in the REST response without displaying it (now a second time and out of order) in my CPT admin edit screen?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/rest-api-problem-with-post_content-field/">REST API problem with post_content field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>QuickPress for CPT</title>
+		<link>https://piklist.com/support/topic/quickpress-for-cpt/</link>
+		
+		<dc:creator><![CDATA[solace]]></dc:creator>
+		<pubDate>Wed, 01 Feb 2017 06:22:51 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/quickpress-for-cpt/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;d like to be able to create a Dashboard QuickPress/Add New Post widget equivalent for a CPT that I have created with Piklist. From the looks of it I&#8217;ll need to create a forms/ part for the form, and use a shortcode in a dashboard/ part to load it. Is this correct? I essentially [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/quickpress-for-cpt/">QuickPress for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;d like to be able to create a Dashboard QuickPress/Add New Post widget equivalent for a CPT that I have created with Piklist.</p>
+<p>From the looks of it I&#8217;ll need to create a <code>forms/</code> part for the form, and use a shortcode in a <code>dashboard/</code> part to load it. Is this correct?</p>
+<p>I essentially want it to be handled in the same way as a standard Add New post submission where it submits to <code>post-new.php</code>, only from a widget, which means I&#8217;ll need the standard hidden fields that are populated on the standard form (ie. nonce, user-id, post-author etc). Is there a quick way to build these or do I need invoke <code>field()</code> for each?</p>
+<p>I&#8217;ve gotten as far as:</p>
+<pre><code>/*
+Action: post-new.php
+Capability: edit_posts
+Network: false
+*/
+
+piklist( &#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;text&#039;,
+  &#039;field&#039;   =&gt; &#039;post_title&#039;,
+  &#039;scope&#039;   =&gt; &#039;post&#039;,
+  &#039;label&#039;   =&gt; &#039;Title&#039;
+) );
+
+&lt;the same custom fields I have in my CPT metaboxes&gt;
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;submit&#039;,
+  &#039;field&#039; =&gt; &#039;submit&#039;,
+  &#039;value&#039; =&gt; &#039;Submit&#039;
+));</code></pre>
+<p>My apologies if I have missed the documentation for this somewhere.</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/quickpress-for-cpt/">QuickPress for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomies on Forms&#8230;</title>
+		<link>https://piklist.com/support/topic/taxonomies-on-forms/</link>
+		
+		<dc:creator><![CDATA[Rob Hust]]></dc:creator>
+		<pubDate>Sun, 18 Sep 2016 21:24:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomies-on-forms/</guid>
+
+					<description><![CDATA[<p>Is this fixed yet? I&#8217;d love to stop using GravityForms&#8230; Not because it&#8217;s so bad, just would prefer a more Piklistian solution, and as it stands right now, taxonomies in forms are a real tussle and I&#8217;m using 0.9.9.9 I created a basic test case, and tried numerous permutations &#8211; clearing all caches. Taxonomies won&#8217;t [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-on-forms/">Taxonomies on Forms&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is this fixed yet? I&#8217;d love to stop using GravityForms&#8230; Not because it&#8217;s so bad, just would prefer a more Piklistian solution, and as it stands right now, taxonomies in forms are a real tussle and I&#8217;m using 0.9.9.9</p>
+<p>I created a basic test case, and tried numerous permutations &#8211; clearing all caches. Taxonomies won&#8217;t save. Here&#8217;s the code&#8230;</p>
+<p>https://gist.github.com/rhust/061ab49a5590fb8c43490d3d508a6937</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-on-forms/">Taxonomies on Forms&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post status remains “draft” in submitbox</title>
+		<link>https://piklist.com/support/topic/post-status-remains-draft-in-submitbox/</link>
+		
+		<dc:creator><![CDATA[lrtrln]]></dc:creator>
+		<pubDate>Thu, 25 Aug 2016 12:26:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-status-remains-draft-in-submitbox/</guid>
+
+					<description><![CDATA[<p>Piklist 0.9.9.9 / WP 4.6 installed. When I write a post in a custom post type, post status remains “draft” and not “published” in drop down even if I changed it and clicked the OK button. I tested already with all other plugins deactivated. Can you please advise. Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-status-remains-draft-in-submitbox/">Post status remains “draft” in submitbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Piklist 0.9.9.9 / WP 4.6 installed. When I write a post in a custom post type, post status remains “draft” and not “published” in drop down even if I changed it and clicked the OK button. I tested already with all other plugins deactivated. Can you please advise. Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-status-remains-draft-in-submitbox/">Post status remains “draft” in submitbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist breaks oEmbed in CTP</title>
+		<link>https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/</link>
+		
+		<dc:creator><![CDATA[7studio]]></dc:creator>
+		<pubDate>Thu, 23 Jun 2016 08:58:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/</guid>
+
+					<description><![CDATA[<p>Hi, It seems that Piklist breaks oEmbed (e.g.: in the media uploader modal) when you edit a post from a CPT. All the things seem ok when you do the same thing from a &#8220;builtin&#8221; post type. After some investigations, it seems that the wp.media.view cannot pick up the post ID (wp.media.view.settings.post.id is egal to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/">Piklist breaks oEmbed in CTP</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>It seems that Piklist breaks oEmbed (e.g.: in the media uploader modal) when you edit a post from a CPT. All the things seem ok when you do the same thing from a &#8220;builtin&#8221; post type.</p>
+<p>After some investigations, it seems that the <code>wp.media.view</code> cannot pick up the post ID (<code>wp.media.view.settings.post.id</code> is egal to 0) and it fails the ajax method <code>wp_ajax_parse_embed</code>.</p>
+<p>Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/">Piklist breaks oEmbed in CTP</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Global CPT in Multisite</title>
+		<link>https://piklist.com/support/topic/global-cpt-in-multisite/</link>
+		
+		<dc:creator><![CDATA[leepeterson]]></dc:creator>
+		<pubDate>Wed, 15 Jun 2016 22:28:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/global-cpt-in-multisite/</guid>
+
+					<description><![CDATA[<p>Hello. I&#8217;d like to create several CPTs at the network level in a 2-site multisite network where each site shares the data from those CPTs. Is this possible with Piklist? I know it works because I&#8217;ve seen WPMU DEV&#8217;s Custom Fields plugin do it.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/global-cpt-in-multisite/">Global CPT in Multisite</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello. I&#8217;d like to create several CPTs at the network level in a 2-site multisite network where each site shares the data from those CPTs. Is this possible with Piklist? I know it works because I&#8217;ve seen WPMU DEV&#8217;s Custom Fields plugin do it. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/global-cpt-in-multisite/">Global CPT in Multisite</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Trying to get property of non-object (Clean install) when adding CPT</title>
+		<link>https://piklist.com/support/topic/trying-to-get-property-of-non-object-clean-install-when-adding-cpt/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Mon, 13 Jun 2016 17:41:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/trying-to-get-property-of-non-object-clean-install-when-adding-cpt/</guid>
+
+					<description><![CDATA[<p>Any website I use Piklist (trunk, haven&#8217;t tried repo version) has a &#8220;Trying to get property of non-object&#8221; via Query Monitor. It appears to only happen when trying to add a new (custom post type) post. I tested on Twenty Sixteen theme and various Genesis child themes and the error remains.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/trying-to-get-property-of-non-object-clean-install-when-adding-cpt/">Trying to get property of non-object (Clean install) when adding CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Any website I use Piklist (trunk, haven&#8217;t tried repo version) has a &#8220;Trying to get property of non-object&#8221; via Query Monitor.</p>
+<p>It appears to only happen when trying to add a new (custom post type) post. I tested on Twenty Sixteen theme and various Genesis child themes and the error remains.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/trying-to-get-property-of-non-object-clean-install-when-adding-cpt/">Trying to get property of non-object (Clean install) when adding CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>CPT front-end Form</title>
+		<link>https://piklist.com/support/topic/cpt-front-end-form/</link>
+		
+		<dc:creator><![CDATA[Nabil]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2016 13:23:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cpt-front-end-form/</guid>
+
+					<description><![CDATA[<p>Hello, I was wondering if Piklist allows creating front-end forms for creating or updating CPT posts. Thanks, Nabil</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cpt-front-end-form/">CPT front-end Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I was wondering if Piklist allows creating front-end forms for creating or updating CPT posts.</p>
+<p>Thanks,<br />
+Nabil</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cpt-front-end-form/">CPT front-end Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

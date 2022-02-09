@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>file uploader &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/file-uploader/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 10 Dec 2015 07:02:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>File upload metabox not setting attachement&#039;s post_parent &#8212; Piklist v0.9.9.7</title>
+		<link>https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/</link>
+		
+		<dc:creator><![CDATA[Mehdi Salem]]></dc:creator>
+		<pubDate>Thu, 10 Dec 2015 07:02:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/</guid>
+
+					<description><![CDATA[<p>Seems like the post variable $_post[&#8216;post_id&#8217;] is not sent to the file media uploader iframe when triggered from the by Piklist&#8217;s file upload metabox, when editing a post&#8230; As a consequence, a new file uploaded from a post via Piklist des not have a post parent set and the file cannot be attached the the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/">File upload metabox not setting attachement&#039;s post_parent &#8212; Piklist v0.9.9.7</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Seems like the post variable $_post[&#8216;post_id&#8217;] is not sent to the file media uploader iframe when triggered from the by Piklist&#8217;s file upload metabox, when editing a post&#8230;</p>
+<p>As a consequence, a new file uploaded from a post via Piklist des not have a post parent set and the file cannot be attached the the current post by WP&#8230; while a native WP featured image will be attached with no issue to its post.</p>
+<p>Could you fix this issue please? I&#8217;m trying to set the upload directory dynamically based on the post_type of the parent post of attachments for my client so I need to be able to know from what post type the piklist uploader is triggered&#8230;</p>
+<p>Thank you!</p>
+<p>Here is my code:</p>
+<p><strong>Custom Dynamic upload directory:</strong></p>
+<pre><code>function hdev_upload_media_dir_based_on_post_type($uploads)
+{
+	if(!isset($_POST[&#039;post_id&#039;])) return $uploads; // do nothing if no attachment post parent is set
+
+	$post = get_post($_POST[&#039;post_id&#039;]);
+	$post_type = $post-&gt;post_type;
+	
+	$new_sub_dir = &#039;/&#039; . $post_type . $uploads[&#039;subdir&#039;];
+
+	$uploads[&#039;path&#039;]    = str_replace($uploads[&#039;subdir&#039;], $new_sub_dir, $uploads[&#039;path&#039;]);
+	$uploads[&#039;url&#039;]     = str_replace($uploads[&#039;subdir&#039;], $new_sub_dir, $uploads[&#039;url&#039;]);
+	$uploads[&#039;subdir&#039;]  = str_replace($uploads[&#039;subdir&#039;], $new_sub_dir, $uploads[&#039;url&#039;]); // not necessary, added just in case and it won&#039;t hurt anyway...
+
+	return $uploads;
+}
+function custom_upload_filter( $file )
+{
+	if(isset($_POST[&#039;action&#039;]) &amp;&amp; $_POST[&#039;action&#039;] === &#039;upload-attachment&#039;) add_filter(&#039;upload_dir&#039;, &#039;hdev_upload_media_dir_based_on_post_type&#039;); // filter the upload directory and substitute with new dir
+
+	return $file;
+}
+add_filter(&#039;wp_handle_upload_prefilter&#039;, &#039;custom_upload_filter&#039; );
+</code></pre>
+<p><strong>Piklist file upload metabox:</strong></p>
+<pre><code>
+/*
+Title: &lt;h3 class=&quot;hdev-highlight&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h3&gt;
+Post Type: post,sepia,black_and_white,color,conservation
+Order: 20
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;folder_content_group&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Gallery Photo&#039;,&#039;stopping-the-world-admin&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Add photos to this folder.&#039;, &#039;stopping-the-world-admin&#039;)
+    ,&#039;help&#039; =&gt; __(&#039;Adds a new photo to this gallery folder and sets its availability on the store.&#039;,&#039;stopping-the-world-admin&#039;)
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;single_photo&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Photo&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; __(&#039;Add a Photo&#039;,&#039;stopping-the-world-admin&#039;)
+            ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;stopping-the-world-admin&#039;)
+        )
+        ,&#039;required&#039; =&gt; true
+        ,&#039;validate&#039; =&gt; array(
+            array(
+                &#039;type&#039; =&gt; &#039;limit&#039;,
+                &#039;options&#039; =&gt; array(
+                        &#039;min&#039; =&gt; 1,
+                        &#039;max&#039; =&gt; 1
+                )
+            )
+            /*,array(
+                  &#039;type&#039; =&gt; &#039;image&#039;
+            )*/
+            ,array(
+                  &#039;type&#039; =&gt; &#039;jpeg&#039;
+            )
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;photo_title&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Title&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;help&#039; =&gt; __(&#039;Sets the photo title. This will appear bellow the photo and above the description on the Gallery Foolder post.&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;columns&#039; =&gt; 7
+        ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; __(&#039;Enter photo title here...&#039;, &#039;stopping-the-world-admin&#039;)
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;store_availability&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Store Availability&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;help&#039; =&gt; __(&#039;(Leave unchecked if you do not want to sell this photo.)&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;columns&#039; =&gt; 4
+        ,&#039;choices&#039; =&gt; array(
+            &#039;option1&#039; =&gt; &#039;Stock&#039;
+            ,&#039;option2&#039; =&gt; &#039;Print&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;textarea&#039;
+        ,&#039;field&#039; =&gt; &#039;photo_description&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Description&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;help&#039; =&gt; __(&#039;Sets the photo description. This will appear bellow the photo and its title on the Gallery Folder post.&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;attributes&#039; =&gt; array(
+            &#039;rows&#039; =&gt; 5
+            ,&#039;cols&#039; =&gt; 120
+            ,&#039;placeholder&#039; =&gt; __(&#039;Describe this photo...&#039;, &#039;stopping-the-world-admin&#039;)
+            ,&#039;maxlength&#039; =&gt; &#039;320&#039;
+        )
+      )
+     )
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/">File upload metabox not setting attachement&#039;s post_parent &#8212; Piklist v0.9.9.7</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

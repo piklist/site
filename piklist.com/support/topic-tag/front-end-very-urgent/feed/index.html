@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Front-end very urgent &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/front-end-very-urgent/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 17 Jan 2017 21:39:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Front-end</title>
+		<link>https://piklist.com/support/topic/front-end/</link>
+		
+		<dc:creator><![CDATA[lunatikzx]]></dc:creator>
+		<pubDate>Thu, 12 Jan 2017 17:30:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end/</guid>
+
+					<description><![CDATA[<p>It seems i did something wrong and i need clarification , at the start of the week my form was submitting but now it does not work anymore can anyone help me quickly ? &#60;?php /* Title: Form du projet Description: Champs du post Method: post Logged in: false */ $args = array( &#039;post_type&#039;=&#62;&#039;ecoles&#039;, &#039;posts_per_page&#039;=&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end/">Front-end</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It seems i did something wrong and i need clarification ,  at the start of the week my form was submitting but now it does not work anymore can anyone help me quickly ?</p>
+<pre><code>&lt;?php
+/*
+Title: Form du  projet
+Description: Champs du post
+Method: post
+Logged in: false
+*/
+
+$args   = array(
+  &#039;post_type&#039;=&gt;&#039;ecoles&#039;,
+  &#039;posts_per_page&#039;=&gt; -1
+);
+
+$query  = new WP_Query( $args );
+$ecoles_array = array(&#039;0&#039;=&gt;&quot;Choisir Une école&quot;);
+
+$posts = $query-&gt;get_posts();
+
+foreach($posts as $post){
+  $ecoles_array[$post-&gt;ID] = $post-&gt;post_title;
+}
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;  =&gt; &#039;hidden&#039;,
+  &#039;scope&#039; =&gt; &#039;post&#039;,
+  &#039;field&#039; =&gt; &#039;post_type&#039;,
+  &#039;value&#039; =&gt; &#039;fiche&#039;
+));
+
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;hidden&#039;,
+ &#039;scope&#039; =&gt; &#039;post&#039;,
+ &#039;field&#039; =&gt; &#039;post_status&#039;,
+ &#039;value&#039; =&gt; &#039;pending&#039;
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;,
+  &#039;scope&#039; =&gt; &#039;post&#039;, // post_title is in the wp_posts table, so scope is: post,
+  &#039;field&#039; =&gt; &#039;post_title&#039;,
+  &#039;label&#039; =&gt; __(&#039;Title&#039;, &#039;_reucir&#039;),
+  &#039;attributes&#039; =&gt; array(
+    &#039;wrapper_class&#039; =&gt; &#039;post_title&#039;,
+    &#039;style&#039; =&gt; &#039;width: 100%&#039;
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;select&#039;,
+  &#039;field&#039;   =&gt; &#039;_ecolie&#039;,
+  &#039;scope&#039;   =&gt; &#039;post_meta&#039;,
+  &#039;attributes&#039; =&gt; array(&#039;class&#039; =&gt; &#039;change_ecole&#039;),
+  &#039;value&#039; =&gt; (isset($_GET[&#039;schoolid&#039;])?$_GET[&#039;schoolid&#039;]:0),
+  &#039;choices&#039; =&gt; $ecoles_array
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;label&#039; =&gt; __(&#039;Informations de base&#039;, &#039;_reucir&#039;),
+  &#039;list&#039; =&gt; false,
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039;      =&gt; &#039;radio&#039;,
+      &#039;field&#039;     =&gt; &#039;_adok&#039;,
+      &#039;scope&#039;     =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;     =&gt; __(&#039;Est-ce la bonne Adresse?&#039;, &#039;_reucir&#039;),
+      &#039;required&#039;  =&gt; false,
+      &#039;columns&#039;   =&gt; 3,
+      &#039;value&#039;     =&gt; &#039;oui&#039;,
+      &#039;choices&#039;   =&gt; array(
+        &#039;oui&#039; =&gt; &#039;Oui&#039;,
+        &#039;non&#039; =&gt; &#039;Non&#039;
+      )
+    ),
+    array(
+      &#039;type&#039;      =&gt; &#039;number&#039;,
+      &#039;field&#039;     =&gt; &#039;_nbenseignant&#039;,
+      &#039;scope&#039;     =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;     =&gt; __(&#039;Nombre d\&#039;enseignants engagé dans le projet:&#039;, &#039;_reucir&#039;),
+      &#039;value&#039;     =&gt; 1,
+      &#039;columns&#039;   =&gt; 3,
+      &#039;attributes&#039;=&gt; array(
+        &#039;min&#039;  =&gt; 1,
+        &#039;max&#039;  =&gt; 80,
+        &#039;step&#039; =&gt; 1
+      )
+    ),
+    array(
+      &#039;type&#039;      =&gt; &#039;number&#039;,
+      &#039;field&#039;     =&gt; &#039;_nbprofessionel&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;     =&gt; __(&#039;Nombre de professionnels engagé dans le projet:&#039;, &#039;_reucir&#039;),
+      &#039;value&#039;     =&gt; 1,
+      &#039;columns&#039;   =&gt; 3,
+      &#039;attributes&#039;=&gt; array(
+        &#039;min&#039;  =&gt; 1,
+        &#039;max&#039;  =&gt; 10,
+        &#039;step&#039; =&gt; 1
+      )
+    ),
+    array(
+      &#039;type&#039;      =&gt; &#039;number&#039;,
+      &#039;field&#039;     =&gt; &#039;_nbgestionnaire&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;     =&gt; __(&#039;Nombre de gestionnaires scolaires engagé dans le projet:&#039;, &#039;_reucir&#039;),
+      &#039;value&#039;     =&gt; 1,
+      &#039;columns&#039;   =&gt; 3,
+      &#039;attributes&#039;=&gt; array(
+        &#039;min&#039;  =&gt; 1,
+        &#039;max&#039;  =&gt; 10,
+        &#039;step&#039; =&gt; 1
+      )
+    ),
+    array(
+      &#039;type&#039;        =&gt; &#039;text&#039;,
+      &#039;field&#039;       =&gt; &#039;_contact_nom&#039;,
+      &#039;scope&#039;       =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;       =&gt; __(&#039;Nom d\&#039;une personne à contacter:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039;     =&gt; 12,
+      &#039;placeholder&#039; =&gt; &quot;Inscrivez le nom du contact&quot;
+    ),
+    array(
+      &#039;type&#039;        =&gt; &#039;text&#039;,
+      &#039;field&#039;       =&gt; &#039;_contact_email&#039;,
+      &#039;scope&#039;     =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;       =&gt; __(&#039;Adresse courriel:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039;     =&gt; 12,
+      &#039;placeholder&#039; =&gt; &quot;Inscrivez l&#039;adresse courriel&quot;
+    ),
+    array(
+      &#039;type&#039;      =&gt; &#039;select&#039;,
+      &#039;field&#039;     =&gt; &#039;_ordredenseignement&#039;,
+      &#039;scope&#039;     =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;     =&gt; __(&#039;Choisir l\&#039;ordre d\&#039;enseignement:&#039;, &#039;_reucir&#039;),
+      &#039;value&#039;     =&gt; &#039;primaire&#039;,
+      &#039;columns&#039;   =&gt; 12,
+      &#039;choices&#039;   =&gt; array(
+        &#039;primaire&#039;  =&gt;&#039;Primaire&#039;,
+        &#039;secondaire&#039;=&gt;&#039;Secondaire&#039;
+      )
+    ),
+  )
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;  =&gt; &#039;group&#039;,
+  &#039;list&#039;  =&gt; false,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;field&#039; =&gt; &#039;_ordred_p&#039;,
+  &#039;label&#039; =&gt; __(&#039;Primaire&#039;, &#039;_reucir&#039;),
+  &#039;attributes&#039; =&gt; array(
+      &#039;wrapper_class&#039; =&gt; &#039;primaire-wrap&#039;,
+  ),
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;select&#039;,
+      &#039;field&#039;   =&gt; &#039;_primaire_cycle&#039;,
+      &#039;scope&#039;   =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Choisir le cycle d\&#039;enseignement:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;choices&#039; =&gt; array(
+        &quot;&quot;  =&gt; &quot;Choisir une valeur&quot;,
+        &quot;0&quot; =&gt; &quot;Préscolaire&quot;,
+        &quot;1&quot; =&gt; &quot;1er cycle&quot;,
+        &quot;2&quot; =&gt; &quot;2 cycle&quot;,
+        &quot;3&quot; =&gt; &quot;3e cycle&quot;,
+        &quot;4&quot; =&gt; &quot;Adaptation scolaire&quot;
+      )
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;group&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Renseignements complémentaire: (facultatif)&#039;, &#039;_reucir&#039;),
+      &#039;list&#039; =&gt; false,
+      &#039;description&#039; =&gt; __(&#039;Renseignements complémentaires sur l\&#039;école primaire:&#039;, &#039;piklist-demo&#039;),
+      &#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039;    =&gt; &#039;select&#039;,
+          &#039;field&#039;   =&gt; &#039;_primaire_comp_part&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;columns&#039; =&gt; 6,
+          &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;prim_choix&#039;,
+          ),
+          &#039;choices&#039; =&gt; array(
+            &#039;&#039;       =&gt;&#039;Choisir une valeur&#039;,
+            &#039;Programme particulier&#039; =&gt; array(
+               &#039;pei&#039;    =&gt;&#039;Programme d\&#039;éducation internationales (PEI)&#039;,
+               &#039;anglais&#039;=&gt;&#039;Anglais intensif&#039;,
+            ),
+            &#039;Programme local&#039; =&gt; array(
+                &#039;autre&#039;  =&gt;&#039;Autre&#039;,
+            )
+          )
+        ),
+        array(
+          &#039;type&#039;        =&gt; &#039;text&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;       =&gt; &#039;_primaire_comp_local&#039;,
+          &#039;label&#039;       =&gt; __(&#039;Programme local:&#039;, &#039;_reucir&#039;),
+          &#039;columns&#039;     =&gt; 6,
+          &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;prim_local&#039;,
+          ),
+          &#039;placeholder&#039; =&gt; &quot;Inscrivez le nom du programme Local&quot;
+        ),
+      )
+    ),
+    array(
+      &#039;type&#039;  =&gt; &#039;group&#039;,
+      &#039;label&#039; =&gt; __(&#039;Quel est le domaine d\&#039;apprentissage ciblé?&#039;, &#039;_reucir&#039;),
+      &#039;list&#039;  =&gt; false,
+      &#039;fields&#039; =&gt;array(
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_primaire_domaine&#039;,
+          &#039;columns&#039;   =&gt; 12,
+          &#039;list&#039;      =&gt; true,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;prim_domaine&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &quot;langue&quot;         =&gt; &quot;Langue&quot;,
+            &quot;math&quot;           =&gt; &quot;Mathématique&quot;,
+            &quot;scettechno&quot;     =&gt; &quot;Science et technologie&quot;,
+            &quot;developpement&quot;  =&gt; &quot;Développement de la personne&quot;,
+            &quot;arts&quot;           =&gt; &quot;Arts&quot;,
+            &quot;univers&quot;        =&gt; &quot;Univers social&quot;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;field&#039;     =&gt; &#039;_primaire_langue&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Langue&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;prim_langue&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;francais&#039;  =&gt; &#039;Français&#039;,
+            &#039;anglais&#039;   =&gt; &#039;Anglais&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;field&#039;     =&gt; &#039;_primaire_personne&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Développement de la personne&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;prim_developpement&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;ethique&#039;  =&gt; &#039;Éthique et culture religieuse&#039;,
+            &#039;edph&#039;     =&gt; &#039;Éducation physique&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;field&#039;     =&gt; &#039;_primaire_arts&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Arts&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;prim_arts&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;musique&#039;     =&gt; &#039;Musique&#039;,
+            &#039;plastiques&#039;  =&gt; &#039;Arts plastiques&#039;,
+            &#039;danse&#039;       =&gt; &#039;Danse&#039;,
+            &#039;theatre&#039;     =&gt; &#039;Théâtre&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;field&#039;     =&gt; &#039;_primaire_social&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Univers social&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;prim_univers&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;historie&#039;     =&gt; &#039;Histoire&#039;,
+            &#039;geographie&#039;  =&gt; &#039;Géographie&#039;,
+          )
+        )
+      )
+    ),
+    array(
+      &#039;type&#039;    =&gt; &#039;select&#039;,
+      &#039;field&#039;   =&gt; &#039;_primaire_sujet&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Avez-vous ciblé un sujet?:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;prim_sujet&#039;,
+      ),
+      &#039;choices&#039; =&gt; array(
+        &quot;&quot;            =&gt; &quot;Choisir une valeur&quot;,
+        &quot;literatie&quot;   =&gt; &quot;Littératie&quot;,
+        &quot;numeratie&quot;   =&gt; &quot;Numératie&quot;,
+        &quot;autre&quot;       =&gt; &quot;Autre&quot;,
+      )
+    ),
+    array(
+      &#039;type&#039;    =&gt; &#039;text&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;prim_sujet_autre&#039;,
+      ),
+      &#039;field&#039;   =&gt; &#039;_primaire_sujet_autre&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Autre:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+    ),
+  )
+
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;list&#039; =&gt; false,
+  &#039;field&#039; =&gt; &#039;_ordred_s&#039;,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;label&#039; =&gt; __(&#039;Secondaire&#039;, &#039;_reucir&#039;),
+  &#039;attributes&#039; =&gt; array(
+      &#039;id&#039; =&gt; &#039;primaire&#039;,
+  ),
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;select&#039;,
+      &#039;field&#039;   =&gt; &#039;_secondaire_cycle&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Choisir le cycle d\&#039;enseignement:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;seco_cycle&#039;,
+      ),
+      &#039;choices&#039; =&gt; array(
+        &quot;1&quot; =&gt; &quot;1er cycle&quot;,
+        &quot;2&quot; =&gt; &quot;2e cycle&quot;,
+      )
+    ),
+    array(
+      &#039;type&#039;    =&gt; &#039;select&#039;,
+      &#039;field&#039;   =&gt; &#039;_secondaire_deux_cycle&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Choisir le cheminement:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;seco_second_cycle&#039;,
+      ),
+      &#039;choices&#039; =&gt; array(
+        &quot;&quot;            =&gt; &quot;Choisir une valeur&quot;,
+        &quot;general&quot;     =&gt; &quot;Cheminement général&quot;,
+        &quot;specialise&quot;  =&gt; &quot;Cheminement spécialisé&quot;,
+        &quot;particulier&quot; =&gt; &quot;Cheminement particulier&quot;
+      )
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;group&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Renseignements complémentaire: &#039;, &#039;_reucir&#039;),
+      &#039;list&#039; =&gt; false,
+      &#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039;    =&gt; &#039;select&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;   =&gt; &#039;_secondaire_comp_part&#039;,
+          &#039;label&#039;   =&gt; __(&#039;Programme particulier:&#039;, &#039;_reucir&#039;),
+          &#039;columns&#039; =&gt; 6,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_choix&#039;,
+          ),
+          &#039;choices&#039; =&gt; array(
+            &#039;&#039;        =&gt; &#039;Choisir une valeur&#039;,
+            &#039;pei&#039;     =&gt; &#039;Programme d\&#039;éducation internationales (PEI)&#039;,
+            &#039;anglais&#039; =&gt; &#039;Anglais intensif&#039;,
+            &#039;sports&#039;  =&gt; &#039;Sports-études&#039;,
+            &#039;arts&#039;    =&gt; &#039;Arts-études&#039;,
+            &#039;autre&#039;   =&gt; &#039;Autre&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;        =&gt; &#039;text&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;       =&gt; &#039;_secondaire_comp_local&#039;,
+          &#039;label&#039;       =&gt; __(&#039;Programme local:&#039;, &#039;_reucir&#039;),
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_local&#039;,
+          ),
+          &#039;columns&#039;     =&gt; 6,
+          &#039;placeholder&#039; =&gt; &quot;Inscrivez le nom du programme Local&quot;
+        ),
+      )
+    ),
+    array(
+      &#039;type&#039;  =&gt; &#039;group&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Quel est le domaine d\&#039;apprentissage ciblé?&#039;, &#039;_reucir&#039;),
+      &#039;list&#039;  =&gt; false,
+      &#039;fields&#039; =&gt;array(
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_domaine&#039;,
+          &#039;columns&#039;   =&gt; 12,
+          &#039;list&#039;      =&gt; true,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_domaine&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &quot;langue&quot;         =&gt; &quot;Langue&quot;,
+            &quot;math&quot;           =&gt; &quot;Mathématique&quot;,
+            &quot;scettechno&quot;     =&gt; &quot;Science et technologie&quot;,
+            &quot;developpement&quot;  =&gt; &quot;Développement de la personne&quot;,
+            &quot;arts&quot;           =&gt; &quot;Arts&quot;,
+            &quot;univers&quot;        =&gt; &quot;Univers social&quot;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_langue&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Langue&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_langue&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;francais&#039;  =&gt; &#039;Français&#039;,
+            &#039;anglais&#039;   =&gt; &#039;Anglais&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_personne&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Développement de la personne&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_developpement&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;ethique&#039;  =&gt; &#039;Éthique et culture religieuse&#039;,
+            &#039;edph&#039;     =&gt; &#039;Éducation physique&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_arts&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Arts&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_arts&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;musique&#039;     =&gt; &#039;Musique&#039;,
+            &#039;plastiques&#039;  =&gt; &#039;Arts plastiques&#039;,
+            &#039;danse&#039;       =&gt; &#039;Danse&#039;,
+            &#039;theatre&#039;     =&gt; &#039;Théâtre&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_social&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Univers social&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 3,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_univers&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;historie&#039;     =&gt; &#039;Histoire&#039;,
+            &#039;geographie&#039;  =&gt; &#039;Géographie&#039;,
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_math&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Mathématiques&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 6,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_math&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;math&#039;        =&gt; &#039;Mathématique&#039;,
+            &#039;math_fort&#039;   =&gt; &#039;Mathématique 4e et 5e secondaire&#039;
+          )
+        ),
+        array(
+          &#039;type&#039;      =&gt; &#039;checkbox&#039;,
+          &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+          &#039;field&#039;     =&gt; &#039;_secondaire_math_seq&#039;,
+          &#039;label&#039;     =&gt; __(&#039;Mathématiques séquence&#039;, &#039;_reucir&#039;),
+          &#039;required&#039;  =&gt; false,
+          &#039;columns&#039;   =&gt; 6,
+          &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;seco_math_seq&#039;,
+          ),
+          &#039;choices&#039;   =&gt; array(
+            &#039;cultetsoc&#039; =&gt; &#039;Séquence: Culture, société et technique&#039;,
+            &#039;snat&#039;      =&gt; &#039;Séquence: Sciences naturelles&#039;,
+            &#039;techsc&#039;    =&gt; &#039;Séquence: Technico-sciences&#039;
+          )
+        ),
+      )
+    ),
+    array(
+      &#039;type&#039;    =&gt; &#039;select&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_secondaire_sujet&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Avez-vous ciblé un sujet?:&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;seco_sujet&#039;,
+      ),
+      &#039;choices&#039; =&gt; array(
+        &quot;&quot;            =&gt; &quot;Choisir une valeur&quot;,
+        &quot;literatie&quot;   =&gt; &quot;Littératie&quot;,
+        &quot;numeratie&quot;   =&gt; &quot;Numératie&quot;,
+        &quot;autre&quot;       =&gt; &quot;Autre&quot;,
+      )
+    ),
+    array(
+      &#039;type&#039;    =&gt; &#039;text&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_secondaire_sujet_autre&#039;,
+      &#039;label&#039;   =&gt; __(&#039;Autre:&#039;, &#039;_reucir&#039;),
+      &#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;seco_sujet_autre&#039;,
+      ),
+      &#039;columns&#039; =&gt; 6,
+    ),
+  )
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;label&#039; =&gt; __(&#039;Démarche d\&#039;analyse d\&#039;une pratique à la lumière des connaissances issus de la recherche Identifier l\&#039;étape?&#039;, &#039;_reucir&#039;),
+  &#039;list&#039; =&gt; false,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;description&#039; =&gt; __(&#039;&#039;, &#039;_reucir&#039;),
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;textarea&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_etape_un&#039;,
+      &#039;label&#039;   =&gt; __(&#039;&lt;h3&gt;Étape 1 :&lt;/h3&gt; &lt;span&gt;Comment avez-vous fait le choix de la pratique à cibler en fonction du besoin d’apprentissage de l’élève ?&lt;/span&gt;&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+        &#039;rows&#039;  =&gt; 10,
+        &#039;cols&#039;  =&gt; 50,
+        &#039;maxlength&#039; =&gt; &#039;250&#039;
+      )
+    ),
+    array(
+      &#039;type&#039;    =&gt; &#039;textarea&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_etape_deux&#039;,
+      &#039;label&#039;   =&gt; __(&#039;&lt;h3&gt;Étape 2 :&lt;/h3&gt; &lt;span&gt;Comment vous êtes-vous  questionné sur les pratiques les plus efficaces pour atteindre les objectifs d’apprentissage ciblé ?&lt;/span&gt;&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+        &#039;rows&#039;  =&gt; 10,
+        &#039;cols&#039;  =&gt; 50,
+        &#039;maxlength&#039; =&gt; &#039;250&#039;
+      )
+    ),array(
+      &#039;type&#039;    =&gt; &#039;textarea&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_etape_trois&#039;,
+      &#039;label&#039;   =&gt; __(&#039;&lt;h3&gt;Étape 3 :&lt;/h3&gt; &lt;span&gt;Comment avez-vous priorisé et planifié les actions pédagogiques en fonction des objectifs d’apprentissage ?&lt;/span&gt;&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+        &#039;rows&#039;  =&gt; 10,
+        &#039;cols&#039;  =&gt; 50,
+        &#039;maxlength&#039; =&gt; &#039;250&#039;
+      )
+    ),array(
+      &#039;type&#039;    =&gt; &#039;textarea&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_etape_quatre&#039;,
+      &#039;label&#039;   =&gt; __(&#039;&lt;h3&gt;Étape 4 :&lt;/h3&gt; &lt;span&gt;Comment avez-vous mis en œuvre l’intervention pédagogique ?&lt;/span&gt;&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+        &#039;rows&#039;  =&gt; 10,
+        &#039;cols&#039;  =&gt; 50,
+        &#039;maxlength&#039; =&gt; &#039;250&#039;
+      )
+    ),array(
+      &#039;type&#039;    =&gt; &#039;textarea&#039;,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;field&#039;   =&gt; &#039;_etape_cinq&#039;,
+      &#039;label&#039;   =&gt; __(&#039;&lt;h3&gt;Étape 5 :&lt;/h3&gt; &lt;span&gt;Comment avez-vous recueilli les données qui permettent le suivi et la régulation ?&lt;/span&gt;&#039;, &#039;_reucir&#039;),
+      &#039;columns&#039; =&gt; 12,
+      &#039;attributes&#039; =&gt; array(
+        &#039;rows&#039;  =&gt; 10,
+        &#039;cols&#039;  =&gt; 50,
+        &#039;maxlength&#039; =&gt; &#039;250&#039;
+      )
+    ),
+  )
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;submit&#039;,
+  &#039;field&#039; =&gt; &#039;submit&#039;,
+  &#039;value&#039; =&gt; &#039;Submit&#039;
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end/">Front-end</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

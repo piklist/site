@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom_post_type &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom_post_type/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 03 Nov 2015 16:06:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Data not savings on create [0.9.9.6]</title>
+		<link>https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Tue, 03 Nov 2015 16:02:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/</guid>
+
+					<description><![CDATA[<p>When I create a new post in my custom post type, it does not save any of the data except for the post title. I have to then completely go to all of that post type, and re-enter the post in order to update any of my meta-boxes. After the 1st update, I can not [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/">Data not savings on create [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I create a new post in my custom post type, it does not save any of the data except for the post title. I have to then completely go to all of that post type, and re-enter the post in order to update any of my meta-boxes. After the 1st update, I can not update a second time until I have gone back to all posts and re-entered that particular post.</p>
+<p>I think it has something to do with my workflow, but I can&#8217;t figure out what. I think it is related to workflow, because the order of my meta-boxes are not working. The order it does is 20,30,10. Where my Order:10 metabox is at the bottom.</p>
+<p>This is the metafile that represents 10.</p>
+<pre><code>&lt;?php
+/*
+Title: General Trip Information
+Post Type: post_mission_trip
+Order: 10
+Flow: Trip Flow
+Tab: General
+
+*/
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_is_full&#039;
+ ,&#039;value&#039; =&gt; &#039;Open&#039;
+ ,&#039;label&#039; =&gt; &#039;Trip Status (Full or Open)&#039;
+ ,&#039;description&#039; =&gt; &#039;Uneditable based upon number of registrations&#039;
+ ,&#039;attributes&#039; =&gt; array(
+	&#039;readonly&#039; =&gt; &#039;readonly&#039;
+	)
+ ));
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_reg_count&#039;
+ ,&#039;label&#039; =&gt; &#039;Trip Registration Count&#039;
+ ,&#039;attributes&#039; =&gt; array(
+	&#039;readonly&#039; =&gt; &#039;readonly&#039;
+	)
+ ));
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;trip_location&#039;
+		,&#039;label&#039; =&gt; &#039;Trip Location&#039;
+		,&#039;attributes&#039; =&gt; array(
+				&#039;multiple&#039; =&gt; &#039;multiple&#039;
+			)
+		,&#039;choices&#039; =&gt; piklist(
+						get_posts(
+							array(
+								&#039;post_type&#039; =&gt; &#039;post_servicelocation&#039;
+								,&#039;orderby&#039; =&gt; &#039;title&#039;
+								,&#039;order&#039; =&gt; &#039;asc&#039;
+								,&#039;posts_per_page&#039; =&gt; -1
+							)
+							,&#039;objects&#039;
+						)
+						,array(
+							&#039;ID&#039;
+							,&#039;post_title&#039;
+						)
+						)
+      ));
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;checkbox&#039;
+    ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+    ,&#039;field&#039; =&gt; &#039;triptype&#039;
+    ,&#039;label&#039; =&gt; &#039;Trip Type&#039;
+    ,&#039;choices&#039; =&gt; piklist(
+      get_terms(&#039;triptype&#039;, array(
+        &#039;hide_empty&#039; =&gt; false
+      ))
+      ,array(
+        &#039;term_id&#039;
+        ,&#039;name&#039;
+      )
+    )
+  ));
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;datepicker&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_begin&#039;
+ ,&#039;label&#039; =&gt; &#039;Begin Date&#039;
+,&#039;options&#039; =&gt; array(
+   &#039;dateFormat&#039; =&gt; &#039;yy-mm-dd&#039;  
+   ,&#039;firstDay&#039; =&gt; &#039;0&#039;
+)
+));
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;datepicker&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_end&#039;
+ ,&#039;label&#039; =&gt; &#039;End Date&#039;
+,&#039;options&#039; =&gt; array(
+   &#039;dateFormat&#039; =&gt; &#039;yy-mm-dd&#039; 
+   ,&#039;firstDay&#039; =&gt; &#039;0&#039;
+)
+));
+piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;checkbox&#039;
+,&#039;field&#039; =&gt; &#039;trip_options&#039;
+,&#039;label&#039; =&gt; &#039;Trip Options&#039;
+,&#039;description&#039; =&gt; &#039;Select all that apply.&#039;
+,&#039;choices&#039; =&gt; array(
+  &#039;hide&#039; =&gt; &#039;Private Event (Hide)&#039;
+  ,&#039;hide_day&#039; =&gt; &#039;Only Display Month and Year (unsure of exact dates)&#039;
+  ,&#039;enable_reg&#039; =&gt; &#039;Enable Registration&#039;
+)
+));
+
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_hide_code&#039;
+ ,&#039;label&#039; =&gt; &#039;Trip Password&#039;
+ ,&#039;description&#039; =&gt; &#039;Code to have users look up hidden event. (MUST BE UNIQUE)&#039;
+ ,&#039;conditions&#039; =&gt; array(
+			array(
+				&#039;field&#039; =&gt; &#039;trip_options&#039;
+				,&#039;value&#039; =&gt; &#039;hide&#039;
+				)
+			)
+ ));
+ 
+ $related = get_posts(array(
+    &#039;post_type&#039; =&gt; &#039;trip_reg&#039;
+    ,&#039;posts_per_page&#039; =&gt; -1
+    ,&#039;post_belongs&#039; =&gt; $post-&gt;ID
+    ,&#039;post_status&#039; =&gt; &#039;approved&#039;
+    ,&#039;suppress_filters&#039; =&gt; false
+  ));
+
+  if ($related): 
+?&gt;
+
+    &lt;h4&gt;&lt;?php _e(&#039;Registrations&#039;, &#039;Extreme&#039;);?&gt;&lt;/h4&gt;
+
+    &lt;ol&gt;
+      &lt;?php foreach ($related as $related_post){ 
+		$TheUser = get_userdata($related_post-&gt;reg_user);
+	  ?&gt;
+        &lt;li&gt;&lt;?php _e($TheUser-&gt;user_login); ?&gt;&lt;/li&gt;
+      &lt;?php }; ?&gt;
+   &lt;/ol&gt;
+
+    &lt;hr /&gt;
+
+&lt;?php 
+  endif;
+
+  ?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/">Data not savings on create [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom Post Type Structure</title>
+		<link>https://piklist.com/support/topic/custom-post-type-structure/</link>
+		
+		<dc:creator><![CDATA[baar]]></dc:creator>
+		<pubDate>Thu, 18 Sep 2014 08:27:49 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-post-type-structure/</guid>
+
+					<description><![CDATA[<p>Hi Everyone, I wonder if it&#8217;s possible to set a custom post type structure, like : %post_id% Best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-type-structure/">Custom Post Type Structure</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Everyone,</p>
+<p>I wonder if it&#8217;s possible to set a custom post type structure,</p>
+<p>like :</p>
+<p>%post_id%</p>
+<p>Best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-type-structure/">Custom Post Type Structure</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

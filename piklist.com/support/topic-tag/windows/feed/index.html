@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>windows &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/windows/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 25 Feb 2014 16:45:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Piklist About &#038; Settings Pages do not Display</title>
+		<link>https://piklist.com/support/topic/piklist-about-settings-pages-do-not-display/</link>
+		
+		<dc:creator><![CDATA[dennis977]]></dc:creator>
+		<pubDate>Tue, 25 Feb 2014 16:45:18 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-about-settings-pages-do-not-display/</guid>
+
+					<description><![CDATA[<p>Windows: 8.1 WordPress: 3.8.1 both pages are blank</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-about-settings-pages-do-not-display/">Piklist About &amp; Settings Pages do not Display</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Windows: 8.1<br />
+WordPress: 3.8.1<br />
+both pages are blank</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-about-settings-pages-do-not-display/">Piklist About &amp; Settings Pages do not Display</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Small patch for windows</title>
+		<link>https://piklist.com/support/topic/small-patch-for-windows/</link>
+		
+		<dc:creator><![CDATA[Daniel Ménard]]></dc:creator>
+		<pubDate>Thu, 02 Aug 2012 13:36:35 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/small-patch-for-windows/</guid>
+
+					<description><![CDATA[<p>Hi! I’m testing piklist on a windows 7 dev machine and I found a problem: nothing appears in wp-admin (as if the plugin wasn’t activated). I traced the problem back to includes/class-piklist.php:86 (PikList::load), the line which initializes the plugin path: self::$paths['plugin'] = rtrim(substr(dirname(__FILE__), 0, strpos(dirname(__FILE__), '/includes')), '/'); On windows the directory_separator is backslash. As we’re [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/small-patch-for-windows/">Small patch for windows</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!</p>
+<p>I’m testing piklist on a windows 7 dev machine and I found a problem: nothing appears in wp-admin (as if the plugin wasn’t activated).</p>
+<p>I traced the problem back to <code>includes/class-piklist.php:86</code> (PikList::load), the line which initializes the plugin path:</p>
+<p><code>self::$paths['plugin'] = rtrim(substr(dirname(__FILE__), 0, strpos(dirname(__FILE__), '/includes')), '/');</code></p>
+<p>On windows the directory_separator is backslash. As we’re looking for &#8216;/includes&#8217;, it can’t work.</p>
+<p>A simple workaround would be:<br />
+<code>… strpos(dirname(__FILE__), DIRECTORY_SEPARATOR. 'includes') …</code></p>
+<p>But thinking again, I think that a simpler line like this would do the job:<br />
+<code>self::$paths['plugin'] = dirname(dirname(__FILE__));</code><br />
+(tested on windows and debian, but only with php5.4).</p>
+<p>Thanks for this promising framework!</p>
+<p>Cheers,</p>
+<p>Daniel</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/small-patch-for-windows/">Small patch for windows</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

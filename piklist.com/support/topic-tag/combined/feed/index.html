@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>combined &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/combined/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 23 May 2017 23:02:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>add_more and</title>
+		<link>https://piklist.com/support/topic/add_more-and/</link>
+		
+		<dc:creator><![CDATA[strarsis]]></dc:creator>
+		<pubDate>Tue, 23 May 2017 23:02:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and/</guid>
+
+					<description><![CDATA[<p>Hi, I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code. Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. 🙂 I want a repeating/loop/&#8221;add more&#8221; field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code.<br />
+Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I want a repeating/loop/&#8221;add more&#8221; field with items that each have a post-relate field.</p>
+<p>I tried the following code (how sleek and beautiful Piklist code is!)</p>
+<pre><code>/*
+Title: Test
+Post Type: parent-post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;items&#039;
+  ,&#039;label&#039; =&gt; &#039;Items&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;field-1&#039;
+      ,&#039;label&#039; =&gt; &#039;Field 1&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;post-relate&#039;
+      ,&#039;scope&#039; =&gt; &#039;post&#039;
+      ,&#039;template&#039; =&gt; &#039;field&#039;
+    )
+  )
+));
+</code></pre>
+<p>While the normal text field is in each &#8220;add more&#8221; item, the post-relate field is shown only once below all the &#8220;add more&#8221; items.<br />
+What could be wrong with the code above &#8211; how can I have a post-relate field per &#8220;add more&#8221; item?</p>
+<p>I also attached a screenshot.</p>
+<p>Thanks in advance and<br />
+with best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

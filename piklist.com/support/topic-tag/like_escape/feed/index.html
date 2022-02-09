@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>like_escape &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/like_escape/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 10 Jun 2015 19:11:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>like_escape is deprecated</title>
+		<link>https://piklist.com/support/topic/like_escape-is-deprecated/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Wed, 10 Jun 2015 19:11:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/like_escape-is-deprecated/</guid>
+
+					<description><![CDATA[<p>I am doing a wp_user_query on the front end and receive this notice when trying to retrieve the query. I actually have found the use of like_escape which is deprecated on line: 343 in file class-piklist-wordpress.php. I assume that is what the other notices about undefined variables are about as well? Notice: like_escape is deprecated [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/like_escape-is-deprecated/">like_escape is deprecated</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am doing a wp_user_query on the front end and receive this notice when trying to retrieve the query. I actually have found the use of like_escape which is deprecated on line: 343 in file class-piklist-wordpress.php.</p>
+<p>I assume that is what the other notices about undefined variables are about as well?</p>
+<pre><code>
+Notice: like_escape is deprecated since version 4.0! Use wpdb::esc_like() instead. in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/functions.php on line 3391
+
+Notice: Undefined variable: relation in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-content/plugins/piklist/includes/class-piklist-wordpress.php on line 379
+
+Notice: Undefined variable: relation in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-content/plugins/piklist/includes/class-piklist-wordpress.php on line 402
+
+Notice: Undefined variable: relation in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-content/plugins/piklist/includes/class-piklist-wordpress.php on line 435
+</code></pre>
+<p>Just in case you do want to look at my code here it is: (it seems to be working fine, just get the notices.)</p>
+<pre><code>&lt;div id=&quot;team-list&quot;&gt;
+				&lt;?php
+				// Generate the query 
+				$mem_num = 9; //Total number of Team members to display
+				$paged = (get_query_var(&#039;paged&#039;)) ? get_query_var(&#039;paged&#039;) : 1;
+				
+				if($paged==1){
+					$offset = 0;
+				}else{
+					$offset= ($paged-1)*$mem_num;
+				}
+				$user_query = new WP_User_Query( 
+					array( 
+					  &#039;role&#039; =&gt; &#039;aamrole_54e5f6d7814cd&#039;, 
+					  &#039;offset&#039; =&gt; $offset ,
+					  &#039;number&#039; =&gt; $mem_num
+
+				));
+				$users = $user_query-&gt;get_results();
+				if ( !empty( $users)) {
+					foreach($users as $user ) {
+						$user_info = get_userdata($user-&gt;ID);
+						echo &#039;&lt;li&gt;&#039; . $user_info-&gt;first_name . &#039; &#039; . $user_info-&gt;last_name . &#039;&lt;/li&gt;&#039;; //. get_avatar( $user_info-&gt;user_email, 165 ) . &#039;&lt;/li&gt;&#039; ;
+					}
+				} else {
+					echo &#039;Error - No Team Members were Found. Please contact webmaster@extremenazarene.org&#039;;
+				}
+				?&gt;
+				&lt;/div&gt;
+				&lt;?php
+            $total_user = $user_query-&gt;total_users;  
+            $total_pages=ceil($total_user/$mem_num);
+
+              echo paginate_links(array(  
+                  &#039;base&#039; =&gt; get_pagenum_link(1) . &#039;%_%&#039;,  
+                  &#039;format&#039; =&gt; &#039;?paged=%#%&#039;,  
+                  &#039;current&#039; =&gt; $paged,  
+                  &#039;total&#039; =&gt; $total_pages,  
+                  &#039;prev_text&#039; =&gt; __(&#039;« Previous&#039;),  
+                  &#039;next_text&#039; =&gt; __(&#039;Next »&#039;),
+                  &#039;type&#039;     =&gt; &#039;plain&#039;,
+                )); 
+?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/like_escape-is-deprecated/">like_escape is deprecated</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

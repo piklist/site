@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>addon &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/addon/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 15 Feb 2014 11:37:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>New Addon for Widget users</title>
+		<link>https://piklist.com/support/topic/new-addon-for-widget-users/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sat, 15 Feb 2014 11:36:23 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/new-addon-for-widget-users/</guid>
+
+					<description><![CDATA[<p>I love using piklist widgets, they make the process of updating little requests by clients such a breeze. (they can change colors, text, its surrounding css, all by dropping in a widget) In fact, here&#8217;s a screen shot of one of my widget areas: You&#8217;ll notice that the piklist widgets all have a nice little [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/new-addon-for-widget-users/">New Addon for Widget users</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I love using piklist widgets, they make the process of updating little requests by clients such a breeze. (they can change colors, text, its surrounding css, all by dropping in a widget)</p>
+<p>In fact, here&#8217;s a screen shot of one of my widget areas:<br />
+<img src="http://feb.imghost.us/EdFC.png" alt="Widget Active Titles" /></p>
+<p>You&#8217;ll notice that the piklist widgets all have a nice little feature.<br />
+They display the active title below them, and that title changes when you change the active widget in the drop down.</p>
+<p>To achieve this, this is all you need to do:<br />
+In your functions.php file add this:</p>
+<pre><code>
+add_action(&#039;admin_init&#039;, &#039;mae_piklist_widgets_titles&#039;);
+function mae_piklist_widgets_titles() {
+	global $pagenow;
+	if ($pagenow==&#039;widgets.php&#039;) {
+	    wp_enqueue_script(&#039;piklist_widgets_titles&#039;, get_template_directory_uri() . &#039;/js/admin-piklist-widgets-titles.js&#039;, array(), &#039;1.0.0&#039;, true );
+	}
+}
+</code></pre>
+<p>The javascript file this references is here on Gist:<br />
+https://gist.github.com/marcuseby/9017929</p>
+<p>Finally add the following to your admin css file:</p>
+<pre><code>
+.widget .widget-title .widget-piklist-active-title {
+    clear: both;
+    position: relative;
+    display: block;
+    padding: 0px 0px 10px 15px;
+    font-size: 80%;
+    margin-top: -15px;
+    font-weight: normal;
+}
+</code></pre>
+<p>Whats nice was this was much easier than all the code needed to do it through hooks instead of js.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/new-addon-for-widget-users/">New Addon for Widget users</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

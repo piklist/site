@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>groups &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/groups/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 02 May 2017 01:55:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Problem with simple conditions</title>
+		<link>https://piklist.com/support/topic/problem-with-simple-conditions/</link>
+		
+		<dc:creator><![CDATA[robertfyffe]]></dc:creator>
+		<pubDate>Tue, 02 May 2017 01:53:41 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-simple-conditions/</guid>
+
+					<description><![CDATA[<p>I am trying to use conditions within a 1 level deep group but I am having some problems. I am trying to set a condition based on if the user has chosen primary from the mew_location select list. If they haven&#8217;t it should hide the field mew_item_children. When I add the condition to this field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-simple-conditions/">Problem with simple conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to use conditions within a 1 level deep group but I am having some problems.</p>
+<p>I am trying to set a condition based on if the user has chosen <code>primary</code> from the <code>mew_location</code> select list. If they haven&#8217;t it should hide the field <code>mew_item_children</code>. When I add the condition to this field it completely prevents the group from displaying.</p>
+<p>My Code:</p>
+<pre><code>
+&lt;?php
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;, 
+  &#039;field&#039; =&gt; &#039;mew_type&#039;,
+  &#039;label&#039; =&gt; __(&#039;What type of menu would you like to build?&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;value&#039; =&gt; &#039;&#039;,
+  &#039;column&#039; =&gt; 12,
+  &#039;choices&#039; =&gt; array(
+    &#039;standard&#039; =&gt; __(&#039;Standard Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;mega&#039; =&gt; __(&#039;Mega Menu&#039;, WPDMEW_TEXT_DOMAIN),
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;,
+  &#039;field&#039; =&gt; &#039;mew_location&#039;,
+  &#039;label&#039; =&gt; __(&#039;Where will this appear?&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;value&#039; =&gt; &#039;&#039;,
+  &#039;column&#039; =&gt; 12,
+  &#039;choices&#039; =&gt; array(
+    &#039;&#039; =&gt; &#039;&#039;,
+    &#039;primary&#039; =&gt; __(&#039;Primary Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;secondary&#039; =&gt; __(&#039;Secondary Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;social&#039; =&gt; __(&#039;Social Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;footer&#039; =&gt; __(&#039;Footer Menu&#039;, WPDMEW_TEXT_DOMAIN),
+  ),
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;relation&#039; =&gt; &#039;or&#039;,
+      &#039;field&#039; =&gt; &#039;mew_type&#039;,
+      &#039;value&#039; =&gt; array(
+        &#039;standard&#039;,
+        &#039;mega&#039;
+      ),
+    )
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;field&#039; =&gt; &#039;mew_primary_menu&#039;,
+  &#039;label&#039; =&gt; __(&#039;&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;description&#039; =&gt; __(&#039;&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;add_more&#039; =&gt; true,
+  &#039;columns&#039; =&gt; 12,
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_type&#039;,
+      &#039;label&#039; =&gt; __(&#039;What kind of nav item do you want to add?&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;&#039;,
+        &#039;page&#039; =&gt; __(&#039;Page&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;post&#039; =&gt; __(&#039;Post&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;external&#039; =&gt; __(&#039;External&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;relation&#039; =&gt; &#039;or&#039;,
+          &#039;field&#039; =&gt; &#039;mew_location&#039;,
+          &#039;value&#039; =&gt; array(
+            &#039;primary&#039;,
+            &#039;secondary&#039;,
+            &#039;social&#039;,
+            &#039;footer&#039;,
+          )
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_post&#039;,
+      &#039;label&#039; =&gt; __(&#039;Select an existing post&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; wpdmw_get_posts(),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;post&#039;,
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_page&#039;,
+      &#039;label&#039; =&gt; __(&#039;Select an existing page&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;column&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; wpdmw_get_pages(),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;page&#039;,
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;,
+      &#039;field&#039; =&gt; &#039;mew_item_external&#039;,
+      &#039;columns&#039; =&gt; 12,
+      &#039;label&#039; =&gt; __(&#039;Enter an external URL&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;validate&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;url&#039;
+        )
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;external&#039;,
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_children&#039;,
+      &#039;label&#039; =&gt; __(&#039;Display children of this page if exists?&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 12,
+      &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;&#039;,
+        &#039;1&#039; =&gt; __(&#039;Yes&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;0&#039; =&gt; __(&#039;No&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        &#039;relation&#039; =&gt; &#039;and&#039;,
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;page&#039;,
+        ),
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_page&#039;,
+          &#039;value&#039; =&gt; array(
+            &#039;&#039;
+          ),
+          &#039;compare&#039; =&gt; &#039;!=&#039;
+        ),
+        array(
+          &#039;field&#039; =&gt; &#039;mew_location&#039;,
+          &#039;value&#039; =&gt; &#039;primary&#039;,
+          &#039;compare&#039; =&gt; &#039;=&#039;
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_bg_display&#039;,
+      &#039;label&#039; =&gt; __(&#039;Add a background image?&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 12,
+      &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;&#039;,
+        &#039;yes&#039; =&gt; __(&#039;Yes&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;no&#039; =&gt; __(&#039;No&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_children&#039;,
+          &#039;value&#039; =&gt; array(
+            &#039;&#039;
+          ),
+          &#039;compare&#039; =&gt; &#039;!=&#039;
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;file&#039;,
+      &#039;field&#039; =&gt; &#039;mew_item_bg_lg&#039;,
+      &#039;columns&#039; =&gt; 6,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Large&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;options&#039; =&gt; array(
+        &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;button&#039; =&gt; __(&#039;Add&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_bg_display&#039;,
+          &#039;value&#039; =&gt; &#039;yes&#039;,
+        ),
+      ),
+      &#039;validate&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;limit&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;min&#039; =&gt; 1,
+            &#039;max&#039; =&gt; 1
+          )
+        )
+      )
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;file&#039;,
+      &#039;field&#039; =&gt; &#039;mew_item_bg_sm&#039;,
+      &#039;columns&#039; =&gt; 6,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Small&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;options&#039; =&gt; array(
+        &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;button&#039; =&gt; __(&#039;Add&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_bg_display&#039;,
+          &#039;value&#039; =&gt; &#039;yes&#039;,
+        ),
+      ),
+      &#039;validate&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;limit&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;min&#039; =&gt; 1,
+            &#039;max&#039; =&gt; 1
+          )
+        )
+      )
+    ),
+  ),
+));
+</code></pre>
+<p>I am finding the conditions in general very buggy. Is there something wrong with my code?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-simple-conditions/">Problem with simple conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>javascript bug on groups</title>
+		<link>https://piklist.com/support/topic/javascript-bug-on-groups/</link>
+		
+		<dc:creator><![CDATA[oakwood]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2016 13:26:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/javascript-bug-on-groups/</guid>
+
+					<description><![CDATA[<p>Scenarios: 1. If I have a group (add_more), with a conditional inside &#8211; that works as expected. 2. If I have a group (add_more), with a conditional outside (controlling whether or not the group is shown) &#8211; that works as expected. 3. If I have a group (add_more), with a conditional outside (controlling whether or [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-bug-on-groups/">javascript bug on groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Scenarios:<br />
+1. If I have a group (add_more), with a conditional inside &#8211; that works as expected.<br />
+2. If I have a group (add_more), with a conditional outside (controlling whether or not the group is shown) &#8211; that works as expected.<br />
+3. If I have a group (add_more), with a conditional outside (controlling whether or not the group is shown), and a conditional inside &#8211; that does not work as expected.</p>
+<p>Tested on 0.9.4.29 and 0.9.9.7 (different results on each version).</p>
+<pre><code>&lt;?php
+/*
+Title: test
+Post Type: post
+Order: 1
+Collapse: false
+*/
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;
+  ,&#039;field&#039; =&gt; &#039;show_hide_group_two&#039;
+  ,&#039;label&#039; =&gt; &#039;Radio&#039;
+  ,&#039;choices&#039; =&gt; array(
+    &#039;show_group_two&#039; =&gt; &#039;Show Group Two&#039;
+    ,&#039;hide_group_two&#039; =&gt; &#039;Hide Group Two&#039;
+  )
+  ,&#039;value&#039; =&gt; &#039;hide_group_two&#039;
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;group_one&#039;
+  ,&#039;label&#039; =&gt; &#039;Group One - Always On&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;show_hide_text_one&#039;
+      ,&#039;label&#039; =&gt; &#039;Show or hide text input&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;show_text_one&#039; =&gt; &#039;Show&#039;
+        ,&#039;hide_text_one&#039; =&gt; &#039;Hide&#039;
+      )
+      ,&#039;value&#039; =&gt; &#039;hide_text_one&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;group_one:show_hide_text_one&#039;
+          ,&#039;value&#039; =&gt; &#039;show_text_one&#039;
+        )
+      )
+      ,&#039;field&#039; =&gt; &#039;conditional_text_one&#039;
+      ,&#039;label&#039; =&gt; &#039;Conditional Text&#039;
+      ,&#039;columns&#039; =&gt; 8
+    )
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;group_two&#039;
+  ,&#039;label&#039; =&gt; &#039;Group Two - Maybe On&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;show_hide_group_two&#039;
+      ,&#039;value&#039; =&gt; &#039;show_group_two&#039;
+    )
+  )
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;show_hide_text_two&#039;
+      ,&#039;label&#039; =&gt; &#039;Show or hide text input&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;show_text_two&#039; =&gt; &#039;Show&#039;
+        ,&#039;hide_text_two&#039; =&gt; &#039;Hide&#039;
+      )
+      ,&#039;value&#039; =&gt; &#039;hide_text_two&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;group_two:show_hide_text_two&#039;
+          ,&#039;value&#039; =&gt; &#039;show_text_two&#039;
+        )
+      )
+      ,&#039;field&#039; =&gt; &#039;conditional_text_two&#039;
+      ,&#039;label&#039; =&gt; &#039;Conditional Text&#039;
+      ,&#039;columns&#039; =&gt; 8
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-bug-on-groups/">javascript bug on groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Templates for placing labels above fields/inputs and description below</title>
+		<link>https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/</link>
+		
+		<dc:creator><![CDATA[Ben]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 00:46:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/</guid>
+
+					<description><![CDATA[<p>Are there templates that will place a label above its field, and the description below the field? In the &#8220;What I see&#8221; screenshot attached text_field_alone, group_1 and group_2 have the labels to the left, whereas text_field_in_group_1, and text_field_in_group_2 have their labels above. text_field_alone has the description under the label, but I would like it to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/">Templates for placing labels above fields/inputs and description below</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Are there templates that will place a label above its field, and the description below the field? In the &#8220;What I see&#8221; screenshot attached text_field_alone, group_1 and group_2 have the labels to the left, whereas text_field_in_group_1, and text_field_in_group_2 have their labels above. text_field_alone has the description under the label, but I would like it to be under the input box. I attached a quick photo-chop that shows &#8220;What I want (more or less)&#8221;</p>
+<p>If there aren&#8217;t templates for this, then are there instructions for creating templates for groups and the fields within groups? I am having problems finding the default templates for these in the source code.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/">Templates for placing labels above fields/inputs and description below</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Description missing for text field within group</title>
+		<link>https://piklist.com/support/topic/description-missing-for-text-field-within-group/</link>
+		
+		<dc:creator><![CDATA[Ben]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 00:03:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/description-missing-for-text-field-within-group/</guid>
+
+					<description><![CDATA[<p>WordPress 4.4.1 PikList 0.9.4.29 The description for a text field inside a group is not appearing within the edit post view. Here is the code for the meta-box. I am also attaching an image of the result within the edit view, and the html for the group field. /* Title: Text Field Test Description: Text [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/description-missing-for-text-field-within-group/">Description missing for text field within group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WordPress 4.4.1<br />
+PikList 0.9.4.29<br />
+The description for a text field inside a group is not appearing within the edit post view. Here is the code for the meta-box. I am also attaching an image of the result within the edit view, and the html for the group field.</p>
+<pre><code>/*
+Title: Text Field Test
+Description: Text Field Test
+Post Type: post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;text&#039;,
+  &#039;field&#039;   =&gt; &#039;text_field_alone&#039;,
+  &#039;label&#039;   =&gt; __(&#039;text_field_alone&#039;),
+  &#039;description&#039; =&gt; __(&#039;description for text_field_alone&#039;),
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;group&#039;,
+  &#039;field&#039;   =&gt; &#039;group_with_text_field&#039;,
+  &#039;label&#039;   =&gt; &#039;group_with_text_field&#039;,
+  &#039;description&#039; =&gt; __(&#039;description for group_with_text_field&#039;),
+  &#039;fields&#039;  =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;text&#039;,
+      &#039;field&#039;   =&gt; &#039;text_field_in_group&#039;,
+      &#039;label&#039;   =&gt; __(&#039;text_field_in_group&#039;),
+      &#039;description&#039; =&gt; __(&#039;description for text_field_in_group&#039;),
+      &#039;columns&#039; =&gt; 12
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/description-missing-for-text-field-within-group/">Description missing for text field within group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist 0.9.9.7 not set default value in group field for checkbox, radio</title>
+		<link>https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</link>
+		
+		<dc:creator><![CDATA[notaname]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 11:16:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</guid>
+
+					<description><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select). I tried in Setting, Post and Page, default value in group not working, without group field it work as expected. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;checkbox_list&#039; ,&#039;label&#039; =&#62; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;) ,&#039;list&#039; =&#62; false ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select).<br />
+I tried in Setting, Post and Page, default value in group not working, without group field it work as expected.</p>
+<pre><code>  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;checkbox_list&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;)
+    ,&#039;list&#039; =&gt; false
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;radio&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_1&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #1&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;third&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_2&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #2&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;second&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;second&#039; =&gt; &#039;Second Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>If at least one field should be hidden by condition whole metabox not displayed</title>
+		<link>https://piklist.com/support/topic/if-at-least-one-field-should-be-hidden-by-condition-whole-metabox-not-displayed/</link>
+		
+		<dc:creator><![CDATA[notaname]]></dc:creator>
+		<pubDate>Fri, 15 Jan 2016 17:23:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/if-at-least-one-field-should-be-hidden-by-condition-whole-metabox-not-displayed/</guid>
+
+					<description><![CDATA[<p>If at least one field should be hidden by condition in group field whole metabox not displayed in Setting page, for Page its work well: piklist/parts/settings/hf-settings.php: &#60;?php /* Title: Header and Footer settings Setting: hf_settings */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;fruit_settings&#039; ,&#039;label&#039; =&#62; __(&#039;Settings&#039;) ,&#039;add_more&#039; =&#62; true ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/if-at-least-one-field-should-be-hidden-by-condition-whole-metabox-not-displayed/">If at least one field should be hidden by condition whole metabox not displayed</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If at least one field should be hidden by condition in group field whole metabox not displayed in Setting page, for Page its work well:</p>
+<p>piklist/parts/settings/hf-settings.php:</p>
+<pre><code>
+&lt;?php
+/*
+Title: Header and Footer settings
+Setting: hf_settings
+*/
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;fruit_settings&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Settings&#039;)
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;country&#039;
+        ,&#039;label&#039; =&gt; &#039;Country&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; array(
+            &#039;US&#039; =&gt; &#039;United States&#039;
+            ,&#039;EU&#039; =&gt; &#039;European Union&#039;
+          )
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;select&#039;
+          ,&#039;field&#039; =&gt; &#039;fruits&#039;
+          ,&#039;label&#039; =&gt; &#039;Fruits&#039;
+          ,&#039;columns&#039; =&gt; 12
+          ,&#039;choices&#039; =&gt; array(
+            &#039;apples&#039; =&gt; &#039;Apples&#039;
+            ,&#039;oranges&#039; =&gt; &#039;Oranges&#039;
+          )
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;select&#039;
+          ,&#039;field&#039; =&gt; &#039;apples&#039;
+          ,&#039;label&#039; =&gt; &#039;Apples&#039;
+          ,&#039;columns&#039; =&gt; 12
+          ,&#039;choices&#039; =&gt; array(
+            &#039;aceymac&#039; =&gt; &#039;Aceymac Apple&#039;
+            ,&#039;akero&#039; =&gt; &#039;Akero Apple&#039;
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;fruit_settings:fruits&#039;
+              ,&#039;value&#039; =&gt; &#039;apples&#039;
+            )
+          )
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;select&#039;
+          ,&#039;field&#039; =&gt; &#039;oranges&#039;
+          ,&#039;label&#039; =&gt; &#039;Oranges&#039;
+          ,&#039;columns&#039; =&gt; 12
+          ,&#039;choices&#039; =&gt; array(
+            &#039;blood&#039; =&gt; &#039;Blood Orange&#039;
+            ,&#039;navel&#039; =&gt; &#039;Navel Orange&#039;
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;fruit_settings:fruits&#039;
+              ,&#039;value&#039; =&gt; &#039;oranges&#039;
+            )
+          )
+        )
+    )
+  ));</code></pre>
+<p>Code in function.php</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Header Footer settings&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Header and Footer&#039;, &#039;piklist&#039;)
+      ,&#039;sub_menu&#039; =&gt; &#039;themes.php&#039; //Under Appearance menu
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;custom_settings&#039;
+      ,&#039;setting&#039; =&gt; &#039;hf_settings&#039;
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save&#039;
+    );
+
+    return $pages;
+  } </code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/if-at-least-one-field-should-be-hidden-by-condition-whole-metabox-not-displayed/">If at least one field should be hidden by condition whole metabox not displayed</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File Upload &#8211; Undefined item</title>
+		<link>https://piklist.com/support/topic/file-upload-undefined-item/</link>
+		
+		<dc:creator><![CDATA[diegoliv]]></dc:creator>
+		<pubDate>Wed, 08 Apr 2015 16:27:35 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-undefined-item/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve been trying to setup a group (with &#8220;add more&#8221;) with a file uploader with Piklist, and it looks fine. But I noticed a strange issue. With the first group, I select a file and it&#8217;s ok. But, for the subsequent added groups, there is a hidden field with an undefined value that counts [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-undefined-item/">File Upload &#8211; Undefined item</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;ve been trying to setup a group (with &#8220;add more&#8221;) with a file uploader with Piklist, and it looks fine. But I noticed a strange issue. With the first group, I select a file and it&#8217;s ok. But, for the subsequent added groups, there is a hidden field with an <code>undefined</code> value that counts as a file.</p>
+<p>Here is my grouped field code:</p>
+<pre><code>  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;,
+    &#039;field&#039; =&gt; &#039;home_slideshow&#039;,
+    &#039;label&#039; =&gt; __( &#039;Slideshow&#039; ),
+    &#039;add_more&#039; =&gt; true,
+    &#039;fields&#039; =&gt; array(
+		  array(
+		    &#039;type&#039; =&gt; &#039;file&#039;,
+		    &#039;field&#039; =&gt; &#039;slider_img&#039;,
+		    &#039;label&#039; =&gt; __( &#039;Selecionar Imagem&#039; ),
+		    &#039;description&#039; =&gt; __(&#039;Selecione uma imagem para o slide.&#039; ),
+		    &#039;options&#039; =&gt; array(
+		      &#039;modal_title&#039; =&gt; __( &#039;Selecionar imagem do slide&#039; ),
+		      &#039;button&#039; =&gt; __( &#039;Selecionar&#039; )
+		    ),
+			  &#039;validate&#039; =&gt; array(
+			    array(
+			      &#039;type&#039; =&gt; &#039;limit&#039;,
+			      &#039;options&#039; =&gt; array(
+			        &#039;min&#039; =&gt; 1,
+			        &#039;max&#039; =&gt; 1
+			      )
+			    )
+			  )
+		  ),
+		  array(
+		    &#039;type&#039; =&gt; &#039;text&#039;,
+		    &#039;field&#039; =&gt; &#039;slide_title&#039;,
+		    &#039;label&#039; =&gt; __( &#039;Título do Slide&#039; ),
+		    &#039;columns&#039; =&gt; 12
+		  ),
+		  array(
+		    &#039;type&#039; =&gt; &#039;text&#039;,
+		    &#039;field&#039; =&gt; &#039;slide_link&#039;,
+		    &#039;label&#039; =&gt; __( &#039;Link do Slide&#039; ),
+		    &#039;columns&#039; =&gt; 12
+		  ),
+    )
+  ));</code></pre>
+<p>And, when I check the <code>home_slideshow</code> array, I got this:</p>
+<pre><code>		Array
+(
+    [0] =&gt; Array
+        (
+            [slider_img] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; 1526
+                        )
+
+                    [1] =&gt; Array
+                        (
+                            [0] =&gt; undefined
+                            [1] =&gt; 1525
+                        )
+
+                )
+
+            [slide_title] =&gt; Array
+                (
+                    [0] =&gt; Slide 01
+                    [1] =&gt; Slide 02
+                )
+
+            [slide_link] =&gt; Array
+                (
+                    [0] =&gt; http://site.com/
+                    [1] =&gt; http://site.com/
+                )
+
+        )
+
+)</code></pre>
+<p>When I check the source code from the group backend, I noticed this hidden field:</p>
+<p><code>&lt;input type=&quot;hidden&quot; name=&quot;_post_meta[home_slideshow][slider_img][2][]&quot; value=&quot;undefined&quot; data-piklist-field-group=&quot;729944c&quot; data-piklist-field-addmore=&quot;true&quot; class=&quot;_post_meta_home_slideshow_slider_img&quot; data-piklist-original-id=&quot;_post_meta_home_slideshow_slider_img_0&quot;&gt;</code>.</p>
+<p>If I update the page, then add another image, then remove it and update it again, the undefined value is removed. Also, when I add a new group and add multiple images, the sortable function doesn&#8217;t work for that new group. But, if I update the page, it starts to work again.</p>
+<p>Am I doing something wrong?</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-undefined-item/">File Upload &#8211; Undefined item</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Display Group Fields on Frontend Template</title>
+		<link>https://piklist.com/support/topic/display-group-fields-on-frontend-template/</link>
+		
+		<dc:creator><![CDATA[liquidws]]></dc:creator>
+		<pubDate>Thu, 02 Apr 2015 05:05:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/display-group-fields-on-frontend-template/</guid>
+
+					<description><![CDATA[<p>Hi There.. Great plugin.. love it! Can&#8217;t wait to learn more. I just started learning and understanding the concepts. This may be a dumb question but i cant seem to find an answer anywhere.. 1)=============================================== in meta-box.php i defined a field.. example.. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;member_contact&#039; ,&#039;label&#039; =&#62; &#039;Contact&#039; ,&#039;attributes&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-group-fields-on-frontend-template/">Display Group Fields on Frontend Template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi There.. Great plugin.. love it! Can&#8217;t wait to learn more.</p>
+<p>I just started learning and understanding the concepts. This may be a dumb question but i cant seem to find an answer anywhere..</p>
+<p>1)===============================================<br />
+in meta-box.php i defined a field.. example..</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; 		=&gt; &#039;text&#039;
+	,&#039;field&#039; 	=&gt; &#039;member_contact&#039;
+	,&#039;label&#039; 	=&gt; &#039;Contact&#039;
+    ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;Contact Name&#039; )
+));</code></pre>
+<p>on page.php i use </p>
+<p><code>&lt;?php echo $post-&gt;member_contact; ?&gt;</code></p>
+<p>to display.. No Problem, works fine</p>
+<p>2)===============================================<br />
+But now i do a group..</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;member_phone_group&#039;
+    ,&#039;label&#039; =&gt; &#039;Phone&#039;
+    ,&#039;list&#039; =&gt; false
+    // ,&#039;description&#039; =&gt; &#039;A grouped field. Data is not searchable, since it is saved in an array.&#039;
+    ,&#039;fields&#039; =&gt; array(
+
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;member_phone_areacode&#039;
+        ,&#039;columns&#039; =&gt; 1
+        ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;956&#039; )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;member_phone_three&#039;
+        ,&#039;columns&#039; =&gt; 2
+        ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;333&#039; )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;member_phone_four&#039;
+        ,&#039;columns&#039; =&gt; 3
+        ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;4444&#039; )
+      )
+
+    )
+));</code></pre>
+<p>on page.php i use </p>
+<p><code>&lt;p&gt;&lt;strong&gt;Phone:&lt;/strong&gt; (&lt;?php echo $post-&gt;member_phone_areacode; ?&gt;) &lt;?php echo $post-&gt;member_phone_three; ?&gt; - &lt;?php echo $post-&gt;member_phone_four; ?&gt;&lt;/p&gt;</code></p>
+<p>This does not display at all.. am i doing something wrong? I appreciate any help <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>3)===============================================<br />
+Is there a Help Doc somewhere that explains more frontend display examples?</p>
+<p>Thank you!!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-group-fields-on-frontend-template/">Display Group Fields on Frontend Template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add more group with file upload not saving</title>
+		<link>https://piklist.com/support/topic/add-more-group-with-file-upload-not-saving/</link>
+		
+		<dc:creator><![CDATA[upside]]></dc:creator>
+		<pubDate>Tue, 31 Mar 2015 02:52:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-group-with-file-upload-not-saving/</guid>
+
+					<description><![CDATA[<p>So I&#8217;ve created an add-more group with a file upload field and two text fields. When I try to save page the image does not save. If I try to add a second add more field and add the image there the image still does not save. The text fields do save properly. Here is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-group-with-file-upload-not-saving/">Add more group with file upload not saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So I&#8217;ve created an add-more group with a file upload field and two text fields. When I try to save page the image does not save. If I try to add a second add more field and add the image there the image still does not save. The text fields do save properly. Here is the code that is creating the add more metabox:</p>
+<pre>
+piklist('field', array(
+        'type' =&gt; 'group'
+        ,'columns' =&gt; 12
+        ,'field' =&gt; 'box_repeater'
+        ,'add_more' =&gt; true
+        ,'fields' =&gt; array(
+          array(
+            'type' =&gt; 'file'
+    		,'field' =&gt; 'upload_basic'
+    		,'scope' =&gt; 'post_meta'
+    		,'label' =&gt; __('Add File(s)','piklist')
+    		,'description' =&gt; __('This is the basic upload field.','piklist')
+    		,'options' =&gt; array(
+      			'basic' =&gt; true
+    		)
+          )
+          ,array(
+            'type' =&gt; 'text'
+            ,'field' =&gt; 'tc_box_title'
+            ,'columns' =&gt; 6
+            ,'attributes' =&gt; array(
+              'placeholder' =&gt; 'box title'
+            )
+          )
+          ,array(
+            'type' =&gt; 'text'
+            ,'field' =&gt; 'tc_box_url'
+            ,'columns' =&gt; 6
+            ,'attributes' =&gt; array(
+              'placeholder' =&gt; 'box url'
+            )
+          )
+        )
+
+  ));
+</pre>
+<p>Thanks for your help!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-group-with-file-upload-not-saving/">Add more group with file upload not saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Grouped Radio Data Persistence</title>
+		<link>https://piklist.com/support/topic/grouped-radio-data-persistence/</link>
+		
+		<dc:creator><![CDATA[lycidiae]]></dc:creator>
+		<pubDate>Wed, 31 Dec 2014 21:02:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/grouped-radio-data-persistence/</guid>
+
+					<description><![CDATA[<p>Hello! Trying to use the Radio field in a repeating group has led to some finicky behavior: Even though the radio is given a default value and is required, I have a problem of the a choice from the selection being lost in the GUI on the CPT backend page load. The three choices start [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-radio-data-persistence/">Grouped Radio Data Persistence</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>Trying to use the Radio field in a repeating group has led to some finicky behavior:</p>
+<p>Even though the radio is given a default value and is required, I have a problem of the a choice from the selection being lost in the GUI on the CPT backend page load. The three choices start out all blank even if a value for that repeater was selected during a different edit, the required field for some reason misses the dropped values, and updating deletes my meta values in the database. </p>
+<p>Please help me out, am I missing some field in the Piklist setup array that persists choices, or is this a bug in the repeating groups (I&#8217;m not running into any persistence problems when radio and datepicker fields are top level).</p>
+<pre><code>
+piklist(&#039;field&#039;,
+    array(
+        &#039;type&#039; =&gt; &#039;group&#039;,
+        &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+        &#039;field&#039; =&gt; &#039;service_relation&#039;,
+        &#039;label&#039; =&gt; __(&#039;Relate Post&#039;),
+        &#039;description&#039; =&gt; __(&#039;Link this accountant to his/her respective field(s) of practice.&#039;),
+        &#039;add_more&#039; =&gt; true,
+        &#039;columns&#039; =&gt; 12,
+        &#039;fields&#039; =&gt; array(
+            ...
+            ,array(
+                &#039;type&#039; =&gt; &#039;radio&#039;,
+                &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+                &#039;field&#039; =&gt; &#039;cpa_incharge&#039;,
+                &#039;value&#039; =&gt; &#039;member&#039;,
+                &#039;required&#039; =&gt; &#039;true&#039;,
+                &#039;label&#039; =&gt; &#039;Practice Area Level&#039;,
+                &#039;columns&#039; =&gt; 4,
+                &#039;attributes&#039; =&gt; array(
+                    &#039;class&#039; =&gt; &#039;text&#039;
+                ),
+                &#039;choices&#039; =&gt; array(
+                    &#039;member&#039; =&gt; &#039;Member&#039;,
+                    &#039;featured&#039; =&gt; &#039;Featured&#039;,
+                    &#039;charge&#039; =&gt; &#039;In Charge&#039;
+                )
+            )
+        )
+    )
+);
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-radio-data-persistence/">Grouped Radio Data Persistence</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

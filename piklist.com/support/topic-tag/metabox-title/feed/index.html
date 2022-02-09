@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>metabox title &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/metabox-title/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 06 Mar 2015 23:12:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Suggestion for allow translation on Comment&#039;s header</title>
+		<link>https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/</link>
+		
+		<dc:creator><![CDATA[Darlan ten Caten]]></dc:creator>
+		<pubDate>Fri, 06 Mar 2015 23:12:03 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/</guid>
+
+					<description><![CDATA[<p>Hello! This is related to this post: https://piklist.com/support/topic/translate-tab-names-in-comments-header/ I was trying to translate the Metabox&#8217;s title but as Steve said they still aren&#8217;t ready to be translatable. So I wrote a code that allow it, and here is it: add_filter( 'piklist_get_file_data', 'allow_metabox_text_domain' ); function allow_text_domain( $data ) { $data['text_domain'] = 'Text Domain'; return $data; } [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/">Suggestion for allow translation on Comment&#039;s header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!<br />
+This is related to this post: https://piklist.com/support/topic/translate-tab-names-in-comments-header/</p>
+<p>I was trying to translate the Metabox&#8217;s title but as Steve said they still aren&#8217;t ready to be translatable.</p>
+<p>So I wrote a code that allow it, and here is it:</p>
+<p><code><br />
+add_filter( 'piklist_get_file_data', 'allow_metabox_text_domain' );<br />
+function allow_text_domain( $data ) {<br />
+    $data['text_domain'] = 'Text Domain';</p>
+<p>    return $data;<br />
+}</p>
+<p>add_filter( 'piklist_add_part', 'config_metabox_title_text_domain' );<br />
+function config_metabox_title_text_domain( $data ) {<br />
+    if ( !empty( $data['text_domain'] ) ) {<br />
+        $data['name'] = __( $data['name'], $data['text_domain'] );<br />
+    }</p>
+<p>    return $data;<br />
+}<br />
+</code></p>
+<p>Now just add the new option Text Domain in the comment header!<br />
+See the attached screenshot.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/suggestion-for-allow-translation-on-comments-header/">Suggestion for allow translation on Comment&#039;s header</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

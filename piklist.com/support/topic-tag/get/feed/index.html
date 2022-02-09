@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 14 Nov 2016 23:57:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Frontend Forms, change url for a GET request</title>
+		<link>https://piklist.com/support/topic/frontend-forms-change-url-for-a-get-request/</link>
+		
+		<dc:creator><![CDATA[Roy]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2016 23:57:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/frontend-forms-change-url-for-a-get-request/</guid>
+
+					<description><![CDATA[<p>Hey all, I&#8217;m quite new to Piklist and lovin&#8217; it so far! 🙂 At the moment I&#8217;m building a plugin that is an issue tracker that includes a search form. I&#8217;ve created a search form using frontend forms and is displayed in the widget area on the left side of the page. Drop-down choices in [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/frontend-forms-change-url-for-a-get-request/">Frontend Forms, change url for a GET request</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey all,</p>
+<p>I&#8217;m quite new to Piklist and lovin&#8217; it so far! <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> At the moment I&#8217;m building a plugin that is an issue tracker that includes a search form. I&#8217;ve created a search form using frontend forms and is displayed in the widget area on the left side of the page. Drop-down choices in the form are: Status and Owner. When I press search, the form is posted using GET and the main part of the page processes the data in a table using the parameters. This is all working fine as long as the search form widget is on the same page as the data table. In these cases the url including the get is is http://case-tracker.com/?status=2&amp;owner=3</p>
+<p>Now when an user is on an individual case page, the url is http://case-tracker.com/case-1. The search widget is still displayed and when search is pressed the URL http://case-tracker.com/case-1/?status=2&amp;owner=3 is used instead of http://case-tracker.com/?status=2&amp;owner=3</p>
+<p>Is there a hook within Piklist that I can use or any other way to modify the URL before the page is loaded, clean the URL and then return it? I&#8217;m not using the Redirect option in the form header as the site url changes based on what the user has configured.</p>
+<p>I&#8217;ve tried the solution at the following link, but that only seems to work for post requests not get, the get does not seem to trigger th wp_redirect hook.</p>
+<blockquote data-secret="1rFemqH8bg" class="wp-embedded-content"><p><a href="https://piklist.com/support/topic/how-can-i-get-the-id-of-new-post-created-by-front-end-form/">How can I get the ID of new post created by front-end form?</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://piklist.com/support/topic/how-can-i-get-the-id-of-new-post-created-by-front-end-form/embed/#?secret=1rFemqH8bg" data-secret="1rFemqH8bg" width="500" height="282" title="&#8220;How can I get the ID of new post created by front-end form?&#8221; &#8212; Piklist Support" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>Here&#8217;s my code</p>
+<p><strong>case-tracker-plugin.php</strong></p>
+<pre><code>add_filter( &#039;wp_redirect&#039;, &#039;clean_search_url&#039; );
+function clean_search_url( $location, $status ) {
+  if ( strpos( $location, &#039;?&#039;) === FALSE ) {          // no get request in url
+      return $location;
+  }
+  else {                                              // URL includes GET, correct url
+    $get_parms = substr( $location, strpos($location, &#039;?&#039;) );
+    return &#039;http://localhost/case-tracker/&#039; . $get_parms;
+  }
+}</code></pre>
+<p><strong>search-case-form.php</strong></p>
+<pre><code>&lt;?php
+/*
+Title: Search Case Form
+Method: get
+Message: Search successfully
+Logged in: true
+*/
+
+// status
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;status&#039;,    
+    &#039;attributes&#039; =&gt; array(
+      &#039;wrapper_class&#039; =&gt; &#039;case-search&#039;,
+    ),
+    &#039;choices&#039; =&gt; array_merge( array(&#039;&#039; =&gt; &#039;Status&#039;), $cpt_statuses)
+  ));
+
+//owner
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;,
+  &#039;field&#039; =&gt; &#039;owner&#039;,
+  &#039;attributes&#039; =&gt; array(
+      &#039;wrapper_class&#039; =&gt; &#039;case-search&#039;,
+    ),
+  &#039;choices&#039; =&gt; array(
+     &#039;&#039; =&gt; &#039;Owner&#039;
+   )
+   + piklist(
+    get_users(
+      array(
+       &#039;orderby&#039; =&gt; &#039;display_name&#039;
+       ,&#039;order&#039; =&gt; &#039;asc&#039;
+      )
+      ,&#039;objects&#039;
+    )
+    ,array(
+      &#039;ID&#039;
+      ,&#039;display_name&#039;
+    )
+   )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;submit&#039;,
+  &#039;field&#039; =&gt; &#039;submit&#039;,
+  &#039;value&#039; =&gt; &#039;Search&#039;,
+  &#039;attributes&#039; =&gt; array(
+    &#039;class&#039; =&gt; &#039;wpt-search-submit&#039;,
+  )
+));</code></pre>
+<p>Thanks a million</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/frontend-forms-change-url-for-a-get-request/">Frontend Forms, change url for a GET request</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

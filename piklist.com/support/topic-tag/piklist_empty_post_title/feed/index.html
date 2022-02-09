@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist_empty_post_title &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklist_empty_post_title/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 15 Jan 2016 02:14:43 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Allow two plugins to use piklist_empty_post_title filter</title>
+		<link>https://piklist.com/support/topic/allow-two-plugins-to-use-piklist_empty_post_title-filter/</link>
+		
+		<dc:creator><![CDATA[ccjeagle]]></dc:creator>
+		<pubDate>Thu, 14 Jan 2016 09:48:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/allow-two-plugins-to-use-piklist_empty_post_title-filter/</guid>
+
+					<description><![CDATA[<p>Hi, The example in this tutorial works well for one single plugin. I have two plugins that both use piklist_empty_post_title to set Title. The example code seems not work under this scenario- lower priority one will turn the Title back to empty/Auto Draft. So I changed the last return statement, from post_arry to data, and [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/allow-two-plugins-to-use-piklist_empty_post_title-filter/">Allow two plugins to use piklist_empty_post_title filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>The example in <a href="https://piklist.com/user-guide/docs/piklist_empty_post_title/" target="_blank">this tutorial</a> works well for one single plugin.</p>
+<p>I have two plugins that both use piklist_empty_post_title to set Title. The example code seems not work under this scenario- lower priority one will turn the Title back to empty/Auto Draft.</p>
+<p>So I changed the last return statement, from post_arry to data, and it works. Not sure if this the right direction but FYI.</p>
+<p>The code will be:</p>
+<pre><code>function set_post_title_to_order_number($data, $post_array)
+{
+  if ($post_array[&#039;post_type&#039;] == &#039;MY-POST-TYPE&#039;)
+  { 
+    return &#039;Order #&#039; . $post_array[&#039;ID&#039;];
+  }
+  else
+  {
+    // return $post_array[&#039;post_title&#039;];
+    // original parameter $data contains the title passed to this function, 
+    // even being modified by another plugin
+    return $data;
+  }
+ 
+}
+// Change priority so that two plugins use different numbers
+add_filter(&#039;piklist_empty_post_title&#039;, &#039;set_post_title_to_order_number&#039;, 10, 2);</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/allow-two-plugins-to-use-piklist_empty_post_title-filter/">Allow two plugins to use piklist_empty_post_title filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>No-title CPT permalink?</title>
+		<link>https://piklist.com/support/topic/no-title-cpt-permalink/</link>
+		
+		<dc:creator><![CDATA[gospelnerd]]></dc:creator>
+		<pubDate>Fri, 29 May 2015 20:03:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/no-title-cpt-permalink/</guid>
+
+					<description><![CDATA[<p>How can I programatically set or change the permalink of a CPT that doesn&#8217;t support &#8216;title&#8217;? I don&#8217;t care to have the users mess with it. Right now it saves all the entries with the title &#8216;Auto Draft&#8217; and the slug &#8216;auto-draft-{n}&#8217;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/no-title-cpt-permalink/">No-title CPT permalink?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How can I programatically set or change the permalink of a CPT that doesn&#8217;t support &#8216;title&#8217;? I don&#8217;t care to have the users mess with it. Right now it saves all the entries with the title &#8216;Auto Draft&#8217; and the slug &#8216;auto-draft-{n}&#8217;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/no-title-cpt-permalink/">No-title CPT permalink?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Is piklist is for me ?</title>
+		<link>https://piklist.com/support/topic/is-piklist-is-for-me/</link>
+		
+		<dc:creator><![CDATA[fmalinge]]></dc:creator>
+		<pubDate>Fri, 29 May 2015 13:51:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/is-piklist-is-for-me/</guid>
+
+					<description><![CDATA[<p>Hello, I have to develop an application and a website for a mediatheque. the application must manage books, CDs, DVDs, and other &#8230; the authors, and must also manage the adherents and the loan or lease articles, track time works in you, edit reports and statistics &#8230; I can achieve this with piklist?   I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-piklist-is-for-me/">Is piklist is for me ?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I have to develop an application and a website for a mediatheque. the application must manage books, CDs, DVDs, and other &#8230; the authors, and must also manage the adherents and the loan or lease articles, track time works in you, edit reports and statistics &#8230;<br />
+I can achieve this with piklist?<br />
+  I know very well wordpress, but I didnt know if piklist is powerful enough to do that.<br />
+Thank you for expert answers piklist<br />
+Fred</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-piklist-is-for-me/">Is piklist is for me ?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

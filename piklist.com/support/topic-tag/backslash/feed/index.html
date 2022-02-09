@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>backslash &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/backslash/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 22 Oct 2015 21:42:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>single quote marks are backslashed [0.9.9.4]</title>
+		<link>https://piklist.com/support/topic/single-quote-marks-are-backslashed-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2015 21:42:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/single-quote-marks-are-backslashed-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>For some reason, fields I&#8217;m retrieving via Piklist are now being backslashed. I&#8217;m pretty sure this started with 0.9.9. The field newsletter_highlights is part of an add-more group: array( &#039;type&#039; =&#62; &#039;editor&#039;, &#039;field&#039; =&#62; &#039;newsletter_highlights&#039;, &#039;label&#039; =&#62; __( &#039;Highlights of this issue&#039; ), &#039;columns&#039; =&#62; 12, &#039;options&#039; =&#62; array ( &#039;media_buttons&#039; =&#62; false, &#039;teeny&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/single-quote-marks-are-backslashed-0-9-9-4/">single quote marks are backslashed [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>For some reason, fields I&#8217;m retrieving via Piklist are now being backslashed. I&#8217;m pretty sure this started with 0.9.9. </p>
+<p>The field <code>newsletter_highlights</code> is part of an add-more group: </p>
+<pre><code>array(
+    &#039;type&#039; =&gt; &#039;editor&#039;,
+    &#039;field&#039; =&gt; &#039;newsletter_highlights&#039;,
+    &#039;label&#039; =&gt; __( &#039;Highlights of this issue&#039; ),
+    &#039;columns&#039; =&gt; 12,
+    &#039;options&#039; =&gt; array (
+        &#039;media_buttons&#039; =&gt; false,
+        &#039;teeny&#039; =&gt; true,
+    ),
+),
+</code></pre>
+<p>I&#8217;m using the Piklist loop to display each group: </p>
+<pre><code>  $newsletters = get_post_meta( $post-&gt;ID, &#039;newsletter_archive&#039;, true );
+?&gt;
+&lt;div class=&quot;newsletter-list&quot;&gt;
+&lt;?php
+  piklist( &#039;templates/newsletter-template&#039;, array( &#039;data&#039; =&gt; $newsletters, &#039;loop&#039; =&gt; &#039;data&#039; ) );
+?&gt;
+</code></pre>
+<p>And the template code uses wptexturize and wpautop: </p>
+<pre><code>$highlights = wptexturize( wpautop( $data[&#039;newsletter_highlights&#039;] ) );
+</code></pre>
+<p>When I view the content in the editor, it looks fine: </p>
+<pre><code>Highlights include the life of underwater 
+filmmaker and MRWC Board member Jeremy Monroe, 
+MRWC&#039;s financial picture, and an interview with Michael Pope.
+</code></pre>
+<p>but on the page it displays as: </p>
+<pre><code>Highlights include the life of underwater 
+filmmaker and MRWC Board member Jeremy Monroe, 
+MRWC\&#039;s financial picture, and an interview with Michael Pope.
+</code></pre>
+<p>Thanks,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/single-quote-marks-are-backslashed-0-9-9-4/">single quote marks are backslashed [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

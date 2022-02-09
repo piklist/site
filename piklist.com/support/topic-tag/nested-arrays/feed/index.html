@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>nested arrays &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/nested-arrays/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 28 Jan 2016 03:20:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Nested addmore repeater fields &#8211; aka page builder &#8211; displaying on the frontend</title>
+		<link>https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/</link>
+		
+		<dc:creator><![CDATA[pwwwpwww]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 16:18:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/</guid>
+
+					<description><![CDATA[<p>In the latest beta version of Piklist there&#8217;s an awesome new demo in the 2-level addmore section called Page Modules &#8211; basically ACF Flexible Content lite 😉 I&#8217;ve tried using the code found in the addmore docs but can&#8217;t seem to make it work. I then spied Steve&#8217;s advice in this thread &#8211; supposedly the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/">Nested addmore repeater fields &#8211; aka page builder &#8211; displaying on the frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In the latest beta version of Piklist there&#8217;s an awesome new demo in the 2-level addmore section called Page Modules &#8211; basically ACF Flexible Content lite <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I&#8217;ve tried using the code found in the addmore docs but can&#8217;t seem to make it work. I then spied Steve&#8217;s advice <a href="https://piklist.com/support/topic/repeater-field/">in this thread</a> &#8211; supposedly the latest version of Piklist doesn&#8217;t require the creation of template parts for repeatable fields any more. Unfortunately the code example he posted doesn&#8217;t work on nested repeater fields like those in the Page Modules demo. </p>
+<p>Does anyone know how to output this type of nested add_more? Extra hugs to anyone who can share a code example that someone without php knowledge might understand <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here&#8217;s an abridged version of the field group I&#8217;m rattling on about:</p>
+<pre><code>&lt;?php
+/*
+Title: Page builder
+Post Type: page
+*/
+
+// Taken from the Piklist addons demo. Would be awesome as a page builder / alternative to ACF flexible content field.
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;module_group&#039;
+    ,&#039;label&#039; =&gt; &#039;Page Modules&#039;
+    ,&#039;value&#039; =&gt; &#039;none&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;module_select&#039;
+        ,&#039;label&#039; =&gt; &#039;Select a Module&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; array(
+          &#039;none&#039; =&gt; &#039;Select a Module to add&#039;
+          ,&#039;module&#039; =&gt; &#039;Editor&#039;
+          ,&#039;repeating_module&#039; =&gt; &#039;Repeating Textarea&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;editor&#039;
+        ,&#039;field&#039; =&gt; &#039;module_editor&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;options&#039; =&gt; array(
+          &#039;wpautop&#039; =&gt; true
+          ,&#039;media_buttons&#039; =&gt; false
+          ,&#039;tabindex&#039; =&gt; &#039;&#039;
+          ,&#039;editor_css&#039; =&gt; &#039;&#039;
+          ,&#039;editor_class&#039; =&gt; true
+          ,&#039;teeny&#039; =&gt; false
+          ,&#039;dfw&#039; =&gt; false
+          ,&#039;tinymce&#039; =&gt; true
+          ,&#039;quicktags&#039; =&gt; true
+        )
+        ,&#039;conditions&#039; =&gt; array(
+          array(
+            &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+            ,&#039;value&#039; =&gt; &#039;module&#039;
+          )
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;textarea&#039;
+        ,&#039;field&#039; =&gt; &#039;module_title&#039;
+        ,&#039;label&#039; =&gt; &#039;Module title:&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;add_more&#039; =&gt; true
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;large-text&#039;
+          , &#039;rows&#039; =&gt; 2
+        )
+        ,&#039;conditions&#039; =&gt; array(
+          array(
+            &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+            ,&#039;value&#039; =&gt; &#039;repeating_module&#039;
+          )
+        )
+      )
+    
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/">Nested addmore repeater fields &#8211; aka page builder &#8211; displaying on the frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

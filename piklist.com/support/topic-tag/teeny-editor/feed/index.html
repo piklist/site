@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>teeny editor &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/teeny-editor/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 17 Nov 2015 15:10:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>teeny editor, large font</title>
+		<link>https://piklist.com/support/topic/teeny-editor-large-font/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Mon, 16 Nov 2015 20:52:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/teeny-editor-large-font/</guid>
+
+					<description><![CDATA[<p>For some reason the teeny editor uses a larger font size than input boxes or full-sized editors. It displays input text at 16pt whereas the others display at 14px. Is this something set/controlled by Piklist, or do I need to create an editor CSS file? Thanks! Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/teeny-editor-large-font/">teeny editor, large font</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>For some reason the teeny editor uses a larger font size than input boxes or full-sized editors. It displays input text at 16pt whereas the others display at 14px. </p>
+<p>Is this something set/controlled by Piklist, or do I need to create an editor CSS file? </p>
+<p>Thanks!<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/teeny-editor-large-font/">teeny editor, large font</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>teeny editor nests data in divs (0.9.9.4)</title>
+		<link>https://piklist.com/support/topic/teeny-editor-nests-data-in-divs-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 28 Oct 2015 05:23:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/teeny-editor-nests-data-in-divs-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>I don&#8217;t know what&#8217;s going on, but when I edit some teeny editor fields, I end up with my text being embedded in a bunch of backslashed divs. &#60;div class=\&#34;page\&#34; title=\&#34;Page 1\&#34;&#62; &#60;div class=\&#34;section\&#34;&#62; &#60;div class=\&#34;layoutArea\&#34;&#62; &#60;div class=\&#34;column\&#34;&#62; &#60;p&#62;Cillabor eperioriore porem volum vol. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/teeny-editor-nests-data-in-divs-0-9-9-4/">teeny editor nests data in divs (0.9.9.4)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I don&#8217;t know what&#8217;s going on, but when I edit some teeny editor fields, I end up with my text being embedded in a bunch of backslashed divs. </p>
+<pre><code>&lt;div class=\&quot;page\&quot; title=\&quot;Page 1\&quot;&gt;
+&lt;div class=\&quot;section\&quot;&gt;
+&lt;div class=\&quot;layoutArea\&quot;&gt;
+&lt;div class=\&quot;column\&quot;&gt;
+&lt;p&gt;Cillabor eperioriore porem volum vol. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mcaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>This is the field group; the problem child is the section_content (Caption): </p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;home_feature_image&#039;,
+	&#039;label&#039; =&gt; &#039;Feature Image&#039;,
+	&#039;description&#039; =&gt; &#039;Large image at the top of the main content area.&#039;,
+	&#039;add_more&#039; =&gt; true,
+	&#039;template&#039; =&gt; &#039;field&#039;,
+	&#039;columns&#039; =&gt; 12,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;file&#039;,
+			&#039;field&#039; =&gt; &#039;section_image&#039;,
+			&#039;label&#039; =&gt; &#039;Image&#039;,
+			&#039;description&#039; =&gt; &#039;Add or upload an image.&#039;,
+			&#039;options&#039; =&gt; array(
+				&#039;modal_title&#039; =&gt; &#039;Add Image&#039;,
+				&#039;button&#039; =&gt; &#039;Add Image&#039;,
+			),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;section_title&#039;,
+			&#039;label&#039; =&gt; &#039;Image Title&#039;,
+			&#039;columns&#039; =&gt; 12,
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;editor&#039;,
+			&#039;field&#039; =&gt; &#039;section_content&#039;,
+			&#039;label&#039; =&gt; &#039;Image Caption&#039;,
+			&#039;description&#039; =&gt; &#039;Brief description of the image and its relevance to LCSO.&#039;,
+			&#039;columns&#039; =&gt; 12,
+			&#039;options&#039; =&gt; array (
+				&#039;media_buttons&#039; =&gt; false,
+				&#039;teeny&#039; =&gt; true,
+			),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;section_link&#039;,
+			&#039;label&#039; =&gt; &#039;Link to More Info&#039;,
+			&#039;description&#039; =&gt; &quot;If typing in a web address (URL), don&#039;t forget the &#039;http://&#039;.&quot;,
+			&#039;columns&#039; =&gt; 12,
+			&#039;validate&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;url&#039;,
+				),
+			),
+		),
+	),
+));
+</code></pre>
+<p>Since I can&#8217;t edit source in the teeny editor, the only way I&#8217;ve found to get rid of it is to change the field to be textarea and clean it up, then change it back. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/teeny-editor-nests-data-in-divs-0-9-9-4/">teeny editor nests data in divs (0.9.9.4)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

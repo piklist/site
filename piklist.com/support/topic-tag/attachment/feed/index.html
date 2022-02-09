@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>attachment &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/attachment/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 15 Apr 2018 12:01:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>File upload broken in 0.9.9.15</title>
+		<link>https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</link>
+		
+		<dc:creator><![CDATA[cddustin]]></dc:creator>
+		<pubDate>Fri, 13 Apr 2018 18:46:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</guid>
+
+					<description><![CDATA[<p>WP 4.9.5 Piklist 0.9.9.15 I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;_job_download&#039;, &#039;scope&#039; =&#62; &#039;post_meta&#039;, &#039;label&#039; =&#62; &#039;Downloadable Job Description&#039;, &#039;options&#039; =&#62; array( &#039;basic&#039; =&#62; true ) )); What I tried: Add new post Click file upload [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WP 4.9.5<br />
+Piklist 0.9.9.15</p>
+<p>I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;,
+	&#039;field&#039; =&gt; &#039;_job_download&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Downloadable Job Description&#039;,
+	&#039;options&#039; =&gt; array(
+		&#039;basic&#039; =&gt; true
+	)
+));</code></pre>
+<p><strong>What I tried:</strong></p>
+<ol>
+<li>Add new post</li>
+<li>Click file upload &#8220;Browse&#8230;&#8221; button, choose a file</li>
+<li>Save a draft of the post</li>
+</ol>
+<p><strong>What I expected:</strong></p>
+<p>I expected to see something representing the file I attached below the &#8220;Browse&#8230;&#8221; button, with the file name and a button to remove it.</p>
+<p><strong>What I got:</strong></p>
+<p>No indication that the file attachment was successful. With WP_DEBUG on, I get the following warnings after saving a draft, and they appear on a blank white page (no WP admin UI loads in this case):</p>
+<blockquote><p>Warning: Invalid argument supplied for foreach() in /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php on line 1533</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/includes/misc.php on line 1116</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/post.php on line 198</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-includes/pluggable.php on line 1216</p></blockquote>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Accessing attachment data, with piklist meta box inside.</title>
+		<link>https://piklist.com/support/topic/accessing-attachment-data-with-piklist-meta-box-inside/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Thu, 18 Jul 2013 03:02:04 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/accessing-attachment-data-with-piklist-meta-box-inside/</guid>
+
+					<description><![CDATA[<p>Whoohoo, playing with the new beta&#8230; I want to get all the data for attachments that have a piklist meta box in them. (and I only want to get the attachmets that have been set to a specific select field) Here&#8217;s the piklist meta box I created:` &#60;?php /* Title: Slideshow Image &#60;span class=&#8221;piklist-title-right&#8221;&#62;Choose Below&#60;/span&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/accessing-attachment-data-with-piklist-meta-box-inside/">Accessing attachment data, with piklist meta box inside.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Whoohoo, playing with the new beta&#8230;</p>
+<p>I want to get all the data for attachments that have a piklist meta box in them. (and I only want to get the attachmets that have been set to a specific select field)</p>
+<p>Here&#8217;s the piklist meta box I created:`<br />
+&lt;?php<br />
+/*<br />
+Title: Slideshow Image &lt;span class=&#8221;piklist-title-right&#8221;&gt;Choose Below&lt;/span&gt;<br />
+Post Type: attachment<br />
+Order: 110<br />
+Priority: default<br />
+Context: normal<br />
+Locked: true<br />
+Collapse: false<br />
+*/</p>
+<p>  piklist(&#039;field&#039;, array(<br />
+    &#039;type&#039; =&gt; &#039;select&#039;<br />
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;<br />
+    ,&#039;field&#039; =&gt; &#039;slideshow-image&#039;<br />
+    ,&#039;label&#039; =&gt; &#039;Show in Slideshow?&#039;<br />
+    ,&#039;description&#039; =&gt; &#039;Please select the slideshow you would like to show this image in.&#039;<br />
+    ,&#039;value&#039; =&gt; &#039;no_slideshow&#039;<br />
+    ,&#039;attributes&#039; =&gt; array(<br />
+      &#039;class&#039; =&gt; &#039;text&#039;<br />
+    )<br />
+    ,&#039;choices&#039; =&gt; array(<br />
+      &#039;no_slideshow&#039; =&gt; &#039;No&#039;<br />
+      ,&#039;slideshow_main&#039; =&gt; &#039;Slide #1 &#8211; Main Slideshow&#039;<br />
+      ,&#039;slideshow_second&#039; =&gt; &#039;Slide #2&#039;<br />
+      ,&#039;slideshow_third&#039; =&gt; &#039;Slide #3&#039;<br />
+    )<br />
+  ));</p>
+<p>?&gt;<br />
+`</p>
+<p>All I need to know, is how to access the data. LOL</p>
+<p>Pre-thanks</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/accessing-attachment-data-with-piklist-meta-box-inside/">Accessing attachment data, with piklist meta box inside.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

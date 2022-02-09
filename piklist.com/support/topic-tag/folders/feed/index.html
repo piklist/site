@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>folders &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/folders/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 03 Feb 2015 17:04:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Plugin Builder</title>
+		<link>https://piklist.com/support/topic/plugin-builder/</link>
+		
+		<dc:creator><![CDATA[michaellautman]]></dc:creator>
+		<pubDate>Thu, 29 Jan 2015 19:40:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/plugin-builder/</guid>
+
+					<description><![CDATA[<p>Hey everyone, To make my life even easier, I created a boilerplate for building WP plugins with Piklist. It&#8217;s got the checker and directory structure. You can get it on GitHub here. In order to preserve the directory structure, each empty directory has a .gitignore file in it. Once you add something to the directory, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/plugin-builder/">Plugin Builder</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey everyone,<br />
+  To make my life even easier, I created a boilerplate for building WP plugins with Piklist.  It&#8217;s got the checker and directory structure.  You can get it on GitHub <a href="https://github.com/michaellautman/Piklist-Plugin-Builder">here</a>.  In order to preserve the directory structure, each empty directory has a .gitignore file in it.  Once you add something to the directory, make sure to delete that file.</p>
+<p>I hope you find it useful.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/plugin-builder/">Plugin Builder</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>MS/Windows Issues (theme folder)</title>
+		<link>https://piklist.com/support/topic/mswindows-issues-theme-folder/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Thu, 27 Feb 2014 11:55:32 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/mswindows-issues-theme-folder/</guid>
+
+					<description><![CDATA[<p>Just a heads up Kevin, the windows situation (yeah, I know you love this. :-)) with having piklist parts inside the theme folder doesn&#8217;t work with the latest version of piklist. So I found a solution. Apparently in the themes path check in class-piklist.php around lines 200 or so. The self::$paths[$_theme] produces the full theme [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/mswindows-issues-theme-folder/">MS/Windows Issues (theme folder)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just a heads up Kevin, the windows situation (yeah, I know you love this. :-))<br />
+with having piklist parts inside the theme folder doesn&#8217;t work with the latest version of piklist. </p>
+<p>So I found a solution. </p>
+<p>Apparently in the themes path check in class-piklist.php around lines 200 or so.<br />
+The self::$paths[$_theme] produces the full theme path but adds in the folder /piklist to the end, while the $_part variable also adds /piklist to the beginning of all parts, making sure nothing loads from the themes piklist folder.</p>
+<p>I removed the themes additional piklist folder from its path, and voila. Works.<br />
+I changed the following:</p>
+<pre><code>
+        foreach (array(&#039;theme&#039;, &#039;parent-theme&#039;) as $_theme)
+        {
+          $spt = self::$paths[$_theme];
+          $spt = substr($spt,0,strlen($spt)-8); // EDITED BY MARCUS
+          if (isset($spt))
+          {
+            if (file_exists($spt . $_part))
+            {
+              $_file = $spt . $_part;
+              break;
+            }
+          }
+        }
+        // d($_file);
+        if (file_exists($_file))
+        {
+          break;
+        }
+</code></pre>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/mswindows-issues-theme-folder/">MS/Windows Issues (theme folder)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>themes folders and dropbox</title>
+		<link>https://piklist.com/support/topic/themes-folders-and-dropbox/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Thu, 02 Jan 2014 02:11:55 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/themes-folders-and-dropbox/</guid>
+
+					<description><![CDATA[<p>I don&#8217;t know if anyone else has had this problem, but I thought I&#8217;d post a solution. It&#8217;s not pretty but it works. In class-piklist-theme.php it checks to see if there is a theme with a folder of piklist inside it. If so, it creates a class variable: self::$paths[&#039;theme&#039;] In class-piklist.php it checks for that [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/themes-folders-and-dropbox/">themes folders and dropbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I don&#8217;t know if anyone else has had this problem, but I thought I&#8217;d post a solution. </p>
+<p>It&#8217;s not pretty but it works. </p>
+<p>In class-piklist-theme.php it checks to see if there is a theme with a folder of piklist inside it.<br />
+If so, it creates a class variable:<br />
+<code>self::$paths[&#039;theme&#039;]</code> </p>
+<p>In class-piklist.php it checks for that theme variable, and if it finds it, sets up the files to be loaded for any (file/fields/meta-boxes) stored in that path. </p>
+<p>The problem is, the $_part variable (the actual file) (which sits on line 165 and 168 of class-piklist.php) that piklist will append to the self::$paths[&#8216;theme&#8217;] variable has a path thats all screwed up. (including adding a double &#8216;/piklist&#8217; path to the beginning)</p>
+<p>This is probably because my localhost site is kept on dropbox and I use a symbolic link to the dropbox folder. (checking the paths throughout piklist showed that there were often two folder paths to a file. The hardlink (c:\html\blahblabh) and the symlink (c:/html/dropbox)</p>
+<p>So to fix this problem, and I hope this helps someone else, even if its only Kevin, &lt;grin&gt; I did the following:<br />
+On line 175 of class-piklist.php I changed it from:</p>
+<pre><code>      if (isset(self::$paths[&#039;theme&#039;]))
+      {
+        if (file_exists(self::$paths[&#039;theme&#039;] . $_part))
+        {
+          $_file = self::$paths[&#039;theme&#039;] . $_part;
+        }
+      }
+</code></pre>
+<p>to:</p>
+<pre><code>      if (isset(self::$paths[&#039;theme&#039;]))
+      {
+        $together = (stristr($_part, &#039;:\\&#039;) || stristr($_part, &#039;:/&#039;) )?$_part:str_replace(&#039;/piklist&#039;,&#039;&#039;,self::$paths[&#039;theme&#039;]) . $_part;
+        if (file_exists($together))
+        {
+          $_file = $together;
+        }
+      }
+</code></pre>
+<p>This allows me to keep all my piklist meta-boxes (and other piklist files) in my themes directory while still using dropbox and symlinks.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/themes-folders-and-dropbox/">themes folders and dropbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

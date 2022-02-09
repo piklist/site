@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post_belongs &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post_belongs/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 18 Nov 2016 04:56:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Conditional if post_belongs = false</title>
+		<link>https://piklist.com/support/topic/conditional-if-post_belongs-false/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Wed, 16 Nov 2016 14:34:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-if-post_belongs-false/</guid>
+
+					<description><![CDATA[<p>I am trying to create a sidebar with its conditional being to activate only if the post_belongs has a null value. In other words show the sidebar only posts that have a &#8216;sponsor&#8217; post_belong relationship. I have started with this: &#60;?php $args = array( &#039;post_type&#039; =&#62; &#039;sponsor&#039; ,&#039;posts_per_page&#039; =&#62; -1 ,&#039;post_belongs&#039; =&#62; $post-&#62;ID ,&#039;post_status&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-if-post_belongs-false/">Conditional if post_belongs = false</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to create a sidebar with its conditional being to activate only if the post_belongs has a null value. In other words show the sidebar only posts that have a &#8216;sponsor&#8217; post_belong relationship. </p>
+<p>I have started with this:</p>
+<pre><code>&lt;?php
+	
+	$args = array(
+    &#039;post_type&#039; =&gt; &#039;sponsor&#039;
+    ,&#039;posts_per_page&#039; =&gt; -1
+    ,&#039;post_belongs&#039; =&gt; $post-&gt;ID
+    ,&#039;post_status&#039; =&gt; &#039;publish&#039;
+    ,&#039;suppress_filters&#039; =&gt; false
+    ,&#039;exclude&#039; =&gt; $post-&gt;ID
+  );
+  $the_query = null;
+  $the_query = new WP_Query( $args );
+	
+  
+	 if ( $the_query-&gt;have_posts() ) {</code></pre>
+<p>I know that isn&#8217;t proper syntax but essentially just want to create a conditional wrapper that won&#8217;t initiate the sidebar if the post doesn&#8217;t have &#8216;sponsor&#8217; belonging to it.</p>
+<p><code>&#039;if ( $the_query-&gt;post_belongs = null ) {</code></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-if-post_belongs-false/">Conditional if post_belongs = false</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

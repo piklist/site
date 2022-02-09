@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>data not displaying &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/data-not-displaying/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 22 Sep 2016 16:20:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>data from grouped fields not showing up on frontend</title>
+		<link>https://piklist.com/support/topic/data-from-grouped-fields-not-showing-up-on-frontend/</link>
+		
+		<dc:creator><![CDATA[intrepidrealist]]></dc:creator>
+		<pubDate>Mon, 12 Sep 2016 22:41:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/data-from-grouped-fields-not-showing-up-on-frontend/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;ve got all fields showing their data on a custom post type single page except a group of fields for birthday. This is my code in the child-fields.php: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;birthday_group&#039; ,&#039;label&#039; =&#62; &#039;Birthday&#039; ,&#039;list&#039; =&#62; false ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ,&#039;wrapper_class&#039; =&#62; &#039;birth_day&#039; ) ,&#039;fields&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/data-from-grouped-fields-not-showing-up-on-frontend/">data from grouped fields not showing up on frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+I&#8217;ve got all fields showing their data on a custom post type single page except a group of fields for birthday. </p>
+<p>This is my code in the child-fields.php:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	  &#039;type&#039; =&gt; &#039;group&#039;
+	  ,&#039;field&#039; =&gt; &#039;birthday_group&#039;
+	  ,&#039;label&#039; =&gt; &#039;Birthday&#039;
+	  ,&#039;list&#039; =&gt; false
+	  ,&#039;attributes&#039; =&gt; array(
+    &#039;class&#039; =&gt; &#039;text&#039;
+    ,&#039;wrapper_class&#039; =&gt; &#039;birth_day&#039;
+    )
+	  ,&#039;fields&#039; =&gt; array(
+		array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;birth_month&#039;
+    ,&#039;label&#039; =&gt; &#039;Month&#039;
+    ,&#039;choices&#039; =&gt; array(
+	   &#039;&#039; =&gt; &#039;Month&#039;
+    ,&#039;jan&#039; =&gt; &#039;January&#039;
+    ,&#039;feb&#039; =&gt; &#039;February&#039;
+    ,&#039;mar&#039; =&gt; &#039;March&#039;
+    ,&#039;apr&#039; =&gt; &#039;April&#039;
+    ,&#039;may&#039; =&gt; &#039;May&#039;
+    ,&#039;jun&#039; =&gt; &#039;June&#039;
+    ,&#039;jul&#039; =&gt; &#039;July&#039;
+    ,&#039;aug&#039; =&gt; &#039;August&#039;
+    ,&#039;sep&#039; =&gt; &#039;September&#039;
+    ,&#039;oct&#039; =&gt; &#039;October&#039;
+    ,&#039;nov&#039; =&gt; &#039;November&#039;
+    ,&#039;dec&#039; =&gt; &#039;December&#039;
+    ))
+		,array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;birth_day&#039;
+    ,&#039;label&#039; =&gt; &#039;Day&#039;
+    ,&#039;choices&#039; =&gt; array(
+	   &#039;&#039; =&gt; &#039;Day&#039;
+    ,&#039;1st&#039; =&gt; &#039;1&#039;
+    ,&#039;2nd&#039; =&gt; &#039;2&#039;
+    ,&#039;3rd&#039; =&gt; &#039;3&#039;
+    ,&#039;4th&#039; =&gt; &#039;4&#039;
+    ,&#039;5th&#039; =&gt; &#039;5&#039;
+    ,&#039;6th&#039; =&gt; &#039;6&#039;
+    ,&#039;7th&#039; =&gt; &#039;7&#039;
+    ,&#039;8th&#039; =&gt; &#039;8&#039;
+    ,&#039;9th&#039; =&gt; &#039;9&#039;
+    ,&#039;10th&#039; =&gt; &#039;10&#039;
+    ,&#039;11th&#039; =&gt; &#039;11&#039;
+    ,&#039;12th&#039; =&gt; &#039;12&#039;
+    ,&#039;13th&#039; =&gt; &#039;13&#039;
+    ,&#039;14th&#039; =&gt; &#039;14&#039;
+    ,&#039;15th&#039; =&gt; &#039;15&#039;
+    ,&#039;16th&#039; =&gt; &#039;16&#039;
+    ,&#039;17th&#039; =&gt; &#039;17&#039;
+    ,&#039;18th&#039; =&gt; &#039;18&#039;
+    ,&#039;19th&#039; =&gt; &#039;19&#039;
+    ,&#039;20th&#039; =&gt; &#039;20&#039;
+    ,&#039;21st&#039; =&gt; &#039;21&#039;
+    ,&#039;22nd&#039; =&gt; &#039;22&#039;
+    ,&#039;23rd&#039; =&gt; &#039;23&#039;
+    ,&#039;24th&#039; =&gt; &#039;24&#039;
+    ,&#039;25th&#039; =&gt; &#039;25&#039;
+    ,&#039;26th&#039; =&gt; &#039;26&#039;
+    ,&#039;27th&#039; =&gt; &#039;27&#039;
+    ,&#039;28th&#039; =&gt; &#039;28&#039;
+    ,&#039;29th&#039; =&gt; &#039;29&#039;
+    ,&#039;30th&#039; =&gt; &#039;30&#039;
+    ,&#039;31st&#039; =&gt; &#039;31&#039;
+    ))
+    ,array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;birth_year&#039;
+    ,&#039;label&#039; =&gt; &#039;Year&#039;
+    ,&#039;choices&#039; =&gt; array(
+	   &#039;&#039; =&gt; &#039;Year&#039;
+    ,&#039;1997&#039; =&gt; &#039;1997&#039;
+    ,&#039;1998&#039; =&gt; &#039;1998&#039;
+    ,&#039;1999&#039; =&gt; &#039;1999&#039;
+    ,&#039;2000&#039; =&gt; &#039;2000&#039;
+    ,&#039;2001&#039; =&gt; &#039;2001&#039;
+    ,&#039;2002&#039; =&gt; &#039;2002&#039;
+    ,&#039;2003&#039; =&gt; &#039;2003&#039;
+    ,&#039;2004&#039; =&gt; &#039;2004&#039;
+    ,&#039;2005&#039; =&gt; &#039;2005&#039;
+    ,&#039;2006&#039; =&gt; &#039;2006&#039;
+    ,&#039;2007&#039; =&gt; &#039;2007&#039;
+    ,&#039;2008&#039; =&gt; &#039;2008&#039;
+    ,&#039;2009&#039; =&gt; &#039;2009&#039;
+    ,&#039;2010&#039; =&gt; &#039;2010&#039;
+    ,&#039;2011&#039; =&gt; &#039;2011&#039;
+    ,&#039;2012&#039; =&gt; &#039;2012&#039;
+    ,&#039;2013&#039; =&gt; &#039;2013&#039;
+    ,&#039;2014&#039; =&gt; &#039;2014&#039;
+    ,&#039;2015&#039; =&gt; &#039;2015&#039;
+    ,&#039;2016&#039; =&gt; &#039;2016&#039;
+    ,&#039;2017&#039; =&gt; &#039;2017&#039;
+    ,&#039;2018&#039; =&gt; &#039;2018&#039;
+    ,&#039;2019&#039; =&gt; &#039;2019&#039;
+    ,&#039;2020&#039; =&gt; &#039;2020&#039;
+    )))
+  ));</code></pre>
+<p>And this is what I have in the template:</p>
+<p><code>&lt;li&gt;Birthday: &lt;strong&gt;&lt;?php echo get_post_meta($post-&gt;ID, &#039;birth_month&#039;, true); ?&gt; &lt;?php echo get_post_meta($post-&gt;ID, &#039;birth_day&#039;, true); ?&gt;, &lt;?php echo get_post_meta($post-&gt;ID, &#039;birth_year&#039;, true); ?&gt;&lt;/strong&gt;&lt;/li&gt;</code></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/data-from-grouped-fields-not-showing-up-on-frontend/">data from grouped fields not showing up on frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

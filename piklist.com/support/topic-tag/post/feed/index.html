@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 10 Aug 2021 16:27:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Additional post statuses for the default &#8216;post&#8217; post type</title>
+		<link>https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Tue, 10 Aug 2021 16:27:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/</guid>
+
+					<description><![CDATA[<p>I was looking through the documentation and tried to basically have Piklist take over the management of the default post-type &#8220;post.&#8221; Just trying to add archived as an additional post status to the defaults already in place. This is the code that I thought would get me there. I sense a big rookie mistake but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/">Additional post statuses for the default &#8216;post&#8217; post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I was looking through the documentation and tried to basically have Piklist take over the management of the default post-type &#8220;post.&#8221; Just trying to add archived as an additional post status to the defaults already in place. </p>
+<p>This is the code that I thought would get me there. I sense a big rookie mistake but I can&#8217;t seem to decipher where:</p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;post&#039;);
+ function demo_post_type($post_types)
+ {
+	$post_types[&#039;post&#039;] = array(
+		&#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Post&#039;)
+		,&#039;title&#039; =&gt; __(&#039;Enter a new Post Title&#039;)
+		,&#039;public&#039; =&gt; true
+		,&#039;rewrite&#039; =&gt; array(
+			&#039;slug&#039; =&gt; &#039;post&#039;
+		)
+		,&#039;supports&#039; =&gt; array(
+			&#039;author&#039;
+			,&#039;revisions&#039;
+		)
+
+		,&#039;status&#039; =&gt; array(
+				&#039;draft&#039; =&gt; array(
+					&#039;label&#039; =&gt; &#039;Draft&#039;
+				)
+				,&#039;pending&#039; =&gt; array(
+					&#039;label&#039; =&gt; &#039;Pending&#039;
+				)
+				,&#039;private&#039; =&gt; array(
+					&#039;label&#039; =&gt; &#039;Private&#039;
+				)
+				,&#039;inspection&#039; =&gt; array(
+					&#039;archive&#039; =&gt; &#039;Archive&#039;
+				)
+			)
+	);
+return $post_types;
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/additional-post-statuses-for-the-default-post-post-type/">Additional post statuses for the default &#8216;post&#8217; post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Front End Form Saving to Current Post ID</title>
+		<link>https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/</link>
+		
+		<dc:creator><![CDATA[rharrigan]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2016 20:32:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/</guid>
+
+					<description><![CDATA[<p>First time posting to the Piklist Community, but I am very willing to get involved. I will have other tickets, but I&#8217;ll start with this one. Thanks for your work. I want to save info from the Front End Form (FEF) on the current post. I stumbled on a comment somewhere that said there is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/">Front End Form Saving to Current Post ID</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>First time posting to the Piklist Community, but I am very willing to get involved. I will have other tickets, but I&#8217;ll start with this one. Thanks for your work. </p>
+<p>I want to save info from the Front End Form (FEF) on the current post. I stumbled on a comment somewhere that said there is no direct functionality because multiple posts can be updated in one FEF submisison, so I am looking for a way to overload that. Currently, my code only creates a new post of the same below post type.</p>
+<p>The following topics seemed most relevant:<br />
+&#8211; https://piklist.com/learn/doc/arent-fields-saving/<br />
+&#8211; https://piklist.com/support/topic/how-can-i-get-the-id-of-new-post-created-by-front-end-form/</p>
+<p>When using &#8216;ID&#8217; as in</p>
+<pre><code>
+$id = get_the_ID();
+
+// Where to save this form
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_type&#039;
+	,&#039;value&#039; =&gt; &#039;custom_post_type_1&#039;
+));
+
+// New post ID
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;ID&#039;
+	,&#039;value&#039; =&gt; ($id ? $id : &#039;&#039;)
+	,&#039;required&#039; =&gt; false,
+));
+</code></pre>
+<p>I get a &#8220;Class &#8216;Layers_Widget_Migrator&#8217; not found&#8221; conflict with my LayersWP theme. Don&#8217;t know what&#8217;s going on there yet. I do not get a conflict when the field using </p>
+<pre><code>
+$id = get_the_ID();
+// Where to save this form
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_type&#039;
+	,&#039;value&#039; =&gt; &#039;custom_post_type_1&#039;
+));
+
+// New post ID
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_id_backend&#039;
+	,&#039;value&#039; =&gt; ($id ? $id : &#039;&#039;)
+	,&#039;required&#039; =&gt; false,
+));
+</code></pre>
+<p>$id successfully fills. I am using version 0.9.9.9. I tried using code from @mcmaster, but I&#8217;m not too sure.</p>
+<pre><code>
+add_action( &#039;piklist_save_field-post&#039;, &#039;my_grab_new_post_id&#039; );
+function my_grab_new_post_id ( $fields ) {
+	global $my_new_post_id;
+	$my_new_post_id = $fields[&#039;post_id_backend&#039;][&#039;object_id&#039;];
+}
+
+add_filter( &#039;wp_redirect&#039;, &#039;my_stick_new_post_id_in_redirect&#039;, 10, 2 );
+function my_stick_new_post_id_in_redirect ( $location, $status ) {
+	global $my_new_post_id;
+	return( $location.&quot;?ID=$my_new_post_id&quot; );	
+}
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/">Front End Form Saving to Current Post ID</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Any Geo Related Options?</title>
+		<link>https://piklist.com/support/topic/any-geo-related-options/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Thu, 18 Feb 2016 16:20:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/any-geo-related-options/</guid>
+
+					<description><![CDATA[<p>I&#8217;d want to add geo location to posts. I know there&#8217;s this: https://wordpress.org/plugins/geo-mashup/ and geomywp. However, I hate the thought of managing a plugin on a site per site basis. I&#8217;d rather set the same settings in the code (hopefully via piklist) and activate it for an entire multisite network install. Then everyone could add [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/any-geo-related-options/">Any Geo Related Options?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;d want to add geo location to posts. </p>
+<p>I know there&#8217;s this: https://wordpress.org/plugins/geo-mashup/ and geomywp.</p>
+<p>However, I hate the thought of managing a plugin on a site per site basis. I&#8217;d rather set the same settings in the code (hopefully via piklist) and activate it for an entire multisite network install. Then everyone could add geo location to a post using some standard form and inherit any rules in the plugin.</p>
+<p>I figure I&#8217;d ask if Piklist has this type of field option or if you have any direction on how to whip one up from scratch?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/any-geo-related-options/">Any Geo Related Options?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to hook in &#038; replace/alter default blog-post statuses?</title>
+		<link>https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/</link>
+		
+		<dc:creator><![CDATA[catacaly]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 02:52:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/</guid>
+
+					<description><![CDATA[<p>It only states in the documentation how to do this while creating a new CPT. How do I alter the existing default blog post type statuses?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/">How to hook in &amp; replace/alter default blog-post statuses?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It only states in the documentation how to do this while creating a new CPT. How do I alter the existing default blog post type statuses?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-hook-in-replacealter-default-blog-post-statuses/">How to hook in &amp; replace/alter default blog-post statuses?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dynamic Post Metabox</title>
+		<link>https://piklist.com/support/topic/dynamic-post-metabox/</link>
+		
+		<dc:creator><![CDATA[Jason]]></dc:creator>
+		<pubDate>Wed, 25 Jun 2014 19:52:49 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/dynamic-post-metabox/</guid>
+
+					<description><![CDATA[<p>Greetings! I&#8217;m trying to write a plugin that allows the user to dynamically generate a special kind of post. And I&#8217;m using Piklist. 🙂 Unfortunately, a snag I&#8217;m running into is that the metabox file structure requires the post slug in the comments&#8230; meaning it can&#8217;t be a variable. So, to be clear, I would [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-post-metabox/">Dynamic Post Metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Greetings!</p>
+<p>I&#8217;m trying to write a plugin that allows the user to dynamically generate a special kind of post. And I&#8217;m using Piklist. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Unfortunately, a snag I&#8217;m running into is that the metabox file structure requires the post slug in the comments&#8230; meaning it can&#8217;t be a variable. So, to be clear, I would want specific metaboxes to appear on every post type generated by this plugin.</p>
+<p>Is there any way to work around this?</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-post-metabox/">Dynamic Post Metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>display theme setting in wp query_posts</title>
+		<link>https://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/</link>
+		
+		<dc:creator><![CDATA[civilz]]></dc:creator>
+		<pubDate>Tue, 24 Jun 2014 20:11:31 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/</guid>
+
+					<description><![CDATA[<p>how to use my code is : &#60;?php $theme_options = get_option(&#039;my_theme_settings&#039;); $count = $theme_options[&#039;count_nabz&#039;]; ?&#62; &#60;?php query_posts(&#039;cat=2&#38;posts_per_page=echo &#34;$count&#34; ; &#039;); ?&#62; &#60;?php while (have_posts()) : the_post(); ?&#62; . . . but this code not working &#8230; how to display theme setting in wp query_posts ( posts_per_page ) code.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/">display theme setting in wp query_posts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>how to use </p>
+<p>my code is :</p>
+<pre><code>
+&lt;?php 
+      $theme_options = get_option(&#039;my_theme_settings&#039;); 
+      $count = $theme_options[&#039;count_nabz&#039;];					 
+?&gt;
+
+&lt;?php query_posts(&#039;cat=2&amp;posts_per_page=echo &quot;$count&quot; ; &#039;); ?&gt;
+&lt;?php while (have_posts()) : the_post(); ?&gt;
+.
+.
+.
+</code></pre>
+<p>but this code not working &#8230;</p>
+<p>how to display theme setting in wp query_posts ( posts_per_page ) code.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-theme-setting-in-wp-query_posts/">display theme setting in wp query_posts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Getting Error When Modifying Post Date/Time</title>
+		<link>https://piklist.com/support/topic/getting-error-when-modifying-post-datetime/</link>
+		
+		<dc:creator><![CDATA[taishiziyi]]></dc:creator>
+		<pubDate>Fri, 21 Mar 2014 16:53:22 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/getting-error-when-modifying-post-datetime/</guid>
+
+					<description><![CDATA[<p>I am currently working on a site for a client and migrating content over for them from their previous (non-WordPress) site. As I copy over the posts I then go to the &#8220;All Posts&#8221; screen and, from the list choose &#8220;Quick Edit&#8221; and update the date and time of the post publication to match when [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/getting-error-when-modifying-post-datetime/">Getting Error When Modifying Post Date/Time</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am currently working on a site for a client and migrating content over for them from their previous (non-WordPress) site.  As I copy over the posts I then go to the &#8220;All Posts&#8221; screen and, from the list choose &#8220;Quick Edit&#8221; and update the date and time of the post publication to match when it was originally posted on the previous site.</p>
+<p>When I do this I get the following error: &#8220;Notice: Trying to get property of non-object in /vagrant/web/wp-content/plugins/piklist/includes/class-piklist-cpt.php on line 439&#8221;</p>
+<p><a href="http://imgur.com/8XBHCku">Screenshot</a></p>
+<p>The really strange part is twofold:</p>
+<p>1) This is not a custom post type, it is a simple, regular WordPress post, and</p>
+<p>2) When I refresh the screen the error goes away and the new publication date and time are shown correctly.</p>
+<p>I&#8217;m not sure what could be causing this, but I wanted to bring this strange bug to your attention.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/getting-error-when-modifying-post-datetime/">Getting Error When Modifying Post Date/Time</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

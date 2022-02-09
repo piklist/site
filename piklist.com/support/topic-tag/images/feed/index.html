@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>images &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/images/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 22 Oct 2014 14:51:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add a post image with piklist</title>
+		<link>https://piklist.com/support/topic/add-a-post-image-with-piklist/</link>
+		
+		<dc:creator><![CDATA[ebarroso]]></dc:creator>
+		<pubDate>Wed, 22 Oct 2014 13:08:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-a-post-image-with-piklist/</guid>
+
+					<description><![CDATA[<p>I want to add 2 image on a custom post. One of them, i have added with the WordPress feature, the other, i´m trying to add with Piklist but is not possible. I have been reading in this forum and trying the solution, but i cant fix it. This is my code in the custom-metabox.php: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-a-post-image-with-piklist/">Add a post image with piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to add 2 image on a custom post. One of them, i have added with the WordPress feature, the other, i´m trying to add with Piklist but is not possible.<br />
+I have been reading in this forum and trying the solution, but i cant fix it.</p>
+<p>This is my code in the custom-metabox.php:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;
+  ,&#039;field&#039; =&gt; &#039;sec_img&#039;
+  ,&#039;label&#039; =&gt; &#039;Imagen secundaria&#039;
+));</code></pre>
+<p>And this, in my single.php:</p>
+<pre><code> &lt;?php
+
+                                      $image_ids = get_post_meta($post_id, &#039;img_sec&#039;);
+
+                                      foreach ($image_ids as $image)
+                                      {
+                                        $myupload = get_post_meta($image);
+
+                                        echo &#039;&lt;img src=&quot;&#039; . wp_get_attachment_url($image) . &#039;&quot;/&gt;&#039;;
+
+                                        print_r($myupload); // Displays all data
+                                      }
+                                    ?&gt;</code></pre>
+<p>And I obtain this error in frontend:</p>
+<p>&#8220;Warning: Invalid argument supplied for foreach() in D:\xampp\htdocs\wordpress\wp-content\themes\MyBlog\single.php on line 55&#8221;</p>
+<p>And, no image is shown.</p>
+<p>Thanks!!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-a-post-image-with-piklist/">Add a post image with piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Images on previews of Custom Post Types not showing</title>
+		<link>https://piklist.com/support/topic/images-on-previews-of-custom-post-types-not-showing/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 15:00:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/images-on-previews-of-custom-post-types-not-showing/</guid>
+
+					<description><![CDATA[<p>Ok, I&#8217;ve been doing some digging and seen a few posts like this one for example, on how to get my images to show up in a preview/page on the frontend. I&#8217;m not getting it to work for any of my Custom Post Types. I need a little help on how to get these to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/images-on-previews-of-custom-post-types-not-showing/">Images on previews of Custom Post Types not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Ok, I&#8217;ve been doing some digging and seen a few posts like <strong><a href="https://piklist.com/user-guide/tutorials/displaying-images-upload-field/">this one</a></strong> for example, on how to get my images to show up in a preview/page on the frontend. I&#8217;m not getting it to work for any of my Custom Post Types. I need a little help on how to get these to show up. Here is a couple of my custom post types.</p>
+<p><strong>STORIES</strong></p>
+<pre><code>&lt;?php
+/*
+Title: Stories of Impact
+Post Type: stories
+Order: 14
+Meta Box: false
+Collapse: false
+*/
+?&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;story_media&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Media Uploader&#039;,&#039;story-media&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Validation rule set: Upload no more than two files.&#039;,&#039;story-media&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;story-media&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;story-media&#039;)
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;datepicker&#039;
+     ,&#039;field&#039; =&gt; &#039;story_date&#039;
+     ,&#039;label&#039; =&gt; &#039;Story Date&#039;
+     ,&#039;description&#039; =&gt; &#039;Click in box&#039;
+     ,&#039;attributes&#039; =&gt; array(
+       &#039;class&#039; =&gt; &#039;text&#039;
+     )
+    ,&#039;options&#039; =&gt; array(
+       &#039;dateFormat&#039; =&gt; &#039;M d, yy&#039;
+       ,&#039;firstDay&#039; =&gt; &#039;0&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;template&#039;=&gt;&#039;field&#039;
+    ,&#039;label&#039; =&gt; &#039;Add Story&#039;
+    ,&#039;description&#039; =&gt; &#039;Stories of Impact&#039;
+    ,&#039;options&#039; =&gt; array (
+      &#039;media_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; true
+      ,&#039;textarea_rows&#039; =&gt; 5
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+  ));&#039;
+
+&lt;strong&gt;EVENTS&lt;/strong&gt;
+
+</code></pre>
+<p>&lt;?php<br />
+/*<br />
+Title: Event Information<br />
+Post Type: events<br />
+Order: 6<br />
+Meta Box: false<br />
+Collapse: false<br />
+*/</p>
+<p>&lt;?php</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;post_meta&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;event_type&#8217;<br />
+    ,&#8217;value&#8217; =&gt; &#8216;option1&#8242;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Event Type&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Future or past event.&#8217;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+    ,&#8217;choices&#8217; =&gt; array(<br />
+      &#8216;option1&#8217; =&gt; &#8216;Future Event&#8217;<br />
+      ,&#8217;option2&#8242; =&gt; &#8216;Past Event&#8217;<br />
+    )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;file&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;event_upload&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;post_meta&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Event Photo&#8217;,&#8217;piklist-demo&#8217;)<br />
+    ,&#8217;options&#8217; =&gt; array(<br />
+      &#8216;basic&#8217; =&gt; true<br />
+    )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;file&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;event_media&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;post_meta&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Media Uploader&#8217;,&#8217;piklist-demo&#8217;)<br />
+    ,&#8217;description&#8217; =&gt; __(&#8216;Validation rule set: Upload no more than two files.&#8217;,&#8217;piklist-demo&#8217;)<br />
+    ,&#8217;options&#8217; =&gt; array(<br />
+      &#8216;modal_title&#8217; =&gt; __(&#8216;Add File(s)&#8217;,&#8217;piklist-demo&#8217;)<br />
+      ,&#8217;button&#8217; =&gt; __(&#8216;Add&#8217;,&#8217;piklist-demo&#8217;)<br />
+    )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217; ,array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Dates (From &#8211; To)&#8217;<br />
+    ,&#8217;fields&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;type&#8217; =&gt; &#8216;datepicker&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;date_from&#8217;<br />
+        ,&#8217;label&#8217; =&gt; &#8216;Date: (from)&#8217;<br />
+        ,&#8217;options&#8217; =&gt; array(<br />
+          &#8216;dateFormat&#8217; =&gt; &#8216;M d, yy&#8217;<br />
+          ,&#8217;changeYear&#8217; =&gt; true<br />
+        )<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;class&#8217; =&gt; array(&#8216;date&#8217;)<br />
+          ,&#8217;size&#8217; =&gt; 12<br />
+        )<br />
+        ,&#8217;columns&#8217; =&gt; 6<br />
+        ,&#8217;value&#8217; =&gt; date(&#8216;M d, Y&#8217;)<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;datepicker&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;date_to&#8217;<br />
+        ,&#8217;label&#8217; =&gt; &#8216;Date: (to)&#8217;<br />
+        ,&#8217;options&#8217; =&gt; array(<br />
+          &#8216;dateFormat&#8217; =&gt; &#8216;M d, yy&#8217;<br />
+          ,&#8217;changeYear&#8217; =&gt; true<br />
+        )<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;class&#8217; =&gt; array(&#8216;date&#8217;)<br />
+          ,&#8217;size&#8217; =&gt; 12<br />
+        )<br />
+        ,&#8217;columns&#8217; =&gt; 6<br />
+        ,&#8217;value&#8217; =&gt; date(&#8216;M d, Y&#8217;)<br />
+      )<br />
+    )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;event_link&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Event Link&#8217;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;regular-text&#8217;<br />
+      ,&#8217;placeholder&#8217; =&gt; &#8216;http://&#8217;<br />
+    )<br />
+    ,&#8217;on_post_status&#8217; =&gt; array(<br />
+      &#8216;value&#8217; =&gt; &#8216;lock&#8217;<br />
+    )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;checkbox&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;show_hide_checkbox&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Arcus Event:&#8217;<br />
+    ,&#8217;choices&#8217; =&gt; array(<br />
+      &#8216;show&#8217; =&gt; &#8216;Show&#8217;<br />
+    )<br />
+    ,&#8217;on_post_status&#8217; =&gt; array(<br />
+        &#8216;value&#8217; =&gt; &#8216;lock&#8217;<br />
+      )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;editor&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;post&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;post_content&#8217;<br />
+    ,&#8217;template&#8217;=&gt;&#8217;field&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Add Event&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Event information&#8217;<br />
+    ,&#8217;options&#8217; =&gt; array (<br />
+      &#8216;media_buttons&#8217; =&gt; true<br />
+      ,&#8217;teeny&#8217; =&gt; true<br />
+      ,&#8217;textarea_rows&#8217; =&gt; 5<br />
+      ,&#8217;drag_drop_upload&#8217; =&gt; true<br />
+    )<br />
+  ));</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;post-relate&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;Partners&#8217;<br />
+    ,&#8217;template&#8217; =&gt; &#8216;field&#8217;<br />
+  ));`</p>
+<p>and this is my single post code:</p>
+<pre><code>get_header();
+?&gt;
+
+	&lt;div id=&quot;sidebar_layout&quot; class=&quot;clearfix&quot;&gt;
+		&lt;div class=&quot;sidebar_layout-inner&quot;&gt;
+			&lt;div class=&quot;row grid-protection&quot;&gt;
+
+				&lt;!-- &lt;?php get_sidebar( &#039;left&#039; ); ?&gt; --&gt;
+
+				&lt;!-- CONTENT (start) --&gt;
+
+				&lt;div id=&quot;content&quot; class=&quot;&lt;?php echo themeblvd_get_column_class(&#039;content&#039;); ?&gt; clearfix&quot; role=&quot;main&quot;&gt;
+					&lt;div class=&quot;inner&quot;&gt;
+						&lt;h1&gt;TEST&lt;/h1&gt;
+						&lt;?php
+						$settings = get_option(&#039;my_settings&#039;);
+						$story_media = $settings[&#039;story_media&#039;]; ?&gt;
+
+						&lt;?php
+						foreach ($story_media as $image)
+						{
+						  $myupload = get_post($image);
+						  $title = $myupload-&gt;post_title;
+						  $description = $myupload-&gt;post_content;
+						  $caption = $myupload-&gt;post_excerpt;
+
+						  echo &#039;title:&#039; . $title;
+						  echo &#039;description:&#039; . $description;
+						  echo &#039;caption:&#039; . $caption;
+
+						 echo &#039;&lt;img src=&quot;&#039; . wp_get_attachment_url($myupload- /&gt;ID) . &#039;&quot;/&gt;&#039;;
+
+						  print_r($myupload); // Displays all data
+						}
+						?&gt;
+
+						&lt;?php themeblvd_content_top(); ?&gt;
+
+						&lt;?php while ( have_posts() ) : the_post(); ?&gt;
+
+							&lt;?php get_template_part( &#039;content&#039;, themeblvd_get_part( &#039;single&#039; ) ); ?&gt;
+
+							&lt;?php themeblvd_single_footer(); ?&gt;
+
+							&lt;?php if ( themeblvd_supports( &#039;comments&#039;, &#039;posts&#039; ) ) : ?&gt;
+								&lt;?php comments_template( &#039;&#039;, true ); ?&gt;
+							&lt;?php endif; ?&gt;
+
+						&lt;?php endwhile; ?&gt;
+
+						&lt;?php themeblvd_content_bottom(); ?&gt;
+					&lt;/div&gt;&lt;!-- .inner (end) --&gt;
+				&lt;/div&gt;&lt;!-- #content (end) --&gt;
+
+				&lt;!-- CONTENT (end) --&gt;
+
+				&lt;?php get_sidebar( &#039;right&#039; ); ?&gt;
+
+			&lt;/div&gt;&lt;!-- .grid-protection (end) --&gt;
+		&lt;/div&gt;&lt;!-- .sidebar_layout-inner (end) --&gt;
+	&lt;/div&gt;&lt;!-- #sidebar_layout (end) --&gt;
+
+&lt;?php get_footer(); ?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/images-on-previews-of-custom-post-types-not-showing/">Images on previews of Custom Post Types not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>if/else optional widget fields</title>
+		<link>https://piklist.com/support/topic/ifelse-optional-widget-fields/</link>
+		
+		<dc:creator><![CDATA[badlydrawnrob]]></dc:creator>
+		<pubDate>Sat, 04 May 2013 03:15:22 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/ifelse-optional-widget-fields/</guid>
+
+					<description><![CDATA[<p>It&#8217;s always best to have one widget rather than multiple that essentially do the same thing. I&#8217;m using some simple if/else statements for the widget output but it would be really handy for the user to set these options before-hand, a simple example would be: insert image dropdown yes/no if &#8220;yes&#8221; use can enter an [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ifelse-optional-widget-fields/">if/else optional widget fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s always best to have one widget rather than multiple that essentially do the same thing. I&#8217;m using some simple if/else statements for the widget output but it would be really handy for the user to set these options before-hand, a simple example would be:</p>
+<ol>
+<li>insert image dropdown yes/no</li>
+<li>if &#8220;yes&#8221; use can enter an image url</li>
+<li>if &#8220;no&#8221; theres someway to remove the image tag from the output</li>
+</ol>
+<p>I guess similar to your &#8220;add_more&#8221; field, but with a disable/enable option.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ifelse-optional-widget-fields/">if/else optional widget fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>setting &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/setting/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 08 Aug 2018 22:35:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Field conditions don&#039;t work with hidden fields</title>
+		<link>https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/</link>
+		
+		<dc:creator><![CDATA[Alex Kladov]]></dc:creator>
+		<pubDate>Wed, 08 Aug 2018 22:35:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/</guid>
+
+					<description><![CDATA[<p>Hi, I noticed that the field conditions don&#8217;t work, when they depend on hidden field&#8217;s value. The situation is, I have a plugin, which I am writing a settings page for. The Workflow has multiple tabs, the first tab allows the user to enable/disable this plugin by clicking a checkbox field called &#8220;enabled&#8221;. And since [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/">Field conditions don&#039;t work with hidden fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I noticed that the field conditions don&#8217;t work, when they depend on hidden field&#8217;s value.</p>
+<p>The situation is, I have a plugin, which I am writing a settings page for. The Workflow has multiple tabs, the first tab allows the user to enable/disable this plugin by clicking a checkbox field called &#8220;enabled&#8221;. And since I couldn&#8217;t find a way to directly &#8220;hook&#8221; into the &#8220;enabled&#8221; field from other workflow tabs, I was thinking to use a hidden field and populate the value of this field dynamically on every page load. This is what I had:</p>
+<pre><code>$plugin_settings = get_option( &#039;plugin_settings&#039; );
+
+piklist( &#039;field&#039;, array(
+  &#039;type&#039;  =&gt; &#039;hidden&#039;,
+  &#039;field&#039; =&gt; &#039;is_enabled&#039;,
+  &#039;value&#039; =&gt; ( array_key_exists( &#039;enabled&#039;, $plugin_settings ) &amp;&amp; $plugin_settings[&#039;enabled&#039;] == &#039;true&#039; ),
+) );
+piklist( &#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;,
+  &#039;field&#039; =&gt; &#039;dependent_field&#039;,
+  &#039;label&#039; =&gt; &#039;Dependent Field&#039;,
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;is_enabled&#039;,
+      &#039;value&#039; =&gt; true,
+      &#039;reset&#039; =&gt; false,
+    ),
+  ),
+));</code></pre>
+<p>But it doesn&#8217;t work. It only works, if the &#8220;is_enabled&#8221; is not of type &#8220;hidden&#8221;. Is this a bug or an expected behaviour?</p>
+<p>Also, does anyone know how else I can hide fields based on other filed&#8217;s value from another workflow tab? Or, even better, how can I hide entire Wokflow tabs, based on Setting field value?</p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/">Field conditions don&#039;t work with hidden fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metaboxes in tabbed Settings Pages not showing</title>
+		<link>https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 10:26:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</guid>
+
+					<description><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version of 0.9.9.9. I&#8217;ve created the tabs using the old method i.e., without using workflows and they seem to work; but only with one problem. When I use two or more words separated by space, it changes the name to a single word in sentence case joining the two words with an underscore. Now this is not the most challenging since I can choose to use only one word for the tab name. The actual problem however is that metaboxes themselves and fields on the settings pages designated to show on particular don&#8217;t show up at all. Using the workflows worsens the problem as that makes even the tabs disappear altogether. I&#8217;ve been stuck with this problem for the last two or so weeks. I feel  I&#8217;m burning out. Does somebody there no how I can make this work?</p>
+<p>I have this code in one of my settings files named <em>footer-settings.php</em>:</p>
+<pre><code>/*
+Title: Footer Setting
+setting: libra_custom_settings
+Tab: Footer
+*/</code></pre>
+<p>I have this code in another settings file named <em>basic-settings.php</em>:</p>
+<pre><code>/*
+Title: Basic
+Setting: libra_custom_settings
+*/</code></pre>
+<p>I have this code in my <em>functions.php</em> file:</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Libra Settings&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Theme Settings&#039;, &#039;piklist&#039;)
+      ,&#039;sub_menu&#039; =&gt; &#039;themes.php&#039; //Under Appearance menu
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;libra_custom_settings&#039;
+      ,&#039;setting&#039; =&gt; &#039;my_theme_settings&#039;
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Demo Settings&#039;
+    );
+ 
+    return $pages;
+  }</code></pre>
+<p>I have this code in the comment block of another settings file that displays the General tab:</p>
+<pre><code>/*
+Title: Component visibility Settings Section
+setting: lawyeah_custom_settings
+Tab: General
+*/</code></pre>
+<p>I have this code in the comment block of another settings file that displays the Social Options tab:</p>
+<pre><code>/*
+Title: Social Media Settings
+Setting: libra_custom_settings
+Tab: Social-Options
+*/</code></pre>
+<p>I wonder what exactly I&#8217;m doing wrong. The attached snip shows what I already have with everything as it is right now. Any help is very much appreciated. Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Creating Tabbed Setting Page</title>
+		<link>https://piklist.com/support/topic/creating-tabbed-setting-page/</link>
+		
+		<dc:creator><![CDATA[azizultex]]></dc:creator>
+		<pubDate>Sat, 02 Jul 2016 02:59:41 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-tabbed-setting-page/</guid>
+
+					<description><![CDATA[<p>Hello, I have created a setting page, workflow, and added some fields to a tab. Unfortunately, the setting fields aren&#8217;t showing. Below are the codes, would you let me know what&#8217;s wrong? /* setting page */ function piklist_theme_setting_pages($pages) { $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;OO Setting&#039;, &#039;oliveorange&#039;) , &#039;menu_title&#039; =&#62; __(&#039;Theme Setting&#039;, &#039;oliveorange&#039;) , &#039;capability&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-tabbed-setting-page/">Creating Tabbed Setting Page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I have created a setting page, workflow, and added some fields to a tab. Unfortunately, the setting fields aren&#8217;t showing. Below are the codes, would you let me know what&#8217;s wrong? </p>
+<pre><code>/* setting page */
+function piklist_theme_setting_pages($pages) {
+	$pages[] = array(
+		&#039;page_title&#039; =&gt; __(&#039;OO Setting&#039;, &#039;oliveorange&#039;) ,
+		&#039;menu_title&#039; =&gt; __(&#039;Theme Setting&#039;, &#039;oliveorange&#039;) ,
+		&#039;capability&#039; =&gt; &#039;manage_options&#039;,
+		&#039;menu_slug&#039; =&gt; &#039;oliveorange_setting&#039;,
+		&#039;setting&#039; =&gt; &#039;oliveorange_setting&#039;,
+		&#039;menu_icon&#039; =&gt; get_stylesheet_directory_uri() . &#039;/piklist/parts/img/icon.png&#039;,
+		&#039;page_icon&#039; =&gt; get_stylesheet_directory_uri(). &#039;/piklist/parts/img/icon.png&#039;,
+		&#039;single_line&#039; =&gt; true,
+		&#039;default_tab&#039; =&gt; __(&#039;General&#039;, &#039;oliveorange&#039;),
+		&#039;save_text&#039; =&gt; __(&#039;Save Settings&#039;, &#039;oliveorange&#039;)
+	);
+	return $pages;
+}
+add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;); </code></pre>
+<p>Workflow:</p>
+<pre><code>&lt;?php
+/*
+Title: General
+Order: 10
+Flow: OO Setting
+Default: true
+*/</code></pre>
+<p>File in setting dir: </p>
+<pre><code>&lt;?php
+/*
+Title: General Setting
+setting: oliveorange_setting
+Order: 10
+Collapse: false
+Tab: General tab
+Flow: OO Setting
+*/
+?&gt;
+
+&lt;div class=&quot;piklist-demo-highlight&quot;&gt;
+  &lt;?php _e(&#039;Text fields are at the core of most forms, and easily created with Piklist. Tooltip help can be added to any field with one line of code.&#039;, &#039;piklist-demo&#039;);?&gt;
+&lt;/div&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Text&#039;, &#039;piklist-demo&#039;)
+    ,&#039;help&#039; =&gt; __(&#039;You can easily add tooltips to your fields with the help parameter.&#039;, &#039;piklist-demo&#039;)
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;demo_textarea_large&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Text Area&#039;, &#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; &#039;class=&quot;large-text code&quot; rows=&quot;10&quot; columns=&quot;50&quot;&#039;
+    ,&#039;value&#039; =&gt; &#039;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;rows&#039; =&gt; 10
+      ,&#039;cols&#039; =&gt; 50
+      ,&#039;class&#039; =&gt; &#039;large-text&#039;
+    )
+  ));
+
+  piklist(&#039;shared/code-locater&#039;, array(
+    &#039;location&#039; =&gt; __FILE__
+    ,&#039;type&#039; =&gt; &#039;Meta Box&#039;
+  ));</code></pre>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-tabbed-setting-page/">Creating Tabbed Setting Page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

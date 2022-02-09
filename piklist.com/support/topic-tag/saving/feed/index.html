@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Saving &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/saving/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 27 Apr 2015 19:45:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Postmeta &#8211; Delete_metadata and Save_metadata</title>
+		<link>https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/</link>
+		
+		<dc:creator><![CDATA[spitfire]]></dc:creator>
+		<pubDate>Mon, 27 Apr 2015 19:45:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/</guid>
+
+					<description><![CDATA[<p>Hi Piklist, thank-you for this plugin. I had actually started creating my own version of Piklist (spent a few weeks at it) when I came across your plugin while searching for help on a topic. You saved me a lot of work so thanks! 🙂 Just have a question regarding the saving of postmeta you [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/">Postmeta &#8211; Delete_metadata and Save_metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Piklist, thank-you for this plugin. I had actually started creating my own version of Piklist (spent a few weeks at it) when I came across your plugin while searching for help on a topic. You saved me a lot of work so thanks! <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Just have a question regarding the saving of postmeta you have implemented. It&#8217;s kinda nitpicky, but just wondering about the implementation you chose for it. Whenever a page is saved, the TABLE_postmeta row is deleted and then saved rather than updated. Code is in class-piklist-form.php around row 1626 in version 0.9.4.26. This implementation increments the meta_id column for each field/field-group created using Piklist. WP Codex recommends using updata_metadata() function as it will create the md row if not existing, but update the row if exists. So just wondering why you chose to delete_metadata() first then save?</p>
+<p>Even though meta_id is a bigint type in the db which is plenty for 99.99% of websites, I personally don&#8217;t like unnecessary incrementation. Did you choose this implementation because of wp revisions possibly?</p>
+<p>Thanks for this great software and I hope to be a help in making it better as I am certain I will be using it for most of my future WP sites.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/">Postmeta &#8211; Delete_metadata and Save_metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields multiply after save</title>
+		<link>https://piklist.com/support/topic/fields-multiply-after-save/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Mon, 11 Aug 2014 17:21:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-multiply-after-save/</guid>
+
+					<description><![CDATA[<p>Ok, I&#8217;m searching to find out what is causing this and don&#8217;t see why it would multiply the fields after I save. When I go to fill out a new &#8220;Partner&#8221; the fields are fine. Then when I save it get multiple fields. Here is a screen shot: Here is how it looks before I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-multiply-after-save/">Fields multiply after save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Ok, I&#8217;m searching to find out what is causing this and don&#8217;t see why it would multiply the fields after I save. When I go to fill out a new &#8220;Partner&#8221; the fields are fine. Then when I save it get multiple fields. Here is a screen shot:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/7801545/Screen%20Shot%202014-08-11%20at%2012.46.10%20PM.png" alt="" /></p>
+<p>Here is how it looks before I fill anything out:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/7801545/Screen%20Shot%202014-08-11%20at%2012.46.28%20PM.png" alt="" /></p>
+<p>Here is the code:</p>
+<p><strong>functions.php</strong></p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;partners_post_type&#039;);
+ function partners_post_type($post_types)
+ {
+  $post_types[&#039;partners&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Partners&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Partners&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;partners&#039;
+    )
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;title&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;slug&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}
+add_action( &#039;save_post&#039;, &#039;partners_post_type&#039; );</code></pre>
+<p><strong>partners.php</strong></p>
+<pre><code>&lt;?php
+/*
+Title: Partners
+Post Type: partners
+Order: 13
+Meta Box: false
+Collapse: false
+*/
+?&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_basic&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Partner Logo&#039;,&#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;basic&#039; =&gt; true
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Media Uploader&#039;,&#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Validation rule set: Upload no more than two files.&#039;,&#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist-demo&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist-demo&#039;)
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text_class_regular&#039;
+    ,&#039;label&#039; =&gt; &#039;Partner Name&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Partner Name&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text_class_regular&#039;
+    ,&#039;label&#039; =&gt; &#039;Location&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Location&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text_class_regular&#039;
+    ,&#039;label&#039; =&gt; &#039;Grantee URL&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;http://&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text_class_regular&#039;
+    ,&#039;label&#039; =&gt; &#039;Donate URL&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;http://&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content_add_more&#039;
+    ,&#039;label&#039; =&gt; &#039;Blurb&#039;
+    ,&#039;options&#039; =&gt; array (
+      &#039;media_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; true
+      ,&#039;textarea_rows&#039; =&gt; 5
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-multiply-after-save/">Fields multiply after save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom Post Types saving a field to the list of custom post types</title>
+		<link>https://piklist.com/support/topic/custom-post-types-saving-a-field-to-the-list-of-custom-post-types/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Mon, 11 Aug 2014 13:18:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-post-types-saving-a-field-to-the-list-of-custom-post-types/</guid>
+
+					<description><![CDATA[<p>I&#8217;m thinking this may be a wordpress thing, but I&#8217;m new to the wordpress world and I&#8217;m using Piklist for a huge amount of admin customization. I have a bunch of custom post types and when I save them they are only showing as &#8220;Auto Draft&#8221; in the list. How do I set a value [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-types-saving-a-field-to-the-list-of-custom-post-types/">Custom Post Types saving a field to the list of custom post types</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m thinking this may be a wordpress thing, but I&#8217;m new to the wordpress world and I&#8217;m using Piklist for a huge amount of admin customization. I have a bunch of custom post types and when I save them they are only showing as &#8220;Auto Draft&#8221; in the list. How do I set a value from a field, whether it&#8217;s Title, Name or whatever field I have in the custom post type and not &#8220;Auto Draft&#8221;. Again this may be something I need to add from wordpress but not seeing or searching for the correct terms.</p>
+<p><img src="https://dl.dropboxusercontent.com/u/7801545/Screen%20Shot%202014-08-11%20at%209.13.44%20AM.png" alt="Screenshot" /></p>
+<p><strong>CODE:</strong></p>
+<p>functions.php</p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;board_post_type&#039;);
+ function board_post_type($post_types)
+ {
+  $post_types[&#039;board&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Board Members&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Enter a new Board Member&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;board&#039;
+    )
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;revisions&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;slug&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}
+add_action( &#039;save_post&#039;, &#039;board_post_type&#039; );</code></pre>
+<p>board.php</p>
+<pre><code>&lt;?php
+/*
+Title: Board and Staff Information
+Post Type: board
+Order: 110
+Meta Box: false
+Collapse: false
+*/
+
+  // Any field with the scope set to the field name of the upload field will be treated as related
+  // data to the upload. Below we see we are setting the post_status and post_title, where the
+  // post_status is pulled dynamically on page load, hence the current status of the content is
+  // applied. Have fun! ;)
+  //
+  // NOTE: If the post_status of an attachment is anything but inherit or private it will NOT be
+  // shown on the Media page in the admin, but it is in the database and can be found using query_posts
+  // or get_posts or get_post etc....
+?&gt;
+
+&lt;!-- &lt;h3 class=&quot;demo-highlight&quot;&gt;
+  &lt;?php _e(&#039;Piklist comes standard with two upload fields: Basic and Media. The Media field works just like the standard WordPress media field, while the Basic uploader is great for simple forms.&#039;,&#039;piklist-demo&#039;);?&gt;
+  &lt;?php _e(&#039;The metabox &quot;look&quot; can be removed to provide a different look.&#039;,&#039;piklist-demo&#039;);?&gt;
+&lt;/h3&gt; --&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text_class_regular&#039;
+    ,&#039;label&#039; =&gt; &#039;Name&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Name of person&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_basic&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Staff Photo&#039;,&#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Images should be cropped to 200px by 200px&#039;,&#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;basic&#039; =&gt; true
+    )
+  ));
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;description_textarea_large&#039;
+    ,&#039;label&#039; =&gt; &#039;Description&#039;
+    ,&#039;value&#039; =&gt; &#039;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;rows&#039; =&gt; 10
+      ,&#039;cols&#039; =&gt; 50
+      ,&#039;class&#039; =&gt; &#039;large-text code&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-types-saving-a-field-to-the-list-of-custom-post-types/">Custom Post Types saving a field to the list of custom post types</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

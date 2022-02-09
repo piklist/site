@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>$_GET &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/_get/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 25 Jun 2017 22:34:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>$_GET, post relations</title>
+		<link>https://piklist.com/support/topic/_get-post-relations/</link>
+		
+		<dc:creator><![CDATA[levipe]]></dc:creator>
+		<pubDate>Sun, 25 Jun 2017 22:34:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/_get-post-relations/</guid>
+
+					<description><![CDATA[<p>Hi, So, I&#8217;m trying to build this kind of query: www.levipe.be/shop/?color=white&#38;region=Bordeaux I&#8217;ve created a couple of CPTs: &#8211; grapes &#8211; regions &#8211; &#8230; and a couple of custom fields in my products (using WooCommerce) like &#8211; color The code goes like this: function get_levipe_filter_posts( $query ) { if( is_admin() ) { return; }; $meta_query = [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/_get-post-relations/">$_GET, post relations</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>So, I&#8217;m trying to build this kind of query:<br />
+www.levipe.be/shop/?color=white&amp;region=Bordeaux</p>
+<p>I&#8217;ve created a couple of CPTs:<br />
+&#8211; grapes<br />
+&#8211; regions<br />
+&#8211; &#8230;<br />
+and a couple of custom fields in my products (using WooCommerce) like<br />
+&#8211; color</p>
+<p>The code goes like this:</p>
+<pre><code>function get_levipe_filter_posts( $query ) {
+
+    if( is_admin() ) {
+        return;
+    };
+
+    $meta_query = $query-&gt;get(&#039;meta_query&#039;);
+
+    if ( $_GET ) {
+        foreach ( $_GET as $key =&gt; $value ) {
+            $meta_query[] = array(
+                &quot;key&quot; =&gt; $key,
+                &quot;value&quot; =&gt; explode(&#039;,&#039;, $_GET[$key]),
+                &quot;compare&quot; =&gt; &quot;IN&quot;
+            );
+        };
+    };
+
+    $meta_query[] = array( &#039;relation&#039; =&gt; &#039;AND&#039; );
+
+    $query-&gt;set(&#039;meta_query&#039;, $meta_query);
+
+    return;
+};</code></pre>
+<p>The code functions perfectly if I limit myself to custom fields.</p>
+<p>It goes wrong when I want to perform the relationships. For instance, I have a relationship established between a product and regions. There the code breaks.<br />
+It also doesn&#8217;t work if I use the post_id of the region.</p>
+<p>I&#8217;ve also tried &#8220;__relate_post&#8221; as a key but that also doesn&#8217;t work.</p>
+<p>I&#8217;ve now read in one of the posts on the forum that there is a relate_query function. However, I can&#8217;t seem to find some documentation to see how it works.<br />
+First, could I use it in the use case? Second, how should I implement it?</p>
+<p>Thanks,</p>
+<p>Charles </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/_get-post-relations/">$_GET, post relations</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

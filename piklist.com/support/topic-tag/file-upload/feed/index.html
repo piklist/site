@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>file upload &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/file-upload/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 20 Mar 2019 12:56:17 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>File Field not save</title>
+		<link>https://piklist.com/support/topic/file-field-not-save/</link>
+		
+		<dc:creator><![CDATA[aridaniv]]></dc:creator>
+		<pubDate>Wed, 20 Mar 2019 12:56:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-field-not-save/</guid>
+
+					<description><![CDATA[<p>I use piklist on wordpress 5.1 Try to create a slider widget with the file field, but it can&#8217;t be saved. Is piklist not compatible with the latest wordpress? Need help. Slider-form.php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;my_text&#039;, &#039;label&#039; =&#62; &#039;Text&#039;, &#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;regular-text&#039; ) )); piklist( &#039;field&#039;, array( &#039;type&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-not-save/">File Field not save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I use piklist on wordpress 5.1</p>
+<p>Try to create a slider widget with the file field, but it can&#8217;t be saved.</p>
+<p>Is piklist not compatible with the latest wordpress?</p>
+<p>Need help.</p>
+<p>Slider-form.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;,
+    &#039;field&#039; =&gt; &#039;my_text&#039;,
+    &#039;label&#039; =&gt; &#039;Text&#039;,
+    &#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+    )
+  ));
+piklist( &#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;group&#039;,
+  &#039;field&#039;   =&gt; &#039;slider_group&#039;,
+  &#039;add_more&#039;  =&gt; true,
+  &#039;label&#039;   =&gt; __(&#039;Slider Expert4you&#039;, &#039;expert4you&#039;),
+  &#039;fields&#039;  =&gt; array(
+    array(
+      &#039;type&#039;  =&gt; &#039;file&#039;,
+      &#039;field&#039; =&gt; &#039;slider_image&#039;,
+      &#039;label&#039; =&gt; __(&#039;Slides&#039;, &#039;expert4you&#039;),
+      &#039;columns&#039; =&gt; 12,
+    )
+  )
+) );</code></pre>
+<p>Slider.php</p>
+<pre><code>&lt;?php
+/*  
+Title:  Slider Widget
+Description:  Slider Widget
+Standalone: true
+*/?&gt;
+&lt;?php echo $before_widget; ?&gt;
+
+&lt;?php echo $before_title; ?&gt;
+
+&lt;?php echo $settings[&#039;my_text&#039;]; ?&gt;
+
+&lt;?php echo $after_title; ?&gt;
+
+&lt;?php echo $settings[&#039;slider_group&#039;]; ?&gt;
+
+&lt;?php echo $after_widget; ?&gt;</code></pre>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-not-save/">File Field not save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File Upload Field &#8211; order strange behavior</title>
+		<link>https://piklist.com/support/topic/file-upload-field-order-strange-behavior/</link>
+		
+		<dc:creator><![CDATA[Juan]]></dc:creator>
+		<pubDate>Wed, 14 Feb 2018 10:27:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-field-order-strange-behavior/</guid>
+
+					<description><![CDATA[<p>the file uploader seems to work perfect but when i try to re-order thumbnails and then update the entry the order is different. The strange thing is that when i update again the order i made before is ok! If i update again (with o without any change) the file uploader metabox shows a different [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-field-order-strange-behavior/">File Upload Field &#8211; order strange behavior</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>the file uploader seems to work perfect but when i try to re-order thumbnails and then update the entry the order is different.</p>
+<p>The strange thing is that when i update again the order i made before is ok!<br />
+If i update again (with o without any change) the file uploader metabox shows a different order. Then update, and the order is ok.</p>
+<p>this is a video of what is happening:<br />
+https://www.dropbox.com/s/ffh72yopapc5nlc/Archivo%2014-2-18%2011%2020%2021.mov?dl=0<br />
+(sorry for the sound)</p>
+<p>this is the code of the metabox:</p>
+<pre><code>
+&lt;?php 
+/*
+Title: Stills
+Post Type: stills
+Order: 0
+*/
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;,
+  &#039;field&#039; =&gt; &#039;stills&#039;,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;label&#039; =&gt; __(&#039;Add Image(s)&#039;,&#039;piklist&#039;),
+  &#039;description&#039; =&gt; __(&#039;This is the uploader seen in the admin by default.&#039;,&#039;piklist&#039;),
+  &#039;options&#039; =&gt; array(
+    &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;),
+    &#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+    )
+  ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-field-order-strange-behavior/">File Upload Field &#8211; order strange behavior</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload field saves ID instead of URL when reordering</title>
+		<link>https://piklist.com/support/topic/file-upload-field-saves-id-instead-of-url-when-reordering/</link>
+		
+		<dc:creator><![CDATA[riotxoa]]></dc:creator>
+		<pubDate>Wed, 17 Jan 2018 09:13:18 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-field-saves-id-instead-of-url-when-reordering/</guid>
+
+					<description><![CDATA[<p>Hello, I have one meta-box configured as follows: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;section_images&#039;, &#039;label&#039; =&#62; &#039;Carousel Images&#039;, &#039;options&#039; =&#62; array( &#039;save&#039; =&#62; &#039;url&#039;, &#039;modal_title&#039; =&#62; &#039;Add images&#039;, &#039;button&#039; =&#62; &#039;Select&#039; ), )); The images&#8217; URL are saved OK on first load, but if I reorder images doing drag&#8217;n drop, then the images&#8217; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-field-saves-id-instead-of-url-when-reordering/">File upload field saves ID instead of URL when reordering</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I have one meta-box configured as follows:</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;,
+    &#039;field&#039; =&gt; &#039;section_images&#039;,
+    &#039;label&#039; =&gt; &#039;Carousel Images&#039;,
+    &#039;options&#039; =&gt; array(
+        &#039;save&#039; =&gt; &#039;url&#039;,
+        &#039;modal_title&#039; =&gt; &#039;Add images&#039;,
+        &#039;button&#039; =&gt; &#039;Select&#039;
+    ),
+));
+</code></pre>
+<p>The images&#8217; URL are saved OK on first load, but if I reorder images doing drag&#8217;n drop, then the images&#8217; URL&#8217;s are replaced by their ID&#8217;s in database.</p>
+<p>I&#8217;ve found the way to show the images when the metadata is a URL or an ID (with a code snippet in the PHP template), but I think it would be interesting to solve this issue.</p>
+<p>Thank you and best regards,</p>
+<p>Ricardo</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-field-saves-id-instead-of-url-when-reordering/">File upload field saves ID instead of URL when reordering</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Front end File Uploader &#8211; Problems with Required</title>
+		<link>https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/</link>
+		
+		<dc:creator><![CDATA[jrcreative]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2017 18:27:21 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/</guid>
+
+					<description><![CDATA[<p>Hi all, I&#8217;m in desperate need of a solution for this. I have a multi-page front end form with many different required file uploads. Piklist does a fine job of making sure you can&#8217;t move to the next page without submitting the required info. However, when you go back to that page after advancing in [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/">Front end File Uploader &#8211; Problems with Required</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi all,</p>
+<p>I&#8217;m in desperate need of a solution for this. I have a multi-page front end form with many different required file uploads.</p>
+<p>Piklist does a fine job of making sure you can&#8217;t move to the next page without submitting the required info. However, when you go back to that page after advancing in to process, you can see that the image is stored here&#8230;</p>
+<p><img src='https://s30.postimg.org/jlka8g89t/Screen_Shot_2017_01_26_at_10_10_37_AM.png' border='0' alt="Screen Shot 2017-01-26 at 10.10.37 AM" /></p>
+<p>But when you attempt to move on again, it acts as if it doesn&#8217;t know the file exists (despite the fact that you&#8217;re looking at a preview).</p>
+<p><img src="https://s28.postimg.org/mqvabaa7x/Screen_Shot_2017_01_26_at_10_29_33_AM.png" alt="" /></p>
+<p>I&#8217;ve been working at this for a while, looking for ways to even work around Piklist for this one input type, but I&#8217;m not having any luck getting it integrated back into the Piklist flow.</p>
+<p>HELP!!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-file-uploader-problems-with-required/">Front end File Uploader &#8211; Problems with Required</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Reordering not working on images with update</title>
+		<link>https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</link>
+		
+		<dc:creator><![CDATA[bobstew]]></dc:creator>
+		<pubDate>Fri, 21 Oct 2016 09:31:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</guid>
+
+					<description><![CDATA[<p>The reordering of &#8216;field&#8217; &#8216;type&#8217; =&#62; &#8216;upload&#8217; was working fine. But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think). Here is my code for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The reordering of &#8216;field&#8217;  &#8216;type&#8217; =&gt; &#8216;upload&#8217; was working fine.<br />
+But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 </p>
+<p>I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think).</p>
+<p>Here is my code for the media upload:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;file&#039;
+,&#039;field&#039; =&gt; &#039;upload_media&#039;
+,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+,&#039;description&#039; =&gt; __(&#039;Add images to a Report.&#039;,&#039;piklist&#039;)
+,&#039;options&#039; =&gt; array(
+  &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+  ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+)
+));</code></pre>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File field &#039;required&#039; error</title>
+		<link>https://piklist.com/support/topic/file-field-required-error/</link>
+		
+		<dc:creator><![CDATA[jrcreative]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2016 20:43:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-field-required-error/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to make a field type of &#8220;file&#8221; a required field. It works fine when I do the initial file upload and a save the post, but validation stops the save on post updates. Here&#8217;s my code for that field.. nothing fancy. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039; ,&#039;field&#039; =&#62; &#039;government_id&#039; ,&#039;label&#039; =&#62; __(&#039;Government Issued [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-required-error/">File field &#039;required&#039; error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to make a field type of &#8220;file&#8221; a required field. It works fine when I do the initial file upload and a save the post, but validation stops the save on post updates.</p>
+<p>Here&#8217;s my code for that field.. nothing fancy.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;
+  ,&#039;field&#039; =&gt; &#039;government_id&#039;
+  ,&#039;label&#039; =&gt; __(&#039;Government Issued ID&#039;)
+  ,&#039;options&#039; =&gt; array(
+    &#039;basic&#039; =&gt; true
+    )
+  ,&#039;required&#039; =&gt; true
+)</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-required-error/">File field &#039;required&#039; error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File Upload Directory</title>
+		<link>https://piklist.com/support/topic/file-upload-directory/</link>
+		
+		<dc:creator><![CDATA[kris]]></dc:creator>
+		<pubDate>Mon, 16 May 2016 17:04:35 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-directory/</guid>
+
+					<description><![CDATA[<p>Hi I was wondering if there is a way to upload a file into a specific folder? For example instead of storing the uploaded file into the uploads folder I would like to save the file into uploads/my-custom-folder. thanks, &#8211; Kris</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-directory/">File Upload Directory</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi I was wondering if there is a way to upload a file into a specific folder?</p>
+<p>For example instead of storing the uploaded file into the uploads folder I would like to save the file into uploads/my-custom-folder.</p>
+<p>thanks,<br />
+&#8211; Kris</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-directory/">File Upload Directory</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Can&#039;t save file to post</title>
+		<link>https://piklist.com/support/topic/cant-save-file-to-post/</link>
+		
+		<dc:creator><![CDATA[]]></dc:creator>
+		<pubDate>Mon, 18 Jan 2016 20:36:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cant-save-file-to-post/</guid>
+
+					<description><![CDATA[<p>Hi, Im trying to add an image gallery to a custom post type, but when I update the post the images disappear. I can upload images using the media library and I&#8217;ve noticed that the piklist demo file uploader isn&#8217;t working either. Below is the code I am using to make the file upload field. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-save-file-to-post/">Can&#039;t save file to post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>Im trying to add an image gallery to a custom post type, but when I update the post the images disappear. I can upload images using the media library and I&#8217;ve noticed that the piklist demo file uploader isn&#8217;t working either. Below is the code I am using to make the file upload field.</p>
+<p>Any help would be much appreciated as I have run out of ideas as to how to fix this!</p>
+<pre><code>&lt;?php 
+/*
+Title: Gallery
+Post Type: garage
+Order: 99
+*/
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;,
+  &#039;field&#039; =&gt; &#039;gallery&#039;,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;label&#039; =&gt; __(&#039;Add Image(s)&#039;,&#039;piklist&#039;),
+  &#039;description&#039; =&gt; __(&#039;This is the uploader seen in the admin by default.&#039;,&#039;piklist&#039;),
+  &#039;options&#039; =&gt; array(
+    &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;),
+    &#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-save-file-to-post/">Can&#039;t save file to post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload metabox not setting attachement&#039;s post_parent &#8212; Piklist v0.9.9.7</title>
+		<link>https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/</link>
+		
+		<dc:creator><![CDATA[Mehdi Salem]]></dc:creator>
+		<pubDate>Thu, 10 Dec 2015 07:02:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/</guid>
+
+					<description><![CDATA[<p>Seems like the post variable $_post[&#8216;post_id&#8217;] is not sent to the file media uploader iframe when triggered from the by Piklist&#8217;s file upload metabox, when editing a post&#8230; As a consequence, a new file uploaded from a post via Piklist des not have a post parent set and the file cannot be attached the the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/">File upload metabox not setting attachement&#039;s post_parent &#8212; Piklist v0.9.9.7</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Seems like the post variable $_post[&#8216;post_id&#8217;] is not sent to the file media uploader iframe when triggered from the by Piklist&#8217;s file upload metabox, when editing a post&#8230;</p>
+<p>As a consequence, a new file uploaded from a post via Piklist des not have a post parent set and the file cannot be attached the the current post by WP&#8230; while a native WP featured image will be attached with no issue to its post.</p>
+<p>Could you fix this issue please? I&#8217;m trying to set the upload directory dynamically based on the post_type of the parent post of attachments for my client so I need to be able to know from what post type the piklist uploader is triggered&#8230;</p>
+<p>Thank you!</p>
+<p>Here is my code:</p>
+<p><strong>Custom Dynamic upload directory:</strong></p>
+<pre><code>function hdev_upload_media_dir_based_on_post_type($uploads)
+{
+	if(!isset($_POST[&#039;post_id&#039;])) return $uploads; // do nothing if no attachment post parent is set
+
+	$post = get_post($_POST[&#039;post_id&#039;]);
+	$post_type = $post-&gt;post_type;
+	
+	$new_sub_dir = &#039;/&#039; . $post_type . $uploads[&#039;subdir&#039;];
+
+	$uploads[&#039;path&#039;]    = str_replace($uploads[&#039;subdir&#039;], $new_sub_dir, $uploads[&#039;path&#039;]);
+	$uploads[&#039;url&#039;]     = str_replace($uploads[&#039;subdir&#039;], $new_sub_dir, $uploads[&#039;url&#039;]);
+	$uploads[&#039;subdir&#039;]  = str_replace($uploads[&#039;subdir&#039;], $new_sub_dir, $uploads[&#039;url&#039;]); // not necessary, added just in case and it won&#039;t hurt anyway...
+
+	return $uploads;
+}
+function custom_upload_filter( $file )
+{
+	if(isset($_POST[&#039;action&#039;]) &amp;&amp; $_POST[&#039;action&#039;] === &#039;upload-attachment&#039;) add_filter(&#039;upload_dir&#039;, &#039;hdev_upload_media_dir_based_on_post_type&#039;); // filter the upload directory and substitute with new dir
+
+	return $file;
+}
+add_filter(&#039;wp_handle_upload_prefilter&#039;, &#039;custom_upload_filter&#039; );
+</code></pre>
+<p><strong>Piklist file upload metabox:</strong></p>
+<pre><code>
+/*
+Title: &lt;h3 class=&quot;hdev-highlight&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h3&gt;
+Post Type: post,sepia,black_and_white,color,conservation
+Order: 20
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;folder_content_group&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Gallery Photo&#039;,&#039;stopping-the-world-admin&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Add photos to this folder.&#039;, &#039;stopping-the-world-admin&#039;)
+    ,&#039;help&#039; =&gt; __(&#039;Adds a new photo to this gallery folder and sets its availability on the store.&#039;,&#039;stopping-the-world-admin&#039;)
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;single_photo&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Photo&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; __(&#039;Add a Photo&#039;,&#039;stopping-the-world-admin&#039;)
+            ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;stopping-the-world-admin&#039;)
+        )
+        ,&#039;required&#039; =&gt; true
+        ,&#039;validate&#039; =&gt; array(
+            array(
+                &#039;type&#039; =&gt; &#039;limit&#039;,
+                &#039;options&#039; =&gt; array(
+                        &#039;min&#039; =&gt; 1,
+                        &#039;max&#039; =&gt; 1
+                )
+            )
+            /*,array(
+                  &#039;type&#039; =&gt; &#039;image&#039;
+            )*/
+            ,array(
+                  &#039;type&#039; =&gt; &#039;jpeg&#039;
+            )
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;photo_title&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Title&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;help&#039; =&gt; __(&#039;Sets the photo title. This will appear bellow the photo and above the description on the Gallery Foolder post.&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;columns&#039; =&gt; 7
+        ,&#039;attributes&#039; =&gt; array(
+            &#039;placeholder&#039; =&gt; __(&#039;Enter photo title here...&#039;, &#039;stopping-the-world-admin&#039;)
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;store_availability&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Store Availability&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;help&#039; =&gt; __(&#039;(Leave unchecked if you do not want to sell this photo.)&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;columns&#039; =&gt; 4
+        ,&#039;choices&#039; =&gt; array(
+            &#039;option1&#039; =&gt; &#039;Stock&#039;
+            ,&#039;option2&#039; =&gt; &#039;Print&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;textarea&#039;
+        ,&#039;field&#039; =&gt; &#039;photo_description&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Description&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;help&#039; =&gt; __(&#039;Sets the photo description. This will appear bellow the photo and its title on the Gallery Folder post.&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;attributes&#039; =&gt; array(
+            &#039;rows&#039; =&gt; 5
+            ,&#039;cols&#039; =&gt; 120
+            ,&#039;placeholder&#039; =&gt; __(&#039;Describe this photo...&#039;, &#039;stopping-the-world-admin&#039;)
+            ,&#039;maxlength&#039; =&gt; &#039;320&#039;
+        )
+      )
+     )
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-metabox-not-setting-attachements-post_parent-piklist-v0-9-9-7/">File upload metabox not setting attachement&#039;s post_parent &#8212; Piklist v0.9.9.7</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>More than one file upload field in add_more group fails to save</title>
+		<link>https://piklist.com/support/topic/more-than-one-file-upload-field-in-add_more-group-fails-to-save/</link>
+		
+		<dc:creator><![CDATA[bjoerns]]></dc:creator>
+		<pubDate>Fri, 04 Dec 2015 17:06:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/more-than-one-file-upload-field-in-add_more-group-fails-to-save/</guid>
+
+					<description><![CDATA[<p>Hi Steve Has the bugs with file upload in group fields been resolved (see here)? Because I’m also having very strange things happening when using the code below: some data get saved in the database, others not and all of this in an array which doesn&#8217;t look as the example here. In a second attempt [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/more-than-one-file-upload-field-in-add_more-group-fails-to-save/">More than one file upload field in add_more group fails to save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Steve</p>
+<p>Has the bugs with file upload in group fields been resolved (see <a href="https://piklist.com/support/topic/editor-field-in-repeatable-group-does-not-appear-when-clicking-plus-button/">here</a>)? Because I’m also having very strange things happening when using the code below: some data get saved in the database, others not and all of this in an array which doesn&#8217;t look as the example <a href="https://piklist.com/user-guide/docs/field-parameters/add_more/">here</a>.</p>
+<p>In a second attempt I tried without grouping by commenting out the line &#8220;,&#8217;field&#8217; =&gt; &#8216;ausbildung_zeugnis&#8221; in the code below, but then it’s even worse: I created two “Diplom/Zeugnis” (see code below) and in each of them I attached a pdf (see code below with field ‘ausbildung_zeugnis_pdf’) and an image (ausbildung_zeugnis_bild). The form behaves normal, but after publishing my custom post entry the two “Diplom/Zeugnis” are gone and I also don’t see in the post_meta-database table any entries.</p>
+<p>Is this a bug or am I doing things the wrong way? If it is a bug: Can you propose a work-around?</p>
+<p>Kind regards<br />
+Björn</p>
+<pre><code>array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			,&#039;field&#039; =&gt; &#039;ausbildung_zeugnis&#039;
+			,&#039;label&#039; =&gt; __(&#039;Diplom/Zeugnis&#039;)
+			,&#039;columns&#039; =&gt; &#039;12&#039;
+			,&#039;add_more&#039; =&gt; true
+			,&#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;text&#039;
+					,&#039;field&#039; =&gt; &#039;ausbildung_zeugnis_bezeichnung&#039;
+					,&#039;label&#039; =&gt; __(&#039;Bezeichnung&#039;)
+					,&#039;columns&#039; =&gt; &#039;6&#039;
+					,&#039;help&#039; =&gt; __(&#039;Wie heisst das Zeugnis? Entspricht normalerweise dem Dateinamen&#039;)
+				),
+				array(
+					&#039;type&#039; =&gt; &#039;file&#039;
+					,&#039;field&#039; =&gt; &#039;ausbildung_zeugnis_pdf&#039;
+					,&#039;label&#039; =&gt; __(&#039;PDF&#039;,&#039;piklist&#039;)
+					,&#039;columns&#039; =&gt; &#039;3&#039;
+					,&#039;help&#039; =&gt; __(&#039;Bitte laden Sie hier das Zeugnis als PDF-Datei hoch&#039;)
+					,&#039;options&#039; =&gt; array(
+						&#039;modal_title&#039; =&gt; __(&#039;PDF hinzufügen&#039;,&#039;piklist&#039;)
+						,&#039;button&#039; =&gt; __(&#039;PDF hinzufügen&#039;,&#039;piklist&#039;)
+					)
+					,&#039;validate&#039; =&gt; array(
+						array(
+							&#039;type&#039; =&gt; &#039;limit&#039;,
+							&#039;options&#039; =&gt; array(
+								&#039;min&#039; =&gt; 1,
+								&#039;max&#039; =&gt; 1
+							)
+						)
+					)
+				),
+				array(
+					&#039;type&#039; =&gt; &#039;file&#039;
+					,&#039;field&#039; =&gt; &#039;ausbildung_zeugnis_bild&#039;
+					,&#039;label&#039; =&gt; __(&#039;Titelbild&#039;,&#039;piklist&#039;)
+					,&#039;columns&#039; =&gt; &#039;3&#039;
+					,&#039;help&#039; =&gt; __(&#039;Bitte laden Sie hier ein Titelbild der PDF-Datei hoch&#039;)
+					,&#039;options&#039; =&gt; array(
+						&#039;modal_title&#039; =&gt; __(&#039;Bild hinzufügen&#039;,&#039;piklist&#039;)
+						,&#039;button&#039; =&gt; __(&#039;Bild hinzufügen&#039;,&#039;piklist&#039;)
+					)
+					,&#039;validate&#039; =&gt; array(
+						array(
+							&#039;type&#039; =&gt; &#039;limit&#039;,
+							&#039;options&#039; =&gt; array(
+								&#039;min&#039; =&gt; 1,
+								&#039;max&#039; =&gt; 1
+							)
+						)
+					)
+				)
+			)
+		),</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/more-than-one-file-upload-field-in-add_more-group-fails-to-save/">More than one file upload field in add_more group fails to save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

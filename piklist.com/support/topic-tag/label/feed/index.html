@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>label &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/label/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 28 Apr 2016 18:23:53 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Editor label out of sequence in add more</title>
+		<link>https://piklist.com/support/topic/editor-label-out-of-sequence-in-add-more/</link>
+		
+		<dc:creator><![CDATA[cdcorey]]></dc:creator>
+		<pubDate>Thu, 28 Apr 2016 18:23:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/editor-label-out-of-sequence-in-add-more/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve noticed a minor issue when using editors in add mores that seems to recur for me across various sites and custom Piklist-powered plugins. It&#8217;s cosmetic and somewhat intermittent, but I couldn&#8217;t find any references on the forum so I thought it should be noted. When using an editor inside an add more, I&#8217;ve noticed [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-label-out-of-sequence-in-add-more/">Editor label out of sequence in add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve noticed a minor issue when using editors in add mores that seems to recur for me across various sites and custom Piklist-powered plugins. It&#8217;s cosmetic and somewhat intermittent, but I couldn&#8217;t find any references on the forum so I thought it should be noted.</p>
+<p>When using an editor inside an add more, I&#8217;ve noticed that the label of the editor sometimes shows up outside its add more item. I think when this happens, it&#8217;s usually on the first item, and then the subsequent ones look fine. Odd.</p>
+<p>Here&#8217;s one example of some code where I&#8217;ve seen this happen:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;template&#039; =&gt; &#039;field&#039;,
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;_cd_custom_tab_title&#039;,
+			&#039;label&#039; =&gt; &#039;Title&#039;,
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;_cd_custom_tab_priority&#039;,
+			&#039;label&#039; =&gt; &#039;Order&#039;,
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;editor&#039;,
+			&#039;field&#039; =&gt; &#039;_cd_custom_tab_content&#039;,
+			&#039;label&#039; =&gt; &#039;Content&#039;,
+			&#039;options&#039; =&gt; array(
+				&#039;wpautop&#039; =&gt; true,
+		      &#039;media_buttons&#039; =&gt; true,
+		      &#039;teeny&#039; =&gt; true,
+		      &#039;textarea_rows&#039; =&gt; 5,
+		      &#039;drag_drop_upload&#039; =&gt; true,
+			),
+		),
+	),
+	&#039;on_post_status&#039; =&gt; array(
+		&#039;value&#039; =&gt; &#039;lock&#039;,
+	),
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-label-out-of-sequence-in-add-more/">Editor label out of sequence in add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Templates for placing labels above fields/inputs and description below</title>
+		<link>https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/</link>
+		
+		<dc:creator><![CDATA[Ben]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 00:46:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/</guid>
+
+					<description><![CDATA[<p>Are there templates that will place a label above its field, and the description below the field? In the &#8220;What I see&#8221; screenshot attached text_field_alone, group_1 and group_2 have the labels to the left, whereas text_field_in_group_1, and text_field_in_group_2 have their labels above. text_field_alone has the description under the label, but I would like it to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/">Templates for placing labels above fields/inputs and description below</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Are there templates that will place a label above its field, and the description below the field? In the &#8220;What I see&#8221; screenshot attached text_field_alone, group_1 and group_2 have the labels to the left, whereas text_field_in_group_1, and text_field_in_group_2 have their labels above. text_field_alone has the description under the label, but I would like it to be under the input box. I attached a quick photo-chop that shows &#8220;What I want (more or less)&#8221;</p>
+<p>If there aren&#8217;t templates for this, then are there instructions for creating templates for groups and the fields within groups? I am having problems finding the default templates for these in the source code.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/templates-for-placing-labels-above-fieldsinputs-and-description-below/">Templates for placing labels above fields/inputs and description below</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>label misplaced in add-more (0.9.9.4)</title>
+		<link>https://piklist.com/support/topic/label-misplaced-in-add-more-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 28 Oct 2015 03:34:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/label-misplaced-in-add-more-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>Not sure whether I should be doing something different with my fields? Here is the code: piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;home_news&#039;, &#039;label&#039; =&#62; &#039;Featured News&#039;, &#039;description&#039; =&#62; &#039;Information for the home page news feature.&#039;, &#039;template&#039; =&#62; &#039;field&#039;, &#039;columns&#039; =&#62; 12, &#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;section_title&#039;, &#039;columns&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/label-misplaced-in-add-more-0-9-9-4/">label misplaced in add-more (0.9.9.4)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Not sure whether I should be doing something different with my fields? Here is the code: </p>
+<pre><code>piklist( &#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;home_news&#039;,
+	&#039;label&#039; =&gt; &#039;Featured News&#039;,
+	&#039;description&#039; =&gt; &#039;Information for the home page news feature.&#039;,
+	&#039;template&#039; =&gt; &#039;field&#039;,
+	&#039;columns&#039; =&gt; 12,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;section_title&#039;,
+			&#039;columns&#039; =&gt; 8,
+			&#039;label&#039; =&gt; &#039;News Section Title&#039;,
+			&#039;value&#039; =&gt; &quot;What&#039;s New&quot;,
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;number&#039;,
+			&#039;field&#039; =&gt; &#039;section_quantity&#039;,
+			&#039;label&#039; =&gt; &#039;Number of Posts&#039;,
+			&#039;description&#039; =&gt; &#039;How many recent posts should we display?&#039;,
+			&#039;value&#039; =&gt; 2,
+			&#039;validate&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;range&#039;,
+					&#039;options&#039; =&gt; array(
+						&#039;min&#039; =&gt; 1,
+						&#039;max&#039; =&gt; 4,
+					),
+				),
+			),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;section_link_text&#039;,
+			&#039;label&#039; =&gt; &#039;Text for Link to News Page&#039;,
+			&#039;value&#039; =&gt; &#039;View All News&#039;,
+			&#039;columns&#039; =&gt; 8,
+			&#039;validate&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;safe_text&#039;,
+				),
+			),
+		),
+	),
+));
+</code></pre>
+<p>And attached is an image of the resulting metabox. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/label-misplaced-in-add-more-0-9-9-4/">label misplaced in add-more (0.9.9.4)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Setting labels on new type</title>
+		<link>https://piklist.com/support/topic/setting-labels-on-new-type/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Wed, 19 Dec 2012 17:59:23 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/setting-labels-on-new-type/</guid>
+
+					<description><![CDATA[<p>Hi, just wondering if it is possible to set my &#8216;own&#8217; labels on creation of new post_type. using this command 'labels' =&#62; piklist('post_type_labels', 'Boek') will generate the ENGLISH version, but it is a dutch word. So it will not create the right labels. Looking into the piklist code, this is all auto-generated. Possible to pass [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-labels-on-new-type/">Setting labels on new type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>just wondering if it is possible to set my &#8216;own&#8217; labels on creation of new post_type.</p>
+<p>using this command <code>'labels' =&gt; piklist('post_type_labels', 'Boek')</code><br />
+will generate the ENGLISH version, but it is a dutch word. So it will not create the right labels.<br />
+Looking into the piklist code, this is all auto-generated.<br />
+Possible to pass this? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-labels-on-new-type/">Setting labels on new type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

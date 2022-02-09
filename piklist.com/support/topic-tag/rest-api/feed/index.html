@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>rest api &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/rest-api/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 19 May 2020 15:39:07 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add meta to REST API response</title>
+		<link>https://piklist.com/support/topic/add-meta-to-rest-api-response/</link>
+		
+		<dc:creator><![CDATA[Ico]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2017 18:27:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-meta-to-rest-api-response/</guid>
+
+					<description><![CDATA[<p>Hi All, I searched for an easy way to display meta-box content created by Piklist in the rest_api response. For example: //Title: Custom meta to show in Rest //Post Type: post piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;custom_text&#039;, &#039;label&#039; =&#62; &#039;Custom text demo&#039;, //&#039;show_in_rest&#039; =&#62; true, //not working :( ) ); I can [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All,<br />
+I searched for an easy way to display meta-box content created by Piklist in the rest_api response.</p>
+<p>For example:</p>
+<pre><code>//Title: Custom meta to show in Rest
+ //Post Type: post
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;       =&gt; &#039;text&#039;,
+	&#039;field&#039;      =&gt; &#039;custom_text&#039;,
+	&#039;label&#039;      =&gt; &#039;Custom text demo&#039;,
+	//&#039;show_in_rest&#039; =&gt; true, //not working :(
+) );</code></pre>
+<p>I can use register_rest_field to add the meta to the api response ( for example : )</p>
+<pre><code>
+	register_rest_field( &#039;post&#039;, &#039;cm&#039;, array(
+		&#039;get_callback&#039; =&gt; function ( $post ) {
+			return get_post_meta( $post[&#039;id&#039;], &#039;custom_text&#039;, true );
+		},
+		&#039;schema&#039;       =&gt; array(
+			&#039;description&#039; =&gt; __( &#039;Custom piklist text.&#039; ),
+			&#039;type&#039;        =&gt; &#039;string&#039;
+		),
+	) );
+</code></pre>
+<p>and it does the trick, but it would be awesome if just passing <code>&#039;show_in_rest&#039; =&gt; true</code> to the meta params make it automatically show in the response.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Method to know what fields have been created using Piklist</title>
+		<link>https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Thu, 11 Feb 2016 04:08:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/</guid>
+
+					<description><![CDATA[<p>Hi all! I figured I&#8217;d post this here in case someone else might find this useful. As you may know, I am using Piklist to create some custom fields and serving them using the REST API. I would like a way to automagically monitor what Piklist fields are available per content type and include those [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/">Method to know what fields have been created using Piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi all!</p>
+<p>I figured I&#8217;d post this here in case someone else might find this useful.</p>
+<p>As you may know, I am using Piklist to create some custom fields and serving them using the REST API. I would like a way to automagically monitor what Piklist fields are available per content type and include those in my API. This way, I won&#8217;t have to manually update the API every time a field is added.</p>
+<p>Are there any functions that can monitor fields created using Piklist or a recommended way of doing so?</p>
+<p>Here&#8217;s how I currently add fields to the API for a custom content type called &#8216;homepage&#8217;:</p>
+<pre><code>  add_action(&#039;rest_api_init&#039;, &#039;my_rest_api_init&#039;);
+
+  function my_rest_api_init()
+  {
+    // This is where we add the custom fields to the REST API
+    // More docs: http://v2.wp-api.org/extending/modifying/
+    $meta = array(
+      &#039;custom_field_a&#039;,
+      &#039;custom_field_b&#039;,
+      &#039;custom_field_c&#039;
+    );
+
+    foreach ($meta as $meta_key)
+    {
+      register_api_field(&#039;homepage&#039;,
+      $meta_key,
+        array(
+          &#039;get_callback&#039; =&gt; &#039;get_registered_meta&#039;,
+          &#039;update_callback&#039; =&gt; &#039;update_registered_meta&#039;,
+          &#039;schema&#039; =&gt; null
+        )
+      );
+    }
+  }
+
+  function get_registered_meta( $object, $field_name, $request ) {
+    return get_post_meta( $object[ &#039;id&#039; ], $field_name, true );
+  }
+
+  function update_registered_meta( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+    return update_post_meta( $object-&gt;ID, $field_name, strip_tags( $value ) );
+}</code></pre>
+<p>Thanks again!<br />
+Rachel</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/">Method to know what fields have been created using Piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

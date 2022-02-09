@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 07 Sep 2020 04:08:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>use frontend form with custom field created manually or through other plugin</title>
+		<link>https://piklist.com/support/topic/use-frontend-form-with-custom-field-created-manually-or-through-other-plugin/</link>
+		
+		<dc:creator><![CDATA[hozefasmile]]></dc:creator>
+		<pubDate>Mon, 07 Sep 2020 04:08:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/use-frontend-form-with-custom-field-created-manually-or-through-other-plugin/</guid>
+
+					<description><![CDATA[<p>Is there a way that we can use the frontend form to save custom meta data value created manually in wordpress or by another plugin for example metabox ACF etc ? I mean to say suppose we have created a custom post type, created some custom meta fields for it, using wordpress default custom field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/use-frontend-form-with-custom-field-created-manually-or-through-other-plugin/">use frontend form with custom field created manually or through other plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way that we can use the frontend form to save custom meta data value created manually in wordpress or by another plugin for example metabox ACF etc ? I mean to say suppose we have created a custom post type, created some custom meta fields for it, using wordpress default custom field section of the post or by another plugin like metabox or ACF.</p>
+<p>Now can we use the field id or slug to be used in frontend form that piklist use to save the post ?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/use-frontend-form-with-custom-field-created-manually-or-through-other-plugin/">use frontend form with custom field created manually or through other plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Show custom fields only when meta box is selected</title>
+		<link>https://piklist.com/support/topic/show-custom-fields-only-when-meta-box-is-selected/</link>
+		
+		<dc:creator><![CDATA[mhweb]]></dc:creator>
+		<pubDate>Sat, 12 May 2018 23:22:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/show-custom-fields-only-when-meta-box-is-selected/</guid>
+
+					<description><![CDATA[<p>So, currently, I&#8217;m using a piklist list radio options, which I use to select and create posts with different formats depending on the option I select. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;radio&#039; ,&#039;field&#039; =&#62; &#039;article_format&#039; ,&#039;label&#039; =&#62; &#039;Normal&#039; ,&#039;description&#039; =&#62; &#039;Choose article format. Default is Standard.&#039; ,&#039;value&#039; =&#62; &#039;format-1&#039; ,&#039;choices&#039; =&#62; array( &#039;format-1&#039; =&#62; &#039;Standard&#039; ,&#039;format-2&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/show-custom-fields-only-when-meta-box-is-selected/">Show custom fields only when meta box is selected</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So, currently, I&#8217;m using a piklist list radio options, which I use to select and create posts with different formats depending on the option I select.</p>
+<pre><code> piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;radio&#039;
+    ,&#039;field&#039; =&gt; &#039;article_format&#039;
+    ,&#039;label&#039; =&gt; &#039;Normal&#039;
+    ,&#039;description&#039; =&gt; &#039;Choose article format. Default is Standard.&#039;
+    ,&#039;value&#039; =&gt; &#039;format-1&#039; 
+    ,&#039;choices&#039; =&gt; array(
+      &#039;format-1&#039; =&gt; &#039;Standard&#039;
+      ,&#039;format-2&#039; =&gt; &#039;Background&#039;
+,&#039;format-10&#039; =&gt; &#039;Affiliate&#039;
+      ,&#039;format-99&#039; =&gt; &#039;Legacy&#039; 
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));</code></pre>
+<p>However, now I&#8217;m trying to create a post format that will include other options using custom fields, such as buy button, and other blocks, but I don&#8217;t want to show the options in the post editor unless the post format is select (radio button using the above code).</p>
+<p>How can I do this?</p>
+<p>I was trying this, but it doesn&#8217;t work:</p>
+<p>Note: I know the piklist array needs other options, I just put it as an example. </p>
+<pre><code>&lt;?php if ($article_format_ids == &#039;format-10&#039;) :
+/*
+Title: Affiliate Link
+Post Type: post
+Collapse: false
+Capability: manage_options
+Context: normal
+Priority: low
+Locked: false
+*/
+ piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;affiliate_link1&#039;
+    ,&#039;label&#039; =&gt; &#039;Affiliate Link&#039;
+    ,&#039;description&#039; =&gt; &#039;Buy button&#039;
+    ,&#039;value&#039; =&gt; &#039;&#039;
+    ,&#039;help&#039; =&gt; &#039;Character limit is 40.&#039;
+    )
+  ));
+endif; ?&gt;</code></pre>
+<p>Any help will be appreciated.<br />
+Thanks,</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/show-custom-fields-only-when-meta-box-is-selected/">Show custom fields only when meta box is selected</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>how to enqueue script as per custom field</title>
+		<link>https://piklist.com/support/topic/how-to-enqueue-script-as-per-custom-field/</link>
+		
+		<dc:creator><![CDATA[ajayphp]]></dc:creator>
+		<pubDate>Mon, 29 Jun 2015 20:09:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-enqueue-script-as-per-custom-field/</guid>
+
+					<description><![CDATA[<p>Hi, I created custom post type, and want to replace tinymce latest 4.x editor with old tinymce 3.x (for specific reason ) I plan to remove support of editor in post_type and create textarea custom field for that post_type.. but issue is i have to include my version old tinymce js files from plugin, to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-enqueue-script-as-per-custom-field/">how to enqueue script as per custom field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I created custom post type,<br />
+and want to replace tinymce latest 4.x editor with old tinymce 3.x<br />
+(for specific reason )</p>
+<p>I plan to remove support of editor in post_type<br />
+and create textarea custom field for that post_type.. </p>
+<p>but issue is i have to include my version old tinymce js files from plugin,<br />
+to convert custom field textarea to tinymce ? </p>
+<p>Please guide me how to do that. </p>
+<p>Regards,<br />
+Ajay</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-enqueue-script-as-per-custom-field/">how to enqueue script as per custom field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Validate Unique value</title>
+		<link>https://piklist.com/support/topic/validate-unique-value/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Thu, 19 Feb 2015 20:54:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/validate-unique-value/</guid>
+
+					<description><![CDATA[<p>I was wondering how you could enforce a unique value for a text field. I am allowing each user to enter in their custom URL to take a user to their profile, but I need to be able to validate the field that it is not currently being used. Currently the below code allows unique [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validate-unique-value/">Validate Unique value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I was wondering how you could enforce a unique value for a text field.<br />
+I am allowing each user to enter in their custom URL to take a user to their profile, but I need to be able to validate the field that it is not currently being used.<br />
+Currently the below code allows unique values.</p>
+<pre><code>
+
+add_filter(&#039;piklist_validation_rules&#039;, &#039;check_if_unique&#039;, 11);
+function check_if_unique($validation_rules)
+{
+  $validation_rules[&#039;custom_unique&#039;] = array(
+    &#039;callback&#039; =&gt; &#039;my_validate_unique&#039;
+  );
+ 
+  return $validation_rules;
+}
+ 
+function my_validate_unique($file, $field, $arguments)
+{
+	$user_query = new WP_User_Query( array( &#039;meta_key&#039; =&gt; &#039;user_custom_url&#039;, &#039;meta_value&#039; =&gt; $field ) );
+	if( !empty ($user_query)){
+		return true;
+	}else{ return false;}
+ 
+}
+</code></pre>
+<p>This is my field:</p>
+<pre><code>
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;user_custom_url&#039;
+ ,&#039;label&#039; =&gt; &#039;URL of your profile&#039;
+ ,&#039;validate&#039; =&gt; array(
+  array(
+    &#039;type&#039; =&gt; &#039;custom_unique&#039;
+  )
+)
+ ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validate-unique-value/">Validate Unique value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using get_terms to pull in menus into select field</title>
+		<link>https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Sun, 31 Aug 2014 03:03:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to pull in all menus that the user has created in a select field. Can anyone tell me why this isn&#8217;t working? Thanks in advance! piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;submenu_selection&#039; ,&#039;value&#039; =&#62; &#039;option1&#039; // Sets default to Option 2 ,&#039;label&#039; =&#62; &#039;Sub Menu&#039; ,&#039;description&#039; =&#62; &#039;This is where to select [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/">Using get_terms to pull in menus into select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to pull in all menus that the user has created in a select field. Can anyone tell me why this isn&#8217;t working? Thanks in advance!</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+  ,&#039;field&#039; =&gt; &#039;submenu_selection&#039;
+  ,&#039;value&#039; =&gt; &#039;option1&#039; // Sets default to Option 2
+  ,&#039;label&#039; =&gt; &#039;Sub Menu&#039;
+  ,&#039;description&#039; =&gt; &#039;This is where to select what sub menu you need.&#039;
+  ,&#039;attributes&#039; =&gt; array(
+    &#039;class&#039; =&gt; &#039;text&#039;
+  )
+  ,&#039;choices&#039; =&gt; array(
+      piklist( return get_terms( &#039;nav_menu&#039;, array( &#039;hide_empty&#039; =&gt; true ) ) );
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/">Using get_terms to pull in menus into select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist my own custom field</title>
+		<link>https://piklist.com/support/topic/piklist-my-own-custom-field/</link>
+		
+		<dc:creator><![CDATA[Darlan ten Caten]]></dc:creator>
+		<pubDate>Thu, 03 Jul 2014 15:08:32 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-my-own-custom-field/</guid>
+
+					<description><![CDATA[<p>Hello! Is there a way to add a own custom field to a metabox? Something like this: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;my_custom_field&#039; ,&#039;label&#039; =&#62; &#039;My own custom Field&#039; ,&#039;field&#039; =&#62; &#039;myCustomField&#039; ,&#039;description&#039; =&#62; &#039;My own html field.&#039; )); add_action( &#039;piklist_render_my_custom_field&#039;, &#039;my_custom_field_function&#039;, 10, 2 ); function my_custom_field_function( $field, $meta ) { return &#039;&#60;label for=&#34;&#039; . $field[&#039;id&#039;] [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-my-own-custom-field/">Piklist my own custom field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>Is there a way to add a own custom field to a metabox?</p>
+<p>Something like this:</p>
+<pre><code> piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;my_custom_field&#039;
+    ,&#039;label&#039; =&gt; &#039;My own custom Field&#039;
+    ,&#039;field&#039; =&gt; &#039;myCustomField&#039;
+    ,&#039;description&#039; =&gt; &#039;My own html field.&#039;
+  ));
+
+add_action( &#039;piklist_render_my_custom_field&#039;, &#039;my_custom_field_function&#039;, 10, 2 );
+function my_custom_field_function( $field, $meta ) {
+	return &#039;&lt;label for=&quot;&#039; . $field[&#039;id&#039;] . &#039;&quot;&gt;&#039; . $field[&#039;label&#039;] . &#039;&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;&#039; . $field[&#039;id&#039;] . &#039;&quot; value=&quot;&#039; . $meta . &#039;&quot; /&gt;&#039;;
+}</code></pre>
+<p>This is a simple example, I want to build a field that use a table with pagination, something my customer want and will be great if I can use piklist to do that.</p>
+<p>Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-my-own-custom-field/">Piklist my own custom field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>multiselect field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/multiselect-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 14 Oct 2014 18:32:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Multiselect Field does not work?</title>
+		<link>https://piklist.com/support/topic/multiselect-field-does-not-work/</link>
+		
+		<dc:creator><![CDATA[prasenjit]]></dc:creator>
+		<pubDate>Tue, 14 Oct 2014 18:32:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/multiselect-field-does-not-work/</guid>
+
+					<description><![CDATA[<p>Hi, I am trying to use the multi-select field using the tutorial published here: but it is not working. Here is my code: piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039;, &#039;scope&#039; =&#62; &#039;taxonomy&#039;, &#039;field&#039; =&#62; &#039;languages&#039;, &#039;label&#039; =&#62; __(&#039;Languages&#039;), &#039;description&#039; =&#62; __(&#039;Select languages.&#039;), &#039;columns&#039; =&#62; &#039;12&#039;, &#039;choices&#039; =&#62; piklist( get_terms( &#039;language&#039;, array( &#039;hide_empty&#039; =&#62; false ) [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiselect-field-does-not-work/">Multiselect Field does not work?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I am trying to use the multi-select field using the tutorial published here: <a href="https://piklist.com/user-guide/docs/fields/multiselect-field/" title="MultiSelect Field"></a> but it is not working.</p>
+<p>Here is my code:</p>
+<pre><code>
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;        =&gt; &#039;select&#039;,
+	&#039;scope&#039;       =&gt; &#039;taxonomy&#039;,
+	&#039;field&#039;       =&gt; &#039;languages&#039;,
+	&#039;label&#039;       =&gt; __(&#039;Languages&#039;),
+	&#039;description&#039; =&gt; __(&#039;Select languages.&#039;),
+	&#039;columns&#039; =&gt; &#039;12&#039;,
+	&#039;choices&#039;     =&gt; piklist(
+		get_terms( &#039;language&#039;, array(
+			&#039;hide_empty&#039; =&gt; false
+		) ),
+		array(
+			&#039;term_id&#039;,
+			&#039;name&#039;
+		)
+	),
+	&#039;attributes&#039; =&gt; array(
+		&#039;multiple&#039;
+	)
+) );
+</code></pre>
+<p>Am I doing it wrong? I also tried the user contributed field &#8216;select2&#8217; from the github repo <a href="https://github.com/anderly/piklist-field-addons" title="Piklist Select2 Field"></a>. Even that isn&#8217;t working. Did you guys ever integrate the select2 field?</p>
+<p>Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiselect-field-does-not-work/">Multiselect Field does not work?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Media uploader &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/media-uploader/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 20 Jun 2015 22:01:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Bug with Media uploader in widget?</title>
+		<link>https://piklist.com/support/topic/bug-with-media-uploader-in-widget/</link>
+		
+		<dc:creator><![CDATA[kattagami]]></dc:creator>
+		<pubDate>Sat, 20 Jun 2015 21:54:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/bug-with-media-uploader-in-widget/</guid>
+
+					<description><![CDATA[<p>Hi, It seems there is a bug in the way the array is builed when we use a media uploader button in a repeater field. For instance, with the Piklist Demos Widgets, choose &#8220;Basic&#8221; in the select box, then fill in the &#8220;Slide Images&#8221; repeater field with the &#8220;Add Media&#8221; button. Add two group field. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-with-media-uploader-in-widget/">Bug with Media uploader in widget?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>It seems there is a bug in the way the array is builed when we use a media uploader button in a repeater field.</p>
+<p>For instance, with the Piklist Demos Widgets, choose &#8220;Basic&#8221; in the select box, then fill in the &#8220;Slide Images&#8221; repeater field with the &#8220;Add Media&#8221; button. Add two group field.</p>
+<p>This is the array generated:</p>
+<pre><code>Array
+(
+    [text_class_small] =&gt; Lorem
+    [text_columns_element] =&gt; Lorem
+    [text_add_more] =&gt; Lorem
+    [number] =&gt; 5
+    [demo_textarea_large] =&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    [upload_media] =&gt; Array
+        (
+            [0] =&gt; 
+        )
+
+    [slides] =&gt; Array
+        (
+            [image] =&gt; Array
+                (
+                    [0] =&gt; 54
+                    [1] =&gt; Array
+                        (
+                            [0] =&gt; undefined
+                            [1] =&gt; 52
+                        )
+
+                )
+
+            [url] =&gt; Array
+                (
+                    [0] =&gt; 
+                    [1] =&gt; 
+                )
+
+        )
+
+    [slides_basic] =&gt; Array
+        (
+            [image] =&gt; Array
+                (
+                    [0] =&gt; 
+                )
+
+            [url] =&gt; 
+        )
+)
+</code></pre>
+<p>First image: [0] =&gt; 54<br />
+Second image: [1] = &gt; Array<br />
+                        (<br />
+                            [0] =&gt; undefined<br />
+                            [1] =&gt; 52<br />
+                        )</p>
+<p>&gt; After the first key/value, Piklist generate an undefined value<br />
+Piklist 0.9.4.27</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-with-media-uploader-in-widget/">Bug with Media uploader in widget?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

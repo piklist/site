@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>meta_value &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/meta_value/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 03 Sep 2017 07:32:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Upgrade question&#8230;</title>
+		<link>https://piklist.com/support/topic/upgrade-question/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sun, 03 Sep 2017 07:32:24 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/upgrade-question/</guid>
+
+					<description><![CDATA[<p>I just upgraded from Piklist 0.9.9.7 to 0.9.9.12 and found what I think is a drastic change. All of my meta_values went from single meta_id values (rows) to a very large single serialized string in one single meta_value row, and I&#8217;m not quite sure what happened. Was wondering if this is an update/major change to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upgrade-question/">Upgrade question&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I just upgraded from Piklist 0.9.9.7 to 0.9.9.12 and found what I think is a drastic change.</p>
+<p>All of my meta_values went from single meta_id values (rows) to a very large single serialized string in one single meta_value row, and I&#8217;m not quite sure what happened.</p>
+<p>Was wondering if this is an update/major change to piklist?</p>
+<p>Thanks guys.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/upgrade-question/">Upgrade question&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Simple Checkbox (True or Value)</title>
+		<link>https://piklist.com/support/topic/simple-checkbox-true-or-value/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Wed, 02 Dec 2015 22:52:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/simple-checkbox-true-or-value/</guid>
+
+					<description><![CDATA[<p>I am trying to get a simple checkbox meta attached to a post. I am using this code: &#60;?php /* Title: Publish (Clearance) Post Type: post Capability: administrator */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;checkbox&#039; ,&#039;scope&#039; =&#62; &#039;taxonomy&#039; ,&#039;field&#039; =&#62; &#039;post_clearance&#039; ,&#039;label&#039; =&#62; &#039;Cleared&#039; ,&#039;description&#039; =&#62; &#039;Administrators &#38; Editors can clear publication for edition.&#039; ,&#039;choices&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/simple-checkbox-true-or-value/">Simple Checkbox (True or Value)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to get a simple checkbox meta attached to a post. I am using this code:</p>
+<pre><code>&lt;?php 
+	
+/*
+Title: Publish (Clearance)
+Post Type: post
+Capability: administrator
+*/
+	
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;field&#039; =&gt; &#039;post_clearance&#039;
+  ,&#039;label&#039; =&gt; &#039;Cleared&#039;
+  ,&#039;description&#039; =&gt; &#039;Administrators &amp; Editors can clear publication for edition.&#039;
+  ,&#039;choices&#039; =&gt; array(
+	  &#039;cleared&#039; =&gt; &#039;Cleared&#039;
+     )
+));
+	?&gt;</code></pre>
+<p>Two things happen. One is that the meta box does successfully appear, but when I check it and hit update, it doesn&#8217;t save it. (Using version 0.9.9.6 beta)</p>
+<p>Essentially using this simple one-option check box to act as a simple boolean function for a pre_get_post call through functions.php. This is what I have, but its not yielding any results of at the moment cause of the issue above.</p>
+<pre><code>function homepage_sticky_date_normalized( $query ) {
+	
+     if (is_home() || is_archive() &amp;&amp; $query-&gt;is_main_query())  
+      	$query-&gt;set(&#039;ignore_sticky_posts&#039;, true); // don&#039;t stack sticky posts 
+        $query-&gt;set( &#039;meta_key&#039;, &#039;clearance&#039; );
+        $query-&gt;set( &#039;meta_value&#039;, true );
+	 // $query-&gt;set(&#039;post__not_in&#039;, $excludes);
+        // $query-&gt;set(&#039;post__not_in&#039;, get_option(&#039;sticky_posts&#039;)); 
+        }
+        
+add_action( &#039;pre_get_posts&#039;, &#039;homepage_sticky_date_normalized&#039; );</code></pre>
+<p>These additional <code>query-sets</code> kill the listing of my posts in the backend.</p>
+<pre><code>   $query-&gt;set( &#039;meta_key&#039;, &#039;clearance&#039; );
+        $query-&gt;set( &#039;meta_value&#039;, true );</code></pre>
+<p>So three problems. :-/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/simple-checkbox-true-or-value/">Simple Checkbox (True or Value)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

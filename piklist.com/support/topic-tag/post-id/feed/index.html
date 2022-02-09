@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post ID &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post-id/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 12 Nov 2015 04:14:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>limiting workflow to specific post ID or template</title>
+		<link>https://piklist.com/support/topic/limiting-workflow-to-specific-post-id-or-template/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 04:14:37 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/limiting-workflow-to-specific-post-id-or-template/</guid>
+
+					<description><![CDATA[<p>The site&#8217;s home page has all kinds of special features, so I defined three tabs to organize the chaos. Awesome! Even though it wasn&#8217;t in the documentation, I added &#8220;ID: 2&#8221; below the &#8220;Post Type: page&#8221; line, since it works with meta-boxes, and I am an optimistic sort. Oops, now all pages have special tabs [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/limiting-workflow-to-specific-post-id-or-template/">limiting workflow to specific post ID or template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The site&#8217;s home page has all kinds of special features, so I defined three tabs to organize the chaos. Awesome! </p>
+<p>Even though it wasn&#8217;t in the documentation, I added &#8220;ID: 2&#8221; below the &#8220;Post Type: page&#8221; line, since it works with meta-boxes, and I am an optimistic sort. </p>
+<p>Oops, now all pages have special tabs for home page features, though each just has an editor box as the home page meta-boxes are tagged with &#8220;ID: 2&#8221;. </p>
+<p>I am really hoping I&#8217;m just goofing up here. Any chance that this is pilot error? And if so, is there a way to show tabs only for certain page templates as well? <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Thanks!<br />
+Donna</p>
+<p>Workflow file:</p>
+<pre><code>&lt;?php
+/*
+Flow: Homepage Workflow
+Page: post.php, post-new.php, post-edit.php, admin.php
+Post Type: page
+ID: 2
+Header: true
+Position: title
+*/
+</code></pre>
+<p>One of the 3 tab files:</p>
+<pre><code>&lt;?php
+/*
+Title: Features
+Order: 10
+ID: 2
+Flow: Homepage Workflow
+Default: true
+*/</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/limiting-workflow-to-specific-post-id-or-template/">limiting workflow to specific post ID or template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

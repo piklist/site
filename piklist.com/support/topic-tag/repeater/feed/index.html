@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>repeater &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/repeater/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 10 Mar 2021 19:36:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Select2 in repeaters?</title>
+		<link>https://piklist.com/support/topic/select2-in-repeaters/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Wed, 10 Mar 2021 19:36:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select2-in-repeaters/</guid>
+
+					<description><![CDATA[<p>Can you make it work with &#8220;add more&#8221;? https://docs.piklist.com/tutorials/fields/using-select2/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select2-in-repeaters/">Select2 in repeaters?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Can you make it work with &#8220;add more&#8221;?<br />
+https://docs.piklist.com/tutorials/fields/using-select2/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select2-in-repeaters/">Select2 in repeaters?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Repeater field display output in frontend</title>
+		<link>https://piklist.com/support/topic/repeater-field-display-output-in-frontend/</link>
+		
+		<dc:creator><![CDATA[dahnsnake]]></dc:creator>
+		<pubDate>Fri, 19 Jul 2019 13:41:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/repeater-field-display-output-in-frontend/</guid>
+
+					<description><![CDATA[<p>Hi, First of all I love Piklist &#60;3! This is the first time I could not figure something out on my onw. I made created this code with the last array a group with add more (or repeater) functionality. I would like to know how I can loop through the group &#8216;writer&#8217;. So the loop [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-field-display-output-in-frontend/">Repeater field display output in frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, First of all I love Piklist &lt;3! This is the first time I could not figure something out on my onw. I made created this code with the last array a group with add more (or repeater) functionality. I would like to know how I can loop through the group &#8216;writer&#8217;. So the loop creates a new div with the new data when the add more functionality is used. This way I would like the user to be able to add more writers to a book :). I saw this one but I could not figure it out: https://piklist.com/support/topic/repeater-field/</p>
+<p>`piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Blok boek en schrijvers&#8217;)<br />
+    ,&#8217;description&#8217; =&gt; __(&#8216;Het tweede blok met het boek &#8220;hou je kop erbij&#8221; en de schrijvers eronder.&#8217;)<br />
+    ,&#8217;fields&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-title&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Titel&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Titel&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-button&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Link onder tekst&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Knop&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-button2&#8242;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Knop onder schrijvers&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Knop&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;editor&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-introduction&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Introductie bij het boek&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 12<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Introductie&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;writer&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Schrijver&#8217;)<br />
+        ,&#8217;add_more&#8217; =&gt; true<br />
+        ,&#8217;fields&#8217; =&gt; array(<br />
+          array(<br />
+	        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+	        ,&#8217;field&#8217; =&gt; &#8216;writerName&#8217;<br />
+	        ,&#8217;label&#8217; =&gt; __(&#8216;Naam&#8217;)<br />
+	        ,&#8217;columns&#8217; =&gt; 4<br />
+	        ,&#8217;attributes&#8217; =&gt; array(<br />
+	          &#8216;placeholder&#8217; =&gt; &#8216;Naam&#8217;<br />
+	        )<br />
+	      )<br />
+	      ,array(<br />
+	        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+	        ,&#8217;field&#8217; =&gt; &#8216;writer-linkedin&#8217;<br />
+	        ,&#8217;label&#8217; =&gt; __(&#8216;LinkedIn&#8217;)<br />
+	        ,&#8217;columns&#8217; =&gt; 4<br />
+	        ,&#8217;attributes&#8217; =&gt; array(<br />
+	          &#8216;placeholder&#8217; =&gt; &#8216;LinkedIn&#8217;<br />
+	        )<br />
+	      )<br />
+        )<br />
+      )<br />
+    )<br />
+  ));</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-field-display-output-in-frontend/">Repeater field display output in frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Alignment of fields, contained in a field group.</title>
+		<link>https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/</link>
+		
+		<dc:creator><![CDATA[askek]]></dc:creator>
+		<pubDate>Wed, 05 Jul 2017 14:34:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/</guid>
+
+					<description><![CDATA[<p>I&#8217;m currently working on a &#8216;field group repeater&#8217; for prices, unfortunately, the fields inside each field group don&#8217;t align &#8211; as shown in the image. So my question is simply if there&#8217;s a way to make them? My code looks like this: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;price&#039;, &#039;add_more&#039; =&#62; true, &#039;template&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/">Alignment of fields, contained in a field group.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m currently working on a &#8216;field group repeater&#8217; for prices, unfortunately, the fields inside each field group don&#8217;t align &#8211; as shown in the image. So my question is simply if there&#8217;s a way to make them?<br />
+My code looks like this:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;,
+    &#039;field&#039; =&gt; &#039;price&#039;,
+    &#039;add_more&#039; =&gt; true,
+    &#039;template&#039; =&gt; &#039;field&#039;,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;pricelabel&#039;,
+            &#039;label&#039; =&gt; &#039;Pris titel:&#039;,
+            &#039;required&#039; =&gt; true,
+            &#039;value&#039; =&gt; &#039;B-kørekort  lovpakken (Bil)&#039;
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;number&#039;,
+            &#039;field&#039; =&gt; &#039;price&#039;,
+            &#039;label&#039; =&gt; &#039;Pris&#039;,
+            &#039;required&#039; =&gt; true,
+            &#039;value&#039; =&gt; 13500
+        )
+    )
+));
+</code></pre>
+<p>Thx in advance:))</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/">Alignment of fields, contained in a field group.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Image in repeater issue (WordPress 4.5 + Piklist 0.9.9.8)</title>
+		<link>https://piklist.com/support/topic/image-in-repeater-issue-wordpress-4-5-piklist-0-9-9-8/</link>
+		
+		<dc:creator><![CDATA[adrianm]]></dc:creator>
+		<pubDate>Thu, 21 Apr 2016 06:05:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/image-in-repeater-issue-wordpress-4-5-piklist-0-9-9-8/</guid>
+
+					<description><![CDATA[<p>This is the field I have piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;slides&#039;, &#039;label&#039; =&#62; __(&#039;Slides&#039;), &#039;template&#039; =&#62; &#039;field&#039;, &#039;list&#039; =&#62; false, &#039;add_more&#039; =&#62; true, &#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;image&#039;, &#039;columns&#039; =&#62; 12, &#039;options&#039; =&#62; array( &#039;modal_title&#039; =&#62; __(&#039;Select image&#039;, &#039;app&#039;), &#039;button&#039; =&#62; __(&#039;Select image&#039;, &#039;app&#039;) ) ), array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-in-repeater-issue-wordpress-4-5-piklist-0-9-9-8/">Image in repeater issue (WordPress 4.5 + Piklist 0.9.9.8)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is the field I have</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;,
+    &#039;field&#039; =&gt; &#039;slides&#039;,
+    &#039;label&#039; =&gt; __(&#039;Slides&#039;),
+    &#039;template&#039; =&gt; &#039;field&#039;,
+    &#039;list&#039; =&gt; false,
+    &#039;add_more&#039; =&gt; true,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;file&#039;,
+            &#039;field&#039; =&gt; &#039;image&#039;,
+            &#039;columns&#039; =&gt; 12,
+            &#039;options&#039; =&gt; array(
+                &#039;modal_title&#039; =&gt; __(&#039;Select image&#039;, &#039;app&#039;),
+                &#039;button&#039; =&gt; __(&#039;Select image&#039;, &#039;app&#039;)
+            )
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;title&#039;,
+            &#039;columns&#039; =&gt; 6,
+            &#039;attributes&#039; =&gt; array(
+                &#039;placeholder&#039; =&gt; &#039;Title&#039;
+            )
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;link&#039;,
+            &#039;columns&#039; =&gt; 6,
+            &#039;attributes&#039; =&gt; array(
+                &#039;placeholder&#039; =&gt; &#039;URL (optional)&#039;
+            )
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;textarea&#039;,
+            &#039;field&#039; =&gt; &#039;content&#039;,
+            &#039;columns&#039; =&gt; 12,
+            &#039;attributes&#039; =&gt; array(
+                &#039;rows&#039; =&gt; 3,
+                &#039;placeholder&#039; =&gt; &#039;Description&#039;
+            )
+        ),
+    )
+));
+</code></pre>
+<p>When creating a post, the image is not saved (the rest of the fields are) but if I populated the field directly in the DB and edit the post everything works fine.</p>
+<p>It doesn&#8217;t save the image if, from an existing post, I delete the image and try to add again.</p>
+<p>From what I saw the problem is that the <code>_post_meta[slides][0][image][]</code> input fields are not updated correctly. When you remove the image the value of the associated field is cleared, but the input stays on the homepage and when you add an image there is not input field appended to the DOM.</p>
+<p>I think this might cause problems with ALL the image selector fields not just in the repeater.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-in-repeater-issue-wordpress-4-5-piklist-0-9-9-8/">Image in repeater issue (WordPress 4.5 + Piklist 0.9.9.8)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more with relate to custom post type</title>
+		<link>https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[arranfraser]]></dc:creator>
+		<pubDate>Fri, 04 Dec 2015 20:22:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Hi everyone, I&#8217;m trying to copy/modify the demo code that shows how you can use a repeater field to create related Posts/Users/Comments on the edit form of the Demo custom-post-type. meta-boxes/field-relationship.php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;scope&#039; =&#62; &#039;post&#039; ,&#039;label&#039; =&#62; &#039;Related Posts&#039; ,&#039;relate&#039; =&#62; array( &#039;scope&#039; =&#62; &#039;post&#039; ) ,&#039;add_more&#039;=&#62; true ,&#039;fields&#039; =&#62; array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/">add_more with relate to custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>I&#8217;m trying to copy/modify the demo code that shows how you can use a repeater field to create related Posts/Users/Comments on the edit form of the Demo custom-post-type.</p>
+<p><code>meta-boxes/field-relationship.php</code></p>
+<pre><code>
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;label&#039; =&gt; &#039;Related Posts&#039;
+    ,&#039;relate&#039; =&gt; array(
+      &#039;scope&#039; =&gt; &#039;post&#039;
+    )
+    ,&#039;add_more&#039;=&gt; true
+    ,&#039;fields&#039; =&gt; array(
+...</code></pre>
+<p>The only difference I am attempting is that I want to be able to add other custom post types (that are related to the custom post type I am editing).  I am editing a Family, and I want to be able to add Students to it.</p>
+<p>The closest I got was to simply add a post-type field within the repeated form.</p>
+<p><code>[&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;field&#039; =&gt; &#039;post_type&#039;, &#039;value&#039; =&gt; &#039;student&#039;]</code></p>
+<p>This actually works perfectly (post is created of correct type, relationship is intact), but only for the first entry of the repeater.</p>
+<p>If I click + and fill out a second form to relate a second student to the family, nothing gets saved.</p>
+<p>Any idea what I&#8217;m missing?  It seems so close to the demo that I can&#8217;t imagine this couldn&#8217;t work.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/">add_more with relate to custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PikList WYSIWYG breaking format in PikList Group</title>
+		<link>https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/</link>
+		
+		<dc:creator><![CDATA[hyperarts]]></dc:creator>
+		<pubDate>Tue, 08 Sep 2015 18:52:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/</guid>
+
+					<description><![CDATA[<p>There appears to be a PikList Sentence and PikList Paragraph in a repeatable group. So it is structured like: Group 1 Sentence Paragraph Group 2 Sentence Paragraph But when I switch the Paragraph to a WYSIWYG, the WYSIWYG editor breaks out of the group div formatting. See attached image. It should be Title, Content, but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/">PikList WYSIWYG breaking format in PikList Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>There appears to be a PikList Sentence and PikList Paragraph in a repeatable group.</p>
+<p>So it is structured like:<br />
+Group 1<br />
+    Sentence<br />
+    Paragraph</p>
+<p>Group 2<br />
+    Sentence<br />
+    Paragraph</p>
+<p>But when I switch the Paragraph to a WYSIWYG, the WYSIWYG editor breaks out of the group div formatting.</p>
+<p>See attached image.  It should be Title, Content, but it looks like Title, Content/Title, Content/Title.  So this makes it look like the next title is right below the editor, and part of the editor. It also makes the repeater buttons oddly placed.</p>
+<p>TL/DR; WYSIWYG editor in repeating group breaks layout. How to fix?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-wysiwyg-breaking-format-in-piklist-group/">PikList WYSIWYG breaking format in PikList Group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Repeater Link Field</title>
+		<link>https://piklist.com/support/topic/repeater-link-field/</link>
+		
+		<dc:creator><![CDATA[dawood]]></dc:creator>
+		<pubDate>Fri, 12 Dec 2014 17:42:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/repeater-link-field/</guid>
+
+					<description><![CDATA[<p>How would I go about creating a repeater field that allows the user to link to a pages? I&#8217;ve tried a text area that the user can just type the links but seems a page link repeater feild would be more user friendly?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-link-field/">Repeater Link Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How would I go about creating a repeater field that allows the user to link to a pages?</p>
+<p>I&#8217;ve tried a text area that the user can just type the links but seems  a page link repeater feild would be more user friendly?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-link-field/">Repeater Link Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Repeater with a conditional inside</title>
+		<link>https://piklist.com/support/topic/repeater-with-a-conditional-inside/</link>
+		
+		<dc:creator><![CDATA[jcrist]]></dc:creator>
+		<pubDate>Fri, 21 Nov 2014 04:28:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/repeater-with-a-conditional-inside/</guid>
+
+					<description><![CDATA[<p>We would like to create a repeater with a conditional inside to show an extra field but we are experiencing some unexpected behavior, is this not fully functioning yet? BTW the forum search sends users straight to a 404 page</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-with-a-conditional-inside/">Repeater with a conditional inside</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>We would like to create a repeater with a conditional inside to show an extra field but we are experiencing some unexpected behavior, is this not fully functioning yet?</p>
+<p>BTW the forum search sends users straight to a 404 page</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-with-a-conditional-inside/">Repeater with a conditional inside</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

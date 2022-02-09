@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>fronted forms &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/fronted-forms/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 24 Nov 2015 15:04:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>How to get metabox data from the form before to save a new post?</title>
+		<link>https://piklist.com/support/topic/how-to-get-metabox-data-from-the-form-before-to-save-a-new-post/</link>
+		
+		<dc:creator><![CDATA[kattagami]]></dc:creator>
+		<pubDate>Thu, 01 May 2014 13:58:51 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/how-to-get-metabox-data-from-the-form-before-to-save-a-new-post/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve got a custom post type &#8220;organizer&#8221; and I&#8217;m trying to find a way to set the title of each post based on two fields data value group in a metabox. (I hid the title field) See this screenshot: http://i.imgur.com/mqzRpDM.png I use Piklist (I&#8217;ve created the CPT in a piklist plugin) and tried this [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-get-metabox-data-from-the-form-before-to-save-a-new-post/">How to get metabox data from the form before to save a new post?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;ve got a custom post type &#8220;organizer&#8221; and I&#8217;m trying to find a way to set the title of each post based on two fields data value group in a metabox. (I hid the title field)</p>
+<p>See this screenshot: http://i.imgur.com/mqzRpDM.png</p>
+<p>I use Piklist (I&#8217;ve created the CPT in a piklist plugin) and tried this code on the hook &#8220;publish_{post-type-slug}&#8221;:</p>
+<pre><code>
+function set_cpt_organizer_title( $post_id ) {
+  // If this is a revision, get real post ID
+  if ( $parent_id = wp_is_post_revision( $post_id ) ) 
+    $post_id = $parent_id;
+
+  $name_group =  get_post_meta( $post_id, &#039;name_group&#039;, true);
+
+  if ( !empty( $name_group ) ) {
+     $full_name = $name_group[&#039;firstname&#039;][0] .&#039; &#039;. $name_group[&#039;lastname&#039;][0];
+  else {
+       $full_name = &#039;You forgot the name&#039;;
+  }
+
+  $my_post = array(
+    &#039;ID&#039;            =&gt; $post_id,
+    &#039;post_title&#039;    =&gt; $full_name,
+    &#039;post_status&#039;   =&gt; &#039;publish&#039;,
+    &#039;post_type&#039;     =&gt; &#039;organizer&#039;
+  );
+
+    // unhook this function so it doesn&#039;t loop infinitely
+    remove_action( &#039;publish_organizer&#039;, &#039;set_cpt_organizer_title&#039; );
+
+    // update the post, which calls save_post again
+    wp_update_post( $my_post );
+
+    // re-hook this function
+    add_action( &#039;publish_organizer&#039;, &#039;set_cpt_organizer_title&#039; );
+
+  //}
+  
+}
+add_action( &#039;publish_organizer&#039;, &#039;set_cpt_organizer_title&#039; );
+</code></pre>
+<p>As you can see, I use &#8220;get_post_meta()&#8221; but the first time I add a new post, piklist data field are not yet in the database so title is set to &#8220;You forgot the name&#8221;.</p>
+<p>My question: How to get, from the piklist form, the data fields &#8220;firstname&#8221; and &#8220;Lastname&#8221; before they are saved in the database?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-get-metabox-data-from-the-form-before-to-save-a-new-post/">How to get metabox data from the form before to save a new post?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

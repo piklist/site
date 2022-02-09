@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+trycaliper.com	TRUE	/	FALSE	1999999999	mailchimp_landing_site	https%3A%2F%2Ftrycaliper.com%2Fwholesale%2F
+.trycaliper.com	TRUE	/	FALSE	1999999999	__cfduid	dcbcfae94f14b87e590f09ea5693f209d1616513808
+trycaliper.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+

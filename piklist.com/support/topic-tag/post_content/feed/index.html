@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post_content &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post_content/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 04 Apr 2017 05:34:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>latest piklist broke out of order post_content field in CPT</title>
+		<link>https://piklist.com/support/topic/latest-piklist-broke-out-of-order-post_content-field-in-cpt/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Tue, 04 Apr 2017 05:34:52 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/latest-piklist-broke-out-of-order-post_content-field-in-cpt/</guid>
+
+					<description><![CDATA[<p>The latest version of Piklist (.11, and possibly .10) broke the display of my post_content field in my cpt. I am not displaying it in the normal place, but rather grouped with a bunch of other fields. This was working fine until the latest piklist updates, not the field shows but is empty and won&#8217;t [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/latest-piklist-broke-out-of-order-post_content-field-in-cpt/">latest piklist broke out of order post_content field in CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The latest version of Piklist (.11, and possibly .10) broke the display of my post_content field in my cpt. I am not displaying it in the normal place, but rather grouped with a bunch of other fields. This was working fine until the latest piklist updates, not the field shows but is empty and won&#8217;t display data in the db. Help.</p>
+<p>Here is the (previously working fine) code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;required&#039; =&gt; false
+    ,&#039;label&#039; =&gt; __(&#039;Full Description&#039;, &#039;my-domain&#039;)
+    ,&#039;help&#039; =&gt; __(&#039;Type your long description here. It will show up on the detail page.&#039;, &#039;my-domain&#039;)
+   // ,&#039;value&#039; =&gt; &#039;&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; false
+      ,&#039;shortcode_buttons&#039; =&gt; false
+      ,&#039;teeny&#039; =&gt; true
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+      ,&#039;quicktags&#039; =&gt; false
+      ,&#039;drag_drop_upload&#039; =&gt; false
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/latest-piklist-broke-out-of-order-post_content-field-in-cpt/">latest piklist broke out of order post_content field in CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Empty post_excerpt and post_content fields</title>
+		<link>https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/</link>
+		
+		<dc:creator><![CDATA[norboo]]></dc:creator>
+		<pubDate>Wed, 08 Mar 2017 08:19:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to replace &#8220;post_excerpt&#8221; and &#8220;post_content&#8221; with Piklist editor fields and everything seems to work fine with one exception: I can&#8217;t completly delete the content of either of these fields, I must have at least an empty space &#8221;&#160;&#8221; for the fields to save. &#60;?php /* Title: Content Post Type: page, post, tour (a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/">Empty post_excerpt and post_content fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to replace &#8220;post_excerpt&#8221; and &#8220;post_content&#8221; with Piklist editor fields and everything seems to work fine with one exception: I can&#8217;t completly delete the content of either of these fields, I must have at least an empty space &#8221;&nbsp;&#8221; for the fields to save.</p>
+<pre><code>
+&lt;?php
+/*
+Title: Content
+Post Type: page, post, tour (a CPT)
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;label&#039; =&gt; &#039;Content&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;description&#039; =&gt; &#039;This is a custom Content&#039;
+    ,&#039;value&#039; =&gt; &#039; &#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;shortcode_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; false
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+      ,&#039;quicktags&#039; =&gt; true
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+&lt;?php
+/*
+Title: Excerpt
+Post Type: post, page, tour (CPT)
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_excerpt&#039;
+    ,&#039;label&#039; =&gt; &#039;Excerpt&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;description&#039; =&gt; &#039;This is a custom Excerpt&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;shortcode_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; false
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+      ,&#039;quicktags&#039; =&gt; true
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+//functions.php
+function my_remove_post_type_support()
+{ 
+    remove_post_type_support(&#039;post&#039;, &#039;excerpt&#039;);
+    remove_post_type_support(&#039;post&#039;, &#039;editor&#039;);
+    remove_post_type_support(&#039;post&#039;, &#039;custom-fields&#039;);
+    
+    remove_post_type_support(&#039;page&#039;, &#039;editor&#039;);
+    remove_post_type_support(&#039;page&#039;, &#039;excerpt&#039;);
+    remove_post_type_support(&#039;page&#039;, &#039;custom-fields&#039;); 
+}
+add_action(&#039;init&#039;, &#039;my_remove_post_type_support&#039;,10);
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/empty-post_excerpt-and-post_content-fields/">Empty post_excerpt and post_content fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Issues using post_content and post_excerpt for fields</title>
+		<link>https://piklist.com/support/topic/issues-using-post_content-and-post_excerpt-for-fields/</link>
+		
+		<dc:creator><![CDATA[bubdev]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2015 03:54:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/issues-using-post_content-and-post_excerpt-for-fields/</guid>
+
+					<description><![CDATA[<p>Hi, I found it causes incompatibility issues with probably a large number of plugins if fields are being saved to post_content or post_excerpt. For the most part it is an inability to delete content from this fields once it has been added and saved. Experimenting a little bit, I was sometimes able to delete parts [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/issues-using-post_content-and-post_excerpt-for-fields/">Issues using post_content and post_excerpt for fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I found it causes incompatibility issues with probably a large number of plugins if fields are being saved to post_content or post_excerpt. For the most part it is an inability to delete content from this fields once it has been added and saved. Experimenting a little bit, I was sometimes able to delete parts the text but I couldn&#8217;t delete it up to the last letter.</p>
+<p>The plugins I could identify causing this were:</p>
+<p>&#8211; Custom Field Suite (which I still use for relationship fields)<br />
+&#8211; Content Aware Sidebars<br />
+&#8211; Toolbar Publish Button</p>
+<p>Probably others too, but I wasn&#8217;t quite sure since the exact effects are different from one to the other. </p>
+<p>I&#8217;ve no idea what causes the problem. It&#8217;s not a huge thing to save to post meta instead, but of course it comes with a few downsides. I thought I should let you know.</p>
+<p>Thanks &#8211; Stefan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/issues-using-post_content-and-post_excerpt-for-fields/">Issues using post_content and post_excerpt for fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist in Pages</title>
+		<link>https://piklist.com/support/topic/piklist-in-pages/</link>
+		
+		<dc:creator><![CDATA[Jason]]></dc:creator>
+		<pubDate>Fri, 28 Feb 2014 14:17:36 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-in-pages/</guid>
+
+					<description><![CDATA[<p>I&#8217;m starting to mess around with metaboxes in pages, and I&#8217;m curious what all Piklist can do with pages. As far as I can tell, Piklist cannot load a Workflow into a page. In addition, how would one add the meta to the page object (like post instead of post_meta)? Can the editor be replaced, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-in-pages/">Piklist in Pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m starting to mess around with metaboxes in pages, and I&#8217;m curious what all Piklist can do with pages.</p>
+<p>As far as I can tell, Piklist <em>cannot</em> load a Workflow into a page. In addition, how would one add the meta to the page object (like post instead of post_meta)? Can the editor be replaced, or can metaboxes really only be added?</p>
+<p>I don&#8217;t see any docs specific to pages, is why I ask.</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-in-pages/">Piklist in Pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

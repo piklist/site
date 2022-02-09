@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>thrive &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/thrive/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 18 Mar 2020 08:16:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>[Resolved] Conflict in JS with Thrive Ultimatum plugin</title>
+		<link>https://piklist.com/support/topic/conflict-in-js-with-thrive-ultimatum-plugin/</link>
+		
+		<dc:creator><![CDATA[alordiel]]></dc:creator>
+		<pubDate>Wed, 18 Mar 2020 08:13:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conflict-in-js-with-thrive-ultimatum-plugin/</guid>
+
+					<description><![CDATA[<p>Hello, I just got a &#8220;conflict&#8221; between Piklist admin js file and the banner builder from Thrive Ultimatum plugin. The problem appeared on the admin page when trying to edit some of the Thrive visual elements (in my case a banner). Thrive has its own builder for that and it is not using anything from [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conflict-in-js-with-thrive-ultimatum-plugin/">[Resolved] Conflict in JS with Thrive Ultimatum plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I just got a &#8220;conflict&#8221; between Piklist admin js file and the banner builder from Thrive Ultimatum plugin. The problem appeared on the admin page when trying to edit some of the Thrive visual elements (in my case a banner). Thrive has its own builder for that and it is not using anything from WordPress, so that is why the error appears. And here is what I got in the console:</p>
+<blockquote><p>ReferenceError: piklist is not definedadmin.js:252:11<br />
+    post_submit_meta_box https://******.com/wp-content/plugins/piklist/parts/js/admin.js?ver=1.0.6:252<br />
+    init https://****.com/wp-content/plugins/piklist/parts/js/admin.js?ver=1.0.6:23<br />
+    &lt;anonymous&gt; https://****.com/wp-content/plugins/piklist/parts/js/admin.js?ver=1.0.6:13<br />
+    Backbone 4<br />
+        i<br />
+        fireWith<br />
+        ready<br />
+        J</p></blockquote>
+<p>As this page is something that will never use the Piklist functionality I just disabled Piklist for it. I did this by creating a small MU plugin and placed it in wp-content/mu-plugins folder. Here is the code:</p>
+<pre><code>&lt;?php
+/*
+Plugin Name: Plugin-loading-restrictions
+Description: Restricts the loading (activation) of selected plugins based on url of the opened page
+Version: 0.0.1
+Author: Alexander Vasilev
+Author URI: timelinedev.com
+*/
+
+$is_admin    = strpos($_SERVER[&#039;REQUEST_URI&#039;], &#039;/wp-admin/&#039;);
+$is_thrieve  = strpos($_SERVER[&#039;REQUEST_URI&#039;], &#039;tve=true&#039;);
+
+if (false !== $is_admin &amp;&amp; $is_thrieve !== false ) {
+
+	add_filter(&#039;option_active_plugins&#039;, function ($plugins) {
+			$index = array_search(&#039;piklist/piklist.php&#039;, $plugins);
+			unset($plugins[$index]);
+			return $plugins;
+	});
+
+}</code></pre>
+<p>This basically solved the problem.<br />
+Hope this will help in case of someone get similar issue.</p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conflict-in-js-with-thrive-ultimatum-plugin/">[Resolved] Conflict in JS with Thrive Ultimatum plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

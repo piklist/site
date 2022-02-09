@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist::pre &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklistpre/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 15 Sep 2015 16:33:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Checking for value of a repeating field seems not to work</title>
+		<link>https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Sun, 13 Sep 2015 21:33:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/</guid>
+
+					<description><![CDATA[<p>Hi guys! I&#8217;m trying to prevent displaying a field if it&#8217;s empty &#8211; but for one repeating field, my standard approach is not working: &#60;?php $ticket_links = get_post_meta($post-&#62;ID, &#039;ticket_links&#039;, true); if (!empty($ticket_links[0]) ) { piklist(&#039;buy-tickets-template&#039;, array(&#039;data&#039; =&#62; $ticket_links, &#039;loop&#039; =&#62; &#039;data&#039;)); } ?&#62; If I leave the &#8220;if&#8221; statement out, it runs fine, but then, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/">Checking for value of a repeating field seems not to work</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys!</p>
+<p>I&#8217;m trying to prevent displaying a field if it&#8217;s empty &#8211; but for one repeating field, my standard approach is not working:</p>
+<pre><code>&lt;?php 
+$ticket_links = get_post_meta($post-&gt;ID, &#039;ticket_links&#039;, true);				
+if (!empty($ticket_links[0])  ) {				
+piklist(&#039;buy-tickets-template&#039;, array(&#039;data&#039; =&gt; $ticket_links, &#039;loop&#039; =&gt; &#039;data&#039;)); 							
+}
+?&gt;</code></pre>
+<p>If I leave the &#8220;if&#8221; statement out, it runs fine, but then, even if I&#8217;ve deleted all repeating fields but the first one, and deleted all text in that first repeating field&#8230; I get something displayed (my template includes some code to make a button out of elements in the repeating field, and I get a sort of half-button even if my sole repeating field is empty.)</p>
+<p>This is only if I&#8217;ve used the repeating field(s) but then want to &#8220;empty them out&#8221;. Is there a proper way to do that? Or to check first with a better &#8220;if&#8221; statement before displaying?</p>
+<p>Thanks!<br />
+adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/">Checking for value of a repeating field seems not to work</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

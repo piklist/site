@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>conditional group &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/conditional-group/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 04 Feb 2017 02:59:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Grouped Conditionals not working</title>
+		<link>https://piklist.com/support/topic/grouped-conditionals-not-working/</link>
+		
+		<dc:creator><![CDATA[gthomason]]></dc:creator>
+		<pubDate>Sat, 04 Feb 2017 02:57:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/grouped-conditionals-not-working/</guid>
+
+					<description><![CDATA[<p>I&#8217;m creating a grouped repeater where the user selects a layout option and fields appear based off of that selection. This does not appear to be working when the conditional sets are grouped. I&#8217;ve also noticed your demo does not work grouped. A smaller issue is if I have a validation limit on add more [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-conditionals-not-working/">Grouped Conditionals not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m creating a grouped repeater where the user selects a layout option and fields appear based off of that selection. This does not appear to be working when the conditional sets are grouped. I&#8217;ve also noticed your demo does not work grouped.</p>
+<p>A smaller issue is if I have a validation limit on add more items; it looks at all items in the group; not just inside the repeater &#8211; but I don&#8217;t really care about that since the conditional is a bigger deal.</p>
+<p>My piklist group:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;featured_bottom_group&#039;,
+	&#039;label&#039; =&gt; __(&#039;Overview Bottom boxes (grouped)&#039;, &#039;gst_piklist&#039;),
+	&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;),
+	&#039;list&#039; =&gt; true,
+	&#039;add_more&#039; =&gt; true,
+	&#039;validate&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;limit&#039;,
+			&#039;options&#039; =&gt; array(
+				&#039;min&#039; =&gt; 0,
+				&#039;max&#039; =&gt; 4,
+			)
+		)
+	),
+	&#039;attributes&#039; =&gt; array(
+		&#039;class&#039; =&gt; &#039;piklist_group&#039; // WordPress css class 
+	),
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;select&#039;,
+			&#039;field&#039; =&gt; &#039;bottom_condtional&#039;,
+			&#039;label&#039; =&gt; &#039;What type of content is in this box?&#039;,
+			&#039;value&#039; =&gt; &#039;textarea&#039;,
+			&#039;choices&#039; =&gt; array(
+				&#039;textarea&#039; =&gt; &#039;Textarea&#039;,
+				&#039;list&#039; =&gt; &#039;Text List + Icon&#039;,
+			),
+			&#039;attributes&#039; =&gt; array(
+				&#039;class&#039; =&gt; &#039;piklist_select&#039; // WordPress css class 
+			),
+			
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;bottom_title&#039;,
+			&#039;label&#039; =&gt; &#039;Box Title&#039;,
+			&#039;list&#039; =&gt; true,
+			&#039;attributes&#039; =&gt; array(
+				&#039;class&#039; =&gt; &#039;piklist_text&#039; // WordPress css class 
+			),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;textarea&#039;,
+			&#039;field&#039; =&gt; &#039;bottom_textarea&#039;,
+			&#039;label&#039; =&gt; &#039;Box Content&#039;,
+			&#039;list&#039; =&gt; true,
+			&#039;attributes&#039; =&gt; array(
+				&#039;rows&#039; =&gt; 5,
+				&#039;cols&#039; =&gt; 100,
+				&#039;class&#039; =&gt; &#039;piklist_textarea&#039; // WordPress css class 
+			),
+			// This doesn&#039;t work
+			&#039;conditions&#039; =&gt; array(
+				array(
+					&#039;field&#039; =&gt; &#039;bottom_condtional&#039;,
+					&#039;value&#039; =&gt; &#039;textarea&#039;
+				)
+			),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;group&#039;,
+			&#039;field&#039; =&gt; &#039;bottom_link_group&#039;,
+			&#039;label&#039; =&gt; __(&#039;Enter Anchor and Select Icon&#039;, &#039;gst_piklist&#039;),
+			&#039;list&#039; =&gt; true,
+			&#039;add_more&#039; =&gt; true,
+			// This doesn&#039;t work
+			&#039;conditions&#039; =&gt; array(
+				array(
+					&#039;field&#039; =&gt; &#039;bottom_condtional&#039;,
+					&#039;value&#039; =&gt; &#039;list&#039;
+				)
+			),
+			&#039;attributes&#039; =&gt; array(
+				&#039;class&#039; =&gt; &#039;piklist_group&#039; // WordPress css class 
+			),
+			&#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;select&#039;,
+					&#039;field&#039; =&gt; &#039;bottom_link_icon&#039;,
+					&#039;label&#039; =&gt; &#039;Anchor Icon&#039;,
+					&#039;list&#039; =&gt; true,
+					&#039;choices&#039; =&gt; array(
+						&#039;none&#039; =&gt; &#039;None&#039;,
+						&#039;arrow&#039; =&gt; &#039;Arrow&#039;,
+						&#039;circle&#039; =&gt; &#039;Circle&#039;,
+					),
+					&#039;attributes&#039; =&gt; array(
+						&#039;class&#039; =&gt; &#039;piklist_select&#039; // WordPress css class 
+					),
+
+				), // end 	bottom_link_icon
+				array(
+					&#039;type&#039; =&gt; &#039;text&#039;,
+					&#039;field&#039; =&gt; &#039;bottom_link_text&#039;,
+					&#039;label&#039; =&gt; &#039;Anchor Link&#039;,
+					&#039;list&#039; =&gt; true,
+					&#039;attributes&#039; =&gt; array(
+						&#039;class&#039; =&gt; &#039;piklist_text&#039; // WordPress css class 
+					),
+				), // end 	bottom_link_text	
+			)
+		), // end bottom_link_group 
+	)
+));</code></pre>
+<p>Piklist Demo&#8217;s code that works:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	 &#039;type&#039; =&gt; &#039;select&#039;,
+	 &#039;field&#039; =&gt; &#039;subscribe_to_newsletter&#039;,
+	 &#039;label&#039; =&gt; &#039;Would you like to subscribe to our newsletter?&#039;,
+	 &#039;attributes&#039; =&gt; array(
+	 	&#039;class&#039; =&gt; &#039;text&#039;,
+	 ),
+	 &#039;choices&#039; =&gt; array(
+	   &#039;yes&#039; =&gt; &#039;Yes&#039;
+	   ,&#039;no&#039; =&gt; &#039;No&#039;
+	 ),
+	 &#039;value&#039; =&gt; &#039;no&#039;
+));
+	
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;my_text&#039;,
+	&#039;label&#039; =&gt; &#039;Text&#039;,
+	&#039;conditions&#039; =&gt; array(
+		array(
+			&#039;field&#039; =&gt; &#039;subscribe_to_newsletter&#039;
+			,&#039;value&#039; =&gt; &#039;yes&#039;
+		)
+	),
+	&#039;attributes&#039; =&gt; array(
+		&#039;class&#039; =&gt; &#039;regular-text&#039; // WordPress css class 
+	)
+));</code></pre>
+<p>Piklist Demo&#8217;s code that doesn&#8217;t work if grouped:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;featured_bottom_group&#039;,
+	&#039;label&#039; =&gt; __(&#039;Overview Bottom boxes (grouped)&#039;, &#039;fxcm_piklist&#039;),
+	&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;),
+	&#039;list&#039; =&gt; true,
+	&#039;add_more&#039; =&gt; true,
+	&#039;validate&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;limit&#039;,
+			&#039;options&#039; =&gt; array(
+				&#039;min&#039; =&gt; 0,
+				&#039;max&#039; =&gt; 4,
+			)
+		)
+	),
+	&#039;attributes&#039; =&gt; array(
+		&#039;class&#039; =&gt; &#039;piklist_group&#039; // WordPress css class 
+	),
+	&#039;fields&#039; =&gt; array(
+		array(
+			 &#039;type&#039; =&gt; &#039;select&#039;,
+			 &#039;field&#039; =&gt; &#039;subscribe_to_newsletter&#039;,
+			 &#039;label&#039; =&gt; &#039;Would you like to subscribe to our newsletter?&#039;,
+			 &#039;attributes&#039; =&gt; array(
+			 	&#039;class&#039; =&gt; &#039;text&#039;,
+			 ),
+			 &#039;choices&#039; =&gt; array(
+			   &#039;yes&#039; =&gt; &#039;Yes&#039;
+			   ,&#039;no&#039; =&gt; &#039;No&#039;
+			 ),
+			 &#039;value&#039; =&gt; &#039;no&#039;
+		),	
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;my_text&#039;,
+			&#039;label&#039; =&gt; &#039;Text&#039;,
+			&#039;conditions&#039; =&gt; array(
+				array(
+					&#039;field&#039; =&gt; &#039;subscribe_to_newsletter&#039;
+					,&#039;value&#039; =&gt; &#039;yes&#039;
+				)
+			),
+			&#039;attributes&#039; =&gt; array(
+				&#039;class&#039; =&gt; &#039;regular-text&#039; // WordPress css class 
+			)
+		)	
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-conditionals-not-working/">Grouped Conditionals not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional Fields within groups</title>
+		<link>https://piklist.com/support/topic/conditional-fields-within-groups/</link>
+		
+		<dc:creator><![CDATA[quethenoo]]></dc:creator>
+		<pubDate>Wed, 02 Apr 2014 14:14:48 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/conditional-fields-within-groups/</guid>
+
+					<description><![CDATA[<p>Hi All Is it possible to have conditional fields within a group? I have tried the fields out of the group and they appear to work but no luck inside. Is it my code or just not possible? piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;drinks_menu_group&#039; ,&#039;add_more&#039; =&#62; true ,&#039;label&#039; =&#62; __(&#039;Drinks Set Menu&#039;) ,&#039;description&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-fields-within-groups/">Conditional Fields within groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All</p>
+<p>Is it possible to have conditional fields within a group? I have tried the fields out of the group and they appear to work but no luck inside. Is it my code or just not possible?</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;drinks_menu_group&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; __(&#039;Drinks Set Menu&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Add items to the lunch menu. Use the plus and minus buttons to add and remove items, you can also drag and drop each item to change the display order.&#039;)
+    ,&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;drinks_menu_cat&#039;
+			,&#039;columns&#039; =&gt; 7
+			,&#039;label&#039; =&gt; __(&#039;Drinks menu category e.g. &quot;Red Wine, Cocktails&quot;&#039;)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;select&#039;
+			,&#039;field&#039; =&gt; &#039;drinks_menu_cat_cols&#039;
+			,&#039;columns&#039; =&gt; 5
+			,&#039;label&#039; =&gt; __(&#039;No. of additional information columns&#039;)
+			,&#039;value&#039; =&gt; &#039;1&#039;
+			,&#039;choices&#039; =&gt; array(
+				&#039;1&#039; =&gt; &#039;1 Column&#039;
+				,&#039;2&#039; =&gt; &#039;2 Columns&#039;
+				,&#039;3&#039; =&gt; &#039;3 Columns&#039;
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;drinks_menu_cat_col1_title&#039;
+			,&#039;columns&#039; =&gt; 4
+			,&#039;label&#039; =&gt; __(&#039;Additional Column 1 Title&#039;)
+			,&#039;conditions&#039; =&gt; array(
+				array(
+					&#039;field&#039; =&gt; &#039;drinks_menu_cat_cols&#039;
+					,&#039;value&#039; =&gt; &#039;1&#039;
+				)
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;drinks_menu_cat_col2_title&#039;
+			,&#039;columns&#039; =&gt; 4
+			,&#039;label&#039; =&gt; __(&#039;Additional Column 2 Title&#039;)
+			,&#039;conditions&#039; =&gt; array(
+				array(
+					&#039;field&#039; =&gt; &#039;drinks_menu_cat_cols&#039;
+					,&#039;value&#039; =&gt; &#039;2&#039;
+				)
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;drinks_menu_cat_col3_title&#039;
+			,&#039;columns&#039; =&gt; 4
+			,&#039;label&#039; =&gt; __(&#039;Additional Column 3 Title&#039;)
+			,&#039;conditions&#039; =&gt; array(
+			   array(
+				&#039;field&#039; =&gt; &#039;drinks_menu_cat_cols&#039;
+				,&#039;value&#039; =&gt; &#039;3&#039;
+			   )
+			)
+		)
+		,array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			,&#039;add_more&#039; =&gt; true
+			,&#039;field&#039; =&gt; &#039;drinks_menu_group_items&#039;
+			,&#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;text&#039;
+					,&#039;field&#039; =&gt; &#039;ldrinks_menu_group_item_description&#039;
+					,&#039;columns&#039; =&gt; 8
+					,&#039;label&#039; =&gt; __(&#039;Drinks menu item specifics e.g. &quot;Edamame spicy (v)&quot;&#039;)
+				)
+				,array(
+					&#039;type&#039; =&gt; &#039;text&#039;
+					,&#039;field&#039; =&gt; &#039;drinks_menu_group_item_number&#039;
+					,&#039;columns&#039; =&gt; 4
+					,&#039;label&#039; =&gt; __(&#039;Drinks menu item number&#039;)
+				)
+			)
+		) 
+
+	)
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-fields-within-groups/">Conditional Fields within groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get_terms &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get_terms/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 09 Sep 2014 15:41:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Using get_terms to pull in menus into select field</title>
+		<link>https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Sun, 31 Aug 2014 03:03:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to pull in all menus that the user has created in a select field. Can anyone tell me why this isn&#8217;t working? Thanks in advance! piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;submenu_selection&#039; ,&#039;value&#039; =&#62; &#039;option1&#039; // Sets default to Option 2 ,&#039;label&#039; =&#62; &#039;Sub Menu&#039; ,&#039;description&#039; =&#62; &#039;This is where to select [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/">Using get_terms to pull in menus into select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to pull in all menus that the user has created in a select field. Can anyone tell me why this isn&#8217;t working? Thanks in advance!</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+  ,&#039;field&#039; =&gt; &#039;submenu_selection&#039;
+  ,&#039;value&#039; =&gt; &#039;option1&#039; // Sets default to Option 2
+  ,&#039;label&#039; =&gt; &#039;Sub Menu&#039;
+  ,&#039;description&#039; =&gt; &#039;This is where to select what sub menu you need.&#039;
+  ,&#039;attributes&#039; =&gt; array(
+    &#039;class&#039; =&gt; &#039;text&#039;
+  )
+  ,&#039;choices&#039; =&gt; array(
+      piklist( return get_terms( &#039;nav_menu&#039;, array( &#039;hide_empty&#039; =&gt; true ) ) );
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-get_terms-to-pull-in-menus-into-select-field/">Using get_terms to pull in menus into select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Setting up taxonomy to display on post editor</title>
+		<link>https://piklist.com/support/topic/setting-up-taxonomy-to-display-on-post-editor/</link>
+		
+		<dc:creator><![CDATA[ehoanshelt]]></dc:creator>
+		<pubDate>Tue, 24 Jul 2012 15:02:14 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/setting-up-taxonomy-to-display-on-post-editor/</guid>
+
+					<description><![CDATA[<p>Hey guys, So I got the basics down now where I can display a list of post_metas along the side of the post editor. This is a replica of what the tags and categories looks like. What I&#8217;m trying to do now is to be able to make that more dynamic rather then static php. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-up-taxonomy-to-display-on-post-editor/">Setting up taxonomy to display on post editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey guys,</p>
+<p>So I got the basics down now where I can display a list of post_metas along the side of the post editor. This is a replica of what the tags and categories looks like.</p>
+<p>What I&#8217;m trying to do now is to be able to make that more dynamic rather then static php.</p>
+<p>This is what I would like to do and hopefully you can guide me to the right path. I created a custom post type &#8220;Providers&#8221; and I would like to have a taxonomy of &#8220;Specialty&#8221; where we can add more specialties as they come in via the admin menu Providers &gt; Specialties. I got the taxonomy menu to show up using this code:</p>
+<p>http://pastebin.com/aBitgirP</p>
+<p>I also have the specialty values pulling into the post editor using this code:</p>
+<p>http://pastebin.com/3fQ1Wn17</p>
+<p>Now I understand that I would need to plug in the values in the taxonomy page but how would I pull in those taxonomies using piklist?</p>
+<p>Thanks for the support!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-up-taxonomy-to-display-on-post-editor/">Setting up taxonomy to display on post editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>file upload field bug &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/file-upload-field-bug/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 12 Jul 2016 09:55:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>File upload fields not working in settings pages</title>
+		<link>https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 12 Jul 2016 09:49:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/</guid>
+
+					<description><![CDATA[<p>Well, I just noticed that all file upload fields particularly those on the settings pages are not working. You click on the button to upload the file and all it does is to scroll you up to the top of the settings page. These were working perfectly before the upgrade to version 0.9.9.9. I notice [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/">File upload fields not working in settings pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Well, I just noticed that all file upload fields particularly those on the settings pages are not working. You click on the button to upload the file and all it does is to scroll you up to the top of the settings page. These were working perfectly before the upgrade to version 0.9.9.9. I notice that the implementation of the same changed for the new version of Piklist according to the new documentation directions. However, I&#8217;ve tried both the old way and the new way of doing things but nothing works all the same. I was advised some time back to turn on Javascript validation in the Piklist settings. But the problem is that this option does not work either. When you check the option that says <em>Javascript Validation</em> in the <em>Piklist settings</em>, it never stays checked even after you click the Save button. This is also related to the problem regarding activating and deactivating Piklist demos. These demos won&#8217;t deactivate because the Disable button in the Demo settings page doesn&#8217;t work either. I guess because of the inability to turn on Javascript validation in the Piklist settings page since it&#8217;s not working. Surprisingly, file upload fields that are inside the Metaboxes files i.e., under meta-boxes folder, are working perfectly. These below are the two ways I&#8217;ve tried the file upload fields and they&#8217;re not working.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+    ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+    ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+      ,&#039;button&#039; =&gt; &#039;Add&#039;
+    )
+  ));</code></pre>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;slideimage2&#039;
+    //,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Slide-2 Image&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Add slide-2 image&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add Image&#039;,&#039;piklist&#039;)
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/">File upload fields not working in settings pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

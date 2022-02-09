@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>image upload &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/image-upload/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 17 Feb 2016 10:59:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Limiting file fields to a single image?</title>
+		<link>https://piklist.com/support/topic/limiting-file-fields-to-a-single-image/</link>
+		
+		<dc:creator><![CDATA[Adrian]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2016 10:59:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/limiting-file-fields-to-a-single-image/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m using Piklist to provide additional profile fields for my site users and it&#8217;s fantastic, outstanding work guys! One slight issue is I&#8217;ve created a file upload field for the user to choose a header image for the public profile pages they have. Is there any way to limit this field to a single [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/limiting-file-fields-to-a-single-image/">Limiting file fields to a single image?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I&#8217;m using Piklist to provide additional profile fields for my site users and it&#8217;s fantastic, outstanding work guys!</p>
+<p>One slight issue is I&#8217;ve created a file upload field for the user to choose a header image for the public profile pages they have.</p>
+<p><strong>Is there any way to limit this field to a single image?</strong></p>
+<p>At the moment when the user edits their profile and hits the button to select the image it adds a second one instead of replacing the existing one.</p>
+<p>I&#8217;ve set the validation to only allow one, but it would be preferable if it could just use a single image and avoid the &#8220;allowing you to do something then telling you off&#8221; experience.</p>
+<p>My code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;file&#039;
+,&#039;field&#039; =&gt; &#039;header_photo_id&#039;
+,&#039;scope&#039; =&gt; &#039;user_meta&#039;
+,&#039;label&#039; =&gt; __(&#039;Header Photo&#039;,&#039;piklist&#039;)
+,&#039;description&#039; =&gt; __(&#039;Choose a photo to replace the default on your profile page.&#039;,&#039;piklist&#039;)
+,&#039;validate&#039; =&gt; array(
+  array(
+    &#039;type&#039; =&gt; &#039;limit&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;min&#039; =&gt; 1
+      ,&#039;max&#039; =&gt; 1
+    )
+    ,&#039;message&#039; =&gt; &#039;Sorry, you can only select one image for this.&#039;
+  )
+)
+,&#039;options&#039; =&gt; array(
+  &#039;modal_title&#039; =&gt; __(&#039;Choose Header Photo&#039;,&#039;piklist&#039;)
+  ,&#039;button&#039; =&gt; __(&#039;Select&#039;,&#039;piklist&#039;)
+)
+));</code></pre>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/limiting-file-fields-to-a-single-image/">Limiting file fields to a single image?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get_post_meta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get_post_meta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 04 Mar 2016 14:46:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>get_post_meta not working on CPT with custom post statuses</title>
+		<link>https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/</link>
+		
+		<dc:creator><![CDATA[wpmusketeer]]></dc:creator>
+		<pubDate>Fri, 04 Mar 2016 14:46:21 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/</guid>
+
+					<description><![CDATA[<p>Hi, I have a CPT &#8216;job&#8217; with a bunch of Piklist custom fields. The CPT also has custom post statuses that consist of: &#8216;draft&#8217;, &#8216;processing&#8217;, &#8216;complete&#8217;. Jobs are fetched via an external API and populated into the WordPress CPT using wp_insert_post() or wp_update_post() with &#039;post_status&#039; =&#62; &#039;processing&#039; as one of the arguments. Everything appears correctly [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/">get_post_meta not working on CPT with custom post statuses</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have a CPT &#8216;job&#8217; with a bunch of Piklist custom fields. The CPT also has custom post statuses that consist of: &#8216;draft&#8217;, &#8216;processing&#8217;, &#8216;complete&#8217;.</p>
+<p>Jobs are fetched via an external API and populated into the WordPress CPT using <code>wp_insert_post()</code> or <code>wp_update_post()</code> with <code>&#039;post_status&#039;  =&gt; &#039;processing&#039;</code> as one of the arguments.</p>
+<p>Everything appears correctly in the WordPress admin, including all the custom Piklist fields that are populated from the remote API.</p>
+<p>On the frontend, using a custom <code>WP_Query</code> loop, I can call the standard WordPress fields using functions like <code>the_content()</code>, <code>the_title()</code> etc., but calling <code>get_post_meta()</code> on the Piklist custom fields doesn&#8217;t work.</p>
+<p>Using something like this:</p>
+<p><code>$priority = get_post_meta( get_the_ID(), PREFIX . &#039;job_priority&#039;, true );</code></p>
+<p>Just returns an empty string. If I change the last parameter to &#8216;false&#8217; it returns an empty array.</p>
+<p>The same is true for simple text fields and radio fields.</p>
+<p>However. If I manually go into a Job through the WordPress admin and click save, then go back to the frontend and refresh, the one Job I manually saved will now return the post meta correctly. The rest of the Jobs still won&#8217;t though.</p>
+<p>Have you come across this before? Is there something else I need to do after <code>wp_insert_post()</code> and <code>wp_update_post()</code>?</p>
+<p>Thanks in advance,</p>
+<p>Dave</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/">get_post_meta not working on CPT with custom post statuses</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Checking for value of a repeating field seems not to work</title>
+		<link>https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Sun, 13 Sep 2015 21:33:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/</guid>
+
+					<description><![CDATA[<p>Hi guys! I&#8217;m trying to prevent displaying a field if it&#8217;s empty &#8211; but for one repeating field, my standard approach is not working: &#60;?php $ticket_links = get_post_meta($post-&#62;ID, &#039;ticket_links&#039;, true); if (!empty($ticket_links[0]) ) { piklist(&#039;buy-tickets-template&#039;, array(&#039;data&#039; =&#62; $ticket_links, &#039;loop&#039; =&#62; &#039;data&#039;)); } ?&#62; If I leave the &#8220;if&#8221; statement out, it runs fine, but then, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/">Checking for value of a repeating field seems not to work</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys!</p>
+<p>I&#8217;m trying to prevent displaying a field if it&#8217;s empty &#8211; but for one repeating field, my standard approach is not working:</p>
+<pre><code>&lt;?php 
+$ticket_links = get_post_meta($post-&gt;ID, &#039;ticket_links&#039;, true);				
+if (!empty($ticket_links[0])  ) {				
+piklist(&#039;buy-tickets-template&#039;, array(&#039;data&#039; =&gt; $ticket_links, &#039;loop&#039; =&gt; &#039;data&#039;)); 							
+}
+?&gt;</code></pre>
+<p>If I leave the &#8220;if&#8221; statement out, it runs fine, but then, even if I&#8217;ve deleted all repeating fields but the first one, and deleted all text in that first repeating field&#8230; I get something displayed (my template includes some code to make a button out of elements in the repeating field, and I get a sort of half-button even if my sole repeating field is empty.)</p>
+<p>This is only if I&#8217;ve used the repeating field(s) but then want to &#8220;empty them out&#8221;. Is there a proper way to do that? Or to check first with a better &#8220;if&#8221; statement before displaying?</p>
+<p>Thanks!<br />
+adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checking-for-value-of-a-repeating-field-seems-not-to-work/">Checking for value of a repeating field seems not to work</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Basic front end help</title>
+		<link>https://piklist.com/support/topic/basic-front-end-help/</link>
+		
+		<dc:creator><![CDATA[nadia]]></dc:creator>
+		<pubDate>Sat, 22 Mar 2014 09:19:30 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/basic-front-end-help/</guid>
+
+					<description><![CDATA[<p>Hi there, I&#8217;m really stuck. I just can&#8217;t seem to get my Piklist editor values to show in replace of the default WordPress values. Have looked through the forums which point me to the get_post_meta in WordPress help, but it&#8217;s just not helping. I have created my demo_metabox.php file. And within it have created a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/basic-front-end-help/">Basic front end help</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>I&#8217;m really stuck. I just can&#8217;t seem to get my Piklist editor values to show in replace of the default WordPress values. Have looked through the forums which point me to the get_post_meta in WordPress help, but it&#8217;s just not helping.</p>
+<p>I have created my demo_metabox.php file.<br />
+And within it have created a text field:<br />
+piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;subtitle&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Subtitle Text Box&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Enter the year of birth here&#8217;<br />
+    ,&#8217;value&#8217; =&gt; &#8216;Default text&#8217;<br />
+    ,&#8217;help&#8217; =&gt; &#8216;Example: b.1940&#8242;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+  ));<br />
+This is working, it now shows in the editor.<br />
+Great. Happy with this.</p>
+<p>In single.php I have called my custom fields in the same way I would normally.</p>
+<p>&lt;?php<br />
+$subtitle= get_post_meta($post-&gt;ID, &#8216;demo_subtitle&#8217;, true);<br />
+?&gt;</p>
+<p>&lt;?php if($subtitle){?&gt;<br />
+   &lt;h3&gt;&lt;?php echo $subtitle;?&gt;&lt;/h3&gt;<br />
+&lt;?php } ?&gt;</p>
+<p>This returns nothing.<br />
+I just can&#8217;t move forward until I figure out how to get the values coming through.</p>
+<p>Please help!<br />
+Cheers.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/basic-front-end-help/">Basic front end help</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

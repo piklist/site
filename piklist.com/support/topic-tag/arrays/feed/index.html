@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>arrays &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/arrays/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 30 Jul 2014 13:31:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Settings Array</title>
+		<link>https://piklist.com/support/topic/settings-array/</link>
+		
+		<dc:creator><![CDATA[egnsh98]]></dc:creator>
+		<pubDate>Fri, 27 Jun 2014 14:59:54 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/settings-array/</guid>
+
+					<description><![CDATA[<p>Hello, I know this is more of a general PHP question than it is Piklist, but I figured I would post it here anyways. The Setup What I am trying to do On each iteration, grab the value of each field for that particular group. For example the first group box: Category =&#62; Anime Time [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/settings-array/">Settings Array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I know this is more of a general PHP question than it is Piklist, but I figured I would post it here anyways.</p>
+<p><strong>The Setup</strong></p>
+<p><img src="http://i58.tinypic.com/28802fc.jpg" alt="Example settings setup" /></p>
+<p><strong>What I am trying to do</strong></p>
+<p>On each iteration, grab the value of each field for that particular group. For example the first group box:</p>
+<ul>
+<li>Category =&gt; Anime</li>
+<li>Time =&gt; 01:00</li>
+<li>Format =&gt; woot </li>
+</ul>
+<p>and so on&#8230;</p>
+<p><strong>Actual Behaviour</strong></p>
+<p>On each iteration, the same fields in the different group boxes are being stored together, rather than apart. I&#8217;m posting the formatted output so you can see what I mean:</p>
+<pre><code>a:8:{
+
+	s:11:&quot;group&quot;;
+
+	a:3:{
+
+		s:9:&quot;cat&quot;;
+
+		a:2:{
+
+			i:0;
+			s:4:&quot;3722&quot;;
+
+			i:1;
+			s:2:&quot;20&quot;;
+
+		}
+
+		s:10:&quot;time&quot;;
+
+		a:2:{
+
+			i:0;
+			s:1:&quot;1&quot;;
+
+			i:1;
+			s:1:&quot;2&quot;;
+
+		}
+
+		s:12:&quot;output&quot;;
+
+		a:2:{
+
+			i:0;
+			s:4:&quot;woot&quot;;
+
+			i:1;
+			s:5:&quot;hello&quot;;
+
+		}
+
+	}
+
+}</code></pre>
+<p>And this is how I am trying to retrieve them&#8230;</p>
+<pre><code>// Loop through options
+foreach ( $options as $field_group ) {
+
+    // Check type
+    if ( is_array( $field_group ) ) {
+
+        // Loop through field groups
+        foreach ( $field_group as $field_arr ) {
+            
+            // Check type
+            if ( is_array( $field_arr ) ) {
+                
+                // Loop through fields
+                foreach ( $field_arr as $field ) {
+                    
+                    // Print results
+                    echo $field;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}</code></pre>
+<p>The output from my above loops looks like this:</p>
+<p><code>37222012woothello</code></p>
+<p>I need to access and store each field from the first group before moving onto the second group.</p>
+<p>Would anyone be able to give me some advice on how to go about this?</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/settings-array/">Settings Array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

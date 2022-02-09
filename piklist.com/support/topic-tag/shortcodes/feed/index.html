@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shortcodes &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/shortcodes/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 03 Jun 2019 13:36:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Disable piklist_form from shortcodes</title>
+		<link>https://piklist.com/support/topic/disable-piklist_form-from-shortcodes/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Mon, 03 Jun 2019 13:36:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/disable-piklist_form-from-shortcodes/</guid>
+
+					<description><![CDATA[<p>How can I disable the shortcode? I don&#8217;t need the Piklist Form, but I will use my own piklist shortcodes.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/disable-piklist_form-from-shortcodes/">Disable piklist_form from shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How can I disable the shortcode? I don&#8217;t need the Piklist Form, but I will use my own piklist shortcodes.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/disable-piklist_form-from-shortcodes/">Disable piklist_form from shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shortocde Issues</title>
+		<link>https://piklist.com/support/topic/shortocde-issues/</link>
+		
+		<dc:creator><![CDATA[redsoxfan99]]></dc:creator>
+		<pubDate>Wed, 25 Jul 2018 12:01:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortocde-issues/</guid>
+
+					<description><![CDATA[<p>So I have inherited a WordPress site built on PikList which I have never worked on before. We I try to place a salesforce shortcode for a form in the content editor it is not working. Again, I am brand new to Piklist, any help would be greatly appreciated. I am running WP 4.9.7 and [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortocde-issues/">Shortocde Issues</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So I have inherited a WordPress site built on PikList which I have never worked on before. We I try to place a salesforce shortcode for a form in the content editor it is not working. Again, I am brand new to Piklist, any help would be greatly appreciated. I am running WP 4.9.7 and Pkilist version 0.11.4.  on Linux server. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortocde-issues/">Shortocde Issues</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shortcode not working</title>
+		<link>https://piklist.com/support/topic/shortcode-not-working/</link>
+		
+		<dc:creator><![CDATA[wpdeveloperpro]]></dc:creator>
+		<pubDate>Tue, 09 May 2017 16:53:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortcode-not-working/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m new to Piklist and trying out my hands on it. I created an example plugin and tried to create a Shortcode with Piklist. The shortcode added icon to Editor, however nothing shows when I click that icon. I tried the Demo and faced the same error. Can someone please tell me what&#8217;s wrong? [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-not-working/">Shortcode not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I&#8217;m new to Piklist and trying out my hands on it. I created an example plugin and tried to create a Shortcode with Piklist. The shortcode added icon to Editor, however nothing shows when I click that icon. I tried the Demo and faced the same error. </p>
+<p>Can someone please tell me what&#8217;s wrong? I&#8217;ve attached the screenshots for your quick review. Nothing fancy in the code, here is the same for your ready reference:</p>
+<p><strong>example-form.php</strong></p>
+<pre><code>
+/*
+ * Name: Example Shortcode
+ * Description: This is just an example shortcode
+ * Icon: dashicons-editor-quote
+ * Shortcode: dummy
+ * Inline: true
+ * Editor: true
+ */
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;,
+    &#039;field&#039; =&gt; &#039;name&#039;,
+    &#039;label&#039; =&gt; __(&#039;Name&#039;),
+    &#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;large-text&#039;
+    )
+));
+</code></pre>
+<p><strong>example.php</strong></p>
+<pre><code>&lt;?php
+/*
+Shortcode: dummy
+*/
+?&gt;
+&lt;div&gt;
+    Hey Dummy... is your name &lt;?php echo $name; ?&gt;?
+&lt;/div&gt;
+</code></pre>
+<p>Waiting for your valuable reply&#8230;</p>
+<p>Cheers,</p>
+<p>Ruturaaj.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-not-working/">Shortcode not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>editing problem with Piklist shortcodes</title>
+		<link>https://piklist.com/support/topic/editing-problem-with-piklist-shortcodes/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Sat, 08 Apr 2017 05:58:21 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/editing-problem-with-piklist-shortcodes/</guid>
+
+					<description><![CDATA[<p>When the content editor includes a Piklist shortcode, you can&#8217;t navigate past it in the Visual tab. Instead the editor cursor is dropped into the shortcode description. This is hard to describe so I did a quick recording that you can see here. The recording was done on a super-clean testbed running _s. The only [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editing-problem-with-piklist-shortcodes/">editing problem with Piklist shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When the content editor includes a Piklist shortcode, you can&#8217;t navigate past it in the Visual tab. Instead the editor cursor is dropped into the shortcode description. This is hard to describe so I did a quick recording that you can see <a href="http://g.recordit.co/zv5x1IADOF.gif" target="_blank">here</a>.  </p>
+<p>The recording was done on a super-clean testbed running _s. The only plugins active are Piklist and WP Migrate DB Pro. I activated Piklist Demos to define the shortcodes. </p>
+<p>The good news is that this doesn&#8217;t happen with shortcodes defined outside of Piklist unless you &#8220;Allow Shortcode UI&#8221; for them in the Piklist Settings. It happens with all Piklist-defined shortcodes regardless of the Shortcode UI setting.</p>
+<p>p.s. running Piklist 0.9.9.12 and WP 4.7.3</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editing-problem-with-piklist-shortcodes/">editing problem with Piklist shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Problems editing shortcode on wordpress 4.6</title>
+		<link>https://piklist.com/support/topic/problems-editing-shortcode-on-wordpress-4-6/</link>
+		
+		<dc:creator><![CDATA[tiberiur]]></dc:creator>
+		<pubDate>Tue, 23 Aug 2016 17:16:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problems-editing-shortcode-on-wordpress-4-6/</guid>
+
+					<description><![CDATA[<p>Has anyone encounter this kind of problem with wordpress 4.6? Fresh wordpress install, piklist 0.9.9.9 with demo activated, ubuntu with nginx. https://dl.dropboxusercontent.com/u/10268282/ShareX/2016/08/2016-08-23_20-12-16.mp4</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problems-editing-shortcode-on-wordpress-4-6/">Problems editing shortcode on wordpress 4.6</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Has anyone encounter this kind of problem with wordpress 4.6?</p>
+<p>Fresh wordpress install, piklist 0.9.9.9 with demo activated, ubuntu with nginx.</p>
+<div style="width: 640px;" class="wp-video"><video class="wp-video-shortcode" id="video-7233-2" width="640" height="360" preload="metadata" controls="controls"><source type="video/mp4" src="https://dl.dropboxusercontent.com/u/10268282/ShareX/2016/08/2016-08-23_20-12-16.mp4?_=2" /><a href="https://dl.dropboxusercontent.com/u/10268282/ShareX/2016/08/2016-08-23_20-12-16.mp4">https://dl.dropboxusercontent.com/u/10268282/ShareX/2016/08/2016-08-23_20-12-16.mp4</a></video></div>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problems-editing-shortcode-on-wordpress-4-6/">Problems editing shortcode on wordpress 4.6</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shortcode &#8211; Set URL and then show it in form</title>
+		<link>https://piklist.com/support/topic/shortcode-set-url-and-then-show-it-in-form/</link>
+		
+		<dc:creator><![CDATA[kutyadog]]></dc:creator>
+		<pubDate>Fri, 12 Aug 2016 14:54:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortcode-set-url-and-then-show-it-in-form/</guid>
+
+					<description><![CDATA[<p>Hello, New to piklist. I am building a simple shortcode form that allows the user to paste a URL into a textfield. Once this field has a value, I want to show the image below it. /* Name: Photo Description: Embed a photo into the content. Shortcode: photo Icon: dashicons-format-image Preview: true */ piklist(&#039;field&#039;, array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-set-url-and-then-show-it-in-form/">Shortcode &#8211; Set URL and then show it in form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+New to piklist.<br />
+I am building a simple shortcode form that allows the user to paste a URL into a textfield. Once this field has a value, I want to show the image below it.</p>
+<pre><code>/*
+Name: Photo
+Description: Embed a photo into the content.
+Shortcode: photo
+Icon: dashicons-format-image
+Preview: true
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;src&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Photo URL&#039;)
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;large-text&#039;
+    )
+  ));
+
+echo &#039;&lt;img src=&quot;&#039;. get_the_url_for_the_field_above() .&#039;&quot; alt=&quot;How to get that value?&quot; height=&quot;42&quot; width=&quot;42&quot;&gt;&#039;
+
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-set-url-and-then-show-it-in-form/">Shortcode &#8211; Set URL and then show it in form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>May have found a bug with shortcodes</title>
+		<link>https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 06:39:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/</guid>
+
+					<description><![CDATA[<p>It&#8217;s similar to what&#8217;s described here in an issue report for tinymce, but it seems sort of different. Basically when I click to edit a shortcode in the editor (with preview not enabled, but that doesn&#8217;t seem to make a difference), and then click on another shortcode in the editor, it immediately jumps to the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/">May have found a bug with shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s similar to what&#8217;s described <a href="https://github.com/tinymce/tinymce/issues/2776">here</a> in an issue report for tinymce, but it seems sort of different. Basically when I click to edit a shortcode in the editor (with preview not enabled, but that doesn&#8217;t seem to make a difference), and then click on another shortcode in the editor, it immediately jumps to the top of the editor.</p>
+<p>Here&#8217;s a screen recording of the behavior:</p>
+<p><iframe width="500" height="375" src="https://www.youtube.com/embed/04QWpqiQPj0?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/may-have-found-a-bug-with-shortcodes/">May have found a bug with shortcodes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shortcode UI</title>
+		<link>https://piklist.com/support/topic/shortcode-ui/</link>
+		
+		<dc:creator><![CDATA[tiberiur]]></dc:creator>
+		<pubDate>Thu, 24 Mar 2016 12:21:26 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortcode-ui/</guid>
+
+					<description><![CDATA[<p>Hi everbody, How shortcode ui exactly work? Demo code from piklist-demos/parts/shortcodes are pretty straightforward but I see nothing in admin. My Piklist version is 0.9.9.7 on fresh wordpress install. What am I doing wrong? Thanks Printscreen: http://i.imgur.com/WcNPyWy.png</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-ui/">Shortcode UI</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi everbody,</p>
+<p>How shortcode ui exactly work?<br />
+Demo code from piklist-demos/parts/shortcodes are pretty straightforward but I see nothing in admin.</p>
+<p>My Piklist version is 0.9.9.7 on fresh wordpress install.</p>
+<p>What am I doing wrong?</p>
+<p>Thanks</p>
+<p>Printscreen: http://i.imgur.com/WcNPyWy.png</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcode-ui/">Shortcode UI</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shortcodes &#8211; getting a warning when trying to add in an editor</title>
+		<link>https://piklist.com/support/topic/shortcodes-getting-a-warning-when-trying-to-add-in-an-editor/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Wed, 23 Mar 2016 20:50:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortcodes-getting-a-warning-when-trying-to-add-in-an-editor/</guid>
+
+					<description><![CDATA[<p>Hi Piklist friends, I&#8217;ve seen this issue with the Piklist demos as well with WP_debug set to true. Looks like the URL param separators are funky. I&#8217;m using Piklist 0.9.9.7 http://local.hfa.io:9090/wp-admin/admin.php?page=shortcode_editor&#38;_%5Badmin…rue&#38;_shortcode_data%5Bname%5D=pullquote&#38;_shortcode_data%5Baction%5D=insert E_WARNING Invalid argument supplied for foreach() - /wp-admin/menu-header.php:74 /wp-admin/menu-header.php:254 - _wp_menu_output(NULL, NULL) /wp-admin/admin-header.php:205 - require(&#039;/opt/wordpress...&#039;) /wp-admin/admin.php:228 - require_once(&#039;/opt/wordpress...&#039;) Anyone else have similar issues?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcodes-getting-a-warning-when-trying-to-add-in-an-editor/">Shortcodes &#8211; getting a warning when trying to add in an editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Piklist friends,</p>
+<p>I&#8217;ve seen this issue with the Piklist demos as well with WP_debug set to true. Looks like the URL param separators are funky. I&#8217;m using Piklist 0.9.9.7</p>
+<pre><code>http://local.hfa.io:9090/wp-admin/admin.php?page=shortcode_editor&amp;_%5Badmin…rue&amp;_shortcode_data%5Bname%5D=pullquote&amp;_shortcode_data%5Baction%5D=insert
+E_WARNING  Invalid argument supplied for foreach() - /wp-admin/menu-header.php:74 
+/wp-admin/menu-header.php:254 - _wp_menu_output(NULL, NULL)
+/wp-admin/admin-header.php:205 - require(&#039;/opt/wordpress...&#039;)
+/wp-admin/admin.php:228 - require_once(&#039;/opt/wordpress...&#039;)</code></pre>
+<p>Anyone else have similar issues?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcodes-getting-a-warning-when-trying-to-add-in-an-editor/">Shortcodes &#8211; getting a warning when trying to add in an editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>[0.9.9.6] shortcode interface not working with IIS</title>
+		<link>https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 25 Nov 2015 23:32:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/</guid>
+
+					<description><![CDATA[<p>Have been building a new site on LAMP; just moved it to its new home on a Microsoft-IIS/8.5 server. Took a few hours but all is working well except for the Piklist shortcodes interface (in Edit Page). When you click on the &#8220;add shortcode&#8221; button, or when you click to edit an existing shortcode, the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/">[0.9.9.6] shortcode interface not working with IIS</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Have been building a new site on LAMP; just moved it to its new home on a Microsoft-IIS/8.5 server. Took a few hours but all is working well except for the Piklist shortcodes interface (in Edit Page). </p>
+<p>When you click on the &#8220;add shortcode&#8221; button, or when you click to edit an existing shortcode, the overlay that pops up is blank except for the title (&#8220;Add Shortcode&#8221; or &#8220;Edit &lt;shortcode name&gt;&#8221;). This is not browser-related: it happened for me running Firefox on my Mac laptop, and for the IT guy running IE/Windows in his local network. </p>
+<p>I checked the PHP debug log and found this: </p>
+<pre><code>[25-Nov-2015 23:15:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\inetpub\wwwroot\TestSite\wp-admin\menu-header.php on line 62
+[25-Nov-2015 23:15:52 UTC] PHP Notice:  Undefined index: file in C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-add-on.php on line 211
+[25-Nov-2015 23:15:52 UTC] PHP Notice:  Undefined index: file in C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-add-on.php on line 211
+[25-Nov-2015 23:15:52 UTC] PHP Notice:  Undefined index: file in C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-add-on.php on line 211
+</code></pre>
+<p>I can&#8217;t tell whether the error in the function <code>_wp_menu_output()</code> in <code>/wp-admin/menu-header.php</code> is causing the Piklist errors. </p>
+<p>The Piklist error occurs in <code>Piklist_Add_On::current()</code> where it walks through a debug backtrace and some elements of the trace are missing $trace[&#8216;file&#8217;]:</p>
+<pre><code>    foreach ($backtrace as $trace)
+    {
+      if ( strstr($trace[&#039;file&#039;], &#039;/parts/&#039;))
+</code></pre>
+<p>I edited the line to read:<br />
+<code>if ( isset( $trace[&#039;file&#039;] ) &amp;&amp; strstr($trace[&#039;file&#039;], &#039;/parts/&#039;))</code><br />
+and the error messages stopped but it didn&#8217;t fix the problem. </p>
+<p>I also logged the <code>$trace</code> array: </p>
+<pre><code>Array
+(
+    [0] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-form.php
+            [line] =&gt; 2748
+            [function] =&gt; current
+            [class] =&gt; Piklist_Add_On
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                )
+
+        )
+
+    [1] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 2445
+            [function] =&gt; render_form
+            [class] =&gt; Piklist_Form
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; shortcode
+                    [1] =&gt; 
+                )
+
+        )
+
+    [2] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shortcodes\form.php
+            [line] =&gt; 9
+            [function] =&gt; piklist
+            [args] =&gt; Array
+                (
+                    [0] =&gt; form
+                    [1] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                            [add_on] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [3] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 507
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shortcodes\form.php
+                )
+
+            [function] =&gt; include
+        )
+
+    [4] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-shortcode.php
+            [line] =&gt; 256
+            [function] =&gt; render
+            [class] =&gt; Piklist
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/shortcodes/form.php
+                    [1] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                            [content] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [5] =&gt; Array
+        (
+            [function] =&gt; shortcode
+            [class] =&gt; Piklist_Shortcode
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                        )
+
+                    [1] =&gt; 
+                    [2] =&gt; piklist_form
+                )
+
+        )
+
+    [6] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-includes\shortcodes.php
+            [line] =&gt; 308
+            [function] =&gt; call_user_func
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; piklist_shortcode
+                            [1] =&gt; shortcode
+                        )
+
+                    [1] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                        )
+
+                    [2] =&gt; 
+                    [3] =&gt; piklist_form
+                )
+
+        )
+
+    [7] =&gt; Array
+        (
+            [function] =&gt; do_shortcode_tag
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; 
+                            [1] =&gt; 
+                            [2] =&gt; piklist_form
+                            [3] =&gt;  form=&quot;shortcode&quot;
+                            [4] =&gt; 
+                            [5] =&gt; 
+                            [6] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [8] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-includes\shortcodes.php
+            [line] =&gt; 210
+            [function] =&gt; preg_replace_callback
+            [args] =&gt; Array
+                (
+                    [0] =&gt; /\[(\[?)(embed|wp_caption|caption|playlist|audio|video|simple\-sitemap|wpseo_breadcrumb|wpseo_sitemap|gallery|mcw_widget|omta_button|gravityform|gravityforms|members_login_form|login\-form|members_access|access|members_feed|feed|members_logged_in|is_user_logged_in|get_avatar|avatar|4players|alugha|archiveorg|blip|bliptv|break|collegehumor|comedycentral|dailymotion|dailymotionlist|flickr|funnyordie|gametrailers|iframe|ign|kickstarter|liveleak|metacafe|movieweb|mpora|myspace|myvideo|snotr|spike|ted|twitch|ustream|veoh|vevo|viddler|videojug|vine|vimeo|xtube|yahoo|youtube|youtubelist|arve_tests|arve_supported|field_wrapper|field_label|field|field_description_wrapper|field_description|mcw\-feature|piklist_form)(?![\w-])([^\]\/]*(?:\/(?!\])[^\]\/]*)*?)(?:(\/)\]|\](?:([^\[]*+(?:\[(?!\/\2\])[^\[]*+)*+)\[\/\2\])?)(\]?)/s
+                    [1] =&gt; do_shortcode_tag
+                    [2] =&gt; 
+                )
+
+        )
+
+    [9] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\admin-pages\shortcode-editor.php
+            [line] =&gt; 6
+            [function] =&gt; do_shortcode
+            [args] =&gt; Array
+                (
+                    [0] =&gt; 
+                )
+
+        )
+
+    [10] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 507
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\admin-pages\shortcode-editor.php
+                )
+
+            [function] =&gt; include
+        )
+
+    [11] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 2583
+            [function] =&gt; render
+            [class] =&gt; Piklist
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/admin-pages/shortcode-editor.php
+                    [1] =&gt; Array
+                        (
+                        )
+
+                    [2] =&gt; 
+                    [3] =&gt; 
+                )
+
+        )
+
+    [12] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shared\admin-page.php
+            [line] =&gt; 12
+            [function] =&gt; piklist
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/admin-pages/shortcode-editor.php
+                )
+
+        )
+
+    [13] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 507
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shared\admin-page.php
+                )
+
+            [function] =&gt; include
+        )
+
+    [14] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-admin.php
+            [line] =&gt; 447
+            [function] =&gt; render
+            [class] =&gt; Piklist
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; shared/admin-page
+                    [1] =&gt; Array
+                        (
+                            [section] =&gt; shortcode_editor
+                            [notice] =&gt; 1
+                            [icon] =&gt; 
+                            [single_line] =&gt; 
+                            [title] =&gt; Shortcode Editor
+                            [setting] =&gt; 
+                            [page_sections] =&gt; Array
+                                (
+                                    [0] =&gt; Array
+                                        (
+                                            [id] =&gt; piklist_shortcode_editor
+                                            [folder] =&gt; admin-pages
+                                            [part] =&gt; shortcode-editor.php
+                                            [data] =&gt; Array
+                                                (
+                                                    [title] =&gt; 
+                                                    [page] =&gt; Array
+                                                        (
+                                                            [0] =&gt; shortcode_editor
+                                                        )
+
+                                                    [order] =&gt; 
+                                                    [position] =&gt; before
+                                                    [tab] =&gt; 
+                                                    [sub_tab] =&gt; 
+                                                    [flow] =&gt; 
+                                                    [extend] =&gt; 
+                                                    [extend_method] =&gt; 
+                                                )
+
+                                            [prefix] =&gt; 
+                                            [add_on] =&gt; piklist
+                                            [path] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist
+                                            [render] =&gt; Array
+                                                (
+                                                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/admin-pages/shortcode-editor.php
+                                                )
+
+                                        )
+
+                                )
+
+                            [save] =&gt; 1
+                            [save_text] =&gt; Save Changes
+                            [page] =&gt; 
+                            [layout] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [15] =&gt; Array
+        (
+            [function] =&gt; admin_page
+            [class] =&gt; Piklist_Admin
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; 
+                )
+
+        )
+
+    [16] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-includes\plugin.php
+            [line] =&gt; 503
+            [function] =&gt; call_user_func_array
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; piklist_admin
+                            [1] =&gt; admin_page
+                        )
+
+                    [1] =&gt; Array
+                        (
+                            [0] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [17] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-admin\admin.php
+            [line] =&gt; 236
+            [function] =&gt; do_action
+            [args] =&gt; Array
+                (
+                    [0] =&gt; admin_page_shortcode_editor
+                )
+
+        )
+
+)
+</code></pre>
+<p>If this doesn&#8217;t provide enough information, I can give you access to the site. Let me know. </p>
+<p>Thanks!<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/">[0.9.9.6] shortcode interface not working with IIS</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>profile &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/profile/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 18 Jun 2015 14:49:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>User query select field</title>
+		<link>https://piklist.com/support/topic/user-query-select-field/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Wed, 17 Jun 2015 21:19:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/user-query-select-field/</guid>
+
+					<description><![CDATA[<p>I created this select field inside of the user profiles. It works as expected in my user profile. When I go to edit someone else&#8217;s profile, it has a dropped down full of empty white selections. If you inspect the select button, all of the Id&#8217;s are populating in the values, but the display name [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-query-select-field/">User query select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I created this select field inside of the user profiles. It works as expected in my user profile. When I go to edit someone else&#8217;s profile, it has a dropped down full of empty white selections. If you inspect the select button, all of the Id&#8217;s are populating in the values, but the display name does not show. If I switch it to user_login, it displays, but ideally I would like to use their display name.</p>
+<pre><code>$user_id = (int) $user_id;
+$current_user = wp_get_current_user();
+if ( ! defined( &#039;IS_PROFILE_PAGE&#039; ) )
+    define( &#039;IS_PROFILE_PAGE&#039;, ( $user_id == $current_user-&gt;ID ) );
+
+if ( ! $user_id &amp;&amp; IS_PROFILE_PAGE )
+    $user_id = $current_user-&gt;ID;
+elseif ( ! $user_id &amp;&amp; ! IS_PROFILE_PAGE )
+    wp_die(__( &#039;Invalid user ID.&#039; ) );
+elseif ( ! get_userdata( $user_id ) )
+    wp_die( __(&#039;Invalid user ID.&#039;) );
+$spouse_id = $user_id;
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;user_spouse&#039;
+		,&#039;label&#039; =&gt; &#039;Your Spouse&#039;
+		,&#039;value&#039; =&gt; &#039;0&#039; // Sets default to None
+		,&#039;description&#039; =&gt; &#039;Please select your spouse below&#039;
+		,&#039;choices&#039; =&gt; array( 0 =&gt; &quot;Not Married&quot; ) + piklist(
+						get_users(
+							array(
+								&#039;orderby&#039; =&gt; &#039;display_name&#039;
+								,&#039;order&#039; =&gt; &#039;asc&#039;
+								,&#039;exclude&#039; =&gt; $spouse_id
+								,&#039;fields&#039; =&gt; array(&#039;ID&#039;, &#039;display_name&#039;)
+							)
+							,&#039;objects&#039;
+						)
+						,array(
+							&#039;ID&#039;
+							,&#039;display_name&#039;
+						)
+						)
+      )); </code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-query-select-field/">User query select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

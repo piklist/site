@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ui-sortable &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/ui-sortable/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 05 Dec 2014 22:10:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Removing attachment causes it to jump right back after update</title>
+		<link>https://piklist.com/support/topic/removing-attachment-causes-it-to-jump-right-back-after-update/</link>
+		
+		<dc:creator><![CDATA[drblue]]></dc:creator>
+		<pubDate>Fri, 05 Dec 2014 11:42:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/removing-attachment-causes-it-to-jump-right-back-after-update/</guid>
+
+					<description><![CDATA[<p>Hi guys, tried searching for this issue both now and a while back but haven&#8217;t encountered anyone having posted about this problem. Thing is, I have a meta box on a custom post type where the user can upload several attachments (see screenshot). But, when I try to remove either one of them (or both), [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/removing-attachment-causes-it-to-jump-right-back-after-update/">Removing attachment causes it to jump right back after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys, tried searching for this issue both now and a while back but haven&#8217;t encountered anyone having posted about this problem.</p>
+<p>Thing is, I have a meta box on a custom post type where the user can upload several attachments (see screenshot). But, when I try to remove either one of them (or both), they just re-appear once I press Update.</p>
+<p>Did some debugging and the click on remove only removes the ui-sortable item, it doesn&#8217;t clear/remove the hidden input-field which piklist uses then saving and then are using as the base for building the ui-sortable list in the meta box.</p>
+<p>Seems odd that someone else wouldn&#8217;t have encountered this before, which makes me questioning if I implemented it wrongly?</p>
+<p>Here&#8217;s an extract from my metabox-code (disregard the validation-rule, doesn&#8217;t seem to work either):</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;file&#039;
+	,&#039;field&#039; =&gt; &#039;noas_product_attachments&#039;
+	//,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+	,&#039;label&#039; =&gt; &#039;Attachment&#039;
+	,&#039;options&#039; =&gt; array(
+		&#039;modal_title&#039; =&gt; __(&#039;Add&#039;,&#039;noas&#039;)
+		,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;noas&#039;)
+	)
+	,&#039;validate&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;limit&#039;
+			,&#039;options&#039; =&gt; array(
+				&#039;min&#039; =&gt; 0
+				,&#039;max&#039; =&gt; 2
+			)
+		)
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/removing-attachment-causes-it-to-jump-right-back-after-update/">Removing attachment causes it to jump right back after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

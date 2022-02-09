@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>file_upload &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/file_upload/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 22 Oct 2015 14:26:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>term meta with 2 file uploads [0.9.9.4]</title>
+		<link>https://piklist.com/support/topic/term-meta-with-2-file-uploads-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Wed, 21 Oct 2015 16:44:51 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/term-meta-with-2-file-uploads-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>I have added a file upload to my term options, and it works fine as long as only 1 field is for a upload option, but when I add my second file upload it does not allow me to save either field. It was working before the upgrade. There is no workflow and there is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/term-meta-with-2-file-uploads-0-9-9-4/">term meta with 2 file uploads [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have added a file upload to my term options, and it works fine as long as only 1 field is for a upload option, but when I add my second file upload it does not allow me to save either field. It was working before the upgrade. There is no workflow and there is only 1 meta-box assigned to this taxonomy. Here is the meta-box that I have created:</p>
+<pre><code>
+&lt;?php
+/*
+Title: Trip Settings
+Description: Options for Our Trips
+Taxonomy: trip-type
+Order: 0
+*/
+ 
+// Let&#039;s create a text box field
+ piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;trip_img&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add Trip Image&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Image to display Trip in this category&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+    )
+  ));
+   piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;trip_img_white&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add Trip Image White&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;White Image to display Trip in this category&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+    )
+  ));
+ ?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/term-meta-with-2-file-uploads-0-9-9-4/">term meta with 2 file uploads [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

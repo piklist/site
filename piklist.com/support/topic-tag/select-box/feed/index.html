@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Select box &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/select-box/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 30 Apr 2015 02:28:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Select box for custom post type</title>
+		<link>https://piklist.com/support/topic/select-box-for-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[ehime]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2015 13:06:55 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select-box-for-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Good day, I&#8217;m trying to create a select box that contains the posts of a custom post type as it&#8217;s choices. For some reason it&#8217;s not working. This is what i have below: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;member&#039; ,&#039;label&#039; =&#62; &#039;Member&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) ,&#039;choices&#039; =&#62; piklist( get_posts( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-box-for-custom-post-type/">Select box for custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Good day,</p>
+<p>I&#8217;m trying to create a select box that contains the posts of a custom post type as it&#8217;s choices. For some reason it&#8217;s not working. This is what i have below:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;member&#039;
+    ,&#039;label&#039; =&gt; &#039;Member&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+   ,&#039;choices&#039; =&gt; piklist(
+     get_posts(
+       array(
+	&#039;post_type&#039; =&gt; &#039;member&#039;
+        ,&#039;orderby&#039; =&gt; &#039;ID&#039;
+        ,&#039;order&#039; =&gt; &#039;asc&#039;
+       )
+       ,&#039;objects&#039;
+     )
+     ,array(
+       &#039;ID&#039;
+       ,&#039;title&#039;
+     )
+    )
+));</code></pre>
+<p>It just displays the select box without the contents. I don&#8217;t know what i could be doing wrong. Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-box-for-custom-post-type/">Select box for custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

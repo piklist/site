@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>include &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/include/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 30 Jul 2014 13:32:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Include a file within Piklist</title>
+		<link>https://piklist.com/support/topic/include-a-file-within-piklist/</link>
+		
+		<dc:creator><![CDATA[egnsh98]]></dc:creator>
+		<pubDate>Thu, 19 Jun 2014 14:07:57 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/include-a-file-within-piklist/</guid>
+
+					<description><![CDATA[<p>Good morning! First off I&#8217;d like to say fantastic work developing Piklist. I made the decision to switch over to your framework half way through developing a plugin, and I&#8217;ve never looked back! I do have some questions however. I&#8217;m finding myself needing to include a file within a settings file in /parts/settings/. I&#8217;m developing [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/include-a-file-within-piklist/">Include a file within Piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Good morning!</p>
+<p>First off I&#8217;d like to say fantastic work developing Piklist. I made the decision to switch over to your framework half way through developing a plugin, and I&#8217;ve never looked back!</p>
+<p>I do have some questions however. I&#8217;m finding myself needing to include a file within a settings file in /parts/settings/. I&#8217;m developing a twitter plugin and within /settings/ I have a &#8220;twitter.php&#8221;. Within that file are the settings associated with authenticating. What I am trying to do is include the twitter API library from that settings file so I can store the user&#8217;s profile data in option fields. Everytime I try to include the file (whether its an absolute, or relative path), I get a &#8220;No such file&#8221; error.</p>
+<p>If this is not possible, how would I go about passing data from my main plugin class file (that isn&#8217;t yet in the database) to the settings field files.</p>
+<p>Let me know.</p>
+<p>Thanks! <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/include-a-file-within-piklist/">Include a file within Piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Including piklist with another plugin</title>
+		<link>https://piklist.com/support/topic/including-piklist-with-another-plugin/</link>
+		
+		<dc:creator><![CDATA[tripflex]]></dc:creator>
+		<pubDate>Tue, 10 Jun 2014 00:46:28 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/including-piklist-with-another-plugin/</guid>
+
+					<description><![CDATA[<p>Just FYI I received this email today regarding my plugin submission .. We cannot accept a plugin that includes an entire other plugin, wholesale, inside it. Yours included Piklist. While we understand the use of framework (or boilerplate) plugins, and encourage the use of common libraries, full blown plugins should never be included inside another, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/including-piklist-with-another-plugin/">Including piklist with another plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just FYI I received this email today regarding my plugin submission ..</p>
+<pre><code>We cannot accept a plugin that includes an entire other plugin, wholesale, inside it.
+
+Yours included Piklist.
+
+While we understand the use of framework (or boilerplate) plugins, and encourage the use of common libraries, full blown plugins should never be included inside another, as it causes multiple potential issues, such as function/attribute conflicts, and also opens your code up for issues should the included plugin be closed for a security hole. 
+
+The proper way to include another plugin would be to require it in your own. You can use the hook is_plugin_active() to check to see if the plugin is, indeed, installed and active.
+
+https://codex.wordpress.org/Function_Reference/is_plugin_active
+The other alternative would be to actually fork the code, and not have a 100% copy in yours. Sadly, WordPress plugins don&#039;t have the ability to do sub-modules, so you&#039;ll have to actually customize the code for interaction.
+
+When you&#039;ve corrected your code, reply to this email with the updated code attached as a zip, or provide a link to the new code for us to review.</code></pre>
+<p>While I understand the recommendation is to use the custom file that checks for Piklist, but as I mentioned in another thread, I do not want the users to have to deal with anything in regards to installing/updating/maintaining piklist, so my plan was to just include it in the plugin.</p>
+<p>Unfortunately WP doesn&#8217;t like this too much, and wanted to post this here in case anybody wanted to do this, as had I known this before, I probably would have not used Piklist on this plugin <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f641.png" alt="🙁" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Now it&#8217;s time to remove files and see what I can eliminate to make them accept it &#8230; hmmm </p>
+<p>https://github.com/tripflex/wp-login-flow</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/including-piklist-with-another-plugin/">Including piklist with another plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

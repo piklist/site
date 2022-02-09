@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>not saved &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/not-saved/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 17 Jun 2016 13:23:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Fields not saved</title>
+		<link>https://piklist.com/support/topic/fields-not-saved/</link>
+		
+		<dc:creator><![CDATA[unluckyxiii]]></dc:creator>
+		<pubDate>Thu, 16 Jun 2016 16:15:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-not-saved/</guid>
+
+					<description><![CDATA[<p>WordPress 4.5.2 Piklist 0.9.9.8 Everything works fine except for Servings and Skill not saved. Thanks in advance for the help. &#60;?php /* Title: Recipe Details Post Type: post Order: 1 */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;youtube_embed&#039; ,&#039;label&#039; =&#62; &#039;Youtube Embed&#039; ,&#039;attributes&#039; =&#62; array( &#039;placeholder&#039; =&#62; &#039;https://www.youtube.com/embed/vGuIdi__4kY&#039; ) ,&#039;columns&#039; =&#62; 12 )); piklist(&#039;field&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-saved/">Fields not saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WordPress 4.5.2<br />
+Piklist 0.9.9.8<br />
+Everything works fine except for Servings and Skill not saved. Thanks in advance for the help.</p>
+<pre><code>&lt;?php
+/*
+Title: Recipe Details
+Post Type: post
+Order: 1
+*/
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;youtube_embed&#039;
+  ,&#039;label&#039; =&gt; &#039;Youtube Embed&#039;
+  ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;https://www.youtube.com/embed/vGuIdi__4kY&#039; )
+  ,&#039;columns&#039; =&gt; 12
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;prep_time&#039;
+  ,&#039;label&#039; =&gt; &#039;Prep Time&#039;
+  ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;30 min&#039; )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;cook_time&#039;
+  ,&#039;label&#039; =&gt; &#039;Cook Time&#039;
+  ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;1 hr 30 min&#039; )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;servings&#039;
+  ,&#039;label&#039; =&gt; &#039;Servings&#039;
+  ,&#039;description&#039; =&gt; &#039;Example: 4 pax&#039;
+  ,&#039;attributes&#039; =&gt; array( &#039;placeholder&#039; =&gt; &#039;4&#039; )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+  ,&#039;field&#039; =&gt; &#039;skill&#039;
+  ,&#039;label&#039; =&gt; &#039;Skill&#039;
+  ,&#039;description&#039; =&gt; &#039;Choose difficulty level&#039;
+  ,&#039;choices&#039; =&gt; array(
+    &#039;Easy&#039; =&gt; &#039;Easy&#039;
+    ,&#039;Intermediate&#039; =&gt; &#039;Intermediate&#039;
+    ,&#039;Hard&#039; =&gt; &#039;Hard&#039;
+  )
+));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;ingredient&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; __(&#039;Ingredients&#039;)
+    ,&#039;description&#039; =&gt; &#039;Add more ingredients using the plus button&#039;
+    ,&#039;columns&#039; =&gt; 12
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;instruction&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; __(&#039;Instructions&#039;)
+    ,&#039;description&#039; =&gt; &#039;Add more steps using the plus button&#039;
+    ,&#039;columns&#039; =&gt; 12
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-not-saved/">Fields not saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

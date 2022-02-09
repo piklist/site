@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>metadata &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/metadata/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 14 May 2016 16:29:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Metadata not saved for initial revision</title>
+		<link>https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/</link>
+		
+		<dc:creator><![CDATA[torarnv]]></dc:creator>
+		<pubDate>Sat, 14 May 2016 16:29:37 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/</guid>
+
+					<description><![CDATA[<p>Hi, It seems that if I create a new (custom) post (using a front-end piklist form), the post is saved with all the meta-data that I specify in the form, but the same meta-data is not persisted in the initial revision that WP generates. Once I update the data from the admin UI, I see [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/">Metadata not saved for initial revision</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>It seems that if I create a new (custom) post (using a front-end piklist form), the post is saved with all the meta-data that I specify in the form, but the same meta-data is not persisted in the initial revision that WP generates. Once I update the data from the admin UI, I see a diff between revision 1 and 2 where all the custom metadata fields are set. Eg:</p>
+<p>Create new post, id 100. WP saves a revision, id 101. I update one of the fields (foo), save post. WP updates id 100, and creates a new revision, id 102. If I diff revision 101 and 102 in the admin UI, I would expect a diff for only the <code>foo</code> field, but I see that every meta field in the post goes from undefined/blank to the initial values that they had when first creating the post. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metadata-not-saved-for-initial-revision/">Metadata not saved for initial revision</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>All metadata saved for post revisions, not just piklist metadata</title>
+		<link>https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/</link>
+		
+		<dc:creator><![CDATA[torarnv]]></dc:creator>
+		<pubDate>Sat, 14 May 2016 15:59:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/</guid>
+
+					<description><![CDATA[<p>Hi, I noticed Piklist_Revision hooks into save_post and saves metadata for new revisions, but there doesn&#8217;t seem to be any guard for which fields are saves, so I end up with changes to _edit_last, _edit_lock, _post_restored_from, etc in my revision diffs. Perhaps piklist should go the way of e.g. https://wordpress.org/plugins/wp-post-meta-revisions/ and only save a white-listed [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/">All metadata saved for post revisions, not just piklist metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I noticed <code>Piklist_Revision</code> hooks into save_post and saves metadata for new revisions, but there doesn&#8217;t seem to be any guard for which fields are saves, so I end up with changes to <code>_edit_last</code>, <code>_edit_lock</code>, <code>_post_restored_from</code>, etc in my revision diffs. </p>
+<p>Perhaps piklist should go the way of e.g. <a href="https://wordpress.org/plugins/wp-post-meta-revisions/">https://wordpress.org/plugins/wp-post-meta-revisions/</a> and only save a white-listed list of meta fields, possibly defaulted to the ones defined by the piklist-generated meta-boxes of that post type?</p>
+<p>I&#8217;m also seeing that all my meta-data fields are cleared when WP does an auto-save, is there a particular reason for the <code>!wp_is_post_autosave($post_id)</code> condition in <code>save_post()</code>?</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/all-metadata-saved-for-post-revisions-not-just-piklist-metadata/">All metadata saved for post revisions, not just piklist metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Postmeta &#8211; Delete_metadata and Save_metadata</title>
+		<link>https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/</link>
+		
+		<dc:creator><![CDATA[spitfire]]></dc:creator>
+		<pubDate>Mon, 27 Apr 2015 19:45:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/</guid>
+
+					<description><![CDATA[<p>Hi Piklist, thank-you for this plugin. I had actually started creating my own version of Piklist (spent a few weeks at it) when I came across your plugin while searching for help on a topic. You saved me a lot of work so thanks! 🙂 Just have a question regarding the saving of postmeta you [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/">Postmeta &#8211; Delete_metadata and Save_metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Piklist, thank-you for this plugin. I had actually started creating my own version of Piklist (spent a few weeks at it) when I came across your plugin while searching for help on a topic. You saved me a lot of work so thanks! <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Just have a question regarding the saving of postmeta you have implemented. It&#8217;s kinda nitpicky, but just wondering about the implementation you chose for it. Whenever a page is saved, the TABLE_postmeta row is deleted and then saved rather than updated. Code is in class-piklist-form.php around row 1626 in version 0.9.4.26. This implementation increments the meta_id column for each field/field-group created using Piklist. WP Codex recommends using updata_metadata() function as it will create the md row if not existing, but update the row if exists. So just wondering why you chose to delete_metadata() first then save?</p>
+<p>Even though meta_id is a bigint type in the db which is plenty for 99.99% of websites, I personally don&#8217;t like unnecessary incrementation. Did you choose this implementation because of wp revisions possibly?</p>
+<p>Thanks for this great software and I hope to be a help in making it better as I am certain I will be using it for most of my future WP sites.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/postmeta-delete_metadata-and-save_metadata/">Postmeta &#8211; Delete_metadata and Save_metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist Overwriting CPT Metadata</title>
+		<link>https://piklist.com/support/topic/piklist-overwriting-cpt-metadata/</link>
+		
+		<dc:creator><![CDATA[luminaire801]]></dc:creator>
+		<pubDate>Tue, 08 Apr 2014 05:59:39 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-overwriting-cpt-metadata/</guid>
+
+					<description><![CDATA[<p>Hi guys, I have a variable, created and populated inside the &#8220;publish_hour&#8221; (hour is my CPT) hook. I&#8217;ve been trying to save that variable to a metadata field, however, it seems that the data does get stored but get&#8217;s overwritten by a blank (I assume this is the value from the input box). Is there [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-overwriting-cpt-metadata/">Piklist Overwriting CPT Metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys,</p>
+<p>I have a variable, created and populated inside the &#8220;publish_hour&#8221; (hour is my CPT) hook. I&#8217;ve been trying to save that variable to a metadata field, however, it seems that the data does get stored but get&#8217;s overwritten by a blank (I assume this is the value from the input box). Is there any way that I can prevent the data being overwritten?</p>
+<p>From what I have observed, the hook &#8220;publish_hour&#8221; gets fired twice, as when I added &#8220;wp_die();&#8221; the data was not overwritten.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-overwriting-cpt-metadata/">Piklist Overwriting CPT Metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add Revisions Support for CPT metadata</title>
+		<link>https://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/</link>
+		
+		<dc:creator><![CDATA[luminaire801]]></dc:creator>
+		<pubDate>Wed, 02 Apr 2014 00:44:48 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/</guid>
+
+					<description><![CDATA[<p>Hi guys, been working with Piklist for a while now and it has been wonderful! I&#8217;m wondering if there is a way to add revisions support for CPT metadata using piklist? I found this post but it didn&#8217;t really help, http://piklist.com/support/topic/revisions-masterful-coding/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/">Add Revisions Support for CPT metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys, been working with Piklist for a while now and it has been wonderful!<br />
+I&#8217;m wondering if there is a way to add revisions support for CPT metadata using piklist?<br />
+I found this post but it didn&#8217;t really help, http://piklist.com/support/topic/revisions-masterful-coding/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-revisions-support-for-cpt-metadata/">Add Revisions Support for CPT metadata</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

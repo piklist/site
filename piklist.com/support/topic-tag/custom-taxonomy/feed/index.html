@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom taxonomy &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom-taxonomy/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 04 Jun 2018 20:31:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Custom Taxonomy Select Box Missing in Editor</title>
+		<link>https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/</link>
+		
+		<dc:creator><![CDATA[achowell]]></dc:creator>
+		<pubDate>Thu, 24 May 2018 18:36:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/</guid>
+
+					<description><![CDATA[<p>So I followed the tutorial to set up a selection box that has my custom taxonomy values, but its not appearing for some reason. The taxonomy is Project Status and the options I added are Open and Close. Here is the code used to create the taxonomy and hide the original metabox //Create Project Status [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/">Custom Taxonomy Select Box Missing in Editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So I followed the tutorial to set up a selection box that has my custom taxonomy values, but its not appearing for some reason. The taxonomy is <strong>Project Status</strong> and the options I added are <strong>Open</strong> and <strong>Close</strong>.</p>
+<p>Here is the code used to create the taxonomy and hide the original metabox</p>
+<pre><code>//Create Project Status Taxonomy
+add_filter(&#039;piklist_taxonomies&#039;, &#039;project_status&#039;);
+  function project_status($taxonomies) {
+     $taxonomies[] = array(
+        &#039;post_type&#039; =&gt; &#039;mro_project&#039;
+        ,&#039;name&#039; =&gt; &#039;project_status&#039;
+        ,&#039;show_admin_column&#039; =&gt; true
+        ,&#039;configuration&#039; =&gt; array(
+          &#039;hierarchical&#039; =&gt; true
+          ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Project State&#039;)
+          ,&#039;hide_meta_box&#039; =&gt; true
+          ,&#039;show_ui&#039; =&gt; true
+          ,&#039;query_var&#039; =&gt; true
+          ,&#039;rewrite&#039; =&gt; array(
+            &#039;slug&#039; =&gt; &#039;project-status&#039;
+          )
+        )
+      );
+    return $taxonomies;
+  }</code></pre>
+<p>Here is what is in the file for the selection/dropdown version that is not appearing. This is the only thing in the php file, exactly as is and is located in <strong>parts/terms</strong>.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;field&#039; =&gt; &#039;project_status&#039;
+  ,&#039;label&#039; =&gt; &#039;Project Status&#039;
+  ,&#039;description&#039; =&gt; &#039;Change status of project based on amount of people registered&#039;
+  ,&#039;choices&#039; =&gt; array(
+      &#039;&#039; =&gt; &#039;Open&#039;
+    )
+    + piklist(get_terms(array(
+      &#039;taxonomy&#039; =&gt; &#039;project_status&#039;
+      ,&#039;hide_empty&#039; =&gt; false
+    ))
+    ,array(
+      &#039;term_id&#039;
+      ,&#039;name&#039;
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-taxonomy-select-box-missing-in-editor/">Custom Taxonomy Select Box Missing in Editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>using piklist_post_types with custom tax will not show in tax archive</title>
+		<link>https://piklist.com/support/topic/using-piklist_post_types-with-custom-tax-will-not-show-in-tax-archive/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Sun, 20 Nov 2016 16:49:35 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/using-piklist_post_types-with-custom-tax-will-not-show-in-tax-archive/</guid>
+
+					<description><![CDATA[<p>Hi, I am new to piklist, so perhaps there is something I am doing wrong, but when using piklist_post_types filter to register post types (vs standard wordpress register_post_type), I can&#8217;t get my posts to show up in my custom taxonomy. When I use the standard register_post_type with my same exact custom taxonomy, however, the post [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-piklist_post_types-with-custom-tax-will-not-show-in-tax-archive/">using piklist_post_types with custom tax will not show in tax archive</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I am new to piklist, so perhaps there is something I am doing wrong, but when using piklist_post_types filter to register post types (vs standard wordpress register_post_type), I can&#8217;t get my posts to show up in my custom taxonomy. When I use the standard register_post_type with my same exact custom taxonomy, however, the post will show up in the taxonomy. Is there something simple I am missing?</p>
+<p>I should add that my custom taxonomy DOES show on the post itself, and can be selected and the value saved. It is just that it will not show in the taxonomy archive as being in that category. (but it will if the posttype was registered in the standard WP way)</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-piklist_post_types-with-custom-tax-will-not-show-in-tax-archive/">using piklist_post_types with custom tax will not show in tax archive</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Error in saving taxonomy from front-end form for custom post type</title>
+		<link>https://piklist.com/support/topic/error-in-saving-taxonomy-from-front-end-form-for-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[torarnv]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2016 18:59:51 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-in-saving-taxonomy-from-front-end-form-for-custom-post-type/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to save a taxonomy from a font-end-form for a custom post type: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;hidden&#039;, &#039;scope&#039; =&#62; &#039;post&#039;, &#039;field&#039; =&#62; &#039;post_type&#039;, &#039;value&#039; =&#62; &#039;foo&#039;, )); piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;radio&#039; ,&#039;scope&#039; =&#62; &#039;taxonomy&#039; ,&#039;field&#039; =&#62; &#039;bar&#039; ,&#039;label&#039; =&#62; &#039;Bar&#039; ,&#039;description&#039; =&#62; &#039;Bar&#039; ,&#039;choices&#039; =&#62; piklist(get_terms(array( &#039;taxonomy&#039; =&#62; &#039;bar&#039; ,&#039;hide_empty&#039; =&#62; false [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-in-saving-taxonomy-from-front-end-form-for-custom-post-type/">Error in saving taxonomy from front-end form for custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to save a taxonomy from a font-end-form for a custom post type:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;,
+	&#039;scope&#039; =&gt; &#039;post&#039;,
+	&#039;field&#039; =&gt; &#039;post_type&#039;,
+	&#039;value&#039; =&gt; &#039;foo&#039;,
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;field&#039; =&gt; &#039;bar&#039;
+  ,&#039;label&#039; =&gt; &#039;Bar&#039;
+  ,&#039;description&#039; =&gt; &#039;Bar&#039;
+  ,&#039;choices&#039; =&gt; piklist(get_terms(array(
+      &#039;taxonomy&#039; =&gt; &#039;bar&#039;
+      ,&#039;hide_empty&#039; =&gt; false
+    ))
+    ,array(
+      &#039;term_id&#039;
+      ,&#039;name&#039;
+    )
+  )
+));
+</code></pre>
+<p>Which errors out in <code>class-piklist-form.php</code> on the line <code>$field[&#039;object_id&#039;] = $field[&#039;object_id&#039;] ? $field[&#039;object_id&#039;] : $object_ids[$wp_taxonomies[$taxonomy]-&gt;object_type[0]];</code> since object_ids contains &#8216;post&#8217;, not &#8216;foo&#8217;; </p>
+<p>I had to change the logic for appending to object_ids to the following:</p>
+<pre><code>
+$post_type = !empty($object[&#039;post_type&#039;]) ? $object[&#039;post_type&#039;] : $scope;
+
+if (!isset($object_ids[$post_type]))
+{
+  $object_ids[$post_type] = $result_id;
+}</code></pre>
+<p>Dunno if this is the right approach.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-in-saving-taxonomy-from-front-end-form-for-custom-post-type/">Error in saving taxonomy from front-end form for custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fixing taxonomy Counts [0.9.9.4]</title>
+		<link>https://piklist.com/support/topic/fixing-taxonomy-counts-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Mon, 26 Oct 2015 20:01:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fixing-taxonomy-counts-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>I was having issues fixing the taxonomy counts for my custom post types that did not use publish as a state. So I added the following &#8216;update_count_callback&#8217; function. It works well except for the fact it prevents me from changing any of my content inside of those custom post types. Do you have any suggestions [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fixing-taxonomy-counts-0-9-9-4/">Fixing taxonomy Counts [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I was having issues fixing the taxonomy counts for my custom post types that did not use publish as a state. So I added the following &#8216;update_count_callback&#8217; function. </p>
+<p>It works well except for the fact it prevents me from changing any of my content inside of those custom post types. Do you have any suggestions on how to fix the taxonomy count and still allow updating meta data inside posts.</p>
+<pre><code>function piklist_demo_tax_count_callback( $terms, $taxonomy ) {
+    global $wpdb, $post;
+ if ( is_array( $post )){
+    $posttype =$post[&#039;post_type&#039;];
+ }else{
+    $posttype =$post-&gt;post_type;
+ }
+ switch($posttype){
+	case &#039;post_mission_trip&#039;:
+		$status = &#039;public&#039;;
+		break;
+	case &#039;post_jobs&#039;:
+		$status = &#039;open&#039;;
+		break;
+
+ }
+    $object_types = (array) $taxonomy-&gt;object_type;
+ 
+    foreach ( $object_types as &amp;$object_type ){
+        list( $object_type ) = explode( &#039;:&#039;, $object_type );
+	}
+ 
+    $object_types = array_unique( $object_types );
+ 
+    if ( false !== ( $check_attachments = array_search( &#039;attachment&#039;, $object_types ) ) ) {
+        unset( $object_types[ $check_attachments ] );
+        $check_attachments = true;
+    }
+ 
+    if ( $object_types ){
+        $object_types = esc_sql( array_filter( $object_types, &#039;post_type_exists&#039; ) );
+	}
+    foreach ( (array) $terms as $term ) {
+        $count = 0;
+ 
+        // Attachments can be &#039;inherit&#039; status, we need to base count off the parent&#039;s status if so.
+        if ( $check_attachments ){
+            $count += (int) $wpdb-&gt;get_var( $wpdb-&gt;prepare( &quot;SELECT COUNT(*) FROM $wpdb-&gt;term_relationships, $wpdb-&gt;posts p1 WHERE p1.ID = $wpdb-&gt;term_relationships.object_id AND ( post_status = %s OR ( post_status = &#039;inherit&#039; AND post_parent &gt; 0 AND ( SELECT post_status FROM $wpdb-&gt;posts WHERE ID = p1.post_parent ) = %s ) ) AND post_type = &#039;attachment&#039; AND term_taxonomy_id = %d&quot;, $status, $status, $term ) );
+		}
+ 
+        if ( $object_types ){
+            $count += (int) $wpdb-&gt;get_var( $wpdb-&gt;prepare( &quot;SELECT COUNT(*) FROM $wpdb-&gt;term_relationships, $wpdb-&gt;posts WHERE $wpdb-&gt;posts.ID = $wpdb-&gt;term_relationships.object_id AND post_status = %s AND post_type IN (&#039;&quot; . implode(&quot;&#039;, &#039;&quot;, $object_types ) . &quot;&#039;) AND term_taxonomy_id = %d&quot;, $status, $term ) );
+		} 
+        /** This action is documented in wp-includes/taxonomy.php */
+        do_action( &#039;edit_term_taxonomy&#039;, $term, $taxonomy-&gt;name );
+        $wpdb-&gt;update( $wpdb-&gt;term_taxonomy, compact( &#039;count&#039; ), array( &#039;term_taxonomy_id&#039; =&gt; $term ) );
+ 
+        /** This action is documented in wp-includes/taxonomy.php */
+        do_action( &#039;edited_term_taxonomy&#039;, $term, $taxonomy-&gt;name );
+    }
+}</code></pre>
+<p>Here is a link to my file that creates the custom post_types, taxonomy, and the code above. https://drive.google.com/open?id=0BwbidsNuwyPoVEJodHdzeGZkaFU</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fixing-taxonomy-counts-0-9-9-4/">Fixing taxonomy Counts [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Categories field in quick edit not showing</title>
+		<link>https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/</link>
+		
+		<dc:creator><![CDATA[vagelis]]></dc:creator>
+		<pubDate>Mon, 17 Aug 2015 10:40:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/</guid>
+
+					<description><![CDATA[<p>Hi. I have created a custom post type with piklist and I&#8217;ve noticed that in the quick edit area the categories field is empty(I&#8217;ve inspected over it and all the are display:none). The custom taxonomies field below is showing fine. This happens only in the quick edit area. In the full edit screen they appear [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/">Categories field in quick edit not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi. I have created a custom post type with piklist and I&#8217;ve noticed that in the quick edit area the categories field is empty(I&#8217;ve inspected over it and all the </p>
+<li> are display:none). The custom taxonomies field below is showing fine. This happens only in the quick edit area. In the full edit screen they appear normally. The same field in post categories also is showing up normally in quick edit. Any ideas?
+<p>My post type code: </p>
+<pre><code>function yacht_post_types($post_types) {
+
+$post_types[&#039;yacht&#039;] = array(
+      &#039;labels&#039; 			=&gt; piklist(&#039;post_type_labels&#039;, &#039;Yacht&#039;)
+      ,&#039;title&#039; 			=&gt; __(&#039;Όνομα σκάφους&#039;)
+      ,&#039;menu_icon&#039; =&gt; &#039;dashicons-sos&#039;
+      ,&#039;capability_type&#039;  =&gt; &#039;post&#039;
+
+      ,&#039;supports&#039; 		=&gt; array(
+        &#039;title&#039;
+        ,&#039;revisions&#039;
+        ,&#039;thumbnail&#039;
+        ,&#039;editor&#039;
+      )
+      ,&#039;public&#039; 		=&gt; true
+
+      ,&#039;taxonomies&#039;		=&gt; array(&#039;category&#039;, &#039;manufacturers&#039;)
+
+      ,&#039;has_archive&#039;	=&gt; true
+      ,&#039;rewrite&#039; 		=&gt; array(
+        &#039;slug&#039; 			=&gt; &#039;yacht&#039;
+      )
+      ,&#039;edit_columns&#039; 	=&gt; array(
+        &#039;title&#039; 		=&gt; __(&#039;Name&#039;)
+		,&#039;post_states&#039; 	=&gt; __(&#039;Status&#039;)
+      )
+      ,&#039;hide_meta_box&#039; 	=&gt; array(
+        &#039;slug&#039;
+        ,&#039;author&#039;
+      )
+      ,&#039;post_states&#039; 	=&gt; true
+    );
+
+    return $post_types;
+}
+
+add_filter(&#039;piklist_post_types&#039;, &#039;yacht_post_types&#039;);
+
+function yacht_rewrite_flush() {
+
+    // codex_yachts_init();
+
+    yacht_post_types();
+
+    flush_rewrite_rules();
+}
+
+register_activation_hook( __FILE__, &#039;yacht_rewrite_flush&#039; );</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/">Categories field in quick edit not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

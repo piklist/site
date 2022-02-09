@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>random &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/random/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 07 Mar 2016 23:58:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Error with widget (images) and add more</title>
+		<link>https://piklist.com/support/topic/error-with-widget-images-and-add-more/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2016 23:57:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-with-widget-images-and-add-more/</guid>
+
+					<description><![CDATA[<p>hello i&#8217;m creating a widget with 3 fields, image, title and url, at this moment everything is working like a charm, but when i want to print widget array i got this error in array. Piklist file &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;label&#039; =&#62; __(&#039;Publicidad&#039;) ,&#039;add_more&#039; =&#62; true ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-with-widget-images-and-add-more/">Error with widget (images) and add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hello i&#8217;m creating a widget with 3 fields, image, title and url, at this moment everything is working like a charm, but when i want to print widget array i got this error in array.</p>
+<p>Piklist file</p>
+<pre><code>&lt;?php
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Publicidad&#039;) 
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;image&#039;,
+        &#039;label&#039; =&gt; &#039;Imagen&#039;
+      ),
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;titulo&#039;,
+        &#039;label&#039; =&gt; &#039;Titulo&#039;
+      ),
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;url&#039;,
+        &#039;label&#039; =&gt; &#039;Enlace&#039;
+      ),
+    )
+  ));</code></pre>
+<p>Print_r of $settings</p>
+<pre><code>Array
+(
+    [image] =&gt; Array
+        (
+            [0] =&gt; 13
+            [1] =&gt; Array
+                (
+                    [0] =&gt; undefined
+                    [1] =&gt; 15
+                )
+
+            [2] =&gt; Array
+                (
+                    [0] =&gt; undefined
+                    [1] =&gt; 14
+                )
+
+        )
+
+    [titulo] =&gt; Array
+        (
+            [0] =&gt; title---
+            [1] =&gt; title---
+            [2] =&gt; title---
+        )
+
+    [url] =&gt; Array
+        (
+            [0] =&gt; http:...
+            [1] =&gt; http:...
+            [2] =&gt; http:...
+        )
+
+)</code></pre>
+<p>first array position retrives image id, but second and third no.</p>
+<p>Another question, is how can i loop into this array? i want to do this because i need to set random ads and posts.</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-with-widget-images-and-add-more/">Error with widget (images) and add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

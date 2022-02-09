@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Priority &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/priority/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 07 Jun 2016 00:46:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>bizarre priority/custom fields interaction</title>
+		<link>https://piklist.com/support/topic/bizarre-prioritycustom-fields-interaction/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Mon, 06 Jun 2016 04:00:35 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/bizarre-prioritycustom-fields-interaction/</guid>
+
+					<description><![CDATA[<p>Piklist 0.9.9.8: Been tearing my hair out trying to figure out why I couldn&#8217;t change certain field values in meta-boxes; finally narrowed down the case. The problem occurs when the post-type supports &#8216;custom-fields&#8217; and the meta-box has low or no priority set. I can set a value and save, but then cannot change the value. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bizarre-prioritycustom-fields-interaction/">bizarre priority/custom fields interaction</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Piklist 0.9.9.8: Been tearing my hair out trying to figure out why I couldn&#8217;t change certain field values in meta-boxes; finally narrowed down the case. The problem occurs when the post-type supports &#8216;custom-fields&#8217; and the meta-box has low or no priority set. I can set a value and save, but then cannot change the value. </p>
+<p>See behavior here: http://recordit.co/VIS0mcZ7OS</p>
+<p>Simpleton post type: </p>
+<pre><code>
+$post_types[&#039;simpleton&#039;] = array(
+	&#039;labels&#039; =&gt; piklist( &#039;post_type_labels&#039;, &#039;Simpleton&#039; ),
+	&#039;public&#039; =&gt; true,
+	&#039;rewrite&#039; =&gt; false,
+	&#039;has_archive&#039; =&gt; false,
+	&#039;menu_icon&#039; =&gt; &#039;dashicons-smiley&#039;,
+	&#039;supports&#039; =&gt; array(
+		&#039;title&#039;,
+		&#039;custom-fields&#039;,
+	),
+);
+</code></pre>
+<p>Meta boxes: </p>
+<pre><code>
+/*
+Title: Test with priority: high
+Post Type: post,simpleton
+Priority: high
+Order: 10
+*/
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;test_high&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Enter text&#039;,
+));
+</code></pre>
+<pre><code>
+/*
+Title: Test with priority: low
+Post Type: post,simpleton
+Priority: low
+Order: 10
+*/
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;test_low&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Enter text&#039;,
+));
+</code></pre>
+<pre><code>
+/*
+Title: Test with no priority set
+Post Type: post,simpleton
+Order: 10
+*/
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;test_nop&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Enter text&#039;,
+));
+</code></pre>
+<p>If I remove &#8216;custom-fields&#8217; from the post_type supports clause, all three fields can be set and reset with no problem. </p>
+<p>I have a testbed available; let me know if you want the keys.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bizarre-prioritycustom-fields-interaction/">bizarre priority/custom fields interaction</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Context, Priority and Order</title>
+		<link>https://piklist.com/support/topic/context-priority-and-order/</link>
+		
+		<dc:creator><![CDATA[vayu]]></dc:creator>
+		<pubDate>Tue, 29 Dec 2015 11:46:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/context-priority-and-order/</guid>
+
+					<description><![CDATA[<p>Hi, I am having some trouble placing the metabox where I would like to. I have played around with the Context, Priority and Order options, but this does not get me where I want. Please see attached file for explanation. These are the options I have: Context: advanced Priority: high Order: 1 &#8220;Meta-boxes&#8221; File Structure</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/context-priority-and-order/">Context, Priority and Order</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I am having some trouble placing the metabox where I would like to. I have played around with the Context, Priority and Order options, but this does not get me where I want. Please see attached file for explanation.<br />
+These are the options I have:<br />
+Context: advanced<br />
+Priority: high<br />
+Order: 1</p>
+<blockquote data-secret="9sK8WDWtQ5" class="wp-embedded-content"><p><a href="https://piklist.com/user-guide/docs/file-structure/meta-boxes/">&#8220;Meta-boxes&#8221; File Structure</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="display:none;" src="https://piklist.com/user-guide/docs/file-structure/meta-boxes/embed/#?secret=9sK8WDWtQ5" data-secret="9sK8WDWtQ5" width="500" height="282" title="Embedded WordPress Post" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/context-priority-and-order/">Context, Priority and Order</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

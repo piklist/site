@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>group field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/group-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 09 Jul 2020 16:42:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Image retrieving problem from group meta field</title>
+		<link>https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/</link>
+		
+		<dc:creator><![CDATA[rashedul007]]></dc:creator>
+		<pubDate>Mon, 06 Jul 2020 04:51:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/</guid>
+
+					<description><![CDATA[<p>I want to show attachment like section. For this my code for meta field and out is given below: Meta field Code: &#60;?php /** * Title: Chef Settings * Post Type: section * Order: 20 */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;meal_chef&#039;, // removing this parameter saves all fields as separate meta &#039;label&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/">Image retrieving problem from group meta field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to show attachment like section. For this my code for meta field and out is given below:<br />
+<strong>Meta field Code:</strong></p>
+<pre><code>&lt;?php
+
+/**
+ * Title: Chef Settings
+ * Post Type: section
+ * Order: 20
+ */
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;meal_chef&#039;, // removing this parameter saves all fields as separate meta
+	&#039;label&#039; =&gt; __(&#039;Chef&#039;, &#039;meal&#039;),
+	&#039;list&#039; =&gt; false,
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;name&#039;,
+			&#039;label&#039; =&gt; __(&#039;Name&#039;, &#039;meal&#039;),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;file&#039;,
+			&#039;field&#039; =&gt; &#039;chef_image&#039;,
+			&#039;label&#039; =&gt; __(&#039;Image&#039;, &#039;meal&#039;),
+			&#039;options&#039; =&gt; array(
+				&#039;button&#039; =&gt; __(&#039;Add Image&#039;, &#039;meal&#039;)
+			)
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;title&#039;,
+			&#039;label&#039; =&gt; __(&#039;Title&#039;, &#039;meal&#039;),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;textarea&#039;,
+			&#039;field&#039; =&gt; &#039;bio&#039;,
+			&#039;label&#039; =&gt; __(&#039;bio&#039;, &#039;meal&#039;),
+		),
+		array(
+			&#039;field&#039;        =&gt; &#039;social_profiles&#039;,
+			&#039;type&#039;      =&gt; &#039;group&#039;,
+			&#039;label&#039;     =&gt; __(&#039;Social Profiles&#039;, &#039;meal&#039;),
+			&#039;fields&#039;    =&gt; array(
+
+				array(
+					&#039;field&#039;    =&gt; &#039;facebook&#039;,
+					&#039;type&#039;  =&gt; &#039;text&#039;,
+					&#039;label&#039; =&gt; __(&#039;Facebook&#039;, &#039;meal&#039;),
+				),
+				array(
+					&#039;field&#039;   =&gt; &#039;twitter&#039;,
+					&#039;type&#039;  =&gt; &#039;text&#039;,
+					&#039;label&#039; =&gt; __(&#039;Twitter&#039;, &#039;meal&#039;),
+				),
+				array(
+					&#039;field&#039;   =&gt; &#039;instagram&#039;,
+					&#039;type&#039;  =&gt; &#039;text&#039;,
+					&#039;label&#039; =&gt; __(&#039;Instagram&#039;, &#039;meal&#039;),
+				),
+
+			),
+		),
+	)
+));
+
+&lt;strong&gt;Output code:&lt;/strong&gt;
+
+</code></pre>
+<p>&lt;?php<br />
+global $section_id;<br />
+$meal_section             = get_post($section_id);<br />
+$meal_section_title       = $meal_section-&gt;post_title;<br />
+$meal_section_description = $meal_section-&gt;post_content;<br />
+?&gt;</p>
+<p>&lt;div class=&#8221;section bg-white&#8221; data-aos=&#8221;fade-up&#8221;&gt;<br />
+    &lt;div class=&#8221;container&#8221;&gt;<br />
+        &lt;div class=&#8221;row mb-5&#8243;&gt;<br />
+            &lt;div class=&#8221;col-md-12 section-heading text-center&#8221;&gt;<br />
+                &lt;h2 class=&#8221;heading mb-5&#8243;&gt;<br />
+                    &lt;?php echo esc_html($meal_section_title); ?&gt;<br />
+                &lt;/h2&gt;<br />
+                &lt;?php<br />
+                echo apply_filters(&#8216;the_content&#8217;, $meal_section_description);<br />
+                ?&gt;<br />
+            &lt;/div&gt;<br />
+        &lt;/div&gt;<br />
+        &lt;?php<br />
+        $meal_chefs = get_post_meta($section_id, &#8216;meal_chef&#8217;, true);<br />
+        print_r($meal_chefs);<br />
+        if ($meal_chefs) :<br />
+        ?&gt;<br />
+        &lt;div class=&#8221;row&#8221;&gt;<br />
+            &lt;?php<br />
+                foreach ($meal_chefs as $meal_chef) :</p>
+<p>                    $meal_chef_image = wp_get_attachment_image_src($meal_chef[&#8216;chef_image&#8217;], &#8216;medium&#8217;);<br />
+                ?&gt;<br />
+            &lt;div class=&#8221;col-md-6 pl-md-5 text-center mb-5&#8243;&gt;<br />
+                &lt;div class=&#8221;ftco-38&#8243;&gt;<br />
+                    &lt;div class=&#8221;ftco-38-img&#8221;&gt;<br />
+                        &lt;div class=&#8221;ftco-38-header&#8221;&gt;<br />
+                            <img />&#8221;<br />
+                                alt=&#8221;&lt;?php echo esc_attr($meal_chef[&#8216;name&#8217;]) ?&gt;&#8221;&gt;<br />
+                            &lt;h3 class=&#8221;ftco-38-heading&#8221;&gt;&lt;?php echo esc_attr($meal_chef[&#8216;name&#8217;]) ?&gt;&lt;/h3&gt;<br />
+                            &lt;p class=&#8221;ftco-38-subheading&#8221;&gt;&lt;?php echo esc_attr($meal_chef[&#8216;title&#8217;]) ?&gt;&lt;/p&gt;<br />
+                        &lt;/div&gt;<br />
+                        &lt;div class=&#8221;ftco-38-body&#8221;&gt;<br />
+                            &lt;?php echo apply_filters(&#8216;the_content&#8217;, $meal_chef[&#8216;bio&#8217;]) ?&gt;<br />
+                            &lt;?php if ($meal_chef[&#8216;social_profiles&#8217;][&#8216;facebook&#8217;]) : ?&gt;<br />
+                            <a>&#8221; class=&#8221;p-2&#8243;&gt;&lt;span<br />
+                                    class=&#8221;fa fa-facebook&#8221;&gt;&lt;/span&gt;</a><br />
+                            &lt;?php endif; ?&gt;<br />
+                            &lt;?php if ($meal_chef[&#8216;social_profiles&#8217;][&#8216;twitter&#8217;]) : ?&gt;<br />
+                            <a>&#8221; class=&#8221;p-2&#8243;&gt;&lt;span<br />
+                                    class=&#8221;fa fa-twitter&#8221;&gt;&lt;/span&gt;</a><br />
+                            &lt;?php endif; ?&gt;<br />
+                            &lt;?php if ($meal_chef[&#8216;social_profiles&#8217;][&#8216;instagram&#8217;]) : ?&gt;<br />
+                            <a>&#8221;<br />
+                                class=&#8221;p-2&#8243;&gt;&lt;span class=&#8221;fa fa-instagram&#8221;&gt;&lt;/span&gt;</a><br />
+                            &lt;?php endif; ?&gt;<br />
+                            &lt;/p&gt;<br />
+                        &lt;/div&gt;<br />
+                    &lt;/div&gt;<br />
+                &lt;/div&gt;<br />
+            &lt;/div&gt;<br />
+            &lt;?php endforeach; ?&gt;</p>
+<p>            &lt;!&#8211; &lt;div class=&#8221;col-md-4&#8243;&gt;&lt;/div&gt; &#8211;&gt;<br />
+        &lt;/div&gt;</p>
+<p>        &lt;?php endif; ?&gt;<br />
+    &lt;/div&gt;<br />
+&lt;/div&gt; &lt;!&#8211; .section &#8211;&gt;</p>
+<p>But image get broken.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/">Image retrieving problem from group meta field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Filed group containing file upload field issue: corrupted postmeta after update</title>
+		<link>https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/</link>
+		
+		<dc:creator><![CDATA[Mehdi Salem]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 05:38:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/</guid>
+
+					<description><![CDATA[<p>Hello folks, I&#8217;m experiencing the following issue with a field group meta box containing a file upload field (Piklist v 0.9.9.9): The first time I save the post, every thing goes well and data is saved correctly in the database. If I update the post without doing any modifications, no problem. HOWEVER if I add [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/">Filed group containing file upload field issue: corrupted postmeta after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello folks,</p>
+<p>I&#8217;m experiencing the following issue with a field group meta box containing a file upload field (Piklist v 0.9.9.9):<br />
+The first time I save the post, every thing goes well and data is saved correctly in the database. If I update the post without doing any modifications, no problem. HOWEVER if I add an additional photo after the post has been saved once, the postmeta gets corrupted and thus, all the meta box data disappears from the post&#8230;</p>
+<p>&#8211; Here is how looks the postmeta after first save:<br />
+a:2:{s:12:&#8221;folder_title&#8221;;s:10:&#8221;test title&#8221;;s:12:&#8221;single_photo&#8221;;a:2:{i:0;s:4:&#8221;1306&#8243;;i:1;s:4:&#8221;1305&#8243;;}}</p>
+<p>&#8211; And here is how it gets corrupted after adding one file and second save:<br />
+a:2:{i:0;s:10:&#8221;test title&#8221;;i:1;a:3:{i:0;s:4:&#8221;1306&#8243;;i:1;s:4:&#8221;1305&#8243;;i:2;s:4:&#8221;1296&#8243;;}}</p>
+<p>Did not have time to debug so not sure if it is a JS or a PHP issue.</p>
+<p>Could you have a quick look at this guys and fix? I need to get my client&#8217;s site up asap&#8230;</p>
+<p>Many thanks in advance!</p>
+<p>Her is the meta box code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+,&#039;field&#039; =&gt; &#039;folder_content_group&#039;
+,&#039;label&#039; =&gt; __(&#039;Gallery Photo&#039;,&#039;stopping-the-world-admin&#039;)
+,&#039;description&#039; =&gt; __(&#039;Add photos to this folder.&#039;, &#039;stopping-the-world-admin&#039;)
+,&#039;help&#039; =&gt; __(&#039;Adds a new photo to this gallery folder and sets its availability on the store.&#039;,&#039;stopping-the-world-admin&#039;)
+,&#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;folder_title&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Title&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 12
+        )
+        ,array(
+            &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;single_photo&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Photo&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; __(&#039;Add photo&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;stopping-the-world-admin&#039;)
+        )
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;validate&#039; =&gt; array(
+        array(
+                &#039;type&#039; =&gt; &#039;jpeg&#039;
+            )
+        ,array(
+                &#039;type&#039; =&gt; &#039;gallery_photo&#039;
+            )
+        )
+        )
+    )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/">Filed group containing file upload field issue: corrupted postmeta after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>&#039;value&#039; in text field not showing</title>
+		<link>https://piklist.com/support/topic/value-in-text-field-not-showing/</link>
+		
+		<dc:creator><![CDATA[visualtricks]]></dc:creator>
+		<pubDate>Sun, 10 Jul 2016 14:58:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/value-in-text-field-not-showing/</guid>
+
+					<description><![CDATA[<p>Hi, after the last update the default &#8216;value&#8217; I set in text field doesn&#8217;t show up anymore (was working fine before). Here&#8217;s my code: array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;secondo_1_ita&#039; ,&#039;columns&#039; =&#62; 8 ,&#039;label&#039; =&#62; &#039;secondo 1&#039; ,&#039;value&#039; =&#62; &#039;Bistecca alla Fiorentina con patate arrosto&#039; ,&#039;attributes&#039; =&#62; array(&#039;placeholder&#039; =&#62; &#039;secondo 1 Italiano&#039;) ) The [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/value-in-text-field-not-showing/">&#039;value&#039; in text field not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, after the last update the default &#8216;value&#8217; I set in text field doesn&#8217;t show up anymore (was working fine before). Here&#8217;s my code:</p>
+<pre><code>array( 
+	&#039;type&#039; =&gt; &#039;text&#039;
+	,&#039;field&#039; =&gt; &#039;secondo_1_ita&#039;
+	,&#039;columns&#039; =&gt; 8
+	,&#039;label&#039; =&gt; &#039;secondo 1&#039;
+	,&#039;value&#039; =&gt; &#039;Bistecca alla Fiorentina con patate arrosto&#039;
+	,&#039;attributes&#039; =&gt; array(&#039;placeholder&#039; =&gt; &#039;secondo 1 Italiano&#039;)
+	)</code></pre>
+<p>The text field is (one) part of a group field, used in the backend on a custom post type (not registered via piklist).<br />
+Am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/value-in-text-field-not-showing/">&#039;value&#039; in text field not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

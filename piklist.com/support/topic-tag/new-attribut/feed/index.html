@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>New attribut &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/new-attribut/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 11 Nov 2014 14:23:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Bug with the &#034;New&#034; attribut when creating a metabox in a CPT</title>
+		<link>https://piklist.com/support/topic/bug-with-the-new-attribut-when-creating-a-metabox-in-a-cpt/</link>
+		
+		<dc:creator><![CDATA[kattagami]]></dc:creator>
+		<pubDate>Sat, 08 Nov 2014 08:50:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/bug-with-the-new-attribut-when-creating-a-metabox-in-a-cpt/</guid>
+
+					<description><![CDATA[<p>Hello, There is maybe a bug with the &#8220;New&#8221; attribut when you create a metabox. For instance, when I use this code to add a metabox + text field in my Custom Post &#8220;cadeau&#8221; : &#60;?php /* Title: Prix Description: Prix du cadeau en euros Post Type: cadeau Capability: administrator Context: normal Priority: high Order: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-with-the-new-attribut-when-creating-a-metabox-in-a-cpt/">Bug with the &quot;New&quot; attribut when creating a metabox in a CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>There is maybe a bug with the &#8220;New&#8221; attribut when you create a metabox.<br />
+For instance, when I use this code to add a metabox + text field in my Custom Post &#8220;cadeau&#8221; :</p>
+<pre><code>
+&lt;?php
+/*
+Title: Prix
+Description: Prix du cadeau en euros
+Post Type: cadeau
+Capability: administrator
+Context: normal
+Priority: high
+Order: 1
+Locked: true
+Collapse: false
+New: true
+*/
+
+piklist( &#039;field&#039;, 
+	array(
+		&#039;type&#039;        =&gt; &#039;text&#039;,
+		&#039;scope&#039;       =&gt; &#039;post_meta&#039;,
+		&#039;field&#039;       =&gt; &#039;wptech_cadeau_prix&#039;,
+		&#039;label&#039;       =&gt; __( &#039;Prix&#039; , &#039;texdomain&#039; ),
+		&#039;description&#039; =&gt; __( &#039;Maximum 150 €&#039; , &#039;texdomain&#039; ),
+		&#039;help&#039; 		  =&gt; __( &#039;Prix du cadeau en euros. Indiquer uniquement un chiffre.&#039; , &#039;texdomain&#039; ),
+		&#039;attributes&#039;  =&gt; array(
+			&#039;class&#039; =&gt; &#039;wpatech-cadeau-prix&#039;		),
+		&#039;position&#039;    =&gt; &#039;wrap&#039;
+		)
+);
+</code></pre>
+<p>The metabox doesn&#8217;t display in my CPT &#8220;cadeau&#8221; (whatever the value is true or false). If I remove the &#8220;New&#8221; attribut from the comment, my metabox appears.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-with-the-new-attribut-when-creating-a-metabox-in-a-cpt/">Bug with the &quot;New&quot; attribut when creating a metabox in a CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

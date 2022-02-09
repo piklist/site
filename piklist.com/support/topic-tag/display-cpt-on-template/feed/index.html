@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>display cpt on template &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/display-cpt-on-template/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 20 May 2014 13:51:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Display Custom post type on frontend / template</title>
+		<link>https://piklist.com/support/topic/display-custom-post-type-on-frontend-template/</link>
+		
+		<dc:creator><![CDATA[vincire]]></dc:creator>
+		<pubDate>Tue, 20 May 2014 13:51:10 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/display-custom-post-type-on-frontend-template/</guid>
+
+					<description><![CDATA[<p>Can anyone point out how to have the fields of a custom post type can be displayed on the frontend in a specific theme-template. I have read the user guide and several topics in the forum but could find the answer. I am building a site in which members can place and maintain their profile. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-custom-post-type-on-frontend-template/">Display Custom post type on frontend / template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Can anyone point out how to have the fields of a custom post type can be displayed on the frontend in a specific theme-template. I have read the user guide and several topics in the forum but could find the answer.</p>
+<p>I am building a site in which members can place and maintain their profile. The profile will contain for example name, biography, telephone, email and social media fields.</p>
+<p>I have created a plugin with the CPT and some of the fields I need:</p>
+<pre><code>&lt;?php
+/*
+Post Type: leden
+Order: 100
+Lock: true
+Meta box: false
+*/
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;label&#039; =&gt; &#039;profile&#039;
+    ,&#039;description&#039; =&gt; &#039;Place your profile info here&#039;
+    ,&#039;value&#039; =&gt; &#039;Tell us about yourself.&#039;
+    ,&#039;options&#039; =&gt; array (
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;tabindex&#039; =&gt; &#039;&#039;
+      ,&#039;editor_css&#039; =&gt; &#039;&#039;
+      ,&#039;editor_class&#039; =&gt; &#039;&#039;
+      ,&#039;teeny&#039; =&gt; false
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; true
+      ,&#039;quicktags&#039; =&gt; true
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+  
+   piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;introduction&#039;
+    ,&#039;label&#039; =&gt; &#039;Introduction&#039;
+    ,&#039;description&#039; =&gt; &#039;Short intro about yourself. This will be shown on the overview page&#039;
+    ,&#039;value&#039; =&gt; &#039;Enter a short text as a introduction to your profile. Max 200 characters&#039;
+    ,&#039;help&#039; =&gt; &#039;Enter a short text, maximum 200 characters.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;rows&#039; =&gt; 10
+      ,&#039;cols&#039; =&gt; 50
+      ,&#039;class&#039; =&gt; &#039;large-text code&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+ 
+ piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add your logo.&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Choose a file from the library or upload from your computer&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Choose a file underneath or choose Upload File&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+    )
+  ));
+  
+   piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039; // Not used for settings sections
+  ,&#039;field&#039; =&gt; &#039;field_name&#039;
+  ,&#039;label&#039; =&gt; &#039;Name&#039;
+  ,&#039;description&#039; =&gt; &#039;Your name&#039;
+  ,&#039;attributes&#039; =&gt; array(
+   &#039;class&#039; =&gt; &#039;text&#039;
+    )
+  )); 
+</code></pre>
+<p>I use this code underneath in a theme template to display the content. But I have to display the fields seperatally in order to add mark-up<br />
+How can this be done.</p>
+<pre><code>&lt;?php $args = array( &#039;post_type&#039; =&gt; &#039;leden&#039;, &#039;posts_per_page&#039; =&gt; 10 );
+$loop = new WP_Query( $args );
+while ( $loop-&gt;have_posts() ) : $loop-&gt;the_post();
+    the_title();
+    echo &#039;&lt;div class=&quot;profiel&quot;&gt;&#039;;
+    the_content();
+    echo &#039;&lt;/div&gt;&#039;;
+endwhile;?&gt;
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-custom-post-type-on-frontend-template/">Display Custom post type on frontend / template</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

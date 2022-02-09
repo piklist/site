@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>field templates front end forms &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/field-templates-front-end-forms/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 12 May 2016 04:45:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Field Templates piklist-field div is empty</title>
+		<link>https://piklist.com/support/topic/field-templates-piklist-field-div-is-empty/</link>
+		
+		<dc:creator><![CDATA[travisloc]]></dc:creator>
+		<pubDate>Thu, 12 May 2016 04:45:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-templates-piklist-field-div-is-empty/</guid>
+
+					<description><![CDATA[<p>I&#8217;m running piklist 0.9.9.8 and wp 4.5.2 I&#8217;m using front end forms and trying to use the template post_meta as below: $passengers = array( &#039;&#039; =&#62; &#039;Select&#039; , &#039;Passenger 1&#039; =&#62; &#039;Passenger 1&#039; , &#039;Passenger 2&#039; =&#62; &#039;Passenger 2&#039; , &#039;Passenger 3&#039; =&#62; &#039;Passenger 3&#039; , &#039;Passenger 4&#039; =&#62; &#039;Passenger 4&#039; ); piklist(&#039;field&#039;, array( &#039;type&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-templates-piklist-field-div-is-empty/">Field Templates piklist-field div is empty</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m running piklist 0.9.9.8 and wp 4.5.2</p>
+<p>I&#8217;m using front end forms and trying to use the template post_meta as below:</p>
+<pre><code>
+$passengers = array(
+	&#039;&#039; =&gt; &#039;Select&#039;
+	, &#039;Passenger 1&#039; =&gt; &#039;Passenger 1&#039;
+	, &#039;Passenger 2&#039; =&gt; &#039;Passenger 2&#039;
+	, &#039;Passenger 3&#039; =&gt; &#039;Passenger 3&#039;
+	, &#039;Passenger 4&#039; =&gt; &#039;Passenger 4&#039;
+);
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	, &#039;scope&#039; =&gt; &#039;post_meta&#039; // Not used for settings sections
+	, &#039;field&#039; =&gt; &#039;passenger_details&#039;
+	, &#039;columns&#039; =&gt; 12
+	, &#039;add_more&#039; =&gt; true
+	, &#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;select&#039;
+			, &#039;scope&#039; =&gt; &#039;post_meta&#039; // Not used for settings sections
+			, &#039;field&#039; =&gt; &#039;passenger_passenger_details&#039;
+			, &#039;label&#039; =&gt; &#039;Passenger&#039;
+			, &#039;choices&#039; =&gt; $passengers
+			, &#039;attributes&#039; =&gt; array(
+				&#039;required&#039; =&gt; &#039;required&#039;
+			)
+			, &#039;template&#039; =&gt; &#039;post_meta&#039;
+		)
+</code></pre>
+<p>My problem can be seen in the screen shot.  The template shows that the HTML SELECT element should appear inside the DIV with class=&#8217;piklist-field&#8217; as below:</p>
+<pre><code>
+                     &lt;div class=&quot;%1$s piklist-field-container&quot;&gt;
+                       &lt;div class=&quot;piklist-field-container-row&quot;&gt;
+                         &lt;div class=&quot;piklist-label-container&quot;&gt;
+                           
+                           
+                         &lt;/div&gt;
+                         &lt;div class=&quot;piklist-field&quot;&gt;
+                           
+                         &lt;/div&gt;
+                       &lt;/div&gt;
+                     &lt;/div&gt;
+                   
+</code></pre>
+<p>However, the screen shot shows the SELECT is appearing after the last DIV.  Can anyone see where I am going wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-templates-piklist-field-div-is-empty/">Field Templates piklist-field div is empty</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

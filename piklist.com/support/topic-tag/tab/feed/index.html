@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tab &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/tab/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 07 Aug 2016 06:24:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Get a list of all fields under a tab</title>
+		<link>https://piklist.com/support/topic/get-a-list-of-all-fields-under-a-tab/</link>
+		
+		<dc:creator><![CDATA[azizultex]]></dc:creator>
+		<pubDate>Sun, 07 Aug 2016 06:24:49 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get-a-list-of-all-fields-under-a-tab/</guid>
+
+					<description><![CDATA[<p>Howdy, I wonder if it is possible to get a list of all fields under a tab in an array. Like, in the attached screenshot, I want to get a list of field for Render, Interactive, Panoramic, 360 Video etc. in an array like $fields = array(&#039;render&#039;, &#039;interactive&#039;, &#039;panoramic&#039;); and thus all the fields under [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-a-list-of-all-fields-under-a-tab/">Get a list of all fields under a tab</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Howdy,<br />
+I wonder if it is possible to get a list of all fields under a tab in an array. Like, in the attached screenshot, I want to get a list of <code>field</code> for Render, Interactive, Panoramic, 360 Video etc. in an array like <code>$fields = array(&#039;render&#039;, &#039;interactive&#039;, &#039;panoramic&#039;);</code> and thus all the fields under Services tab. </p>
+<p>Is is possible? How? </p>
+<p>Thanks in advance. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-a-list-of-all-fields-under-a-tab/">Get a list of all fields under a tab</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metaboxes in tabbed Settings Pages not showing</title>
+		<link>https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 10:26:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</guid>
+
+					<description><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version of 0.9.9.9. I&#8217;ve created the tabs using the old method i.e., without using workflows and they seem to work; but only with one problem. When I use two or more words separated by space, it changes the name to a single word in sentence case joining the two words with an underscore. Now this is not the most challenging since I can choose to use only one word for the tab name. The actual problem however is that metaboxes themselves and fields on the settings pages designated to show on particular don&#8217;t show up at all. Using the workflows worsens the problem as that makes even the tabs disappear altogether. I&#8217;ve been stuck with this problem for the last two or so weeks. I feel  I&#8217;m burning out. Does somebody there no how I can make this work?</p>
+<p>I have this code in one of my settings files named <em>footer-settings.php</em>:</p>
+<pre><code>/*
+Title: Footer Setting
+setting: libra_custom_settings
+Tab: Footer
+*/</code></pre>
+<p>I have this code in another settings file named <em>basic-settings.php</em>:</p>
+<pre><code>/*
+Title: Basic
+Setting: libra_custom_settings
+*/</code></pre>
+<p>I have this code in my <em>functions.php</em> file:</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Libra Settings&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Theme Settings&#039;, &#039;piklist&#039;)
+      ,&#039;sub_menu&#039; =&gt; &#039;themes.php&#039; //Under Appearance menu
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;libra_custom_settings&#039;
+      ,&#039;setting&#039; =&gt; &#039;my_theme_settings&#039;
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Demo Settings&#039;
+    );
+ 
+    return $pages;
+  }</code></pre>
+<p>I have this code in the comment block of another settings file that displays the General tab:</p>
+<pre><code>/*
+Title: Component visibility Settings Section
+setting: lawyeah_custom_settings
+Tab: General
+*/</code></pre>
+<p>I have this code in the comment block of another settings file that displays the Social Options tab:</p>
+<pre><code>/*
+Title: Social Media Settings
+Setting: libra_custom_settings
+Tab: Social-Options
+*/</code></pre>
+<p>I wonder what exactly I&#8217;m doing wrong. The attached snip shows what I already have with everything as it is right now. Any help is very much appreciated. Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Creating Tabbed Setting Page</title>
+		<link>https://piklist.com/support/topic/creating-tabbed-setting-page/</link>
+		
+		<dc:creator><![CDATA[azizultex]]></dc:creator>
+		<pubDate>Sat, 02 Jul 2016 02:59:41 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-tabbed-setting-page/</guid>
+
+					<description><![CDATA[<p>Hello, I have created a setting page, workflow, and added some fields to a tab. Unfortunately, the setting fields aren&#8217;t showing. Below are the codes, would you let me know what&#8217;s wrong? /* setting page */ function piklist_theme_setting_pages($pages) { $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;OO Setting&#039;, &#039;oliveorange&#039;) , &#039;menu_title&#039; =&#62; __(&#039;Theme Setting&#039;, &#039;oliveorange&#039;) , &#039;capability&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-tabbed-setting-page/">Creating Tabbed Setting Page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I have created a setting page, workflow, and added some fields to a tab. Unfortunately, the setting fields aren&#8217;t showing. Below are the codes, would you let me know what&#8217;s wrong? </p>
+<pre><code>/* setting page */
+function piklist_theme_setting_pages($pages) {
+	$pages[] = array(
+		&#039;page_title&#039; =&gt; __(&#039;OO Setting&#039;, &#039;oliveorange&#039;) ,
+		&#039;menu_title&#039; =&gt; __(&#039;Theme Setting&#039;, &#039;oliveorange&#039;) ,
+		&#039;capability&#039; =&gt; &#039;manage_options&#039;,
+		&#039;menu_slug&#039; =&gt; &#039;oliveorange_setting&#039;,
+		&#039;setting&#039; =&gt; &#039;oliveorange_setting&#039;,
+		&#039;menu_icon&#039; =&gt; get_stylesheet_directory_uri() . &#039;/piklist/parts/img/icon.png&#039;,
+		&#039;page_icon&#039; =&gt; get_stylesheet_directory_uri(). &#039;/piklist/parts/img/icon.png&#039;,
+		&#039;single_line&#039; =&gt; true,
+		&#039;default_tab&#039; =&gt; __(&#039;General&#039;, &#039;oliveorange&#039;),
+		&#039;save_text&#039; =&gt; __(&#039;Save Settings&#039;, &#039;oliveorange&#039;)
+	);
+	return $pages;
+}
+add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;); </code></pre>
+<p>Workflow:</p>
+<pre><code>&lt;?php
+/*
+Title: General
+Order: 10
+Flow: OO Setting
+Default: true
+*/</code></pre>
+<p>File in setting dir: </p>
+<pre><code>&lt;?php
+/*
+Title: General Setting
+setting: oliveorange_setting
+Order: 10
+Collapse: false
+Tab: General tab
+Flow: OO Setting
+*/
+?&gt;
+
+&lt;div class=&quot;piklist-demo-highlight&quot;&gt;
+  &lt;?php _e(&#039;Text fields are at the core of most forms, and easily created with Piklist. Tooltip help can be added to any field with one line of code.&#039;, &#039;piklist-demo&#039;);?&gt;
+&lt;/div&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Text&#039;, &#039;piklist-demo&#039;)
+    ,&#039;help&#039; =&gt; __(&#039;You can easily add tooltips to your fields with the help parameter.&#039;, &#039;piklist-demo&#039;)
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;textarea&#039;
+    ,&#039;field&#039; =&gt; &#039;demo_textarea_large&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Text Area&#039;, &#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; &#039;class=&quot;large-text code&quot; rows=&quot;10&quot; columns=&quot;50&quot;&#039;
+    ,&#039;value&#039; =&gt; &#039;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;rows&#039; =&gt; 10
+      ,&#039;cols&#039; =&gt; 50
+      ,&#039;class&#039; =&gt; &#039;large-text&#039;
+    )
+  ));
+
+  piklist(&#039;shared/code-locater&#039;, array(
+    &#039;location&#039; =&gt; __FILE__
+    ,&#039;type&#039; =&gt; &#039;Meta Box&#039;
+  ));</code></pre>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-tabbed-setting-page/">Creating Tabbed Setting Page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>in workflow tab values are not saving</title>
+		<link>https://piklist.com/support/topic/in-workflow-tab-values-are-not-saving/</link>
+		
+		<dc:creator><![CDATA[ajayphp]]></dc:creator>
+		<pubDate>Thu, 13 Nov 2014 13:37:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/in-workflow-tab-values-are-not-saving/</guid>
+
+					<description><![CDATA[<p>Hi, Workflow tab feature is gr8, I am trying with that, after filled the data in fiels, and press save button, nothing is saving, even in tab input fields are disappearing. i tried with different post status method. and then save, even then save button title were changes save to publish (do not know how [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/in-workflow-tab-values-are-not-saving/">in workflow tab values are not saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>Workflow tab feature is gr8, I am trying with that, </p>
+<p>after filled the data in fiels, and press save button,<br />
+nothing is saving, even in tab input fields are disappearing.</p>
+<p>i tried with different post status method. and then save,<br />
+even then save button title were changes save to publish (do not know how )</p>
+<p>could you please tell how can i fix, as all efforts will be waste if noting will<br />
+save. this is for custom post type. </p>
+<p>sample code with file structute:</p>
+<p>File: plugin/parts/workflow/gateway.php</p>
+<pre><code>&lt;?php
+/*
+Flow: Gateways
+Page: post.php, post-new.php, post-edit.php, admin.php
+Post Type: biz_gateway
+Header: true
+Position: title
+*/
+?&gt;</code></pre>
+<p>first tab<br />
+&#8212; File: plugin/parts/workflow/api.php </p>
+<pre><code>&lt;?php
+/*
+Title: Api
+Order: 20
+Flow: Gateways
+Default: true 
+*/
+?&gt;
+
+&lt;?php
+  
+  piklist(&#039;include_meta_boxes&#039;, array(
+    &#039;piklist_meta_help&#039;
+    ,&#039;piklist_meta_field_api&#039;
+    ,&#039;piklist_meta_field_upload&#039;
+    ,&#039;piklist_meta_field_taxonomies&#039;
+    ,&#039;piklist_meta_field_featured_image&#039;
+    ,&#039;piklist_meta_field_relate&#039;
+    ,&#039;piklist_meta_field_comments&#039;
+  ));
+
+/*
+ * you can pass var to file, with location of file to call 
+ */ 
+ piklist(&#039;shared/field-api&#039;, array(
+    &#039;location&#039; =&gt; __FILE__
+    ,&#039;type&#039; =&gt; &#039;Workflow Tab&#039;
+  ));
+
+?&gt;
+
+</code></pre>
+<p>First tab content file:<br />
+&#8212; File: plugin/parts/shared/field-api.php </p>
+<pre><code>&lt;?php
+
+ piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;gtw_api_url&#039;
+    ,&#039;label&#039; =&gt; &#039;Api Url&#039;
+    ,&#039;description&#039; =&gt; &quot;Api Url for this gateway to remote call&quot;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Enter Api Url...&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;save&#039;
+    )
+    ,&#039;required&#039; =&gt; true
+  ));
+  
+
+  
+   piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;gtw_api_username&#039;
+    ,&#039;label&#039; =&gt; &#039;Api Username&#039;
+    ,&#039;description&#039; =&gt; &quot;Api Username&quot;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Enter Api Username...&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;save&#039;
+    )
+    ,&#039;required&#039; =&gt; true
+  ));
+  
+ piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;gtw_api_password&#039;
+    ,&#039;label&#039; =&gt; &#039;Api Password&#039;
+    ,&#039;description&#039; =&gt; &quot;Api Password&quot;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Enter Api Password...&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;save&#039;
+    )
+    ,&#039;required&#039; =&gt; true
+  ));
+  
+
+  
+  
+  
+?&gt;
+</code></pre>
+<p>&#8212; like above second and third tab.</p>
+<p>is that code file and tab content file location is fine ..?<br />
+data is display correctly. </p>
+<p>&#8212; data is not saving, on click save button<br />
+&#8212; data is not saving when move to another tab<br />
+&#8212; after save fields not able to edit and input fields disappears.</p>
+<p>Please guide me in detail please.. i have read your doc not get exact idea<br />
+what is missing.</p>
+<p>Regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/in-workflow-tab-values-are-not-saving/">in workflow tab values are not saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>in workflow tab unsaved value are lost</title>
+		<link>https://piklist.com/support/topic/in-workflow-tab-unsaved-value-are-lost/</link>
+		
+		<dc:creator><![CDATA[ajayphp]]></dc:creator>
+		<pubDate>Thu, 13 Nov 2014 13:20:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/in-workflow-tab-unsaved-value-are-lost/</guid>
+
+					<description><![CDATA[<p>Hi, Workflow tab feature is gr8, I am trying with that, usually user will think fill data in first tab, and then move to second tab to fill the data.. , this is natural flow. But i found when user move to second tab and first tab data lost, in moving to another tab , [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/in-workflow-tab-unsaved-value-are-lost/">in workflow tab unsaved value are lost</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>Workflow tab feature is gr8, I am trying with that, </p>
+<p>usually user will think fill data in first tab, and then move to second tab<br />
+to fill  the data.. , this is natural flow. But i found when user move to second<br />
+tab and first tab data lost, </p>
+<p>in moving to another tab , filled data in another tab should be saved , how can<br />
+i achieve this&#8230; ?</p>
+<p>Regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/in-workflow-tab-unsaved-value-are-lost/">in workflow tab unsaved value are lost</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

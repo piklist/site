@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>repeater field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/repeater-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 27 Oct 2016 17:29:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Hidden Field in Repeater Field Default Value Bug (with sample code)</title>
+		<link>https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/</link>
+		
+		<dc:creator><![CDATA[rick]]></dc:creator>
+		<pubDate>Thu, 27 Oct 2016 17:26:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/</guid>
+
+					<description><![CDATA[<p>Hi, I have been noticing this strange behavior when using a repeater field with a hidden field. In a nutshell, I created a settings page which is designed for a user to add in store locations (as many as they need). I have a location_id hidden field, which before saving to the database, I will [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/">Hidden Field in Repeater Field Default Value Bug (with sample code)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have been noticing this strange behavior when using a repeater field with a hidden field. In a nutshell, I created a settings page which is designed for a user to add in store locations (as many as they need). I have a location_id hidden field, which before saving to the database, I will programmatically fill in with a unique ID. When defining the field group, I specify a default value of &#8216;null&#8217; for the location_id field. Then, when the piklist_pre_update_option filter is fired, I will iterate through each location, check if the location_id field is null, and if it is, do what needs to be done to calculate the location ID. </p>
+<p>The first field, this works great and as expected. However, once a second field is created, the default &#8216;null&#8217; value does not occur&#8230; in fact, the default value appears to somehow get cloned from whatever the first location&#8217;s entry is, which should not be the case.</p>
+<p>To demonstrate this, I created a little demo bug plugin which you can try attached. To simulate the &#8220;generate location id&#8221; process, I replaced this with a wp_rand call, which is unlikely to product the same number back to back. </p>
+<p>To replicate this issue, do the following:</p>
+<p>1. Install Piklist and the &#8220;Hidden Field Bug&#8221; plugin (attached)<br />
+2. Navigate to the newly created &#8220;locations&#8221; settings page<br />
+3. Make up a location name – such as &#8220;Location 1&#8221; and press &#8220;Save Location Information&#8221;<br />
+4. Log into the WP Database (through phpMyAdmin or however you prefer).<br />
+5. Run SQL Query [code]SELECT * FROM <code>wp_options</code> WHERE <code>option_name</code>=&#8217;demo_store_locations'[/code] (make sure you set your specific wp_ prefix for tables)<br />
+6. Note the unique location_id generated in this serialized array. If you have trouble viewing the serialized data, use a site like https://www.functions-online.com/unserialize.html to unserialized this data.<br />
+7. Go back to the Locations page in the WP-Admin, add a new location such as Location 2.<br />
+8. Repeat the SQL query, and note that the location_id is the same for both locations. If you want to rule out the &#8216;possibility&#8217; that there was a number collision from the wp_rand() function used to generate location_id in this demo, keep adding in new locations and notice that the value is the same.</p>
+<p>Let me know if you have any questions, and looking forward to hearing back from you.</p>
+<p>Bug Demo Plugin: https://dl.dropboxusercontent.com/u/31824171/hidden-field-bug.zip </p>
+<p>Rick</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/hidden-field-in-repeater-field-default-value-bug/">Hidden Field in Repeater Field Default Value Bug (with sample code)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

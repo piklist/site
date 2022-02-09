@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist checker &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklist-checker/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 04 Mar 2015 14:57:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Piklist Checker Woes.</title>
+		<link>https://piklist.com/support/topic/piklist-checker-woes/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Fri, 27 Feb 2015 08:40:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-checker-woes/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been trying for the life of me to implement piklist checker in my plugin, but seem to get the same response everytime I activate the plugin without piklist being downloaded. &#8216;Plugin Activated&#8217; Maybe someone can help me with where its going wrong, as no matter what I try within these classes, nothing will show [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-checker-woes/">Piklist Checker Woes.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been trying for the life of me to implement piklist checker in my plugin, but seem to get the same response everytime I activate the plugin without piklist being downloaded. &#8216;Plugin Activated&#8217;</p>
+<p>Maybe someone can help me with where its going wrong, as no matter what I try within these classes, nothing will show the &#8216;download piklist now&#8217; box.<br />
+Here&#8217;s the code:</p>
+<pre><code>
+if(!class_exists(&#039;WP_piklist_fields&#039;))
+{
+	class WP_piklist_fields
+	{
+		/**
+		 * Construct the plugin object
+		 */
+		public function __construct()
+		{
+			add_action( &#039;init&#039;, array(&#039;WP_piklist_fields&#039;, &#039;init_plugin&#039;));
+		} // END public function load
+
+		/**
+		 * Init the plugin
+		 */
+		public static function init_plugin()
+		{
+			if(is_admin()) {
+				include_once(&#039;piklist-checker/class-piklist-checker.php&#039;);
+				if (!piklist_checker::check(__FILE__)) {
+					return;
+				}
+			}
+		} // END public static function init_plugin
+
+		/**
+		 * Activate the plugin
+		 */
+		public static function activate()
+		{
+			// Do nothing
+		} // END public static function activate
+
+		/**
+		 * Deactivate the plugin
+		 */
+		public static function deactivate()
+		{
+			// Do nothing
+		} // END public static function deactivate
+
+	} // END class WP_piklist_fields
+} // END if(!class_exists(&#039;WP_piklist_fields&#039;))
+
+if(class_exists(&#039;WP_piklist_fields&#039;))
+{
+	// Installation and uninstallation hooks
+	register_activation_hook(__FILE__, array(&#039;WP_piklist_fields&#039;, &#039;activate&#039;));
+	register_deactivation_hook(__FILE__, array(&#039;WP_piklist_fields&#039;, &#039;deactivate&#039;));
+
+	// instantiate the plugin class
+	$WP_piklist_fields = new WP_piklist_fields();
+}</code></pre>
+<p>Pre-thanks to anyone that can fix this&#8230;</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-checker-woes/">Piklist Checker Woes.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist Checker + TGM Plugin Activation causes extra links</title>
+		<link>https://piklist.com/support/topic/piklist-checker-tgm-plugin-activation-causes-extra-links/</link>
+		
+		<dc:creator><![CDATA[ewafford]]></dc:creator>
+		<pubDate>Thu, 29 Jan 2015 18:04:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-checker-tgm-plugin-activation-causes-extra-links/</guid>
+
+					<description><![CDATA[<p>When attempting to use both the piklist checker (v0.6.0) and current version of TGMPA (https://github.com/thomasgriffin/TGM-Plugin-Activation/) One or the other seems to be injecting extra tags into the warnings. Here is a picture of what it looks like: http://i.imgur.com/OtKpSz8.png Here is a picture of the code: http://i.imgur.com/VP1tl4E.png Im not sure which is at fault, but I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-checker-tgm-plugin-activation-causes-extra-links/">Piklist Checker + TGM Plugin Activation causes extra links</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When attempting to use both the piklist checker (v0.6.0) and current version of TGMPA (https://github.com/thomasgriffin/TGM-Plugin-Activation/) One or the other seems to be injecting extra <a> tags into the warnings. </p>
+<p>Here is a picture of what it looks like: http://i.imgur.com/OtKpSz8.png<br />
+Here is a picture of the code: http://i.imgur.com/VP1tl4E.png</p>
+<p>Im not sure which is at fault, but I assume it is piklist because it the link is to the themes page where as TGMPA would link to plugins or it&#8217;s install mechanism. </p>
+<p>I am also posting this to the github for TGMPA so the author is aware of the issue. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-checker-tgm-plugin-activation-causes-extra-links/">Piklist Checker + TGM Plugin Activation causes extra links</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist Checker Doesn&#039;t Seem to Be Working</title>
+		<link>https://piklist.com/support/topic/piklist-checker-doesnt-seem-to-be-working/</link>
+		
+		<dc:creator><![CDATA[moshemo]]></dc:creator>
+		<pubDate>Wed, 24 Apr 2013 13:16:37 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-checker-doesnt-seem-to-be-working/</guid>
+
+					<description><![CDATA[<p>Hi there, I&#8217;m working on creating my first plugin with Piklist and I am trying to get the checker to work.  The thing is, I don&#8217;t see the message &#8211; even when piklist is not activated.  The same is true for WordPress Helpers &#8211; I don&#8217;t get the message even when piklist is deactivated. I&#8217;m [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-checker-doesnt-seem-to-be-working/">Piklist Checker Doesn&#039;t Seem to Be Working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>I&#8217;m working on creating my first plugin with Piklist and I am trying to get the checker to work.  The thing is, I don&#8217;t see the message &#8211; even when piklist is not activated.  The same is true for WordPress Helpers &#8211; I don&#8217;t get the message even when piklist is deactivated.</p>
+<p>I&#8217;m running wordpress on localhost &#8211; I don&#8217;t know if that could have anything to do with it.  The thing is, I tested and know that the piklist checker file is being included.</p>
+<p>Any ideas?</p>
+<p>Moshe</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-checker-doesnt-seem-to-be-working/">Piklist Checker Doesn&#039;t Seem to Be Working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

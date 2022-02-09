@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tabs not pulling metaboxes &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/tabs-not-pulling-metaboxes/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 07 Jul 2016 16:28:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Metaboxes in tabbed Settings Pages not showing</title>
+		<link>https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 10:26:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/</guid>
+
+					<description><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m having a really hard time to get my settings tabbed pages to work. I&#8217;ve tried using workflows and as well without them but nothing seems to work. I&#8217;ve already created my settings pages and populated them with fields. These settings pages and their tabs were working fine until I upgraded to the latest version of 0.9.9.9. I&#8217;ve created the tabs using the old method i.e., without using workflows and they seem to work; but only with one problem. When I use two or more words separated by space, it changes the name to a single word in sentence case joining the two words with an underscore. Now this is not the most challenging since I can choose to use only one word for the tab name. The actual problem however is that metaboxes themselves and fields on the settings pages designated to show on particular don&#8217;t show up at all. Using the workflows worsens the problem as that makes even the tabs disappear altogether. I&#8217;ve been stuck with this problem for the last two or so weeks. I feel  I&#8217;m burning out. Does somebody there no how I can make this work?</p>
+<p>I have this code in one of my settings files named <em>footer-settings.php</em>:</p>
+<pre><code>/*
+Title: Footer Setting
+setting: libra_custom_settings
+Tab: Footer
+*/</code></pre>
+<p>I have this code in another settings file named <em>basic-settings.php</em>:</p>
+<pre><code>/*
+Title: Basic
+Setting: libra_custom_settings
+*/</code></pre>
+<p>I have this code in my <em>functions.php</em> file:</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Libra Settings&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Theme Settings&#039;, &#039;piklist&#039;)
+      ,&#039;sub_menu&#039; =&gt; &#039;themes.php&#039; //Under Appearance menu
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;libra_custom_settings&#039;
+      ,&#039;setting&#039; =&gt; &#039;my_theme_settings&#039;
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Demo Settings&#039;
+    );
+ 
+    return $pages;
+  }</code></pre>
+<p>I have this code in the comment block of another settings file that displays the General tab:</p>
+<pre><code>/*
+Title: Component visibility Settings Section
+setting: lawyeah_custom_settings
+Tab: General
+*/</code></pre>
+<p>I have this code in the comment block of another settings file that displays the Social Options tab:</p>
+<pre><code>/*
+Title: Social Media Settings
+Setting: libra_custom_settings
+Tab: Social-Options
+*/</code></pre>
+<p>I wonder what exactly I&#8217;m doing wrong. The attached snip shows what I already have with everything as it is right now. Any help is very much appreciated. Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metaboxes-in-tabbed-settings-pages-not-showing/">Metaboxes in tabbed Settings Pages not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

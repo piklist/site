@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom post type &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom-post-type/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 19 Aug 2021 21:32:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Piklist Post Type permalink overwritten</title>
+		<link>https://piklist.com/support/topic/piklist-post-type-permalink-overwritten/</link>
+		
+		<dc:creator><![CDATA[robin]]></dc:creator>
+		<pubDate>Thu, 19 Aug 2021 21:32:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-post-type-permalink-overwritten/</guid>
+
+					<description><![CDATA[<p>Hi, Thanks for the plugin, we use it lots and it&#8217;s really useful! I&#8217;ve encountered a weird bug, where I create a custom post type using the filter piklist_post_types, permalinks of pages of that custom post type get overwritten every time you save the page. Using the exact same array and creating the post type [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-post-type-permalink-overwritten/">Piklist Post Type permalink overwritten</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+Thanks for the plugin, we use it lots and it&#8217;s really useful!</p>
+<p>I&#8217;ve encountered a weird bug, where I create a custom post type using the filter <code>piklist_post_types</code>, permalinks of pages of that custom post type get overwritten every time you save the page. Using the exact same array and creating the post type using WordPress&#8217; own register_post_type method fixes the issue. It doesn&#8217;t block me, as I will use the native method, but I wanted to let you know anyway.</p>
+<p>Thank you!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-post-type-permalink-overwritten/">Piklist Post Type permalink overwritten</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Creating a CPT in a plugin &#8211; what am I doing wrong?</title>
+		<link>https://piklist.com/support/topic/creating-a-cpt-in-a-plugin-what-am-i-doing-wrong/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2016 23:38:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-a-cpt-in-a-plugin-what-am-i-doing-wrong/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;m using best practices to add a custom post type to a new site I&#8217;m developing. But I&#8217;ve stumbled right at step one! Sigh&#8230; I&#8217;ve created and activated a simple plugin, to which I&#8217;ve added code based on the example here: piklist_post_types [Filter] Everything in my one PHP file is below &#8211; I can&#8217;t [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-a-cpt-in-a-plugin-what-am-i-doing-wrong/">Creating a CPT in a plugin &#8211; what am I doing wrong?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! I&#8217;m using best practices to add a custom post type to a new site I&#8217;m developing. But I&#8217;ve stumbled right at step one! Sigh&#8230;  I&#8217;ve created and activated a simple plugin, to which I&#8217;ve added code based on the example here:</p>
+<blockquote data-secret="P8dCFOgchJ" class="wp-embedded-content"><p><a href="https://piklist.com/learn/doc/piklist_post_types/">piklist_post_types [Filter]</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://piklist.com/learn/doc/piklist_post_types/embed/#?secret=P8dCFOgchJ" data-secret="P8dCFOgchJ" width="500" height="282" title="&#8220;piklist_post_types [Filter]&#8221; &#8212; Learn Piklist" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>Everything in my one PHP file is below &#8211; I can&#8217;t figure out what I&#8217;ve done wrong&#8230; hope someone can enlighten me. Thanks!</p>
+<p>Adam</p>
+<pre><code>&lt;?php
+/*
+Plugin Name: Recipes etc with Piklist 
+Description: Adds custom post types and other features using the Piklist plugin.
+Version: 1.0
+Author: Adam Abrams
+Author URI: http://www.adamabramsdesign.com
+Plugin Type: Piklist
+License: GPL2
+*/
+
+add_filter(&#039;piklist_post_types&#039;, &#039;piklist_demo_post_types&#039;);
+  function piklist_demo_post_types($post_types)
+  {
+    $post_types[&#039;recipes&#039;] = array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Recipes&#039;)
+      ,&#039;title&#039; =&gt; __(&#039;Enter a new Recipe&#039;)
+      ,&#039;menu_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-menu-icon.svg&#039;
+      ,&#039;page_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-page-icon-32.png&#039;
+      ,&#039;supports&#039; =&gt; array(
+        &#039;title&#039;
+        ,&#039;post-formats&#039;
+      )
+      ,&#039;public&#039; =&gt; true
+      ,&#039;admin_body_class&#039; =&gt; array(
+        &#039;custom-body-class&#039;
+      )
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;recipe&#039;
+      )
+      ,&#039;capability_type&#039; =&gt; &#039;post&#039;
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Recipe&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Assigned to&#039;)
+      )
+      ,&#039;hide_meta_box&#039; =&gt; array(
+        ,&#039;author&#039;
+      )
+      ,&#039;status&#039; =&gt; array(
+        &#039;new&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;New&#039;
+          ,&#039;public&#039; =&gt; false
+        )
+        ,&#039;pending&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Pending Review&#039;
+          ,&#039;public&#039; =&gt; false
+        )
+        ,&#039;demo&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Recipe&#039;
+          ,&#039;public&#039; =&gt; true
+          ,&#039;exclude_from_search&#039; =&gt; true
+          ,&#039;show_in_admin_all_list&#039; =&gt; true
+          ,&#039;show_in_admin_status_list&#039; =&gt; true
+       )
+        ,&#039;lock&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Lock&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+    );
+
+    return $post_types;
+  }
+
+?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-a-cpt-in-a-plugin-what-am-i-doing-wrong/">Creating a CPT in a plugin &#8211; what am I doing wrong?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Front End Form Saving to Current Post ID</title>
+		<link>https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/</link>
+		
+		<dc:creator><![CDATA[rharrigan]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2016 20:32:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/</guid>
+
+					<description><![CDATA[<p>First time posting to the Piklist Community, but I am very willing to get involved. I will have other tickets, but I&#8217;ll start with this one. Thanks for your work. I want to save info from the Front End Form (FEF) on the current post. I stumbled on a comment somewhere that said there is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/">Front End Form Saving to Current Post ID</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>First time posting to the Piklist Community, but I am very willing to get involved. I will have other tickets, but I&#8217;ll start with this one. Thanks for your work. </p>
+<p>I want to save info from the Front End Form (FEF) on the current post. I stumbled on a comment somewhere that said there is no direct functionality because multiple posts can be updated in one FEF submisison, so I am looking for a way to overload that. Currently, my code only creates a new post of the same below post type.</p>
+<p>The following topics seemed most relevant:<br />
+&#8211; https://piklist.com/learn/doc/arent-fields-saving/<br />
+&#8211; https://piklist.com/support/topic/how-can-i-get-the-id-of-new-post-created-by-front-end-form/</p>
+<p>When using &#8216;ID&#8217; as in</p>
+<pre><code>
+$id = get_the_ID();
+
+// Where to save this form
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_type&#039;
+	,&#039;value&#039; =&gt; &#039;custom_post_type_1&#039;
+));
+
+// New post ID
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;ID&#039;
+	,&#039;value&#039; =&gt; ($id ? $id : &#039;&#039;)
+	,&#039;required&#039; =&gt; false,
+));
+</code></pre>
+<p>I get a &#8220;Class &#8216;Layers_Widget_Migrator&#8217; not found&#8221; conflict with my LayersWP theme. Don&#8217;t know what&#8217;s going on there yet. I do not get a conflict when the field using </p>
+<pre><code>
+$id = get_the_ID();
+// Where to save this form
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_type&#039;
+	,&#039;value&#039; =&gt; &#039;custom_post_type_1&#039;
+));
+
+// New post ID
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_id_backend&#039;
+	,&#039;value&#039; =&gt; ($id ? $id : &#039;&#039;)
+	,&#039;required&#039; =&gt; false,
+));
+</code></pre>
+<p>$id successfully fills. I am using version 0.9.9.9. I tried using code from @mcmaster, but I&#8217;m not too sure.</p>
+<pre><code>
+add_action( &#039;piklist_save_field-post&#039;, &#039;my_grab_new_post_id&#039; );
+function my_grab_new_post_id ( $fields ) {
+	global $my_new_post_id;
+	$my_new_post_id = $fields[&#039;post_id_backend&#039;][&#039;object_id&#039;];
+}
+
+add_filter( &#039;wp_redirect&#039;, &#039;my_stick_new_post_id_in_redirect&#039;, 10, 2 );
+function my_stick_new_post_id_in_redirect ( $location, $status ) {
+	global $my_new_post_id;
+	return( $location.&quot;?ID=$my_new_post_id&quot; );	
+}
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/">Front End Form Saving to Current Post ID</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>problem with conditional field and (I think) scope</title>
+		<link>https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/</link>
+		
+		<dc:creator><![CDATA[morganrt]]></dc:creator>
+		<pubDate>Thu, 30 Jun 2016 20:33:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m new to Piklist, working on a simple plugin that creates a custom post with a couple of custom admin fields. An answer to this field determines whether another field appears on a public comment form. Admin side Custom post type: Question, using the title field to write the question. Custom admin only field: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/">problem with conditional field and (I think) scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I&#8217;m new to Piklist, working on a simple plugin that creates a custom post with a couple of custom admin fields. An answer to this field determines whether another field appears on a public comment form.</p>
+<p><strong>Admin side</strong><br />
+Custom post type: Question, using the title field to write the question.<br />
+Custom admin only field: &#8220;response_type&#8221; (radio box with a few options)</p>
+<p><strong>Public</strong> comment form field: &#8220;response&#8221; (whether it&#8217;s yes or no, a rating, etc should be determined by the custom field in Question).</p>
+<p>When I have conditional fields appear in the same file, they work as expected. In the case above, the response_type is in the metabox file with other Question related fields and only appears in admin. The conditional field appears in a separate comment_form-metabox.php file and when they are apart, they don&#8217;t work.</p>
+<p>I found the post at the link below and thought the solution was adding scope to the conditions array and tried numerous scope combinations.<br />
+https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/</p>
+<p>Example appears in question-metabox.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;radio&#039;,
+	&#039;field&#039; =&gt; &#039;response_type&#039;,
+	&#039;label&#039; =&gt; &#039;Response Type&#039;,
+	&#039;help&#039; =&gt; &#039;This is help text.&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;choices&#039; =&gt; array(
+		&#039;yn&#039; =&gt; &#039;Yes or No&#039;,
+		&#039;ad&#039; =&gt; &#039;Agree or Disagree&#039;,
+		&#039;Rating1toX&#039; =&gt; &#039;Rating: 1 to X&#039;,
+		&#039;RatingXto0toX&#039; =&gt; &#039;Rating: -X to 0 to X&#039;
+	),
+	&#039;value&#039; =&gt; &#039;yn&#039;,
+	&#039;required&#039;   =&gt; true
+));</code></pre>
+<p>Example appears in public facing comment_form_metabox.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+		&#039;type&#039; =&gt; &#039;radio&#039;,
+		&#039;field&#039; =&gt; &#039;response&#039;,
+		&#039;label&#039; =&gt; &#039;Response&#039;,
+		&#039;scope&#039; =&gt; &#039;comment_meta&#039;,
+		&#039;list&#039; =&gt; false,
+		&#039;choices&#039; =&gt; array(
+			&#039;Yes&#039; =&gt; &#039;Yes&#039;,
+			&#039;No&#039; =&gt; &#039;No&#039;
+		),
+		&#039;conditions&#039; =&gt; array(
+   			array(
+   			&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+    		&#039;field&#039; =&gt; &#039;response_type&#039;,
+    		&#039;value&#039; =&gt; &#039;yn&#039;
+   			))
+   		));
+</code></pre>
+<p>Hopefully, it&#8217;s easily fixed. I don&#8217;t discount the possibility I&#8217;ve misunderstood something and/or have been staring at this too long to see the obvious.</p>
+<p>Many thanks,<br />
+Morgan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/">problem with conditional field and (I think) scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>menu_icon not interpreted as label</title>
+		<link>https://piklist.com/support/topic/menu_icon-not-interpreted-as-label/</link>
+		
+		<dc:creator><![CDATA[sajonara]]></dc:creator>
+		<pubDate>Thu, 14 Jan 2016 03:02:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/menu_icon-not-interpreted-as-label/</guid>
+
+					<description><![CDATA[<p>When I create a new custom post type I use a $labels array to summarize all that can be put in the &#039;labels&#039; post type array, like so: $post_types[&#039;ng_game&#039;] = array( &#039;labels&#039; =&#62; $labels, &#039;title&#039; =&#62; __(&#039;Spiele&#039;), &#039;public&#039; =&#62; true, &#039;publicly_queryable&#039; =&#62; true, &#039;menu_position&#039; =&#62; 5, &#039;show_ui&#039; =&#62; true, &#039;show_in_menu&#039; =&#62; true, &#039;show_in_nav_menus&#039; =&#62; true, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/menu_icon-not-interpreted-as-label/">menu_icon not interpreted as label</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I create a new custom post type I use a <code>$labels</code> array to summarize all that can be put in the <code>&#039;labels&#039;</code> post type array, like so:</p>
+<pre><code>$post_types[&#039;ng_game&#039;] = array(
+&#039;labels&#039; =&gt; $labels,
+&#039;title&#039; =&gt; __(&#039;Spiele&#039;),
+&#039;public&#039; =&gt; true,
+&#039;publicly_queryable&#039; =&gt; true,
+&#039;menu_position&#039; =&gt; 5,
+&#039;show_ui&#039; =&gt; true,
+&#039;show_in_menu&#039; =&gt; true,
+&#039;show_in_nav_menus&#039; =&gt; true,
+&#039;query_var&#039; =&gt; true,
+&#039;capability_type&#039; =&gt; &#039;page&#039;,
+...
+);</code></pre>
+<p>But if add the <code>menu_icon</code> to the <code>$labels</code> array it is not interpreted, I have to add it somewhere between the above shown code.</p>
+<p>This is just a remark as I found it a bit odd that <code>menu_name</code> could be added to the <code>$labels</code> array but <code>menu_icon</code> cannot.</p>
+<p>Kind regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/menu_icon-not-interpreted-as-label/">menu_icon not interpreted as label</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Categories field in quick edit not showing</title>
+		<link>https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/</link>
+		
+		<dc:creator><![CDATA[vagelis]]></dc:creator>
+		<pubDate>Mon, 17 Aug 2015 10:40:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/</guid>
+
+					<description><![CDATA[<p>Hi. I have created a custom post type with piklist and I&#8217;ve noticed that in the quick edit area the categories field is empty(I&#8217;ve inspected over it and all the are display:none). The custom taxonomies field below is showing fine. This happens only in the quick edit area. In the full edit screen they appear [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/">Categories field in quick edit not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi. I have created a custom post type with piklist and I&#8217;ve noticed that in the quick edit area the categories field is empty(I&#8217;ve inspected over it and all the </p>
+<li> are display:none). The custom taxonomies field below is showing fine. This happens only in the quick edit area. In the full edit screen they appear normally. The same field in post categories also is showing up normally in quick edit. Any ideas?
+<p>My post type code: </p>
+<pre><code>function yacht_post_types($post_types) {
+
+$post_types[&#039;yacht&#039;] = array(
+      &#039;labels&#039; 			=&gt; piklist(&#039;post_type_labels&#039;, &#039;Yacht&#039;)
+      ,&#039;title&#039; 			=&gt; __(&#039;Όνομα σκάφους&#039;)
+      ,&#039;menu_icon&#039; =&gt; &#039;dashicons-sos&#039;
+      ,&#039;capability_type&#039;  =&gt; &#039;post&#039;
+
+      ,&#039;supports&#039; 		=&gt; array(
+        &#039;title&#039;
+        ,&#039;revisions&#039;
+        ,&#039;thumbnail&#039;
+        ,&#039;editor&#039;
+      )
+      ,&#039;public&#039; 		=&gt; true
+
+      ,&#039;taxonomies&#039;		=&gt; array(&#039;category&#039;, &#039;manufacturers&#039;)
+
+      ,&#039;has_archive&#039;	=&gt; true
+      ,&#039;rewrite&#039; 		=&gt; array(
+        &#039;slug&#039; 			=&gt; &#039;yacht&#039;
+      )
+      ,&#039;edit_columns&#039; 	=&gt; array(
+        &#039;title&#039; 		=&gt; __(&#039;Name&#039;)
+		,&#039;post_states&#039; 	=&gt; __(&#039;Status&#039;)
+      )
+      ,&#039;hide_meta_box&#039; 	=&gt; array(
+        &#039;slug&#039;
+        ,&#039;author&#039;
+      )
+      ,&#039;post_states&#039; 	=&gt; true
+    );
+
+    return $post_types;
+}
+
+add_filter(&#039;piklist_post_types&#039;, &#039;yacht_post_types&#039;);
+
+function yacht_rewrite_flush() {
+
+    // codex_yachts_init();
+
+    yacht_post_types();
+
+    flush_rewrite_rules();
+}
+
+register_activation_hook( __FILE__, &#039;yacht_rewrite_flush&#039; );</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/categories-field-in-quick-edit-not-showing/">Categories field in quick edit not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Stoping Custom Post Types from using default &#034;Post&#034; structure</title>
+		<link>https://piklist.com/support/topic/stoping-custom-post-types-using-user-defined-structure/</link>
+		
+		<dc:creator><![CDATA[Dennis]]></dc:creator>
+		<pubDate>Tue, 16 Jun 2015 10:43:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/stoping-custom-post-types-using-user-defined-structure/</guid>
+
+					<description><![CDATA[<p>Greetings, I have the following problem: 1) I am using custom Permalink structure for standard posts (Settings / Permalinks -&#62;) &#8221; &#60;Root / Domain&#62;/blog/%year%%monthnum%%day%/%postname%/ &#8221; (only intended for Blog entries, using WordPress as a CMS too in this case) 2) Now I want to set up a Custom Post Type with the slug: &#8221; &#60;Root [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/stoping-custom-post-types-using-user-defined-structure/">Stoping Custom Post Types from using default &quot;Post&quot; structure</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Greetings, I have the following problem:<br />
+<strong>1)</strong> I am using custom Permalink structure for standard posts (Settings / Permalinks -&gt;)<br />
+&#8221; &lt;Root / Domain&gt;/blog/%year%%monthnum%%day%/%postname%/ &#8221;<br />
+(only intended for Blog entries, using WordPress as a CMS too in this case)</p>
+<p><strong>2)</strong> Now I want to set up a Custom Post Type with the slug:<br />
+&#8221; &lt;Root / Domain&gt;/lexicon/&lt;custom post single&gt; &#8221;<br />
+(Defined Slug is &#8220;lexicon&#8221;)</p>
+<p><strong>Problem:</strong> The unintended result for the Lexicon type in the system is the diisplayed slug:<br />
+&#8221; &lt;Root / Domain&gt;<strong>/blog/</strong>lexicon/&lt;custom post single&gt; &#8221;</p>
+<p>I searched the web for this but found nothing about it. It seems to be something Piklist related. (Only solution I got was to change the &#8216;Post&#8217; type structure manually, but this would be difficult because of the included Date formats.)</p>
+<p>So is there a Way, to make the root folder the start for the custom posts slug?<br />
+I don&#8217;t remember such a problem with Custom Post Types before so could this be an unintended kind of behavior regarding Piklist? Or did I miss an available parameter to adjust this?</p>
+<p>Thanks very much.<br />
+Best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/stoping-custom-post-types-using-user-defined-structure/">Stoping Custom Post Types from using default &quot;Post&quot; structure</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Select box for custom post type</title>
+		<link>https://piklist.com/support/topic/select-box-for-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[ehime]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2015 13:06:55 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select-box-for-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Good day, I&#8217;m trying to create a select box that contains the posts of a custom post type as it&#8217;s choices. For some reason it&#8217;s not working. This is what i have below: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;member&#039; ,&#039;label&#039; =&#62; &#039;Member&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) ,&#039;choices&#039; =&#62; piklist( get_posts( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-box-for-custom-post-type/">Select box for custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Good day,</p>
+<p>I&#8217;m trying to create a select box that contains the posts of a custom post type as it&#8217;s choices. For some reason it&#8217;s not working. This is what i have below:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;member&#039;
+    ,&#039;label&#039; =&gt; &#039;Member&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+   ,&#039;choices&#039; =&gt; piklist(
+     get_posts(
+       array(
+	&#039;post_type&#039; =&gt; &#039;member&#039;
+        ,&#039;orderby&#039; =&gt; &#039;ID&#039;
+        ,&#039;order&#039; =&gt; &#039;asc&#039;
+       )
+       ,&#039;objects&#039;
+     )
+     ,array(
+       &#039;ID&#039;
+       ,&#039;title&#039;
+     )
+    )
+));</code></pre>
+<p>It just displays the select box without the contents. I don&#8217;t know what i could be doing wrong. Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-box-for-custom-post-type/">Select box for custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Featured image support not working</title>
+		<link>https://piklist.com/support/topic/featured-image-support-not-working/</link>
+		
+		<dc:creator><![CDATA[azizultex]]></dc:creator>
+		<pubDate>Sat, 03 Jan 2015 06:41:26 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/featured-image-support-not-working/</guid>
+
+					<description><![CDATA[<p>Hi there, I am registering a new post type. I added add_theme_support(&#039;post-thumbnails&#039;); and `add_filter(&#8216;piklist_post_types&#8217;, &#8216;worksfire_post_type&#8217;); function worksfire_post_type($post_types) { $post_types[&#8216;staff&#8217;] = array( &#8216;title&#8217; =&#62; __(&#8216;Enter Custom Title&#8217;) ,&#8217;labels&#8217; =&#62; piklist(&#8216;post_type_labels&#8217;, &#8216;Staff&#8217;) ,&#8217;public&#8217; =&#62; true ,&#8217;rewrite&#8217; =&#62; array( &#8216;slug&#8217; =&#62; &#8216;staff&#8217; ) ,&#8217;menu_icon&#8217; =&#62; &#8216;dashicons-groups&#8217; ,&#8217;page_icon&#8217; =&#62; &#8216;dashicons-groups&#8217; ,&#8217;supports&#8217; =&#62; array( &#8216;author&#8217; ,&#8217;thumbnail&#8217; ,&#8217;title&#8217; ,&#8217;editor&#8217; ,&#8217;custom-fields&#8217; ) [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/featured-image-support-not-working/">Featured image support not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,<br />
+I am registering a new post type. I added <code>add_theme_support(&#039;post-thumbnails&#039;);</code> and `add_filter(&#8216;piklist_post_types&#8217;, &#8216;worksfire_post_type&#8217;);<br />
+function worksfire_post_type($post_types)<br />
+{<br />
+  $post_types[&#8216;staff&#8217;] = array(<br />
+  	&#8216;title&#8217; =&gt; __(&#8216;Enter Custom Title&#8217;)<br />
+    ,&#8217;labels&#8217; =&gt; piklist(&#8216;post_type_labels&#8217;, &#8216;Staff&#8217;)<br />
+    ,&#8217;public&#8217; =&gt; true<br />
+    ,&#8217;rewrite&#8217; =&gt; array(<br />
+      &#8216;slug&#8217; =&gt; &#8216;staff&#8217;<br />
+    )<br />
+	,&#8217;menu_icon&#8217; =&gt; &#8216;dashicons-groups&#8217;<br />
+	,&#8217;page_icon&#8217; =&gt; &#8216;dashicons-groups&#8217;<br />
+    ,&#8217;supports&#8217; =&gt; array(<br />
+      &#8216;author&#8217;<br />
+      ,&#8217;thumbnail&#8217;<br />
+      ,&#8217;title&#8217;<br />
+      ,&#8217;editor&#8217;<br />
+      ,&#8217;custom-fields&#8217;<br />
+    )<br />
+	,&#8217;edit_columns&#8217; =&gt; array(<br />
+	   &#8216;title&#8217; =&gt; __(&#8216;Staff Name&#8217;)<br />
+	 )<br />
+    ,&#8217;hide_meta_box&#8217; =&gt; array(<br />
+      &#8216;slug&#8217;<br />
+      ,&#8217;author&#8217;<br />
+      ,&#8217;revisions&#8217;<br />
+      ,&#8217;comments&#8217;<br />
+      ,&#8217;commentstatus&#8217;<br />
+    )<br />
+  );</p>
+<p>  return $post_types;<br />
+}`</p>
+<p>but I can&#8217;t see the featured image upload field. Am I doing anything wrong? </p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/featured-image-support-not-working/">Featured image support not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom Post Type question</title>
+		<link>https://piklist.com/support/topic/custom-post-type-question/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Fri, 13 Dec 2013 00:14:07 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/custom-post-type-question/</guid>
+
+					<description><![CDATA[<p>Hi folks. I know this may be a bit outside of the scope of this forum, but hopefully there&#8217;s enough overlap for a quick reply. I&#8217;d like to have some custom metafields that only show up in certain kinds of posts. I presume i need a custom post type to achieve this. But I&#8217;m running [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-type-question/">Custom Post Type question</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi folks. I know this may be a bit outside of the scope of this forum, but hopefully there&#8217;s enough overlap for a quick reply.</p>
+<p>I&#8217;d like to have some custom metafields that only show up in certain kinds of posts. I presume i need a custom post type to achieve this. But I&#8217;m running into my limited familiarity with the whole concept of custom posts types.</p>
+<p>I went ahead and followed the instructions here:</p>
+<p>http://piklist.com/user-guide/tutorials/registering-custom-post-types/</p>
+<p>But I ended up with a post type that doesn&#8217;t have any Title or content fields! And not sure why, or how to get them.</p>
+<p>Am I doing this even somewhat correctly?  8^)</p>
+<p>Thanks, and if the answer is &#8220;go study the Codex and get back to me&#8221;, I&#8217;ll accept that! (Already doing some of  that but still stumped at this point however&#8230;)</p>
+<p>adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-type-question/">Custom Post Type question</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

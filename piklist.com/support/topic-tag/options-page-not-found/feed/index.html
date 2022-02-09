@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>options page not found &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/options-page-not-found/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 17 Dec 2016 17:59:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Workflow Settings ends up with &#034;ERROR: options page not found&#034; on save</title>
+		<link>https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/</link>
+		
+		<dc:creator><![CDATA[dameer]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2016 10:58:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/</guid>
+
+					<description><![CDATA[<p>Hi! Not sure whether it&#8217;s WP 4.7 or myself but I can&#8217;t solve the problem. I&#8217;ve made a Piklist plugin. The plugin settings page was added to admin menu like this: public function kd_admin_menu( $pages ) { // add settings page $pages[] = array( &#039;page_title&#039; =&#62; NULL, &#039;menu_title&#039; =&#62; esc_attr__( &#039;Settings&#039;, &#039;kd&#039; ), &#039;sub_menu&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/">Workflow Settings ends up with &quot;ERROR: options page not found&quot; on save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+Not sure whether it&#8217;s WP 4.7 or myself but I can&#8217;t solve the problem.</p>
+<p>I&#8217;ve made a Piklist plugin. The plugin settings page was added to admin menu like this:</p>
+<pre><code>public function kd_admin_menu( $pages ) {
+
+	// add settings page
+	$pages[] = array(
+		&#039;page_title&#039; =&gt; NULL, 
+		&#039;menu_title&#039; =&gt; esc_attr__( &#039;Settings&#039;, &#039;kd&#039; ), 
+		&#039;sub_menu&#039; =&gt; &#039;edit.php?post_type=kd&#039;,
+		&#039;capability&#039; =&gt; &#039;manage_options&#039;, 
+		&#039;menu_slug&#039; =&gt; &#039;general_settings&#039;, 
+		&#039;setting&#039; =&gt; &#039;general_settings&#039;, 
+		&#039;single_line&#039; =&gt; true, 
+		&#039;default_tab&#039; =&gt; esc_attr__( &#039;General settings&#039;, &#039;kd&#039; ), 
+		&#039;save_text&#039; =&gt; esc_attr__( &#039;Save Options&#039;, &#039;kd&#039; )
+	);
+
+	return $pages;
+	
+}</code></pre>
+<p>Under my plugin folder I&#8217;ve created &#8220;/parts/workflows/&#8221; folder which is used to hold plugin settings across 4 tabs. It means that each file represents one tab + header file. Here they are:</p>
+<p>&#8212; /parts/workflows/plugin-settings-header.php  &#8212;</p>
+<pre><code>/*
+Flow: Plugin Options
+Page: edit.php, general_settings
+Post Type: kd
+Header: true
+Position: title
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-general.php  &#8212;</p>
+<pre><code>
+/*
+Title: Features Panel
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 10
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-single-post.php  &#8212;</p>
+<pre><code>/*
+Title: Single Post
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 20
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-archive.php  &#8212;</p>
+<pre><code>/*
+Title: Category
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 30
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-rewrite-rules.php  &#8212;</p>
+<pre><code>/*
+Title: Rewrite Rules
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 40
+*/</code></pre>
+<p>Of course, each of the files contains Piklist fields which I guess are irrelevant<br />
+in this case.</p>
+<p>Everything looks right, tab switching works fine, however, when I hit Save Options button, I end up with the blank WordPress page saying:<br />
+<strong>ERROR: options page not found.</strong></p>
+<p>Is there anything wrong with workflow header?</p>
+<p>Thanks for any clue!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/">Workflow Settings ends up with &quot;ERROR: options page not found&quot; on save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

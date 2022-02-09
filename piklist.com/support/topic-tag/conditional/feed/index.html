@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>conditional &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/conditional/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 04 Feb 2020 13:49:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Conditional resets fields when hiding fields</title>
+		<link>https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Tue, 04 Feb 2020 13:49:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/</guid>
+
+					<description><![CDATA[<p>I have added &#8216;reset&#8217; =&#62; &#8216;false&#8217; to the fields, but when hiding and showing the fields (via &#8216;product_show_faq&#8217;) it still clears the very first field &#8216;product_faq_title&#8217; &#8211; not any of the other fields &#8211; not even a second (repeated) &#8216;product_faq_title&#8217;. A bug? &#60;?php /* Title: FAQ Post Type: product Priority: high Order: -1 */ piklist(&#039;field&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/">Conditional resets fields when hiding fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have added &#8216;reset&#8217; =&gt; &#8216;false&#8217; to the fields, but when hiding and showing the fields (via  &#8216;product_show_faq&#8217;) it still clears the very first field &#8216;product_faq_title&#8217; &#8211; not any of the other fields &#8211; not even a second (repeated) &#8216;product_faq_title&#8217;. A bug?</p>
+<pre><code>&lt;?php
+/*
+Title: FAQ
+Post Type: product
+Priority: high
+Order: -1
+*/
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;radio&#039;,
+	&#039;field&#039; =&gt; &#039;product_show_faq&#039;,
+	&#039;label&#039; =&gt; &#039;Show FAQ?&#039;,
+	&#039;attributes&#039; =&gt; array(
+		&#039;class&#039; =&gt; &#039;text&#039;,
+	),
+	&#039;choices&#039; =&gt; array(
+		&#039;yes&#039; =&gt; &#039;Yes&#039;,
+		&#039;no&#039; =&gt; &#039;No&#039;
+	),
+	&#039;value&#039; =&gt; &#039;no&#039;
+));
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;product_faq&#039;,
+	&#039;label&#039; =&gt; &#039;FAQ&#039;,
+	&#039;list&#039; =&gt; false,
+	&#039;reset&#039; =&gt; &#039;false&#039;,
+	&#039;conditions&#039; =&gt; array(
+		array(
+			&#039;field&#039; =&gt; &#039;product_show_faq&#039;,
+			&#039;value&#039; =&gt; &#039;yes&#039;
+		)
+	),
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;reset&#039; =&gt; &#039;false&#039;,
+			&#039;field&#039; =&gt; &#039;product_faq_title&#039;,
+			&#039;required&#039; =&gt; false,
+			&#039;columns&#039; =&gt; 12,
+			&#039;attributes&#039; =&gt; array(
+				&#039;placeholder&#039; =&gt; &#039;Type question&#039;
+			),
+		),
+
+		array(
+			&#039;type&#039; =&gt; &#039;editor&#039;,
+			&#039;reset&#039; =&gt; &#039;false&#039;,
+			&#039;field&#039; =&gt; &#039;product_faq_content&#039;, // &#039;post_content&#039; is the field name of the WordPress DEFAULT editor
+			&#039;value&#039; =&gt; &#039;&#039;,
+			//&#039;template&#039; =&gt; &#039;field&#039;, // Only display the field not the label
+			&#039;options&#039; =&gt; array( // Pass any option that is accepted by wp_editor()
+				&#039;wpautop&#039; =&gt; true,
+				&#039;media_buttons&#039; =&gt; false,
+				&#039;shortcode_buttons&#039; =&gt; false,
+				&#039;teeny&#039; =&gt; true,
+				&#039;dfw&#039; =&gt; false,
+				&#039;quicktags&#039; =&gt; true,
+				&#039;drag_drop_upload&#039; =&gt; false,
+				&#039;tinymce&#039; =&gt; array(
+					&#039;resize&#039; =&gt; false,
+					&#039;wp_autoresize_on&#039; =&gt; true,
+					&#039;toolbar1&#039; =&gt; &#039;bold,italic,underline,link,unlink&#039;,
+					&#039;toolbar2&#039; =&gt; &#039;&#039;,
+				)
+			)
+		)
+	)
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/">Conditional resets fields when hiding fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditionally Shown Fields: Saved value reset when condition changes</title>
+		<link>https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/</link>
+		
+		<dc:creator><![CDATA[riotxoa]]></dc:creator>
+		<pubDate>Fri, 04 Aug 2017 08:38:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/</guid>
+
+					<description><![CDATA[<p>Hi Piklist team, I&#8217;m implementing some conditions to show or hide fields when those conditions&#8217; values changes. The conditions are implemented through radio buttons and simple select lists. Showing and hiding works fine, but i&#8217;m having troubles when i&#8217;m consulting a saved post with conditional values saved. If I change the value of a radio [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/">Conditionally Shown Fields: Saved value reset when condition changes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Piklist team,</p>
+<p>I&#8217;m implementing some conditions to show or hide fields when those conditions&#8217; values changes. The conditions are implemented through radio buttons and simple select lists.</p>
+<p>Showing and hiding works fine, but i&#8217;m having troubles when i&#8217;m consulting a saved post with conditional values saved. If I change the value of a radio button, then the shown fields change correctly, but if I change back the radio button to its original status, then the value of the conditionally shown (and saved) field disappear (it appears blank).</p>
+<p>Here is my code. If I change de first radio status to &#8216;No&#8217;, and then go back to &#8216;Sí&#8217; (Yes), the others fields&#8217; values reset:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;radio&#039;,
+    &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+    &#039;label&#039; =&gt; &#039;¿Botón de enlace?&#039;,
+    &#039;list&#039; =&gt; false,
+    &#039;value&#039; =&gt; 0, // set default value
+    &#039;choices&#039; =&gt; array(
+        0 =&gt; &#039;No&#039;,
+        1 =&gt; &#039;Sí&#039;,
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_text&#039;,
+    &#039;label&#039; =&gt; &#039;Texto del botón de enlace&#039;,
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+    &#039;label&#039; =&gt; &#039;Tipo de enlace&#039;,
+    &#039;value&#039; =&gt; &#039;url&#039;,
+    &#039;choices&#039; =&gt; array(
+        &#039;url&#039; =&gt; &#039;URL Externa&#039;,
+        &#039;post&#039; =&gt; &#039;Entrada de Blog&#039;,
+        &#039;portfolio&#039; =&gt; &#039;Portfolio&#039;,
+        &#039;page&#039; =&gt; &#039;Página&#039;
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;url&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_url_url&#039;,
+    &#039;label&#039; =&gt; &#039;URL enlazada&#039;,
+    &#039;columns&#039; =&gt; 12,
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;url&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_post_url&#039;,
+    &#039;label&#039; =&gt; &#039;Entrada de Blog enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;post&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;post&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_portfolio_url&#039;,
+    &#039;label&#039; =&gt; &#039;Entrada de Portfolio enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;avada_portfolio&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;portfolio&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_page_url&#039;,
+    &#039;label&#039; =&gt; &#039;Página enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;page&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;page&#039;
+        )
+    )
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/">Conditionally Shown Fields: Saved value reset when condition changes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>conditional field troubles</title>
+		<link>https://piklist.com/support/topic/conditional-field-troubles/</link>
+		
+		<dc:creator><![CDATA[morganrt]]></dc:creator>
+		<pubDate>Wed, 20 Jul 2016 22:13:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-field-troubles/</guid>
+
+					<description><![CDATA[<p>Hello, I can&#8217;t seem to get an HTML field to appear conditionally in a plugin I&#8217;m writing. I&#8217;ve got a radio with two options and an HTML field. The HTML field should only appear after someone clicks a radio button. In conditions, I&#8217;ve been using an empty value =&#62; &#8221; or value =&#62; &#8216;none&#8217; (preset [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-field-troubles/">conditional field troubles</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I can&#8217;t seem to get an HTML field to appear conditionally in a plugin I&#8217;m writing.</p>
+<p>I&#8217;ve got a radio with two options and an HTML field. The HTML field should only appear after someone clicks a radio button. In conditions, I&#8217;ve been using an empty value =&gt; &#8221; or value =&gt; &#8216;none&#8217; (preset in the choice field) along with compare =&gt; &#8216;!=&#8217;. Nothing I try with != works. </p>
+<p>I&#8217;m not sure if it is intended behaviour, but &#8216;none&#8217; only works if it is one of the choices. I only wanted to use it as the default, not make it a user choosable option.</p>
+<p>There are numerious possible choice fields beyond the radio button I mention above, so I&#8217;d like to avoid trying to put in all options. There will only ever be one choice to determine whther the HTML should appear. It works much better to say &#8216;don&#8217;t show this if that field&#8217;s value is empty or not set or otherwise not one of its choices&#8217;.</p>
+<p>An example choice field:</p>
+<pre><code>piklist(&#039;field&#039;,array(
+    &#039;type&#039; =&gt; &#039;radio&#039;,
+    &#039;field&#039; =&gt; &#039;response_structured&#039;,
+    &#039;label&#039; =&gt; &#039;Response&#039;,
+    &#039;scope&#039; =&gt; &#039;comment_meta&#039;,
+    &#039;list&#039; =&gt; false,
+    &#039;choices&#039; =&gt; array(
+		&#039;yes&#039; =&gt; &#039;Yes&#039;,
+		&#039;no&#039; =&gt; &#039;No&#039;
+		),
+	&#039;required&#039; =&gt; true
+);</code></pre>
+<p>The conditional field:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;html&#039;,
+	&#039;field&#039; =&gt; &#039;recorder&#039;,
+	&#039;label&#039; =&gt; &#039;A label...&#039;,
+	&#039;help&#039; =&gt; &#039;This is help text.&#039;,
+	&#039;scope&#039; =&gt; &#039;comment_meta&#039;,
+	&#039;reset&#039; =&gt; &#039;false&#039;,
+	&#039;value&#039; =&gt; &#039;&lt;div&gt;Some HTML goes here&lt;/div&gt;&#039;,
+ &#039;conditions&#039; =&gt; array(
+ 		array(
+         	&#039;field&#039; =&gt; &#039;response_structured&#039;,
+         	&#039;scope&#039; =&gt; &#039;comment_meta&#039;,
+         	&#039;value&#039; =&gt; &#039;&#039;,
+         	&#039;compare&#039; =&gt; &#039;!=&#039;
+       		))
+)); 
+</code></pre>
+<p>I&#8217;ve left a lot of stuff in that I&#8217;ve tried with and without. Scope, reset and value seem to make no difference. Nothing I do with compare works.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-field-troubles/">conditional field troubles</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>problem with conditional field and (I think) scope</title>
+		<link>https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/</link>
+		
+		<dc:creator><![CDATA[morganrt]]></dc:creator>
+		<pubDate>Thu, 30 Jun 2016 20:33:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m new to Piklist, working on a simple plugin that creates a custom post with a couple of custom admin fields. An answer to this field determines whether another field appears on a public comment form. Admin side Custom post type: Question, using the title field to write the question. Custom admin only field: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/">problem with conditional field and (I think) scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I&#8217;m new to Piklist, working on a simple plugin that creates a custom post with a couple of custom admin fields. An answer to this field determines whether another field appears on a public comment form.</p>
+<p><strong>Admin side</strong><br />
+Custom post type: Question, using the title field to write the question.<br />
+Custom admin only field: &#8220;response_type&#8221; (radio box with a few options)</p>
+<p><strong>Public</strong> comment form field: &#8220;response&#8221; (whether it&#8217;s yes or no, a rating, etc should be determined by the custom field in Question).</p>
+<p>When I have conditional fields appear in the same file, they work as expected. In the case above, the response_type is in the metabox file with other Question related fields and only appears in admin. The conditional field appears in a separate comment_form-metabox.php file and when they are apart, they don&#8217;t work.</p>
+<p>I found the post at the link below and thought the solution was adding scope to the conditions array and tried numerous scope combinations.<br />
+https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/</p>
+<p>Example appears in question-metabox.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;radio&#039;,
+	&#039;field&#039; =&gt; &#039;response_type&#039;,
+	&#039;label&#039; =&gt; &#039;Response Type&#039;,
+	&#039;help&#039; =&gt; &#039;This is help text.&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;choices&#039; =&gt; array(
+		&#039;yn&#039; =&gt; &#039;Yes or No&#039;,
+		&#039;ad&#039; =&gt; &#039;Agree or Disagree&#039;,
+		&#039;Rating1toX&#039; =&gt; &#039;Rating: 1 to X&#039;,
+		&#039;RatingXto0toX&#039; =&gt; &#039;Rating: -X to 0 to X&#039;
+	),
+	&#039;value&#039; =&gt; &#039;yn&#039;,
+	&#039;required&#039;   =&gt; true
+));</code></pre>
+<p>Example appears in public facing comment_form_metabox.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+		&#039;type&#039; =&gt; &#039;radio&#039;,
+		&#039;field&#039; =&gt; &#039;response&#039;,
+		&#039;label&#039; =&gt; &#039;Response&#039;,
+		&#039;scope&#039; =&gt; &#039;comment_meta&#039;,
+		&#039;list&#039; =&gt; false,
+		&#039;choices&#039; =&gt; array(
+			&#039;Yes&#039; =&gt; &#039;Yes&#039;,
+			&#039;No&#039; =&gt; &#039;No&#039;
+		),
+		&#039;conditions&#039; =&gt; array(
+   			array(
+   			&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+    		&#039;field&#039; =&gt; &#039;response_type&#039;,
+    		&#039;value&#039; =&gt; &#039;yn&#039;
+   			))
+   		));
+</code></pre>
+<p>Hopefully, it&#8217;s easily fixed. I don&#8217;t discount the possibility I&#8217;ve misunderstood something and/or have been staring at this too long to see the obvious.</p>
+<p>Many thanks,<br />
+Morgan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/">problem with conditional field and (I think) scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditions for items in a listbox</title>
+		<link>https://piklist.com/support/topic/conditions-for-items-in-a-listbox/</link>
+		
+		<dc:creator><![CDATA[Fernando Lourenço]]></dc:creator>
+		<pubDate>Mon, 13 Jun 2016 15:46:23 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditions-for-items-in-a-listbox/</guid>
+
+					<description><![CDATA[<p>piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;select&#8217; ,&#8217;scope&#8217; =&#62; &#8216;post_meta&#8217; // Not used for settings sections ,&#8217;field&#8217; =&#62; &#8216;box&#8217; ,&#8217;label&#8217; =&#62; &#8216;Example Field&#8217; ,&#8217;description&#8217; =&#62; &#8216;This is a description of the field.&#8217; ,&#8217;attributes&#8217; =&#62; array( &#8216;class&#8217; =&#62; &#8216;text&#8217; ) ,&#8217;choices&#8217; =&#62; array( &#8216;box1&#8217; =&#62; &#8216;1&#8217; ,&#8217;box2&#8242; =&#62; &#8216;2&#8217; ) )); piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;select&#8217; ,&#8217;scope&#8217; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditions-for-items-in-a-listbox/">Conditions for items in a listbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;post_meta&#8217; // Not used for settings sections<br />
+,&#8217;field&#8217; =&gt; &#8216;box&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Example Field&#8217;<br />
+,&#8217;description&#8217; =&gt; &#8216;This is a description of the field.&#8217;<br />
+,&#8217;attributes&#8217; =&gt; array(<br />
+  &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+)<br />
+,&#8217;choices&#8217; =&gt; array(<br />
+  &#8216;box1&#8217; =&gt; &#8216;1&#8217;<br />
+  ,&#8217;box2&#8242; =&gt; &#8216;2&#8217;<br />
+)<br />
+));</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;post_meta&#8217; // Not used for settings sections<br />
+,&#8217;field&#8217; =&gt; &#8216;itens&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Itens&#8217;<br />
+,&#8217;attributes&#8217; =&gt; array(<br />
+  &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+)<br />
+,&#8217;choices&#8217; =&gt; array(<br />
+  &#8216;item01&#8217; =&gt; &#8216;Item 1&#8242; ***(visible only is field box = 1)<br />
+  ,&#8217;item02&#8217; =&gt; &#8216;Item 2&#8242; ***(visible only is field box = 2)<br />
+  ,&#8217;item03&#8217; =&gt; &#8216;Item 3&#8242; ***(visible only is field box = 1)<br />
+  ,&#8217;item04&#8217; =&gt; &#8216;Item 4&#8217;  ***(visible only is field box = 2)<br />
+)<br />
+));</p>
+<p>In this case the condition does not apply to the field (hide / uhide), but the items in the select field.<br />
+Is there a way to do this?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditions-for-items-in-a-listbox/">Conditions for items in a listbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add More with conditonals &#8211; JS performance</title>
+		<link>https://piklist.com/support/topic/add-more-with-conditonals-js-performance/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 23:24:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-with-conditonals-js-performance/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m running the 0.9.9.7 beta; I&#8217;ve got an Add More, each unit of which includes a conditional tied to a radio button. All functions fine, but I need about 20 Add More units to give the layout on the front end I&#8217;m looking for. Front-end JS performance slows as the number of units grows, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-with-conditonals-js-performance/">Add More with conditonals &#8211; JS performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I&#8217;m running the 0.9.9.7 beta; I&#8217;ve got an Add More, each unit of which includes a conditional tied to a radio button. All functions fine, but I need about 20 Add More units to give the layout on the front end I&#8217;m looking for.</p>
+<p>Front-end JS performance slows as the number of units grows, to the point where the page is locked up for &gt; 1 minute, with a CPU core pegged, when I either add a new unit, or attempt to re-order the existing ones. </p>
+<p>I can try disabling the conditionals, but wondered if there was anything else I can do to improve the performance.</p>
+<p>I&#8217;ve read this post:</p>
+<blockquote data-secret="78T1QzkVT2" class="wp-embedded-content"><p><a href="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/">performance drop with lots of conditional statements</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="display:none;" src="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/embed/#?secret=78T1QzkVT2" data-secret="78T1QzkVT2" width="500" height="282" title="Embedded WordPress Post" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>but I&#8217;m not sure if it&#8217;s relevant.<br />
+Here&#8217;s my code:</p>
+<pre><code>
+
+ piklist(&#039;field&#039;, array(
+   &#039;type&#039; =&gt; &#039;group&#039;
+   ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+   ,&#039;field&#039; =&gt; &#039;ap_link_list&#039;
+   ,&#039;add_more&#039; =&gt; true
+   ,&#039;label&#039; =&gt; __(&#039;Link Icons&#039;)
+   ,&#039;description&#039; =&gt; __(&#039;These link to individual Service Types (or flat pages)&#039;)
+   ,&#039;attributes&#039; =&gt; array(
+     &#039;class&#039; =&gt; &#039;&#039;
+   )
+   ,&#039;fields&#039; =&gt; array(
+   	array(
+	 &#039;type&#039; =&gt; &#039;radio&#039;
+	 ,&#039;field&#039; =&gt; &#039;link_type&#039;
+	 ,&#039;label&#039; =&gt; &#039;Links To&#039;
+	 ,&#039;attributes&#039; =&gt; array(
+	 &#039;class&#039; =&gt; &#039;text&#039;
+	 )
+	 ,&#039;choices&#039; =&gt; array(
+	   &#039;page&#039; =&gt; &#039;Page&#039;
+	   ,&#039;categories&#039; =&gt; &#039;Service Type&#039;
+	   ,&#039;path&#039; =&gt; &#039;Full Path&#039;
+	 )
+	)
+   	, array(
+	  &#039;type&#039; =&gt; &#039;select&#039;
+	  ,&#039;field&#039; =&gt; &#039;ap_category_id&#039;
+	  ,&#039;label&#039; =&gt; &#039;Service Type&#039;
+	  ,&#039;description&#039; =&gt; &#039;&#039;
+	  , &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;categories&#039;
+	  		)
+	  	)
+	  ,&#039;choices&#039; =&gt; array(
+	      &#039;&#039; =&gt; &#039;-- Choose Service Type --&#039;
+	    )
+	    + piklist(get_terms(&#039;dl_type&#039;, array(
+	      &#039;hide_empty&#039; =&gt; false
+	    ))
+	    ,array(
+	      &#039;term_id&#039;
+	      ,&#039;name&#039;
+	    )
+	  )
+	)
+    , array(
+	   &#039;type&#039; =&gt; &#039;text&#039;
+	   ,&#039;field&#039; =&gt; &#039;ap_icon_text&#039;
+	   ,&#039;label&#039; =&gt; __(&#039;Link Text (blank gives Service Type)&#039;)
+	   ,&#039;description&#039; =&gt; &#039;(blank gives Service Type)&#039;
+	   ,&#039;attributes&#039; =&gt; array(
+	     &#039;class&#039; =&gt; &#039;&#039;
+	   )
+	 )
+    , array(
+        &#039;type&#039; =&gt; &#039;select&#039;,
+        &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+        &#039;field&#039; =&gt; &#039;ap_page_link&#039;,
+        &#039;label&#039; =&gt; &#039;Choose a Page&#039;,
+	  	
+	   &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;page&#039;
+	  		)
+	  	),
+        &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;text&#039;,
+        ),
+        &#039;choices&#039; =&gt; array(
+	      &#039;&#039; =&gt; &#039;-- Choose Page --&#039;
+	    )
+	    + piklist(
+            get_posts(
+                array(
+                    &#039;post_type&#039; =&gt; &#039;page&#039;,
+                    &#039;hide_empty&#039; =&gt; false
+                )
+            ),
+            array(
+                &#039;ID&#039;,
+                &#039;post_title&#039;
+            )
+        )
+    )
+   	 
+
+   	,array(
+	   &#039;type&#039; =&gt; &#039;text&#039;
+	   ,&#039;field&#039; =&gt; &#039;ap_link_url&#039;
+	   ,&#039;label&#039; =&gt; __(&#039;Link URL&#039;)
+	   ,&#039;description&#039; =&gt; &#039;relative to root, ie /audience/parents-and-carers/category/education&#039;
+	   ,&#039;attributes&#039; =&gt; array(
+	     &#039;class&#039; =&gt; &#039;text&#039;
+	   )
+	  , &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;path&#039;
+	  		)
+	  	)
+	 )
+   	)
+
+ ));
+</code></pre>
+<p>Attached is how a single Add More unit is rendering.<br />
+cheers,<br />
+Hugh</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-with-conditonals-js-performance/">Add More with conditonals &#8211; JS performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional Attached to Group Giving Error Message (v0.9.9.3)</title>
+		<link>https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/</link>
+		
+		<dc:creator><![CDATA[shayneol]]></dc:creator>
+		<pubDate>Fri, 16 Oct 2015 18:44:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/</guid>
+
+					<description><![CDATA[<p>Hello, I sent an email yesterday with my code for this issue, but I just figured out what really is going wrong. If I have a conditional attached to a group, I receive the below error message. For example, if I want to show the contents of a group when a specific option from a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/">Conditional Attached to Group Giving Error Message (v0.9.9.3)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I sent an email yesterday with my code for this issue, but I just figured out what really is going wrong. If I have a conditional attached to a group, I receive the below error message.  For example, if I want to show the contents of a group when a specific option from a select field is chosen, I receive an error message on the page.  If the content to show/hide is not within a group, everything works fine.  </p>
+<p>Error: Warning: array_push() expects parameter 1 to be array, string given in &#8230;/wp-content/plugins/piklist/includes/class-piklist-form.php on line 2534</p>
+<p>My Code:</p>
+<pre><code>  // Post Type
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;post_type&#039;
+    ,&#039;label&#039; =&gt; &#039;Post Type&#039;
+    ,&#039;value&#039; =&gt; &#039;choose&#039;
+	,&#039;columns&#039; =&gt; 12
+    ,&#039;choices&#039; =&gt; array(
+      &#039;choose&#039; =&gt; &#039;--CHOOSE POST TYPE--&#039;
+      ,&#039;teacher&#039; =&gt; &#039;Teacher Page&#039;
+      ,&#039;standards&#039; =&gt; &#039;Standards&#039;
+      ,&#039;lesson_long&#039; =&gt; &#039;Creativity Lesson&#039;
+      ,&#039;lesson_short&#039; =&gt; &#039;Skill Builder Lesson&#039;
+      ,&#039;glossary&#039; =&gt; &#039;Glossary&#039;
+    )
+  ));
+
+  // STANDARDS FIELDS
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;standards&#039;
+	,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; &#039;Add Section&#039;
+    ,&#039;description&#039; =&gt; &#039;To add more SECTIONS, the &quot;+&quot; button. Click and drag to rearrange the order.&#039;
+    ,&#039;conditions&#039; =&gt; array(
+      array(
+        &#039;field&#039; =&gt; &#039;post_type&#039;
+        ,&#039;value&#039; =&gt; &#039;standards&#039;
+      )
+    )
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;section_title&#039;
+        ,&#039;label&#039; =&gt; &#039;Section Title&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;large-text&#039;
+        )
+      )
+	  
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;section_anchor&#039;
+        ,&#039;label&#039; =&gt; &#039;Section Anchor ID&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;large-text&#039;
+        )
+      )
+      
+	  ,array(
+		&#039;type&#039; =&gt; &#039;editor&#039;
+		,&#039;field&#039; =&gt; &#039;section_content&#039;
+		,&#039;label&#039; =&gt; &#039;Section Content&#039;
+		,&#039;options&#039; =&gt; array(
+			&#039;wpautop&#039; =&gt; true
+			,&#039;media_buttons&#039; =&gt; true
+			,&#039;shortcode_buttons&#039; =&gt; true
+			,&#039;tabindex&#039; =&gt; &#039;&#039;
+			,&#039;editor_css&#039; =&gt; &#039;&#039;
+			,&#039;editor_class&#039; =&gt; &#039;&#039;
+			,&#039;teeny&#039; =&gt; false
+			,&#039;dfw&#039; =&gt; false
+			,&#039;tinymce&#039; =&gt; array(
+				&#039;resize&#039; =&gt; false
+				,&#039;wp_autoresize_on&#039; =&gt; true
+			)
+			,&#039;quicktags&#039; =&gt; true
+			,&#039;drag_drop_upload&#039; =&gt; true
+		)
+      )
+	  
+	  
+    )
+  ));
+</code></pre>
+<p>Thanks,<br />
+Shayne</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-attached-to-group-giving-error-message-v0-9-9-3/">Conditional Attached to Group Giving Error Message (v0.9.9.3)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional Meta Boxes split into several files</title>
+		<link>https://piklist.com/support/topic/conditional-meta-boxes-split-into-several-files/</link>
+		
+		<dc:creator><![CDATA[tcarney]]></dc:creator>
+		<pubDate>Thu, 07 May 2015 19:14:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-meta-boxes-split-into-several-files/</guid>
+
+					<description><![CDATA[<p>Is there a way in Piklist to split a Conditional metabox file with many choices into having each choice having its own file? Currently writing a conditional where it opens with six choices and each choice has between two and five metaboxes. I am trying to make it easier for others on my team to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-meta-boxes-split-into-several-files/">Conditional Meta Boxes split into several files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way in Piklist to split a Conditional metabox file with many choices into having each choice having its own file? Currently writing a conditional where it opens with six choices and each choice has between two and five metaboxes.  I am trying to make it easier for others on my team to read and edit this section.  </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-meta-boxes-split-into-several-files/">Conditional Meta Boxes split into several files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>show metabox only for top-level pages</title>
+		<link>https://piklist.com/support/topic/show-metabox-only-for-top-level-pages/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Sat, 02 May 2015 04:53:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/show-metabox-only-for-top-level-pages/</guid>
+
+					<description><![CDATA[<p>I have a &#8220;section_name&#8221; field that I want to show only for top-level pages. Was first looking at using a template but then I saw the tutorial https://piklist.com/user-guide/tutorials/hide-meta-boxes-page-template/ and modified it for my use. I&#8217;m sharing the code in case someone else might find it handy. Suggestions for improvement are also welcome. 🙂 https://gist.github.com/mcdonna/7324cba06b375ef35b5b</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/show-metabox-only-for-top-level-pages/">show metabox only for top-level pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a &#8220;section_name&#8221; field that I want to show only for top-level pages. Was first looking at using a template but then I saw the tutorial https://piklist.com/user-guide/tutorials/hide-meta-boxes-page-template/ and modified it for my use. I&#8217;m sharing the code in case someone else might find it handy. Suggestions for improvement are also welcome. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>https://gist.github.com/mcdonna/7324cba06b375ef35b5b</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/show-metabox-only-for-top-level-pages/">show metabox only for top-level pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

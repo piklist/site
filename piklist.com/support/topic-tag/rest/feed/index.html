@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>REST &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/rest/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 19 May 2020 15:39:07 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add meta to REST API response</title>
+		<link>https://piklist.com/support/topic/add-meta-to-rest-api-response/</link>
+		
+		<dc:creator><![CDATA[Ico]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2017 18:27:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-meta-to-rest-api-response/</guid>
+
+					<description><![CDATA[<p>Hi All, I searched for an easy way to display meta-box content created by Piklist in the rest_api response. For example: //Title: Custom meta to show in Rest //Post Type: post piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;custom_text&#039;, &#039;label&#039; =&#62; &#039;Custom text demo&#039;, //&#039;show_in_rest&#039; =&#62; true, //not working :( ) ); I can [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All,<br />
+I searched for an easy way to display meta-box content created by Piklist in the rest_api response.</p>
+<p>For example:</p>
+<pre><code>//Title: Custom meta to show in Rest
+ //Post Type: post
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;       =&gt; &#039;text&#039;,
+	&#039;field&#039;      =&gt; &#039;custom_text&#039;,
+	&#039;label&#039;      =&gt; &#039;Custom text demo&#039;,
+	//&#039;show_in_rest&#039; =&gt; true, //not working :(
+) );</code></pre>
+<p>I can use register_rest_field to add the meta to the api response ( for example : )</p>
+<pre><code>
+	register_rest_field( &#039;post&#039;, &#039;cm&#039;, array(
+		&#039;get_callback&#039; =&gt; function ( $post ) {
+			return get_post_meta( $post[&#039;id&#039;], &#039;custom_text&#039;, true );
+		},
+		&#039;schema&#039;       =&gt; array(
+			&#039;description&#039; =&gt; __( &#039;Custom piklist text.&#039; ),
+			&#039;type&#039;        =&gt; &#039;string&#039;
+		),
+	) );
+</code></pre>
+<p>and it does the trick, but it would be awesome if just passing <code>&#039;show_in_rest&#039; =&gt; true</code> to the meta params make it automatically show in the response.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>REST API problem with post_content field</title>
+		<link>https://piklist.com/support/topic/rest-api-problem-with-post_content-field/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Tue, 07 Mar 2017 20:57:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/rest-api-problem-with-post_content-field/</guid>
+
+					<description><![CDATA[<p>Hi, using your examples, I set up a CPT that is using the post content field in the posts table, but displayed using piklist among my other meta fields. The problem with this (I just discovered) is that unless I put it into the &#8220;support&#8221; array in the register post type command, it will NOT [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/rest-api-problem-with-post_content-field/">REST API problem with post_content field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, using your examples, I set up a CPT that is using the post content field in the posts table, but displayed using piklist among my other meta fields. The problem with this (I just discovered) is that unless I put it into the &#8220;support&#8221; array in the register post type command, it will NOT show in the REST response. Any idea how to include it in the REST response without displaying it (now a second time and out of order) in my CPT admin edit screen?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/rest-api-problem-with-post_content-field/">REST API problem with post_content field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>preview &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/preview/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 23 Jun 2016 08:58:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Piklist breaks oEmbed in CTP</title>
+		<link>https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/</link>
+		
+		<dc:creator><![CDATA[7studio]]></dc:creator>
+		<pubDate>Thu, 23 Jun 2016 08:58:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/</guid>
+
+					<description><![CDATA[<p>Hi, It seems that Piklist breaks oEmbed (e.g.: in the media uploader modal) when you edit a post from a CPT. All the things seem ok when you do the same thing from a &#8220;builtin&#8221; post type. After some investigations, it seems that the wp.media.view cannot pick up the post ID (wp.media.view.settings.post.id is egal to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/">Piklist breaks oEmbed in CTP</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>It seems that Piklist breaks oEmbed (e.g.: in the media uploader modal) when you edit a post from a CPT. All the things seem ok when you do the same thing from a &#8220;builtin&#8221; post type.</p>
+<p>After some investigations, it seems that the <code>wp.media.view</code> cannot pick up the post ID (<code>wp.media.view.settings.post.id</code> is egal to 0) and it fails the ajax method <code>wp_ajax_parse_embed</code>.</p>
+<p>Thank you.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-breaks-oembed-in-ctp/">Piklist breaks oEmbed in CTP</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Critical: Preview while editing metaboxes causes data loss</title>
+		<link>https://piklist.com/support/topic/critical-preview-while-editing-metaboxes-causes-data-loss/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Fri, 23 Oct 2015 22:57:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/critical-preview-while-editing-metaboxes-causes-data-loss/</guid>
+
+					<description><![CDATA[<p>My client contacted me to say that she tried to edit the page that I set up for her yesterday, and she deleted all the bios. The bios are implemented as an add-more group: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;board_members&#039;, &#039;label&#039; =&#62; $label, &#039;description&#039; =&#62; &#039;&#039;, &#039;add_more&#039; =&#62; true, &#039;template&#039; =&#62; &#039;field&#039;, &#039;columns&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/critical-preview-while-editing-metaboxes-causes-data-loss/">Critical: Preview while editing metaboxes causes data loss</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>My client contacted me to say that she tried to edit the page that I set up for her yesterday, and she deleted all the bios. The bios are implemented as an add-more group: </p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;board_members&#039;,
+	&#039;label&#039; =&gt; $label,
+	&#039;description&#039; =&gt; &#039;&#039;,
+	&#039;add_more&#039; =&gt; true,
+	&#039;template&#039; =&gt; &#039;field&#039;,
+	&#039;columns&#039; =&gt; 12,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;person_name&#039;,
+			&#039;label&#039; =&gt; &#039;Name&#039;,
+			&#039;columns&#039; =&gt; 12,
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;person_title&#039;,
+			&#039;label&#039; =&gt; &#039;Title (if applicable)&#039;,
+			&#039;columns&#039; =&gt; 12,
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;editor&#039;,
+			&#039;field&#039; =&gt; &#039;person_bio&#039;,
+			&#039;label&#039; =&gt; __( &quot;Person&#039;s Bio&quot; ),
+			&#039;description&#039; =&gt; __( &#039;Brief biography&#039;),
+			&#039;columns&#039; =&gt; 12,
+			&#039;options&#039; =&gt; array (
+				&#039;media_buttons&#039; =&gt; false,
+				&#039;teeny&#039; =&gt; true,
+			),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;file&#039;,
+			&#039;field&#039; =&gt; &#039;person_image&#039;,
+			&#039;label&#039; =&gt; &#039;Add an image&#039;,
+			&#039;options&#039; =&gt; array(
+				&#039;modal_title&#039; =&gt; &#039;Add Image&#039;,
+				&#039;button&#039; =&gt; &#039;Add&#039;,
+			),
+		),
+	),
+));
+</code></pre>
+<p>When I asked for more information, she said that she deleted a couple of the bios, edited and added others. Then she pressed Preview. Nothing happened. So she just pressed Update &#8230; and all the bios disappeared. </p>
+<p>I was able to reproduce this. I deleted the second bio and edited a couple of others. Pressed Preview, nothing happened. Pressed Update and all but the first bio disappeared. This may indicate that if one is deleted, then those after it are also deleted. (One of the bios she deleted was the first one.)</p>
+<p>Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/critical-preview-while-editing-metaboxes-causes-data-loss/">Critical: Preview while editing metaboxes causes data loss</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

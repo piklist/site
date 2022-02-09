@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>upload field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/upload-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 15 Apr 2018 12:01:17 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Uploader field only saves one file instead of multiple</title>
+		<link>https://piklist.com/support/topic/uploader-field-only-saves-one-file-instead-of-multiple/</link>
+		
+		<dc:creator><![CDATA[stham]]></dc:creator>
+		<pubDate>Fri, 13 Apr 2018 09:16:52 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/uploader-field-only-saves-one-file-instead-of-multiple/</guid>
+
+					<description><![CDATA[<p>Hello, I basically have the same problem as mentioned in this topic &#62; https://piklist.com/support/topic/only-one-image-is-saved/ I have an upload field in a metabox for a custom post type like so: piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;scope&#039; =&#62; &#039;post_meta&#039;, &#039;label&#039; =&#62; __( &#039;Images&#039;, &#039;sophi&#039; ), &#039;field&#039; =&#62; &#039;sophi_place_gallery_photos&#039;, &#039;options&#039; =&#62; array( &#039;modal_title&#039; =&#62; __( &#039;Add Image&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/uploader-field-only-saves-one-file-instead-of-multiple/">Uploader field only saves one file instead of multiple</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I basically have the same problem as mentioned in this topic &gt; https://piklist.com/support/topic/only-one-image-is-saved/</p>
+<p>I have an upload field in a metabox for a custom post type like so:</p>
+<pre><code>piklist( &#039;field&#039;, array(
+	&#039;type&#039;     =&gt; &#039;file&#039;,
+	&#039;scope&#039;    =&gt; &#039;post_meta&#039;,
+	&#039;label&#039;    =&gt; __( &#039;Images&#039;, &#039;sophi&#039; ),
+	&#039;field&#039;    =&gt; &#039;sophi_place_gallery_photos&#039;,
+	&#039;options&#039;  =&gt; array(
+		&#039;modal_title&#039; =&gt; __( &#039;Add Image&#039;, &#039;sophi&#039; ),
+		&#039;button&#039;      =&gt; __( &#039;Add&#039;, &#039;sophi&#039; )
+	),
+	&#039;validate&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;image&#039;
+		)
+	)
+) );</code></pre>
+<p>I need the field to accept any number of images that the user would want to attach. Currently, the field will only save one image at a time. I can select multiple images to add (in the modal) but after clicking on the post publish/update button, only the last image gets saved and the other images disappear.</p>
+<p>I tried the same update instructions as nnovosad, i.e. the ones from here &gt;  https://piklist.com/support/topic/9-9-data-update-script-not-triggered/#post-8808<br />
+I didn&#8217;t get any errors but the problem still persists.</p>
+<p>This code was working fine about 2-3 weeks ago. I didn&#8217;t touch it after that and only noticed earlier this week that it stopped saving more than one image at a time.</p>
+<p>I checked the db and found that there used to be multiple entries of <code>sophi_place_gallery_photos</code> (for a single custom post type) in the <code>postmeta</code> table, each with the ID of the image attachment that I had saved. Now, only one entry exists per post, even when I attempt to save multiple images at a time.</p>
+<p>Any suggestions on how to fix this would be much much appreciated.</p>
+<p>Thanks in advance.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/uploader-field-only-saves-one-file-instead-of-multiple/">Uploader field only saves one file instead of multiple</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

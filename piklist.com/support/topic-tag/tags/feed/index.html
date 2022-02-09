@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tags &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/tags/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 14 Apr 2018 10:37:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Multiple Tags for CPT</title>
+		<link>https://piklist.com/support/topic/multiple-tags-for-cpt/</link>
+		
+		<dc:creator><![CDATA[Dan]]></dc:creator>
+		<pubDate>Sat, 14 Apr 2018 10:37:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/multiple-tags-for-cpt/</guid>
+
+					<description><![CDATA[<p>Hi There, Struggling to save multiple tags for a CPT with a custom taxonomy. It only saves the latest value selected rather than all the values selected. Please help! Taxonomy: function register_event_type($taxonomies) { $taxonomies[] = array( &#039;post_type&#039; =&#62; &#039;mrc_event&#039; ,&#039;name&#039; =&#62; &#039;mrc_event_type&#039; ,&#039;show_admin_column&#039; =&#62; true ,&#039;configuration&#039; =&#62; array( &#039;hierarchical&#039; =&#62; false ,&#039;labels&#039; =&#62; piklist(&#039;taxonomy_labels&#039;, &#039;Event [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiple-tags-for-cpt/">Multiple Tags for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi There,</p>
+<p>Struggling to save multiple tags for a CPT with a custom taxonomy.<br />
+It only saves the latest value selected rather than all the values selected.<br />
+Please help!</p>
+<p>Taxonomy:</p>
+<pre><code>function register_event_type($taxonomies) 
+    {
+        $taxonomies[] = array(
+            &#039;post_type&#039; =&gt; &#039;mrc_event&#039;
+            ,&#039;name&#039; =&gt; &#039;mrc_event_type&#039;
+            ,&#039;show_admin_column&#039; =&gt; true
+            ,&#039;configuration&#039; =&gt; array(
+              &#039;hierarchical&#039; =&gt; false
+              ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Event Type&#039;)
+              ,&#039;hide_meta_box&#039; =&gt; false
+              ,&#039;show_ui&#039; =&gt; false
+              ,&#039;query_var&#039; =&gt; true
+              ,&#039;rewrite&#039; =&gt; array( 
+                &#039;slug&#039; =&gt; &#039;event-type&#039; 
+            )
+            ));
+        return $taxonomies;
+    }</code></pre>
+<p>Taxonomy select field on metabox:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039; 
+  ,&#039;field&#039; =&gt; &#039;mrc_event_type&#039;
+  ,&#039;label&#039; =&gt; &#039;Categories&#039;
+  ,&#039;description&#039; =&gt; &#039;Terms will appear when they are added to this taxonomy.&#039;
+  ,&#039;choices&#039; =&gt; piklist(get_terms(array(
+      &#039;taxonomy&#039; =&gt; &#039;mrc_event_type&#039;
+      ,&#039;hide_empty&#039; =&gt; false
+    ))
+    ,array(
+      &#039;term_id&#039;
+      ,&#039;name&#039;
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiple-tags-for-cpt/">Multiple Tags for CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

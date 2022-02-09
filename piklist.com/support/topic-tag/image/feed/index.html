@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>image &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/image/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 09 Jul 2020 16:42:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Image retrieving problem from group meta field</title>
+		<link>https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/</link>
+		
+		<dc:creator><![CDATA[rashedul007]]></dc:creator>
+		<pubDate>Mon, 06 Jul 2020 04:51:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/</guid>
+
+					<description><![CDATA[<p>I want to show attachment like section. For this my code for meta field and out is given below: Meta field Code: &#60;?php /** * Title: Chef Settings * Post Type: section * Order: 20 */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;meal_chef&#039;, // removing this parameter saves all fields as separate meta &#039;label&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/">Image retrieving problem from group meta field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to show attachment like section. For this my code for meta field and out is given below:<br />
+<strong>Meta field Code:</strong></p>
+<pre><code>&lt;?php
+
+/**
+ * Title: Chef Settings
+ * Post Type: section
+ * Order: 20
+ */
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;meal_chef&#039;, // removing this parameter saves all fields as separate meta
+	&#039;label&#039; =&gt; __(&#039;Chef&#039;, &#039;meal&#039;),
+	&#039;list&#039; =&gt; false,
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;name&#039;,
+			&#039;label&#039; =&gt; __(&#039;Name&#039;, &#039;meal&#039;),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;file&#039;,
+			&#039;field&#039; =&gt; &#039;chef_image&#039;,
+			&#039;label&#039; =&gt; __(&#039;Image&#039;, &#039;meal&#039;),
+			&#039;options&#039; =&gt; array(
+				&#039;button&#039; =&gt; __(&#039;Add Image&#039;, &#039;meal&#039;)
+			)
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;field&#039; =&gt; &#039;title&#039;,
+			&#039;label&#039; =&gt; __(&#039;Title&#039;, &#039;meal&#039;),
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;textarea&#039;,
+			&#039;field&#039; =&gt; &#039;bio&#039;,
+			&#039;label&#039; =&gt; __(&#039;bio&#039;, &#039;meal&#039;),
+		),
+		array(
+			&#039;field&#039;        =&gt; &#039;social_profiles&#039;,
+			&#039;type&#039;      =&gt; &#039;group&#039;,
+			&#039;label&#039;     =&gt; __(&#039;Social Profiles&#039;, &#039;meal&#039;),
+			&#039;fields&#039;    =&gt; array(
+
+				array(
+					&#039;field&#039;    =&gt; &#039;facebook&#039;,
+					&#039;type&#039;  =&gt; &#039;text&#039;,
+					&#039;label&#039; =&gt; __(&#039;Facebook&#039;, &#039;meal&#039;),
+				),
+				array(
+					&#039;field&#039;   =&gt; &#039;twitter&#039;,
+					&#039;type&#039;  =&gt; &#039;text&#039;,
+					&#039;label&#039; =&gt; __(&#039;Twitter&#039;, &#039;meal&#039;),
+				),
+				array(
+					&#039;field&#039;   =&gt; &#039;instagram&#039;,
+					&#039;type&#039;  =&gt; &#039;text&#039;,
+					&#039;label&#039; =&gt; __(&#039;Instagram&#039;, &#039;meal&#039;),
+				),
+
+			),
+		),
+	)
+));
+
+&lt;strong&gt;Output code:&lt;/strong&gt;
+
+</code></pre>
+<p>&lt;?php<br />
+global $section_id;<br />
+$meal_section             = get_post($section_id);<br />
+$meal_section_title       = $meal_section-&gt;post_title;<br />
+$meal_section_description = $meal_section-&gt;post_content;<br />
+?&gt;</p>
+<p>&lt;div class=&#8221;section bg-white&#8221; data-aos=&#8221;fade-up&#8221;&gt;<br />
+    &lt;div class=&#8221;container&#8221;&gt;<br />
+        &lt;div class=&#8221;row mb-5&#8243;&gt;<br />
+            &lt;div class=&#8221;col-md-12 section-heading text-center&#8221;&gt;<br />
+                &lt;h2 class=&#8221;heading mb-5&#8243;&gt;<br />
+                    &lt;?php echo esc_html($meal_section_title); ?&gt;<br />
+                &lt;/h2&gt;<br />
+                &lt;?php<br />
+                echo apply_filters(&#8216;the_content&#8217;, $meal_section_description);<br />
+                ?&gt;<br />
+            &lt;/div&gt;<br />
+        &lt;/div&gt;<br />
+        &lt;?php<br />
+        $meal_chefs = get_post_meta($section_id, &#8216;meal_chef&#8217;, true);<br />
+        print_r($meal_chefs);<br />
+        if ($meal_chefs) :<br />
+        ?&gt;<br />
+        &lt;div class=&#8221;row&#8221;&gt;<br />
+            &lt;?php<br />
+                foreach ($meal_chefs as $meal_chef) :</p>
+<p>                    $meal_chef_image = wp_get_attachment_image_src($meal_chef[&#8216;chef_image&#8217;], &#8216;medium&#8217;);<br />
+                ?&gt;<br />
+            &lt;div class=&#8221;col-md-6 pl-md-5 text-center mb-5&#8243;&gt;<br />
+                &lt;div class=&#8221;ftco-38&#8243;&gt;<br />
+                    &lt;div class=&#8221;ftco-38-img&#8221;&gt;<br />
+                        &lt;div class=&#8221;ftco-38-header&#8221;&gt;<br />
+                            <img />&#8221;<br />
+                                alt=&#8221;&lt;?php echo esc_attr($meal_chef[&#8216;name&#8217;]) ?&gt;&#8221;&gt;<br />
+                            &lt;h3 class=&#8221;ftco-38-heading&#8221;&gt;&lt;?php echo esc_attr($meal_chef[&#8216;name&#8217;]) ?&gt;&lt;/h3&gt;<br />
+                            &lt;p class=&#8221;ftco-38-subheading&#8221;&gt;&lt;?php echo esc_attr($meal_chef[&#8216;title&#8217;]) ?&gt;&lt;/p&gt;<br />
+                        &lt;/div&gt;<br />
+                        &lt;div class=&#8221;ftco-38-body&#8221;&gt;<br />
+                            &lt;?php echo apply_filters(&#8216;the_content&#8217;, $meal_chef[&#8216;bio&#8217;]) ?&gt;<br />
+                            &lt;?php if ($meal_chef[&#8216;social_profiles&#8217;][&#8216;facebook&#8217;]) : ?&gt;<br />
+                            <a>&#8221; class=&#8221;p-2&#8243;&gt;&lt;span<br />
+                                    class=&#8221;fa fa-facebook&#8221;&gt;&lt;/span&gt;</a><br />
+                            &lt;?php endif; ?&gt;<br />
+                            &lt;?php if ($meal_chef[&#8216;social_profiles&#8217;][&#8216;twitter&#8217;]) : ?&gt;<br />
+                            <a>&#8221; class=&#8221;p-2&#8243;&gt;&lt;span<br />
+                                    class=&#8221;fa fa-twitter&#8221;&gt;&lt;/span&gt;</a><br />
+                            &lt;?php endif; ?&gt;<br />
+                            &lt;?php if ($meal_chef[&#8216;social_profiles&#8217;][&#8216;instagram&#8217;]) : ?&gt;<br />
+                            <a>&#8221;<br />
+                                class=&#8221;p-2&#8243;&gt;&lt;span class=&#8221;fa fa-instagram&#8221;&gt;&lt;/span&gt;</a><br />
+                            &lt;?php endif; ?&gt;<br />
+                            &lt;/p&gt;<br />
+                        &lt;/div&gt;<br />
+                    &lt;/div&gt;<br />
+                &lt;/div&gt;<br />
+            &lt;/div&gt;<br />
+            &lt;?php endforeach; ?&gt;</p>
+<p>            &lt;!&#8211; &lt;div class=&#8221;col-md-4&#8243;&gt;&lt;/div&gt; &#8211;&gt;<br />
+        &lt;/div&gt;</p>
+<p>        &lt;?php endif; ?&gt;<br />
+    &lt;/div&gt;<br />
+&lt;/div&gt; &lt;!&#8211; .section &#8211;&gt;</p>
+<p>But image get broken.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-retrieving-problem-from-group-meta-field/">Image retrieving problem from group meta field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Reordering not working on images with update</title>
+		<link>https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</link>
+		
+		<dc:creator><![CDATA[bobstew]]></dc:creator>
+		<pubDate>Fri, 21 Oct 2016 09:31:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</guid>
+
+					<description><![CDATA[<p>The reordering of &#8216;field&#8217; &#8216;type&#8217; =&#62; &#8216;upload&#8217; was working fine. But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think). Here is my code for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The reordering of &#8216;field&#8217;  &#8216;type&#8217; =&gt; &#8216;upload&#8217; was working fine.<br />
+But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 </p>
+<p>I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think).</p>
+<p>Here is my code for the media upload:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;file&#039;
+,&#039;field&#039; =&gt; &#039;upload_media&#039;
+,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+,&#039;description&#039; =&gt; __(&#039;Add images to a Report.&#039;,&#039;piklist&#039;)
+,&#039;options&#039; =&gt; array(
+  &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+  ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+)
+));</code></pre>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File field, edit image when clicking linked image preview</title>
+		<link>https://piklist.com/support/topic/file-field-edit-image-when-clicking-linked-image-preview/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Mon, 09 May 2016 19:30:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-field-edit-image-when-clicking-linked-image-preview/</guid>
+
+					<description><![CDATA[<p>Hey guys, still loving Piklist 🙂 When using the file field type for image uploads, it would be much more convenient (and natural UX) when clicking the preview image for it display the already selected image, so we can edit the alt/description/caption/etc. Currently clicking the image brings up the media modal and requires us to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-edit-image-when-clicking-linked-image-preview/">File field, edit image when clicking linked image preview</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey guys, still loving Piklist <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>When using the file field type for image uploads, it would be much more convenient (and natural UX) when clicking the preview image for it display the already selected image, so we can edit the alt/description/caption/etc. Currently clicking the image brings up the media modal and requires us to re-select the image (sometimes it&#8217;s buried down in the media list) just to edit the images attributes.</p>
+<p>Any plans or solutions to this issue?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-field-edit-image-when-clicking-linked-image-preview/">File field, edit image when clicking linked image preview</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Error with widget (images) and add more</title>
+		<link>https://piklist.com/support/topic/error-with-widget-images-and-add-more/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2016 23:57:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-with-widget-images-and-add-more/</guid>
+
+					<description><![CDATA[<p>hello i&#8217;m creating a widget with 3 fields, image, title and url, at this moment everything is working like a charm, but when i want to print widget array i got this error in array. Piklist file &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;label&#039; =&#62; __(&#039;Publicidad&#039;) ,&#039;add_more&#039; =&#62; true ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-with-widget-images-and-add-more/">Error with widget (images) and add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hello i&#8217;m creating a widget with 3 fields, image, title and url, at this moment everything is working like a charm, but when i want to print widget array i got this error in array.</p>
+<p>Piklist file</p>
+<pre><code>&lt;?php
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Publicidad&#039;) 
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;image&#039;,
+        &#039;label&#039; =&gt; &#039;Imagen&#039;
+      ),
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;titulo&#039;,
+        &#039;label&#039; =&gt; &#039;Titulo&#039;
+      ),
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;url&#039;,
+        &#039;label&#039; =&gt; &#039;Enlace&#039;
+      ),
+    )
+  ));</code></pre>
+<p>Print_r of $settings</p>
+<pre><code>Array
+(
+    [image] =&gt; Array
+        (
+            [0] =&gt; 13
+            [1] =&gt; Array
+                (
+                    [0] =&gt; undefined
+                    [1] =&gt; 15
+                )
+
+            [2] =&gt; Array
+                (
+                    [0] =&gt; undefined
+                    [1] =&gt; 14
+                )
+
+        )
+
+    [titulo] =&gt; Array
+        (
+            [0] =&gt; title---
+            [1] =&gt; title---
+            [2] =&gt; title---
+        )
+
+    [url] =&gt; Array
+        (
+            [0] =&gt; http:...
+            [1] =&gt; http:...
+            [2] =&gt; http:...
+        )
+
+)</code></pre>
+<p>first array position retrives image id, but second and third no.</p>
+<p>Another question, is how can i loop into this array? i want to do this because i need to set random ads and posts.</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-with-widget-images-and-add-more/">Error with widget (images) and add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Image upload / preview?</title>
+		<link>https://piklist.com/support/topic/image-upload-preview/</link>
+		
+		<dc:creator><![CDATA[Daniel]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 21:14:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/image-upload-preview/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve known about piklist for a while. I finally have a break in between projects to try to spend some time using it&#8230;I am coming from ACF so bear with me as I adjust. Is the &#8220;file upload&#8221; field the proper field to use for images? If so, is there control over the upload limit? [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-upload-preview/">Image upload / preview?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve known about piklist for a while. I finally have a break in between projects to try to spend some time using it&#8230;I am coming from ACF so bear with me as I adjust. </p>
+<p>Is the &#8220;file upload&#8221; field the proper field to use for images? If so, is there control over the upload limit? (how many files can be attached to that field). If not, what are my options?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/image-upload-preview/">Image upload / preview?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>can&#039;t access file id uploaded via piklist</title>
+		<link>https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 00:28:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/</guid>
+
+					<description><![CDATA[<p>I am creating user profile pages on the front end of the site. I&#8217;m allowing them to upload a cover photo as a background image for their profile. i&#8217;m following this to get the profile image uploaded to the profile : https://piklist.com/user-guide/tutorials/displaying-images-upload-field/ I have the field in the user&#8217;s folder in a plugin. &#60;?php /* [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/">can&#039;t access file id uploaded via piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am creating user profile pages on the front end of the site. </p>
+<p>I&#8217;m allowing them to upload a cover photo as a background image for their profile. </p>
+<p>i&#8217;m following this to get the profile image uploaded to the profile<br />
+: https://piklist.com/user-guide/tutorials/displaying-images-upload-field/</p>
+<p>I have the field in the user&#8217;s folder in a plugin. </ul>
+<pre><code>&lt;?php
+/*
+Title: Profile Cover Photo
+Description: Displays on your profile as a background cover image
+Capability: manage_options
+*/
+ 
+// image upload
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;
+  ,&#039;field&#039; =&gt; &#039;cover_image&#039;
+  ,&#039;label&#039; =&gt; &#039;Upload image&#039;
+));
+
+?&gt;</code></pre>
+<p>I can upload the image just fine. </p>
+<p>However, when I go to get the data back, I can&#8217;t get the id.<br />
+($author code is not referenced below but is a valid variable in this instance)</p>
+<pre><code>$image_ids = get_user_meta($author-&gt;ID, &#039;cover_image&#039;);
+ print_r($image_ids);
+</code></pre>
+<p>I get on the page:</p>
+<p><code>Array ( )</code></p>
+<p>Any suggestions?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-access-file-id-uploaded-via-piklist/">can&#039;t access file id uploaded via piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload in group</title>
+		<link>https://piklist.com/support/topic/file-upload-in-group/</link>
+		
+		<dc:creator><![CDATA[aerlaut]]></dc:creator>
+		<pubDate>Tue, 09 Jun 2015 02:35:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-in-group/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to create a metabox group with fields : member_image : upload photo position : member position name : member name interest1 : interest 1 interest1 : interest 2 interest1 : interest 3 and came up with the following Piklist field : piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;members_list&#039;, &#039;label&#039; =&#62; &#039;Members List&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-in-group/">File upload in group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to create a metabox group with fields :</p>
+<p>member_image : upload photo<br />
+position : member position<br />
+name : member name<br />
+interest1 : interest 1<br />
+interest1 : interest 2<br />
+interest1 : interest 3</p>
+<p>and came up with the following Piklist field : </p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;members_list&#039;,
+	&#039;label&#039; =&gt; &#039;Members List&#039;,
+	&#039;columns&#039; =&gt; 12,
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+			
+			array(
+			&#039;type&#039; =&gt; &#039;file&#039;,
+			&#039;field&#039; =&gt; &#039;member_image&#039;,
+			&#039;label&#039; =&gt; &#039;Foto Upload&#039;,
+			&#039;columns&#039; =&gt; 12
+			),
+
+			array(
+			&#039;type&#039; =&gt; &#039;group&#039;,
+			&#039;field&#039; =&gt; &#039;details&#039;,
+			&#039;attributes&#039; =&gt; array(
+				&#039;class&#039; =&gt; &#039;details&#039;
+				),
+			&#039;fields&#039; =&gt; array(
+
+				array(
+					&#039;type&#039; =&gt; &#039;text&#039;,
+					&#039;field&#039; =&gt; &#039;name&#039;,
+					&#039;label&#039; =&gt; &#039;Full Name&#039;,
+					&#039;columns&#039; =&gt; 12
+					),
+
+					array(
+					&#039;type&#039; =&gt; &#039;select&#039;,
+					&#039;field&#039; =&gt; &#039;position&#039;,
+					&#039;value&#039; =&gt; &#039;member&#039;,
+					&#039;label&#039; =&gt; &#039;Position&#039;,
+					&#039;columns&#039; =&gt; 3,
+					&#039;description&#039; =&gt; &#039;Member Position&#039;,
+					&#039;choices&#039; =&gt; array(
+						&#039;head&#039; =&gt; &#039;Head&#039;,
+						&#039;member&#039; =&gt; &#039;Member&#039;
+						)
+					), 
+
+					array(
+						&#039;type&#039; =&gt; &#039;text&#039;,
+						&#039;field&#039; =&gt; &#039;interest1&#039;,
+						&#039;label&#039; =&gt; &#039;Interest 1&#039;,
+						&#039;columns&#039; =&gt; 12
+					), 
+
+array(
+						&#039;type&#039; =&gt; &#039;text&#039;,
+						&#039;field&#039; =&gt; &#039;interest2&#039;,
+						&#039;label&#039; =&gt; &#039;Interest 2&#039;,
+						&#039;columns&#039; =&gt; 12
+					), 
+
+array(
+						&#039;type&#039; =&gt; &#039;text&#039;,
+						&#039;field&#039; =&gt; &#039;interest3&#039;,
+						&#039;label&#039; =&gt; &#039;Interest 3&#039;,
+						&#039;columns&#039; =&gt; 12
+					)
+
+				)
+			)
+	)
+));</code></pre>
+<p>The field displays fine, and I&#8217;m able to upload and insert data, as can be seen in the attachment. However, the resulting array structure from</p>
+<p> `$members_list = get_post_meta($post-&gt;ID, &#8216;members_list&#8217;, true)&#8217;</p>
+<p>returns an incorrect structure for the field <code>members_list</code> (array of the <code>details</code> group is fine)</p>
+<pre><code>Array ( 
+	[member_image] =&gt; Array 
+		( 
+			[0] =&gt; Array
+			( 
+				[0] =&gt; 16 
+			) 
+		
+			[1] =&gt; Array 
+			( 
+				[0] =&gt; undefined 
+				[1] =&gt; 23
+			) 
+
+                        [2] =&gt; Array 
+			( 
+				[0] =&gt; undefined 
+				[1] =&gt; 30 
+			) 
+	) </code></pre>
+<p>Other than index 0, index 0 of the subsequent indices is <code>undefined</code>. If the following template part is used to loop through the result</p>
+<p><code>piklist(get_template_directory() . &#039;template-show-member&#039;, array(&#039;data&#039; =&gt; $members_list, &#039;loop&#039; =&gt; &#039;data&#039;));</code></p>
+<p>a quick check of index 0 of the <code>$data[&#039;member_image&#039;]</code> can be done in the <code>template-show-member</code> to check whether the image ID is stored in the 0th or the 1st index</p>
+<pre><code>$pic = $data[&#039;member_image&#039;][0] != &#039;undefined&#039; ? $data[&#039;member_image&#039;][0] : $data[&#039;member_image&#039;][1];
+echo &quot;&lt;img src=&#039;&quot; . wp_get_attachment_url($pic) . &quot;&#039; /&gt;&quot;;</code></pre>
+<p>Although I&#8217;m able to post the correct images using the above fix, I don&#8217;t think it&#8217;s the way it&#8217;s meant to behave. Help?</p>
+<p>Cheers,<br />
+Agi</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-in-group/">File upload in group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Displaying a image</title>
+		<link>https://piklist.com/support/topic/displaying-a-image/</link>
+		
+		<dc:creator><![CDATA[vincire]]></dc:creator>
+		<pubDate>Wed, 28 May 2014 12:49:34 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/displaying-a-image/</guid>
+
+					<description><![CDATA[<p>Hi, how do I get an image displayed on a page? I have read through the forum and codex pages but can&#8217;t figure it out. I have used this to create the cpt image upload: ` piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;file&#8217; ,&#8217;field&#8217; =&#62; &#8216;portret&#8217; ,&#8217;scope&#8217; =&#62; &#8216;post_meta&#8217; ,&#8217;label&#8217; =&#62; __(&#8216;Voeg een portretfoto toe.&#8217;,&#8217;piklist&#8217;) ,&#8217;description&#8217; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-a-image/">Displaying a image</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, how do I get an image displayed on a page?<br />
+I have read through the forum and codex pages but can&#8217;t figure it out.</p>
+<p>I have used this to create the cpt image upload:<br />
+` piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;file&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;portret&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;post_meta&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Voeg een portretfoto toe.&#8217;,&#8217;piklist&#8217;)<br />
+    ,&#8217;description&#8217; =&gt; __(&#8216;U kunt een foto uit de mediatheek kiezen of uw eigen uploaden&#8217;,&#8217;piklist&#8217;)<br />
+    ,&#8217;options&#8217; =&gt; array(<br />
+      &#8216;modal_title&#8217; =&gt; __(&#8216;Kies hieronder een foto of kies voor Bestanden uploaden&#8217;,&#8217;piklist&#8217;)<br />
+      ,&#8217;button&#8217; =&gt; __(&#8216;Add&#8217;,&#8217;piklist&#8217;)<br />
+    )<br />
+  )); </p>
+<p>What should I use in a template to get the image displayed?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-a-image/">Displaying a image</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Relating data to media uploader</title>
+		<link>https://piklist.com/support/topic/relating-data-to-media-uploader/</link>
+		
+		<dc:creator><![CDATA[taishiziyi]]></dc:creator>
+		<pubDate>Fri, 07 Feb 2014 23:55:32 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/relating-data-to-media-uploader/</guid>
+
+					<description><![CDATA[<p>I&#8217;m developing a slideshow plugin and have incorporated piklist into the plugin itself because of the huge amount of time and code it can save me. I have, however, run into a problem: What I would like to do is create a group of repeatable meta boxes where the group contains two fields &#8211; an [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/relating-data-to-media-uploader/">Relating data to media uploader</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m developing a slideshow plugin and have incorporated piklist into the plugin itself because of the huge amount of time and code it can save me.  I have, however, run into a problem:</p>
+<p>What I would like to do is create a group of repeatable meta boxes where the group contains two fields &#8211; an image upload field (that uses the media uploader) and a text field to add a url that the image will link to.</p>
+<p>However, when making a file upload field that uses the media uploader, the add_more option seems to automatically turn off.  This seems to be &#8211; from what I have discovered &#8211; because the media upload field allows you to upload multiple images.  The issue I have is that I don&#8217;t see a good way to add a text field that relates to a specific image that was uploaded in order to give it a URL to link to.</p>
+<p>Is there something that I am overlooking?  Or another way to accomplish what I an looking to do?  I know that I could add a field to the media meta for a user to input a URL there after they click to choose the image from the media manager, but I would rather do it the other way.  Any suggestions?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/relating-data-to-media-uploader/">Relating data to media uploader</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>media upload</title>
+		<link>https://piklist.com/support/topic/media-upload/</link>
+		
+		<dc:creator><![CDATA[pdewouters]]></dc:creator>
+		<pubDate>Sat, 22 Sep 2012 20:30:13 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/media-upload/</guid>
+
+					<description><![CDATA[<p>Hi I see there&#8217;s a basic upload field, but is there a media upload field that loads the default media upload UI with thickbox?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-upload/">media upload</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi</p>
+<p>I see there&#8217;s a basic upload field, but is there a media upload field that loads the default media upload UI with thickbox?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-upload/">media upload</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

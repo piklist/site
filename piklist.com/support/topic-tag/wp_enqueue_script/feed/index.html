@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>wp_enqueue_script &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/wp_enqueue_script/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 22 Jun 2015 14:53:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Enqueue conditional script with wp_scripts</title>
+		<link>https://piklist.com/support/topic/enqueue-conditional-script-with-wp_scripts/</link>
+		
+		<dc:creator><![CDATA[windir10]]></dc:creator>
+		<pubDate>Thu, 18 Jun 2015 15:39:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/enqueue-conditional-script-with-wp_scripts/</guid>
+
+					<description><![CDATA[<p>Hi ! First of all, well done for your plugin, it&#8217;s awesome for building custom forms fastly and the array syntax is very flexible ! But I meet a problem with the use of wp_scripts object and his function &#8220;add_data&#8221;. The condition appears 2 times in the generated source code. If I desactivate Piklist, all [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/enqueue-conditional-script-with-wp_scripts/">Enqueue conditional script with wp_scripts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi !<br />
+First of all, well done for your plugin, it&#8217;s awesome for building custom forms fastly and the array syntax is very flexible !</p>
+<p>But I meet a problem with the use of wp_scripts object and his function &#8220;add_data&#8221;. The condition appears 2 times in the generated source code.</p>
+<p>If I desactivate Piklist, all is ok&#8230;</p>
+<p>Here&#8217;s my code in functions.php :</p>
+<pre><code>global $wp_scripts;
+		
+		wp_register_script(&#039;html5shiv-script&#039;, &#039;//html5shiv.googlecode.com/svn/trunk/html5.js&#039;);
+		$wp_scripts-&gt;add_data(&#039;html5shiv-script&#039;, &#039;conditional&#039;, &#039;lt IE 9&#039;);
+		wp_enqueue_script(&#039;html5shiv-script&#039;);</code></pre>
+<p>And here&#8217;s the generated html code :</p>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;script type=&#039;text/javascript&#039; src=&#039;//html5shiv.googlecode.com/svn/trunk/html5.js?ver=4.2.2&#039;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;![endif]--&gt;</code></pre>
+<p>Any ideas ? Thanks !</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/enqueue-conditional-script-with-wp_scripts/">Enqueue conditional script with wp_scripts</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

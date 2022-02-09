@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Persistence &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/persistence/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 04 Sep 2015 18:19:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Grouped Radio Data Persistence</title>
+		<link>https://piklist.com/support/topic/grouped-radio-data-persistence/</link>
+		
+		<dc:creator><![CDATA[lycidiae]]></dc:creator>
+		<pubDate>Wed, 31 Dec 2014 21:02:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/grouped-radio-data-persistence/</guid>
+
+					<description><![CDATA[<p>Hello! Trying to use the Radio field in a repeating group has led to some finicky behavior: Even though the radio is given a default value and is required, I have a problem of the a choice from the selection being lost in the GUI on the CPT backend page load. The three choices start [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-radio-data-persistence/">Grouped Radio Data Persistence</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>Trying to use the Radio field in a repeating group has led to some finicky behavior:</p>
+<p>Even though the radio is given a default value and is required, I have a problem of the a choice from the selection being lost in the GUI on the CPT backend page load. The three choices start out all blank even if a value for that repeater was selected during a different edit, the required field for some reason misses the dropped values, and updating deletes my meta values in the database. </p>
+<p>Please help me out, am I missing some field in the Piklist setup array that persists choices, or is this a bug in the repeating groups (I&#8217;m not running into any persistence problems when radio and datepicker fields are top level).</p>
+<pre><code>
+piklist(&#039;field&#039;,
+    array(
+        &#039;type&#039; =&gt; &#039;group&#039;,
+        &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+        &#039;field&#039; =&gt; &#039;service_relation&#039;,
+        &#039;label&#039; =&gt; __(&#039;Relate Post&#039;),
+        &#039;description&#039; =&gt; __(&#039;Link this accountant to his/her respective field(s) of practice.&#039;),
+        &#039;add_more&#039; =&gt; true,
+        &#039;columns&#039; =&gt; 12,
+        &#039;fields&#039; =&gt; array(
+            ...
+            ,array(
+                &#039;type&#039; =&gt; &#039;radio&#039;,
+                &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+                &#039;field&#039; =&gt; &#039;cpa_incharge&#039;,
+                &#039;value&#039; =&gt; &#039;member&#039;,
+                &#039;required&#039; =&gt; &#039;true&#039;,
+                &#039;label&#039; =&gt; &#039;Practice Area Level&#039;,
+                &#039;columns&#039; =&gt; 4,
+                &#039;attributes&#039; =&gt; array(
+                    &#039;class&#039; =&gt; &#039;text&#039;
+                ),
+                &#039;choices&#039; =&gt; array(
+                    &#039;member&#039; =&gt; &#039;Member&#039;,
+                    &#039;featured&#039; =&gt; &#039;Featured&#039;,
+                    &#039;charge&#039; =&gt; &#039;In Charge&#039;
+                )
+            )
+        )
+    )
+);
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-radio-data-persistence/">Grouped Radio Data Persistence</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

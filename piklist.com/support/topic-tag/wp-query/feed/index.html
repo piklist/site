@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>wp query &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/wp-query/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 30 Jul 2014 19:25:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>dynamic select</title>
+		<link>https://piklist.com/support/topic/dynamic-select/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Tue, 29 Jul 2014 23:17:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/dynamic-select/</guid>
+
+					<description><![CDATA[<p>Hello i want to select one of my cpt to another post i dont want to use post-relate because i actually using it and its not working like i want, so i need select only one option, so when i do the query $args = array( &#039;post_type&#039; =&#62; &#039;estado&#039;, &#039;post_per_page&#039; -1, &#039;order&#039; =&#62; &#039;ASC&#039;, &#039;orderby&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-select/">dynamic select</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello i want to select one of my cpt to another post i dont want to use post-relate because i actually using it and its not working like i want, so i need select only one option, so when i do the query</p>
+<pre><code>$args = array(
+    &#039;post_type&#039; =&gt; &#039;estado&#039;,
+    &#039;post_per_page&#039; -1,
+    &#039;order&#039; =&gt; &#039;ASC&#039;,
+    &#039;orderby&#039; =&gt; &#039;title&#039;
+);
+
+$query = new WP_Query($args);
+
+$states = array();
+while($query-&gt;have_posts()) : $query-&gt;the_post();
+    $states[get_the_ID()] = get_the_title();
+endwhile;
+
+piklist(&#039;field&#039;,array(
+        &#039;type&#039; =&gt; &#039;select&#039;,
+        &#039;columns&#039; =&gt; 12,
+        &#039;field&#039; =&gt; &#039;estados&#039;,
+        &#039;label&#039; =&gt; &#039;Estados relacionados&#039;,
+        &#039;choices&#039; =&gt; $states
+    )
+);
+</code></pre>
+<p>but when i go to edit my post and update it, the first option is selected forever, where is my error? or how can i create a dynamic select?</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-select/">dynamic select</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

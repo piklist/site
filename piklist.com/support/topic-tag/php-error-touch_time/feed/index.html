@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>php error touch_time &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/php-error-touch_time/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 30 Aug 2016 16:57:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add custom post type php error touch_time</title>
+		<link>https://piklist.com/support/topic/add-custom-post-type-php-error-touch_time/</link>
+		
+		<dc:creator><![CDATA[thomas]]></dc:creator>
+		<pubDate>Tue, 30 Aug 2016 16:52:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-custom-post-type-php-error-touch_time/</guid>
+
+					<description><![CDATA[<p>Hi, i have an error when i want to add new custom post. I use themosis framework to declare my new post type : PostType::make(&#039;mission&#039;, &#039;Missions&#039;, &#039;Mission&#039;)-&#62;set([ &#039;public&#039; =&#62; true, &#039;menu_position&#039; =&#62; 25, &#039;supports&#039; =&#62; [&#039;title&#039;], &#039;rewrite&#039; =&#62; [&#039;slug&#039; =&#62; &#039;mission&#039;], &#039;capability_type&#039; =&#62; &#039;post&#039;, &#039;query_var&#039; =&#62; true, ]); But when i access to : /cms/wp-admin/post-new.php?post_type=mission [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-custom-post-type-php-error-touch_time/">Add custom post type php error touch_time</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>i have an error when i want to add new custom post. I use themosis framework to declare my new post type :</p>
+<pre><code>PostType::make(&#039;mission&#039;, &#039;Missions&#039;, &#039;Mission&#039;)-&gt;set([
+    &#039;public&#039;        =&gt; true,
+    &#039;menu_position&#039; =&gt; 25,
+    &#039;supports&#039;      =&gt; [&#039;title&#039;],
+    &#039;rewrite&#039;       =&gt; [&#039;slug&#039; =&gt; &#039;mission&#039;],
+    &#039;capability_type&#039; =&gt; &#039;post&#039;,
+    &#039;query_var&#039;     =&gt; true,
+]);</code></pre>
+<p>But when i access to : /cms/wp-admin/post-new.php?post_type=mission<br />
+got this error : </p>
+<pre><code>Message:
+Trying to get property of non-object
+Location:
+/path_to_webroot/htdocs/cms/wp-admin/includes/template.php on line 699</code></pre>
+<p>Problem comes from this line :<br />
+<code>&lt;?php touch_time(($action == &#039;edit&#039;), ($pagenow != &#039;post-new.php&#039;), 4); ?&gt;</code><br />
+(/htdocs/content/plugins/piklist/parts/meta-boxes/submitdiv.php l.218)</p>
+<p>so when i add post <code>($pagenow != &#039;post-new.php&#039;)</code>=<code>0</code>,<br />
+but the wordpress function touch_time() get <code>get_comment()-&gt;comment_date</code> for $post_date value </p>
+<pre><code>function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
+/* ... */
+$post_date = ($for_post) ? $post-&gt;post_date : get_comment()-&gt;comment_date;
+</code></pre>
+<p>whereas get_comment don&#8217;t return an object in my case !! why ?</p>
+<p>(/htdocs/cms/wp-admin/includes/template.php l.699)</p>
+<p>How can i fix this ? </p>
+<p>Thank you,<br />
+Thomas</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-custom-post-type-php-error-touch_time/">Add custom post type php error touch_time</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

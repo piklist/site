@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>repeater widgets &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/repeater-widgets/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 04 May 2019 08:01:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>repeater in widgets</title>
+		<link>https://piklist.com/support/topic/repeater-in-widgets/</link>
+		
+		<dc:creator><![CDATA[osmansufy]]></dc:creator>
+		<pubDate>Sat, 04 May 2019 07:56:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/repeater-in-widgets/</guid>
+
+					<description><![CDATA[<p>Hi I want to crate repeater field in widgets .Although create it but when save the widgets it save one field only and i can&#8217;t work with &#8216;forech&#8217; loop . my widget-form code is hare&#8230;&#8230; &#60;?php piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;group&#8217; , &#8216;field&#8217; =&#62; &#8216;social_group&#8217; // removing this parameter saves all fields as separate meta [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-in-widgets/">repeater in widgets</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi<br />
+I want to crate repeater field in widgets .Although create it but when save the widgets it save one field only and i can&#8217;t work with &#8216;forech&#8217;  loop .<br />
+my widget-form code is hare&#8230;&#8230;</p>
+<p>&lt;?php</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    , &#8216;field&#8217; =&gt; &#8216;social_group&#8217; // removing this parameter saves all fields as separate meta<br />
+    , &#8216;label&#8217; =&gt; __(&#8216;Social item&#8217;, &#8216;VerumSocial&#8217;)<br />
+    , &#8216;list&#8217; =&gt; false<br />
+    , &#8216;description&#8217; =&gt; __(&#8216;A grouped field with the field parameter set.&#8217;, &#8216;VerumSocial&#8217;)<br />
+    , &#8216;add_more&#8217; =&gt; true</p>
+<p>    , &#8216;fields&#8217; =&gt; array(<br />
+        array(<br />
+            &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            , &#8216;field&#8217; =&gt; &#8216;social_icon&#8217;<br />
+            , &#8216;label&#8217; =&gt; __(&#8216;social_icon&#8217;, &#8216;VerumSocial&#8217;)<br />
+            , &#8216;required&#8217; =&gt; true<br />
+            , &#8216;columns&#8217; =&gt; 12<br />
+            , &#8216;attributes&#8217; =&gt; array(<br />
+                &#8216;placeholder&#8217; =&gt; &#8216;social_icon&#8217;,<br />
+            ),</p>
+<p>        )<br />
+        , array(<br />
+            &#8216;type&#8217; =&gt; &#8216;url&#8217;<br />
+            , &#8216;field&#8217; =&gt; &#8216;social_link&#8217;<br />
+            , &#8216;label&#8217; =&gt; __(&#8216;Add social link&#8217;, &#8216;VerumSocial&#8217;)<br />
+            , &#8216;columns&#8217; =&gt; 12<br />
+            , &#8216;attributes&#8217; =&gt; array(<br />
+                &#8216;placeholder&#8217; =&gt; &#8216;social link.&#8217;,<br />
+            ),<br />
+        )<br />
+        ,<br />
+    ),<br />
+));</p>
+<p>and my widget code is hare<br />
+&lt;?php<br />
+/*<br />
+Title: My Demo Widget<br />
+Description: A description of what my widget does<br />
+ */</p>
+<p>echo $before_widget;<br />
+$vsocial = $settings[&#8216;social_group&#8217;];</p>
+<p>print_r($vsocial);</p>
+<p>foreach ($vsocial as $vsocial) {</p>
+<p>    ?&gt;</p>
+<p>  <a>&#8220;&gt;&lt;i class=&#8221;fa fa-&lt;?php echo $vsocial[0][&#8216;social_icon&#8217;]                                                 ?&gt;&#8221;&gt;&lt;/i&gt;</a><br />
+&lt;?php</p>
+<p>    echo $after_widget;<br />
+}<br />
+&#8230;.</p>
+<p>output in front</p>
+<p>Array ( [0] =&gt; Array ( [social_icon] =&gt; facebook [social_link] =&gt; https://www.facebook.com/ ) )</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-in-widgets/">repeater in widgets</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

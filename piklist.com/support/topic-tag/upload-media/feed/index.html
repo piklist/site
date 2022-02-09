@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>upload media &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/upload-media/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 21 Oct 2016 09:31:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Reordering not working on images with update</title>
+		<link>https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</link>
+		
+		<dc:creator><![CDATA[bobstew]]></dc:creator>
+		<pubDate>Fri, 21 Oct 2016 09:31:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/reordering-not-working-on-images-with-update/</guid>
+
+					<description><![CDATA[<p>The reordering of &#8216;field&#8217; &#8216;type&#8217; =&#62; &#8216;upload&#8217; was working fine. But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think). Here is my code for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The reordering of &#8216;field&#8217;  &#8216;type&#8217; =&gt; &#8216;upload&#8217; was working fine.<br />
+But then the client updated WordPress and now the reordering is not working. We are now running WP 4.6.1 &#8211; PikList 0.9.9.9 </p>
+<p>I&#8217;ve checked this post &#8211; https://piklist.com/support/topic/reordering-not-working-on-images/ &#8211; but it doesn&#8217;t seem to address my issue ( I think).</p>
+<p>Here is my code for the media upload:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;file&#039;
+,&#039;field&#039; =&gt; &#039;upload_media&#039;
+,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+,&#039;description&#039; =&gt; __(&#039;Add images to a Report.&#039;,&#039;piklist&#039;)
+,&#039;options&#039; =&gt; array(
+  &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+  ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+)
+));</code></pre>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/reordering-not-working-on-images-with-update/">Reordering not working on images with update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>media uploads not working</title>
+		<link>https://piklist.com/support/topic/media-uploads-not-working/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 10 Jan 2016 23:04:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/media-uploads-not-working/</guid>
+
+					<description><![CDATA[<p>I had this issue back in 0.9.9.4 but seemed to have been resolved after I updated to 0.9.9.6. Again I find that I cannot really work the media upload. The symptoms are odd. Upon creating a new post it will let me upload using the media modal native to WordPress. Then its locked out for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-uploads-not-working/">media uploads not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I had this issue back in 0.9.9.4 but seemed to have been resolved after I updated to 0.9.9.6. Again I find that I cannot really work the media upload. The symptoms are odd. Upon creating a new post it will let me upload using the media modal native to WordPress. Then its locked out for the most part. When I try to remove and update the post &#8211; it remains. I can upload more without a problem and I can remove the second onward, but never the first one that I uploaded. I am pulling my hair (*what&#8217;s left of it) at this point. </p>
+<p>This is the meta-box I setup:</p>
+<pre><code> piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;post_header_banner&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Upload Top Banner.&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Banner Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add Banner&#039;,&#039;piklist&#039;)
+    )
+    ,&#039;validate&#039; =&gt; array(
+	  array(
+	    &#039;type&#039; =&gt; &#039;limit&#039;,
+	    &#039;options&#039; =&gt; array(
+	      &#039;min&#039; =&gt; 0,
+	      &#039;max&#039; =&gt; 2
+	    )
+	  )
+	)
+  ));
+  
+  
+  	 piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;post_title_banner&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Upload Title Banner.&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Title Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add Title&#039;,&#039;piklist&#039;)
+    )
+    
+    ,&#039;validate&#039; =&gt; array(
+	  array(
+	    &#039;type&#039; =&gt; &#039;limit&#039;,
+	    &#039;options&#039; =&gt; array(
+	      &#039;min&#039; =&gt; 0,
+	      &#039;max&#039; =&gt; 1
+	    )
+	  )
+	)
+    
+  ));
+</code></pre>
+<p>If I go into the database I can see the postmeta section with the <code>post_header_banner</code> populated with the image ID of the first image. From here I can put in another ID and it updates nicely without a hitch. </p>
+<p>I read through the forums and found that some people were experiencing similar issues with far more complex setups than what I am doing. I even added the limits to see if setting the <code>min</code> but no dice!</p>
+<p>Then I figured it had something to do with not being explicit with setting capability on the <code>meta-box</code> file. Nope. </p>
+<p>I turned off all the plugins to make sure they weren&#8217;t conflicting. Nothing.</p>
+<p>I already went back in time to the previous releases, including the one still posted as the current release on WordPress Plugins section. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-uploads-not-working/">media uploads not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

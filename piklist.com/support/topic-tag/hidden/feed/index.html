@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>hidden &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/hidden/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 19 May 2019 19:44:59 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Save to hidden</title>
+		<link>https://piklist.com/support/topic/save-to-hidden/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Sun, 19 May 2019 19:44:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/save-to-hidden/</guid>
+
+					<description><![CDATA[<p>I have a regular text field that holds a custom title (&#8216;custom_title&#8217;) for the post. The title has a few &#8220;reserved&#8221; characters for soft hyphenation and line breaks (easy for the &#8220;non-tech-savvy&#8221; user to understand). I want to save that title to a an extra hidden field with the linebreaks as html tags. I know [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/save-to-hidden/">Save to hidden</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a regular text field that holds a custom title (&#8216;custom_title&#8217;) for the post. The title has a few &#8220;reserved&#8221; characters for soft hyphenation and line breaks (easy for the &#8220;non-tech-savvy&#8221; user to understand).</p>
+<p>I want to save that title to a an extra hidden field with the linebreaks as html tags. I know how to do that, but how do I pull the custom title field to the hidden? Do I need to hook into &#8216;piklist_save_field&#8217;? I would love to have it as a part of a the sanitization filter that I am already using to strip out extra spaces on the &#8216;custom_title&#8217;.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/save-to-hidden/">Save to hidden</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Field conditions don&#039;t work with hidden fields</title>
+		<link>https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/</link>
+		
+		<dc:creator><![CDATA[Alex Kladov]]></dc:creator>
+		<pubDate>Wed, 08 Aug 2018 22:35:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/</guid>
+
+					<description><![CDATA[<p>Hi, I noticed that the field conditions don&#8217;t work, when they depend on hidden field&#8217;s value. The situation is, I have a plugin, which I am writing a settings page for. The Workflow has multiple tabs, the first tab allows the user to enable/disable this plugin by clicking a checkbox field called &#8220;enabled&#8221;. And since [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/">Field conditions don&#039;t work with hidden fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I noticed that the field conditions don&#8217;t work, when they depend on hidden field&#8217;s value.</p>
+<p>The situation is, I have a plugin, which I am writing a settings page for. The Workflow has multiple tabs, the first tab allows the user to enable/disable this plugin by clicking a checkbox field called &#8220;enabled&#8221;. And since I couldn&#8217;t find a way to directly &#8220;hook&#8221; into the &#8220;enabled&#8221; field from other workflow tabs, I was thinking to use a hidden field and populate the value of this field dynamically on every page load. This is what I had:</p>
+<pre><code>$plugin_settings = get_option( &#039;plugin_settings&#039; );
+
+piklist( &#039;field&#039;, array(
+  &#039;type&#039;  =&gt; &#039;hidden&#039;,
+  &#039;field&#039; =&gt; &#039;is_enabled&#039;,
+  &#039;value&#039; =&gt; ( array_key_exists( &#039;enabled&#039;, $plugin_settings ) &amp;&amp; $plugin_settings[&#039;enabled&#039;] == &#039;true&#039; ),
+) );
+piklist( &#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;,
+  &#039;field&#039; =&gt; &#039;dependent_field&#039;,
+  &#039;label&#039; =&gt; &#039;Dependent Field&#039;,
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;is_enabled&#039;,
+      &#039;value&#039; =&gt; true,
+      &#039;reset&#039; =&gt; false,
+    ),
+  ),
+));</code></pre>
+<p>But it doesn&#8217;t work. It only works, if the &#8220;is_enabled&#8221; is not of type &#8220;hidden&#8221;. Is this a bug or an expected behaviour?</p>
+<p>Also, does anyone know how else I can hide fields based on other filed&#8217;s value from another workflow tab? Or, even better, how can I hide entire Wokflow tabs, based on Setting field value?</p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/">Field conditions don&#039;t work with hidden fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more and hidden field</title>
+		<link>https://piklist.com/support/topic/add_more-and-hidden-field/</link>
+		
+		<dc:creator><![CDATA[rharrigan]]></dc:creator>
+		<pubDate>Tue, 26 Jul 2016 20:23:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and-hidden-field/</guid>
+
+					<description><![CDATA[<p>This is not related to the problem here: https://piklist.com/support/topic/hidden-field-bugs/ The group add_more does not display correctly when a hidden field is included in a group. Here is my erroneous code &#8211; Title: Recipe Options Post Type: recipe Order: 1 Collapse: false */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;add_more&#039; =&#62; true ,&#039;scope&#039; =&#62; &#039;post_meta&#039; ,&#039;columns&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and-hidden-field/">add_more and hidden field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is not related to the problem here: https://piklist.com/support/topic/hidden-field-bugs/</p>
+<p>The group add_more does not display correctly when a hidden field is included in a group. </p>
+<p>Here is my erroneous code &#8211; </p>
+<pre><code>
+Title: Recipe Options
+Post Type: recipe
+Order: 1
+Collapse: false
+*/
+
+piklist(&#039;field&#039;, array(	
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;recipe_id&#039;
+      ,&#039;type&#039; =&gt; &#039;hidden&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;field&#039; =&gt; &#039;recipe_title&#039;
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;label&#039; =&gt; __(&#039;Recipe Title&#039;,&#039;ideas_solutions&#039;)
+      ,&#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;required&#039; =&gt; true
+      ,&#039;columns&#039; =&gt; 12
+    )	
+  )
+));
+</code></pre>
+<p>This is working code &#8211; </p>
+<pre><code>
+Title: Recipe Options
+Post Type: recipe
+Order: 1
+Collapse: false
+*/
+
+piklist(&#039;field&#039;, array(	
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(array(
+      &#039;field&#039; =&gt; &#039;recipe_title&#039;
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;label&#039; =&gt; __(&#039;Recipe Title&#039;,&#039;ideas_solutions&#039;)
+      ,&#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;required&#039; =&gt; true
+      ,&#039;columns&#039; =&gt; 12
+    )	
+  )
+));
+</code></pre>
+<p>It would be nice to have hidden fields in an add_more so I can filter the meta data on insert/update</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and-hidden-field/">add_more and hidden field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to display add more field in oder detail page of woocommerce</title>
+		<link>https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/</link>
+		
+		<dc:creator><![CDATA[hozefasmile]]></dc:creator>
+		<pubDate>Mon, 30 Nov 2015 10:39:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/</guid>
+
+					<description><![CDATA[<p>Hi, I am working on an eCommerce site http://uniqueswebsolution.com/clippingc/ and I am using piklist beta version 0.9.9.6 On the order detail page I want to display a add more field of upload files. You can see the product detail page to know what I have added on the product detail page through piklist http://uniqueswebsolution.com/clippingc/product/color-correction/ For [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/">How to display add more field in oder detail page of woocommerce</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, </p>
+<p>I am working on an eCommerce site http://uniqueswebsolution.com/clippingc/ and I am using piklist beta version 0.9.9.6</p>
+<p>On the order detail page I want to display a add more field of upload files. You can see the product detail page to know what I have added on the product detail page through piklist http://uniqueswebsolution.com/clippingc/product/color-correction/</p>
+<p>For adding this add more field I had created order-form.php under piklist/parts/ folder of the theme and provided following code to display it.</p>
+<pre><code>&lt;?php
+/*
+Title: Upload files
+Method: post
+Message: Your data has been successfully uploaded
+
+*/
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_order_attch&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Upload your images&#039;) 
+    ,&#039;scope&#039; =&gt; &#039;shop_order&#039;
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;attch-single&#039;
+    	,&#039;scope&#039; =&gt; &#039;shop_order&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+    	,&#039;description&#039; =&gt; __(&#039;You can add image files or zip file with all images in it.&#039;,&#039;piklist&#039;)
+    	,&#039;options&#039; =&gt; array(
+      		&#039;basic&#039; =&gt; true
+    		)
+        )
+      )
+    )
+  );
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;submit&#039;
+    ,&#039;field&#039; =&gt; &#039;submit&#039;
+    ,&#039;value&#039; =&gt; &#039;Submit&#039;
+  ));
+?&gt;</code></pre>
+<p>I have used scope as &#8220;shop_order&#8221; , that I think is the post type for order in woocommerce, ref https://docs.woothemes.com/document/installed-taxonomies-post-types/</p>
+<p>Now to display it on order detail page I am adding this code in woocommerce/order/order-details.php</p>
+<pre><code>&lt;?php 
+		// Additional attachement display on detail page
+		$upload_order_attch = get_post_meta($post-&gt;ID, &#039;upload_order_attch&#039;, true);
+		// Get your custom template part: addmore-workout-template.php
+		piklist(get_stylesheet_directory() . &#039;/template/addmore-workout-template&#039;, array(&#039;data&#039; =&gt; $upload_order_attch, &#039;loop&#039; =&gt; &#039;data&#039;));
+	?&gt;</code></pre>
+<p>According to the instruction provided in your documentation. and then created a template file addmore-workout-template.php and added this code in it </p>
+<pre><code>&lt;?php 
+	echo $data[&#039;upload_order_attch&#039;]; 
+?&gt;</code></pre>
+<p>But nothing is displaying on the order detail page when creating an order by adding images to piklist add more field.</p>
+<p>Please suggest me what I am missing and what next we need to do here to make it available on the order detail page?</p>
+<p>Thanks<br />
+Hozefa</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/">How to display add more field in oder detail page of woocommerce</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

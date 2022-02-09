@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 27 Dec 2021 12:31:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Unexpected hidden field on checklist field</title>
+		<link>https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/</link>
+		
+		<dc:creator><![CDATA[ramzi]]></dc:creator>
+		<pubDate>Mon, 27 Dec 2021 12:31:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/</guid>
+
+					<description><![CDATA[<p>I tried the checlist field with the following code: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;checkbox&#039;, &#039;field&#039; =&#62; &#039;my_checkbox&#039;, &#039;label&#039; =&#62; &#039;Checkbox&#039;, &#039;value&#039; =&#62; &#039;third&#039;, // set default value &#039;choices&#039; =&#62; array( &#039;first&#039; =&#62; &#039;First Choice&#039;, &#039;second&#039; =&#62; &#039;Second Choice&#039;, &#039;third&#039; =&#62; &#039;Third Choice&#039; ) )); When I see the code from the browser, I found the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/">Unexpected hidden field on checklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I tried the checlist field with the following code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;checkbox&#039;,
+    &#039;field&#039; =&gt; &#039;my_checkbox&#039;,
+    &#039;label&#039; =&gt; &#039;Checkbox&#039;,
+    &#039;value&#039; =&gt; &#039;third&#039;, // set default value
+    &#039;choices&#039; =&gt; array(
+      &#039;first&#039; =&gt; &#039;First Choice&#039;,
+      &#039;second&#039; =&gt; &#039;Second Choice&#039;,
+      &#039;third&#039; =&gt; &#039;Third Choice&#039;
+    )
+  ));</code></pre>
+<p>When I see the code from the browser, I found the following result:</p>
+<pre><code>&lt;li&gt;    
+      &lt;label class=&quot;piklist-field-list-item&quot;&gt;  
+        &lt;input 
+          type=&quot;checkbox&quot;
+          id=&quot;my_checkbox_0&quot; 
+          name=&quot;my_checkbox[]&quot;
+          value=&quot;first&quot;
+                    class=&quot;my_checkbox piklist-field-type-checkbox piklist-field-element&quot;         /&gt;         
+          &lt;input 
+            type=&quot;hidden&quot;
+            id=&quot;my_checkbox_0&quot; 
+            name=&quot;my_checkbox[]&quot;
+            value=&quot;&quot;
+          /&gt;
+      
+                
+        &lt;span class=&quot;piklist-list-item-label&quot;&gt;
+          First Choice        &lt;/span&gt;
+    
+      &lt;/label&gt;
+  
+    &lt;/li&gt;</code></pre>
+<p>There is a hidden field come out from the code. What should I do to correct this?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/">Unexpected hidden field on checklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Request failed: error in field/form</title>
+		<link>https://piklist.com/support/topic/request-failed-error-in-field-form/</link>
+		
+		<dc:creator><![CDATA[cami]]></dc:creator>
+		<pubDate>Tue, 14 Sep 2021 12:31:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/request-failed-error-in-field-form/</guid>
+
+					<description><![CDATA[<p>Hey guys!; I have a website that plays music by connecting with SoundCloud via Ajax to get a playable stream. In this way users can complete a form created with Piklist to publish their music on our website. Right now I&#8217;m having a problem because the form created with Piklist says “Request failed: error” when [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/request-failed-error-in-field-form/">Request failed: error in field/form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey guys!;</p>
+<p>I have a website that plays music by connecting with SoundCloud via Ajax to get a playable stream.</p>
+<p>In this way users can complete a form created with Piklist to publish their music on our website.</p>
+<p>Right now I&#8217;m having a problem because the form created with Piklist says “Request failed: error” when a SoundCloud link is pasted into the field designated for that.</p>
+<p>Everything was working perfectly until just a few weeks ago, I thought that it would be resolved with an update or that it was perhaps a conflict with some other plugin but I have uninstalled one by one and none of these changes.</p>
+<p>Please help me, Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/request-failed-error-in-field-form/">Request failed: error in field/form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Field conditions don&#039;t work with hidden fields</title>
+		<link>https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/</link>
+		
+		<dc:creator><![CDATA[Alex Kladov]]></dc:creator>
+		<pubDate>Wed, 08 Aug 2018 22:35:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/</guid>
+
+					<description><![CDATA[<p>Hi, I noticed that the field conditions don&#8217;t work, when they depend on hidden field&#8217;s value. The situation is, I have a plugin, which I am writing a settings page for. The Workflow has multiple tabs, the first tab allows the user to enable/disable this plugin by clicking a checkbox field called &#8220;enabled&#8221;. And since [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/">Field conditions don&#039;t work with hidden fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I noticed that the field conditions don&#8217;t work, when they depend on hidden field&#8217;s value.</p>
+<p>The situation is, I have a plugin, which I am writing a settings page for. The Workflow has multiple tabs, the first tab allows the user to enable/disable this plugin by clicking a checkbox field called &#8220;enabled&#8221;. And since I couldn&#8217;t find a way to directly &#8220;hook&#8221; into the &#8220;enabled&#8221; field from other workflow tabs, I was thinking to use a hidden field and populate the value of this field dynamically on every page load. This is what I had:</p>
+<pre><code>$plugin_settings = get_option( &#039;plugin_settings&#039; );
+
+piklist( &#039;field&#039;, array(
+  &#039;type&#039;  =&gt; &#039;hidden&#039;,
+  &#039;field&#039; =&gt; &#039;is_enabled&#039;,
+  &#039;value&#039; =&gt; ( array_key_exists( &#039;enabled&#039;, $plugin_settings ) &amp;&amp; $plugin_settings[&#039;enabled&#039;] == &#039;true&#039; ),
+) );
+piklist( &#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;,
+  &#039;field&#039; =&gt; &#039;dependent_field&#039;,
+  &#039;label&#039; =&gt; &#039;Dependent Field&#039;,
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;is_enabled&#039;,
+      &#039;value&#039; =&gt; true,
+      &#039;reset&#039; =&gt; false,
+    ),
+  ),
+));</code></pre>
+<p>But it doesn&#8217;t work. It only works, if the &#8220;is_enabled&#8221; is not of type &#8220;hidden&#8221;. Is this a bug or an expected behaviour?</p>
+<p>Also, does anyone know how else I can hide fields based on other filed&#8217;s value from another workflow tab? Or, even better, how can I hide entire Wokflow tabs, based on Setting field value?</p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-conditions-dont-work-with-hidden-fields/">Field conditions don&#039;t work with hidden fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Prevent Piklist from saving meta-box data when field is empty</title>
+		<link>https://piklist.com/support/topic/stop-piklist-saving-meta-box-data-when-field-is-empty/</link>
+		
+		<dc:creator><![CDATA[mhweb]]></dc:creator>
+		<pubDate>Sun, 03 Jun 2018 12:58:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/stop-piklist-saving-meta-box-data-when-field-is-empty/</guid>
+
+					<description><![CDATA[<p>I noticing that when saving a post even though a metab-box is empty, Piklist saves a meta_key in the database without meta_value. How can I prevent Piklist from saving empty fields? Thanks,</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/stop-piklist-saving-meta-box-data-when-field-is-empty/">Prevent Piklist from saving meta-box data when field is empty</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I noticing that when saving a post even though a metab-box is empty, Piklist saves a meta_key in the database without meta_value.<br />
+How can I prevent Piklist from saving empty fields?</p>
+<p>Thanks,</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/stop-piklist-saving-meta-box-data-when-field-is-empty/">Prevent Piklist from saving meta-box data when field is empty</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>field reflecting current user</title>
+		<link>https://piklist.com/support/topic/field-reflecting-current-user/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Thu, 26 Apr 2018 12:06:23 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-reflecting-current-user/</guid>
+
+					<description><![CDATA[<p>How would you set up a field, that reflects the current user. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;my_filed&#039;+currentusersIDhere, .... Would it work and be safe to use the users id integer?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-reflecting-current-user/">field reflecting current user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How would you set up a field, that reflects the current user.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;my_filed&#039;+currentusersIDhere,
+	....</code></pre>
+<p>Would it work and be safe to use the users id integer?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-reflecting-current-user/">field reflecting current user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload broken in 0.9.9.15</title>
+		<link>https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</link>
+		
+		<dc:creator><![CDATA[cddustin]]></dc:creator>
+		<pubDate>Fri, 13 Apr 2018 18:46:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/</guid>
+
+					<description><![CDATA[<p>WP 4.9.5 Piklist 0.9.9.15 I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;_job_download&#039;, &#039;scope&#039; =&#62; &#039;post_meta&#039;, &#039;label&#039; =&#62; &#039;Downloadable Job Description&#039;, &#039;options&#039; =&#62; array( &#039;basic&#039; =&#62; true ) )); What I tried: Add new post Click file upload [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WP 4.9.5<br />
+Piklist 0.9.9.15</p>
+<p>I had a file upload field associated with a custom post type that was working correctly in 0.9.9.12:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;,
+	&#039;field&#039; =&gt; &#039;_job_download&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Downloadable Job Description&#039;,
+	&#039;options&#039; =&gt; array(
+		&#039;basic&#039; =&gt; true
+	)
+));</code></pre>
+<p><strong>What I tried:</strong></p>
+<ol>
+<li>Add new post</li>
+<li>Click file upload &#8220;Browse&#8230;&#8221; button, choose a file</li>
+<li>Save a draft of the post</li>
+</ol>
+<p><strong>What I expected:</strong></p>
+<p>I expected to see something representing the file I attached below the &#8220;Browse&#8230;&#8221; button, with the file name and a button to remove it.</p>
+<p><strong>What I got:</strong></p>
+<p>No indication that the file attachment was successful. With WP_DEBUG on, I get the following warnings after saving a draft, and they appear on a blank white page (no WP admin UI loads in this case):</p>
+<blockquote><p>Warning: Invalid argument supplied for foreach() in /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php on line 1533</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/includes/misc.php on line 1116</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-admin/post.php on line 198</p></blockquote>
+<blockquote><p>Warning: Cannot modify header information &#8211; headers already sent by (output started at /var/www/html/wp-content/plugins/piklist/includes/class-piklist.php:1533) in /var/www/html/wp-includes/pluggable.php on line 1216</p></blockquote>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-broken-in-0-9-9-15/">File upload broken in 0.9.9.15</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Alignment of fields, contained in a field group.</title>
+		<link>https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/</link>
+		
+		<dc:creator><![CDATA[askek]]></dc:creator>
+		<pubDate>Wed, 05 Jul 2017 14:34:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/</guid>
+
+					<description><![CDATA[<p>I&#8217;m currently working on a &#8216;field group repeater&#8217; for prices, unfortunately, the fields inside each field group don&#8217;t align &#8211; as shown in the image. So my question is simply if there&#8217;s a way to make them? My code looks like this: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;price&#039;, &#039;add_more&#039; =&#62; true, &#039;template&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/">Alignment of fields, contained in a field group.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m currently working on a &#8216;field group repeater&#8217; for prices, unfortunately, the fields inside each field group don&#8217;t align &#8211; as shown in the image. So my question is simply if there&#8217;s a way to make them?<br />
+My code looks like this:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;,
+    &#039;field&#039; =&gt; &#039;price&#039;,
+    &#039;add_more&#039; =&gt; true,
+    &#039;template&#039; =&gt; &#039;field&#039;,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;pricelabel&#039;,
+            &#039;label&#039; =&gt; &#039;Pris titel:&#039;,
+            &#039;required&#039; =&gt; true,
+            &#039;value&#039; =&gt; &#039;B-kørekort  lovpakken (Bil)&#039;
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;number&#039;,
+            &#039;field&#039; =&gt; &#039;price&#039;,
+            &#039;label&#039; =&gt; &#039;Pris&#039;,
+            &#039;required&#039; =&gt; true,
+            &#039;value&#039; =&gt; 13500
+        )
+    )
+));
+</code></pre>
+<p>Thx in advance:))</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/alignment-of-fields-contained-in-a-field-group/">Alignment of fields, contained in a field group.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Is it possible to have a repeater with multiple text inputs?</title>
+		<link>https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/</link>
+		
+		<dc:creator><![CDATA[brianeoneill]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2017 18:07:05 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/</guid>
+
+					<description><![CDATA[<p>Hi. Just discovered Piklist, and I&#8217;m using it to create a theme for podcasters. I&#8217;m creating a custom meta box where users can enter details about the music that&#8217;s included in an episode. For each song, the user should be able to add the title, artist, and a URL. This should be a repeater, so [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/">Is it possible to have a repeater with multiple text inputs?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi. Just discovered Piklist, and I&#8217;m using it to create a theme for podcasters. I&#8217;m creating a custom meta box where users can enter details about the music that&#8217;s included in an episode. </p>
+<p>For each song, the user should be able to add the title, artist, and a URL. This should be a repeater, so the user can add as many songs as needed. </p>
+<p>I&#8217;m trying this, but it&#8217;s not working:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	
+	&#039;label&#039; =&gt; &#039;Music&#039;,
+	&#039;description&#039; =&gt; &#039;Add songs from this episode&#039;,
+	&#039;add_more&#039; =&gt; true,
+
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song title&#039;,
+			&#039;field&#039; =&gt; &#039;song_title&#039;
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song artist&#039;,
+			&#039;field&#039; =&gt; &#039;song_artist&#039;
+		),
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;value&#039; =&gt; &#039;song url&#039;,
+			&#039;field&#039; =&gt; &#039;song_url&#039;
+		)
+	)
+
+));</code></pre>
+<p>Am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/is-it-possible-to-have-a-repeater-with-multiple-text-inputs/">Is it possible to have a repeater with multiple text inputs?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox field not updating for inferior user roles</title>
+		<link>https://piklist.com/support/topic/metabox-field-not-updating-for-inferior-user-roles/</link>
+		
+		<dc:creator><![CDATA[buishi]]></dc:creator>
+		<pubDate>Tue, 15 Nov 2016 23:59:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-field-not-updating-for-inferior-user-roles/</guid>
+
+					<description><![CDATA[<p>I have a custom post type that I&#8217;ve declared with custom capabilities: ,&#039;capability_type&#039; =&#62; array(&#039;plagiarism_case&#039;, &#039;plagiarism_cases&#039;) ,&#039;map_meta_cap&#039; =&#62; true Then I have the capabilities defined: $admin_caps = array( &#039;edit_others_plagiarism_cases&#039;, &#039;delete_others_plagiarism_cases&#039;, ); $user_caps = array( &#039;edit_plagiarism_cases&#039;, &#039;read_plagiarism_case&#039;, &#039;delete_plagiarism_case&#039;, &#039;edit_plagiarism_cases&#039;, &#039;publish_plagiarism_cases&#039;, &#039;read_private_plagiarism_cases&#039;, &#039;read&#039;, &#039;delete_plagiarism_cases&#039;, &#039;delete_private_plagiarism_cases&#039;, &#039;delete_published_plagiarism_cases&#039;, &#039;edit_private_plagiarism_cases&#039;, &#039;edit_published_plagiarism_cases&#039;, &#039;create_plagiarism_cases&#039;, ); $admin_roles = array( get_role( &#039;administrator&#039; ), get_role( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-field-not-updating-for-inferior-user-roles/">Metabox field not updating for inferior user roles</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a custom post type that I&#8217;ve declared with custom capabilities:</p>
+<pre><code>,&#039;capability_type&#039; =&gt; array(&#039;plagiarism_case&#039;, &#039;plagiarism_cases&#039;)
+ ,&#039;map_meta_cap&#039; =&gt; true</code></pre>
+<p>Then I have the capabilities defined:</p>
+<pre><code>$admin_caps = array(
+    &#039;edit_others_plagiarism_cases&#039;,
+    &#039;delete_others_plagiarism_cases&#039;,
+  );
+  $user_caps = array(
+    &#039;edit_plagiarism_cases&#039;,
+    &#039;read_plagiarism_case&#039;,
+    &#039;delete_plagiarism_case&#039;,
+    &#039;edit_plagiarism_cases&#039;,
+    &#039;publish_plagiarism_cases&#039;,
+    &#039;read_private_plagiarism_cases&#039;,
+    &#039;read&#039;,
+    &#039;delete_plagiarism_cases&#039;,
+    &#039;delete_private_plagiarism_cases&#039;,
+    &#039;delete_published_plagiarism_cases&#039;,
+    &#039;edit_private_plagiarism_cases&#039;,
+    &#039;edit_published_plagiarism_cases&#039;,
+    &#039;create_plagiarism_cases&#039;,
+  );
+  $admin_roles = array(
+    get_role( &#039;administrator&#039; ),
+    get_role( &#039;editor&#039; ),
+  );
+  $user_roles = array(
+    get_role( &#039;subscriber&#039; ),
+    get_role( &#039;contributor&#039; ),
+  );
+  foreach ($admin_roles as $role) {
+    foreach (array_merge($admin_caps, $user_caps) as $cap) {
+      $role-&gt;add_cap( $cap );
+    }
+  };
+  foreach($user_roles as $role){
+    foreach ($user_caps as $cap) {
+      $role-&gt;add_cap( $cap );
+    }
+  };
+</code></pre>
+<p>Unfortunately, only admins appear to be able to save values in the metaboxes. Subscribers can edit the post type, and even edit the meta fields directly  (via native wordpress field display), but when entering information in the metabox field, the content is not saved. The same is true of the front-end form.</p>
+<p>I&#8217;m using piklist 0.9.9.9</p>
+<p>Thanks in advance!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-field-not-updating-for-inferior-user-roles/">Metabox field not updating for inferior user roles</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Get the field label</title>
+		<link>https://piklist.com/support/topic/get-the-field-label/</link>
+		
+		<dc:creator><![CDATA[norboo]]></dc:creator>
+		<pubDate>Sat, 12 Nov 2016 08:30:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get-the-field-label/</guid>
+
+					<description><![CDATA[<p>Hey guys! I have several custom fields for a CPT product: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;clothes_width&#039; ,&#039;label&#039; =&#62; __(&#039;Width&#039;) ,&#039;value&#039; =&#62; &#039;N/A&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) )); It&#8217;s pretty easy to get the value for each field but I&#8217;d like to output it in the following format: $clothes_width[&#039;label&#039;] =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-the-field-label/">Get the field label</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey guys!</p>
+<p>I have several custom fields for a CPT product:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;clothes_width&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Width&#039;)
+    ,&#039;value&#039; =&gt; &#039;N/A&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+));</code></pre>
+<p>It&#8217;s pretty easy to get the value for each field but I&#8217;d like to output it in the following format:</p>
+<pre><code>$clothes_width[&#039;label&#039;] =&gt; $clothes_width[&#039;value&#039;]
+eg: Width =&gt; N/A
+</code></pre>
+<p>Any idea how to output the label?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-the-field-label/">Get the field label</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

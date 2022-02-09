@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>#TimeMemoryFunctionLocation &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/timememoryfunctionlocation/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 22 Jul 2016 11:23:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Setting retrieval error using foreach</title>
+		<link>https://piklist.com/support/topic/setting-retrieval-error-using-foreach/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Fri, 22 Jul 2016 11:16:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/setting-retrieval-error-using-foreach/</guid>
+
+					<description><![CDATA[<p>I have the code below for retrieving field values from a settings page. &#60;?php $theme_options = get_option(&#039;lawyeah_theme_settings&#039;); $position4_vsb = $theme_options[&#34;stmp_postn4_vsb&#34;]; foreach ($position4_vsb as $value) { echo &#34;$value&#34;;}?&#62; The challenge I&#8217;m facing is that if I make a fresh installation of my theme, I get an error like Call Stack #TimeMemoryFunctionLocation. This has not been happening [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-retrieval-error-using-foreach/">Setting retrieval error using foreach</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have the code below for retrieving field values from a settings page.</p>
+<pre><code>&lt;?php $theme_options = get_option(&#039;lawyeah_theme_settings&#039;); 
+$position4_vsb = $theme_options[&quot;stmp_postn4_vsb&quot;]; 
+foreach ($position4_vsb as $value) { echo &quot;$value&quot;;}?&gt;</code></pre>
+<p>The challenge I&#8217;m facing is that if I make a fresh installation of my theme, I get an error like <strong><em>Call Stack #TimeMemoryFunctionLocation</em></strong>. This has not been happening on my old WordPress installation.Reason: Because it already has the array values in the database.  But it does on any other WordPress installation because the database actually does not have the array values queried by foreach. I&#8217;ve done a little research and according to what I&#8217;ve found, the error comes as a result of querying the database for array values that don&#8217;t exist. The solution to the problem then, in my opinion is to provide a fallback/default value should the database not have those values. That way, <em>foreach</em> returns a default value or nothing at all should it not find the queried field values. I&#8217;ve been trying to pull this off but in vain. Could somebody help me figure out a way to make <em>foreach</em> silent in case it doesn&#8217;t find a value in the database instead of throwing fatal errors.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-retrieval-error-using-foreach/">Setting retrieval error using foreach</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

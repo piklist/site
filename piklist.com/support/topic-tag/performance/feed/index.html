@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>performance &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/performance/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 20 Apr 2016 23:24:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add More with conditonals &#8211; JS performance</title>
+		<link>https://piklist.com/support/topic/add-more-with-conditonals-js-performance/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 23:24:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-with-conditonals-js-performance/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m running the 0.9.9.7 beta; I&#8217;ve got an Add More, each unit of which includes a conditional tied to a radio button. All functions fine, but I need about 20 Add More units to give the layout on the front end I&#8217;m looking for. Front-end JS performance slows as the number of units grows, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-with-conditonals-js-performance/">Add More with conditonals &#8211; JS performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I&#8217;m running the 0.9.9.7 beta; I&#8217;ve got an Add More, each unit of which includes a conditional tied to a radio button. All functions fine, but I need about 20 Add More units to give the layout on the front end I&#8217;m looking for.</p>
+<p>Front-end JS performance slows as the number of units grows, to the point where the page is locked up for &gt; 1 minute, with a CPU core pegged, when I either add a new unit, or attempt to re-order the existing ones. </p>
+<p>I can try disabling the conditionals, but wondered if there was anything else I can do to improve the performance.</p>
+<p>I&#8217;ve read this post:</p>
+<blockquote data-secret="78T1QzkVT2" class="wp-embedded-content"><p><a href="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/">performance drop with lots of conditional statements</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="display:none;" src="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/embed/#?secret=78T1QzkVT2" data-secret="78T1QzkVT2" width="500" height="282" title="Embedded WordPress Post" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>but I&#8217;m not sure if it&#8217;s relevant.<br />
+Here&#8217;s my code:</p>
+<pre><code>
+
+ piklist(&#039;field&#039;, array(
+   &#039;type&#039; =&gt; &#039;group&#039;
+   ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+   ,&#039;field&#039; =&gt; &#039;ap_link_list&#039;
+   ,&#039;add_more&#039; =&gt; true
+   ,&#039;label&#039; =&gt; __(&#039;Link Icons&#039;)
+   ,&#039;description&#039; =&gt; __(&#039;These link to individual Service Types (or flat pages)&#039;)
+   ,&#039;attributes&#039; =&gt; array(
+     &#039;class&#039; =&gt; &#039;&#039;
+   )
+   ,&#039;fields&#039; =&gt; array(
+   	array(
+	 &#039;type&#039; =&gt; &#039;radio&#039;
+	 ,&#039;field&#039; =&gt; &#039;link_type&#039;
+	 ,&#039;label&#039; =&gt; &#039;Links To&#039;
+	 ,&#039;attributes&#039; =&gt; array(
+	 &#039;class&#039; =&gt; &#039;text&#039;
+	 )
+	 ,&#039;choices&#039; =&gt; array(
+	   &#039;page&#039; =&gt; &#039;Page&#039;
+	   ,&#039;categories&#039; =&gt; &#039;Service Type&#039;
+	   ,&#039;path&#039; =&gt; &#039;Full Path&#039;
+	 )
+	)
+   	, array(
+	  &#039;type&#039; =&gt; &#039;select&#039;
+	  ,&#039;field&#039; =&gt; &#039;ap_category_id&#039;
+	  ,&#039;label&#039; =&gt; &#039;Service Type&#039;
+	  ,&#039;description&#039; =&gt; &#039;&#039;
+	  , &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;categories&#039;
+	  		)
+	  	)
+	  ,&#039;choices&#039; =&gt; array(
+	      &#039;&#039; =&gt; &#039;-- Choose Service Type --&#039;
+	    )
+	    + piklist(get_terms(&#039;dl_type&#039;, array(
+	      &#039;hide_empty&#039; =&gt; false
+	    ))
+	    ,array(
+	      &#039;term_id&#039;
+	      ,&#039;name&#039;
+	    )
+	  )
+	)
+    , array(
+	   &#039;type&#039; =&gt; &#039;text&#039;
+	   ,&#039;field&#039; =&gt; &#039;ap_icon_text&#039;
+	   ,&#039;label&#039; =&gt; __(&#039;Link Text (blank gives Service Type)&#039;)
+	   ,&#039;description&#039; =&gt; &#039;(blank gives Service Type)&#039;
+	   ,&#039;attributes&#039; =&gt; array(
+	     &#039;class&#039; =&gt; &#039;&#039;
+	   )
+	 )
+    , array(
+        &#039;type&#039; =&gt; &#039;select&#039;,
+        &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+        &#039;field&#039; =&gt; &#039;ap_page_link&#039;,
+        &#039;label&#039; =&gt; &#039;Choose a Page&#039;,
+	  	
+	   &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;page&#039;
+	  		)
+	  	),
+        &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;text&#039;,
+        ),
+        &#039;choices&#039; =&gt; array(
+	      &#039;&#039; =&gt; &#039;-- Choose Page --&#039;
+	    )
+	    + piklist(
+            get_posts(
+                array(
+                    &#039;post_type&#039; =&gt; &#039;page&#039;,
+                    &#039;hide_empty&#039; =&gt; false
+                )
+            ),
+            array(
+                &#039;ID&#039;,
+                &#039;post_title&#039;
+            )
+        )
+    )
+   	 
+
+   	,array(
+	   &#039;type&#039; =&gt; &#039;text&#039;
+	   ,&#039;field&#039; =&gt; &#039;ap_link_url&#039;
+	   ,&#039;label&#039; =&gt; __(&#039;Link URL&#039;)
+	   ,&#039;description&#039; =&gt; &#039;relative to root, ie /audience/parents-and-carers/category/education&#039;
+	   ,&#039;attributes&#039; =&gt; array(
+	     &#039;class&#039; =&gt; &#039;text&#039;
+	   )
+	  , &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;path&#039;
+	  		)
+	  	)
+	 )
+   	)
+
+ ));
+</code></pre>
+<p>Attached is how a single Add More unit is rendering.<br />
+cheers,<br />
+Hugh</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-with-conditonals-js-performance/">Add More with conditonals &#8211; JS performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>ajax client side can work.</title>
+		<link>https://piklist.com/support/topic/ajax-client-side-can-work/</link>
+		
+		<dc:creator><![CDATA[rafi]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 08:48:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/ajax-client-side-can-work/</guid>
+
+					<description><![CDATA[<p>I can make ajax client side validation work. I just need the &#8220;required&#8221; keyword to be inside the input tag of any field. Is there any way to put it there?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ajax-client-side-can-work/">ajax client side can work.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I can make ajax client side validation work. I just need the &#8220;required&#8221; keyword to be inside the input tag of any field.</p>
+<p>Is there any way to put it there?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ajax-client-side-can-work/">ajax client side can work.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist and CPU use</title>
+		<link>https://piklist.com/support/topic/piklist-and-cpu-use/</link>
+		
+		<dc:creator><![CDATA[ralmestro]]></dc:creator>
+		<pubDate>Wed, 08 Oct 2014 20:10:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-and-cpu-use/</guid>
+
+					<description><![CDATA[<p>Hi, I experimented a hight use of my server CPU, then I search about and I find a P3 &#8211; Plugin Performance Profiler and when I run it the test the results show that piklist is using the 78% of runtime of all plugins. Has anyone experimented the same?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-and-cpu-use/">Piklist and CPU use</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I experimented a hight use of my server CPU, then I search about and I find a P3 &#8211; Plugin Performance Profiler and when I run it the test the results show that piklist is using the 78% of runtime of all plugins.</p>
+<p>Has anyone experimented the same?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-and-cpu-use/">Piklist and CPU use</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

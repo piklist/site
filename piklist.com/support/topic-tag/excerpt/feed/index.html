@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>excerpt &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/excerpt/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 17 Jan 2016 04:01:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>excerpt metabox disappears when WYSIWYG enabled</title>
+		<link>https://piklist.com/support/topic/excerpt-metabox-disappears-when-wysiwyg-enabled/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Fri, 15 Jan 2016 21:59:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/excerpt-metabox-disappears-when-wysiwyg-enabled/</guid>
+
+					<description><![CDATA[<p>WP 4.4.1, Piklist 0.9.9.6, WP Helpers 1.9.3 I realized that the excerpt box was missing from post edit pages. It wasn&#8217;t listed under Screen Options either. When I unchecked the box for &#8220;Enable WYSIWYG for excerpts&#8221; in WP Helpers/Reading, the excerpt box reappeared. I hadn&#8217;t had this problem before, so I deactivated all plugins except [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/excerpt-metabox-disappears-when-wysiwyg-enabled/">excerpt metabox disappears when WYSIWYG enabled</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WP 4.4.1, Piklist 0.9.9.6, WP Helpers 1.9.3</p>
+<p>I realized that the excerpt box was missing from post edit pages. It wasn&#8217;t listed under Screen Options either. When I unchecked the box for &#8220;Enable WYSIWYG for excerpts&#8221; in WP Helpers/Reading, the excerpt box reappeared. </p>
+<p>I hadn&#8217;t had this problem before, so I deactivated all plugins except for Piklist and WP Helpers, and switched to theme Twenty Fifteen. No change. Enabling WYSIWYG still makes the post excerpt box disappear. </p>
+<p>I tested a few sites still running WP 4.3.x and they&#8217;re working fine, but I tested on another site running 4.4.1 and had the same problem there. </p>
+<p>Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/excerpt-metabox-disappears-when-wysiwyg-enabled/">excerpt metabox disappears when WYSIWYG enabled</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>WYSIWYG post excerpts?</title>
+		<link>https://piklist.com/support/topic/wysiwyg-post-excerpts/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 20 May 2015 20:31:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/wysiwyg-post-excerpts/</guid>
+
+					<description><![CDATA[<p>From the answer at https://piklist.com/support/topic/editor-field-not-saving-data/ I got the impression that I could override the WordPress textarea meta box for post excerpts with a Piklist editor meta box. Here&#8217;s my metabox file: &#60;?php /* Title: WYSIWYG Post Type: post Description: enables TinyMCE editor for excerpts Priority: high */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;editor&#039; ,&#039;scope&#039; =&#62; &#039;post&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wysiwyg-post-excerpts/">WYSIWYG post excerpts?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>From the answer at https://piklist.com/support/topic/editor-field-not-saving-data/ I got the impression that I could override the WordPress textarea meta box for post excerpts with a Piklist editor meta box. </p>
+<p>Here&#8217;s my metabox file: </p>
+<pre><code>&lt;?php
+/*
+Title: WYSIWYG
+Post Type: post
+Description: enables TinyMCE editor for excerpts
+Priority: high
+*/
+  
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;editor&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_excerpt&#039;
+	,&#039;label&#039; =&gt; &#039;Excerpt&#039;
+	,&#039;options&#039; =&gt; array (
+		&#039;media_buttons&#039; =&gt; false
+		,&#039;teeny&#039; =&gt; true
+	)
+));
+</code></pre>
+<p>Unfortunately it doesn&#8217;t change the Excerpt box. I tried removing post type support for excerpts in hopes that would remove the WP box &#8230; which it does. But it also evidently prevents Piklist from creating its box. </p>
+<pre><code>add_action( &#039;init&#039;, &#039;remove_post_excerpt&#039; );
+function remove_post_excerpt () {
+	remove_post_type_support( &#039;post&#039;, &#039;excerpt&#039; );
+}
+</code></pre>
+<p>Suggestions? Thanks!</p>
+<p>p.s. tried this on 0.9.4.26 and on beta 0.9.5v</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wysiwyg-post-excerpts/">WYSIWYG post excerpts?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>default pages &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/default-pages/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 26 Feb 2014 16:25:36 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>The post in default pages gone.</title>
+		<link>https://piklist.com/support/topic/the-post-in-default-pages-gone/</link>
+		
+		<dc:creator><![CDATA[iwillhappy1314]]></dc:creator>
+		<pubDate>Wed, 26 Feb 2014 16:25:36 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/the-post-in-default-pages-gone/</guid>
+
+					<description><![CDATA[<p>I created two custom post types with piklist, then the post in default pages gone, here is my code: add_filter(&#8216;piklist_post_types&#8217;, &#8216;product_post_type&#8217;); function product_post_type($post_types) { $labels_pro = array( &#8216;name&#8217; =&#62; &#8216;产品&#8217;, &#8216;singular_name&#8217; =&#62; &#8216;产品&#8217;, &#8216;add_new&#8217; =&#62; &#8216;添加产品&#8217;, &#8216;add_new_item&#8217; =&#62; &#8216;添加新产品&#8217;, &#8216;edit_item&#8217; =&#62; &#8216;编辑产品&#8217;, &#8216;new_item&#8217; =&#62; &#8216;新产品&#8217;, &#8216;all_items&#8217; =&#62; &#8216;所有产品&#8217;, &#8216;view_item&#8217; =&#62; &#8216;查看产品&#8217;, &#8216;search_items&#8217; =&#62; &#8216;搜索产品&#8217;, &#8216;not_found&#8217; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/the-post-in-default-pages-gone/">The post in default pages gone.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I created two custom post types with piklist, then the post in default pages gone, here is my code:</p>
+<p>add_filter(&#8216;piklist_post_types&#8217;, &#8216;product_post_type&#8217;);<br />
+ function product_post_type($post_types)<br />
+ {</p>
+<p>   $labels_pro = array(<br />
+    &#8216;name&#8217; =&gt; &#8216;产品&#8217;,<br />
+    &#8216;singular_name&#8217; =&gt; &#8216;产品&#8217;,<br />
+    &#8216;add_new&#8217; =&gt; &#8216;添加产品&#8217;,<br />
+    &#8216;add_new_item&#8217; =&gt; &#8216;添加新产品&#8217;,<br />
+    &#8216;edit_item&#8217; =&gt; &#8216;编辑产品&#8217;,<br />
+    &#8216;new_item&#8217; =&gt; &#8216;新产品&#8217;,<br />
+    &#8216;all_items&#8217; =&gt; &#8216;所有产品&#8217;,<br />
+    &#8216;view_item&#8217; =&gt; &#8216;查看产品&#8217;,<br />
+    &#8216;search_items&#8217; =&gt; &#8216;搜索产品&#8217;,<br />
+    &#8216;not_found&#8217; =&gt;  &#8216;没有找到产品&#8217;,<br />
+    &#8216;not_found_in_trash&#8217; =&gt; &#8216;没有在回收站中找到产品&#8217;,<br />
+    &#8216;parent_item_colon&#8217; =&gt; &#8221;,<br />
+    &#8216;menu_name&#8217; =&gt; &#8216;产品&#8217;,<br />
+  );</p>
+<p>	$labels_order = array(<br />
+		 &#8216;name&#8217; =&gt; &#8216;订单&#8217;,<br />
+		 &#8216;singular_name&#8217; =&gt; &#8216;订单&#8217;,<br />
+		 &#8216;add_new&#8217; =&gt; &#8216;添加订单&#8217;,<br />
+		 &#8216;add_new_item&#8217; =&gt; &#8216;添加新订单&#8217;,<br />
+		 &#8216;edit_item&#8217; =&gt; &#8216;编辑订单&#8217;,<br />
+		 &#8216;new_item&#8217; =&gt; &#8216;新订单&#8217;,<br />
+		 &#8216;all_items&#8217; =&gt; &#8216;所有订单&#8217;,<br />
+		 &#8216;view_item&#8217; =&gt; &#8216;查看订单&#8217;,<br />
+		 &#8216;search_items&#8217; =&gt; &#8216;搜索订单&#8217;,<br />
+		 &#8216;not_found&#8217; =&gt; &#8216;没有找到订单&#8217;,<br />
+		 &#8216;not_found_in_trash&#8217; =&gt; &#8216;没有在回收站中找到订单&#8217;,<br />
+		 &#8216;parent_item_colon&#8217; =&gt; &#8221;,<br />
+		 &#8216;menu_name&#8217; =&gt; &#8216;订单&#8217;,<br />
+	 );</p>
+<p>  $post_types[&#8216;product&#8217;] = array(<br />
+    &#8216;labels&#8217; =&gt; $labels_pro<br />
+    ,&#8217;public&#8217; =&gt; true<br />
+    ,&#8217;has_archive&#8217; =&gt; true<br />
+    ,&#8217;show_ui&#8217; =&gt; true<br />
+    ,&#8217;rewrite&#8217; =&gt; array(<br />
+      &#8216;slug&#8217; =&gt; &#8216;product&#8217;<br />
+      ,&#8217;with_front&#8217; =&gt; true<br />
+    )<br />
+    ,&#8217;supports&#8217; =&gt; array(<br />
+      &#8216;title&#8217;<br />
+      ,&#8217;author&#8217;<br />
+      ,&#8217;revisions&#8217;<br />
+      ,&#8217;commentstatus&#8217;<br />
+    )<br />
+    ,&#8217;hide_meta_box&#8217; =&gt; array(<br />
+     &#8216;slug&#8217;<br />
+     ,&#8217;author&#8217;<br />
+    )<br />
+     ,&#8217;edit_columns&#8217; =&gt; array(<br />
+     &#8216;title&#8217; =&gt; __(&#8216;名称&#8217;)<br />
+     ,&#8217;author&#8217; =&gt; __(&#8216;作者&#8217;)<br />
+    )<br />
+  );</p>
+<p>	 $post_types[&#8216;order&#8217;] = array(<br />
+		 &#8216;labels&#8217; =&gt; $labels_order<br />
+	 , &#8216;public&#8217; =&gt; false<br />
+	 , &#8216;has_archive&#8217; =&gt; false<br />
+	 , &#8216;show_ui&#8217; =&gt; true<br />
+	 , &#8216;rewrite&#8217; =&gt; array(<br />
+			 &#8216;slug&#8217; =&gt; &#8216;order&#8217;<br />
+		 , &#8216;with_front&#8217; =&gt; false<br />
+		 )<br />
+	 , &#8216;supports&#8217; =&gt; array(<br />
+			 &#8216;title&#8217;<br />
+		 , &#8216;author&#8217;<br />
+		 , &#8216;revisions&#8217;<br />
+		 )<br />
+	 , &#8216;hide_meta_box&#8217; =&gt; array(<br />
+			 &#8216;slug&#8217;<br />
+		 , &#8216;author&#8217;<br />
+		 )<br />
+	 , &#8216;edit_columns&#8217; =&gt; array(<br />
+			 &#8216;title&#8217; =&gt; __(&#8216;姓名&#8217;)<br />
+		 )<br />
+	 );</p>
+<p>return $post_types;<br />
+}</p>
+<p>is there any error? or this is a bug for now?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/the-post-in-default-pages-gone/">The post in default pages gone.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

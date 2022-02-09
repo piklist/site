@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>add_more &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/add_more/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 23 Dec 2020 19:52:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Tutorial not working</title>
+		<link>https://piklist.com/support/topic/tutorial-not-working/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2020 19:41:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/tutorial-not-working/</guid>
+
+					<description><![CDATA[<p>I stumbled upon a tutorial in the docs: https://docs.piklist.com/tutorials/shortcodes/save-shortcode-data-to-database/ It is missing a &#8216;)&#8217; in the end of the first piece of code. By the way, is it suppose to show the fields data_id as value in the shortcode, or is my_shortcode_saved_to_db=&#34;&#34; the right appearance?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/tutorial-not-working/">Tutorial not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I stumbled upon a tutorial in the docs:<br />
+https://docs.piklist.com/tutorials/shortcodes/save-shortcode-data-to-database/</p>
+<p>It is missing a &#8216;)&#8217; in the end of the first piece of code. By the way, is it suppose to show the fields data_id as value in the shortcode, or is <code>my_shortcode_saved_to_db=&quot;&quot;</code> the right appearance?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/tutorial-not-working/">Tutorial not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nested Group Filed</title>
+		<link>https://piklist.com/support/topic/nested-group-filed/</link>
+		
+		<dc:creator><![CDATA[Md Rashed Hossain]]></dc:creator>
+		<pubDate>Thu, 26 Mar 2020 06:26:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/nested-group-filed/</guid>
+
+					<description><![CDATA[<p>I used this code for the nested group with add_more, now how can I show the output. My code &#60;?php /** * Title: Section * Post Type: doc **/ piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; &#039;tdoc_section&#039;, &#039;label&#039; =&#62; __( &#039;Section&#039;, &#039;tdoc&#039; ), &#039;add_more&#039; =&#62; true, &#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-group-filed/">Nested Group Filed</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I used this code for the nested group with add_more, now how can I show the output. My code</p>
+<pre><code>&lt;?php
+
+/**
+* Title: Section
+* Post Type: doc
+**/
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;		=&gt; &#039;group&#039;,
+	&#039;field&#039;		=&gt; &#039;tdoc_section&#039;,
+	&#039;label&#039;		=&gt; __( &#039;Section&#039;, &#039;tdoc&#039; ),
+	&#039;add_more&#039;	=&gt; true,
+	&#039;fields&#039;	=&gt; array(
+		array(
+			&#039;type&#039;			=&gt; &#039;text&#039;,
+			&#039;field&#039;			=&gt; &#039;title&#039;,
+			&#039;label&#039;			=&gt; __( &#039;Section Title&#039;, &#039;tdoc&#039; ),
+			&#039;attributes&#039; 	=&gt; array(
+		      &#039;class&#039; 		=&gt; &#039;widefat&#039;
+		    )
+		),
+		array(
+			&#039;type&#039;		=&gt; &#039;editor&#039;,
+			&#039;field&#039;		=&gt; &#039;description&#039;,
+			&#039;label&#039;		=&gt; __( &#039;Section Description&#039;, &#039;tdoc&#039; ),
+			&#039;template&#039; 	=&gt; &#039;field&#039;,
+			&#039;options&#039;	=&gt; array(
+			    &#039;wpautop&#039; 				=&gt; true,
+			    &#039;media_buttons&#039; 		=&gt; true,
+			    &#039;shortcode_buttons&#039; 	=&gt; true,
+			    &#039;teeny&#039; 				=&gt; true,
+			    &#039;dfw&#039; 					=&gt; true,
+			    &#039;quicktags&#039; 			=&gt; true,
+			    &#039;drag_drop_upload&#039; 		=&gt; true,
+			    &#039;tinymce&#039; 				=&gt; array(
+			    	&#039;resize&#039; 			=&gt; true,
+			    	&#039;wp_autoresize_on&#039; 	=&gt; true
+			    )
+			)
+		),
+		array(
+			&#039;type&#039;		=&gt; &#039;group&#039;,
+			&#039;field&#039;		=&gt; &#039;tdoc_section_group&#039;,
+			&#039;label&#039;		=&gt; __( &#039;Sub Section&#039;, &#039;tdoc&#039; ),
+			&#039;add_more&#039;	=&gt; true,
+			&#039;fields&#039;	=&gt; array(
+				array(
+					&#039;type&#039;			=&gt; &#039;text&#039;,
+					&#039;field&#039;			=&gt; &#039;sub_title&#039;,
+					&#039;label&#039;			=&gt; __( &#039;Section Title&#039;, &#039;tdoc&#039; ),
+					&#039;attributes&#039; 	=&gt; array(
+				      &#039;class&#039; 		=&gt; &#039;widefat&#039;
+				    )
+				),
+				array(
+					&#039;type&#039;		=&gt; &#039;editor&#039;,
+					&#039;field&#039;		=&gt; &#039;sub_description&#039;,
+					&#039;label&#039;		=&gt; __( &#039;Section Description&#039;, &#039;tdoc&#039; ),
+					&#039;template&#039; 	=&gt; &#039;field&#039;,
+					&#039;options&#039;	=&gt; array(
+					    &#039;wpautop&#039; 				=&gt; true,
+					    &#039;media_buttons&#039; 		=&gt; true,
+					    &#039;shortcode_buttons&#039; 	=&gt; true,
+					    &#039;teeny&#039; 				=&gt; true,
+					    &#039;dfw&#039; 					=&gt; true,
+					    &#039;quicktags&#039; 			=&gt; true,
+					    &#039;drag_drop_upload&#039; 		=&gt; true,
+					    &#039;tinymce&#039; 				=&gt; array(
+					    	&#039;resize&#039; 			=&gt; true,
+					    	&#039;wp_autoresize_on&#039; 	=&gt; true
+					    )
+					)
+				)
+			)
+		)
+	)
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-group-filed/">Nested Group Filed</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add More and Conditional Slow Performance</title>
+		<link>https://piklist.com/support/topic/add-more-and-conditional-slow-performance/</link>
+		
+		<dc:creator><![CDATA[stefano]]></dc:creator>
+		<pubDate>Mon, 19 Jun 2017 16:56:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-and-conditional-slow-performance/</guid>
+
+					<description><![CDATA[<p>Hi Guys i&#8217;m trying to create a sort of custom page builder, i have a Group with a select box and a series of groups shown depending on that select value. Unfortunately after 5 or 6 module added the browser start to be very slow in adding new modules (minutes) I tried to search in [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-and-conditional-slow-performance/">Add More and Conditional Slow Performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Guys i&#8217;m trying to create a sort of custom page builder,<br />
+i have a Group with a select box and a series of groups shown depending on that select value.</p>
+<p>Unfortunately after 5 or 6 module added the browser start to be very slow in adding new modules (minutes)</p>
+<p>I tried to search in the forum without luck</p>
+<p>I tried also commenting<br />
+<code>add_filter(&#039;get_meta_sql&#039;, array(&#039;piklist_wordpress&#039;, &#039;get_meta_sql&#039;), 101, 6);</code></p>
+<p>as mentioned here:</p>
+<blockquote data-secret="FBhU5ldSjY" class="wp-embedded-content"><p><a href="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/">performance drop with lots of conditional statements</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/embed/#?secret=FBhU5ldSjY" data-secret="FBhU5ldSjY" width="500" height="282" title="&#8220;performance drop with lots of conditional statements&#8221; &#8212; Piklist Support" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>But no effect&#8230;</p>
+<p>Here the code:</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;group&#039;
+      ,&#039;field&#039; =&gt; &#039;module_group&#039;
+      ,&#039;label&#039; =&gt; &#039;Page Modules&#039;
+      ,&#039;value&#039; =&gt; &#039;none&#039;
+      ,&#039;add_more&#039; =&gt; true
+      ,&#039;fields&#039; =&gt; array(
+        array(
+              &#039;type&#039; =&gt; &#039;select&#039;
+              ,&#039;field&#039; =&gt; &#039;module_select&#039;
+              ,&#039;label&#039; =&gt; &#039;Select a Module&#039;
+              ,&#039;columns&#039; =&gt; 12
+              ,&#039;choices&#039; =&gt; array(
+              &#039;none&#039; =&gt; &#039;Select a Module to add&#039;
+              ,&#039;full_w_slide&#039; =&gt; &#039;Full Width Slide&#039;
+              ,&#039;slide_text_dx&#039; =&gt; &#039;Slide + Testo a DX&#039;
+              ,&#039;slide_text_sx&#039; =&gt; &#039;Testo a SX + Slide&#039;
+              ,&#039;3_column_text&#039; =&gt; &#039;Testo 3 Colonne&#039;
+              ,&#039;quadreria_img&#039; =&gt; &#039;Quadreria Immagini&#039;
+              ,&#039;quadreria_img_irreg&#039; =&gt; &#039;Quadreria Immagini Irregolare&#039;
+              )
+          )
+        //----------------------
+        //-- Full Width Slide --
+        //----------------------
+        ,array(
+          &#039;type&#039; =&gt; &#039;group&#039;
+          ,&#039;field&#039; =&gt; &#039;full_w_slide_field&#039;
+          //,&#039;label&#039; =&gt; __(&#039;Slide + Testo a DX&#039;, &#039;mph&#039;)
+          ,&#039;list&#039; =&gt; false
+          ,&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;)
+          ,&#039;fields&#039; =&gt; array(
+              array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h2)&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;file&#039;
+                  ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+                  ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+                  ,&#039;options&#039; =&gt; array(
+                  &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;button&#039; =&gt; &#039;Add&#039;
+                  )
+              )
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+              ,&#039;value&#039; =&gt; &#039;full_w_slide&#039;
+            )
+          )
+      )
+
+        //----------------------
+        //- Slide + Testo a DX -
+        //----------------------
+        ,array(
+          &#039;type&#039; =&gt; &#039;group&#039;
+          ,&#039;field&#039; =&gt; &#039;slide_text_dx_field&#039;
+          //,&#039;label&#039; =&gt; __(&#039;Slide + Testo a DX&#039;, &#039;mph&#039;)
+          ,&#039;list&#039; =&gt; false
+          ,&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;)
+          ,&#039;fields&#039; =&gt; array(
+              array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h2)&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h3)&#039;,
+                  &#039;columns&#039; =&gt; &#039;6&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;file&#039;
+                  ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+                  ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+                  ,&#039;columns&#039; =&gt; &#039;6&#039;
+                  ,&#039;options&#039; =&gt; array(
+                  &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;button&#039; =&gt; &#039;Add&#039;
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;editor&#039;,
+                  &#039;field&#039; =&gt; &#039;my_textarea&#039;,
+                  &#039;label&#039; =&gt; &#039;Text Area&#039;,
+                  &#039;columns&#039; =&gt; &#039;6&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                      &#039;rows&#039; =&gt; 10,
+                      &#039;cols&#039; =&gt; 50,
+                      &#039;class&#039; =&gt; &#039;alignright&#039;
+                  )
+
+                )
+              )
+            ,&#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+          ,&#039;value&#039; =&gt; &#039;slide_text_dx&#039;
+        )
+      )
+    )
+
+        //----------------------
+        //- Testo a SX + Slide -
+        //----------------------
+        ,array(
+          &#039;type&#039; =&gt; &#039;group&#039;
+          ,&#039;field&#039; =&gt; &#039;slide_text_sx_field&#039;
+          //,&#039;label&#039; =&gt; __(&#039;Testo a SX + Slide&#039;, &#039;mph&#039;)
+          ,&#039;list&#039; =&gt; false
+          ,&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;)
+          ,&#039;fields&#039; =&gt; array(
+              array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h2)&#039;,
+                  &#039;columns&#039; =&gt; &#039;6&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h3)&#039;,
+                  &#039;columns&#039; =&gt; &#039;6&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;file&#039;
+                  ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+                  ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+                  ,&#039;columns&#039; =&gt; &#039;6&#039;
+                  ,&#039;options&#039; =&gt; array(
+                  &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;button&#039; =&gt; &#039;Add&#039;
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;editor&#039;,
+                  &#039;field&#039; =&gt; &#039;my_textarea&#039;,
+                  &#039;label&#039; =&gt; &#039;Text Area&#039;,
+                  &#039;columns&#039; =&gt; &#039;6&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                      &#039;rows&#039; =&gt; 10,
+                      &#039;cols&#039; =&gt; 50,
+                      &#039;class&#039; =&gt; &#039;alignright&#039;
+                  )
+              )
+              
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+              ,&#039;value&#039; =&gt; &#039;slide_text_sx&#039;
+            )
+          )
+      )
+
+        //----------------------
+        //--- 3 Column Text ----
+        //----------------------
+        ,array(
+          &#039;type&#039; =&gt; &#039;group&#039;
+          ,&#039;field&#039; =&gt; &#039;3_column_text_field&#039;
+          //,&#039;label&#039; =&gt; __(&#039;Slide + Testo a DX&#039;, &#039;mph&#039;)
+          ,&#039;list&#039; =&gt; false
+          ,&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;)
+          ,&#039;fields&#039; =&gt; array(
+              array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h2)&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                    &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo_col_1&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo Colonna 1 (h3)&#039;,
+                  &#039;columns&#039; =&gt; 4,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo_col_2&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo Colonna 2 (h3)&#039;,
+                  &#039;columns&#039; =&gt; 4,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo_col_3&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo Colonna 3 (h3)&#039;,
+                  &#039;columns&#039; =&gt; 4,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;editor&#039;,
+                  &#039;field&#039; =&gt; &#039;testo_col_1&#039;,
+                  &#039;label&#039; =&gt; &#039;Testo Colonna 1&#039;,
+                  &#039;columns&#039; =&gt; 4,
+                  &#039;attributes&#039; =&gt; array(
+                      &#039;rows&#039; =&gt; 7,
+                      &#039;cols&#039; =&gt; 50,
+                      &#039;class&#039; =&gt; &#039;large-text&#039;
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;editor&#039;,
+                  &#039;field&#039; =&gt; &#039;testo_col_2&#039;,
+                  &#039;label&#039; =&gt; &#039;Testo Colonna 2&#039;,
+                  &#039;columns&#039; =&gt; 4,
+                  &#039;attributes&#039; =&gt; array(
+                      &#039;rows&#039; =&gt; 7,
+                      &#039;cols&#039; =&gt; 50,
+                      &#039;class&#039; =&gt; &#039;large-text&#039;
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;editor&#039;,
+                  &#039;field&#039; =&gt; &#039;testo_col_3&#039;,
+                  &#039;label&#039; =&gt; &#039;Testo Colonna 3&#039;,
+                  &#039;columns&#039; =&gt; 4,
+                  &#039;attributes&#039; =&gt; array(
+                      &#039;rows&#039; =&gt; 7,
+                      &#039;cols&#039; =&gt; 50,
+                      &#039;class&#039; =&gt; &#039;large-text&#039;
+                  )
+              )
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+              ,&#039;value&#039; =&gt; &#039;3_column_text&#039;
+            )
+          )
+      )
+
+        //----------------------
+        //-- Quadreria Immagini --
+        //----------------------
+        ,array(
+          &#039;type&#039; =&gt; &#039;group&#039;
+          ,&#039;field&#039; =&gt; &#039;quadreria_img_field&#039;
+          //,&#039;label&#039; =&gt; __(&#039;Slide + Testo a DX&#039;, &#039;mph&#039;)
+          ,&#039;list&#039; =&gt; false
+          ,&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;)
+          ,&#039;fields&#039; =&gt; array(
+              array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h2)&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;file&#039;
+                  ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+                  ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+                  ,&#039;options&#039; =&gt; array(
+                  &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;button&#039; =&gt; &#039;Add&#039;
+                  )
+              )
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+              ,&#039;value&#039; =&gt; &#039;quadreria_img&#039;
+            )
+          )
+      )
+
+        //----------------------
+        //-- Quadreria Immagini Irregolare --
+        //----------------------
+        ,array(
+          &#039;type&#039; =&gt; &#039;group&#039;
+          ,&#039;field&#039; =&gt; &#039;quadreria_img_irreg_field&#039;
+          //,&#039;label&#039; =&gt; __(&#039;Slide + Testo a DX&#039;, &#039;mph&#039;)
+          ,&#039;list&#039; =&gt; false
+          ,&#039;description&#039; =&gt; __(&#039;A grouped field with a key set. Data is not searchable, since it is saved in an array.&#039;, &#039;piklist-demo&#039;)
+          ,&#039;fields&#039; =&gt; array(
+              array(
+                  &#039;type&#039; =&gt; &#039;text&#039;,
+                  &#039;field&#039; =&gt; &#039;titolo&#039;,
+                  &#039;label&#039; =&gt; &#039;Titolo (h2)&#039;,
+                  &#039;attributes&#039; =&gt; array(
+                  &#039;class&#039; =&gt; &#039;large-text&#039; // WordPress css class 
+                  )
+              )
+              ,array(
+                  &#039;type&#039; =&gt; &#039;file&#039;
+                  ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+                  ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+                  ,&#039;options&#039; =&gt; array(
+                  &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+                  ,&#039;button&#039; =&gt; &#039;Add&#039;
+                  )
+              )
+          )
+          ,&#039;conditions&#039; =&gt; array(
+            array(
+              &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+              ,&#039;value&#039; =&gt; &#039;quadreria_img_irreg&#039;
+            )
+          )
+      )
+
+    )
+  )
+);
+</code></pre>
+<p>Some tips to improve or optimize?<br />
+I have to change approach?</p>
+<p>Thanks`</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-and-conditional-slow-performance/">Add More and Conditional Slow Performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more and</title>
+		<link>https://piklist.com/support/topic/add_more-and/</link>
+		
+		<dc:creator><![CDATA[strarsis]]></dc:creator>
+		<pubDate>Tue, 23 May 2017 23:02:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and/</guid>
+
+					<description><![CDATA[<p>Hi, I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code. Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. 🙂 I want a repeating/loop/&#8221;add more&#8221; field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I just discovered Piklist and it is really great and basically the thing I was searching for &#8211; giving me the features of plugins like ACF but still the flexibility of PHP code.<br />
+Let&#8217;s hope Piklist will be further developed and maintained for a long, long time. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I want a repeating/loop/&#8221;add more&#8221; field with items that each have a post-relate field.</p>
+<p>I tried the following code (how sleek and beautiful Piklist code is!)</p>
+<pre><code>/*
+Title: Test
+Post Type: parent-post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;items&#039;
+  ,&#039;label&#039; =&gt; &#039;Items&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;field-1&#039;
+      ,&#039;label&#039; =&gt; &#039;Field 1&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;post-relate&#039;
+      ,&#039;scope&#039; =&gt; &#039;post&#039;
+      ,&#039;template&#039; =&gt; &#039;field&#039;
+    )
+  )
+));
+</code></pre>
+<p>While the normal text field is in each &#8220;add more&#8221; item, the post-relate field is shown only once below all the &#8220;add more&#8221; items.<br />
+What could be wrong with the code above &#8211; how can I have a post-relate field per &#8220;add more&#8221; item?</p>
+<p>I also attached a screenshot.</p>
+<p>Thanks in advance and<br />
+with best regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and/">add_more and</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Problem with simple conditions</title>
+		<link>https://piklist.com/support/topic/problem-with-simple-conditions/</link>
+		
+		<dc:creator><![CDATA[robertfyffe]]></dc:creator>
+		<pubDate>Tue, 02 May 2017 01:53:41 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-simple-conditions/</guid>
+
+					<description><![CDATA[<p>I am trying to use conditions within a 1 level deep group but I am having some problems. I am trying to set a condition based on if the user has chosen primary from the mew_location select list. If they haven&#8217;t it should hide the field mew_item_children. When I add the condition to this field [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-simple-conditions/">Problem with simple conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to use conditions within a 1 level deep group but I am having some problems.</p>
+<p>I am trying to set a condition based on if the user has chosen <code>primary</code> from the <code>mew_location</code> select list. If they haven&#8217;t it should hide the field <code>mew_item_children</code>. When I add the condition to this field it completely prevents the group from displaying.</p>
+<p>My Code:</p>
+<pre><code>
+&lt;?php
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;, 
+  &#039;field&#039; =&gt; &#039;mew_type&#039;,
+  &#039;label&#039; =&gt; __(&#039;What type of menu would you like to build?&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;value&#039; =&gt; &#039;&#039;,
+  &#039;column&#039; =&gt; 12,
+  &#039;choices&#039; =&gt; array(
+    &#039;standard&#039; =&gt; __(&#039;Standard Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;mega&#039; =&gt; __(&#039;Mega Menu&#039;, WPDMEW_TEXT_DOMAIN),
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;,
+  &#039;field&#039; =&gt; &#039;mew_location&#039;,
+  &#039;label&#039; =&gt; __(&#039;Where will this appear?&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;value&#039; =&gt; &#039;&#039;,
+  &#039;column&#039; =&gt; 12,
+  &#039;choices&#039; =&gt; array(
+    &#039;&#039; =&gt; &#039;&#039;,
+    &#039;primary&#039; =&gt; __(&#039;Primary Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;secondary&#039; =&gt; __(&#039;Secondary Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;social&#039; =&gt; __(&#039;Social Menu&#039;, WPDMEW_TEXT_DOMAIN),
+    &#039;footer&#039; =&gt; __(&#039;Footer Menu&#039;, WPDMEW_TEXT_DOMAIN),
+  ),
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;relation&#039; =&gt; &#039;or&#039;,
+      &#039;field&#039; =&gt; &#039;mew_type&#039;,
+      &#039;value&#039; =&gt; array(
+        &#039;standard&#039;,
+        &#039;mega&#039;
+      ),
+    )
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;field&#039; =&gt; &#039;mew_primary_menu&#039;,
+  &#039;label&#039; =&gt; __(&#039;&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;description&#039; =&gt; __(&#039;&#039;, WPDMEW_TEXT_DOMAIN),
+  &#039;add_more&#039; =&gt; true,
+  &#039;columns&#039; =&gt; 12,
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_type&#039;,
+      &#039;label&#039; =&gt; __(&#039;What kind of nav item do you want to add?&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;&#039;,
+        &#039;page&#039; =&gt; __(&#039;Page&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;post&#039; =&gt; __(&#039;Post&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;external&#039; =&gt; __(&#039;External&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;relation&#039; =&gt; &#039;or&#039;,
+          &#039;field&#039; =&gt; &#039;mew_location&#039;,
+          &#039;value&#039; =&gt; array(
+            &#039;primary&#039;,
+            &#039;secondary&#039;,
+            &#039;social&#039;,
+            &#039;footer&#039;,
+          )
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_post&#039;,
+      &#039;label&#039; =&gt; __(&#039;Select an existing post&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; wpdmw_get_posts(),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;post&#039;,
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_page&#039;,
+      &#039;label&#039; =&gt; __(&#039;Select an existing page&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;column&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; wpdmw_get_pages(),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;page&#039;,
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;,
+      &#039;field&#039; =&gt; &#039;mew_item_external&#039;,
+      &#039;columns&#039; =&gt; 12,
+      &#039;label&#039; =&gt; __(&#039;Enter an external URL&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;validate&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;url&#039;
+        )
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;external&#039;,
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_item_children&#039;,
+      &#039;label&#039; =&gt; __(&#039;Display children of this page if exists?&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 12,
+      &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;&#039;,
+        &#039;1&#039; =&gt; __(&#039;Yes&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;0&#039; =&gt; __(&#039;No&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        &#039;relation&#039; =&gt; &#039;and&#039;,
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_type&#039;,
+          &#039;value&#039; =&gt; &#039;page&#039;,
+        ),
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_page&#039;,
+          &#039;value&#039; =&gt; array(
+            &#039;&#039;
+          ),
+          &#039;compare&#039; =&gt; &#039;!=&#039;
+        ),
+        array(
+          &#039;field&#039; =&gt; &#039;mew_location&#039;,
+          &#039;value&#039; =&gt; &#039;primary&#039;,
+          &#039;compare&#039; =&gt; &#039;=&#039;
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;, 
+      &#039;field&#039; =&gt; &#039;mew_bg_display&#039;,
+      &#039;label&#039; =&gt; __(&#039;Add a background image?&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;value&#039; =&gt; &#039;&#039;,
+      &#039;column&#039; =&gt; 12,
+      &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;&#039;,
+        &#039;yes&#039; =&gt; __(&#039;Yes&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;no&#039; =&gt; __(&#039;No&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_item_children&#039;,
+          &#039;value&#039; =&gt; array(
+            &#039;&#039;
+          ),
+          &#039;compare&#039; =&gt; &#039;!=&#039;
+        ),
+      ),
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;file&#039;,
+      &#039;field&#039; =&gt; &#039;mew_item_bg_lg&#039;,
+      &#039;columns&#039; =&gt; 6,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Large&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;options&#039; =&gt; array(
+        &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;button&#039; =&gt; __(&#039;Add&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_bg_display&#039;,
+          &#039;value&#039; =&gt; &#039;yes&#039;,
+        ),
+      ),
+      &#039;validate&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;limit&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;min&#039; =&gt; 1,
+            &#039;max&#039; =&gt; 1
+          )
+        )
+      )
+    ),
+    array(
+      &#039;type&#039; =&gt; &#039;file&#039;,
+      &#039;field&#039; =&gt; &#039;mew_item_bg_sm&#039;,
+      &#039;columns&#039; =&gt; 6,
+      &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+      &#039;label&#039; =&gt; __(&#039;Small&#039;, WPDMEW_TEXT_DOMAIN),
+      &#039;options&#039; =&gt; array(
+        &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;, WPDMEW_TEXT_DOMAIN),
+        &#039;button&#039; =&gt; __(&#039;Add&#039;, WPDMEW_TEXT_DOMAIN),
+      ),
+      &#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;mew_primary_menu:mew_bg_display&#039;,
+          &#039;value&#039; =&gt; &#039;yes&#039;,
+        ),
+      ),
+      &#039;validate&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;limit&#039;,
+          &#039;options&#039; =&gt; array(
+            &#039;min&#039; =&gt; 1,
+            &#039;max&#039; =&gt; 1
+          )
+        )
+      )
+    ),
+  ),
+));
+</code></pre>
+<p>I am finding the conditions in general very buggy. Is there something wrong with my code?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-simple-conditions/">Problem with simple conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Auto-populate add_more fields</title>
+		<link>https://piklist.com/support/topic/auto-populate-add_more-fields/</link>
+		
+		<dc:creator><![CDATA[Dan]]></dc:creator>
+		<pubDate>Sat, 27 Aug 2016 10:27:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/auto-populate-add_more-fields/</guid>
+
+					<description><![CDATA[<p>Hi, Is there a way to auto populate the add more fields by default? For example, on creation of a new post I would like to display 3 text fields, but the user could delete or change these as appropriate?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/auto-populate-add_more-fields/">Auto-populate add_more fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, Is there a way to auto populate the add more fields by default?</p>
+<p>For example, on creation of a new post I would like to display 3 text fields, but the user could delete or change these as appropriate?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/auto-populate-add_more-fields/">Auto-populate add_more fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more and hidden field</title>
+		<link>https://piklist.com/support/topic/add_more-and-hidden-field/</link>
+		
+		<dc:creator><![CDATA[rharrigan]]></dc:creator>
+		<pubDate>Tue, 26 Jul 2016 20:23:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-and-hidden-field/</guid>
+
+					<description><![CDATA[<p>This is not related to the problem here: https://piklist.com/support/topic/hidden-field-bugs/ The group add_more does not display correctly when a hidden field is included in a group. Here is my erroneous code &#8211; Title: Recipe Options Post Type: recipe Order: 1 Collapse: false */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;add_more&#039; =&#62; true ,&#039;scope&#039; =&#62; &#039;post_meta&#039; ,&#039;columns&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and-hidden-field/">add_more and hidden field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is not related to the problem here: https://piklist.com/support/topic/hidden-field-bugs/</p>
+<p>The group add_more does not display correctly when a hidden field is included in a group. </p>
+<p>Here is my erroneous code &#8211; </p>
+<pre><code>
+Title: Recipe Options
+Post Type: recipe
+Order: 1
+Collapse: false
+*/
+
+piklist(&#039;field&#039;, array(	
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;recipe_id&#039;
+      ,&#039;type&#039; =&gt; &#039;hidden&#039;
+      ,&#039;value&#039; =&gt; &#039;&#039;
+    )
+    ,array(
+      &#039;field&#039; =&gt; &#039;recipe_title&#039;
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;label&#039; =&gt; __(&#039;Recipe Title&#039;,&#039;ideas_solutions&#039;)
+      ,&#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;required&#039; =&gt; true
+      ,&#039;columns&#039; =&gt; 12
+    )	
+  )
+));
+</code></pre>
+<p>This is working code &#8211; </p>
+<pre><code>
+Title: Recipe Options
+Post Type: recipe
+Order: 1
+Collapse: false
+*/
+
+piklist(&#039;field&#039;, array(	
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(array(
+      &#039;field&#039; =&gt; &#039;recipe_title&#039;
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;label&#039; =&gt; __(&#039;Recipe Title&#039;,&#039;ideas_solutions&#039;)
+      ,&#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;required&#039; =&gt; true
+      ,&#039;columns&#039; =&gt; 12
+    )	
+  )
+));
+</code></pre>
+<p>It would be nice to have hidden fields in an add_more so I can filter the meta data on insert/update</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-and-hidden-field/">add_more and hidden field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>how to make a field of required fields optional?</title>
+		<link>https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/</link>
+		
+		<dc:creator><![CDATA[lalit]]></dc:creator>
+		<pubDate>Thu, 21 Jul 2016 16:58:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/</guid>
+
+					<description><![CDATA[<p>I have a piklist field called test &#8211; add_more is set to true and the fields attribute consists of multiple fields (some required). I want the user to be able to have 0 or more tests. In the case of zero I can&#8217;t save the form because there are required fields. Pressing the minus button [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/">how to make a field of required fields optional?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a piklist field called test &#8211; add_more is set to true and the fields attribute consists of multiple fields (some required).</p>
+<p>I want the user to be able to have 0 or more tests.</p>
+<p>In the case of zero I can&#8217;t save the form because there are required fields. Pressing the minus button doesn&#8217;t remove it either.</p>
+<p>How can I have zero tests? Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-make-a-field-of-required-fields-optional/">how to make a field of required fields optional?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>javascript bug on groups</title>
+		<link>https://piklist.com/support/topic/javascript-bug-on-groups/</link>
+		
+		<dc:creator><![CDATA[oakwood]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2016 13:26:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/javascript-bug-on-groups/</guid>
+
+					<description><![CDATA[<p>Scenarios: 1. If I have a group (add_more), with a conditional inside &#8211; that works as expected. 2. If I have a group (add_more), with a conditional outside (controlling whether or not the group is shown) &#8211; that works as expected. 3. If I have a group (add_more), with a conditional outside (controlling whether or [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-bug-on-groups/">javascript bug on groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Scenarios:<br />
+1. If I have a group (add_more), with a conditional inside &#8211; that works as expected.<br />
+2. If I have a group (add_more), with a conditional outside (controlling whether or not the group is shown) &#8211; that works as expected.<br />
+3. If I have a group (add_more), with a conditional outside (controlling whether or not the group is shown), and a conditional inside &#8211; that does not work as expected.</p>
+<p>Tested on 0.9.4.29 and 0.9.9.7 (different results on each version).</p>
+<pre><code>&lt;?php
+/*
+Title: test
+Post Type: post
+Order: 1
+Collapse: false
+*/
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;
+  ,&#039;field&#039; =&gt; &#039;show_hide_group_two&#039;
+  ,&#039;label&#039; =&gt; &#039;Radio&#039;
+  ,&#039;choices&#039; =&gt; array(
+    &#039;show_group_two&#039; =&gt; &#039;Show Group Two&#039;
+    ,&#039;hide_group_two&#039; =&gt; &#039;Hide Group Two&#039;
+  )
+  ,&#039;value&#039; =&gt; &#039;hide_group_two&#039;
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;group_one&#039;
+  ,&#039;label&#039; =&gt; &#039;Group One - Always On&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;show_hide_text_one&#039;
+      ,&#039;label&#039; =&gt; &#039;Show or hide text input&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;show_text_one&#039; =&gt; &#039;Show&#039;
+        ,&#039;hide_text_one&#039; =&gt; &#039;Hide&#039;
+      )
+      ,&#039;value&#039; =&gt; &#039;hide_text_one&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;group_one:show_hide_text_one&#039;
+          ,&#039;value&#039; =&gt; &#039;show_text_one&#039;
+        )
+      )
+      ,&#039;field&#039; =&gt; &#039;conditional_text_one&#039;
+      ,&#039;label&#039; =&gt; &#039;Conditional Text&#039;
+      ,&#039;columns&#039; =&gt; 8
+    )
+  )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;group_two&#039;
+  ,&#039;label&#039; =&gt; &#039;Group Two - Maybe On&#039;
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;show_hide_group_two&#039;
+      ,&#039;value&#039; =&gt; &#039;show_group_two&#039;
+    )
+  )
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;show_hide_text_two&#039;
+      ,&#039;label&#039; =&gt; &#039;Show or hide text input&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;show_text_two&#039; =&gt; &#039;Show&#039;
+        ,&#039;hide_text_two&#039; =&gt; &#039;Hide&#039;
+      )
+      ,&#039;value&#039; =&gt; &#039;hide_text_two&#039;
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;conditions&#039; =&gt; array(
+        array(
+          &#039;field&#039; =&gt; &#039;group_two:show_hide_text_two&#039;
+          ,&#039;value&#039; =&gt; &#039;show_text_two&#039;
+        )
+      )
+      ,&#039;field&#039; =&gt; &#039;conditional_text_two&#039;
+      ,&#039;label&#039; =&gt; &#039;Conditional Text&#039;
+      ,&#039;columns&#039; =&gt; 8
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-bug-on-groups/">javascript bug on groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more callback</title>
+		<link>https://piklist.com/support/topic/add_more-callback/</link>
+		
+		<dc:creator><![CDATA[jasc]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2016 00:46:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-callback/</guid>
+
+					<description><![CDATA[<p>Hello, Is there a custom event that gets fired on add_more button click. if I am using a custom datatimepicker, new fields as a result of add_more does not get init by datatimepicker. Any help will be appreciated. Jas</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-callback/">add_more callback</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>Is there a custom event that gets fired on add_more button click. </p>
+<p>if I am using a custom datatimepicker, new fields as a result of add_more does not get init by datatimepicker.</p>
+<p>Any help will be appreciated. </p>
+<p>Jas</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-callback/">add_more callback</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>frontend forms &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/frontend-forms/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 27 Jul 2016 16:18:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Title field in a frontend form</title>
+		<link>https://piklist.com/support/topic/title-field-in-a-frontend-form/</link>
+		
+		<dc:creator><![CDATA[jordisanchez]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2016 16:18:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/title-field-in-a-frontend-form/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve tried to search for the answer, but I didn&#8217;t find anything. Is there any easy way to create a field in a frontend form that edits the title of a post? I&#8217;ve already used forms for editing post meta data, like this: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;scope&#039; =&#62; &#039;post_meta&#039; ,&#039;field&#039; =&#62; &#039;name&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/title-field-in-a-frontend-form/">Title field in a frontend form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I&#8217;ve tried to search for the answer, but I didn&#8217;t find anything.</p>
+<p><strong>Is there any easy way to create a field in a frontend form that edits the title of a post?</strong></p>
+<p>I&#8217;ve already used forms for editing post meta data, like this:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;
+	,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+	,&#039;field&#039; =&gt; &#039;name&#039;
+	,&#039;label&#039; =&gt; &#039;Name&#039;
+	,&#039;attributes&#039; =&gt; array(
+	&#039;class&#039; =&gt; &#039;text&#039;
+	)
+));</code></pre>
+<p>But I don&#8217;t know how to let the user edit the title of the post. Is it possible using Piklist?</p>
+<p>Thanks!!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/title-field-in-a-frontend-form/">Title field in a frontend form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Frontend forms in template files</title>
+		<link>https://piklist.com/support/topic/frontend-forms-in-template-files/</link>
+		
+		<dc:creator><![CDATA[wpmusketeer]]></dc:creator>
+		<pubDate>Thu, 10 Mar 2016 17:04:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/frontend-forms-in-template-files/</guid>
+
+					<description><![CDATA[<p>Hi awesome Piklist peeps 😉 I&#8217;m struggling with a frontend form. I have a CPT &#8216;job&#8217;. Within a template file I&#8217;m iterating over a WP_Query and creating a list of Jobs. In each Job&#8217;s li I have a div that needs to display a form for editing that Job (I&#8217;ve created the form in /parts/forms/job.php). [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/frontend-forms-in-template-files/">Frontend forms in template files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi awesome Piklist peeps <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I&#8217;m struggling with a frontend form. I have a CPT &#8216;job&#8217;.</p>
+<p>Within a template file I&#8217;m iterating over a WP_Query and creating a list of Jobs. In each Job&#8217;s li I have a div that needs to display a form for editing that Job (I&#8217;ve created the form in <code>/parts/forms/job.php</code>).</p>
+<p>The only way I&#8217;ve seen mentioned of outputting a Piklist form is via shortcode. I can use <code>do_shortcode()</code> to output the form on the template page as long as it is <em>outside</em> of the WP_Query loop. As soon as I use it <em>inside</em> the loop the page crashes completely. To the point where I have to close the Chrome tab because there&#8217;s nothing I can do with it!</p>
+<p>I have a couple of questions based off of this:</p>
+<p>1. Is <code>do_shortcode()</code> the best way to output a form in a template file?</p>
+<p>2. If so, why is it crashing when used inside a WP_Query loop?</p>
+<p>3. Once I&#8217;ve got the form to display, how do I get it to update the right Job? I&#8217;ve seen in the docs that you can pass the post ID to the page in a URL parameter, but that doesn&#8217;t help me inside the loop&#8230; Is there an ID parameter that can be passed to the shortcode?</p>
+<p>Thanks for your time.</p>
+<p>Dave</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/frontend-forms-in-template-files/">Frontend forms in template files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Multi-page frontend form?</title>
+		<link>https://piklist.com/support/topic/muli-page-frontend-form/</link>
+		
+		<dc:creator><![CDATA[jrcreative]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2016 00:23:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/muli-page-frontend-form/</guid>
+
+					<description><![CDATA[<p>What&#8217;s the best way to go about creating a multi-page frontend form in piklist? A few options come to mind, but what I&#8217;m attempting now is to create a page for each form, add the shortcode to each page, and use javascript redirection on save_post. I have the name of the next page in a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/muli-page-frontend-form/">Multi-page frontend form?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>What&#8217;s the best way to go about creating a multi-page frontend form in piklist?</p>
+<p>A few options come to mind, but what I&#8217;m attempting now is to create a page for each form, add the shortcode to each page, and use javascript redirection on save_post. I have the name of the next page in a hidden field so javascript knows where to take you.</p>
+<p>The challenge I have now is that Piklist wants to show the confirmation message at the top of the form. Is it possible that there&#8217;s another Piklist hook that I can grab onto after form validation and submission (saving to DB), but before displaying the message?</p>
+<p>Right now, I have to click submit twice to get it to go to the next page. The first brings up the message, and the second click actually takes me to the next page.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/muli-page-frontend-form/">Multi-page frontend form?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>frontend forms: get form name before saving</title>
+		<link>https://piklist.com/support/topic/frontend-forms-get-form-name-before-saving/</link>
+		
+		<dc:creator><![CDATA[sancreative]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2016 00:29:08 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/frontend-forms-get-form-name-before-saving/</guid>
+
+					<description><![CDATA[<p>Hi there, for frontend forms is there a filter in piklist that will allow me to get the form id or name when it is saved. I just need to hook a function to change the upload directory for frontend forms. or maybe if you have a better suggestion? I want to store file uploads [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/frontend-forms-get-form-name-before-saving/">frontend forms: get form name before saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,<br />
+for frontend forms is there a filter in piklist that will allow me to get the form id or name when it is saved. I just need to hook a function to change the upload directory for frontend forms. </p>
+<p>or maybe if you have a better suggestion?</p>
+<p>I want to store file uploads in the plugin directory rather than the standard wp-upload directory. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/frontend-forms-get-form-name-before-saving/">frontend forms: get form name before saving</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

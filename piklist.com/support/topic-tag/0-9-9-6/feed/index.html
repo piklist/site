@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>0.9.9.6 &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/0-9-9-6/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 10 Nov 2015 20:02:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>validate [0.9.9.6]</title>
+		<link>https://piklist.com/support/topic/validate-0-9-9-6/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Fri, 06 Nov 2015 16:39:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/validate-0-9-9-6/</guid>
+
+					<description><![CDATA[<p>My custom validation broke with the upgrade. In the past, it seemed I was able to grab the value as it was before, and the new value submitted, so that I could determine if it was unique. Now, all I am getting in the $field variable is the new submitted value. How would I get [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validate-0-9-9-6/">validate [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>My custom validation broke with the upgrade. In the past, it seemed I was able to grab the value as it was before, and the new value submitted, so that I could determine if it was unique. Now, all I am getting in the $field variable is the new submitted value. How would I get the value that the field was before the change?</p>
+<p>This was my previous validation formula:</p>
+<pre><code>add_filter(&#039;piklist_validation_rules&#039;, &#039;check_if_unique&#039;, 11);
+function check_if_unique($validation_rules)
+{
+  $validation_rules[&#039;custom_unique&#039;] = array(
+	&#039;type&#039; =&gt; &#039;safe_text&#039;,
+    &#039;callback&#039; =&gt; &#039;my_validate_unique&#039;
+  );
+ 
+  return $validation_rules;
+}
+ 
+function my_validate_unique($file, $field, $arguments)
+{
+
+	$thereturned_field = $field[&#039;request_value&#039;][0];
+	 $duplicate_url = new WP_User_Query(  array(
+	 &#039;meta_key&#039; =&gt; &#039;user_custom_url&#039;,
+	 &#039;meta_value&#039; =&gt; $thereturned_field,
+	 &#039;exclude&#039; =&gt; $field[&#039;attributes&#039;][&#039;title&#039;]
+	 ) );
+	 $userscount = $duplicate_url-&gt;get_total();
+	 //return($field[&#039;attributes&#039;][&#039;title&#039;] . &quot; - total - &quot; . $userscount . &quot;search -&quot; . $thereturned_field);
+	 if($userscount == 0 )
+  {
+  return true;
+  }else{
+	  return __(&#039;is not unique and or used unsupported characters. ONLY letters and numbers.&#039;, &#039;Extreme&#039;);
+  }
+ 
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/validate-0-9-9-6/">validate [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

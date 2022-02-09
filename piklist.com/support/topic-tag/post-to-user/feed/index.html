@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post to user &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post-to-user/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 14 Mar 2016 13:35:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>post to user relationships</title>
+		<link>https://piklist.com/support/topic/post-to-user-relationships/</link>
+		
+		<dc:creator><![CDATA[stemuedendron]]></dc:creator>
+		<pubDate>Mon, 14 Mar 2016 13:35:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-to-user-relationships/</guid>
+
+					<description><![CDATA[<p>Hello, I have a problem with post to user relationships with latest piklist version 0.9.9.7. I can&#8217;t create a bi-directional relation. I have two custom post types: rf_show rf_episode Now there are two relationships: rf_episode to rf_show rf_episode to user This is the code for the metabox for rf_episode: &#60;?php /* Title: On Air Post [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-user-relationships/">post to user relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I have a problem with post to user relationships with latest piklist version 0.9.9.7.<br />
+I can&#8217;t create a bi-directional relation.</p>
+<p>I have two custom post types:<br />
+rf_show<br />
+rf_episode</p>
+<p>Now there are two relationships:<br />
+rf_episode to rf_show<br />
+rf_episode to user</p>
+<p>This is the code for the metabox for rf_episode:</p>
+<pre><code>
+&lt;?php
+/*
+Title: On Air
+Post Type: rf_episode
+*/
+
+// field for related shows
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;checkbox&#039;,
+	&#039;field&#039; =&gt; &#039;rf_episode_to_show&#039;,
+	&#039;label&#039; =&gt; __(&#039;Shows&#039;, &#039;rf&#039;),
+	&#039;relate&#039; =&gt; array(
+		&#039;scope&#039; =&gt; &#039;post&#039;
+	),	
+	&#039;choices&#039; =&gt; piklist(
+		get_posts(array(
+			&#039;post_type&#039; =&gt; &#039;rf_show&#039;,
+			&#039;numberposts&#039; =&gt; -1,
+			&#039;orderby&#039; =&gt; &#039;title&#039;,
+			&#039;order&#039; =&gt; &#039;ASC&#039;
+		)),
+		array(&#039;ID&#039;, &#039;post_title&#039;)
+	)
+));
+
+// field for related users
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;checkbox&#039;,
+	&#039;field&#039; =&gt; &#039;rf_episode_to_user&#039;,
+	&#039;label&#039; =&gt; __(&#039;DJs&#039;, &#039;rf&#039;),
+	&#039;relate&#039; =&gt; array(
+		&#039;scope&#039; =&gt; &#039;user&#039;
+	),	
+	&#039;choices&#039; =&gt; piklist(
+		get_users(array(
+			&#039;orderby&#039; =&gt; &#039;display_name&#039;,
+			&#039;order&#039; =&gt; &#039;ASC&#039;,
+        )),
+		array(&#039;ID&#039;, &#039;display_name&#039;)
+	)
+));
+</code></pre>
+<p>I create an episode and select related show (id 38) and user (id 2).<br />
+This is what I get (and what I expected) in the wp_postmeta table:</p>
+<p>post_id		meta_key 		meta_value<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+338		rf_episode_to_show	38<br />
+338		rf_episode_to_user	2<br />
+38		__relate_post		338</p>
+<p>There is a bi-directional relationship between post 38 (the show) and post 338 (the created episode).<br />
+And there is a relation between post 338 and the user with id 2.</p>
+<p>Now I expected the second part of the bi-directional relationship in the wp_usermeta table, but there is no entry. Is &#8216;scope&#8217; =&gt; &#8216;user&#8217; wrong?<br />
+How to do this?</p>
+<p>Thanks<br />
+Steffen</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-user-relationships/">post to user relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

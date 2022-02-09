@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>issue &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/issue/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 14 Jan 2018 13:16:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Problem with non-english wordpress</title>
+		<link>https://piklist.com/support/topic/problem-with-non-english-wordpress/</link>
+		
+		<dc:creator><![CDATA[luizbills]]></dc:creator>
+		<pubDate>Sun, 14 Jan 2018 13:05:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-non-english-wordpress/</guid>
+
+					<description><![CDATA[<p>When I install piklist in my wordpress installations using the language pt-BR I can&#8217;t save posts. step-by-step: &#8211; Install a fresh wordpress &#8211; Change the language to &#8220;Português do Brasil&#8221; &#8211; create a new post/page, give it a title and save. The post status will save as &#8220;draft&#8221; (here the issue). Note¹: (Using pt-BR) I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-non-english-wordpress/">Problem with non-english wordpress</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I install piklist in my wordpress installations using the language pt-BR I can&#8217;t save posts. </p>
+<p>step-by-step:<br />
+&#8211; Install a fresh wordpress<br />
+&#8211; Change the language to &#8220;Português do Brasil&#8221;<br />
+&#8211; create a new post/page, give it a title and save. The post status will save as &#8220;draft&#8221; (here the issue).</p>
+<p>Note¹: (Using pt-BR) I can&#8217;t change &#8220;manually&#8221; post status from Rascunho (draft) to Publicado (published).<br />
+Note²: When I change to english, the posts save as publish (default/correct behavior).</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-non-english-wordpress/">Problem with non-english wordpress</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Workflows issue</title>
+		<link>https://piklist.com/support/topic/workflows-issue/</link>
+		
+		<dc:creator><![CDATA[jimdonoho]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 00:36:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/workflows-issue/</guid>
+
+					<description><![CDATA[<p>We&#8217;re having an issue following the tutorials for creating workflows and tabs. Here&#8217;s our code, if you can help that would be amazing. functions.php in themes folder: /** * Registering Piklist plugin */ add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;); function piklist_theme_setting_pages($pages) { $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;Cabinet Door Shop&#039;) ,&#039;menu_title&#039; =&#62; __(&#039;Cabinet Door Shop&#039;, &#039;CDS&#039;) ,&#039;capability&#039; =&#62; &#039;manage_options&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflows-issue/">Workflows issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;re having an issue following the tutorials for creating workflows and tabs.<br />
+Here&#8217;s our code, if you can help that would be amazing.</p>
+<p>functions.php in themes folder:</p>
+<pre><code>/**
+ * Registering Piklist plugin
+ */
+  add_filter(&#039;piklist_admin_pages&#039;, &#039;piklist_theme_setting_pages&#039;);
+  function piklist_theme_setting_pages($pages)
+  {
+     $pages[] = array(
+      &#039;page_title&#039; =&gt; __(&#039;Cabinet Door Shop&#039;)
+      ,&#039;menu_title&#039; =&gt; __(&#039;Cabinet Door Shop&#039;, &#039;CDS&#039;)
+      ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+      ,&#039;menu_slug&#039; =&gt; &#039;custom_settings&#039;
+      ,&#039;setting&#039; =&gt; __(&#039;my_theme_settings&#039;)
+      ,&#039;menu_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-icon.png&#039;)
+      ,&#039;page_icon&#039; =&gt; plugins_url(&#039;piklist/parts/img/piklist-page-icon-32.png&#039;)
+      ,&#039;single_line&#039; =&gt; true
+      ,&#039;default_tab&#039; =&gt; &#039;Materials&#039;
+      ,&#039;save_text&#039; =&gt; &#039;Save Door Settings&#039;, &#039;Save CDS&#039;
+  );
+ 
+    return $pages;
+  }</code></pre>
+<p>my-setting-page:</p>
+<pre><code>&lt;?php
+/*
+ Title: Materials
+ Order: 10
+ Tab: Materials
+ Setting: my_theme_settings
+ Flow: Workflow
+ 
+ */
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 456&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));</code></pre>
+<p>my-setting-page1</p>
+<pre><code>&lt;?php
+/*
+ Title: Panels
+ Order: 30
+ Tab: Panels
+ Setting: my_theme_settings
+ Flow: Workflow
+ 
+ */
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;text&#039;
+  ,&#039;label&#039; =&gt; &#039;My NEW Door Style&#039;
+  ,&#039;description&#039; =&gt; &#039;Door Style Name&#039;
+  ,&#039;help&#039; =&gt; &#039;Tell us the door style.&#039;
+  ,&#039;value&#039; =&gt; &#039;RP-10&#039;
+  ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+  )
+ ));
+ 
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker 123&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;select 456&#039;
+ ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+ ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+ &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+   &#039;option1&#039; =&gt; &#039;Option 1&#039;
+   ,&#039;option2&#039; =&gt; &#039;Option 2&#039;
+   ,&#039;option3&#039; =&gt; &#039;Option 3&#039;
+ )
+ ));
+ 
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;field&#039; =&gt; &#039;colorpicker&#039;
+ ,&#039;label&#039; =&gt; &#039;Choose a color&#039;
+ ,&#039;value&#039; =&gt; &#039;#aee029&#039;
+ ,&#039;description&#039; =&gt; &#039;Click in the box to select a color.&#039;
+ ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+ ,&#039;attributes&#039; =&gt; array(
+  &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ));</code></pre>
+<p>workflow.php</p>
+<pre><code>&lt;?php
+/*
+Flow: Workflow
+Page: custom_settings.php
+Header: true
+Position: title
+*/
+</code></pre>
+<p>panels-tab.php</p>
+<pre><code>&lt;?php
+/*
+Title: Panels
+Order: 30
+Flow: Workflow
+*/</code></pre>
+<p>materials-tab.php</p>
+<pre><code>&lt;?php
+/*
+Title: Materials
+Order: 10
+Flow: Workflow
+*/</code></pre>
+<p>Let me know if you need additional information<br />
+Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflows-issue/">Workflows issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

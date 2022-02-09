@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklist/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 01 Oct 2021 13:36:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>add_more (repeater) not working with gutenberg</title>
+		<link>https://piklist.com/support/topic/dd_more-repeater-not-working-with-gutenberg/</link>
+		
+		<dc:creator><![CDATA[tanjim]]></dc:creator>
+		<pubDate>Fri, 01 Oct 2021 13:34:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/dd_more-repeater-not-working-with-gutenberg/</guid>
+
+					<description><![CDATA[<p>Hello, I am a newbie theme developer. Recently I was learning piklist and implementing myself. I found that add_more is not working with gutenberg but when I activate classic editor it works fine. Is it any issue with my code or piklist dd_more (repeater) is not compatible with gutenberg? Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dd_more-repeater-not-working-with-gutenberg/">add_more (repeater) not working with gutenberg</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, I am a newbie theme developer. Recently I was learning piklist and implementing myself. I found that add_more is not working with gutenberg but when I activate classic editor it works fine. Is it any issue with my code or piklist dd_more (repeater) is not compatible with gutenberg?<br />
+ Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dd_more-repeater-not-working-with-gutenberg/">add_more (repeater) not working with gutenberg</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>After revision restoration data from fields of type &#039;group&#039; disappear</title>
+		<link>https://piklist.com/support/topic/after-revision-restoration-data-from-fields-of-type-group-disappear/</link>
+		
+		<dc:creator><![CDATA[nnovosad]]></dc:creator>
+		<pubDate>Thu, 08 Aug 2019 13:05:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/after-revision-restoration-data-from-fields-of-type-group-disappear/</guid>
+
+					<description><![CDATA[<p>Hi. I noticed that after the restoration of the revision, data from fields of the type &#8216;group&#8217; disappear. Data from fields of another type do not disappear. WP version 5.2.2; Piklist version 1.0.4; PHP 7.2.21. There were 3 fields with type &#8216;group&#8217; on the page. Example one field: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039;, &#039;field&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/after-revision-restoration-data-from-fields-of-type-group-disappear/">After revision restoration data from fields of type &#039;group&#039; disappear</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi. I noticed that after the restoration of the revision, data from fields of the type &#8216;group&#8217; disappear. Data from fields of another type do not disappear.<br />
+WP version 5.2.2; Piklist version 1.0.4; PHP 7.2.21.<br />
+There were 3 fields with type &#8216;group&#8217; on the page.<br />
+Example one field:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;,
+    &#039;field&#039; =&gt; &#039;careers_drives_group&#039;,
+    &#039;label&#039; =&gt; __(&#039;Drives Items&#039;, &#039;vts&#039;),
+    &#039;add_more&#039; =&gt; &#039;true&#039;,
+    &#039;description&#039; =&gt; __(&#039;A grouped fields for drives items&#039;, &#039;vts&#039;),
+    &#039;sortable&#039; =&gt; &#039;true&#039;,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;title&#039;,
+            &#039;label&#039; =&gt; __(&#039;Title&#039;, &#039;vts&#039;),
+            &#039;columns&#039; =&gt; &#039;12&#039;
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;textarea&#039;,
+            &#039;field&#039; =&gt; &#039;description&#039;,
+            &#039;label&#039; =&gt; __(&#039;Description&#039;, &#039;vts&#039;),
+            &#039;columns&#039; =&gt; 12,
+            &#039;attributes&#039; =&gt; array(
+                &#039;class&#039; =&gt; &#039;large-text&#039;,
+                &#039;rows&#039; =&gt; &#039;3&#039;
+            )
+        ),
+        array(
+            &#039;type&#039; =&gt; &#039;file&#039;,
+            &#039;field&#039; =&gt; &#039;img&#039;,
+            &#039;label&#039; =&gt; __(&#039;Image&#039;, &#039;vts&#039;),
+            &#039;columns&#039; =&gt; 12,
+            &#039;options&#039; =&gt; array(
+                &#039;title&#039; =&gt; __(&#039;Add File&#039;, &#039;vts&#039;),
+                &#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;vts&#039;)
+            ),
+            &#039;validate&#039; =&gt; array(
+                array(
+                    &#039;type&#039; =&gt; &#039;limit&#039;,
+                    &#039;options&#039; =&gt; array(
+                        &#039;min&#039; =&gt; 1,
+                        &#039;max&#039; =&gt; 1,
+                    )
+                )
+            )
+        ),
+    )
+));</code></pre>
+<p>It can be fixed?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/after-revision-restoration-data-from-fields-of-type-group-disappear/">After revision restoration data from fields of type &#039;group&#039; disappear</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox Field Condition Work is good , problem is piklist admin panel error</title>
+		<link>https://piklist.com/support/topic/metabox-field-condition-work-is-good-problem-is-piklist-admin-panel-error/</link>
+		
+		<dc:creator><![CDATA[nuralamsiddikashik]]></dc:creator>
+		<pubDate>Wed, 09 Jan 2019 08:00:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-field-condition-work-is-good-problem-is-piklist-admin-panel-error/</guid>
+
+					<description><![CDATA[<p>When metabox in piklist I want to get conditioned through condition, meta fields are working very well. But there is an error in the admin panel in the piklist, what is the reason for this. My Code: https://gist.github.com/nuralamsiddikashik/95218b9997f230765004409eb6a8d4c6 Erro: Notice: Undefined index: tab in D:\xampp\htdocs\moto\wp-content\plugins\piklist\includes\class-piklist-setting.php on line 709 Error Notice: Undefined index: id in D:\xampp\htdocs\moto\wp-content\plugins\piklist\includes\class-piklist.php [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-field-condition-work-is-good-problem-is-piklist-admin-panel-error/">Metabox Field Condition Work is good , problem is piklist admin panel error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When metabox in piklist I want to get conditioned through condition, meta fields are working very well.<br />
+But there is an error in the admin panel in the piklist, what is the reason for this.</p>
+<p>My Code: https://gist.github.com/nuralamsiddikashik/95218b9997f230765004409eb6a8d4c6</p>
+<p>Erro: Notice: Undefined index: tab in D:\xampp\htdocs\moto\wp-content\plugins\piklist\includes\class-piklist-setting.php on line 709</p>
+<p>Error Notice: Undefined index: id in D:\xampp\htdocs\moto\wp-content\plugins\piklist\includes\class-piklist.php on line 735</p>
+<p>Warning: Invalid argument supplied for foreach() in D:\xampp\htdocs\moto\wp-content\plugins\piklist\includes\class-piklist.php on line 747</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-field-condition-work-is-good-problem-is-piklist-admin-panel-error/">Metabox Field Condition Work is good , problem is piklist admin panel error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist + Divi are crashing the admin Pages in WP dashboard</title>
+		<link>https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/</link>
+		
+		<dc:creator><![CDATA[Alex Kladov]]></dc:creator>
+		<pubDate>Thu, 13 Dec 2018 03:49:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/</guid>
+
+					<description><![CDATA[<p>Hi, I have been trying to figure out why my Pages section was not being loaded correctly on my site and have narrowed it down to Piklist &#38; Divi combination. Disabling either one fixes the issue. I am running latest versions of everything: WordPress v5.0.1, Piklist v1.0.1 &#38; Divi v3.18.5. Here is what&#8217;s thrown in [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/">Piklist + Divi are crashing the admin Pages in WP dashboard</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have been trying to figure out why my Pages section was not being loaded correctly on my site and have narrowed it down to Piklist &amp; Divi combination. Disabling either one fixes the issue. I am running latest versions of everything: WordPress v5.0.1, Piklist v1.0.1 &amp; Divi v3.18.5.</p>
+<p>Here is what&#8217;s thrown in the error log:</p>
+<pre><code>[13-Dec-2018 03:38:18 UTC] PHP Warning:  array_search() expects parameter 2 to be array, string given in /Applications/MAMP/htdocs/dev/weltrade/wp-content/themes/Divi/includes/builder/feature/BlockEditorIntegration.php on line 299
+[13-Dec-2018 03:38:18 UTC] PHP Fatal error:  Uncaught Error: Cannot unset string offsets in /Applications/MAMP/htdocs/dev/weltrade/wp-content/themes/Divi/includes/builder/feature/BlockEditorIntegration.php:301
+Stack trace:
+#0 /Applications/MAMP/htdocs/dev/weltrade/wp-includes/class-wp-hook.php(286): ET_Builder_Block_Editor_Integration-&gt;display_post_states(&#039;&#039;, Object(WP_Post))
+#1 /Applications/MAMP/htdocs/dev/weltrade/wp-includes/plugin.php(203): WP_Hook-&gt;apply_filters(&#039;&#039;, Array)
+#2 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/template.php(1933): apply_filters(&#039;display_post_st...&#039;, Array, Object(WP_Post))
+#3 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/class-wp-posts-list-table.php(943): _post_states(Object(WP_Post))
+#4 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/class-wp-posts-list-table.php(857): WP_Posts_List_Table-&gt;column_title(Object(WP_Post))
+#5 /Applications/MAMP/htdocs/dev/weltrade/wp-admin/includes/class-wp-list-table.php(1245): WP_Posts_List_Table-&gt;_column_title(Object(WP_Post), &#039;title column-ti...&#039;, &#039;data-c in /Applications/MAMP/htdocs/dev/weltrade/wp-content/themes/Divi/includes/builder/feature/BlockEditorIntegration.php on line 301</code></pre>
+<p>what&#8217;s happening on the Pages section is only some of the lists of pages loads (8 in my case), and the rest of the page gets cutoff (WordPress crashes and does&#8217;t even add all closing footer tags, so the table is all messed up).</p>
+<p><img src="https://i.postimg.cc/Vv6JXBZk/Screen-Shot-2018-12-12-at-7-45-57-pm.png" alt="Pages section in WordPress dashboard" /></p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-is-crashing-the-all-pages-in-dashboard/">Piklist + Divi are crashing the admin Pages in WP dashboard</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Saving additional images as attachments not working</title>
+		<link>https://piklist.com/support/topic/saving-additional-images-as-attachments-not-working/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Tue, 24 Jul 2018 19:46:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/saving-additional-images-as-attachments-not-working/</guid>
+
+					<description><![CDATA[<p>Hi, Is there anyway to to add attachments using piklist rather than adding them in the content area via the &#8220;insert Media&#8221; button in the wysiwyg? I don&#8217;t want to use a custom field, I want to select them via a piklist field and then store them how wordpress stores them &#8211; as attachments. I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/saving-additional-images-as-attachments-not-working/">Saving additional images as attachments not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, Is there anyway to to add attachments using piklist rather than adding them in the content area via the &#8220;insert Media&#8221; button in the wysiwyg? </p>
+<p>I don&#8217;t want to use a custom field, I want to select them via a piklist field and then store them how wordpress stores them &#8211; as attachments.</p>
+<p>I then want to use something like &#8220;get_attached_media( &#8216;image&#8217;, $post_id )&#8221; to get the attachments.</p>
+<p>I did try to use the code from the demo: https://gist.github.com/beatelite/eecbbd5b301ac62583b9245af5547278</p>
+<p>However, it&#8217;s doing this weird thing where when I select three images and then publish, all three images become the first one selected. https://drive.google.com/open?id=1MfNye3lvLrzwnu59TQ62d4AykZahzm2y</p>
+<p>What am I missing?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/saving-additional-images-as-attachments-not-working/">Saving additional images as attachments not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Can I add fields to a group from another piklist plugin</title>
+		<link>https://piklist.com/support/topic/can-i-add-fields-to-a-group-from-another-piklist-plugin/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Fri, 23 Mar 2018 17:42:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/can-i-add-fields-to-a-group-from-another-piklist-plugin/</guid>
+
+					<description><![CDATA[<p>If I have a group of fields, can I add another field to the same group from another piklist plugin? Curious as I&#8217;d like to have addons that add data to an existing group. EX: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;label&#039; =&#62; __(&#039;a group test label&#039;, &#039;piklist-demo&#039;) ,&#039;description&#039; =&#62; __(&#039;test.&#039;, &#039;piklist-demo&#039;) ,&#039;field&#039; =&#62; &#039;my_group_field&#039; ,&#039;value&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/can-i-add-fields-to-a-group-from-another-piklist-plugin/">Can I add fields to a group from another piklist plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If I have a group of fields, can I add another field to the same group from another piklist plugin? </p>
+<p>Curious as I&#8217;d like to have addons that add data to an existing group. </p>
+<p>EX:</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;label&#039; =&gt; __(&#039;a group test label&#039;, &#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;test.&#039;, &#039;piklist-demo&#039;)
+    ,&#039;field&#039; =&gt; &#039;my_group_field&#039;
+    ,&#039;value&#039; =&gt; &#039;none&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; 
+    array(
+        array(
+            &#039;type&#039; =&gt; &#039;datepicker&#039;,
+            &#039;field&#039; =&gt; &#039;field1_date&#039;,
+            &#039;label&#039; =&gt; &#039;field1 Date&#039;,
+            &#039;value&#039; =&gt; date(&#039;M d, Y&#039;, time() + 604800), // set default value
+            &#039;options&#039; =&gt; array(
+                &#039;dateFormat&#039; =&gt; &#039;M d, yy&#039;
+            )
+	),
+      ===============&gt; Can I add a field from another piklist plugin here? &lt;=============
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/can-i-add-fields-to-a-group-from-another-piklist-plugin/">Can I add fields to a group from another piklist plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist dont work with Elementor</title>
+		<link>https://piklist.com/support/topic/piklist-dont-work-with-elementor/</link>
+		
+		<dc:creator><![CDATA[bicho44]]></dc:creator>
+		<pubDate>Wed, 03 May 2017 13:04:55 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-dont-work-with-elementor/</guid>
+
+					<description><![CDATA[<p>Hi: Im using Elementor in certain parts of the site (Home Page mostly) But, neither the widgets or the shortcodes created with Piklist seems to work. Either i receive a blank space or (in widgets case) a code but not a form to modify the widget behaviour. I think is a problem with the Piklist [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-dont-work-with-elementor/">Piklist dont work with Elementor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi:</p>
+<p>Im using Elementor in certain parts of the site (Home Page mostly)</p>
+<p>But, neither the widgets or the shortcodes created with Piklist seems to work. Either i receive a blank space or (in widgets case) a code but not a form to modify the widget behaviour.</p>
+<p>I think is a problem with the Piklist mechanics, because a shortcode  created &#8220;ala&#8221; WordPress works ok.</p>
+<p>If you can take a look at this i will apreciate a lot.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-dont-work-with-elementor/">Piklist dont work with Elementor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Why should I use the Piklist instead of the ACF?</title>
+		<link>https://piklist.com/support/topic/why-should-i-use-the-piklist-instead-of-the-acf/</link>
+		
+		<dc:creator><![CDATA[Fernando Lourenço]]></dc:creator>
+		<pubDate>Tue, 25 Apr 2017 13:17:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/why-should-i-use-the-piklist-instead-of-the-acf/</guid>
+
+					<description><![CDATA[<p>Why should I use the Piklist instead of the ACF? I would like the opinion of those with a lot of experience with the dosi frameworks could discuss on the subject and also the developers of the piklist themselves, could build a comparative matrix pointing advantages and differentials.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/why-should-i-use-the-piklist-instead-of-the-acf/">Why should I use the Piklist instead of the ACF?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Why should I use the Piklist instead of the ACF?<br />
+I would like the opinion of those with a lot of experience with the dosi frameworks could discuss on the subject and also the developers of the piklist themselves, could build a comparative matrix pointing advantages and differentials.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/why-should-i-use-the-piklist-instead-of-the-acf/">Why should I use the Piklist instead of the ACF?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>ERROR! in WIDGET SAVE</title>
+		<link>https://piklist.com/support/topic/error-in-widget-save/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Wed, 31 Aug 2016 21:54:26 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-in-widget-save/</guid>
+
+					<description><![CDATA[<p>Hello guys, i&#8217;m having a strange issue, when i want to save a widget, it reset all my fields and is not saving nothing! here is my code and a gift showing error promotions-form.php &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;lt_box_promotions&#039; ,&#039;add_more&#039; =&#62; true ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;file&#039; ,&#039;field&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-in-widget-save/">ERROR! in WIDGET SAVE</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello guys, i&#8217;m having a strange issue, when i want to save a widget, it reset all my fields and is not saving nothing!</p>
+<p>here is my code and a gift showing error</p>
+<p>promotions-form.php</p>
+<pre><code>&lt;?php
+
+ piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;lt_box_promotions&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;lt_box_image&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;label&#039; =&gt; __(&#039;Agregar imagen&#039;,&#039;piklist&#039;)
+        ,&#039;description&#039; =&gt; __(&#039;Seleccione la imagen que desea mostrar en la promoción&#039;,&#039;piklist&#039;)
+        ,&#039;options&#039; =&gt; array(
+            &#039;basic&#039; =&gt; false
+            ,&#039;multiple&#039; =&gt; false
+        )
+      )
+       ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;lt_box_link&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;Enlace (link)&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;radio&#039;
+        ,&#039;field&#039; =&gt; &#039;tc_box_open&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;label&#039; =&gt; __(&#039;¿Abre en otra pestaña?&#039;,&#039;piklist&#039;)
+	    ,&#039;choices&#039; =&gt; array(
+	      0 =&gt; &#039;No&#039;,
+	      1 =&gt; &#039;Si&#039;
+	    )
+      )
+    )
+  ));</code></pre>
+<p>promotions.php</p>
+<pre><code>&lt;?php
+/*
+Title: Hot Topix: Promotions
+Description: Widget para añadir promociones
+*/
+?&gt;
+
+&lt;?php echo $before_widget; ?&gt;
+ 
+
+&lt;ul class=&quot;bxslider&quot;&gt;
+	&lt;?php foreach($settings[&#039;lt_box_promotions&#039;] as $slide){ ?&gt;
+		&lt;?php $image = wp_get_attachment_image_src(
+					$slide[&#039;lt_box_image&#039;][0],
+					&#039;medium&#039;, //size full,medium,thumbnail
+					false //icon
+			  ); ?&gt;
+		&lt;li&gt;
+			&lt;?php 
+				if($slide[&#039;lt_box_link&#039;] != &quot;&quot;){ 
+					//verificar si abre en otra pestaña
+					$openInBlankPage = $slide[&#039;tc_box_open&#039;][0];
+			?&gt;
+				&lt;a href=&quot;&lt;?= $slide[&#039;lt_box_link&#039;] ?&gt;&quot;
+				  &lt;?php if($openInBlankPage == 1){ echo &#039;target=&quot;_blank&quot;&#039;; } ?&gt;
+				&gt;
+					&lt;img src=&quot;&lt;?= $image[0] ?&gt;&quot; /&gt;
+				&lt;/a&gt;
+			&lt;?php }else{?&gt;
+				&lt;img src=&quot;&lt;?= $image[0] ?&gt;&quot; /&gt;
+			&lt;?php }?&gt;
+		&lt;/li&gt;
+	&lt;?php } ?&gt;
+&lt;/ul&gt;
+
+ 
+&lt;?php echo $after_widget; ?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-in-widget-save/">ERROR! in WIDGET SAVE</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How do I hide the PikList menu</title>
+		<link>https://piklist.com/support/topic/how-do-i-hide-the-piklist-menu/</link>
+		
+		<dc:creator><![CDATA[chrisatoddball]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2016 07:27:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-do-i-hide-the-piklist-menu/</guid>
+
+					<description><![CDATA[<p>How would I hide the PikList admin menu? It seems superfluous to my plugin&#8217;s needs.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-do-i-hide-the-piklist-menu/">How do I hide the PikList menu</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How would I hide the PikList admin menu? It seems superfluous to my plugin&#8217;s needs.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-do-i-hide-the-piklist-menu/">How do I hide the PikList menu</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

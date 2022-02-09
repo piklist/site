@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sidebar title &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/sidebar-title/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 18 Jan 2014 18:54:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Widget addon</title>
+		<link>https://piklist.com/support/topic/widget-addon/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sat, 18 Jan 2014 18:52:44 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/widget-addon/</guid>
+
+					<description><![CDATA[<p>Already you have made widgets amazing and so easy to create and use. But I did have a problem. I need to know the sidebar ID in my widget form, so that I can use it to retrieve some meta data using that sidebar id/title. Currently the form is created and then the drop down [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/widget-addon/">Widget addon</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Already you have made widgets amazing and so easy to create and use. </p>
+<p>But I did have a problem.</p>
+<p>I need to know the sidebar ID in my widget form, so that I can use it to retrieve some meta data using that sidebar id/title.</p>
+<p>Currently the form is created and then the drop down (widget-select.php) that lets you pick a widget. The widgets are then loaded via piklist(pathtowidget.php);<br />
+This process is not passed the $this-&gt;id variable, which is available when the form is being created, but not when rendering the widget forms. </p>
+<p>So what I&#8217;ve done is change these lines: (in includes/class-piklist-universal-widget.php, in the function form)</p>
+<pre><code>
+piklist::render(&#039;shared/widget-select&#039;, array(
+  &#039;instance&#039; =&gt; $instance
+  ,&#039;widgets&#039; =&gt; $this-&gt;widgets
+  ,&#039;name&#039; =&gt; $this-&gt;widget_core_name
+  ,&#039;widget_name&#039; =&gt; $this-&gt;widget_name
+  ,&#039;class_name&#039; =&gt; piklist::dashes($this-&gt;widget_core_name)
+));
+</code></pre>
+<p>to these lines:</p>
+<pre><code>
+piklist::render(&#039;shared/widget-select&#039;, array(
+  &#039;instance&#039; =&gt; $instance
+  ,&#039;sidebarid&#039;=&gt; $this-&gt;id
+  ,&#039;widgets&#039; =&gt; $this-&gt;widgets
+  ,&#039;name&#039; =&gt; $this-&gt;widget_core_name
+  ,&#039;widget_name&#039; =&gt; $this-&gt;widget_name
+  ,&#039;class_name&#039; =&gt; piklist::dashes($this-&gt;widget_core_name)
+));
+</code></pre>
+<p>Basically passing on the new argument, sidebarid, so that widget-select.php will pass it on to the forms that it loads. </p>
+<p>Now I just need to add:</p>
+<pre><code>global $sidebarid;
+</code></pre>
+<p>to any of my widget forms and I have access to the parent sidebar. </p>
+<p>Hope this helps someone else, and when Kevin comes up for air &lt;grin&gt; one day could he please add this to the functionality. (AS I HATE CHANGING CORE CODE) Or maybe even add an action or filter.</p>
+<p>Thanks guys, hope it helps someone else.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/widget-addon/">Widget addon</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>relationships &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/relationships/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 25 Jun 2017 22:34:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>$_GET, post relations</title>
+		<link>https://piklist.com/support/topic/_get-post-relations/</link>
+		
+		<dc:creator><![CDATA[levipe]]></dc:creator>
+		<pubDate>Sun, 25 Jun 2017 22:34:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/_get-post-relations/</guid>
+
+					<description><![CDATA[<p>Hi, So, I&#8217;m trying to build this kind of query: www.levipe.be/shop/?color=white&#38;region=Bordeaux I&#8217;ve created a couple of CPTs: &#8211; grapes &#8211; regions &#8211; &#8230; and a couple of custom fields in my products (using WooCommerce) like &#8211; color The code goes like this: function get_levipe_filter_posts( $query ) { if( is_admin() ) { return; }; $meta_query = [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/_get-post-relations/">$_GET, post relations</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>So, I&#8217;m trying to build this kind of query:<br />
+www.levipe.be/shop/?color=white&amp;region=Bordeaux</p>
+<p>I&#8217;ve created a couple of CPTs:<br />
+&#8211; grapes<br />
+&#8211; regions<br />
+&#8211; &#8230;<br />
+and a couple of custom fields in my products (using WooCommerce) like<br />
+&#8211; color</p>
+<p>The code goes like this:</p>
+<pre><code>function get_levipe_filter_posts( $query ) {
+
+    if( is_admin() ) {
+        return;
+    };
+
+    $meta_query = $query-&gt;get(&#039;meta_query&#039;);
+
+    if ( $_GET ) {
+        foreach ( $_GET as $key =&gt; $value ) {
+            $meta_query[] = array(
+                &quot;key&quot; =&gt; $key,
+                &quot;value&quot; =&gt; explode(&#039;,&#039;, $_GET[$key]),
+                &quot;compare&quot; =&gt; &quot;IN&quot;
+            );
+        };
+    };
+
+    $meta_query[] = array( &#039;relation&#039; =&gt; &#039;AND&#039; );
+
+    $query-&gt;set(&#039;meta_query&#039;, $meta_query);
+
+    return;
+};</code></pre>
+<p>The code functions perfectly if I limit myself to custom fields.</p>
+<p>It goes wrong when I want to perform the relationships. For instance, I have a relationship established between a product and regions. There the code breaks.<br />
+It also doesn&#8217;t work if I use the post_id of the region.</p>
+<p>I&#8217;ve also tried &#8220;__relate_post&#8221; as a key but that also doesn&#8217;t work.</p>
+<p>I&#8217;ve now read in one of the posts on the forum that there is a relate_query function. However, I can&#8217;t seem to find some documentation to see how it works.<br />
+First, could I use it in the use case? Second, how should I implement it?</p>
+<p>Thanks,</p>
+<p>Charles </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/_get-post-relations/">$_GET, post relations</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>post to user relationships</title>
+		<link>https://piklist.com/support/topic/post-to-user-relationships/</link>
+		
+		<dc:creator><![CDATA[stemuedendron]]></dc:creator>
+		<pubDate>Mon, 14 Mar 2016 13:35:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-to-user-relationships/</guid>
+
+					<description><![CDATA[<p>Hello, I have a problem with post to user relationships with latest piklist version 0.9.9.7. I can&#8217;t create a bi-directional relation. I have two custom post types: rf_show rf_episode Now there are two relationships: rf_episode to rf_show rf_episode to user This is the code for the metabox for rf_episode: &#60;?php /* Title: On Air Post [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-user-relationships/">post to user relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I have a problem with post to user relationships with latest piklist version 0.9.9.7.<br />
+I can&#8217;t create a bi-directional relation.</p>
+<p>I have two custom post types:<br />
+rf_show<br />
+rf_episode</p>
+<p>Now there are two relationships:<br />
+rf_episode to rf_show<br />
+rf_episode to user</p>
+<p>This is the code for the metabox for rf_episode:</p>
+<pre><code>
+&lt;?php
+/*
+Title: On Air
+Post Type: rf_episode
+*/
+
+// field for related shows
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;checkbox&#039;,
+	&#039;field&#039; =&gt; &#039;rf_episode_to_show&#039;,
+	&#039;label&#039; =&gt; __(&#039;Shows&#039;, &#039;rf&#039;),
+	&#039;relate&#039; =&gt; array(
+		&#039;scope&#039; =&gt; &#039;post&#039;
+	),	
+	&#039;choices&#039; =&gt; piklist(
+		get_posts(array(
+			&#039;post_type&#039; =&gt; &#039;rf_show&#039;,
+			&#039;numberposts&#039; =&gt; -1,
+			&#039;orderby&#039; =&gt; &#039;title&#039;,
+			&#039;order&#039; =&gt; &#039;ASC&#039;
+		)),
+		array(&#039;ID&#039;, &#039;post_title&#039;)
+	)
+));
+
+// field for related users
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;checkbox&#039;,
+	&#039;field&#039; =&gt; &#039;rf_episode_to_user&#039;,
+	&#039;label&#039; =&gt; __(&#039;DJs&#039;, &#039;rf&#039;),
+	&#039;relate&#039; =&gt; array(
+		&#039;scope&#039; =&gt; &#039;user&#039;
+	),	
+	&#039;choices&#039; =&gt; piklist(
+		get_users(array(
+			&#039;orderby&#039; =&gt; &#039;display_name&#039;,
+			&#039;order&#039; =&gt; &#039;ASC&#039;,
+        )),
+		array(&#039;ID&#039;, &#039;display_name&#039;)
+	)
+));
+</code></pre>
+<p>I create an episode and select related show (id 38) and user (id 2).<br />
+This is what I get (and what I expected) in the wp_postmeta table:</p>
+<p>post_id		meta_key 		meta_value<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+338		rf_episode_to_show	38<br />
+338		rf_episode_to_user	2<br />
+38		__relate_post		338</p>
+<p>There is a bi-directional relationship between post 38 (the show) and post 338 (the created episode).<br />
+And there is a relation between post 338 and the user with id 2.</p>
+<p>Now I expected the second part of the bi-directional relationship in the wp_usermeta table, but there is no entry. Is &#8216;scope&#8217; =&gt; &#8216;user&#8217; wrong?<br />
+How to do this?</p>
+<p>Thanks<br />
+Steffen</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-user-relationships/">post to user relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>post to post hierarchical relationships</title>
+		<link>https://piklist.com/support/topic/post-to-post-hierarchical-relationships/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2016 03:10:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-to-post-hierarchical-relationships/</guid>
+
+					<description><![CDATA[<p>Q: Does post to post support hierarchical relationships? for example: If I create a connection type between &#8220;Continent &#38; Country&#8221;, &#8220;Country &#38; State&#8221;, &#8220;State &#38; City&#8221; and then access a city post, will I have access to the data for all the parents?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-post-hierarchical-relationships/">post to post hierarchical relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Q: Does post to post support hierarchical relationships?</p>
+<p>for example: If I create a connection type between &#8220;Continent &amp; Country&#8221;, &#8220;Country &amp; State&#8221;, &#8220;State &amp; City&#8221; and then access a city post, will I have access to the data for all the parents?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-post-hierarchical-relationships/">post to post hierarchical relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more with relate to custom post type</title>
+		<link>https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[arranfraser]]></dc:creator>
+		<pubDate>Fri, 04 Dec 2015 20:22:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Hi everyone, I&#8217;m trying to copy/modify the demo code that shows how you can use a repeater field to create related Posts/Users/Comments on the edit form of the Demo custom-post-type. meta-boxes/field-relationship.php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;scope&#039; =&#62; &#039;post&#039; ,&#039;label&#039; =&#62; &#039;Related Posts&#039; ,&#039;relate&#039; =&#62; array( &#039;scope&#039; =&#62; &#039;post&#039; ) ,&#039;add_more&#039;=&#62; true ,&#039;fields&#039; =&#62; array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/">add_more with relate to custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>I&#8217;m trying to copy/modify the demo code that shows how you can use a repeater field to create related Posts/Users/Comments on the edit form of the Demo custom-post-type.</p>
+<p><code>meta-boxes/field-relationship.php</code></p>
+<pre><code>
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;label&#039; =&gt; &#039;Related Posts&#039;
+    ,&#039;relate&#039; =&gt; array(
+      &#039;scope&#039; =&gt; &#039;post&#039;
+    )
+    ,&#039;add_more&#039;=&gt; true
+    ,&#039;fields&#039; =&gt; array(
+...</code></pre>
+<p>The only difference I am attempting is that I want to be able to add other custom post types (that are related to the custom post type I am editing).  I am editing a Family, and I want to be able to add Students to it.</p>
+<p>The closest I got was to simply add a post-type field within the repeated form.</p>
+<p><code>[&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;field&#039; =&gt; &#039;post_type&#039;, &#039;value&#039; =&gt; &#039;student&#039;]</code></p>
+<p>This actually works perfectly (post is created of correct type, relationship is intact), but only for the first entry of the repeater.</p>
+<p>If I click + and fill out a second form to relate a second student to the family, nothing gets saved.</p>
+<p>Any idea what I&#8217;m missing?  It seems so close to the demo that I can&#8217;t imagine this couldn&#8217;t work.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/">add_more with relate to custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post_relate -bugs [0.9.9.2]</title>
+		<link>https://piklist.com/support/topic/post_relate-bugs-0-9-9-2/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Thu, 15 Oct 2015 19:50:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post_relate-bugs-0-9-9-2/</guid>
+
+					<description><![CDATA[<p>I think the post_relate functionality is pretty cool. I have noticed a few things. When you want to only allow a single selection to be made for the relate_post, it does not work properly. Because it does not delete the past relationships that it created. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;_&#039; . piklist::$prefix [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post_relate-bugs-0-9-9-2/">Post_relate -bugs [0.9.9.2]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I think the post_relate functionality is pretty cool. I have noticed a few things.</p>
+<p>When you want to only allow a single selection to be made for the relate_post, it does not work properly. Because it does not delete the past relationships that it created. </p>
+<pre><code>piklist(&#039;field&#039;, array(
+		 &#039;type&#039; =&gt; &#039;select&#039;
+		 ,&#039;field&#039; =&gt; &#039;_&#039; . piklist::$prefix . &#039;relate_post&#039;
+		 ,&#039;choices&#039; =&gt; piklist(
+		   get_posts(array(
+			 &#039;post_type&#039; =&gt; &#039;post_mission_trip&#039;
+			 ,&#039;numberposts&#039; =&gt; -1
+			 ,&#039;orderby&#039; =&gt; &#039;meta_value_num&#039;
+			 ,&#039;meta_key&#039; =&gt; &#039;trip_begin&#039;
+			 ,&#039;order&#039; =&gt; &#039;DESC&#039;
+			 ,&#039;post_status&#039; =&gt; &#039;any&#039;
+		   ))
+		   ,array(&#039;ID&#039;, &#039;post_title&#039;)
+		 )
+		 ,&#039;relate&#039; =&gt; array(
+		   &#039;scope&#039; =&gt; &#039;post&#039;
+		 )
+	   ));</code></pre>
+<p>The above code will cause duplicate relationships.</p>
+<p>Also I notice that on the front-end the checkbox version of the code above works fine inside of user&#8217;s profiles, except that the system keeps saving weird meta_keys in the user _meta table that seem to be just strings of letter/numbers. I attached an image with highlighted meta_keys that were created after I added the checkbox version of the relate_post field to my user_profile.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post_relate-bugs-0-9-9-2/">Post_relate -bugs [0.9.9.2]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>post-relate and one-to-many relationship</title>
+		<link>https://piklist.com/support/topic/post-relate-and-one-to-many-relationship/</link>
+		
+		<dc:creator><![CDATA[chrisben]]></dc:creator>
+		<pubDate>Wed, 14 Aug 2013 09:31:36 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/post-relate-and-one-to-many-relationship/</guid>
+
+					<description><![CDATA[<p>I have two custom post types, Models and Products, and I need to define a one-to-many relationship so that: 1. a Product references only one Model 2. a Model can belong to 0..n Products With such a relationship I can either show the current Model of a Product, or list all Products that match this [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-and-one-to-many-relationship/">post-relate and one-to-many relationship</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have two custom post types, Models and Products, and I need to define a one-to-many relationship so that:<br />
+1. a Product references only one Model<br />
+2. a Model can belong to 0..n Products</p>
+<p>With such a relationship I can either show the current Model of a Product, or list all Products that match this Model.</p>
+<p>From the Edit Product page I want to select a Model and save this relationship.</p>
+<p>I have used &#8220;post-relate&#8221; but:<br />
+&#8211; checkboxes don&#8217;t enforce the 1st rule : one can select many models &#8211; this is good for a many-to-many relationship.<br />
+&#8211; radiobuttons would be a solution, but I would prefer showing a select box</p>
+<p>I have used &#8216;type&#8217; =&gt; &#8216;select&#8217; and passed an array of Models to &#8216;choices&#8217;, but with that solution I&#8217;m losing the reciprocity of the relationship as I have no more &#8216;post_belongs&#8217;/&#8217;post_has&#8217;. The query to get all Products for a given Model gets ugly as I need to pull the meta for each Product and keep only the ones that match this Model.</p>
+<p>Would it be possible to customize the &#8220;post-relate&#8221; definition to get either that checkbox UI or a select/radiobutton UI for a one-to-many relationship?</p>
+<p>The problem here is that &#8220;type&#8221; which is usually used to define the kind of UI (select, checkbox..) you&#8217;ll get in the admin is here used to define a relationship.<br />
+I would suggest keeping &#8220;type&#8221; for the UI type and adding a field &#8220;relationship&#8221; where one can set &#8220;many-to-many&#8221;, &#8220;many-to-one&#8221;, &#8220;one-to-one&#8221;, &#8220;one-to-many&#8221;.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-and-one-to-many-relationship/">post-relate and one-to-many relationship</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom Post Type Relationships</title>
+		<link>https://piklist.com/support/topic/custom-post-type-relationships/</link>
+		
+		<dc:creator><![CDATA[James Mc]]></dc:creator>
+		<pubDate>Thu, 11 Oct 2012 16:11:40 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/custom-post-type-relationships/</guid>
+
+					<description><![CDATA[<p>Is there a way to add relationships between CPTs? For example: A CPT &#8216;customer&#8217; would have a &#8216;has_many&#8217; relationship with a CPT &#8216;order&#8217;. I swear I saw this functionality mentioned somewhere with Piklist. I guess I need to spend some time in the source code as its the ultimate manual.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-type-relationships/">Custom Post Type Relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to add relationships between CPTs?  For example:  A CPT &#8216;customer&#8217; would have a &#8216;has_many&#8217; relationship with a CPT &#8216;order&#8217;.</p>
+<p>I swear I saw this functionality mentioned somewhere with Piklist.  I guess I need to spend some time in the source code as its the ultimate manual.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-type-relationships/">Custom Post Type Relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

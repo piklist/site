@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>true or false &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/true-or-false/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 02 Mar 2016 02:16:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Checkbox with only one choice</title>
+		<link>https://piklist.com/support/topic/checkbox-with-only-one-choice/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 19:22:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checkbox-with-only-one-choice/</guid>
+
+					<description><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked? I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked?</p>
+<p>I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;checkbox&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; &#039;1&#039;,
+     &#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;text&#039;
+      ),
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       &#039;1&#039; =&gt; &#039;Enable&#039;
+     )
+   )
+)</code></pre>
+<p>In the past, I&#8217;ve used the workaround of having radio buttons, but I&#8217;d really like to just have an enable checkbox.</p>
+<p>My workaround:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;radio&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; 1,
+     &#039;list&#039; =&gt; true,
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       1 =&gt; &#039;Enable&#039;,
+       0 =&gt; &#039;Disable&#039;
+      )
+   )
+ )</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

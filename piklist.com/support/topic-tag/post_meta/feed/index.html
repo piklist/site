@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post_meta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post_meta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 09 May 2017 03:52:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>maybe_serialize &#038; double-serialization of post_meta values</title>
+		<link>https://piklist.com/support/topic/maybe_serialize-double-serialization-of-post_meta-values/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Tue, 09 May 2017 03:52:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/maybe_serialize-double-serialization-of-post_meta-values/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve struck this issue twice recently; 2 sites running the Events Calendar one Pro. I&#8217;ve got corrupted post_meta values due to existing array data being double serialized. The error manifests in a 500 when trying to save an Event. The code dies because it has pulled a string out of the database when it expected [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/maybe_serialize-double-serialization-of-post_meta-values/">maybe_serialize &amp; double-serialization of post_meta values</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve struck this issue twice recently; 2 sites running the Events Calendar one Pro. </p>
+<p>I&#8217;ve got corrupted post_meta values due to existing array data being double serialized.</p>
+<p>The error manifests in a 500 when trying to save an Event. The code dies because it has pulled a string out of the database when it expected an Array. </p>
+<p><img src="https://dl.dropboxusercontent.com/u/2803129/sshot-914.png" alt="my database values" /></p>
+<p>If I disable Piklist, Events save correctly.</p>
+<p>In browsing the issue, I read this: https://codex.wordpress.org/Function_Reference/maybe_serialize#Notes</p>
+<p>in includes/class-piklist-meta.php  <code>wp_save_post_revision_post_meta_serialize()</code> looks like it does a maybe_serialize on raw values from the database, and then writes them back, without first checking whether the value is already serialized. </p>
+<p>@sbruner or @jasontheadams , when should this code be triggered?</p>
+<p>Without a clear understanding of when this is called, I can&#8217;t be certain that this is the cause. But I&#8217;ve definitely got a conflict between Piklist 0.9.9.9+ and the Events Calendar.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/maybe_serialize-double-serialization-of-post_meta-values/">maybe_serialize &amp; double-serialization of post_meta values</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Manipulate input data before post meta save</title>
+		<link>https://piklist.com/support/topic/manipulate-input-data-before-post-meta-save/</link>
+		
+		<dc:creator><![CDATA[cjwebdesigntt]]></dc:creator>
+		<pubDate>Wed, 02 Mar 2016 19:37:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/manipulate-input-data-before-post-meta-save/</guid>
+
+					<description><![CDATA[<p>Hi, Is there a filter that either Piklist or WP provides where you can manipulate the data being saved to the database for custom fields (post meta) such as piklist_pre_update_option? Can piklist_pre_update_option be used to do this? I&#8217;m developing a small client management system that keeps tracks of all the ftp account and domains etc [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/manipulate-input-data-before-post-meta-save/">Manipulate input data before post meta save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>Is there a filter that either Piklist or WP provides where you can manipulate the data being saved to the database for custom fields (post meta) such as piklist_pre_update_option?</p>
+<p>Can piklist_pre_update_option be used to do this?</p>
+<p>I&#8217;m developing a small client management system that keeps tracks of all the ftp account and domains etc and I would like to save the username and password for these accounts in a custom post type (e.g. Accounts) and would like to save the password using WP hashing functions or bcrypt.</p>
+<p>Suggestions?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/manipulate-input-data-before-post-meta-save/">Manipulate input data before post meta save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post save_post filter?</title>
+		<link>https://piklist.com/support/topic/post-save_post-filter/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sun, 10 Aug 2014 01:11:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-save_post-filter/</guid>
+
+					<description><![CDATA[<p>I am currently working on a new refund system for our client. And the component I&#8217;m writing needs to deal with the post, and the post_meta after its saved. Using &#8216;save_post_{custom_post_type}&#8216; works, but its BEFORE piklist saves all the meta data. I&#8217;m just wondering if there is a filter that I can use, AFTER your [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-save_post-filter/">Post save_post filter?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am currently working on a new refund system for our client.<br />
+And the component I&#8217;m writing needs to deal with the post, and the post_meta after its saved.</p>
+<p>Using &#8216;<strong>save_post_{custom_post_type}</strong>&#8216; works, but its BEFORE piklist saves all the meta data.</p>
+<p>I&#8217;m just wondering if there is a filter that I can use, AFTER your meta data is saved?<br />
+Something like &#8216;<strong>save_post_meta_{customer_post_type}</strong>&#8216; <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Or is there another filter I should be using that would be better?<br />
+Or can I edit the $_POST post_meta variables myself, then run a piklist function that saves the post_meta properly after I&#8217;ve altered it?</p>
+<p>Thanks guys.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-save_post-filter/">Post save_post filter?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PikList Revision saves data in wrong way</title>
+		<link>https://piklist.com/support/topic/piklist-revision-saves-data-in-wrong-way/</link>
+		
+		<dc:creator><![CDATA[matczar]]></dc:creator>
+		<pubDate>Mon, 12 Nov 2012 12:24:34 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/piklist-revision-saves-data-in-wrong-way/</guid>
+
+					<description><![CDATA[<p>Hi, It seems to me that I have found bug in the class that extends WP Revision. The &#8216;save_post&#8217; function in &#8216;PikList_Revision&#8217; class, saves the post meta data for revision in the wrong way. Look at the screenshot (wp_postmeta table): https://lh3.googleusercontent.com/-URoJFb-LHXA/UKDlm-zLbKI/AAAAAAAAIAQ/HBnfGLQ_fn4/s0/2012-11-12_13-03-39.png &#8211; yellow (post_id=17) &#8211; revision&#8217;s post meta &#8211; green (post_id=15) &#8211; post&#8217;s post meta</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-revision-saves-data-in-wrong-way/">PikList Revision saves data in wrong way</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+It seems to me that I have found bug in the class that extends WP Revision. The &#8216;save_post&#8217; function in &#8216;PikList_Revision&#8217; class, saves the post meta data for revision in the wrong way. Look at the screenshot (wp_postmeta table): https://lh3.googleusercontent.com/-URoJFb-LHXA/UKDlm-zLbKI/AAAAAAAAIAQ/HBnfGLQ_fn4/s0/2012-11-12_13-03-39.png<br />
+&#8211; yellow (post_id=17) &#8211; revision&#8217;s post meta<br />
+&#8211; green (post_id=15) &#8211; post&#8217;s post meta</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-revision-saves-data-in-wrong-way/">PikList Revision saves data in wrong way</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>user &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/user/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 03 May 2018 14:37:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>field reflecting current user</title>
+		<link>https://piklist.com/support/topic/field-reflecting-current-user/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Thu, 26 Apr 2018 12:06:23 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-reflecting-current-user/</guid>
+
+					<description><![CDATA[<p>How would you set up a field, that reflects the current user. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;my_filed&#039;+currentusersIDhere, .... Would it work and be safe to use the users id integer?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-reflecting-current-user/">field reflecting current user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How would you set up a field, that reflects the current user.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;my_filed&#039;+currentusersIDhere,
+	....</code></pre>
+<p>Would it work and be safe to use the users id integer?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-reflecting-current-user/">field reflecting current user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>user Flow 0.9.9.3</title>
+		<link>https://piklist.com/support/topic/user-flow-0-9-9-3/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Mon, 19 Oct 2015 18:38:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/user-flow-0-9-9-3/</guid>
+
+					<description><![CDATA[<p>Hi, This is sorta in relation to this ticket: https://piklist.com/support/topic/user-flow-0-9-9-2/ With the new upgrade, now the profile page is empty except for the update profile button. This is my user_header.php flow that was working before on 0.9.9.2 &#60;?php /* Flow: User Workflow Page: profile.php, user-edit.php Header: true Position: title */ // NOTE: Because of the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-flow-0-9-9-3/">user Flow 0.9.9.3</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, </p>
+<p>This is sorta in relation to this ticket: https://piklist.com/support/topic/user-flow-0-9-9-2/</p>
+<p>With the new upgrade, now the profile page is empty except for the update profile button. </p>
+<p>This is my user_header.php flow that was working before on 0.9.9.2</p>
+<pre><code>&lt;?php
+/*
+Flow: User Workflow
+Page: profile.php, user-edit.php
+Header: true
+Position: title
+*/
+
+// NOTE: Because of the way the some of the admin forms work we just can&#039;t remove the 
+//       fields or the form will throw errors, so instead we hide them when necessary
+?&gt;
+
+  &lt;?php 
+    if (in_array($pagenow, array(&#039;profile.php&#039;, &#039;user-edit.php&#039;))): 
+  ?&gt;
+   
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;h2&gt;
+        &lt;?php if ($pagenow == &#039;profile.php&#039;): ?&gt;
+          &lt;?php _e(&#039;Edit Your Profile&#039;); ?&gt;
+        &lt;?php
+          else:
+            $user = get_user_by(&#039;id&#039;, (int) $_REQUEST[&#039;user_id&#039;]); 
+        ?&gt;
+          &lt;?php _e(&#039;Edit User: &#039; . $user-&gt;user_login); ?&gt; &lt;a href=&quot;user-new.php&quot; class=&quot;page-title-action&quot;&gt;&lt;?php _e(&#039;Add New&#039;); ?&gt;&lt;/a&gt;
+        &lt;?php endif;?&gt;
+      &lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+    
+    
+      &lt;?php 
+
+        // Updated this conditional to only trigger on &#039;profile&#039; page
+        if (isset($_REQUEST[piklist::$prefix][&#039;flow_page&#039;]) &amp;&amp; !in_array($_REQUEST[piklist::$prefix][&#039;flow_page&#039;], array(&#039;profile&#039;))):
+
+      ?&gt;
+
+        body.piklist-workflow-active.user-edit-php #your-profile .piklist-meta-box-title,
+        body.piklist-workflow-active.profile-php #your-profile .piklist-meta-box-title,
+        body.piklist-workflow-active.user-edit-php #your-profile .piklist-form-table,
+        body.piklist-workflow-active.profile-php #your-profile .piklist-form-table,
+        body.piklist-workflow-active.user-edit-php #your-profile p.submit,
+        body.piklist-workflow-active.profile-php #your-profile p.submit {
+          display: block;
+        }
+
+          body.piklist-workflow-active.user-edit-php #your-profile &gt; *,
+          body.piklist-workflow-active.profile-php #your-profile &gt; * {
+            display: none;
+          }
+
+            /* Show Piklist meta boxes */
+            body.piklist-workflow-active.user-edit-php #your-profile .piklist-meta-box,
+            body.piklist-workflow-active.profile-php #your-profile .piklist-meta-box {
+              display: block;
+            }
+  
+      &lt;?php endif;?&gt;
+      
+      body.piklist-workflow-active.user-edit-php #profile-page h1,
+      body.piklist-workflow-active.profile-php #profile-page h1 {
+        display: none;
+      }
+
+    &lt;/style&gt;
+    
+  &lt;?php 
+    elseif ($pagenow == &#039;edit-tags.php&#039;): 
+      $taxonomy = get_taxonomy($taxnow);
+  ?&gt;
+    
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;h2&gt;&lt;?php echo $taxonomy-&gt;labels-&gt;edit_item; ?&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+  
+      &lt;?php if (isset($_REQUEST[piklist::$prefix][&#039;flow_page&#039;]) &amp;&amp; !in_array($_REQUEST[piklist::$prefix][&#039;flow_page&#039;], array(&#039;common&#039;, &#039;common_term&#039;))): ?&gt;
+
+        body.piklist-workflow-active.edit-tags-php .term-name-wrap,
+        body.piklist-workflow-active.edit-tags-php .term-slug-wrap,
+        body.piklist-workflow-active.edit-tags-php .term-parent-wrap,
+        body.piklist-workflow-active.edit-tags-php .term-description-wrap {
+          display: none;
+        }
+
+      &lt;?php endif;?&gt;
+  
+      body.piklist-workflow-active.edit-tags-php h1 {
+        display: none;
+      }
+
+    &lt;/style&gt;
+      
+  &lt;?php endif;</code></pre>
+<p>I also tried using the header in the demo but that does not work as well, and I have tried to use just the comment section without additional code. I am not using sub-tabs, just normal tabs. I right clicked into the source using &#8220;inspect&#8221; and it looks like it is just being hidden. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-flow-0-9-9-3/">user Flow 0.9.9.3</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Warnings when savings a user</title>
+		<link>https://piklist.com/support/topic/warnings-when-savings-a-user/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Mon, 28 Sep 2015 17:03:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/warnings-when-savings-a-user/</guid>
+
+					<description><![CDATA[<p>When I save one of the pages I have created in my profile flow I consitently get these warnings. After I save it I get a blank white page with these warnings: Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092 Warning: mysqli_real_escape_string() expects parameter 2 to be string, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/warnings-when-savings-a-user/">Warnings when savings a user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I save one of the pages I have created in my profile flow I consitently get these warnings. After I save it I get a blank white page with these warnings:</p>
+<pre><code>
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: Cannot modify header information - headers already sent by (output started at /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php:1092) in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/pluggable.php on line 1207
+</code></pre>
+<p>It does successfully save the information, but it is pretty annoying.</p>
+<p>I have narrowed it down to validation rule I have created.</p>
+<p>This is the validation rule that is on my functions page</p>
+<pre><code>
+//Validation RULES
+add_filter(&#039;piklist_validation_rules&#039;, &#039;check_if_unique&#039;, 11);
+function check_if_unique($validation_rules)
+{
+  $validation_rules[&#039;custom_unique&#039;] = array(
+    &#039;callback&#039; =&gt; &#039;my_validate_unique&#039;
+  );
+ 
+  return $validation_rules;
+}
+ 
+function my_validate_unique($file, $field, $arguments)
+{
+	global $user_id;
+	$user_profile_id = $user_id;
+	$user_query = new WP_User_Query( 
+	array( 
+		&#039;meta_key&#039; =&gt; &#039;user_custom_url&#039;
+		,&#039;meta_value&#039; =&gt; $field 
+		,&#039;exclude&#039; =&gt;$user_profile_id
+		) 
+	);
+$userscount = $user_query-&gt;get_total();
+  if($userscount != 1 )
+  {
+  return true;
+  }else{
+	  return __(&#039;is not unique and or used unsupported characters. ONLY letters and numbers.&#039;, &#039;Extreme&#039;);
+  }
+ 
+}
+
+</code></pre>
+<p>This is the field that calls that validation. If I remove the validate parameter I do not receive the errors anymore.</p>
+<pre><code>
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;user_custom_url&#039;
+ ,&#039;label&#039; =&gt; &#039;URL of your profile&#039;
+ ,&#039;validate&#039; =&gt; array(
+  array(
+    &#039;type&#039; =&gt; &#039;custom_unique&#039;
+  )
+)
+ ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/warnings-when-savings-a-user/">Warnings when savings a user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>User query select field</title>
+		<link>https://piklist.com/support/topic/user-query-select-field/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Wed, 17 Jun 2015 21:19:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/user-query-select-field/</guid>
+
+					<description><![CDATA[<p>I created this select field inside of the user profiles. It works as expected in my user profile. When I go to edit someone else&#8217;s profile, it has a dropped down full of empty white selections. If you inspect the select button, all of the Id&#8217;s are populating in the values, but the display name [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-query-select-field/">User query select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I created this select field inside of the user profiles. It works as expected in my user profile. When I go to edit someone else&#8217;s profile, it has a dropped down full of empty white selections. If you inspect the select button, all of the Id&#8217;s are populating in the values, but the display name does not show. If I switch it to user_login, it displays, but ideally I would like to use their display name.</p>
+<pre><code>$user_id = (int) $user_id;
+$current_user = wp_get_current_user();
+if ( ! defined( &#039;IS_PROFILE_PAGE&#039; ) )
+    define( &#039;IS_PROFILE_PAGE&#039;, ( $user_id == $current_user-&gt;ID ) );
+
+if ( ! $user_id &amp;&amp; IS_PROFILE_PAGE )
+    $user_id = $current_user-&gt;ID;
+elseif ( ! $user_id &amp;&amp; ! IS_PROFILE_PAGE )
+    wp_die(__( &#039;Invalid user ID.&#039; ) );
+elseif ( ! get_userdata( $user_id ) )
+    wp_die( __(&#039;Invalid user ID.&#039;) );
+$spouse_id = $user_id;
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;user_spouse&#039;
+		,&#039;label&#039; =&gt; &#039;Your Spouse&#039;
+		,&#039;value&#039; =&gt; &#039;0&#039; // Sets default to None
+		,&#039;description&#039; =&gt; &#039;Please select your spouse below&#039;
+		,&#039;choices&#039; =&gt; array( 0 =&gt; &quot;Not Married&quot; ) + piklist(
+						get_users(
+							array(
+								&#039;orderby&#039; =&gt; &#039;display_name&#039;
+								,&#039;order&#039; =&gt; &#039;asc&#039;
+								,&#039;exclude&#039; =&gt; $spouse_id
+								,&#039;fields&#039; =&gt; array(&#039;ID&#039;, &#039;display_name&#039;)
+							)
+							,&#039;objects&#039;
+						)
+						,array(
+							&#039;ID&#039;
+							,&#039;display_name&#039;
+						)
+						)
+      )); </code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-query-select-field/">User query select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Separate Set of Taxonomy Terms for each user</title>
+		<link>https://piklist.com/support/topic/separate-set-of-taxonomy-terms-for-each-user/</link>
+		
+		<dc:creator><![CDATA[byronyasgur]]></dc:creator>
+		<pubDate>Wed, 26 Nov 2014 00:25:41 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/separate-set-of-taxonomy-terms-for-each-user/</guid>
+
+					<description><![CDATA[<p>I have done a fair bit of searching and I haven&#8217;t found any simple way with any existing technology to have a separate set of terms for each user ( ie where the user owned their own terms &#8230; so that they could return their own queries based on their own personal categorization of the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/separate-set-of-taxonomy-terms-for-each-user/">Separate Set of Taxonomy Terms for each user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have done a fair bit of searching and I haven&#8217;t found any simple way with any existing technology to have a separate set of terms for each user ( ie where the user owned their own terms &#8230; so that they could return their own queries based on their own personal categorization of the blog&#8217;s content) &#8230; I do have an idea of how this could be done and I&#8217;m going to start that experiment soon but I thought first I&#8217;d ask to see if I&#8217;m missing something and maybe Piklist can do it, or help.</p>
+<p><strong>Example of operation</strong></p>
+<ul>
+<li>There are 3 posts in the blog and 2 users.</li>
+<li>The first user tags Post 1 and 2 as &#8220;foo&#8221; and Post 3 as &#8220;bar&#8221;</li>
+<li>The second user tags Post 2 and 3 as &#8220;baz&#8221; and post 1 as &#8220;qux&#8221;</li>
+</ul>
+<p> &#8230; so that User 1&#8217;s tags are completely autonomous from User 2.</p>
+<p><strong>Example of use</strong><br />
+My email program (Thunderbird) lets me tag emails according to my own workflow. I&#8217;m not going to use this in a regular blog but I can imagine a scenario where a a large blog with data heavy content might let it&#8217;s users categorise it&#8217;s content based on their own prefs &#8230; a sort of bookmarking system.</p>
+<p>If you have any thoughts I&#8217;d be grateful to hear them.</p>
+<p>NB I don&#8217;t think <strong>User Taxonomies</strong> would help as they seem to be just a way of categorising users, unless I&#8217;m missing something.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/separate-set-of-taxonomy-terms-for-each-user/">Separate Set of Taxonomy Terms for each user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

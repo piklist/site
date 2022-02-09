@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get_post_meta postmeta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get_post_meta-postmeta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 22 Jan 2017 17:06:36 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Related Content from Postmeta</title>
+		<link>https://piklist.com/support/topic/related-content-from-postmeta/</link>
+		
+		<dc:creator><![CDATA[moshemo]]></dc:creator>
+		<pubDate>Sun, 22 Jan 2017 17:06:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/related-content-from-postmeta/</guid>
+
+					<description><![CDATA[<p>Hello, I would like to use the relate field with postmeta (as opposed to posts). I am having trouble, though, figuring out how to do that with get_post_meta. Here is your code: piklist(&#8216;field&#8217;, array( &#8216;type&#8217; =&#62; &#8216;checkbox&#8217; ,&#8217;field&#8217; =&#62; &#8216;_&#8217; . piklist::$prefix . &#8216;relate_post&#8217; ,&#8217;label&#8217; =&#62; __(&#8216;Relate Posts&#8217;, &#8216;piklist-demo&#8217;) ,&#8217;choices&#8217; =&#62; piklist( get_posts(array( &#8216;post_type&#8217; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/related-content-from-postmeta/">Related Content from Postmeta</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I would like to use the relate field with postmeta (as opposed to posts).  I am having trouble, though, figuring out how to do that with get_post_meta.</p>
+<p>Here is your code:</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;checkbox&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;_&#8217; . piklist::$prefix . &#8216;relate_post&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Relate Posts&#8217;, &#8216;piklist-demo&#8217;)<br />
+    ,&#8217;choices&#8217; =&gt; piklist(<br />
+      get_posts(array(<br />
+        &#8216;post_type&#8217; =&gt; &#8216;post&#8217;<br />
+        ,&#8217;numberposts&#8217; =&gt; -1<br />
+        ,&#8217;orderby&#8217; =&gt; &#8216;title&#8217;<br />
+        ,&#8217;order&#8217; =&gt; &#8216;ASC&#8217;<br />
+      ))<br />
+      ,array(&#8216;ID&#8217;, &#8216;post_title&#8217;)<br />
+    )<br />
+    ,&#8217;relate&#8217; =&gt; array(<br />
+      &#8216;scope&#8217; =&gt; &#8216;post&#8217;<br />
+    )<br />
+  ));</p>
+<p>How do I modify this so that instead of retrieving a list of posts, I can retrieve a list of items saved in post meta.  In my particular case, the meta key is Sections.  I want to retrieve all the values with that meta key.</p>
+<p>Any idea?</p>
+<p>Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/related-content-from-postmeta/">Related Content from Postmeta</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

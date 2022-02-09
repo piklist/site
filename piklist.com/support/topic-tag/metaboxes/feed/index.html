@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>metaboxes &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/metaboxes/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 19 May 2020 15:39:07 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add meta to REST API response</title>
+		<link>https://piklist.com/support/topic/add-meta-to-rest-api-response/</link>
+		
+		<dc:creator><![CDATA[Ico]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2017 18:27:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-meta-to-rest-api-response/</guid>
+
+					<description><![CDATA[<p>Hi All, I searched for an easy way to display meta-box content created by Piklist in the rest_api response. For example: //Title: Custom meta to show in Rest //Post Type: post piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;custom_text&#039;, &#039;label&#039; =&#62; &#039;Custom text demo&#039;, //&#039;show_in_rest&#039; =&#62; true, //not working :( ) ); I can [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All,<br />
+I searched for an easy way to display meta-box content created by Piklist in the rest_api response.</p>
+<p>For example:</p>
+<pre><code>//Title: Custom meta to show in Rest
+ //Post Type: post
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;       =&gt; &#039;text&#039;,
+	&#039;field&#039;      =&gt; &#039;custom_text&#039;,
+	&#039;label&#039;      =&gt; &#039;Custom text demo&#039;,
+	//&#039;show_in_rest&#039; =&gt; true, //not working :(
+) );</code></pre>
+<p>I can use register_rest_field to add the meta to the api response ( for example : )</p>
+<pre><code>
+	register_rest_field( &#039;post&#039;, &#039;cm&#039;, array(
+		&#039;get_callback&#039; =&gt; function ( $post ) {
+			return get_post_meta( $post[&#039;id&#039;], &#039;custom_text&#039;, true );
+		},
+		&#039;schema&#039;       =&gt; array(
+			&#039;description&#039; =&gt; __( &#039;Custom piklist text.&#039; ),
+			&#039;type&#039;        =&gt; &#039;string&#039;
+		),
+	) );
+</code></pre>
+<p>and it does the trick, but it would be awesome if just passing <code>&#039;show_in_rest&#039; =&gt; true</code> to the meta params make it automatically show in the response.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How re-use metaboxes and control their visibility</title>
+		<link>https://piklist.com/support/topic/how-re-use-metaboxes-and-control-their-visibility/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Wed, 18 May 2016 11:08:52 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-re-use-metaboxes-and-control-their-visibility/</guid>
+
+					<description><![CDATA[<p>This is a long post but I kindly ask you to bear with me. I don&#8217;t want to use Piklist the wrong way just because I can use it to get what I want. I ran into this challenge when trying to reuse metaboxes on different page templates. I have a page template that uses [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-re-use-metaboxes-and-control-their-visibility/">How re-use metaboxes and control their visibility</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is a long post but I kindly ask you to bear with me. I don&#8217;t want to use Piklist the wrong way just because I can use it to get what I want. I ran into this challenge when trying to reuse metaboxes on different page templates. I have a page template that uses a number of Piklist&#8217;s metaboxes. In my second page template, I would want to reuse some of those metaboxes I used on the first page template but not all of them. Why think this way? Because WordPress only shows data created by a metabox if the page being viewed is the same as the one on which the data was posted by those same metboxes. So reusing metaboxes is ok. However, when crating my second page template, I thought that if I added a coma between the values taken by the Template parameter in the comment block, like this Template: page-home, page-home-one, that would allow me rule out explicitly which template had to show those metaboxes. This way I&#8217;d specify which metaboxs could show on my second page template. This didn&#8217;t work however. I tried effecting the Hide for Template parameter step by step as specified in the documentation but this didn&#8217;t work either. I wanted to use/show my metaboxes on more than one template but failed. I wonder how I can do this? To try solve the challenge, I decided to create completely different metaboxes for use with the second page template since in the very metaboxes that I had earlier, I didn&#8217;t intend to use all of the fields therein on the second template; and so creating different ones seemed the way to go. I also thought that instead of creating new fields for use by the second template by simply adding them into the metaboxes I already have, that would make even the fields I don&#8217;t want to use show up on the second template or the first. So I created different ones. However, this has given me some headache as of now. Why? The metaboxes are not posting any data I enter in them neither does their data show on the frontend. I&#8217;m working with quite many variables for my site functionality and it seems WordPress is not happy about it. It throws this error:</p>
+<pre><code>Warning: Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+
+Fatal error: Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\lawyeah\wp-includes\wp-db.php on line 1803</code></pre>
+<p>I&#8217;m not much worried about the errors above, but I wonder how Piklist can help me work around them effectively while helping me implement the functionality I desire. So here are my questions to get them straight:<br />
+1. Is there a way to use a metabox on more than one page template while not showing it on all the pages by default like it&#8217;s the case when you don&#8217;t specify the Template parameter values? If yes, how?<br />
+2.  If it is possible to reuse metaboxes on different page templates, is there a way to hide desired fields of a metabox from showing in the metabox if it is being used on another page template?<br />
+3. Is my approach of creating different metaboxes for use with a second template ok? Isn&#8217;t it the chief contributor to the <em>max_input_vars</em> limit hit error? If my approach of creating different metaboxes for a second template is ok, do you think it&#8217;s ok to increase the <em>max_input_vars</em>  parameter value or it&#8217;s not advisable?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-re-use-metaboxes-and-control-their-visibility/">How re-use metaboxes and control their visibility</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Default workflow tab not working correctly</title>
+		<link>https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/</link>
+		
+		<dc:creator><![CDATA[vagelis]]></dc:creator>
+		<pubDate>Mon, 24 Aug 2015 15:09:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/</guid>
+
+					<description><![CDATA[<p>Hi again. I&#8217;ve made some workflows using piklist and despite the fact that I&#8217;ve set one of them as default when I attempt to make a new post it does not being selected and I cannot figure out why. Below is my code (some of it cause the metaboxes contain many fields) workflow.php &#60;?php /* [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/">Default workflow tab not working correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi again. I&#8217;ve made some workflows using piklist and despite the fact that I&#8217;ve set one of them as default when I attempt to make a new post it does not being selected and I cannot figure out why.</p>
+<p>Below is my code (some of it cause the metaboxes contain many fields)</p>
+<p>workflow.php</p>
+<pre><code>&lt;?php
+/*
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+Post Type: yacht
+Header: true
+Position: title
+*/
+?&gt;</code></pre>
+<p>Default tab:</p>
+<pre><code>
+&lt;?php
+/*
+Title: Μηχανοκίνητα &lt; 25ft
+Default: true
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+*/
+
+// WordPress Core Meta Boxes
+piklist(&#039;include_meta_boxes&#039;, array(
+  &#039;categorydiv&#039;
+  ,&#039;slugdiv&#039;
+  ,&#039;postcustom&#039;
+  ,&#039;pageparentdiv&#039;
+  ,&#039;postimagediv&#039;
+  ,&#039;excerpt&#039;
+  ,&#039;wpseo_meta&#039;
+  ,&#039;richtext_excerpt_editor_metabox&#039;
+  ,&#039;piklist_meta_motors_max_25ft&#039;
+  // Add your custom meta boxes here
+));
+?&gt;</code></pre>
+<p>2nd Tab:</p>
+<pre><code>&lt;?php
+/*
+Title: Μηχανοκίνητα &gt; 25ft
+Order: 1
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+*/
+
+// WordPress Core Meta Boxes
+piklist(&#039;include_meta_boxes&#039;, array(
+  &#039;categorydiv&#039;
+  ,&#039;slugdiv&#039;
+  ,&#039;postcustom&#039;
+  ,&#039;pageparentdiv&#039;
+  ,&#039;postimagediv&#039;
+  ,&#039;excerpt&#039;
+  ,&#039;wpseo_meta&#039;
+  ,&#039;richtext_excerpt_editor_metabox&#039;
+  ,&#039;piklist_meta_motors_min_25ft&#039;
+  // Add your custom meta boxes here
+));
+?&gt;</code></pre>
+<p>3rd Tab:</p>
+<pre><code>&lt;?php
+/*
+Title: Φουσκωτά / Ιστιοπλοϊκά
+Order: 2
+Flow: Yachts Categories
+Page: post.php, post-new.php, post-edit.php, admin.php
+*/
+
+// WordPress Core Meta Boxes
+piklist(&#039;include_meta_boxes&#039;, array(
+  &#039;categorydiv&#039;
+  ,&#039;slugdiv&#039;
+  ,&#039;postcustom&#039;
+  ,&#039;pageparentdiv&#039;
+  ,&#039;postimagediv&#039;
+  ,&#039;excerpt&#039;
+  ,&#039;wpseo_meta&#039;
+  ,&#039;richtext_excerpt_editor_metabox&#039;
+  ,&#039;piklist_meta_sails&#039;
+  // Add your custom meta boxes here
+));
+?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/default-workflow-tab-not-working-correctly/">Default workflow tab not working correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Position of metaboxes not saved when Piklist is active</title>
+		<link>https://piklist.com/support/topic/position-of-metaboxes-not-saved-when-piklist-is-active/</link>
+		
+		<dc:creator><![CDATA[cvc1968]]></dc:creator>
+		<pubDate>Mon, 15 Jun 2015 22:42:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/position-of-metaboxes-not-saved-when-piklist-is-active/</guid>
+
+					<description><![CDATA[<p>After installing Piklist (for use with WordPress Helpers), I now find that I cannot re-order any of the metaboxes on my edit screens. That is, I can move them around, but their positions are no longer saved. Deactivating Piklist solves this problem, but reactivating it causes the metaboxes to go back to the order they [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/position-of-metaboxes-not-saved-when-piklist-is-active/">Position of metaboxes not saved when Piklist is active</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>After installing Piklist (for use with WordPress Helpers), I now find that I cannot re-order any of the metaboxes on my edit screens.  That is, I can move them around, but their positions are no longer saved.  Deactivating Piklist solves this problem, but reactivating it causes the metaboxes to go back to the order they were in before I disabled Piklist. I&#8217;d like to continue using Piklist, but I can&#8217;t have Metaboxes like &#8220;WordPress SEO&#8221; and &#8220;Revisions&#8221; appearing at the top of my edit pages above everything else.  </p>
+<p>I see no settings in Helpers, and the problem exists even when Helpers is disabled but Piklist is enabled. Is there a solution to this problem?  </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/position-of-metaboxes-not-saved-when-piklist-is-active/">Position of metaboxes not saved when Piklist is active</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

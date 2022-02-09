@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>is_author &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/is_author/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 06 Dec 2015 04:40:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>pre_get_posts for is_author( ) main query</title>
+		<link>https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 06 Dec 2015 04:40:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/</guid>
+
+					<description><![CDATA[<p>I am trying to alter the main_query for is_author() in a pre_get_posts() function. Essentially I want to grab the posts it normally would grab (posts by the author) but also grab posts with that author id which is the value for meta custom value. In this case `user_mediaographer&#8217; Here is my stab at it, but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/">pre_get_posts for is_author( ) main query</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to alter the <code>main_query</code> for <code>is_author()</code> in a <code>pre_get_posts()</code> function. Essentially I want to grab the posts it normally would grab (posts by the author) but also grab posts with that author id which is the value for meta custom value. In this case `user_mediaographer&#8217;</p>
+<p>Here is my stab at it, but its still not yielding any posts:</p>
+<pre><code>function author_and_mediaographers_loop( $query ) {
+	
+	if ( is_admin() || ! $query-&gt;is_main_query() )
+    return;
+
+	
+     if ( $query-&gt;is_author() &amp;&amp; $query-&gt;is_main_query() ) { 
+      	// $query-&gt;set(&#039;ignore_sticky_posts&#039;, true);
+      	// $query-&gt;set(  );
+      	$query-&gt;set( array(
+      		&#039;meta_key&#039; =&gt; &#039;user_mediaographer&#039;,
+      		&#039;meta_value&#039; =&gt; true,
+      		// &#039;meta_compare&#039; =&gt; &#039;&gt;=&#039; 
+      		));
+        // $query-&gt;set( &#039;meta_key&#039;, &#039;user_mediaographer&#039; );
+        // $query-&gt;set( &#039;meta_value&#039;, true );
+        }
+     }
+        
+add_action( &#039;pre_get_posts&#039;, &#039;author_and_mediaographers_loop&#039; );</code></pre>
+<p>As it is written, it doesn&#8217;t function but I can see if I did, it would only grab the posts that had the <code>meta_value</code> with the author ID. But I don&#8217;t see how what I have is adding to the main_query. Can anyone shed a little light here?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/">pre_get_posts for is_author( ) main query</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shortcode button &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/shortcode-button/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 15 Dec 2016 18:58:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>shortcodes on page edit not working properly</title>
+		<link>https://piklist.com/support/topic/shortcodes-on-page-edit-not-working-properly/</link>
+		
+		<dc:creator><![CDATA[hozefasmile]]></dc:creator>
+		<pubDate>Thu, 15 Dec 2016 18:58:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/shortcodes-on-page-edit-not-working-properly/</guid>
+
+					<description><![CDATA[<p>Hi All, Please help me with shortcode working. I have created two files in themes shortcodes folder. social.php and social-form.php social-form has following code:- &#60;?php /* Name: My Social Description: Add url of social media pages Shortcode: my_social Icon: dashicons-share Inline: true preview: false editor: false */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;my_facebok_url&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcodes-on-page-edit-not-working-properly/">shortcodes on page edit not working properly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All,</p>
+<p>Please help me with shortcode working. I have created two files in themes shortcodes folder. social.php and social-form.php<br />
+social-form has following code:-</p>
+<pre><code>&lt;?php
+/*
+Name: My Social
+Description: Add url of social media pages
+Shortcode: my_social
+Icon: dashicons-share
+Inline: true
+preview: false 
+editor: false 
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;my_facebok_url&#039;
+    ,&#039;label&#039; =&gt; &#039;Facebook Link&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      	&#039;class&#039; =&gt; &#039;regular-text&#039; // WordPress css class 
+    	)
+    ,&#039;required&#039; =&gt; true
+  ));
+piklist(&#039;field&#039;,array(
+	&#039;type&#039; =&gt; &#039;text&#039;
+	,&#039;field&#039; =&gt; &#039;my_twitter_url&#039;
+	,&#039;label&#039; =&gt; &#039;Twitter Link&#039;
+	,&#039;attributes&#039; = array(
+		&#039;class&#039; =&gt; &#039;regular-text&#039;
+	)
+));</code></pre>
+<p>and social.php has following :-</p>
+<pre><code>&lt;?php
+/*
+Shortcode: my_social
+*/
+?&gt;
+&lt;ul class=&quot;social&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;&lt;?php echo esc_html($my_facebok_url); ?&gt;&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt; Facebook&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;&lt;?php echo esc_html($my_twitter_url); ?&gt;&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt; Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>Now when I go to add a new page and click on shortcode button, its open the popup, where I can see my &#8220;My Social&#8221; icon box, then when I click it, it shows just a blank space, no form fields are showing in next screen to fill up to generate shortcode. Can anybody have idea why its not working?<br />
+I am using piklist 0.9.9.9 and wordpress 4.7</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/shortcodes-on-page-edit-not-working-properly/">shortcodes on page edit not working properly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

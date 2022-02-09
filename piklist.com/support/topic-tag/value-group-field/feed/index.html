@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>value group field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/value-group-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 19 Mar 2017 19:31:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add custom user profile fields to New User creation</title>
+		<link>https://piklist.com/support/topic/add-custom-user-profile-fields-to-new-user-creation/</link>
+		
+		<dc:creator><![CDATA[mikearsenault]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 19:30:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-custom-user-profile-fields-to-new-user-creation/</guid>
+
+					<description><![CDATA[<p>Hello there! I am just starting to get into using the plugin for development, and I am already running into a few issues that I don&#8217;t know how to resolve: 1. My customized field group is showing up no problems when I edit a user, but not when I create a new user. Is there [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-custom-user-profile-fields-to-new-user-creation/">Add custom user profile fields to New User creation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello there!</p>
+<p>I am just starting to get into using the plugin for development, and I am already running into a few issues that I don&#8217;t know how to resolve:</p>
+<p>1. My customized field group is showing up no problems when I edit a user, but not when I create a new user. Is there a flag or something I have to set in order to make these fields show up on the new user form?</p>
+<p>2. The &#8216;value&#8217; field doesn&#8217;t seem to work on select lists. I want the prov/state in my code below to default to Manitoba, but despite setting the value to Manitoba&#8217;s key value of &#8216;MB&#8217;, the first province in the list is the one that comes up.</p>
+<p>3. Is there a way using Piklist to remove or hide core wordpress user fields like Website? </p>
+<p>Here is my code, please let me know if there are answers to any of these issues as I can&#8217;t really make use of this plug-in on the strength of the documentation alone.</p>
+<pre><code>&lt;?php
+/*
+Title: FRCC Member Registration Information 
+*/
+?&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;address_group&#039;
+    ,&#039;label&#039; =&gt; &#039;ADDRESS INFORMATION&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Please enter your address information:&lt;/span&gt;&#039;
+    ,&#039;list&#039; =&gt; false
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;address_1&#039;
+        ,&#039;label&#039; =&gt; &#039;Street Address&#039;
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 6
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;Street Address&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;address_2&#039;
+        ,&#039;label&#039; =&gt; &#039;PO Box, Suite, etc.&#039;
+        ,&#039;columns&#039; =&gt; 6
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;PO Box, Suite, etc.&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;city&#039;
+        ,&#039;label&#039; =&gt; &#039;City&#039;
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 6
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;City&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;prov-state&#039;
+        ,&#039;label&#039; =&gt; &#039;Prov/State&#039;
+        ,&#039;required&#039; =&gt; true
+        ,&#039;value&#039; =&gt; &#039;MB&#039;
+        ,&#039;columns&#039; =&gt; 3
+        ,&#039;choices&#039; =&gt; array(
+        &#039;Canada&#039; =&gt; array(
+        &#039;first&#039; =&gt; &#039;Alberta&#039;, &#039;second&#039; =&gt; &#039;British Columbia&#039;, &#039;third&#039; =&gt; &#039;Manitoba&#039;, &#039;NB&#039; =&gt; &#039;New Brunswick&#039;, &#039;NL&#039; =&gt; &#039;Newfoundland&#039;, &#039;NS&#039; =&gt; &#039;Nova Scotia&#039;, &#039;NU&#039; =&gt; &#039;Nunavut&#039;, &#039;ON&#039; =&gt; &#039;Ontario&#039;, &#039;PE&#039; =&gt; &#039;Prince Edward Island&#039;, &#039;QC&#039; =&gt; &#039;Quebec&#039;, &#039;SK&#039; =&gt; &#039;Saskatchewan&#039;, &#039;NT&#039; =&gt; &#039;Northwest Territories&#039;, &#039;YT&#039; =&gt; &#039;Yukon Territory&#039;, &#039;AA&#039; =&gt; &#039;Armed Forces Americas&#039;, &#039;AE&#039; =&gt; &#039;Armed Forces Europe, Middle East, and Canada&#039;),
+        &#039;USA&#039; =&gt; array(
+        &#039;AK&#039; =&gt; &#039;Alaska&#039;, &#039;AL&#039; =&gt; &#039;Alabama&#039;, &#039;AP&#039; =&gt; &#039;Armed Forces Pacific&#039;, &#039;AR&#039; =&gt; &#039;Arkansas&#039;, &#039;AS&#039; =&gt; &#039;American Samoa&#039;, &#039;AZ&#039; =&gt; &#039;Arizona&#039;, &#039;CA&#039; =&gt; &#039;California&#039;, &#039;CO&#039; =&gt; &#039;Colorado&#039;, &#039;CT&#039; =&gt; &#039;Connecticut&#039;, &#039;DC&#039; =&gt; &#039;District of Columbia&#039;, &#039;DE&#039; =&gt; &#039;Delaware&#039;, &#039;FL&#039; =&gt; &#039;Florida&#039;, &#039;FM&#039; =&gt; &#039;Federated States of Micronesia&#039;, &#039;GA&#039; =&gt; &#039;Georgia&#039;, &#039;GU&#039; =&gt; &#039;Guam&#039;, &#039;HI&#039; =&gt; &#039;Hawaii&#039;, &#039;IA&#039; =&gt; &#039;Iowa&#039;, &#039;ID&#039; =&gt; &#039;Idaho&#039;, &#039;IL&#039; =&gt; &#039;Illinois&#039;, &#039;IN&#039; =&gt; &#039;Indiana&#039;, &#039;KS&#039; =&gt; &#039;Kansas&#039;, &#039;KY&#039; =&gt; &#039;Kentucky&#039;, &#039;LA&#039; =&gt; &#039;Louisiana&#039;, &#039;MA&#039; =&gt; &#039;Massachusetts&#039;, &#039;MD&#039; =&gt; &#039;Maryland&#039;, &#039;ME&#039; =&gt; &#039;Maine&#039;, &#039;MH&#039; =&gt; &#039;Marshall Islands&#039;, &#039;MI&#039; =&gt; &#039;Michigan&#039;, &#039;MN&#039; =&gt; &#039;Minnesota&#039;, &#039;MO&#039; =&gt; &#039;Missouri&#039;, &#039;MP&#039; =&gt; &#039;Northern Mariana Islands&#039;, &#039;MS&#039; =&gt; &#039;Mississippi&#039;, &#039;MT&#039; =&gt; &#039;Montana&#039;, &#039;NC&#039; =&gt; &#039;North Carolina&#039;, &#039;ND&#039; =&gt; &#039;North Dakota&#039;, &#039;NE&#039; =&gt; &#039;Nebraska&#039;, &#039;NH&#039; =&gt; &#039;New Hampshire&#039;, &#039;NJ&#039; =&gt; &#039;New Jersey&#039;, &#039;NM&#039; =&gt; &#039;New Mexico&#039;, &#039;NV&#039; =&gt; &#039;Nevada&#039;, &#039;NY&#039; =&gt; &#039;New York&#039;, &#039;OH&#039; =&gt; &#039;Ohio&#039;, &#039;OK&#039; =&gt; &#039;Oklahoma&#039;, &#039;OR&#039; =&gt; &#039;Oregon&#039;, &#039;PA&#039; =&gt; &#039;Pennsylvania&#039;, &#039;PR&#039; =&gt; &#039;Puerto Rico&#039;, &#039;PW&#039; =&gt; &#039;Palau&#039;, &#039;RI&#039; =&gt; &#039;Rhode Island&#039;, &#039;SC&#039; =&gt; &#039;South Carolina&#039;, &#039;SD&#039; =&gt; &#039;South Dakota&#039;, &#039;TN&#039; =&gt; &#039;Tennessee&#039;, &#039;TX&#039; =&gt; &#039;Texas&#039;, &#039;UT&#039; =&gt; &#039;Utah&#039;, &#039;VA&#039; =&gt; &#039;Virginia&#039;, &#039;VI&#039; =&gt; &#039;Virgin Islands&#039;, &#039;VT&#039; =&gt; &#039;Vermont&#039;, &#039;WA&#039; =&gt; &#039;Washington&#039;, &#039;WV&#039; =&gt; &#039;West Virginia&#039;, &#039;WI&#039; =&gt; &#039;Wisconsin&#039;, &#039;WY&#039; =&gt; &#039;Wyoming&#039;)
+      )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;postal_zip&#039;
+        ,&#039;label&#039; =&gt; &#039;Postal/Zip Code&#039;
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 3
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;Postal/ZIP Code&#039;
+        )
+      )
+    )
+    
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-custom-user-profile-fields-to-new-user-creation/">Add custom user profile fields to New User creation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

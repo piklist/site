@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>location &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/location/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 20 Feb 2016 23:03:11 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Any Geo Related Options?</title>
+		<link>https://piklist.com/support/topic/any-geo-related-options/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Thu, 18 Feb 2016 16:20:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/any-geo-related-options/</guid>
+
+					<description><![CDATA[<p>I&#8217;d want to add geo location to posts. I know there&#8217;s this: https://wordpress.org/plugins/geo-mashup/ and geomywp. However, I hate the thought of managing a plugin on a site per site basis. I&#8217;d rather set the same settings in the code (hopefully via piklist) and activate it for an entire multisite network install. Then everyone could add [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/any-geo-related-options/">Any Geo Related Options?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;d want to add geo location to posts. </p>
+<p>I know there&#8217;s this: https://wordpress.org/plugins/geo-mashup/ and geomywp.</p>
+<p>However, I hate the thought of managing a plugin on a site per site basis. I&#8217;d rather set the same settings in the code (hopefully via piklist) and activate it for an entire multisite network install. Then everyone could add geo location to a post using some standard form and inherit any rules in the plugin.</p>
+<p>I figure I&#8217;d ask if Piklist has this type of field option or if you have any direction on how to whip one up from scratch?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/any-geo-related-options/">Any Geo Related Options?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox Locations Not Locking</title>
+		<link>https://piklist.com/support/topic/metabox-locations-not-locking/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sat, 03 Oct 2015 19:20:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-locations-not-locking/</guid>
+
+					<description><![CDATA[<p>I have been successful in creating a simple custom post type (sponsor) and a few metaboxes to go with them. However, whenever I refresh the page, the locations I set for the metaboxes revert back to a position where everything except the &#8220;Publish&#8221; metabox is on the right column. Functions.php call /* ██████╗ ██╗██╗ ██╗██╗ [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-locations-not-locking/">Metabox Locations Not Locking</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have been successful in creating a simple custom post type (sponsor) and a few metaboxes to go with them. However, whenever I refresh the page, the locations I set for the metaboxes revert back to a position where everything except the &#8220;Publish&#8221; metabox is on the right column. </p>
+<p>Functions.php call</p>
+<pre><code>/*
+	
+██████╗ ██╗██╗  ██╗██╗     ██╗███████╗████████╗
+██╔══██╗██║██║ ██╔╝██║     ██║██╔════╝╚══██╔══╝
+██████╔╝██║█████╔╝ ██║     ██║███████╗   ██║   
+██╔═══╝ ██║██╔═██╗ ██║     ██║╚════██║   ██║   
+██║     ██║██║  ██╗███████╗██║███████║   ██║   
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝   ╚═╝   
+                                               
+Used for custom post types only. Otherwise within default folders
+
+	*/
+	
+	
+	
+add_filter(&#039;piklist_post_types&#039;, &#039;sponsor_post_type&#039;);
+ function sponsor_post_type($post_types)
+ {
+  $post_types[&#039;sponsor&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Sponsor&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Enter Sponsor Name&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;sponsor&#039;
+    )
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;title&#039;
+      ,&#039;editor&#039;
+      ,&#039;excerpt&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}
+
+</code></pre>
+<p>Metaboxes</p>
+<pre><code>/*
+Title: Social Specs
+Post Type: sponsor
+Locked: true
+Collapse: false
+*/
+ 
+ 
+piklist(&#039;field&#039;, array( // FACEBOOK
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;sponsor_fb&#039;
+    ,&#039;label&#039; =&gt; &#039;&lt;i class=&quot;fa fa-facebook-official&quot;&gt;&lt;/i&gt;Facebook Page ID&#039;
+    ,&#039;description&#039; =&gt; &#039;Click &lt;a target=&quot;_blank&quot; href=&quot;http://findmyfbid.com&quot;&gt;here&lt;/a&gt; to recover ID&#039;
+    ,&#039;value&#039; =&gt; &#039;Enter numbers only&#039;
+    ,&#039;help&#039; =&gt; &#039;Click on link to recover ID.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+  ));
+</code></pre>
+<p>In addition, I tried using &#8220;Global Meta Box Order&#8221; to harmonize my views. It was successful in doing it on my regular posts and pages but not my sponsor CPT. </p>
+<p>Any thoughts as to why? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-locations-not-locking/">Metabox Locations Not Locking</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

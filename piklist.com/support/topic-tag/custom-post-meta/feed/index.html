@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom post meta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom-post-meta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 15 Feb 2016 23:11:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Setting additional meta fields based on select box</title>
+		<link>https://piklist.com/support/topic/setting-additional-meta-fields-based-on-select-box/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Mon, 15 Feb 2016 23:11:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/setting-additional-meta-fields-based-on-select-box/</guid>
+
+					<description><![CDATA[<p>So I am basically giving users the ability to set a featured post as a drop down, and in addition to storing the ID of the post to feature, I want to include other info &#8211; like the title, excerpt, and featured image path, and have these reflect the most up to date values for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-additional-meta-fields-based-on-select-box/">Setting additional meta fields based on select box</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So I am basically giving users the ability to set a featured post as a drop down, and in addition to storing the ID of the post to feature, I want to include other info &#8211; like the title, excerpt, and featured image path, and have these reflect the most up to date values for the post.</p>
+<p>Right now, I created a field template called &#8216;preview-post&#8217; which displays those values to the WordPress user, but I haven&#8217;t figured out how to store the values in the DB as part of that.</p>
+<p>Here&#8217;s my fields:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;,
+  &#039;label&#039; =&gt; &#039;Primary Feature&#039;,
+  &#039;field&#039; =&gt; &#039;primary_feature&#039;,
+  &#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;select&#039;,
+      &#039;field&#039; =&gt; &#039;primary_feature_post&#039;,
+      &#039;label&#039; =&gt; &#039;Choose Post&#039;,
+      &#039;columns&#039; =&gt; 6,
+      &#039;choices&#039; =&gt; piklist_get_posts()),
+    array(
+      &#039;type&#039; =&gt; &#039;preview-post&#039;,
+      &#039;label&#039; =&gt; &#039;Preview&#039;,
+      &#039;columns&#039; =&gt; 6,
+      &#039;attributes&#039; =&gt; array(
+        &#039;field&#039; =&gt; &#039;primary_feature&#039;,
+        &#039;subfield&#039; =&gt; &#039;primary_feature_post&#039;
+      )
+    )
+  )
+));</code></pre>
+<p>and the field template is &#8216;preview-post&#8217;:</p>
+<pre><code>&lt;?php array_push($attributes[&#039;class&#039;], &#039;piklist-field-part&#039;); ?&gt;
+&lt;div
+  &lt;?php echo piklist_form::attributes_to_string($attributes); ?&gt;
+  id=&quot;&lt;?php echo piklist_form::get_field_id($arguments); ?&gt;&quot;
+  name=&quot;&lt;?php echo piklist_form::get_field_name($arguments); ?&gt;&quot;&gt;
+  &lt;?php
+    $post_meta = get_post_meta($post-&gt;ID, [$attributes[&#039;field&#039;]][0], false);
+
+    foreach ($post_meta as $key =&gt; $val) {
+      if (array_key_exists($key, $post_meta)) {
+        foreach($val as $subkey =&gt; $subval) {
+          if (array_key_exists($attributes[&#039;subfield&#039;], $val)) {
+            $the_post = get_post($subval);
+            echo get_the_post_thumbnail($the_post-&gt;ID,&#039;thumbnail&#039;) . &#039;&lt;h2&gt;&#039; . $the_post-&gt;post_title . &#039;&lt;/h2&gt;&lt;p&gt;&#039; . $the_post-&gt;post_excerpt . &#039;&lt;/p&gt;&#039;;
+          }
+        }
+      }
+    }
+
+  ?&gt;
+&lt;/div&gt;
+</code></pre>
+<p>How do I modify my field template to save the fields to the DB?</p>
+<p>Also, I need to be able to store the results so that they are updated in the DB should the title, excerpt, or image path be updated.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/setting-additional-meta-fields-based-on-select-box/">Setting additional meta fields based on select box</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

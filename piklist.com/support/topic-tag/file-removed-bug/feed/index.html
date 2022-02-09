@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>file removed bug &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/file-removed-bug/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 12 Jul 2016 10:55:36 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>[functional bug] single image not working after it&#039;s removed from media</title>
+		<link>https://piklist.com/support/topic/functional-bug-single-image-not-working-after-its-removed-from-media/</link>
+		
+		<dc:creator><![CDATA[pionect]]></dc:creator>
+		<pubDate>Tue, 12 Jul 2016 10:55:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/functional-bug-single-image-not-working-after-its-removed-from-media/</guid>
+
+					<description><![CDATA[<p>We implemented a piklist field which allows for a single image to be selected. piklist(&#039;field&#039;, [ &#039;type&#039; =&#62; &#039;file&#039;, &#039;field&#039; =&#62; &#039;background_image&#039;, &#039;scope&#039; =&#62; &#039;post_meta&#039;, &#039;label&#039; =&#62; __(&#039;Page background image&#039;, &#039;theme&#039;), &#039;validate&#039; =&#62; [ [ &#039;type&#039; =&#62; &#039;limit&#039;, &#039;options&#039; =&#62; [ &#039;min&#039; =&#62; 1, &#039;max&#039; =&#62; 1 ], &#039;message&#039; =&#62; __(&#039;Sorry, you can only select [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/functional-bug-single-image-not-working-after-its-removed-from-media/">[functional bug] single image not working after it&#039;s removed from media</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>We implemented a piklist field which allows for a single image to be selected.</p>
+<pre><code>
+    piklist(&#039;field&#039;, [
+        &#039;type&#039;     =&gt; &#039;file&#039;,
+        &#039;field&#039;    =&gt; &#039;background_image&#039;,
+        &#039;scope&#039;    =&gt; &#039;post_meta&#039;,
+        &#039;label&#039;    =&gt; __(&#039;Page background image&#039;, &#039;theme&#039;),
+        &#039;validate&#039; =&gt; [
+            [
+                &#039;type&#039;    =&gt; &#039;limit&#039;,
+                &#039;options&#039; =&gt; [
+                    &#039;min&#039; =&gt; 1,
+                    &#039;max&#039; =&gt; 1
+                ],
+                &#039;message&#039; =&gt; __(&#039;Sorry, you can only select one image for this.&#039;, &#039;theme&#039;)
+            ]
+        ]
+    ]);
+</code></pre>
+<p>The website is in production for a few months now and the backgrounds have been changed recently. So the site admin uploaded new backgrounds and removed the old ones in the media library. Later on she tried to apply the new ones to pages. On the specific pages the background field didn&#8217;t show an image, because it&#8217;s deleted, but it did still contain a reference to the deleted media. So when she added the new image, the field denied to save and gave the warning that only a single image can be saved. The only current solution is that we manually remove all the outdated references. </p>
+<p>I&#8217;d like to see that Piklist would check the integrity of the media reference when the edit screen is loaded. So it wouldn&#8217;t add the hidden reference to the html in the first place. When the page is saved it wouldn&#8217;t have to know that there was a deprecated reference in the first place.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/functional-bug-single-image-not-working-after-its-removed-from-media/">[functional bug] single image not working after it&#039;s removed from media</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>external api &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/external-api/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 18 Dec 2016 17:42:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Populate custom post type with data from external api</title>
+		<link>https://piklist.com/support/topic/populate-custom-post-type-with-data-from-external-api/</link>
+		
+		<dc:creator><![CDATA[whysr]]></dc:creator>
+		<pubDate>Sun, 18 Dec 2016 17:42:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/populate-custom-post-type-with-data-from-external-api/</guid>
+
+					<description><![CDATA[<p>Hi folks, I&#8217;m thrilled to discover piklist. WordPress + piklist seems like a great start for me to get into developing a frontend for my api. Using piklist, I created a plugin that creates a new custom post type (campaign). To start, I want to make a GET request to my api endpoint and use [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/populate-custom-post-type-with-data-from-external-api/">Populate custom post type with data from external api</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi folks, I&#8217;m thrilled to discover piklist. WordPress + piklist seems like a great start for me to get into developing a frontend for my api.</p>
+<p>Using piklist, I created a plugin that creates a new custom post type (campaign). To start, I want to make a GET request to my api endpoint and use the response data to create new posts.</p>
+<p>How can I use piklist to A) retrieve a list of campaigns from my api and B) use the response data to create new &#8216;campaigns&#8217; in WordPress?</p>
+<p>This is the field mapping to map the api response fields to WordPress post fields:</p>
+<p>1. id -&gt; post_id<br />
+2. name -&gt; post_title<br />
+3. created_at -&gt; post_date<br />
+4. modified_date -&gt; post_modified<br />
+5. notes -&gt; post_content<br />
+6. campaign_url -&gt; campaign_url (custom text field)<br />
+7. campaign_name_prefix -&gt; campaign_name_prefix (custom text field)</p>
+<p>My api endpoint looks like this: https://api.domain.com:443/campaigns?api_key=abcd1234</p>
+<p>The response data type is application/json and looks like this: </p>
+<p>[<br />
+  [<br />
+    {<br />
+      &#8220;id&#8221;: 50,<br />
+      &#8220;url&#8221;: &#8220;http://domain.com/landingpage&#8221;,<br />
+      &#8220;name&#8221;: &#8220;Example 1&#8221;,<br />
+      &#8220;prefix&#8221;: &#8220;APPLE&#8221;,<br />
+      &#8220;created_at&#8221;: &#8220;2016-12-01 00:00:00&#8221;,<br />
+      &#8220;updated_at&#8221;: &#8220;2016-12-01 01:00:00&#8221;,<br />
+      &#8220;notes&#8221;: &#8220;Something here.&#8221;<br />
+    },<br />
+    {<br />
+      &#8220;id&#8221;: 51,<br />
+      &#8220;url&#8221;: &#8220;http://anotherdomain.com/landingpage&#8221;,<br />
+      &#8220;name&#8221;: &#8220;Example 2&#8221;,<br />
+      &#8220;prefix&#8221;: &#8220;BANANA&#8221;,<br />
+      &#8220;created_at&#8221;: &#8220;2016-12-02 00:00:00&#8221;,<br />
+      &#8220;updated_at&#8221;: &#8220;2016-12-02 01:00:00&#8221;,<br />
+      &#8220;notes&#8221;: &#8220;Something here.&#8221;<br />
+    }<br />
+   ],<br />
+  []<br />
+]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/populate-custom-post-type-with-data-from-external-api/">Populate custom post type with data from external api</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

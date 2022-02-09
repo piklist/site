@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shortcode ajax &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/shortcode-ajax/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 06 Sep 2016 20:01:11 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Ajax inside of Shortcode</title>
+		<link>https://piklist.com/support/topic/ajax-inside-of-shortcode/</link>
+		
+		<dc:creator><![CDATA[cfuyuki]]></dc:creator>
+		<pubDate>Tue, 06 Sep 2016 19:59:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/ajax-inside-of-shortcode/</guid>
+
+					<description><![CDATA[<p>Hi there, I have been trying to incorporate Ajax in shortcode with piklist however it doesn&#8217;t seem to work. May i ask if there is anything that i should be careful when using Ajax for shortcode with piklist? I have already made several similar Ajax shortcode without piklist, which is perfectly working. I reviewed many [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ajax-inside-of-shortcode/">Ajax inside of Shortcode</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,<br />
+I have been trying to incorporate Ajax in shortcode with piklist however it doesn&#8217;t seem to work.  May i ask if there is anything that i should be careful when using Ajax for shortcode with piklist? I have already made several similar Ajax shortcode without piklist, which is perfectly working. I reviewed many times whether there is something wrong with how i implemented Ajax on piklist shortcode feature but wasn&#8217;t able to find the reason. Any suggestion would be much appreciated.</p>
+<p>Here is the code:</p>
+<p>JS</p>
+<pre><code>var parent = $(&#039;*[class*=&quot;ts-hello_world_ajax&quot;]&#039;);
+
+        $.each(parent, function (i, value) {
+            var item = $(this);
+            var button = item.find(&#039;.btn&#039;),
+                callback = item.find(&#039;.callback&#039;);
+
+            button.on(&#039;click&#039;, function () {
+                var say = $(this).data(&#039;say&#039;);
+                //console.log(HWA.ajaxurl_piklist);
+                $.ajax({
+                    url: HWA.ajaxurl_piklist,
+                    type: &#039;post&#039;,
+                    data: {
+                        action: &#039;hello_world_ajax&#039;,
+                        say: say
+                    },
+                    complete: function( xhr, status ){
+                        console.log(&quot;Request complete: &quot; + status);
+                    },
+                    success: function (response) {
+                        console.log(&#039;Request success: &#039; + response);
+                        callback.html(response);
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            });
+        });</code></pre>
+<p>PHP </p>
+<pre><code>&lt;?php
+/*
+Shortcode: hello-world-ajax
+*/
+
+wp_localize_script(&#039;tspt-frontend&#039;, &#039;HWA&#039;, array(
+	&#039;ajaxurl_piklist&#039; =&gt; admin_url(&#039;admin-ajax.php&#039;)
+));
+add_action(&#039;wp_ajax_hello_world_ajax&#039;, &#039;hwa_callback&#039;, 10, 999);
+add_action(&#039;wp_ajax_nopriv_hello_world_ajax&#039;, &#039;hwa_callback&#039;, 10, 999);
+
+global $post;
+$op = &#039;&#039;;
+$op .= &#039;&lt;section class=&quot;hello-world ts-hello_world_ajax&quot;&gt;&#039;;
+$op .= &#039;&lt;button class=&quot;btn btn-lg popover-button&quot; data-say=&quot;&#039; . $say . &#039;&quot;&gt;&lt;i class=&quot;glyphicon glyphicon-repeat&quot;&gt;&lt;/i&gt;&lt;/button&gt;&#039;;
+$op .= &#039;&lt;p class=&quot;callback&quot; style=&quot;min-height: 28px;&quot;&gt;&#039; . &#039;&#039; . &#039;&lt;/p&gt;&#039;;
+$op .= &#039;&lt;/section&gt;&#039;;
+?&gt;
+
+&lt;em&gt;&lt;?php echo $op; ?&gt;&lt;/em&gt;
+
+&lt;?php
+/**
+ *
+ * Function: hello-world-ajax_callback.
+ * @return  ajax call back
+ * @since  1.0.0
+ *
+ */
+function hwa_callback() {
+	$say = $_POST[&#039;say&#039;];
+	if (defined(&#039;DOING_AJAX&#039;) &amp;&amp; DOING_AJAX) {
+		echo $say;
+		wp_die();
+	} else {
+		wp_redirect(home_url());
+		exit();
+	}
+}</code></pre>
+<p>Thank you in advance,</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ajax-inside-of-shortcode/">Ajax inside of Shortcode</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

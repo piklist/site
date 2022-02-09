@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>loop &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/loop/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 19 Jul 2019 13:41:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Repeater field display output in frontend</title>
+		<link>https://piklist.com/support/topic/repeater-field-display-output-in-frontend/</link>
+		
+		<dc:creator><![CDATA[dahnsnake]]></dc:creator>
+		<pubDate>Fri, 19 Jul 2019 13:41:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/repeater-field-display-output-in-frontend/</guid>
+
+					<description><![CDATA[<p>Hi, First of all I love Piklist &#60;3! This is the first time I could not figure something out on my onw. I made created this code with the last array a group with add more (or repeater) functionality. I would like to know how I can loop through the group &#8216;writer&#8217;. So the loop [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-field-display-output-in-frontend/">Repeater field display output in frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, First of all I love Piklist &lt;3! This is the first time I could not figure something out on my onw. I made created this code with the last array a group with add more (or repeater) functionality. I would like to know how I can loop through the group &#8216;writer&#8217;. So the loop creates a new div with the new data when the add more functionality is used. This way I would like the user to be able to add more writers to a book :). I saw this one but I could not figure it out: https://piklist.com/support/topic/repeater-field/</p>
+<p>`piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+    ,&#8217;label&#8217; =&gt; __(&#8216;Blok boek en schrijvers&#8217;)<br />
+    ,&#8217;description&#8217; =&gt; __(&#8216;Het tweede blok met het boek &#8220;hou je kop erbij&#8221; en de schrijvers eronder.&#8217;)<br />
+    ,&#8217;fields&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-title&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Titel&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Titel&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-button&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Link onder tekst&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Knop&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-button2&#8242;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Knop onder schrijvers&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 4<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Knop&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;editor&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;home-book-introduction&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Introductie bij het boek&#8217;)<br />
+        ,&#8217;columns&#8217; =&gt; 12<br />
+        ,&#8217;attributes&#8217; =&gt; array(<br />
+          &#8216;placeholder&#8217; =&gt; &#8216;Introductie&#8217;<br />
+        )<br />
+      )<br />
+      ,array(<br />
+        &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+        ,&#8217;field&#8217; =&gt; &#8216;writer&#8217;<br />
+        ,&#8217;label&#8217; =&gt; __(&#8216;Schrijver&#8217;)<br />
+        ,&#8217;add_more&#8217; =&gt; true<br />
+        ,&#8217;fields&#8217; =&gt; array(<br />
+          array(<br />
+	        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+	        ,&#8217;field&#8217; =&gt; &#8216;writerName&#8217;<br />
+	        ,&#8217;label&#8217; =&gt; __(&#8216;Naam&#8217;)<br />
+	        ,&#8217;columns&#8217; =&gt; 4<br />
+	        ,&#8217;attributes&#8217; =&gt; array(<br />
+	          &#8216;placeholder&#8217; =&gt; &#8216;Naam&#8217;<br />
+	        )<br />
+	      )<br />
+	      ,array(<br />
+	        &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+	        ,&#8217;field&#8217; =&gt; &#8216;writer-linkedin&#8217;<br />
+	        ,&#8217;label&#8217; =&gt; __(&#8216;LinkedIn&#8217;)<br />
+	        ,&#8217;columns&#8217; =&gt; 4<br />
+	        ,&#8217;attributes&#8217; =&gt; array(<br />
+	          &#8216;placeholder&#8217; =&gt; &#8216;LinkedIn&#8217;<br />
+	        )<br />
+	      )<br />
+        )<br />
+      )<br />
+    )<br />
+  ));</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeater-field-display-output-in-frontend/">Repeater field display output in frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Looping through fields in WordPress</title>
+		<link>https://piklist.com/support/topic/looping-through-fields-in-wordpress/</link>
+		
+		<dc:creator><![CDATA[beades48]]></dc:creator>
+		<pubDate>Wed, 24 Aug 2016 18:20:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/looping-through-fields-in-wordpress/</guid>
+
+					<description><![CDATA[<p>I&#8217;m fairly new to Piklist and WordPress. I have an issue that is giving me a headache. I have a created a content type via Piklist for staff. Within this content type I have two fields that I would like to loop over when displaying the content. The first is the organizational level for the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/looping-through-fields-in-wordpress/">Looping through fields in WordPress</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m fairly new to Piklist and WordPress.  I have an issue that is giving me a headache.  I have a created a content type via Piklist for staff.  Within this content type I have two fields that I would like to loop over when displaying the content.  The first is the organizational level for the staff member (are they a department head, director, or plain staff).  The second loop would sort each organizational level by last name.  </p>
+<p>I am able to do this using array_multisort();.  Is this the best method?  Is there a better way in WordPress that I am missing?  How can I get WordPress to see the custom fields I have created?  I tried meta_key and key, neither worked.  When I use WP_query, I get strange results.</p>
+<p>Any help is greatly appreciated.  Sorry for the newbie question!</p>
+<p>Lynn</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/looping-through-fields-in-wordpress/">Looping through fields in WordPress</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>dont display value in metabox</title>
+		<link>https://piklist.com/support/topic/dont-display-value-in-metabox/</link>
+		
+		<dc:creator><![CDATA[civilz]]></dc:creator>
+		<pubDate>Tue, 10 Jun 2014 15:07:52 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/dont-display-value-in-metabox/</guid>
+
+					<description><![CDATA[<p>hi my code : piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;j_select&#039; ,&#039;label&#039; =&#62; &#039;Select Box&#039; ,&#039;description&#039; =&#62; &#039;Choose from the drop-down.&#039; ,&#039;help&#039; =&#62; &#039;This is help text.&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) ,&#039;choices&#039; =&#62; array( &#039;option1&#039; =&#62; &#039;red&#039; ,&#039;option2&#039; =&#62; &#039;blue&#039; ,&#039;option3&#039; =&#62; &#039;yellow&#039; ) )); and use in loop (single.php) : [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dont-display-value-in-metabox/">dont display value in metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hi<br />
+my code :</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;j_select&#039;
+    ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+    ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+    ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+    ,&#039;choices&#039; =&gt; array(
+      &#039;option1&#039; =&gt; &#039;red&#039;
+      ,&#039;option2&#039; =&gt; &#039;blue&#039;
+      ,&#039;option3&#039; =&gt; &#039;yellow&#039;
+    )
+  ));</code></pre>
+<p>and use in loop (single.php) :</p>
+<pre><code>
+color : &lt;?php  echo get_post_meta($post-&gt;ID,&#039;j_select&#039;, true);?&gt;
+</code></pre>
+<p>but result :<br />
+<code>color : option1</code></p>
+<p>text feild is work good but select and checkbox dont work !!!</p>
+<p>please help me &#8230;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dont-display-value-in-metabox/">dont display value in metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

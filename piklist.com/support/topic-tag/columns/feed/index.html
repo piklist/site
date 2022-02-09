@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>columns &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/columns/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 04 Dec 2016 12:45:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Group fields layout</title>
+		<link>https://piklist.com/support/topic/group-fields-layout/</link>
+		
+		<dc:creator><![CDATA[mrioa]]></dc:creator>
+		<pubDate>Sun, 04 Dec 2016 12:45:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/group-fields-layout/</guid>
+
+					<description><![CDATA[<p>Hello! I can&#8217;t seem to get my group fields using columns, e.g. to display two groups in a row using 6 colums each. Docs say colums are great to use within groups, but nothing specific about using colums for themselves. Though it&#8217;s also mentioned to use the &#8220;Piklist field parameters&#8221; to customize the field type [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-fields-layout/">Group fields layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>I can&#8217;t seem to get my group fields using columns, e.g. to display two groups in a row using 6 colums each.<br />
+Docs say colums are great to use within groups, but nothing specific about using colums for themselves. Though it&#8217;s also mentioned to use the &#8220;Piklist field parameters&#8221; to customize the field type &#8220;group&#8221;, so columns should work?</p>
+<p>Here&#8217;s my simplified code (irl there are more fields withing the groups, so groups are neccessary):</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	, &#039;field&#039; =&gt; &#039;map_details_section&#039;
+	, &#039;label&#039; =&gt; __(&#039;Map Details&#039;)
+	, &#039;add_more&#039; =&gt; true
+	, &#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;
+			, &#039;field&#039; =&gt; &#039;map_name&#039;
+			, &#039;label&#039; =&gt; __(&#039;Map name&#039;)
+			, &#039;columns&#039; =&gt; 3
+		)
+		, array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			, &#039;field&#039; =&gt; &#039;map_regular_1st&#039;
+			, &#039;label&#039; =&gt; &#039;Regular 1st half&#039;
+			, &#039;columns&#039; =&gt; 6
+			, &#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;radio&#039;
+					, &#039;field&#039; =&gt; &#039;map_half_side1&#039;
+					, &#039;label&#039; =&gt; __(&#039;Team1 side&#039;)
+					, &#039;columns&#039; =&gt; 2
+					, &#039;choices&#039; =&gt; array(
+						&#039;ct&#039; =&gt; &#039;CT&#039;
+						, &#039;t&#039; =&gt; &#039;T&#039;
+					)
+				)
+			)
+		)
+		, array(
+			&#039;type&#039; =&gt; &#039;group&#039;
+			, &#039;field&#039; =&gt; &#039;map_regular_2nd&#039;
+			, &#039;label&#039; =&gt; &#039;Regular 2nd half&#039;
+			, &#039;columns&#039; =&gt; 6
+			, &#039;fields&#039; =&gt; array(
+				array(
+					&#039;type&#039; =&gt; &#039;radio&#039;
+					, &#039;field&#039; =&gt; &#039;map_half_side1&#039;
+					, &#039;label&#039; =&gt; __(&#039;Team1 side&#039;)
+					, &#039;columns&#039; =&gt; 2
+					, &#039;choices&#039; =&gt; array(
+						&#039;ct&#039; =&gt; &#039;CT&#039;
+						, &#039;t&#039; =&gt; &#039;T&#039;
+					)
+				)
+			)
+		)
+	)
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/group-fields-layout/">Group fields layout</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox Locations Not Locking</title>
+		<link>https://piklist.com/support/topic/metabox-locations-not-locking/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sat, 03 Oct 2015 19:20:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-locations-not-locking/</guid>
+
+					<description><![CDATA[<p>I have been successful in creating a simple custom post type (sponsor) and a few metaboxes to go with them. However, whenever I refresh the page, the locations I set for the metaboxes revert back to a position where everything except the &#8220;Publish&#8221; metabox is on the right column. Functions.php call /* ██████╗ ██╗██╗ ██╗██╗ [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-locations-not-locking/">Metabox Locations Not Locking</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have been successful in creating a simple custom post type (sponsor) and a few metaboxes to go with them. However, whenever I refresh the page, the locations I set for the metaboxes revert back to a position where everything except the &#8220;Publish&#8221; metabox is on the right column. </p>
+<p>Functions.php call</p>
+<pre><code>/*
+	
+██████╗ ██╗██╗  ██╗██╗     ██╗███████╗████████╗
+██╔══██╗██║██║ ██╔╝██║     ██║██╔════╝╚══██╔══╝
+██████╔╝██║█████╔╝ ██║     ██║███████╗   ██║   
+██╔═══╝ ██║██╔═██╗ ██║     ██║╚════██║   ██║   
+██║     ██║██║  ██╗███████╗██║███████║   ██║   
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝   ╚═╝   
+                                               
+Used for custom post types only. Otherwise within default folders
+
+	*/
+	
+	
+	
+add_filter(&#039;piklist_post_types&#039;, &#039;sponsor_post_type&#039;);
+ function sponsor_post_type($post_types)
+ {
+  $post_types[&#039;sponsor&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Sponsor&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Enter Sponsor Name&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;sponsor&#039;
+    )
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;title&#039;
+      ,&#039;editor&#039;
+      ,&#039;excerpt&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}
+
+</code></pre>
+<p>Metaboxes</p>
+<pre><code>/*
+Title: Social Specs
+Post Type: sponsor
+Locked: true
+Collapse: false
+*/
+ 
+ 
+piklist(&#039;field&#039;, array( // FACEBOOK
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;sponsor_fb&#039;
+    ,&#039;label&#039; =&gt; &#039;&lt;i class=&quot;fa fa-facebook-official&quot;&gt;&lt;/i&gt;Facebook Page ID&#039;
+    ,&#039;description&#039; =&gt; &#039;Click &lt;a target=&quot;_blank&quot; href=&quot;http://findmyfbid.com&quot;&gt;here&lt;/a&gt; to recover ID&#039;
+    ,&#039;value&#039; =&gt; &#039;Enter numbers only&#039;
+    ,&#039;help&#039; =&gt; &#039;Click on link to recover ID.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+  ));
+</code></pre>
+<p>In addition, I tried using &#8220;Global Meta Box Order&#8221; to harmonize my views. It was successful in doing it on my regular posts and pages but not my sponsor CPT. </p>
+<p>Any thoughts as to why? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-locations-not-locking/">Metabox Locations Not Locking</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Position group content correctly</title>
+		<link>https://piklist.com/support/topic/position-group-content-correctly/</link>
+		
+		<dc:creator><![CDATA[ehoanshelt]]></dc:creator>
+		<pubDate>Wed, 25 Jul 2012 21:18:04 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/position-group-content-correctly/</guid>
+
+					<description><![CDATA[<p>Hey guys, Im in the process of trying to add a &#8220;Hours&#8221; custom field. Basically what I&#8217;m looking for is this kind of layout: Hours Open Close Open Close Open Close Open Close Open Close Open Close Open Close I&#8217;m working with groups right now for the first time and having trouble coming up with [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/position-group-content-correctly/">Position group content correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hey guys,</p>
+<p>Im in the process of trying to add a &#8220;Hours&#8221; custom field. Basically what I&#8217;m looking for is this kind of layout:</p>
+<p>Hours                       Open           Close<br />
+                                   Open           Close<br />
+                                   Open           Close<br />
+                                   Open           Close<br />
+                                   Open           Close<br />
+                                   Open           Close<br />
+                                   Open           Close</p>
+<p>I&#8217;m working with groups right now for the first time and having trouble coming up with this solution. Do you have any ideas on how to get this styled?</p>
+<p>Like always&#8230;.here is my current code:</p>
+<p>http://pastebin.com/0FMDgkBS</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/position-group-content-correctly/">Position group content correctly</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

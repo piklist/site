@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dropbox &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/dropbox/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 02 Jan 2014 02:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>themes folders and dropbox</title>
+		<link>https://piklist.com/support/topic/themes-folders-and-dropbox/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Thu, 02 Jan 2014 02:11:55 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/themes-folders-and-dropbox/</guid>
+
+					<description><![CDATA[<p>I don&#8217;t know if anyone else has had this problem, but I thought I&#8217;d post a solution. It&#8217;s not pretty but it works. In class-piklist-theme.php it checks to see if there is a theme with a folder of piklist inside it. If so, it creates a class variable: self::$paths[&#039;theme&#039;] In class-piklist.php it checks for that [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/themes-folders-and-dropbox/">themes folders and dropbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I don&#8217;t know if anyone else has had this problem, but I thought I&#8217;d post a solution. </p>
+<p>It&#8217;s not pretty but it works. </p>
+<p>In class-piklist-theme.php it checks to see if there is a theme with a folder of piklist inside it.<br />
+If so, it creates a class variable:<br />
+<code>self::$paths[&#039;theme&#039;]</code> </p>
+<p>In class-piklist.php it checks for that theme variable, and if it finds it, sets up the files to be loaded for any (file/fields/meta-boxes) stored in that path. </p>
+<p>The problem is, the $_part variable (the actual file) (which sits on line 165 and 168 of class-piklist.php) that piklist will append to the self::$paths[&#8216;theme&#8217;] variable has a path thats all screwed up. (including adding a double &#8216;/piklist&#8217; path to the beginning)</p>
+<p>This is probably because my localhost site is kept on dropbox and I use a symbolic link to the dropbox folder. (checking the paths throughout piklist showed that there were often two folder paths to a file. The hardlink (c:\html\blahblabh) and the symlink (c:/html/dropbox)</p>
+<p>So to fix this problem, and I hope this helps someone else, even if its only Kevin, &lt;grin&gt; I did the following:<br />
+On line 175 of class-piklist.php I changed it from:</p>
+<pre><code>      if (isset(self::$paths[&#039;theme&#039;]))
+      {
+        if (file_exists(self::$paths[&#039;theme&#039;] . $_part))
+        {
+          $_file = self::$paths[&#039;theme&#039;] . $_part;
+        }
+      }
+</code></pre>
+<p>to:</p>
+<pre><code>      if (isset(self::$paths[&#039;theme&#039;]))
+      {
+        $together = (stristr($_part, &#039;:\\&#039;) || stristr($_part, &#039;:/&#039;) )?$_part:str_replace(&#039;/piklist&#039;,&#039;&#039;,self::$paths[&#039;theme&#039;]) . $_part;
+        if (file_exists($together))
+        {
+          $_file = $together;
+        }
+      }
+</code></pre>
+<p>This allows me to keep all my piklist meta-boxes (and other piklist files) in my themes directory while still using dropbox and symlinks.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/themes-folders-and-dropbox/">themes folders and dropbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

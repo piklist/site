@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>error message &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/error-message/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 12 May 2016 02:40:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>error message assoc with Members plugin</title>
+		<link>https://piklist.com/support/topic/error-message-assoc-with-members-plugin/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Thu, 12 May 2016 02:39:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-message-assoc-with-members-plugin/</guid>
+
+					<description><![CDATA[<p>Just reporting an error message; functionality is fine. I&#8217;m running Piklist 0.9.9.8 and WP 4.5.2. I have Justin Tadlock&#8217;s Members plugin installed. I click on the Users/Roles menu in the admin sidebar, and then select Administrator as the role to edit. I get 4 copies of this error message: Notice: Trying to get property of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-message-assoc-with-members-plugin/">error message assoc with Members plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just reporting an error message; functionality is fine. I&#8217;m running Piklist 0.9.9.8 and WP 4.5.2. I have Justin Tadlock&#8217;s Members plugin installed. </p>
+<p>I click on the Users/Roles menu in the admin sidebar, and then select Administrator as the role to edit. I get 4 copies of this error message: </p>
+<pre><code>
+Notice: Trying to get property of non-object in /Users/donna/Sites/coloma/wp-content/plugins/piklist/includes/class-piklist.php on line 1019
+</code></pre>
+<p>That code is in function validate_part_parameter, case &#8216;template&#8217;: </p>
+<pre><code>
+$page_template = ($post-&gt;post_status == &#039;auto-draft&#039;) ? &#039;default&#039; : strtolower(str_replace(&#039;.php&#039;, &#039;&#039;, get_post_meta($post-&gt;ID, &#039;_wp_page_template&#039;, true)));
+</code></pre>
+<p>HTH,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-message-assoc-with-members-plugin/">error message assoc with Members plugin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>error messages &#8211; undefined variable, undefined index</title>
+		<link>https://piklist.com/support/topic/error-messages-undefined-variable-undefined-index/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2016 01:41:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-messages-undefined-variable-undefined-index/</guid>
+
+					<description><![CDATA[<p>These errors started appearing both in admin and on the front end after I made a bunches of changes using WP Helpers: Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488 Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488 Notice: Undefined index: in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488 Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-messages-undefined-variable-undefined-index/">error messages &#8211; undefined variable, undefined index</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>These errors started appearing both in admin and on the front end after I made a bunches of changes using WP Helpers:</p>
+<pre><code>Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488
+
+Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488
+
+Notice: Undefined index: in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488
+
+Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488
+
+Notice: Undefined variable: priority in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488
+
+Notice: Undefined index: in /Users/donna/Sites/lcso/wp-content/plugins/wp-helpers/wp-helpers.php on line 488
+</code></pre>
+<p>I was able to clear it up by adding <code>&quot;&amp;&amp; isset($priority)&quot;</code> as shown:</p>
+<pre><code>if(!empty($filter) &amp;&amp; isset($priority) ) {
+   remove_action($filter, $tag, $priority, $wp_filter[$filter][$priority][$tag][&#039;accepted_args&#039;]);
+}
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-messages-undefined-variable-undefined-index/">error messages &#8211; undefined variable, undefined index</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist error triggered by Roots code [0.9.9.4]</title>
+		<link>https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 21 Oct 2015 23:29:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/</guid>
+
+					<description><![CDATA[<p>This site is running a Roots child theme. The Roots code is from 2014; not sure whether it would still be a problem with the current build. I&#8217;ve been using Piklist with Roots for a couple of years; this error just started showing up in the last week or two. (I&#8217;m guessing it first appeared [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/">Piklist error triggered by Roots code [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This site is running a Roots child theme. The Roots code is from 2014; not sure whether it would still be a problem with the current build. I&#8217;ve been using Piklist with Roots for a couple of years; this error just started showing up in the last week or two. (I&#8217;m guessing it first appeared with 0.9.9.) </p>
+<p>The error messages show up only on the admin dashboard page, and are 16 repetitions of the following: </p>
+<pre><code>Warning: in_array() expects parameter 2 to be array, null given in 
+/Users/donna/Sites/marys/wp-content/plugins/piklist/includes/class-piklist-meta.php 
+on line 340</code></pre>
+<p>I finally narrowed it down to the following code in the Roots theme. If I comment out the admin_init action, the error messages go away. </p>
+<pre><code>/**
+ * Remove unnecessary dashboard widgets
+ *
+ * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
+ */
+function roots_remove_dashboard_widgets() {
+  remove_meta_box(&#039;dashboard_incoming_links&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+  remove_meta_box(&#039;dashboard_plugins&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+  remove_meta_box(&#039;dashboard_primary&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+  remove_meta_box(&#039;dashboard_secondary&#039;, &#039;dashboard&#039;, &#039;normal&#039;);
+}
+add_action(&#039;admin_init&#039;, &#039;roots_remove_dashboard_widgets&#039;);
+</code></pre>
+<p>HTH,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-error-triggered-by-roots-code-0-9-9-4/">Piklist error triggered by Roots code [0.9.9.4]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

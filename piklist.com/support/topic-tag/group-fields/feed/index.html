@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>group fields &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/group-fields/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 18 Jul 2015 00:55:07 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Last field in group misaligned</title>
+		<link>https://piklist.com/support/topic/last-field-in-group-misaligned/</link>
+		
+		<dc:creator><![CDATA[karenoconnell]]></dc:creator>
+		<pubDate>Wed, 15 Jul 2015 10:21:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/last-field-in-group-misaligned/</guid>
+
+					<description><![CDATA[<p>Hi Steve, I have a group of fields within a metabox but the last field is not aligning with the others &#8211; see attached screenshot. The code listing is below &#8211; it doesn&#8217;t matter what field is the last one in the group, it is always misaligned. Thanks, Karen &#60;?php /* Title: Job References Post [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/last-field-in-group-misaligned/">Last field in group misaligned</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Steve,</p>
+<p>    I have a group of fields within a metabox but the last field is not aligning with the others &#8211; see attached screenshot. The code listing is below &#8211; it doesn&#8217;t matter what field is the last one in the group, it is always misaligned.</p>
+<p>Thanks,<br />
+Karen</p>
+<p>&lt;?php</p>
+<p>/*<br />
+Title: Job References<br />
+Post Type: job<br />
+Order: 10<br />
+*/</p>
+<p>    piklist(&#8216;field&#8217;, array(<br />
+        &#8216;type&#8217; =&gt; group<br />
+        ,&#8217;list&#8217; =&gt; &#8216;false&#8217;<br />
+        //,&#8217;label&#8217; =&gt; __(&#8216;Job References&#8217;)<br />
+        ,&#8217;fields&#8217; =&gt; array(<br />
+            array(<br />
+                &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;docket_num&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Job Ref&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;docket_num&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                    ,&#8217;size&#8217; =&gt; &#8217;15&#8217;<br />
+                )<br />
+            )</p>
+<p>            ,array(<br />
+                &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;job_num&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Job Number&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;job_num&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                    ,&#8217;size&#8217; =&gt; &#8217;15&#8217;<br />
+                )<br />
+            )</p>
+<p>            ,array(<br />
+                &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;job_status&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Status&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;job_status&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                    ,&#8217;size&#8217; =&gt; &#8217;15&#8217;<br />
+                )<br />
+            )</p>
+<p>            ,array(<br />
+                &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;job_date&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Job Date&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;job_date&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                    ,&#8217;size&#8217; =&gt; &#8217;15&#8217;<br />
+                )<br />
+            )</p>
+<p>            ,array(<br />
+                &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;manifest_num&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Manifest Number&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;manifest_num&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                    ,&#8217;size&#8217; =&gt; &#8216;8&#8217;<br />
+                )<br />
+            )</p>
+<p>            ,array(<br />
+                &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;customer_po_num&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Customer PO Number&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;customer_po_num&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                    ,&#8217;size&#8217; =&gt; &#8217;20&#8217;<br />
+                )<br />
+            )</p>
+<p>            ,array(<br />
+                &#8216;type&#8217; =&gt; &#8216;textarea&#8217;<br />
+                ,&#8217;field&#8217; =&gt; &#8216;notes&#8217;<br />
+                ,&#8217;label&#8217; =&gt; __(&#8216;Notes&#8217;)<br />
+                ,&#8217;value&#8217; =&gt; &#8216;notes&#8217;<br />
+                ,&#8217;attributes&#8217; =&gt; array(<br />
+                    &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+                    ,&#8217;required&#8217; =&gt; &#8216;required&#8217;<br />
+                    ,&#8217;readonly&#8217; =&gt; &#8216;readonly&#8217;<br />
+                )<br />
+            )<br />
+        )<br />
+    ));</p>
+<p>?&gt;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/last-field-in-group-misaligned/">Last field in group misaligned</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

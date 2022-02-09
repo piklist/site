@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>addmore &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/addmore/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 10 Mar 2021 19:36:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Select2 in repeaters?</title>
+		<link>https://piklist.com/support/topic/select2-in-repeaters/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Wed, 10 Mar 2021 19:36:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select2-in-repeaters/</guid>
+
+					<description><![CDATA[<p>Can you make it work with &#8220;add more&#8221;? https://docs.piklist.com/tutorials/fields/using-select2/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select2-in-repeaters/">Select2 in repeaters?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Can you make it work with &#8220;add more&#8221;?<br />
+https://docs.piklist.com/tutorials/fields/using-select2/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select2-in-repeaters/">Select2 in repeaters?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional resets fields when hiding fields</title>
+		<link>https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Tue, 04 Feb 2020 13:49:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/</guid>
+
+					<description><![CDATA[<p>I have added &#8216;reset&#8217; =&#62; &#8216;false&#8217; to the fields, but when hiding and showing the fields (via &#8216;product_show_faq&#8217;) it still clears the very first field &#8216;product_faq_title&#8217; &#8211; not any of the other fields &#8211; not even a second (repeated) &#8216;product_faq_title&#8217;. A bug? &#60;?php /* Title: FAQ Post Type: product Priority: high Order: -1 */ piklist(&#039;field&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/">Conditional resets fields when hiding fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have added &#8216;reset&#8217; =&gt; &#8216;false&#8217; to the fields, but when hiding and showing the fields (via  &#8216;product_show_faq&#8217;) it still clears the very first field &#8216;product_faq_title&#8217; &#8211; not any of the other fields &#8211; not even a second (repeated) &#8216;product_faq_title&#8217;. A bug?</p>
+<pre><code>&lt;?php
+/*
+Title: FAQ
+Post Type: product
+Priority: high
+Order: -1
+*/
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;radio&#039;,
+	&#039;field&#039; =&gt; &#039;product_show_faq&#039;,
+	&#039;label&#039; =&gt; &#039;Show FAQ?&#039;,
+	&#039;attributes&#039; =&gt; array(
+		&#039;class&#039; =&gt; &#039;text&#039;,
+	),
+	&#039;choices&#039; =&gt; array(
+		&#039;yes&#039; =&gt; &#039;Yes&#039;,
+		&#039;no&#039; =&gt; &#039;No&#039;
+	),
+	&#039;value&#039; =&gt; &#039;no&#039;
+));
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;,
+	&#039;field&#039; =&gt; &#039;product_faq&#039;,
+	&#039;label&#039; =&gt; &#039;FAQ&#039;,
+	&#039;list&#039; =&gt; false,
+	&#039;reset&#039; =&gt; &#039;false&#039;,
+	&#039;conditions&#039; =&gt; array(
+		array(
+			&#039;field&#039; =&gt; &#039;product_show_faq&#039;,
+			&#039;value&#039; =&gt; &#039;yes&#039;
+		)
+	),
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(
+			&#039;type&#039; =&gt; &#039;text&#039;,
+			&#039;reset&#039; =&gt; &#039;false&#039;,
+			&#039;field&#039; =&gt; &#039;product_faq_title&#039;,
+			&#039;required&#039; =&gt; false,
+			&#039;columns&#039; =&gt; 12,
+			&#039;attributes&#039; =&gt; array(
+				&#039;placeholder&#039; =&gt; &#039;Type question&#039;
+			),
+		),
+
+		array(
+			&#039;type&#039; =&gt; &#039;editor&#039;,
+			&#039;reset&#039; =&gt; &#039;false&#039;,
+			&#039;field&#039; =&gt; &#039;product_faq_content&#039;, // &#039;post_content&#039; is the field name of the WordPress DEFAULT editor
+			&#039;value&#039; =&gt; &#039;&#039;,
+			//&#039;template&#039; =&gt; &#039;field&#039;, // Only display the field not the label
+			&#039;options&#039; =&gt; array( // Pass any option that is accepted by wp_editor()
+				&#039;wpautop&#039; =&gt; true,
+				&#039;media_buttons&#039; =&gt; false,
+				&#039;shortcode_buttons&#039; =&gt; false,
+				&#039;teeny&#039; =&gt; true,
+				&#039;dfw&#039; =&gt; false,
+				&#039;quicktags&#039; =&gt; true,
+				&#039;drag_drop_upload&#039; =&gt; false,
+				&#039;tinymce&#039; =&gt; array(
+					&#039;resize&#039; =&gt; false,
+					&#039;wp_autoresize_on&#039; =&gt; true,
+					&#039;toolbar1&#039; =&gt; &#039;bold,italic,underline,link,unlink&#039;,
+					&#039;toolbar2&#039; =&gt; &#039;&#039;,
+				)
+			)
+		)
+	)
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-resets-fields-when-hiding-fields/">Conditional resets fields when hiding fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Repeating metaboxes with add more</title>
+		<link>https://piklist.com/support/topic/repeating-metaboxes-with-add-more/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Tue, 21 Feb 2017 15:35:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/repeating-metaboxes-with-add-more/</guid>
+
+					<description><![CDATA[<p>Hi, I searched the demos and forums but couldn&#8217;t quite find what I&#8217;m looking for. I want to repeat a meta box with an &#8220;add more&#8221; Say I have a meta box called &#8220;Event&#8221; that has name, date, description as piklist fields. Then I want to allow the user to repeat this meta box with [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeating-metaboxes-with-add-more/">Repeating metaboxes with add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I searched the demos and forums but couldn&#8217;t quite find what I&#8217;m looking for. </p>
+<p>I want to repeat a meta box with an &#8220;add more&#8221;</p>
+<p>Say I have a meta box called &#8220;Event&#8221; that has name, date, description as piklist fields.</p>
+<p>Then I want to allow the user to repeat this meta box with an &#8220;add more&#8221; and create a new event with the same fields. </p>
+<p>I know this is possible with ACF but I&#8217;m trying to stick to piklist. Is this possible? And if so, how?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/repeating-metaboxes-with-add-more/">Repeating metaboxes with add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to send json response from piklist group with add more option</title>
+		<link>https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2016 17:45:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/</guid>
+
+					<description><![CDATA[<p>Hi, i just want to make my own api with piklist fields, is there any way to make this? i just have a piklist field //horarios $days = array(); $days[0] = &#8220;Choose an option&#8221;; $days[1] = &#8220;Monday&#8221;; $days[2] = &#8220;Tuesday&#8221;; $days[3] = &#8220;Wednesday&#8221;; $days[4] = &#8220;Thursday&#8221;; $days[5] = &#8220;Friday&#8221;; $days[6] = &#8220;Saturday&#8221;; $days[7] = &#8220;Sunday&#8221;; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/">How to send json response from piklist group with add more option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, i just want to make my own api with piklist fields, is there any way to make this?</p>
+<p>i just have a piklist field</p>
+<blockquote><p>//horarios<br />
+$days = array();</p>
+<p>$days[0] = &#8220;Choose an option&#8221;;<br />
+$days[1] = &#8220;Monday&#8221;;<br />
+$days[2] = &#8220;Tuesday&#8221;;<br />
+$days[3] = &#8220;Wednesday&#8221;;<br />
+$days[4] = &#8220;Thursday&#8221;;<br />
+$days[5] = &#8220;Friday&#8221;;<br />
+$days[6] = &#8220;Saturday&#8221;;<br />
+$days[7] = &#8220;Sunday&#8221;;</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+        &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 12<br />
+		,&#8217;label&#8217; =&gt; __(&#8216;Horarios de la parroquia&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;parroquia_horarios&#8217;<br />
+        ,&#8217;add_more&#8217; =&gt; true<br />
+        ,&#8217;fields&#8217; =&gt; array(<br />
+          array(<br />
+            &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;day&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 6<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+			  &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+		  ),<br />
+		  &#8216;choices&#8217; =&gt; $days,<br />
+		  &#8216;required&#8217; =&gt; true<br />
+          )<br />
+          ,array(<br />
+            &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;time&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 6<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+              &#8216;placeholder&#8217; =&gt; &#8217;09:00&#8242;<br />
+            )<br />
+          )<br />
+        )</p>
+<p>  ));</p></blockquote>
+<p>i want to request my endpoint and receive by answer something like this</p>
+<p>{<br />
+  &#8220;Monday&#8221; : [<br />
+     &#8220;00:09&#8243;,&#8221;12:00&#8243;,&#8221;15:00&#8221;, &#8230;and so on<br />
+  ],<br />
+  &#8220;Thursday&#8221; : [<br />
+    &#8230;<br />
+  ]<br />
+}</p>
+<blockquote>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/">How to send json response from piklist group with add more option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to display nested addmore?</title>
+		<link>https://piklist.com/support/topic/how-to-display-nested-addmore/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Thu, 22 Sep 2016 21:07:49 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-display-nested-addmore/</guid>
+
+					<description><![CDATA[<p>Hello, i&#8217;m having hard times with this, i have 2 groups, this is my code&#8230; &#60;?php /* Title: Parroquias en las que se imparte este curso Post Type: cursos Priority : high Order : 1 Locked : true New : true Collapse : false Meta box : true */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-nested-addmore/">How to display nested addmore?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, i&#8217;m having hard times with this, i have 2 groups, this is my code&#8230;</p>
+<pre><code>&lt;?php
+/*
+Title: Parroquias en las que se imparte este curso
+Post Type: cursos
+Priority : high
+Order : 1
+Locked : true
+New : true
+Collapse : false
+Meta box : true
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;curso_parroquias&#039;
+    ,&#039;label&#039; =&gt; &#039;Parroquias que imparten el curso&#039;
+    ,&#039;value&#039; =&gt; &#039;none&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;parroquia&#039;
+        ,&#039;label&#039; =&gt; &#039;Parroquia&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; array(&#039;none&#039; =&gt; &#039;Elija una parroquia&#039;) + piklist(
+          get_posts(
+             array(
+              &#039;post_type&#039; =&gt; &#039;parroquias&#039;
+              ,&#039;posts_per_page&#039; =&gt; -1
+              ,&#039;orderby&#039; =&gt; &#039;title&#039;
+             )
+             ,&#039;objects&#039;
+           )
+           ,array(
+             &#039;ID&#039;
+             ,&#039;post_title&#039;
+           )
+        )
+        ,&#039;required&#039; =&gt; false
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;group&#039;
+        ,&#039;field&#039; =&gt; &#039;info_curso&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;add_more&#039; =&gt; true
+        ,&#039;fields&#039; =&gt; array(
+        	array(
+        		&#039;type&#039; =&gt; &#039;date&#039;
+        		,&#039;field&#039; =&gt; &#039;curso_date&#039;
+        		,&#039;label&#039; =&gt; &#039;Fecha&#039;
+       			,&#039;columns&#039; =&gt; 12
+       			,&#039;required&#039; =&gt; false
+        	),
+        	array(
+        		&#039;type&#039; =&gt; &#039;text&#039;
+        		,&#039;field&#039; =&gt; &#039;curso_hour&#039;
+        		,&#039;label&#039; =&gt; &#039;Hora&#039;
+       			,&#039;columns&#039; =&gt; 12
+       			,&#039;required&#039; =&gt; false
+        	)
+        )
+      )
+    
+    )
+  ));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;curso_material&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Material del curso&#039;) 
+    ,&#039;columns&#039; =&gt; 12
+  ));</code></pre>
+<p>how can i display this, in selects? im trying to use piklist template, but with no lucky&#8230;</p>
+<p>i want to click in one select and then show date (curso_date) and hour (curso_hour) related to my church (parroquia), like dependent combos</p>
+<p>| select a church  |  ==&gt;  |  date and hour of my course  |</p>
+<p>is this possible?</p>
+<p>thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-nested-addmore/">How to display nested addmore?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to show images from addmore image fields</title>
+		<link>https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Wed, 18 May 2016 08:32:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/</guid>
+
+					<description><![CDATA[<p>Hullo there everybody, This is a long post but I kindly and politely ask that you bear with me. I&#8217;m working on an image addmore field but I&#8217;m failing to make it work. I&#8217;ve followed and used the sample code in the Piklist documentation and changed the fetched field name as required and the template [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/">How to show images from addmore image fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hullo there everybody, This is a long post but I kindly and politely ask that you bear with me. I&#8217;m working on an image addmore field but I&#8217;m failing to make it work. I&#8217;ve followed and used the sample code in the Piklist documentation and  changed the fetched field name as required and the template part file path as neccessary but nothing seems to work. I also honestly think that most times it&#8217;s a good thing to indicate explicitly in the documentation where you expect the user to place the sample documentation provided other than assuming that everybody knows exactly where the code has to go.  Many times things fail to workout simply because the right thing is being implemented wrongly; and then that adds on to the load of questions that have to come here on the forum. How I wish Piklist would work around this weakness. Personally, for my current challenge with the addmore I&#8217;m working on, I&#8217;ve had a tough time figuring out where the sample code provided in the Piklist documentation goes. I&#8217;ve read the WordPress Codex referenced to get insights but unfortunately the Codex as well assumes that everyone knows where to put the code; So it&#8217;s been of a little help. I&#8217;ve swapped the code several times between my template file and the template part trying to make it workout but still without any success. My workflow is like this; I have a template page called page-home.php which lays out the homepage on the frontend and as well makes usage of all my piklist field values by requiring variables.php. Then I have another file called variables.php where I make all my variable definitions and data calls so as to use them in page-home.php. I created a template part file called addmore-home.php as advised in the documentation. I wonder what code goes into the created template part i.e., addmore.php and which code goes into the page template file i.e., page-home.php that lays out the actual page? The closest I&#8217;ve come to making it work, the frontend page source shows this error:<br />
+<code>&lt;b&gt;Warning&lt;/b&gt;:  Illegal string offset &#039;clientele_logo&#039; in &lt;b&gt;C:\xampp\htdocs\lawyeah\wp-content\themes\JointsWP-CSS-master\parts\addmore-home.php&lt;/b&gt; on line &lt;b&gt;2&lt;/b&gt;&lt;br /&gt;</code><br />
+It&#8217;s complaining about this line in of code in the addmore-home.php file:<br />
+<code>&lt;?php echo $data[&#039;clientele_logo&#039;];?&gt;</code></p>
+<p>And I have this code in my page-home.php file:</p>
+<pre><code>&lt;?php
+                      // Get field data
+                        $clientele_logo = get_post_meta($post-&gt;ID, &#039;clientele_logo&#039;, true);
+ 
+                      // Get your custom template part: addmore-workout-template.php
+                    piklist(get_stylesheet_directory() . &#039;parts/addmore-home&#039;, array(&#039;data&#039; =&gt; $clientele_logo, &#039;loop&#039; =&gt; &#039;data&#039;)); ?&gt;</code></pre>
+<p>If you take notice, you understand that one can add multiple files especially images from the WordPress uploader all at once. This then means that the addmore created will have child elements of images within it and not just one image. This kind of working is a really big time-saver in a scenario where the user is expected to add many images to the section e.g., a gallery because if they have all these images prepared in one location, they can upload all of them at once and attach them at once instead just clicking on each individual image; which is time wasting and tiring. I&#8217;d love to take advantage of this ability so that my ddmore field is very effective. And by the way, it also saves you working space in the backend since the added images are tiled in a single addmore field instead of adding more addmore field rows down and with just a single image each. May someone help me figure out how I do this with Piklist&#8217;s addmore field? Please refer to the attached image for more insight into what I&#8217;m saying.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-show-images-from-addmore-image-fields/">How to show images from addmore image fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Error with widget (images) and add more</title>
+		<link>https://piklist.com/support/topic/error-with-widget-images-and-add-more/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2016 23:57:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/error-with-widget-images-and-add-more/</guid>
+
+					<description><![CDATA[<p>hello i&#8217;m creating a widget with 3 fields, image, title and url, at this moment everything is working like a charm, but when i want to print widget array i got this error in array. Piklist file &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;label&#039; =&#62; __(&#039;Publicidad&#039;) ,&#039;add_more&#039; =&#62; true ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-with-widget-images-and-add-more/">Error with widget (images) and add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hello i&#8217;m creating a widget with 3 fields, image, title and url, at this moment everything is working like a charm, but when i want to print widget array i got this error in array.</p>
+<p>Piklist file</p>
+<pre><code>&lt;?php
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Publicidad&#039;) 
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;image&#039;,
+        &#039;label&#039; =&gt; &#039;Imagen&#039;
+      ),
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;titulo&#039;,
+        &#039;label&#039; =&gt; &#039;Titulo&#039;
+      ),
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;url&#039;,
+        &#039;label&#039; =&gt; &#039;Enlace&#039;
+      ),
+    )
+  ));</code></pre>
+<p>Print_r of $settings</p>
+<pre><code>Array
+(
+    [image] =&gt; Array
+        (
+            [0] =&gt; 13
+            [1] =&gt; Array
+                (
+                    [0] =&gt; undefined
+                    [1] =&gt; 15
+                )
+
+            [2] =&gt; Array
+                (
+                    [0] =&gt; undefined
+                    [1] =&gt; 14
+                )
+
+        )
+
+    [titulo] =&gt; Array
+        (
+            [0] =&gt; title---
+            [1] =&gt; title---
+            [2] =&gt; title---
+        )
+
+    [url] =&gt; Array
+        (
+            [0] =&gt; http:...
+            [1] =&gt; http:...
+            [2] =&gt; http:...
+        )
+
+)</code></pre>
+<p>first array position retrives image id, but second and third no.</p>
+<p>Another question, is how can i loop into this array? i want to do this because i need to set random ads and posts.</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-with-widget-images-and-add-more/">Error with widget (images) and add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nested addmore repeater fields &#8211; aka page builder &#8211; displaying on the frontend</title>
+		<link>https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/</link>
+		
+		<dc:creator><![CDATA[pwwwpwww]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 16:18:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/</guid>
+
+					<description><![CDATA[<p>In the latest beta version of Piklist there&#8217;s an awesome new demo in the 2-level addmore section called Page Modules &#8211; basically ACF Flexible Content lite 😉 I&#8217;ve tried using the code found in the addmore docs but can&#8217;t seem to make it work. I then spied Steve&#8217;s advice in this thread &#8211; supposedly the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/">Nested addmore repeater fields &#8211; aka page builder &#8211; displaying on the frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In the latest beta version of Piklist there&#8217;s an awesome new demo in the 2-level addmore section called Page Modules &#8211; basically ACF Flexible Content lite <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I&#8217;ve tried using the code found in the addmore docs but can&#8217;t seem to make it work. I then spied Steve&#8217;s advice <a href="https://piklist.com/support/topic/repeater-field/">in this thread</a> &#8211; supposedly the latest version of Piklist doesn&#8217;t require the creation of template parts for repeatable fields any more. Unfortunately the code example he posted doesn&#8217;t work on nested repeater fields like those in the Page Modules demo. </p>
+<p>Does anyone know how to output this type of nested add_more? Extra hugs to anyone who can share a code example that someone without php knowledge might understand <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here&#8217;s an abridged version of the field group I&#8217;m rattling on about:</p>
+<pre><code>&lt;?php
+/*
+Title: Page builder
+Post Type: page
+*/
+
+// Taken from the Piklist addons demo. Would be awesome as a page builder / alternative to ACF flexible content field.
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;module_group&#039;
+    ,&#039;label&#039; =&gt; &#039;Page Modules&#039;
+    ,&#039;value&#039; =&gt; &#039;none&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;module_select&#039;
+        ,&#039;label&#039; =&gt; &#039;Select a Module&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;choices&#039; =&gt; array(
+          &#039;none&#039; =&gt; &#039;Select a Module to add&#039;
+          ,&#039;module&#039; =&gt; &#039;Editor&#039;
+          ,&#039;repeating_module&#039; =&gt; &#039;Repeating Textarea&#039;
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;editor&#039;
+        ,&#039;field&#039; =&gt; &#039;module_editor&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;options&#039; =&gt; array(
+          &#039;wpautop&#039; =&gt; true
+          ,&#039;media_buttons&#039; =&gt; false
+          ,&#039;tabindex&#039; =&gt; &#039;&#039;
+          ,&#039;editor_css&#039; =&gt; &#039;&#039;
+          ,&#039;editor_class&#039; =&gt; true
+          ,&#039;teeny&#039; =&gt; false
+          ,&#039;dfw&#039; =&gt; false
+          ,&#039;tinymce&#039; =&gt; true
+          ,&#039;quicktags&#039; =&gt; true
+        )
+        ,&#039;conditions&#039; =&gt; array(
+          array(
+            &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+            ,&#039;value&#039; =&gt; &#039;module&#039;
+          )
+        )
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;textarea&#039;
+        ,&#039;field&#039; =&gt; &#039;module_title&#039;
+        ,&#039;label&#039; =&gt; &#039;Module title:&#039;
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;add_more&#039; =&gt; true
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;class&#039; =&gt; &#039;large-text&#039;
+          , &#039;rows&#039; =&gt; 2
+        )
+        ,&#039;conditions&#039; =&gt; array(
+          array(
+            &#039;field&#039; =&gt; &#039;module_group:module_select&#039;
+            ,&#039;value&#039; =&gt; &#039;repeating_module&#039;
+          )
+        )
+      )
+    
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/nested-addmore-repeater-fields-aka-page-builder-displaying-on-the-frontend/">Nested addmore repeater fields &#8211; aka page builder &#8211; displaying on the frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

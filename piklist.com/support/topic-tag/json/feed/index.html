@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>json &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/json/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 12 Dec 2016 17:46:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>How to send json response from piklist group with add more option</title>
+		<link>https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/</link>
+		
+		<dc:creator><![CDATA[Dante Cervantes]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2016 17:45:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/</guid>
+
+					<description><![CDATA[<p>Hi, i just want to make my own api with piklist fields, is there any way to make this? i just have a piklist field //horarios $days = array(); $days[0] = &#8220;Choose an option&#8221;; $days[1] = &#8220;Monday&#8221;; $days[2] = &#8220;Tuesday&#8221;; $days[3] = &#8220;Wednesday&#8221;; $days[4] = &#8220;Thursday&#8221;; $days[5] = &#8220;Friday&#8221;; $days[6] = &#8220;Saturday&#8221;; $days[7] = &#8220;Sunday&#8221;; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/">How to send json response from piklist group with add more option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, i just want to make my own api with piklist fields, is there any way to make this?</p>
+<p>i just have a piklist field</p>
+<blockquote><p>//horarios<br />
+$days = array();</p>
+<p>$days[0] = &#8220;Choose an option&#8221;;<br />
+$days[1] = &#8220;Monday&#8221;;<br />
+$days[2] = &#8220;Tuesday&#8221;;<br />
+$days[3] = &#8220;Wednesday&#8221;;<br />
+$days[4] = &#8220;Thursday&#8221;;<br />
+$days[5] = &#8220;Friday&#8221;;<br />
+$days[6] = &#8220;Saturday&#8221;;<br />
+$days[7] = &#8220;Sunday&#8221;;</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+        &#8216;type&#8217; =&gt; &#8216;group&#8217;<br />
+        ,&#8217;columns&#8217; =&gt; 12<br />
+		,&#8217;label&#8217; =&gt; __(&#8216;Horarios de la parroquia&#8217;)<br />
+        ,&#8217;field&#8217; =&gt; &#8216;parroquia_horarios&#8217;<br />
+        ,&#8217;add_more&#8217; =&gt; true<br />
+        ,&#8217;fields&#8217; =&gt; array(<br />
+          array(<br />
+            &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;day&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 6<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+			  &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+		  ),<br />
+		  &#8216;choices&#8217; =&gt; $days,<br />
+		  &#8216;required&#8217; =&gt; true<br />
+          )<br />
+          ,array(<br />
+            &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+            ,&#8217;field&#8217; =&gt; &#8216;time&#8217;<br />
+            ,&#8217;columns&#8217; =&gt; 6<br />
+            ,&#8217;attributes&#8217; =&gt; array(<br />
+              &#8216;placeholder&#8217; =&gt; &#8217;09:00&#8242;<br />
+            )<br />
+          )<br />
+        )</p>
+<p>  ));</p></blockquote>
+<p>i want to request my endpoint and receive by answer something like this</p>
+<p>{<br />
+  &#8220;Monday&#8221; : [<br />
+     &#8220;00:09&#8243;,&#8221;12:00&#8243;,&#8221;15:00&#8221;, &#8230;and so on<br />
+  ],<br />
+  &#8220;Thursday&#8221; : [<br />
+    &#8230;<br />
+  ]<br />
+}</p>
+<blockquote>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-send-json-response-from-piklist-group-with-add-more-option/">How to send json response from piklist group with add more option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Method to know what fields have been created using Piklist</title>
+		<link>https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Thu, 11 Feb 2016 04:08:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/</guid>
+
+					<description><![CDATA[<p>Hi all! I figured I&#8217;d post this here in case someone else might find this useful. As you may know, I am using Piklist to create some custom fields and serving them using the REST API. I would like a way to automagically monitor what Piklist fields are available per content type and include those [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/">Method to know what fields have been created using Piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi all!</p>
+<p>I figured I&#8217;d post this here in case someone else might find this useful.</p>
+<p>As you may know, I am using Piklist to create some custom fields and serving them using the REST API. I would like a way to automagically monitor what Piklist fields are available per content type and include those in my API. This way, I won&#8217;t have to manually update the API every time a field is added.</p>
+<p>Are there any functions that can monitor fields created using Piklist or a recommended way of doing so?</p>
+<p>Here&#8217;s how I currently add fields to the API for a custom content type called &#8216;homepage&#8217;:</p>
+<pre><code>  add_action(&#039;rest_api_init&#039;, &#039;my_rest_api_init&#039;);
+
+  function my_rest_api_init()
+  {
+    // This is where we add the custom fields to the REST API
+    // More docs: http://v2.wp-api.org/extending/modifying/
+    $meta = array(
+      &#039;custom_field_a&#039;,
+      &#039;custom_field_b&#039;,
+      &#039;custom_field_c&#039;
+    );
+
+    foreach ($meta as $meta_key)
+    {
+      register_api_field(&#039;homepage&#039;,
+      $meta_key,
+        array(
+          &#039;get_callback&#039; =&gt; &#039;get_registered_meta&#039;,
+          &#039;update_callback&#039; =&gt; &#039;update_registered_meta&#039;,
+          &#039;schema&#039; =&gt; null
+        )
+      );
+    }
+  }
+
+  function get_registered_meta( $object, $field_name, $request ) {
+    return get_post_meta( $object[ &#039;id&#039; ], $field_name, true );
+  }
+
+  function update_registered_meta( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+    return update_post_meta( $object-&gt;ID, $field_name, strip_tags( $value ) );
+}</code></pre>
+<p>Thanks again!<br />
+Rachel</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/method-to-know-what-fields-have-been-created-using-piklist/">Method to know what fields have been created using Piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

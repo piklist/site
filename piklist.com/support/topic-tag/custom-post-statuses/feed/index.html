@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom post statuses &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom-post-statuses/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 04 Mar 2016 14:46:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>get_post_meta not working on CPT with custom post statuses</title>
+		<link>https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/</link>
+		
+		<dc:creator><![CDATA[wpmusketeer]]></dc:creator>
+		<pubDate>Fri, 04 Mar 2016 14:46:21 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/</guid>
+
+					<description><![CDATA[<p>Hi, I have a CPT &#8216;job&#8217; with a bunch of Piklist custom fields. The CPT also has custom post statuses that consist of: &#8216;draft&#8217;, &#8216;processing&#8217;, &#8216;complete&#8217;. Jobs are fetched via an external API and populated into the WordPress CPT using wp_insert_post() or wp_update_post() with &#039;post_status&#039; =&#62; &#039;processing&#039; as one of the arguments. Everything appears correctly [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/">get_post_meta not working on CPT with custom post statuses</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have a CPT &#8216;job&#8217; with a bunch of Piklist custom fields. The CPT also has custom post statuses that consist of: &#8216;draft&#8217;, &#8216;processing&#8217;, &#8216;complete&#8217;.</p>
+<p>Jobs are fetched via an external API and populated into the WordPress CPT using <code>wp_insert_post()</code> or <code>wp_update_post()</code> with <code>&#039;post_status&#039;  =&gt; &#039;processing&#039;</code> as one of the arguments.</p>
+<p>Everything appears correctly in the WordPress admin, including all the custom Piklist fields that are populated from the remote API.</p>
+<p>On the frontend, using a custom <code>WP_Query</code> loop, I can call the standard WordPress fields using functions like <code>the_content()</code>, <code>the_title()</code> etc., but calling <code>get_post_meta()</code> on the Piklist custom fields doesn&#8217;t work.</p>
+<p>Using something like this:</p>
+<p><code>$priority = get_post_meta( get_the_ID(), PREFIX . &#039;job_priority&#039;, true );</code></p>
+<p>Just returns an empty string. If I change the last parameter to &#8216;false&#8217; it returns an empty array.</p>
+<p>The same is true for simple text fields and radio fields.</p>
+<p>However. If I manually go into a Job through the WordPress admin and click save, then go back to the frontend and refresh, the one Job I manually saved will now return the post meta correctly. The rest of the Jobs still won&#8217;t though.</p>
+<p>Have you come across this before? Is there something else I need to do after <code>wp_insert_post()</code> and <code>wp_update_post()</code>?</p>
+<p>Thanks in advance,</p>
+<p>Dave</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get_post_meta-not-working-on-cpt-with-custom-post-statuses/">get_post_meta not working on CPT with custom post statuses</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

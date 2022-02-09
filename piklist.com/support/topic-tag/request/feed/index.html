@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>request &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/request/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 25 Oct 2013 13:03:09 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Feature request: Validation callbacks</title>
+		<link>https://piklist.com/support/topic/feature-request-validation-callbacks/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Fri, 25 Oct 2013 13:00:48 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/feature-request-validation-callbacks/</guid>
+
+					<description><![CDATA[<p>After using Piklist for awhile, I have a really important request&#8230; It would be nice to have callbacks for not only the javascript side (so a callback for different states) such as: &#039;jscallback&#039; =&#62; array ( &#039;function&#039; =&#62; &#039;javascript_function_name_here&#039; ,&#039;state&#039; =&#62; &#039;onchange&#039; ,&#039;args&#039; =&#62; array ( $post-&#62;ID ,&#039;postid&#039; ,&#039;taxonomy&#039; ) ) But also for php [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/feature-request-validation-callbacks/">Feature request: Validation callbacks</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>After using Piklist for awhile, I have a really important request&#8230;</p>
+<p>It would be nice to have callbacks for not only the javascript side (so a callback for different states) such as:</p>
+<pre><code> &#039;jscallback&#039; =&gt; array (
+   &#039;function&#039; =&gt; &#039;javascript_function_name_here&#039;
+   ,&#039;state&#039; =&gt; &#039;onchange&#039;
+   ,&#039;args&#039; =&gt; array (
+     $post-&gt;ID
+     ,&#039;postid&#039;
+     ,&#039;taxonomy&#039;
+  )
+)
+</code></pre>
+<p>But also for php and when it updates, such as:</p>
+<pre><code> &#039;phpcallback&#039; =&gt; array (
+    &#039;function&#039; =&gt; &#039;php_function_name_here&#039;,
+    ,&#039;state&#039; =&gt; &#039;update&#039; // others could be &#039;load&#039;, &#039;init&#039;, etc.
+    ,&#039;args&#039; =&gt; array (
+      $post-&gt;ID
+      ,&#039;postid&#039;
+      ,&#039;taxonomy&#039;
+   )
+)
+</code></pre>
+<p>Just a thought. It would be nice if it had its own validation for every type of field, but thats a massive undertaking. I created a small micro-api for jQuery a while back that covers every type of entry, phone (us/international), credit cards, dates, passwords, etc. Maybe I&#8217;ll look into creating it as a plugin to piklist.</p>
+<p>But this suggestion above, only helps me fine tune the granularity of working with a piklist meta box.<br />
+Giving us ultimate control on how we want our metabox to work. </p>
+<p>This could of course all be ignored and use a simple action or filter hook as a parameter in the fields, (such as choosing the action hook or filter hook that you&#8217;ve created within piklist, and then give them the option of putting their own function name) but I&#8217;ll leave this to your brains.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/feature-request-validation-callbacks/">Feature request: Validation callbacks</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

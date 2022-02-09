@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist meta get_post_meta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklist-meta-get_post_meta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 05 Sep 2014 09:16:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Kevin, Steve, how much damage am I doing? :-)</title>
+		<link>https://piklist.com/support/topic/kevin-steve-how-much-damage-am-i-doing/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Fri, 05 Sep 2014 09:16:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/kevin-steve-how-much-damage-am-i-doing/</guid>
+
+					<description><![CDATA[<p>Hi guys. I have a recurring problem. Everytime I use a get_post_meta(pid,mkey,single) on any field that is a select field (single select not multiple) and I use single=true in the get_post_meta. An array is ALWAYS returned instead of a single value. So for a single get_post_meta call, instead of $tmp = get_post_meta($pid,$key,true); $tmp != &#8216;string&#8217;; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/kevin-steve-how-much-damage-am-i-doing/">Kevin, Steve, how much damage am I doing? :-)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys. </p>
+<p>I have a recurring problem.<br />
+Everytime I use a get_post_meta(pid,mkey,single) on any field that is a select field (single select not multiple) and I use single=true in the get_post_meta.<br />
+An array is ALWAYS returned instead of a single value.</p>
+<p>So for a single get_post_meta call, instead of<br />
+<code>$tmp = get_post_meta($pid,$key,true);</code></p>
+<p>$tmp != &#8216;string&#8217;;<br />
+But<br />
+$tmp = array (<br />
+  &#8216;string&#8217;<br />
+);</p>
+<p>So I&#8217;m always having to do this to all get_post_meta vars, just in case I can&#8217;t remember if its a select or not. <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<pre><code>$tmp = get_post_meta($pid,$key,true);
+$tmp = (is_array($tmp) &amp;&amp; count($tmp)==1) ? $tmp[0] : $tmp;</code></pre>
+<p>Which I hate, as get_post_meta for singles, should return singles, not arrays.</p>
+<p>So I decided to do a little hacking on Kevins magnificent code. (it is, I&#8217;m not kidding)<br />
+So in class-piklist-meta.php in the get_metadata function I changed it from:</p>
+<pre><code>
+  public static function get_metadata($value, $meta_type, $object_id, $meta_key, $single)
+  {
+    global $wpdb;
+    
+    self::$reserved_meta_keys = apply_filters(&#039;piklist_reserved_meta_keys&#039;,self::$reserved_meta_keys);
+    
+    if ((isset(self::$reserved_meta_keys[$meta_type]) &amp;&amp; in_array($meta_key, self::$reserved_meta_keys[$meta_type])) || !$meta_key)
+    {
+      return $value;
+    }
+
+    $meta_key = &#039;_&#039; . piklist::$prefix . $meta_key;
+    
+    switch ($meta_type)
+    {
+      case &#039;post&#039;:
+      
+        $meta_table = $wpdb-&gt;postmeta;
+        $meta_id_field = &#039;meta_id&#039;;
+        $meta_id = &#039;post_id&#039;;
+      
+      break;
+
+      case &#039;term&#039;: 
+      
+        $meta_table = $wpdb-&gt;termmeta;
+        $meta_id_field = &#039;meta_id&#039;;
+        $meta_id = &#039;term_id&#039;;
+      
+      break;
+
+      case &#039;user&#039;:
+      
+        $meta_table = $wpdb-&gt;usermeta;
+        $meta_id_field = &#039;umeta_id&#039;;
+        $meta_id = &#039;user_id&#039;;
+      
+      break;
+    }
+    
+    $is_group = $wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT $meta_id_field FROM $meta_table WHERE meta_key = %s AND $meta_id = %d&quot;, $meta_key, $object_id));
+    
+    if ($is_group)
+    {
+      if ($meta_ids = get_metadata($meta_type, $object_id, $meta_key))
+      {
+        foreach ($meta_ids as &amp;$group)
+        {
+          foreach ($group as &amp;$meta_id)
+          {
+            $meta_id = $wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT meta_value FROM $meta_table WHERE $meta_id_field = %d&quot;, $meta_id));
+          }
+        }
+        $value = $meta_ids;
+      }
+    }
+    return $value;
+  }
+</code></pre>
+<p>to this (I added just before the final value, a simple routine that checks to see if its single, and the value is an array and has a count of 1)</p>
+<pre><code>
+  public static function get_metadata($value, $meta_type, $object_id, $meta_key, $single)
+  {
+    global $wpdb;
+    
+    self::$reserved_meta_keys = apply_filters(&#039;piklist_reserved_meta_keys&#039;,self::$reserved_meta_keys);
+    
+    if ((isset(self::$reserved_meta_keys[$meta_type]) &amp;&amp; in_array($meta_key, self::$reserved_meta_keys[$meta_type])) || !$meta_key)
+    {
+      return $value;
+    }
+
+    $meta_key = &#039;_&#039; . piklist::$prefix . $meta_key;
+    
+    switch ($meta_type)
+    {
+      case &#039;post&#039;:
+      
+        $meta_table = $wpdb-&gt;postmeta;
+        $meta_id_field = &#039;meta_id&#039;;
+        $meta_id = &#039;post_id&#039;;
+      
+      break;
+
+      case &#039;term&#039;: 
+      
+        $meta_table = $wpdb-&gt;termmeta;
+        $meta_id_field = &#039;meta_id&#039;;
+        $meta_id = &#039;term_id&#039;;
+      
+      break;
+
+      case &#039;user&#039;:
+      
+        $meta_table = $wpdb-&gt;usermeta;
+        $meta_id_field = &#039;umeta_id&#039;;
+        $meta_id = &#039;user_id&#039;;
+      
+      break;
+    }
+    
+    $is_group = $wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT $meta_id_field FROM $meta_table WHERE meta_key = %s AND $meta_id = %d&quot;, $meta_key, $object_id));
+    
+    if ($is_group)
+    {
+      if ($meta_ids = get_metadata($meta_type, $object_id, $meta_key))
+      {
+        foreach ($meta_ids as &amp;$group)
+        {
+          foreach ($group as &amp;$meta_id)
+          {
+            $meta_id = $wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT meta_value FROM $meta_table WHERE $meta_id_field = %d&quot;, $meta_id));
+          }
+        }
+        $value = $meta_ids;
+      }
+    }
+    if ($single==true &amp;&amp; is_array($value) &amp;&amp; count($value)==1) {
+      $value = $value[0];
+    }
+    return $value;
+  }
+</code></pre>
+<p>So a couple of questions. What damage will I be doing to the piklist forms I&#8217;m creating? (and other than having to repeat this fix every time a new version comes out is it ok to do this?)</p>
+<p>And is there any way we can have this as a permanent fix? Or is there a specific reason why it will stay like this that I am not smart enough to figure out? (which is totally possible)</p>
+<p>Thanks guys. </p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/kevin-steve-how-much-damage-am-i-doing/">Kevin, Steve, how much damage am I doing? :-)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

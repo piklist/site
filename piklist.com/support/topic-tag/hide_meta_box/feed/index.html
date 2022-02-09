@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>hide_meta_box &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/hide_meta_box/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 09 Jun 2020 19:45:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Taxonomies not showing</title>
+		<link>https://piklist.com/support/topic/taxonomies-not-showing/</link>
+		
+		<dc:creator><![CDATA[guit4eva]]></dc:creator>
+		<pubDate>Tue, 09 Jun 2020 14:15:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomies-not-showing/</guid>
+
+					<description><![CDATA[<p>Hello again, I&#8217;m trying to get a custom taxonomy to show on a custom post type, but I can&#8217;t get it to display properly. This is my code so far: $post_types[&#039;package&#039;] = array( &#039;labels&#039; =&#62; piklist(&#039;post_type_labels&#039;, &#039;Packages&#039;) , &#039;title&#039; =&#62; __(&#039;Enter a new Package Title&#039;) , &#039;supports&#039; =&#62; array( &#039;title&#039; , &#039;editor&#039; , &#039;post-formats&#039; , [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-not-showing/">Taxonomies not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello again,</p>
+<p>I&#8217;m trying to get a custom taxonomy to show on a custom post type, but I can&#8217;t get it to display properly. This is my code so far:</p>
+<pre><code>    $post_types[&#039;package&#039;] = array(
+        &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Packages&#039;)
+        , &#039;title&#039; =&gt; __(&#039;Enter a new Package Title&#039;)
+        , &#039;supports&#039; =&gt; array(
+            &#039;title&#039;
+            , &#039;editor&#039;
+            , &#039;post-formats&#039;
+            , &#039;thumbnail&#039;,
+        )
+        , &#039;public&#039; =&gt; true
+        , &#039;admin_body_class&#039; =&gt; array(
+            &#039;custom-body-class&#039;,
+        )
+        , &#039;has_archive&#039; =&gt; true
+        , &#039;rewrite&#039; =&gt; array(
+            &#039;slug&#039; =&gt; &#039;package&#039;,
+        )
+        , &#039;capability_type&#039; =&gt; &#039;post&#039;
+        , &#039;hide_meta_box&#039; =&gt; array(
+            &#039;author&#039;,
+        ),
+    );
+    return $post_types;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;package_tax&#039;);
+function package_type_tax($taxonomies) {
+   $taxonomies[] = array(
+      &#039;post_type&#039; =&gt; &#039;package&#039;
+      ,&#039;name&#039; =&gt; &#039;package_type&#039;
+      ,&#039;show_admin_column&#039; =&gt; true
+      ,&#039;configuration&#039; =&gt; array(
+        &#039;hierarchical&#039; =&gt; false
+        ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Package Type&#039;)
+        ,&#039;hide_meta_box&#039; =&gt; true
+        ,&#039;show_ui&#039; =&gt; true
+        ,&#039;query_var&#039; =&gt; true
+        ,&#039;rewrite&#039; =&gt; array(
+          &#039;slug&#039; =&gt; &#039;package-type&#039;
+        )
+      )
+    );
+  return $taxonomies;
+}</code></pre>
+<p>If anyone can tell me where I&#8217;m going wrong, I&#8217;d really appreciate that!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomies-not-showing/">Taxonomies not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

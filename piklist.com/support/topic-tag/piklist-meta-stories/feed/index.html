@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>piklist meta stories &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/piklist-meta-stories/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 26 Aug 2014 18:38:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Why am I seeing piklist_meta_stories in my custom post types</title>
+		<link>https://piklist.com/support/topic/why-am-i-seeing-piklist_meta_stories-in-my-custom-post-types/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Tue, 26 Aug 2014 16:40:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/why-am-i-seeing-piklist_meta_stories-in-my-custom-post-types/</guid>
+
+					<description><![CDATA[<p>I am seeing this piklist_meta_stories showing up in my Custom Post Type but no fields. How can I get rid of this and/or why is it showing up? Thanks! Post Type: &#60;?php /* Title: Partners/Grantee Post Type: partners Order: 13 Meta Box: false Collapse: false */ ?&#62; &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039; ,&#039;field&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/why-am-i-seeing-piklist_meta_stories-in-my-custom-post-types/">Why am I seeing piklist_meta_stories in my custom post types</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am seeing this piklist_meta_stories showing up in my Custom Post Type but no fields. How can I get rid of this and/or why is it showing up? Thanks!</p>
+<p><strong>Post Type:</strong></p>
+<pre><code>&lt;?php
+/*
+Title: Partners/Grantee
+Post Type: partners
+Order: 13
+Meta Box: false
+Collapse: false
+*/
+?&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;arcus_upload&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Partner Logo&#039;,&#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;basic&#039; =&gt; true
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;partner_location&#039;
+    ,&#039;label&#039; =&gt; &#039;Location&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Location&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;partner_grantee_url&#039;
+    ,&#039;label&#039; =&gt; &#039;Grantee URL&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;http://&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;partner_donate_url&#039;
+    ,&#039;label&#039; =&gt; &#039;Donate URL&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;http://&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;label&#039; =&gt; &#039;Entity Description&#039;
+    ,&#039;options&#039; =&gt; array (
+      &#039;media_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; true
+      ,&#039;textarea_rows&#039; =&gt; 5
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+  ));</code></pre>
+<p><strong>functions.php</strong></p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;partners_post_type&#039;);
+ function partners_post_type($post_types)
+ {
+  $post_types[&#039;partners&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Partners/Grantee&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Partners/Grantee&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;partners&#039;
+    )
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;title&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;slug&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/why-am-i-seeing-piklist_meta_stories-in-my-custom-post-types/">Why am I seeing piklist_meta_stories in my custom post types</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

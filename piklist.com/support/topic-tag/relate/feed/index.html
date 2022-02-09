@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>relate &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/relate/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 15 Jan 2016 19:05:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Post to Post Relationships &#8211; Displaying a list of related posts in your theme</title>
+		<link>https://piklist.com/support/topic/post-to-post-relationships-displaying-a-list-of-related-posts-in-your-theme/</link>
+		
+		<dc:creator><![CDATA[pwwwpwww]]></dc:creator>
+		<pubDate>Wed, 13 Jan 2016 18:51:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-to-post-relationships-displaying-a-list-of-related-posts-in-your-theme/</guid>
+
+					<description><![CDATA[<p>The docs are great if you know PHP, if not they may as well be written in moon-speak. I struggled to get the relate field to print out a nice list of links in my theme. The example in the docs just prints out the post titles &#8211; no urls / permalinks. Here&#8217;s how I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-post-relationships-displaying-a-list-of-related-posts-in-your-theme/">Post to Post Relationships &#8211; Displaying a list of related posts in your theme</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The docs are great if you know PHP, if not they may as well be written in moon-speak. I struggled to get the relate field to print out a nice list of links in my theme. The example in the docs just prints out the post titles &#8211; no urls / permalinks. Here&#8217;s how I managed to do it.</p>
+<p>First, create your field-</p>
+<pre><code>&lt;?php
+/*
+Title: Add links to other useful posts
+Post Type: post
+*/
+
+piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;post-relate&#039;
+,&#039;scope&#039; =&gt; &#039;post&#039;
+,&#039;template&#039; =&gt; &#039;field&#039;
+));</code></pre>
+<p>Next, go ahead and create a test post and add some related posts to your new field.</p>
+<p>Now open up the theme file that displays your single posts (single.php). You&#8217;ll find some moon-speak similar to the following: </p>
+<pre><code>&lt;?php
+// Start the loop.
+while ( have_posts() ) : the_post();
+
+// Some more moon-speak that prints out the post - removed for brevity. 
+			
+// End of the loop.
+endwhile; ?&gt;</code></pre>
+<p>Before the end of your post loop, add the following:</p>
+<pre><code>&lt;?php         
+$related = get_posts(array(
+&#039;post_type&#039; =&gt; &#039;posts&#039; // Set post type you are relating to.
+,&#039;posts_per_page&#039; =&gt; -1
+,&#039;post_belongs&#039; =&gt; $post-&gt;ID
+,&#039;post_status&#039; =&gt; &#039;publish&#039;
+,&#039;suppress_filters&#039; =&gt; false // This must be set to false
+));
+?&gt;
+
+&lt;ul&gt;
+&lt;?php foreach($related as $related_post) {
+echo &#039;&lt;li&gt;&lt;a href=&quot;&#039;.get_post_permalink($related_post-&gt;ID).&#039;&quot;&gt;&#039;.$related_post-&gt;post_title.&#039;&lt;/a&gt;&lt;/li&gt;&#039;;
+} ?&gt;
+&lt;/ul&gt;</code></pre>
+<p>Viola! A nice list of links to your related posts. Please note this doesn&#8217;t work outside of the main post loop. So no trying to stick it in your sidebar. If anyone knows how to get this to work outside of the loop, I&#8217;d love to know!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-to-post-relationships-displaying-a-list-of-related-posts-in-your-theme/">Post to Post Relationships &#8211; Displaying a list of related posts in your theme</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>add_more with relate to custom post type</title>
+		<link>https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[arranfraser]]></dc:creator>
+		<pubDate>Fri, 04 Dec 2015 20:22:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Hi everyone, I&#8217;m trying to copy/modify the demo code that shows how you can use a repeater field to create related Posts/Users/Comments on the edit form of the Demo custom-post-type. meta-boxes/field-relationship.php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;scope&#039; =&#62; &#039;post&#039; ,&#039;label&#039; =&#62; &#039;Related Posts&#039; ,&#039;relate&#039; =&#62; array( &#039;scope&#039; =&#62; &#039;post&#039; ) ,&#039;add_more&#039;=&#62; true ,&#039;fields&#039; =&#62; array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/">add_more with relate to custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>I&#8217;m trying to copy/modify the demo code that shows how you can use a repeater field to create related Posts/Users/Comments on the edit form of the Demo custom-post-type.</p>
+<p><code>meta-boxes/field-relationship.php</code></p>
+<pre><code>
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;label&#039; =&gt; &#039;Related Posts&#039;
+    ,&#039;relate&#039; =&gt; array(
+      &#039;scope&#039; =&gt; &#039;post&#039;
+    )
+    ,&#039;add_more&#039;=&gt; true
+    ,&#039;fields&#039; =&gt; array(
+...</code></pre>
+<p>The only difference I am attempting is that I want to be able to add other custom post types (that are related to the custom post type I am editing).  I am editing a Family, and I want to be able to add Students to it.</p>
+<p>The closest I got was to simply add a post-type field within the repeated form.</p>
+<p><code>[&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;field&#039; =&gt; &#039;post_type&#039;, &#039;value&#039; =&gt; &#039;student&#039;]</code></p>
+<p>This actually works perfectly (post is created of correct type, relationship is intact), but only for the first entry of the repeater.</p>
+<p>If I click + and fill out a second form to relate a second student to the family, nothing gets saved.</p>
+<p>Any idea what I&#8217;m missing?  It seems so close to the demo that I can&#8217;t imagine this couldn&#8217;t work.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add_more-with-relate-to-custom-post-type/">add_more with relate to custom post type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>post-relate user &#8211; post</title>
+		<link>https://piklist.com/support/topic/post-relate-user-post/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Tue, 29 Jul 2014 20:43:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/post-relate-user-post/</guid>
+
+					<description><![CDATA[<p>Hi! i was just wondering if it was possible to link/relate a post_type to a user? if i select a user (dropdown), when i am in a post_type, will it then be possible to show this &#8216;link&#8217; in the user settings? and then do the same viceversa? thanks for your time</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-user-post/">post-relate user &#8211; post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+i was just wondering if it was possible to link/relate a post_type to a user?</p>
+<p>if i select a user (dropdown), when i am in a post_type, will it then be possible to show this &#8216;link&#8217; in the user settings?<br />
+and then do the same viceversa?</p>
+<p>thanks for your time</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-relate-user-post/">post-relate user &#8211; post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

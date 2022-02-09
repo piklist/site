@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>redirect &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/redirect/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 28 Mar 2019 16:48:19 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Dynamic Redirect on Front End Form</title>
+		<link>https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/</link>
+		
+		<dc:creator><![CDATA[mikakoo]]></dc:creator>
+		<pubDate>Thu, 28 Mar 2019 16:48:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/</guid>
+
+					<description><![CDATA[<p>Hello, To workaround an issue I am redirecting the user back to the normal view of a CPT after they submit changes to it via FEF. I have achieved this using the piklist_request_field filter, but wonder what other ways the community might suggest this could be done more efficiently. It also relies on the Redirect: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/">Dynamic Redirect on Front End Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+To workaround an issue I am redirecting the user back to the normal view of a CPT after they submit changes to it via FEF.</p>
+<p>I have achieved this using the <strong>piklist_request_field</strong> filter, but wonder what other ways the community might suggest this could be done more efficiently.<br />
+It also relies on the <em>Redirect:</em> comment block directive &#8211; if this is removed, my code doesn&#8217;t get called.</p>
+<p>Here&#8217;s my code:</p>
+<pre><code>//
+//	Alter the Redirect link for Edit Listing form
+//
+add_filter( &#039;piklist_request_field&#039;, &#039;thearr_request_field&#039; );
+function thearr_request_field( $field )
+{
+        // only interested in the redirect field
+	if ( strcmp(&#039;redirect&#039;, $field[&#039;field&#039;]) === 0 )
+	{
+                // this is what tells the FEF which data to use
+		if ( isset( $_REQUEST[&#039;_post&#039;][&#039;ID&#039;] ) )
+		{
+			// change redirection back to the normal view after edit
+			$field[&#039;value&#039;] = get_permalink( $_REQUEST[&#039;_post&#039;][&#039;ID&#039;] );
+		}
+	}
+
+	return $field;
+}</code></pre>
+<p>Thanks for any help.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/">Dynamic Redirect on Front End Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>redirect no longer works with front-end form</title>
+		<link>https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Tue, 03 Nov 2015 22:55:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/</guid>
+
+					<description><![CDATA[<p>I have a front-end form (tickets purchase) that was working fine with beta 0.9.5v but I ran into several problems with 0.9.9. I have been able to resolve all but this. I have been using a redirect field in the comment block at the top of the file. Initially this was set to &#8220;review_url&#8221; as [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/">redirect no longer works with front-end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a front-end form (tickets purchase) that was working fine with beta 0.9.5v but I ran into several problems with 0.9.9. I have been able to resolve all but this. I have been using a redirect field in the comment block at the top of the file. Initially this was set to &#8220;review_url&#8221; as I couldn&#8217;t put a function in the Redirect field: </p>
+<p>In <code>piklist/parts/ticket-order-form.php</code>:</p>
+<pre><code>/*  
+Title: Ticket Order Form
+Method: post
+Message: Data saved as a post of type ticket.
+Redirect: review_url
+*/</code></pre>
+<p>In <code>functions.php</code>:</p>
+<pre><code>add_filter( &#039;piklist_add_part&#039;, &#039;mcw_form_redirect&#039;, 10, 2 );
+function mcw_form_redirect ( $data, $type ) {
+	// if not a form then bail
+	if ( $type != &#039;form&#039; ) {
+		return $data;
+	}
+	// check if any page template is set in the comment block
+	if ( ( $data[&#039;redirect&#039;] ) == &#039;review_url&#039; ) {
+		$data[&#039;redirect&#039;] = home_url( &#039;/tickets/order-review/&#039; );
+	}
+	return $data;
+}</code></pre>
+<p>After upgrading to 0.9.9.6, it tried to send me to <code>http://mysite.com/review_url</code> which of course was 404. I changed the Redirect field: </p>
+<pre><code>/*  
+Title: Ticket Order Form
+Method: post
+Message: Data saved as a post of type ticket.
+Redirect: /tickets/order-review/
+*/</code></pre>
+<p>Now it sends me to the correct page, but doesn&#8217;t pass the $_REQUEST parameters so I can&#8217;t process the form inputs. </p>
+<p>Is Redirect no longer supported? Is there another way to do this? </p>
+<p>Thanks,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/">redirect no longer works with front-end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

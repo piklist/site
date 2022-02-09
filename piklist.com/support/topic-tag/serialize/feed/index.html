@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>serialize &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/serialize/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 31 Mar 2017 18:26:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Serialize checkbox data</title>
+		<link>https://piklist.com/support/topic/serialize-checkbox-data/</link>
+		
+		<dc:creator><![CDATA[bshep]]></dc:creator>
+		<pubDate>Mon, 11 Jul 2016 23:57:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/serialize-checkbox-data/</guid>
+
+					<description><![CDATA[<p>Is is possible to store checkbox options as a serialized array? I have a list of checkboxes that is currently saving multiple meta value entries with the same meta_key &#8211; I&#8217;d like it to save as a single row with serialized values.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/serialize-checkbox-data/">Serialize checkbox data</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is is possible to store checkbox options as a serialized array? I have a list of checkboxes that is currently saving multiple meta value entries with the same meta_key &#8211; I&#8217;d like it to save as a single row with serialized values.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/serialize-checkbox-data/">Serialize checkbox data</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>[0.9.9.6] Add more problem</title>
+		<link>https://piklist.com/support/topic/0-9-9-6-add-more-problem/</link>
+		
+		<dc:creator><![CDATA[ndbe]]></dc:creator>
+		<pubDate>Tue, 17 Nov 2015 14:30:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/0-9-9-6-add-more-problem/</guid>
+
+					<description><![CDATA[<p>So i go this: /* Title: Galleries Description: Context: normal Post Type: project Priority: high Order: 1 Collapse: false Meta box: true */ piklist(&#039;field&#039;,array( &#039;type&#039;=&#62;&#039;group&#039;, &#039;label&#039; =&#62; __(&#039;Galleries&#039;,&#039;ik&#039;), &#039;add_more&#039; =&#62; true, &#039;field&#039; =&#62; &#039;galleries&#039;, &#039;fields&#039; =&#62; array( array( &#039;type&#039;=&#62;&#039;text&#039;, &#039;field&#039; =&#62; &#039;title&#039;, &#039;label&#039; =&#62; __(&#039;Title&#039;, &#039;ik&#039;), &#039;columns&#039;=&#62;12, ), array( &#039;type&#039;=&#62;&#039;file&#039;, &#039;field&#039; =&#62; &#039;photos&#039;, &#039;label&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-6-add-more-problem/">[0.9.9.6] Add more problem</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So i go this:</p>
+<pre><code>/*
+Title: Galleries
+Description: 
+Context: normal
+Post Type: project
+Priority: high
+Order: 1
+Collapse: false
+Meta box: true
+*/
+
+piklist(&#039;field&#039;,array(
+    &#039;type&#039;=&gt;&#039;group&#039;,
+    &#039;label&#039; =&gt; __(&#039;Galleries&#039;,&#039;ik&#039;),
+    &#039;add_more&#039; =&gt; true,
+    &#039;field&#039; =&gt; &#039;galleries&#039;,
+    &#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039;=&gt;&#039;text&#039;,
+            &#039;field&#039; =&gt; &#039;title&#039;,
+            &#039;label&#039; =&gt; __(&#039;Title&#039;, &#039;ik&#039;),
+            &#039;columns&#039;=&gt;12,
+
+        ),
+        array(
+            &#039;type&#039;=&gt;&#039;file&#039;,
+            &#039;field&#039; =&gt; &#039;photos&#039;,
+            &#039;label&#039; =&gt; __(&#039;Photos&#039;,&#039;ik&#039;),
+            &#039;options&#039; =&gt; array(
+                &#039;button&#039; =&gt; __(&#039;Add photo&#039;,&#039;ik&#039;)
+            )
+
+        ),    
+    ),
+));</code></pre>
+<p>This group is serialized and saved to one custom field.<br />
+Everything works fine at first but problem starts when I delete one of the galleries. Rest of the galleries disappears from edit screen. After a little investigation a found that after removing one of the galleries the resulting array has wrong indexes. It looks like this:</p>
+<p>Before delete<br />
+<code>Array([0]=&gt;[...gallery one...],[1]=&gt;[...gallery two...],[2]=&gt;[...gallery three...])</code><br />
+And after<br />
+<code>Array([0]=&gt;[...gallery one...],[2]=&gt;[...gallery three...])</code></p>
+<p>And in the admin panel i can see only gallery with index [0].</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-6-add-more-problem/">[0.9.9.6] Add more problem</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>save serilize with file type</title>
+		<link>https://piklist.com/support/topic/save-serilize-with-file-type/</link>
+		
+		<dc:creator><![CDATA[vavakco]]></dc:creator>
+		<pubDate>Sat, 01 Aug 2015 11:13:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/save-serilize-with-file-type/</guid>
+
+					<description><![CDATA[<p>Hello friend i want save picture by file field in database with serialize method by default code save every image create a row in database in wp_postmeta but i want save many image file in a row of wp_postmeta. important : i don&#8217;t use by Group field piklist(&#039;field&#039;,array( &#039;type&#039; =&#62; &#039;file&#039; , &#039;field&#039; =&#62; &#039;gallery_field_images&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/save-serilize-with-file-type/">save serilize with file type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello friend<br />
+i want save picture by file field in database with serialize method<br />
+by default code save every image create a row in database in wp_postmeta but i want save many image file in a row of wp_postmeta.<br />
+important : i don&#8217;t use by Group field</p>
+<pre><code>piklist(&#039;field&#039;,array(
+		&#039;type&#039; =&gt; &#039;file&#039; ,
+		&#039;field&#039; =&gt; &#039;gallery_field_images&#039; ,
+		&#039;label&#039; =&gt; &#039;New Image&#039; ,
+		&#039;options&#039; =&gt; array(
+			&#039;modal_title&#039; =&gt; &#039;New Image&#039; ,
+			&#039;button&#039; =&gt; &#039;New Image&#039; ,
+		)
+	)
+);</code></pre>
+<p>Friends like the idea?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/save-serilize-with-file-type/">save serilize with file type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

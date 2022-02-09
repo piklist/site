@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Multi-select fields &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/multi-select-fields/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 08 Feb 2016 18:02:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Multiple conditions</title>
+		<link>https://piklist.com/support/topic/multiple-conditions/</link>
+		
+		<dc:creator><![CDATA[rafi]]></dc:creator>
+		<pubDate>Sun, 07 Feb 2016 06:04:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/reply/5870/</guid>
+
+					<description><![CDATA[<p>Question related to conditionals: When selecting more than one item on a multi-select box, Only the first selected item will trigger. The rest are ignored. On the example below if you select on the multiple select field: &#8216;prefecture&#8217; &#8216;Aichi&#8217; the hidden field aichi_city will show. Selecting an additional item will not show any other field. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiple-conditions/">Multiple conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Question related to conditionals:<br />
+When selecting more than one item on a multi-select box, Only the first selected item will trigger.<br />
+The rest are ignored. On the example below if you select on the multiple select field: &#8216;prefecture&#8217;<br />
+&#8216;Aichi&#8217; the hidden field aichi_city will show. Selecting an additional item will not show any other field.<br />
+Is there a way to show other fields by selecting the respective items on the field: &#8216;prefecture&#8217;?</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;user_meta&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;prefecture&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Prefecture&#8217;<br />
+,&#8217;attributes&#8217; =&gt; array(<br />
+ &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+, &#8216;multiple&#8217; =&gt; &#8216;multiple&#8217;<br />
+)<br />
+,&#8217;choices&#8217; =&gt; array(<br />
+ Aichi&#8217; =&gt; &#8216;Aichi&#8217;<br />
+,&#8217;Akita&#8217; =&gt; &#8216;Akita&#8217;<br />
+,&#8217;Aomori&#8217; =&gt; &#8216;Aomori&#8217;<br />
+,&#8217;Chiba&#8217; =&gt; &#8216;Chiba&#8217;<br />
+,&#8217;Ehime&#8217; =&gt; &#8216;Ehime&#8217;<br />
+)));</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;user_meta&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;aichi_city&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Aichi city&#8217;<br />
+,&#8217;conditions&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;field&#8217; =&gt; &#8216;prefecture&#8217;<br />
+        ,&#8217;value&#8217; =&gt; &#8216;Aichi&#8217;<br />
+      )<br />
+    )<br />
+));</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;user_meta&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;aichi_city&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Aichi city&#8217;<br />
+,&#8217;conditions&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;field&#8217; =&gt; &#8216;prefecture&#8217;<br />
+        ,&#8217;value&#8217; =&gt; &#8216;Aichi&#8217;<br />
+      )<br />
+    )<br />
+));</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;user_meta&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;akita_city&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Akita city&#8217;<br />
+,&#8217;conditions&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;field&#8217; =&gt; &#8216;prefecture&#8217;<br />
+        ,&#8217;value&#8217; =&gt; &#8216;Aichi&#8217;<br />
+      )<br />
+    )<br />
+));</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+&#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+,&#8217;scope&#8217; =&gt; &#8216;user_meta&#8217;<br />
+,&#8217;field&#8217; =&gt; &#8216;aomori_city&#8217;<br />
+,&#8217;label&#8217; =&gt; &#8216;Aomori city&#8217;<br />
+,&#8217;conditions&#8217; =&gt; array(<br />
+      array(<br />
+        &#8216;field&#8217; =&gt; &#8216;prefecture&#8217;<br />
+        ,&#8217;value&#8217; =&gt; &#8216;Aomori&#8217;<br />
+      )<br />
+    )<br />
+));</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/multiple-conditions/">Multiple conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fields with &#039;template&#039;=&#062; &#039;field&#039; ignoring conditions</title>
+		<link>https://piklist.com/support/topic/fields-with-template-field-ignoring-conditions/</link>
+		
+		<dc:creator><![CDATA[Ben]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 01:28:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-with-template-field-ignoring-conditions/</guid>
+
+					<description><![CDATA[<p>I have a meta-box with three checkboxes: checkbox_1, checkbox_2, checkbox_3 checkbox_2 and checkbox_3 should only appear if checkbox_1&#8217;s value is &#8220;true&#8221;. checkbox_3 is set to use the &#8220;field&#8221; template (&#8216;template&#8217; =&#62; &#8216;field&#8217;) The result is that checkbox_3 always appears in edit/new post view, regardless of checkbox_1&#8217;s value. This also happens for text fields. The attachment [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-with-template-field-ignoring-conditions/">Fields with &#039;template&#039;=&gt; &#039;field&#039; ignoring conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a meta-box with three checkboxes: checkbox_1, checkbox_2, checkbox_3<br />
+checkbox_2 and checkbox_3 should only appear if checkbox_1&#8217;s value is &#8220;true&#8221;.<br />
+checkbox_3 is set to use the &#8220;field&#8221; template (&#8216;template&#8217; =&gt; &#8216;field&#8217;)</p>
+<p>The result is that checkbox_3 always appears in edit/new post view, regardless of checkbox_1&#8217;s value. This also happens for text fields.</p>
+<p>The attachment shows what I am seeing before and after checkbox_1 is checked</p>
+<pre><code>/*
+Title: Condition Checkbox Test
+Description: Description for Condition Checkbox Test
+Post Type: post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;,
+  &#039;field&#039; =&gt; &#039;checkbox_1&#039;,
+  &#039;value&#039; =&gt; &#039;false&#039;,
+  &#039;choices&#039; =&gt; array(
+    &#039;true&#039; =&gt; &#039;Show controls&#039;,
+  )
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;,
+  &#039;field&#039; =&gt; &#039;checkbox_2&#039;,
+  &#039;choices&#039; =&gt; array(
+    &#039;true&#039; =&gt; &#039;Foo&#039;
+  ),
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;checkbox_1&#039;,
+      &#039;value&#039; =&gt; &#039;true&#039;
+    ),
+  ),
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;,
+  &#039;field&#039; =&gt; &#039;checkbox_3&#039;,
+  &#039;template&#039;=&gt; &#039;field&#039;,
+  &#039;choices&#039; =&gt; array(
+    &#039;true&#039; =&gt; &#039;Bar&#039;
+  ),
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;checkbox_1&#039;,
+      &#039;value&#039; =&gt; &#039;true&#039;
+    ),
+  ),
+));</code></pre>
+<p>WordPress 4.4.1<br />
+PikList 0.9.4.29<br />
+twentyfifteen child template</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-with-template-field-ignoring-conditions/">Fields with &#039;template&#039;=&gt; &#039;field&#039; ignoring conditions</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

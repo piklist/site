@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>settings &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/settings/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 23 Dec 2020 19:53:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>How to save data in admin page</title>
+		<link>https://piklist.com/support/topic/how-to-save-data-in-admin-page/</link>
+		
+		<dc:creator><![CDATA[luis]]></dc:creator>
+		<pubDate>Thu, 14 May 2020 17:05:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-save-data-in-admin-page/</guid>
+
+					<description><![CDATA[<p>hi! , I have an admin page and create a workflow with tabs at the moment I only have a textarea, and I will add more options but I am a little lost to be able to save the data, I read the documentation and I saw the filter piklist_pre_update_option but I do not understand [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-save-data-in-admin-page/">How to save data in admin page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hi! , I have an admin page and create a workflow with tabs at the moment I only have a textarea, and I will add more options but I am a little lost to be able to save the data, I read the documentation and I saw the filter piklist_pre_update_option but I do not understand how to use it and where place it, sorry if it is something simple but I can not understand it, I hope you can help me, I leave the image of what my admin page looks like thanks in advance</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-save-data-in-admin-page/">How to save data in admin page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Number type field is saved as Array</title>
+		<link>https://piklist.com/support/topic/number-type-field-is-saved-as-array/</link>
+		
+		<dc:creator><![CDATA[Alex Kladov]]></dc:creator>
+		<pubDate>Sun, 30 Jun 2019 08:14:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/number-type-field-is-saved-as-array/</guid>
+
+					<description><![CDATA[<p>Hi, I am trying to figure out why is Piklist saving my Setting field as an array? This is how the filed is configured: piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;number&#039;, &#039;field&#039; =&#62; &#039;max_past_orders_to_show&#039;, &#039;label&#039; =&#62; __( &#039;Past Orders to Display&#039;, &#039;theme_domain&#039; ), &#039;help&#039; =&#62; __( &#039;Maximum number of Past Orders to display by default.&#039;, &#039;theme_domain&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/number-type-field-is-saved-as-array/">Number type field is saved as Array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I am trying to figure out why is Piklist saving my Setting field as an array? This is how the filed is configured:</p>
+<pre><code>piklist( &#039;field&#039;, array(
+  &#039;type&#039;        =&gt; &#039;number&#039;,
+  &#039;field&#039;       =&gt; &#039;max_past_orders_to_show&#039;,
+  &#039;label&#039;       =&gt; __( &#039;Past Orders to Display&#039;, &#039;theme_domain&#039; ),
+  &#039;help&#039;        =&gt; __( &#039;Maximum number of Past Orders to display by default.&#039;, &#039;theme_domain&#039; ),
+  &#039;description&#039; =&gt; __( &#039;Set to 0 to always show all past orders right away. This will also permanently hide &quot;Show All Past Orders&quot; button. &#039;, &#039;theme_domain&#039; ),
+  &#039;value&#039;       =&gt; 20,
+  &#039;columns&#039;     =&gt; 3,
+  &#039;required&#039;    =&gt; true,
+  &#039;attributes&#039; =&gt; array(
+    &#039;min&#039;  =&gt; 0,
+    &#039;step&#039; =&gt; 5,
+    &#039;required&#039; =&gt; &#039;required&#039;, // HTML 5 validation
+  ),
+  &#039;validate&#039; =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;limit&#039;,
+      &#039;options&#039; =&gt; array(
+        &#039;min&#039; =&gt; 0,
+      ),
+    ),
+  ),
+) );</code></pre>
+<p>And this is what&#8217;s saved in the <code>wp_options</code> for that value:</p>
+<pre><code>[max_past_orders_to_show] =&gt; Array
+(
+  [0] =&gt; 30
+)</code></pre>
+<p>I have almost exactly the same field and it saves it as a plain number. Here is how that field is configured:</p>
+<pre><code>piklist( &#039;field&#039;, array(
+  &#039;type&#039;        =&gt; &#039;number&#039;,
+  &#039;field&#039;       =&gt; &#039;sync_frequency&#039;,
+  &#039;label&#039;       =&gt; __( &#039;Sync Frequency&#039;, &#039;theme_domain&#039; ),
+  &#039;help&#039;        =&gt; __( &#039;How often do you want to pull data from XYZ Service?&#039;, &#039;theme_domain&#039; ),
+  &#039;description&#039; =&gt; __( &#039;Set data sync frequency (in minutes). A lower value will lead to a more frequent synchronisation sycle &amp; therefore might use more server resources. If you notice a significant performance impact, try increasing this value.&#039;, &#039;theme_domain&#039; ),
+  &#039;value&#039;       =&gt; 1,
+  &#039;columns&#039;     =&gt; 3,
+  &#039;required&#039;    =&gt; true,
+  &#039;attributes&#039; =&gt; array(
+    &#039;min&#039;  =&gt; 1,
+    &#039;step&#039; =&gt; 1,
+  ),
+  &#039;attributes&#039; =&gt; array(
+    &#039;required&#039; =&gt; &#039;required&#039;, // HTML 5 validation
+  ),
+  &#039;validate&#039; =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;limit&#039;,
+      &#039;options&#039; =&gt; array(
+        &#039;min&#039; =&gt; 1,
+      ),
+    ),
+  ),
+) );</code></pre>
+<p>And it&#8217;s value is simply <code>[sync_frequency] =&gt; 1</code></p>
+<p>Why would there be a difference, if they are configured almost exactly the same way?</p>
+<p>Regards,<br />
+Alex</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/number-type-field-is-saved-as-array/">Number type field is saved as Array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Creating a Settings page, doesn&#039;t work/strange behaviour</title>
+		<link>https://piklist.com/support/topic/creating-a-settings-page-doesnt-work-strange-behaviour/</link>
+		
+		<dc:creator><![CDATA[mrsdrjim]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2018 18:40:50 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-a-settings-page-doesnt-work-strange-behaviour/</guid>
+
+					<description><![CDATA[<p>I want to create a settings page from within a plugin. I copy and pasted directly from the doc. The menu would be created and the basic page loads, but no page content from demo-settings.php at all. I tried all kinds of variations on folder structure and nothing worked. Then, for the heck of it, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-a-settings-page-doesnt-work-strange-behaviour/">Creating a Settings page, doesn&#039;t work/strange behaviour</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to create a settings page from within a plugin. I copy and pasted directly from <a href="https://docs.piklist.com/tutorials/settings/building-settings-pages/">the doc</a>.</p>
+<p>The menu would be created and the basic page loads, but no page content from demo-settings.php at all. I tried all kinds of variations on <a href="https://docs.piklist.com/folder-structure/">folder structure</a> and nothing worked.</p>
+<p>Then, for the heck of it, I tried putting the demo-settings.php file inside the Piklist plugin&#8217;s parts/settings directory and now it shows up.</p>
+<p>This seems <strong>really incorrect</strong>. Should it not be parts/settings inside MY plugin&#8217;s folder, and not Piklist&#8217;s folder?</p>
+<p>Only structure that works:</p>
+<pre><code>plugins/
+    piklist/
+        parts/
+          settings/
+              demo-settings.php
+    my_plugin_name/
+        my_plugin_name.php
+</code></pre>
+<p>Running on version 1.0.1 of Piklist and an almost bare WP install.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-a-settings-page-doesnt-work-strange-behaviour/">Creating a Settings page, doesn&#039;t work/strange behaviour</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Settings page with Tabs</title>
+		<link>https://piklist.com/support/topic/settings-page-with-tabs/</link>
+		
+		<dc:creator><![CDATA[Jan Čejka]]></dc:creator>
+		<pubDate>Tue, 23 Jan 2018 07:24:52 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/settings-page-with-tabs/</guid>
+
+					<description><![CDATA[<p>Hello, can You (anyone) create a example plugin (code) with working tabbed settings page? I try different ways, but it still don&#8217;t work.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/settings-page-with-tabs/">Settings page with Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+can You (anyone) create a example plugin (code) with working tabbed settings page?<br />
+I try different ways, but it still don&#8217;t work.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/settings-page-with-tabs/">Settings page with Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Can&#039;t make settings page</title>
+		<link>https://piklist.com/support/topic/cant-make-settings-page/</link>
+		
+		<dc:creator><![CDATA[lulico]]></dc:creator>
+		<pubDate>Mon, 15 Jan 2018 18:53:04 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cant-make-settings-page/</guid>
+
+					<description><![CDATA[<p>I followed the tutorial on here, no dice, rather confused. Developing a plugin. I have custom fields added to my WooCommerce products successfully, and to attributes thereof. But the settings I can&#8217;t get to happen. myplugin.php contains the following: add_filter(&#039;piklist_admin_pages&#039;, &#039;woocustom_admin_pages&#039;); function woocustom_admin_pages($pages) { $pages[] = array( &#039;page_title&#039; =&#62; __(&#039;Reseller Settings&#039;) ,&#039;menu_title&#039; =&#62; __(&#039;Reseller&#039;, &#039;reseller-settings&#039;) [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-make-settings-page/">Can&#039;t make settings page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I followed the tutorial on here, no dice, rather confused. Developing a plugin. I have custom fields added to my WooCommerce products successfully, and to attributes thereof. But the settings I can&#8217;t get to happen. </p>
+<p>myplugin.php contains the following:</p>
+<pre><code>add_filter(&#039;piklist_admin_pages&#039;, &#039;woocustom_admin_pages&#039;);
+function woocustom_admin_pages($pages)
+{
+  $pages[] = array(
+    &#039;page_title&#039; =&gt; __(&#039;Reseller Settings&#039;)
+    ,&#039;menu_title&#039; =&gt; __(&#039;Reseller&#039;, &#039;reseller-settings&#039;)
+    ,&#039;sub_menu&#039; =&gt; &#039;options.php&#039;
+    ,&#039;capability&#039; =&gt; &#039;manage_options&#039;
+    ,&#039;menu_slug&#039; =&gt; &#039;woocustom_reseller&#039;
+    ,&#039;setting&#039; =&gt; &#039;reseller_settings&#039;
+    ,&#039;menu_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-icon.png&#039;
+    ,&#039;page_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-page-icon-32.png&#039;
+    ,&#039;default_tab&#039; =&gt; &#039;Basic&#039;
+    // ,&#039;layout&#039; =&gt; &#039;meta-boxes&#039; // NOTE: Uncomment this to use the meta box layout on this settings page!
+    ,&#039;save_text&#039; =&gt; &#039;Save&#039;
+  );
+
+  return $pages;
+}</code></pre>
+<p>Then in myplugin/piklist/parts/settings/reseller-settings.php is this block of brilliance:</p>
+<pre><code>
+/*
+Title: Linens Reseller Settings
+Setting: reseller_settings
+*/
+
+piklist(&#039;field&#039;, array(
+   &#039;type&#039; =&gt; &#039;checkbox&#039;,
+   &#039;field&#039; =&gt; &#039;show_site_here&#039;,
+   &#039;label&#039; =&gt; &#039;Display Your Website on our Network Directory Page&#039;,
+   //&#039;value&#039; =&gt; 0, // default
+   &#039;choices&#039; =&gt; array(
+     1 =&gt; &#039;OK&#039;,
+   )
+ )
+);</code></pre>
+<p>What&#8217;s wrong with this scripture?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cant-make-settings-page/">Can&#039;t make settings page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Creating admin tools (not just Settings pages)</title>
+		<link>https://piklist.com/support/topic/creating-admin-tools-not-just-settings-pages/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 22:26:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-admin-tools-not-just-settings-pages/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve written a fairly complex routine to decompile sites built with Visual Composer. Using Add-Mores, Conditionals etc I&#8217;ve built a Piklist interface for users to add settings that let them extract part of VC layouts into meta values etc. In Piklist, it&#8217;s set up as a Settings Page, under the Tools menu. It works, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-admin-tools-not-just-settings-pages/">Creating admin tools (not just Settings pages)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I&#8217;ve written a fairly complex routine to decompile sites built with Visual Composer. Using Add-Mores, Conditionals etc I&#8217;ve built a Piklist interface for users to add settings that let them extract part of VC layouts into meta values etc. </p>
+<p>In Piklist, it&#8217;s set up as a Settings Page, under the Tools menu. It works, but I&#8217;ve run up against several limitations on the way my code executes.<br />
+&#8211; The code that takes the entered settings and works with them to do the tool&#8217;s work is all hanging of a single Piklist hook, <code>piklist_pre_update_option</code><br />
+&#8211; the code execution happens in a single page load, rather than, for instance, an ajax progress interface<br />
+&#8211; I can&#8217;t see how to offer more verbose feedback, beyond &#8216;Settings saved&#8217;</p>
+<p>I think that Piklist is still a great tool for the creation of the tool&#8217;s interface, but it I&#8217;m stuck, in terms of useability for a &#8216;tool&#8217; rather than simple &#8216;settings&#8217;.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-admin-tools-not-just-settings-pages/">Creating admin tools (not just Settings pages)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Workflow Settings ends up with &#034;ERROR: options page not found&#034; on save</title>
+		<link>https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/</link>
+		
+		<dc:creator><![CDATA[dameer]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2016 10:58:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/</guid>
+
+					<description><![CDATA[<p>Hi! Not sure whether it&#8217;s WP 4.7 or myself but I can&#8217;t solve the problem. I&#8217;ve made a Piklist plugin. The plugin settings page was added to admin menu like this: public function kd_admin_menu( $pages ) { // add settings page $pages[] = array( &#039;page_title&#039; =&#62; NULL, &#039;menu_title&#039; =&#62; esc_attr__( &#039;Settings&#039;, &#039;kd&#039; ), &#039;sub_menu&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/">Workflow Settings ends up with &quot;ERROR: options page not found&quot; on save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+Not sure whether it&#8217;s WP 4.7 or myself but I can&#8217;t solve the problem.</p>
+<p>I&#8217;ve made a Piklist plugin. The plugin settings page was added to admin menu like this:</p>
+<pre><code>public function kd_admin_menu( $pages ) {
+
+	// add settings page
+	$pages[] = array(
+		&#039;page_title&#039; =&gt; NULL, 
+		&#039;menu_title&#039; =&gt; esc_attr__( &#039;Settings&#039;, &#039;kd&#039; ), 
+		&#039;sub_menu&#039; =&gt; &#039;edit.php?post_type=kd&#039;,
+		&#039;capability&#039; =&gt; &#039;manage_options&#039;, 
+		&#039;menu_slug&#039; =&gt; &#039;general_settings&#039;, 
+		&#039;setting&#039; =&gt; &#039;general_settings&#039;, 
+		&#039;single_line&#039; =&gt; true, 
+		&#039;default_tab&#039; =&gt; esc_attr__( &#039;General settings&#039;, &#039;kd&#039; ), 
+		&#039;save_text&#039; =&gt; esc_attr__( &#039;Save Options&#039;, &#039;kd&#039; )
+	);
+
+	return $pages;
+	
+}</code></pre>
+<p>Under my plugin folder I&#8217;ve created &#8220;/parts/workflows/&#8221; folder which is used to hold plugin settings across 4 tabs. It means that each file represents one tab + header file. Here they are:</p>
+<p>&#8212; /parts/workflows/plugin-settings-header.php  &#8212;</p>
+<pre><code>/*
+Flow: Plugin Options
+Page: edit.php, general_settings
+Post Type: kd
+Header: true
+Position: title
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-general.php  &#8212;</p>
+<pre><code>
+/*
+Title: Features Panel
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 10
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-single-post.php  &#8212;</p>
+<pre><code>/*
+Title: Single Post
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 20
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-archive.php  &#8212;</p>
+<pre><code>/*
+Title: Category
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 30
+*/</code></pre>
+<p>&#8212; /parts/workflows/plugin-settings-rewrite-rules.php  &#8212;</p>
+<pre><code>/*
+Title: Rewrite Rules
+Post Type: kd
+Flow: Plugin Options
+Setting: general_settings
+Order: 40
+*/</code></pre>
+<p>Of course, each of the files contains Piklist fields which I guess are irrelevant<br />
+in this case.</p>
+<p>Everything looks right, tab switching works fine, however, when I hit Save Options button, I end up with the blank WordPress page saying:<br />
+<strong>ERROR: options page not found.</strong></p>
+<p>Is there anything wrong with workflow header?</p>
+<p>Thanks for any clue!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/workflow-settings-ends-up-with-error-options-page-not-found-on-save/">Workflow Settings ends up with &quot;ERROR: options page not found&quot; on save</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>tabs not working in settings</title>
+		<link>https://piklist.com/support/topic/tabs-not-working-in-settings/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Fri, 10 Jun 2016 01:14:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/tabs-not-working-in-settings/</guid>
+
+					<description><![CDATA[<p>I just realized that tabs are no longer working in settings files. Is this a change for 0.9.9.8? Do I need to define workflows in order to use tabs now? If so, it might be time to update https://piklist.com/user-guide/docs/settings-admin-page-parameters/ and https://piklist.com/user-guide/docs/file-structure/settings-page-section/. If not, then I&#8217;ll share my code and see if someone can figure out [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/tabs-not-working-in-settings/">tabs not working in settings</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I just realized that tabs are no longer working in settings files. Is this a change for 0.9.9.8? Do I need to define workflows in order to use tabs now? </p>
+<p>If so, it might be time to update https://piklist.com/user-guide/docs/settings-admin-page-parameters/ and https://piklist.com/user-guide/docs/file-structure/settings-page-section/. </p>
+<p>If not, then I&#8217;ll share my code and see if someone can figure out what I&#8217;m doing wrong. </p>
+<p>Thanks,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/tabs-not-working-in-settings/">tabs not working in settings</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Function to programatically save add-more field values in settings?</title>
+		<link>https://piklist.com/support/topic/function-to-programatically-save-add-more-field-values-in-settings/</link>
+		
+		<dc:creator><![CDATA[stham]]></dc:creator>
+		<pubDate>Wed, 08 Jun 2016 03:07:47 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/function-to-programatically-save-add-more-field-values-in-settings/</guid>
+
+					<description><![CDATA[<p>Hi there, I am building a plugin that has a Settings page. Currently, the Settings page consists of a bunch of add-more fields. Each add-more allows multiple textfields and is used to build a list of dropdown options that is used elsewhere in the system. Everything is working fine, but the client has now requested [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/function-to-programatically-save-add-more-field-values-in-settings/">Function to programatically save add-more field values in settings?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>I am building a plugin that has a Settings page. Currently, the Settings page consists of a bunch of add-more fields. Each add-more allows multiple textfields and is used to build a list of dropdown options that is used elsewhere in the system.</p>
+<p>Everything is working fine, but the client has now requested that each add-more field be pre-populated with a list of starter values after the plugin is activated (without the user manually entering said values).</p>
+<p>I have hooked a function to &#8216;admin_init&#8217; (and set it to run only once) and tried using update_option() to save the values of the fields but it doesn&#8217;t appear to work. update_option() saved to the database, but the fields in the Settings page are still blank after activation.</p>
+<p>What function can I use to save values for the add-more fields in the Settings page?</p>
+<p>Thanks in advance!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/function-to-programatically-save-add-more-field-values-in-settings/">Function to programatically save add-more field values in settings?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to order Tab content output from multiple settings files</title>
+		<link>https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 26 Apr 2016 13:02:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/</guid>
+
+					<description><![CDATA[<p>This is my challenge. When you look at Piklist&#8217;s demo settings page under the lists&#8217; tab, it has controls well organized with the title field you describe in the comment block beautifully introducing and categorizing the controls. Refer to the attached image. These titles seem to be separate individual settings files fully populated with the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/">How to order Tab content output from multiple settings files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is my challenge.  When you look at Piklist&#8217;s demo settings page under the lists&#8217; tab, it has controls well organized with the title field you describe in the comment block beautifully introducing and categorizing the controls. Refer to the attached image. These titles seem to be separate individual settings files fully populated with the desired fields, that are all called on one page by simply assigning them to that particular tab in the comment block. At least that is how I&#8217;ve been able to replicate that behavior on my side.  The challenge here, at least in my case is that the last created settings file is the one that shows up at the top of all other settings on that particular tab. Is there a way to determine the order in which the output of these settings files shows up on their respective tab? Take for example in the attached image, suppose I wanted to make the  <em>Checkbox Fields</em> section show first at the top, then <em>Select Fields</em> section next and lastly the <em>Multiselect Fields</em> section. How would I go about that? I don&#8217;t seem to find it anywhere in the Piklist documentation.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/">How to order Tab content output from multiple settings files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

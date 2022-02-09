@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Order &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/order/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 14 Feb 2018 10:27:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>File Upload Field &#8211; order strange behavior</title>
+		<link>https://piklist.com/support/topic/file-upload-field-order-strange-behavior/</link>
+		
+		<dc:creator><![CDATA[Juan]]></dc:creator>
+		<pubDate>Wed, 14 Feb 2018 10:27:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-field-order-strange-behavior/</guid>
+
+					<description><![CDATA[<p>the file uploader seems to work perfect but when i try to re-order thumbnails and then update the entry the order is different. The strange thing is that when i update again the order i made before is ok! If i update again (with o without any change) the file uploader metabox shows a different [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-field-order-strange-behavior/">File Upload Field &#8211; order strange behavior</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>the file uploader seems to work perfect but when i try to re-order thumbnails and then update the entry the order is different.</p>
+<p>The strange thing is that when i update again the order i made before is ok!<br />
+If i update again (with o without any change) the file uploader metabox shows a different order. Then update, and the order is ok.</p>
+<p>this is a video of what is happening:<br />
+https://www.dropbox.com/s/ffh72yopapc5nlc/Archivo%2014-2-18%2011%2020%2021.mov?dl=0<br />
+(sorry for the sound)</p>
+<p>this is the code of the metabox:</p>
+<pre><code>
+&lt;?php 
+/*
+Title: Stills
+Post Type: stills
+Order: 0
+*/
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;file&#039;,
+  &#039;field&#039; =&gt; &#039;stills&#039;,
+  &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+  &#039;label&#039; =&gt; __(&#039;Add Image(s)&#039;,&#039;piklist&#039;),
+  &#039;description&#039; =&gt; __(&#039;This is the uploader seen in the admin by default.&#039;,&#039;piklist&#039;),
+  &#039;options&#039; =&gt; array(
+    &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;),
+    &#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;piklist&#039;)
+    )
+  ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-field-order-strange-behavior/">File Upload Field &#8211; order strange behavior</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Ordering meta boxes</title>
+		<link>https://piklist.com/support/topic/ordering-meta-boxes/</link>
+		
+		<dc:creator><![CDATA[markcsamba]]></dc:creator>
+		<pubDate>Sat, 26 Aug 2017 00:27:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/ordering-meta-boxes/</guid>
+
+					<description><![CDATA[<p>Hi &#8211; I&#8217;m trying to pull a specific meta box up higher on the page using priority, context and order, but they don&#8217;t seem to have any effect. I think I&#8217;m missing something simple (using an Avada child theme): &#60;?php /* Title: Hubspot form code Post Type: s_resource Context: normal Order: 1 Priority: high */ [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ordering-meta-boxes/">Ordering meta boxes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi &#8211; I&#8217;m trying to pull a specific meta box up higher on the page using priority, context and order, but they don&#8217;t seem to have any effect. I think I&#8217;m missing something simple (using an Avada child theme):</p>
+<p>&lt;?php<br />
+/*<br />
+Title: Hubspot form code<br />
+Post Type: s_resource<br />
+Context: normal<br />
+Order: 1<br />
+Priority: high<br />
+*/</p>
+<p>piklist(&#8216;field&#8217;, array(<br />
+  &#8216;type&#8217; =&gt; &#8216;textarea&#8217;<br />
+  ,&#8217;field&#8217; =&gt; &#8216;s_resource_hubspot_form&#8217;<br />
+  ,&#8217;label&#8217; =&gt; &#8216;Hubspot Form Code&#8217;<br />
+  ,&#8217;description&#8217; =&gt; __(&#8216;Paste hubspot form code here.&#8217;, &#8216;s_resources&#8217;)<br />
+  ,&#8217;attributes&#8217; =&gt; array(<br />
+  	&#8216;rows&#8217; =&gt; 20,<br />
+  	&#8216;cols&#8217; =&gt; 50<br />
+  )<br />
+));</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/ordering-meta-boxes/">Ordering meta boxes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox comment parameters not working: order, locked etc.</title>
+		<link>https://piklist.com/support/topic/metabox-comment-parameters-not-working-order-locked-etc/</link>
+		
+		<dc:creator><![CDATA[xeiter]]></dc:creator>
+		<pubDate>Mon, 13 Feb 2017 21:43:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-comment-parameters-not-working-order-locked-etc/</guid>
+
+					<description><![CDATA[<p>Hi, I am running WP 4.7.2 (2017 theme) without any plugins except Piklist &#8211; trying to debug why I can&#8217;t lock or set order to metaboxes that I defined for a Page post type. When looking at the Piklist demos (Layout / Metaboxes) &#8211; there is a &#8220;Locked Metabox (cannot be draged)&#8221; in there that [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-comment-parameters-not-working-order-locked-etc/">Metabox comment parameters not working: order, locked etc.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, </p>
+<p>I am running WP 4.7.2 (2017 theme) without any plugins except Piklist &#8211; trying to debug why I can&#8217;t lock or set order to metaboxes that I defined for a Page post type.</p>
+<p>When looking at the Piklist demos (Layout / Metaboxes) &#8211; there is a &#8220;Locked Metabox (cannot be draged)&#8221; in there that is not locked and I can actually drag it. The Lock, Order and Collapse comment parameters don&#8217;t seem to make any effect on that metabox &#8211; I can still drag the metabox for example (even though it is set to locked) and the Order parameter does not move metabox to its order place.</p>
+<p>Am I missing something?</p>
+<p>Kind regards,<br />
+Anton</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-comment-parameters-not-working-order-locked-etc/">Metabox comment parameters not working: order, locked etc.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Context, Priority and Order</title>
+		<link>https://piklist.com/support/topic/context-priority-and-order/</link>
+		
+		<dc:creator><![CDATA[vayu]]></dc:creator>
+		<pubDate>Tue, 29 Dec 2015 11:46:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/context-priority-and-order/</guid>
+
+					<description><![CDATA[<p>Hi, I am having some trouble placing the metabox where I would like to. I have played around with the Context, Priority and Order options, but this does not get me where I want. Please see attached file for explanation. These are the options I have: Context: advanced Priority: high Order: 1 &#8220;Meta-boxes&#8221; File Structure</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/context-priority-and-order/">Context, Priority and Order</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I am having some trouble placing the metabox where I would like to. I have played around with the Context, Priority and Order options, but this does not get me where I want. Please see attached file for explanation.<br />
+These are the options I have:<br />
+Context: advanced<br />
+Priority: high<br />
+Order: 1</p>
+<blockquote data-secret="9sK8WDWtQ5" class="wp-embedded-content"><p><a href="https://piklist.com/user-guide/docs/file-structure/meta-boxes/">&#8220;Meta-boxes&#8221; File Structure</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="display:none;" src="https://piklist.com/user-guide/docs/file-structure/meta-boxes/embed/#?secret=9sK8WDWtQ5" data-secret="9sK8WDWtQ5" width="500" height="282" title="Embedded WordPress Post" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/context-priority-and-order/">Context, Priority and Order</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

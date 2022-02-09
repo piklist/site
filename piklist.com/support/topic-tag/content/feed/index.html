@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>content &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/content/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 30 Jul 2014 13:31:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Display the_content in a metabox</title>
+		<link>https://piklist.com/support/topic/display-the_content-in-a-metabox/</link>
+		
+		<dc:creator><![CDATA[kattagami]]></dc:creator>
+		<pubDate>Sat, 21 Jun 2014 14:24:08 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/display-the_content-in-a-metabox/</guid>
+
+					<description><![CDATA[<p>Hello, For a specific role, I need my CPT&#8217;s content to be in a &#8220;read only&#8221; mode. To do that, I&#8217;ve hided the content editor and I&#8217;ve tempted to display the CPT&#8217;s content in a Piklist meta box with a classic loop : if ( have_posts() ) { while ( have_posts() ) { the_post(); // [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-the_content-in-a-metabox/">Display the_content in a metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>For a specific role, I need my CPT&#8217;s content to be in a &#8220;read only&#8221; mode.<br />
+To do that, I&#8217;ve hided the content editor and I&#8217;ve tempted to display the CPT&#8217;s content in a Piklist meta box with a classic loop :</p>
+<pre><code>
+if ( have_posts() ) {
+		while ( have_posts() ) {
+			the_post(); 
+			
+			// CPT Content
+			the_content();
+		} 
+	} 
+</code></pre>
+<p>Unfortunately, it doesn’t works.<br />
+If I try with the_title() it works even out the loop.</p>
+<p>Does someone has an idea to do that?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/display-the_content-in-a-metabox/">Display the_content in a metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Post Title and content not showing</title>
+		<link>https://piklist.com/support/topic/post-title-and-content-not-showing/</link>
+		
+		<dc:creator><![CDATA[mooolen]]></dc:creator>
+		<pubDate>Wed, 19 Mar 2014 06:05:04 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/post-title-and-content-not-showing/</guid>
+
+					<description><![CDATA[<p>Hello, I have built a custom post type plugin using the following code. However, only the metabox shows up, the other standard element such as title and content do not. Can you shed some light? /wp-content/plugin/iin_profile.php `add_filter(&#8216;piklist_post_types&#8217;, &#8216;iin_profile_post_type&#8217;); function iin_profile_post_type($post_types) { $post_types[&#8216;iin_profile&#8217;] = array( &#8216;labels&#8217; =&#62; piklist(&#8216;post_type_labels&#8217;, &#8216;User Profile&#8217;) ,&#8217;title&#8217; =&#62; __(&#8216;Enter user full name [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-title-and-content-not-showing/">Post Title and content not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, </p>
+<p>I have built a custom post type plugin using the following code.<br />
+However, only the metabox shows up, the other standard element such as title and content do not. Can you shed some light? </p>
+<p>/wp-content/plugin/iin_profile.php</p>
+<p> `add_filter(&#8216;piklist_post_types&#8217;, &#8216;iin_profile_post_type&#8217;);<br />
+ function iin_profile_post_type($post_types)<br />
+ {<br />
+  $post_types[&#8216;iin_profile&#8217;] = array(<br />
+    &#8216;labels&#8217; =&gt; piklist(&#8216;post_type_labels&#8217;, &#8216;User Profile&#8217;)<br />
+    ,&#8217;title&#8217; =&gt; __(&#8216;Enter user full name here&#8217;)<br />
+    ,&#8217;public&#8217; =&gt; true<br />
+    ,&#8217;rewrite&#8217; =&gt; array(<br />
+      &#8216;slug&#8217; =&gt; &#8216;iin_profile&#8217;<br />
+    )<br />
+    ,&#8217;supports&#8217; =&gt; array(<br />
+      &#8216;author&#8217;<br />
+      ,&#8217;revisions&#8217;<br />
+,&#8217;post_states&#8217; =&gt; true<br />
+    )<br />
+    ,&#8217;hide_meta_box&#8217; =&gt; array(<br />
+      &#8216;slug&#8217;<br />
+      ,&#8217;wpseo_meta&#8217;<br />
+      ,&#8217;author&#8217;<br />
+      ,&#8217;revisions&#8217;<br />
+      ,&#8217;comments&#8217;<br />
+      ,&#8217;commentstatus&#8217;<br />
+    )<br />
+  );<br />
+return $post_types;<br />
+}</p>
+<pre><code>
+
+/wp-content/plugins/iin_profile/iin_profile-metabox.php
+</code></pre>
+<p>piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;text&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Text Box&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Field Description&#8217;<br />
+    ,&#8217;value&#8217; =&gt; &#8216;Default text&#8217;<br />
+    ,&#8217;help&#8217; =&gt; &#8216;This is help text.&#8217;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+  ));`</p>
+<p>  piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;select&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;select&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Select Box&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Choose from the drop-down.&#8217;<br />
+    ,&#8217;help&#8217; =&gt; &#8216;This is help text.&#8217;<br />
+    ,&#8217;attributes&#8217; =&gt; array(<br />
+      &#8216;class&#8217; =&gt; &#8216;text&#8217;<br />
+    )<br />
+    ,&#8217;choices&#8217; =&gt; array(<br />
+      &#8216;option1&#8217; =&gt; &#8216;Option 1&#8242;<br />
+      ,&#8217;option2&#8217; =&gt; &#8216;Option 2&#8242;<br />
+      ,&#8217;option3&#8217; =&gt; &#8216;Option 3&#8217;<br />
+    )<br />
+  ));</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/post-title-and-content-not-showing/">Post Title and content not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

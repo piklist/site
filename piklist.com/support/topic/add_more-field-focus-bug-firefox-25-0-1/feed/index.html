@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>add_more field focus bug (Firefox 25.0.1) &#8211; Piklist Support</title>
+		<atom:link href="https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/feed/" rel="self" type="application/rss+xml" />
+		<link>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 08 Feb 2022 20:39:14 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.6</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/#post-1251</guid>
+					<title><![CDATA[add_more field focus bug (Firefox 25.0.1)]]></title>
+					<link>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/#post-1251</link>
+					<pubDate>Thu, 05 Dec 2013 04:21:10 +0000</pubDate>
+					<dc:creator>mark salvadore</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Came across a bug in Firefox 25.0.1 that affects add_more fields.</p>
+<p>Unable to focus/select/edit inputs in add_more fields when clicking on them (tabbing to the field still works).</p>
+<p>This post on stackoverflow led me to a solution:<br />
+<a href="http://stackoverflow.com/questions/9804026/clicking-on-a-textbox-in-firefox-doesnt-give-focus" rel="nofollow">http://stackoverflow.com/questions/9804026/clicking-on-a-textbox-in-firefox-doesnt-give-focus</a></p>
+<p>Bug is caused by .disableSelection() on <strong>line 379</strong> of piklist/parts/js/<strong>piklist.js</strong></p>
+<p>I simply commented out that line and everything works fine now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/#post-1252</guid>
+					<title><![CDATA[Reply To: add_more field focus bug (Firefox 25.0.1)]]></title>
+					<link>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/#post-1252</link>
+					<pubDate>Thu, 05 Dec 2013 06:53:36 +0000</pubDate>
+					<dc:creator>Marcus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Mark, same problem was already talked about here:<br />
+<a href="http://piklist.com/support/topic/bug-add_more-not-working-in-settings/" title="http://piklist.com/support/topic/bug-add_more-not-working-in-settings/">http://piklist.com/support/topic/bug-add_more-not-working-in-settings/</a></p>
+<p>Using the same solution you found. So way to go. </p>
+<p>Marcus</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/#post-1253</guid>
+					<title><![CDATA[Reply To: add_more field focus bug (Firefox 25.0.1)]]></title>
+					<link>https://piklist.com/support/topic/add_more-field-focus-bug-firefox-25-0-1/#post-1253</link>
+					<pubDate>Thu, 05 Dec 2013 07:00:17 +0000</pubDate>
+					<dc:creator>mark salvadore</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Right on!  Totally didn&#8217;t see that post.  Must have not used the right set of keywords when I searched the forum for a solution earlier.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

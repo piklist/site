@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>quicktags &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/quicktags/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 08 Jul 2015 23:00:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add-more, Editor Field, no Quicktags (Not Working)</title>
+		<link>https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/</link>
+		
+		<dc:creator><![CDATA[pablodmgz]]></dc:creator>
+		<pubDate>Wed, 08 Jul 2015 23:00:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m new to Piklist but I&#8217;m finding it incredibly helpful and fun to work with! I hope this precise issue hasn&#8217;t been posted before (did a quick search but I couldn&#8217;t find it). The problem is the following: I have an Editor Field, set to look like the WP Editor with &#039;template&#039; =&#62; &#039;field&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/">Add-more, Editor Field, no Quicktags (Not Working)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello, I&#8217;m new to Piklist but I&#8217;m finding it incredibly helpful and fun to work with! I hope this precise issue hasn&#8217;t been posted before (did a quick search but I couldn&#8217;t find it). </p>
+<p>The problem is the following: I have an Editor Field, set to look like the WP Editor with <code>&#039;template&#039; =&gt; &#039;field&#039;</code>, and set to hide the editor tabs with <code>&#039;quicktags&#039; =&gt; false</code>. The problem is, if I try to make it a repeater field, the editor stops working after the first iteration. It won&#8217;t let you use the field for writing text and the text-editing tools don&#8217;t show (but it does appear to allow the insertion of media). Also, if I remove <code>&#039;quicktags&#039; =&gt; false</code>, everything works fine, so I&#8217;m assuming that&#8217;s the conflicting parameter. </p>
+<p>Here&#8217;s the full code of my &#8216;page-sections.php&#8217; file inside the &#8216;meta-boxes&#8217; folder:</p>
+<pre><code>
+&lt;?php
+/*
+Title: Page Sections
+Description: Repeater field for the page&#039;s sections.
+Post Type: page
+Lock: true
+Meta box: false
+*/
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;page_section&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;options&#039; =&gt; array (
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;quicktags&#039; =&gt; false
+    )
+));
+</code></pre>
+<p>Is this a known bug or am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-editor-field-no-quicktags-not-working/">Add-more, Editor Field, no Quicktags (Not Working)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

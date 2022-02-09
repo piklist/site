@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>scope &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/scope/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 22 Jan 2018 17:29:59 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Save field to custom DB Table</title>
+		<link>https://piklist.com/support/topic/save-to-custom-db-table/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2018 17:29:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/save-to-custom-db-table/</guid>
+
+					<description><![CDATA[<p>Hi, I saw a post from 2016 that said that, at some point, piklist is going to allow saving to a custom table by setting the scope on a piklist field. Is that completed yet? If so, are there docs on it?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/save-to-custom-db-table/">Save field to custom DB Table</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, </p>
+<p>I saw a post from 2016 that said that, at some point, piklist is going to allow saving to a custom table by setting the scope on a piklist field. Is that completed yet?</p>
+<p>If so, are there docs on it?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/save-to-custom-db-table/">Save field to custom DB Table</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>problem with conditional field and (I think) scope</title>
+		<link>https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/</link>
+		
+		<dc:creator><![CDATA[morganrt]]></dc:creator>
+		<pubDate>Thu, 30 Jun 2016 20:33:20 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/</guid>
+
+					<description><![CDATA[<p>Hello, I&#8217;m new to Piklist, working on a simple plugin that creates a custom post with a couple of custom admin fields. An answer to this field determines whether another field appears on a public comment form. Admin side Custom post type: Question, using the title field to write the question. Custom admin only field: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/">problem with conditional field and (I think) scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+I&#8217;m new to Piklist, working on a simple plugin that creates a custom post with a couple of custom admin fields. An answer to this field determines whether another field appears on a public comment form.</p>
+<p><strong>Admin side</strong><br />
+Custom post type: Question, using the title field to write the question.<br />
+Custom admin only field: &#8220;response_type&#8221; (radio box with a few options)</p>
+<p><strong>Public</strong> comment form field: &#8220;response&#8221; (whether it&#8217;s yes or no, a rating, etc should be determined by the custom field in Question).</p>
+<p>When I have conditional fields appear in the same file, they work as expected. In the case above, the response_type is in the metabox file with other Question related fields and only appears in admin. The conditional field appears in a separate comment_form-metabox.php file and when they are apart, they don&#8217;t work.</p>
+<p>I found the post at the link below and thought the solution was adding scope to the conditions array and tried numerous scope combinations.<br />
+https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/</p>
+<p>Example appears in question-metabox.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;radio&#039;,
+	&#039;field&#039; =&gt; &#039;response_type&#039;,
+	&#039;label&#039; =&gt; &#039;Response Type&#039;,
+	&#039;help&#039; =&gt; &#039;This is help text.&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;choices&#039; =&gt; array(
+		&#039;yn&#039; =&gt; &#039;Yes or No&#039;,
+		&#039;ad&#039; =&gt; &#039;Agree or Disagree&#039;,
+		&#039;Rating1toX&#039; =&gt; &#039;Rating: 1 to X&#039;,
+		&#039;RatingXto0toX&#039; =&gt; &#039;Rating: -X to 0 to X&#039;
+	),
+	&#039;value&#039; =&gt; &#039;yn&#039;,
+	&#039;required&#039;   =&gt; true
+));</code></pre>
+<p>Example appears in public facing comment_form_metabox.php</p>
+<pre><code>piklist(&#039;field&#039;, array(
+		&#039;type&#039; =&gt; &#039;radio&#039;,
+		&#039;field&#039; =&gt; &#039;response&#039;,
+		&#039;label&#039; =&gt; &#039;Response&#039;,
+		&#039;scope&#039; =&gt; &#039;comment_meta&#039;,
+		&#039;list&#039; =&gt; false,
+		&#039;choices&#039; =&gt; array(
+			&#039;Yes&#039; =&gt; &#039;Yes&#039;,
+			&#039;No&#039; =&gt; &#039;No&#039;
+		),
+		&#039;conditions&#039; =&gt; array(
+   			array(
+   			&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+    		&#039;field&#039; =&gt; &#039;response_type&#039;,
+    		&#039;value&#039; =&gt; &#039;yn&#039;
+   			))
+   		));
+</code></pre>
+<p>Hopefully, it&#8217;s easily fixed. I don&#8217;t discount the possibility I&#8217;ve misunderstood something and/or have been staring at this too long to see the obvious.</p>
+<p>Many thanks,<br />
+Morgan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/problem-with-conditional-field-and-i-think-scope/">problem with conditional field and (I think) scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Replacing &#039;Name&#039; field for taxonomy with a piklist field</title>
+		<link>https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Tue, 28 Jun 2016 21:09:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been trying to add a custom taxonomy, that in lieu of the required &#8216;Name&#8217; field, using say, a piklist drop down. I&#8217;ve tried variations of the following to no success. Is this something that&#8217;s supported the way &#039;scope&#039; =&#62; &#039;post&#039;, &#039;field&#039; =&#62; &#039;post_title&#039; is? piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039;, &#039;field&#039; =&#62; &#039;name&#039;, &#039;scope&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/">Replacing &#039;Name&#039; field for taxonomy with a piklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been trying to add a custom taxonomy, that in lieu of the required &#8216;Name&#8217; field, using say, a piklist drop down. I&#8217;ve tried variations of the following to no success. Is this something that&#8217;s supported the way <code>&#039;scope&#039; =&gt; &#039;post&#039;, &#039;field&#039; =&gt; &#039;post_title&#039;</code> is?</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039;      =&gt; &#039;select&#039;,
+  &#039;field&#039;     =&gt; &#039;name&#039;,
+  &#039;scope&#039;     =&gt; &#039;taxonomy&#039;,
+  &#039;choices&#039; =&gt; piklist_get_states_and_slugs(true),
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/replacing-name-field-for-taxonomy-with-a-piklist-field/">Replacing &#039;Name&#039; field for taxonomy with a piklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Featured Request =&#062; Scope as array (multiple scopes)</title>
+		<link>https://piklist.com/support/topic/featured-request-scope-as-array-multiple-scopes/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Mon, 15 Feb 2016 19:22:08 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/featured-request-scope-as-array-multiple-scopes/</guid>
+
+					<description><![CDATA[<p>Would be super cool to have a field with multiple scopes allowed. That way we can save the same value as meta/taxonomy/custom/etc. I&#8217;m finding times where I&#8217;d like to use 1 field on a form or metabox, but save that data in more than one way and more than one place in the db.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/featured-request-scope-as-array-multiple-scopes/">Featured Request =&gt; Scope as array (multiple scopes)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Would be super cool to have a field with multiple scopes allowed. That way we can save the same value as meta/taxonomy/custom/etc.</p>
+<p>I&#8217;m finding times where I&#8217;d like to use 1 field on a form or metabox, but save that data in more than one way and more than one place in the db.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/featured-request-scope-as-array-multiple-scopes/">Featured Request =&gt; Scope as array (multiple scopes)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Metabox, file upload field with custom scope error</title>
+		<link>https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2016 05:02:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/</guid>
+
+					<description><![CDATA[<p>Still moving along with 0.9.9.7 beta, it rocks. I have a metabox with a group field that includes a file field. I&#8217;m using a custom scope for the group and all the fields. Debugging the $fields values when testing all works well as long as the file upload field uses the Media Uploader. If basic: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/">Metabox, file upload field with custom scope error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Still moving along with 0.9.9.7 beta, it rocks.</p>
+<p>I have a metabox with a group field that includes a file field. I&#8217;m using a custom scope for the group and all the fields. Debugging the $fields values when testing all works well as long as the file upload field uses the Media Uploader. If basic: false, that field does not show any value at all during debugging. Very strange.</p>
+<p>Is this a bug, or a limitation in the basic uploader inside WP?</p>
+<p>Here&#8217;s the whole group:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039;        =&gt; &#039;group&#039;,
+    &#039;scope&#039;       =&gt; &#039;connect_resource_to_lesson&#039;,
+    &#039;field&#039;       =&gt; &#039;add_resource&#039;,
+    &#039;template&#039;    =&gt; &#039;theme&#039;,
+    &#039;add_more&#039;    =&gt; true,
+    &#039;label&#039;       =&gt; __(&#039;Add New Resources&#039;, &#039;wampum&#039;),
+    &#039;description&#039; =&gt; __(&#039;Add resources now, or you can always attach resources later.&#039;, &#039;wampum&#039;),
+    &#039;fields&#039;      =&gt; array(
+        array(
+            &#039;type&#039;    =&gt; &#039;text&#039;,
+            &#039;scope&#039;   =&gt; &#039;connect_resource_to_lesson&#039;,
+            &#039;field&#039;   =&gt; &#039;post_title&#039;,
+            &#039;label&#039;   =&gt; __(&#039;Title&#039;, &#039;wampum&#039;),
+            &#039;columns&#039; =&gt; &#039;12&#039;,
+        ),
+        array(
+            &#039;type&#039;    =&gt; &#039;editor&#039;,
+            &#039;scope&#039;   =&gt; &#039;connect_resource_to_lesson&#039;,
+            &#039;field&#039;   =&gt; &#039;post_content&#039;,
+            &#039;label&#039;   =&gt; __(&#039;Content&#039;, &#039;wampum&#039;),
+            &#039;columns&#039; =&gt; &#039;12&#039;,
+        ),
+        array(
+            &#039;type&#039;     =&gt; &#039;file&#039;,
+            &#039;scope&#039;    =&gt; &#039;connect_resource_to_lesson&#039;,
+            &#039;field&#039;    =&gt; &#039;resource_file&#039;,
+            &#039;label&#039;    =&gt; __(&#039;Upload File&#039;, &#039;wampum&#039;),
+            &#039;options&#039; =&gt; array(
+                &#039;basic&#039; =&gt; true,
+            ),
+        ),
+    ),
+));</code></pre>
+<p>And here is my filter:</p>
+<pre><code>add_action( &#039;piklist_save_field-connect_resource_to_lesson&#039;, &#039;jivedig_debut_this_scope&#039;, 10, 1 );
+function jivedig_debut_this_scope($fields) {
+	// My debugger from DesktopServer
+	trace($fields);
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/metabox-file-upload-field-with-custom-scope-error/">Metabox, file upload field with custom scope error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional fields not working when scope is different</title>
+		<link>https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Sat, 23 Jan 2016 21:48:24 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/</guid>
+
+					<description><![CDATA[<p>I am trying to implement conditional fields on a front end form. I have it working, but only when both field&#8217;s scope is the same. We should be able to have a different scope while still allowing conditional fields. Here are the 2 fields i&#8217;m using. Change the scope to the same and it will [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/">Conditional fields not working when scope is different</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to implement conditional fields on a front end form. I have it working, but only when both field&#8217;s scope is the same. We should be able to have a different scope while still allowing conditional fields.</p>
+<p>Here are the 2 fields i&#8217;m using. Change the scope to the same and it will work.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;radio&#039;,
+  &#039;scope&#039;   =&gt; &#039;post&#039;,
+  &#039;field&#039;   =&gt; &#039;post_status&#039;,
+  &#039;label&#039;   =&gt; &#039;When would you like to post this?&#039;,
+  &#039;value&#039;   =&gt; &#039;publish&#039;,
+  &#039;choices&#039; =&gt; array(
+    &#039;publish&#039; =&gt; &#039;Immediately&#039;,
+    &#039;future&#039;  =&gt; &#039;Schedule a future date&#039;,
+  ),
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;       =&gt; &#039;datepicker&#039;,
+  &#039;scope&#039;      =&gt; &#039;post_meta&#039;,
+  &#039;field&#039;      =&gt; &#039;post_date&#039;,
+  &#039;label&#039;      =&gt; &#039;Scheduled Post Date&#039;,
+  &#039;columns&#039;    =&gt; 2,
+  &#039;options&#039; =&gt; array(
+    &#039;dateFormat&#039; =&gt; &#039;m-d-y&#039;,
+    &#039;firstDay&#039;   =&gt; &#039;1&#039;,
+  ),
+  &#039;validate&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;today_or_future&#039;,
+    ),
+  ),
+  &#039;conditions&#039; =&gt; array(
+    array(
+      &#039;field&#039; =&gt; &#039;post_status&#039;,
+      &#039;value&#039; =&gt; &#039;future&#039;,
+    ),
+  ),
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-fields-not-working-when-scope-is-different/">Conditional fields not working when scope is different</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to display add more field in oder detail page of woocommerce</title>
+		<link>https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/</link>
+		
+		<dc:creator><![CDATA[hozefasmile]]></dc:creator>
+		<pubDate>Mon, 30 Nov 2015 10:39:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/</guid>
+
+					<description><![CDATA[<p>Hi, I am working on an eCommerce site http://uniqueswebsolution.com/clippingc/ and I am using piklist beta version 0.9.9.6 On the order detail page I want to display a add more field of upload files. You can see the product detail page to know what I have added on the product detail page through piklist http://uniqueswebsolution.com/clippingc/product/color-correction/ For [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/">How to display add more field in oder detail page of woocommerce</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, </p>
+<p>I am working on an eCommerce site http://uniqueswebsolution.com/clippingc/ and I am using piklist beta version 0.9.9.6</p>
+<p>On the order detail page I want to display a add more field of upload files. You can see the product detail page to know what I have added on the product detail page through piklist http://uniqueswebsolution.com/clippingc/product/color-correction/</p>
+<p>For adding this add more field I had created order-form.php under piklist/parts/ folder of the theme and provided following code to display it.</p>
+<pre><code>&lt;?php
+/*
+Title: Upload files
+Method: post
+Message: Your data has been successfully uploaded
+
+*/
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_order_attch&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Upload your images&#039;) 
+    ,&#039;scope&#039; =&gt; &#039;shop_order&#039;
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;attch-single&#039;
+    	,&#039;scope&#039; =&gt; &#039;shop_order&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+    	,&#039;description&#039; =&gt; __(&#039;You can add image files or zip file with all images in it.&#039;,&#039;piklist&#039;)
+    	,&#039;options&#039; =&gt; array(
+      		&#039;basic&#039; =&gt; true
+    		)
+        )
+      )
+    )
+  );
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;submit&#039;
+    ,&#039;field&#039; =&gt; &#039;submit&#039;
+    ,&#039;value&#039; =&gt; &#039;Submit&#039;
+  ));
+?&gt;</code></pre>
+<p>I have used scope as &#8220;shop_order&#8221; , that I think is the post type for order in woocommerce, ref https://docs.woothemes.com/document/installed-taxonomies-post-types/</p>
+<p>Now to display it on order detail page I am adding this code in woocommerce/order/order-details.php</p>
+<pre><code>&lt;?php 
+		// Additional attachement display on detail page
+		$upload_order_attch = get_post_meta($post-&gt;ID, &#039;upload_order_attch&#039;, true);
+		// Get your custom template part: addmore-workout-template.php
+		piklist(get_stylesheet_directory() . &#039;/template/addmore-workout-template&#039;, array(&#039;data&#039; =&gt; $upload_order_attch, &#039;loop&#039; =&gt; &#039;data&#039;));
+	?&gt;</code></pre>
+<p>According to the instruction provided in your documentation. and then created a template file addmore-workout-template.php and added this code in it </p>
+<pre><code>&lt;?php 
+	echo $data[&#039;upload_order_attch&#039;]; 
+?&gt;</code></pre>
+<p>But nothing is displaying on the order detail page when creating an order by adding images to piklist add more field.</p>
+<p>Please suggest me what I am missing and what next we need to do here to make it available on the order detail page?</p>
+<p>Thanks<br />
+Hozefa</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-display-add-more-field-in-oder-detail-page-of-woocommerce/">How to display add more field in oder detail page of woocommerce</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Can not modify taxonomy of posts [0.9.9.2]</title>
+		<link>https://piklist.com/support/topic/can-not-modify-taxonomy-of-posts-0-9-9-2/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2015 15:10:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/can-not-modify-taxonomy-of-posts-0-9-9-2/</guid>
+
+					<description><![CDATA[<p>In all of my custom post types I can no longer change or select a taxonomy. It shows me what was selected before the upgrade, but I can no longer modify the seletions. When I click save, it says saved correctly, but it never actually saves the new selection. In one I have check box [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/can-not-modify-taxonomy-of-posts-0-9-9-2/">Can not modify taxonomy of posts [0.9.9.2]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In all of my custom post types I can no longer change or select a taxonomy. It shows me what was selected before the upgrade, but I can no longer modify the seletions. When I click save, it says saved correctly, but it never actually saves the new selection. In one I have check box as the option, and the other is a select field.</p>
+<p>Did the scope method change in the upgrade?</p>
+<p>Example:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;checkbox&#039;
+    ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+    ,&#039;field&#039; =&gt; &#039;trip-type&#039;
+    ,&#039;label&#039; =&gt; &#039;Trip Type&#039;
+    ,&#039;choices&#039; =&gt; piklist(
+      get_terms(&#039;trip-type&#039;, array(
+        &#039;hide_empty&#039; =&gt; false
+      ))
+      ,array(
+        &#039;term_id&#039;
+        ,&#039;name&#039;
+      )
+    )
+  ));</code></pre>
+<p>Here is my created Taxonomy from my main plugin file:</p>
+<pre><code>$taxonomies[] = array(
+      &#039;post_type&#039; =&gt; &#039;post_mission_trip&#039;
+      ,&#039;name&#039; =&gt; &#039;trip-type&#039;
+      ,&#039;show_admin_column&#039; =&gt; true
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;configuration&#039; =&gt; array(
+        &#039;hierarchical&#039; =&gt; false
+        ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Trip Type&#039;)
+        ,&#039;show_ui&#039; =&gt; true
+        ,&#039;query_var&#039; =&gt; true
+        ,&#039;rewrite&#039; =&gt; array( 
+          &#039;slug&#039; =&gt; &#039;trip-type&#039; 
+        )
+      )
+    );</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/can-not-modify-taxonomy-of-posts-0-9-9-2/">Can not modify taxonomy of posts [0.9.9.2]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Displaying an Editor Field</title>
+		<link>https://piklist.com/support/topic/displaying-an-editor-field/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2015 22:05:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/displaying-an-editor-field/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;d like to include an extra Editor field for adding a certain category of information to posts. But I can&#8217;t figure out how to display it&#8230; and it looks like there might be a typo on the user guide page for this field type (?). The first example given is: echo wpautop(get_post_meta($post-&#62;ID, &#039;field_name, true)); [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-an-editor-field/">Displaying an Editor Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! I&#8217;d like to include an extra Editor field for adding a certain category of information to posts. But I can&#8217;t figure out how to display it&#8230; and it looks like there might be a typo on the user guide page for this field type (?).</p>
+<p>The first example given is:</p>
+<p><code>echo wpautop(get_post_meta($post-&gt;ID, &#039;field_name, true));</code></p>
+<p>However I notice a single quote mark before field_name in the above code, which I presume is an error (and indeed throws a PHP error if I try it).</p>
+<p>However when I substitute my field name, and remove the quote mark, I get the error message:</p>
+<p>Use of undefined constant awards &#8211; assumed &#8216;awards&#8217; in /home2/vjffs122/public_html/wordpress/wp-content/themes/genesis-sample/single-event.php on line 67</p>
+<p>Am I approaching this the wrong way?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/displaying-an-editor-field/">Displaying an Editor Field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>My field is not saved</title>
+		<link>https://piklist.com/support/topic/my-field-is-not-saved/</link>
+		
+		<dc:creator><![CDATA[deon]]></dc:creator>
+		<pubDate>Wed, 12 Nov 2014 14:34:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/my-field-is-not-saved/</guid>
+
+					<description><![CDATA[<p>Note: I&#8217;m from Brazil and I&#8217;m translating the text by google translate .. Created a CPT and a taxonomy. I put the code metabox and it appears correctly as planned, however, when I publish the post, nothing is saved and the options are blank. What could be happening? &#8212;&#8212;&#8212;&#8212;&#8212;&#8212; My code in functions.php http://pastebin.com/4BAWwwes My [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/my-field-is-not-saved/">My field is not saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Note: I&#8217;m from Brazil and I&#8217;m translating the text by google translate ..</p>
+<p>Created a CPT and a taxonomy. I put the code metabox and it appears correctly as planned, however, when I publish the post, nothing is saved and the options are blank. What could be happening?</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+My code in functions.php<br />
+http://pastebin.com/4BAWwwes</p>
+<p>My code in metabox:<br />
+piklist(&#8216;field&#8217;, array(<br />
+    &#8216;type&#8217; =&gt; &#8216;checkbox&#8217;<br />
+    ,&#8217;scope&#8217; =&gt; &#8216;demo-type&#8217;<br />
+    ,&#8217;field&#8217; =&gt; &#8216;category&#8217;<br />
+    ,&#8217;label&#8217; =&gt; &#8216;Categorias&#8217;<br />
+    ,&#8217;description&#8217; =&gt; &#8216;Terms will appear when they are added to this taxonomy.&#8217;<br />
+    ,&#8217;choices&#8217; =&gt; piklist(get_terms(&#8216;piklist_demo_type&#8217;, array(&#8216;hide_empty&#8217; =&gt; false))<br />
+    ,array(&#8216;term_id&#8217; ,&#8217;name&#8217;))<br />
+));</p>
+<p>Thanks in advance.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/my-field-is-not-saved/">My field is not saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

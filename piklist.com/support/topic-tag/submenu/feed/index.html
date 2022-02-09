@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>submenu &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/submenu/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 29 Jul 2014 13:21:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Admin pages</title>
+		<link>https://piklist.com/support/topic/admin-pages/</link>
+		
+		<dc:creator><![CDATA[stebcom]]></dc:creator>
+		<pubDate>Mon, 14 Jul 2014 15:33:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/admin-pages/</guid>
+
+					<description><![CDATA[<p>Hi, I just discovered Piklist and I&#8217;m trying to write a new plugin. I&#8217;ve already checked out Piklist Demos, but I can&#8217;t figure out how to manage menu and submenu pages. I read the related post in the documentation https://piklist.com/user-guide/docs/settings-admin-page-parameters/ but it doesn&#8217;t explain how to mix the add_submenu_page() WordPress function with Piklist parameters. My [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/admin-pages/">Admin pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I just discovered Piklist and I&#8217;m trying to write a new plugin. I&#8217;ve already checked out Piklist Demos, but I can&#8217;t figure out how to manage menu and submenu pages. I read the related post in the documentation</p>
+<p>https://piklist.com/user-guide/docs/settings-admin-page-parameters/ </p>
+<p>but it doesn&#8217;t explain how to mix the add_submenu_page() WordPress function with Piklist parameters. </p>
+<p>My code is like this:</p>
+<p>    add_action( &#8216;admin_menu&#8217;, &#8216;my_plugin_menu&#8217; );<br />
+    function my_plugin_menu() {<br />
+      add_menu_page( PAGE_TITLE, MENU_TITLE, CAPABILITY, MENU_SLUG, &#8216;show_menu&#8217; );<br />
+      add_submenu_page( MENU_SLUG, &#8216;Options&#8217;, &#8216;Options&#8217;, CAPABILITY, MENU_SLUG,     &#8216;show_options&#8217;);</p>
+<p>    function show_menu() {<br />
+      echo &#8220;Hello World!&#8221;;<br />
+    } </p>
+<p>function show_options() {<br />
+  add_filter(&#8216;piklist_admin_pages&#8217;, &#8216;custom_options&#8217;);<br />
+  add_filter(&#8216;piklist_post_types&#8217;, &#8216;custom_post&#8217;);</p>
+<p>  function custom_options($pages)<br />
+  {<br />
+    $pages[] = array(<br />
+      &#8216;page_title&#8217; =&gt; __(&#8216;Custom options&#8217;, &#8216;piklist&#8217;)<br />
+      ,&#8217;menu_title&#8217; =&gt; __(&#8216;Options&#8217;, &#8216;piklist&#8217;)<br />
+      ,&#8217;capability&#8217; =&gt; &#8216;manage_options&#8217;<br />
+      ,&#8217;sub_menu&#8217; =&gt; &#8216;edit.php?post_type=custom_options&#8217;<br />
+      ,&#8217;menu_slug&#8217; =&gt; &#8216;custom-options&#8217;<br />
+      ,&#8217;setting&#8217; =&gt; &#8216;custom_settings&#8217;<br />
+      ,&#8217;menu_icon&#8217; =&gt; plugins_url(&#8216;piklist/parts/img/piklist-icon.png&#8217;)<br />
+      ,&#8217;page_icon&#8217; =&gt; plugins_url(&#8216;piklist/parts/img/piklist-page-icon-32.png&#8217;)<br />
+      ,&#8217;default_tab&#8217; =&gt; &#8216;General&#8217;<br />
+      ,&#8217;single_line&#8217; =&gt; true<br />
+      ,&#8217;save_text&#8217; =&gt; &#8216;Save these settings&#8217;<br />
+    );</p>
+<p>    return $pages;<br />
+  } </p>
+<p>  function custom_posts($post_types)<br />
+  {<br />
+    $post_types[&#8216;custom_post&#8217;] = array(<br />
+      &#8216;labels&#8217; =&gt; piklist(&#8216;post_type_labels&#8217;, &#8216;Custom&#8217;)<br />
+      ,&#8217;title&#8217; =&gt; __(&#8216;Enter a new Custom Post&#8217;)<br />
+      ,&#8217;menu_icon&#8217; =&gt; piklist_admin::responsive_admin() == true ? plugins_url(&#8216;piklist/parts/img/piklist-icon.svg&#8217;) : plugins_url(&#8216;piklist/parts/img/piklist-icon.png&#8217;)<br />
+      ,&#8217;page_icon&#8217; =&gt; plugins_url(&#8216;piklist/parts/img/piklist-page-icon-32.png&#8217;)<br />
+      ,&#8217;supports&#8217; =&gt; array(<br />
+        &#8216;title&#8217;<br />
+        ,&#8217;revisions&#8217;<br />
+      )<br />
+      ,&#8217;public&#8217; =&gt; true<br />
+      ,&#8217;admin_body_class&#8217; =&gt; array (<br />
+        &#8216;piklist-demonstration&#8217;<br />
+        ,&#8217;piklist-sample&#8217;<br />
+      )<br />
+      ,&#8217;has_archive&#8217; =&gt; true<br />
+      ,&#8217;rewrite&#8217; =&gt; array(<br />
+        &#8216;slug&#8217; =&gt; &#8216;custom-posts&#8217;<br />
+      )<br />
+      ,&#8217;capability_type&#8217; =&gt; &#8216;post&#8217;<br />
+      ,&#8217;edit_columns&#8217; =&gt; array(<br />
+        &#8216;title&#8217; =&gt; __(&#8216;Title&#8217;)<br />
+        ,&#8217;author&#8217; =&gt; __(&#8216;Author&#8217;)<br />
+      )<br />
+      ,&#8217;hide_meta_box&#8217; =&gt; array(<br />
+        &#8216;slug&#8217;<br />
+        ,&#8217;author&#8217;<br />
+      )<br />
+      ,&#8217;post_states&#8217; =&gt; true<br />
+      ,&#8217;status&#8217; =&gt; array(<br />
+        &#8216;draft&#8217; =&gt; array(<br />
+          &#8216;label&#8217; =&gt; &#8216;New&#8217;<br />
+          ,&#8217;public&#8217; =&gt; true<br />
+        )<br />
+        ,&#8217;lock&#8217; =&gt; array(<br />
+          &#8216;label&#8217; =&gt; &#8216;Lock&#8217;<br />
+          ,&#8217;public&#8217; =&gt; true<br />
+        )<br />
+        ,&#8217;publish&#8217; =&gt; array(<br />
+          &#8216;label&#8217; =&gt; &#8216;Published&#8217;<br />
+          ,&#8217;public&#8217; =&gt; true<br />
+        )<br />
+      )<br />
+    );</p>
+<p>    return $post_types;<br />
+  }</p>
+<p>}</p>
+<p>While for main page I get the &#8220;Hello World&#8221; text, I get nothing for submenu page. Can you guide me to use this correctly?</p>
+<p>Many thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/admin-pages/">Admin pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

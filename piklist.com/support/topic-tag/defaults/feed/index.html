@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>defaults &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/defaults/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 28 Sep 2012 00:38:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>initial $value not set in radio.php</title>
+		<link>https://piklist.com/support/topic/initial-value-not-set-in-radio-php/</link>
+		
+		<dc:creator><![CDATA[pers]]></dc:creator>
+		<pubDate>Fri, 28 Sep 2012 00:35:09 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/initial-value-not-set-in-radio-php/</guid>
+
+					<description><![CDATA[<p>1st, you should have a way of reporting bugs, like trac, jira or http://asana.com/ anyway, found this bug: in radio.php (and most likely in the rest), when you set the default value (&#8216;value&#8217; =&#62; &#8216;no&#8217;) in your piklist, like: piklist('field', array( 'type' =&#62; 'radio' ,'field' =&#62; 'subscribe_to_newsletter' ,'value' =&#62; 'no' ,'position' =&#62; 'wrap' ,'choices' =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/initial-value-not-set-in-radio-php/">initial $value not set in radio.php</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>1st, you should have a way of reporting bugs, like trac, jira or http://asana.com/</p>
+<p>anyway, found this bug:</p>
+<p>in radio.php (and most likely in the rest), when you set the default value (&#8216;value&#8217; =&gt; &#8216;no&#8217;) in your piklist, like:<br />
+<code><br />
+piklist('field', array(<br />
+	'type' =&gt; 'radio'<br />
+	,'field' =&gt; 'subscribe_to_newsletter'<br />
+	,'value' =&gt; 'no'<br />
+	,'position' =&gt; 'wrap'<br />
+	,'choices' =&gt; array(<br />
+		'yes' =&gt; 'Yes'<br />
+		,'no' =&gt; 'No'<br />
+	)<br />
+))<br />
+</code></p>
+<p>$value in this line in radio.php is not set since $value is empty (echo $value before this line doesn&#8217;t display anything):<br />
+<code><br />
+$value = (is_array($value) &amp;&amp; count($value) == 1 &amp;&amp; !empty($value[0])) ? $value[0] : $value;<br />
+</code></p>
+<p>However, $value is set after you have selected &#8216;yes&#8217; or &#8216;no&#8217;   in your settings page and saved it.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/initial-value-not-set-in-radio-php/">initial $value not set in radio.php</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>group piklist &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/group-piklist/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 22 Jun 2018 10:59:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>[Piklist 0.11.4]  Piklist &#039;Group&#039; metabox (add more)</title>
+		<link>https://piklist.com/support/topic/piklist-0-11-4-piklist-group-metabox-add-more/</link>
+		
+		<dc:creator><![CDATA[Set None]]></dc:creator>
+		<pubDate>Fri, 22 Jun 2018 10:59:32 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-0-11-4-piklist-group-metabox-add-more/</guid>
+
+					<description><![CDATA[<p>I receive a jquery error message in admin if i use a group metabox inside another one. Because of that i can&#8217;t see/edit some elements (editor content). The metaboxes works on frontend. &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;section&#039; ,&#039;label&#039; =&#62;__(&#039;Section&#039;,&#039;test&#039;) ,&#039;columns&#039; =&#62; 12 ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-11-4-piklist-group-metabox-add-more/">[Piklist 0.11.4]  Piklist &#039;Group&#039; metabox (add more)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I receive a jquery error message in admin if i use a group metabox inside another one.<br />
+Because of that i can&#8217;t see/edit some elements (editor content).</p>
+<p>The metaboxes works on frontend.</p>
+<pre><code>  &lt;?php
+
+    piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;section&#039;
+  ,&#039;label&#039; =&gt;__(&#039;Section&#039;,&#039;test&#039;)
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;fields&#039; =&gt; array(
+  array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;title&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Content&#039;, &#039;test&#039;)
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;rows&#039; =&gt; 5
+      )
+  ),
+  array(
+      &#039;type&#039; =&gt; &#039;textarea&#039;
+      ,&#039;field&#039; =&gt; &#039;content&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Content&#039;, &#039;test&#039;)
+      ,&#039;columns&#039; =&gt; 12
+      ,&#039;attributes&#039; =&gt; array(
+        &#039;rows&#039; =&gt; 5
+      )
+    ),
+   array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;item_tab&#039;
+  ,&#039;label&#039; =&gt;__(&#039;Item Tab Section&#039;,&#039;test&#039;)
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+  array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;headline&#039;
+  ,&#039;label&#039; =&gt; __(&#039;Headline&#039;, &#039;test&#039;)
+  ,&#039;columns&#039; =&gt; 12
+  ),
+   array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;item_tab_list&#039;
+  ,&#039;label&#039; =&gt;__(&#039;List:&#039;,&#039;test&#039;)
+  ,&#039;columns&#039; =&gt; 12
+  ,&#039;add_more&#039; =&gt; true
+  ,&#039;fields&#039; =&gt; array(
+  array(
+  &#039;type&#039; =&gt; &#039;text&#039;
+  ,&#039;field&#039; =&gt; &#039;title&#039;
+  ,&#039;label&#039; =&gt; __(&#039;Title&#039;, &#039;test&#039;)
+  ,&#039;columns&#039; =&gt; 12
+  ),
+  array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;content&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Content&#039;, &#039;test&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;media_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; true
+      ,&#039;textarea_rows&#039; =&gt; 5
+      ,&#039;drag_drop_upload&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; true
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+    )
+  )
+  ))
+  ))
+  )
+  ));
+
+  ?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-11-4-piklist-group-metabox-add-more/">[Piklist 0.11.4]  Piklist &#039;Group&#039; metabox (add more)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

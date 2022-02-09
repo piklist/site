@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>advanced add more result &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/advanced-add-more-result/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 11 Dec 2014 19:05:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Advanced Add More in Setting Page</title>
+		<link>https://piklist.com/support/topic/advanced-add-more-in-setting-page/</link>
+		
+		<dc:creator><![CDATA[azizultex]]></dc:creator>
+		<pubDate>Thu, 11 Dec 2014 19:05:55 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/advanced-add-more-in-setting-page/</guid>
+
+					<description><![CDATA[<p>Howdy, I am trying to get the value of Add More from setting page. I am able to get result from Basic Add More using below code: $settings = get_option(&#039;my_theme_settings&#039;); $exercises = $settings[&#039;exercise&#039;]; echo &#039;&#60;ul&#62;&#039;; foreach ($exercises as $exercise) { echo &#34;&#60;li&#62; $exercise &#60;/li&#62;&#34;; } echo &#039;&#60;/ul&#62;&#039;; for the Advanced Add More, I am trying [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/advanced-add-more-in-setting-page/">Advanced Add More in Setting Page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Howdy,<br />
+I am trying to get the value of <code>Add More</code> from setting page. I am able to get result from Basic Add More using below code: </p>
+<pre><code>$settings = get_option(&#039;my_theme_settings&#039;);
+$exercises = $settings[&#039;exercise&#039;];
+
+echo &#039;&lt;ul&gt;&#039;;
+foreach ($exercises as $exercise)
+	{
+	  echo &quot;&lt;li&gt; $exercise &lt;/li&gt;&quot;;
+	}	
+echo &#039;&lt;/ul&gt;&#039;;</code></pre>
+<p>for the Advanced Add More, I am trying to get the result using something like this: </p>
+<pre><code>$settings = get_option(&#039;my_theme_settings&#039;);
+$workout_schedules = $settings[&#039;workout_schedule&#039;];
+		
+echo &#039;&lt;ul&gt;&#039;;
+
+foreach ( $workout_schedules as $schedule )
+	{ 
+		$days = $schedule[&#039;day&#039;];
+
+		foreach ($days as $day )
+		{
+			echo &quot;Day: $day &lt;br/&gt;&quot;;
+		}
+		
+		$exercise_days = $schedule[&#039;exercise_day&#039;];
+		
+		foreach ($exercise_days as $exercise_day )
+		{
+			$exercise_reps = $exercise_day[&#039;exercise_reps&#039;];
+			$exercise_sets = $exercise_day[&#039;exercise_sets&#039;];
+			$exercise_name = $exercise_day[&#039;exercise&#039;];
+			
+			echo &quot;Exercise: $exercise_name, Recipe: $exercise_reps , Sets: $exercise_sets &quot;;
+		}
+		
+	}	
+ 
+
+echo &#039;&lt;/ul&gt;&#039;;</code></pre>
+<p>But this not working. How can I show the result? </p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/advanced-add-more-in-setting-page/">Advanced Add More in Setting Page</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

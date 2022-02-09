@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>touch_time &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/touch_time/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 03 Aug 2016 06:08:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>touch_time() error</title>
+		<link>https://piklist.com/support/topic/touch_time-error/</link>
+		
+		<dc:creator><![CDATA[vavakco]]></dc:creator>
+		<pubDate>Wed, 03 Aug 2016 06:08:29 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/touch_time-error/</guid>
+
+					<description><![CDATA[<p>error log : PHP Notice: Trying to get property of non-object in ***\wp-admin\includes\template.php on line 699 PHP Stack trace: PHP 1. {main}() ***\wp-admin\post-new.php:0 PHP 2. include() ***\wp-admin\post-new.php:85 PHP 3. do_meta_boxes() ***\wp-admin\edit-form-advanced.php:686 PHP 4. call_user_func:{***\wp-admin\includes\template.php:1037}() ***\wp-admin\includes\template.php:1037 PHP 5. Piklist_Meta::meta_box() ***\wp-admin\includes\template.php:1037 PHP 6. Piklist::render() ***\modules\piklist\includes\class-piklist-meta.php:313 PHP 7. include() ***\modules\piklist\includes\class-piklist.php:507 PHP 8. touch_time() ***\modules\piklist\parts\meta-boxes\submitdiv.php:218 my custom post : [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/touch_time-error/">touch_time() error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>error log :</p>
+<pre><code>PHP Notice:  Trying to get property of non-object in ***\wp-admin\includes\template.php on line 699
+PHP Stack trace:
+PHP   1. {main}() ***\wp-admin\post-new.php:0
+PHP   2. include() ***\wp-admin\post-new.php:85
+PHP   3. do_meta_boxes() ***\wp-admin\edit-form-advanced.php:686
+PHP   4. call_user_func:{***\wp-admin\includes\template.php:1037}() ***\wp-admin\includes\template.php:1037
+PHP   5. Piklist_Meta::meta_box() ***\wp-admin\includes\template.php:1037
+PHP   6. Piklist::render() ***\modules\piklist\includes\class-piklist-meta.php:313
+PHP   7. include() ***\modules\piklist\includes\class-piklist.php:507
+PHP   8. touch_time() ***\modules\piklist\parts\meta-boxes\submitdiv.php:218</code></pre>
+<p>my custom post :</p>
+<pre><code> 	function register_slider_posttype() {
+		$labels = array(
+			&#039;name&#039;				=&gt; _x( &#039;Slider&#039;, &#039;post type general name&#039;,  LANG_STRING),
+			&#039;singular_name&#039;		=&gt; _x( &#039;Slider&#039;, &#039;post type singular name&#039;, LANG_STRING),
+			&#039;add_new&#039;				=&gt; __( &#039;New Slider&#039;, LANG_STRING),
+			&#039;add_new_item&#039;		=&gt; __( &#039;Add New Slider&#039;, LANG_STRING ),
+			&#039;edit_item&#039;			=&gt; __( &#039;Edit Slider&#039; , LANG_STRING),
+			&#039;new_item&#039;			=&gt; __( &#039;New Slider&#039;, LANG_STRING ),
+			&#039;view_item&#039;			=&gt; __( &#039;View Slider&#039;, LANG_STRING ),
+			&#039;search_items&#039;			=&gt; __( &#039;Search Slider&#039;, LANG_STRING ),
+			&#039;not_found&#039;			=&gt; __( &#039;Not found Slider&#039;, LANG_STRING ),
+			&#039;not_found_in_trash&#039;		=&gt; __( &#039;Not Slider in trash&#039;, LANG_STRING ),
+			&#039;parent_item_colon&#039;		=&gt; __( &#039;Slider&#039;, LANG_STRING ),
+			&#039;menu_name&#039;			=&gt; __( &#039;Slider&#039;, LANG_STRING )
+				
+		);
+		
+		$taxonomies = array();
+		$slug = &#039;slider&#039;;
+		$supports = array(&#039;title&#039;,&#039;thumbnail&#039;, &#039;editor&#039;);
+		
+		$post_type_args = array(
+			&#039;labels&#039; 						=&gt; $labels,
+			&#039;singular_label&#039; 			=&gt; __(&#039;Slider&#039;, LANG_STRING),
+			&#039;public&#039; 						=&gt; true,
+			&#039;show_ui&#039; 					=&gt; true,
+			&#039;publicly_queryable&#039;		=&gt; true,
+			&#039;query_var&#039;					=&gt; true,
+			&#039;capability_type&#039; 			=&gt; &#039;post&#039;,
+			&#039;has_archive&#039; 				=&gt; true,
+			&#039;hierarchical&#039; 				=&gt; false,
+			&#039;_builtin&#039; 					=&gt; false,
+			&#039;rewrite&#039; 						=&gt; array(&#039;slug&#039; =&gt; $slug, &#039;with_front&#039; =&gt; true ),
+			&#039;supports&#039; 					=&gt; $supports,
+			&#039;menu_icon&#039; 				=&gt; &#039;dashicons-clipboard&#039;,
+			&#039;menu_position&#039;		 	=&gt; 30,
+			&#039;taxonomies&#039;				=&gt; $taxonomies	
+		);
+		 
+		register_post_type($slug, $post_type_args);
+		
+	}
+	
+	add_action(&#039;init&#039;, &#039;register_slider_posttype&#039;);</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/touch_time-error/">touch_time() error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

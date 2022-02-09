@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>text field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/text-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 28 Jan 2016 00:08:11 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Description missing for text field within group</title>
+		<link>https://piklist.com/support/topic/description-missing-for-text-field-within-group/</link>
+		
+		<dc:creator><![CDATA[Ben]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 00:03:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/description-missing-for-text-field-within-group/</guid>
+
+					<description><![CDATA[<p>WordPress 4.4.1 PikList 0.9.4.29 The description for a text field inside a group is not appearing within the edit post view. Here is the code for the meta-box. I am also attaching an image of the result within the edit view, and the html for the group field. /* Title: Text Field Test Description: Text [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/description-missing-for-text-field-within-group/">Description missing for text field within group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>WordPress 4.4.1<br />
+PikList 0.9.4.29<br />
+The description for a text field inside a group is not appearing within the edit post view. Here is the code for the meta-box. I am also attaching an image of the result within the edit view, and the html for the group field.</p>
+<pre><code>/*
+Title: Text Field Test
+Description: Text Field Test
+Post Type: post
+*/
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;text&#039;,
+  &#039;field&#039;   =&gt; &#039;text_field_alone&#039;,
+  &#039;label&#039;   =&gt; __(&#039;text_field_alone&#039;),
+  &#039;description&#039; =&gt; __(&#039;description for text_field_alone&#039;),
+));
+piklist(&#039;field&#039;, array(
+  &#039;type&#039;    =&gt; &#039;group&#039;,
+  &#039;field&#039;   =&gt; &#039;group_with_text_field&#039;,
+  &#039;label&#039;   =&gt; &#039;group_with_text_field&#039;,
+  &#039;description&#039; =&gt; __(&#039;description for group_with_text_field&#039;),
+  &#039;fields&#039;  =&gt; array(
+    array(
+      &#039;type&#039;    =&gt; &#039;text&#039;,
+      &#039;field&#039;   =&gt; &#039;text_field_in_group&#039;,
+      &#039;label&#039;   =&gt; __(&#039;text_field_in_group&#039;),
+      &#039;description&#039; =&gt; __(&#039;description for text_field_in_group&#039;),
+      &#039;columns&#039; =&gt; 12
+    )
+  )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/description-missing-for-text-field-within-group/">Description missing for text field within group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Pulling data from custom field and use it in place of Title of Custom Post Type</title>
+		<link>https://piklist.com/support/topic/pulling-data-from-custom-field-and-use-it-in-place-of-title-of-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[tuckerjoenz]]></dc:creator>
+		<pubDate>Tue, 26 Aug 2014 18:39:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/pulling-data-from-custom-field-and-use-it-in-place-of-title-of-custom-post-type/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been looking this morning for a way to use my custom text field for the Title of a post type. Is this possible. What happen is the client imported a bunch of data that placed a series of numbers in the Title and looking at the list of post types it&#8217;s quite confusing. There [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pulling-data-from-custom-field-and-use-it-in-place-of-title-of-custom-post-type/">Pulling data from custom field and use it in place of Title of Custom Post Type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been looking this morning for a way to use my custom text field for the Title of a post type. Is this possible. What happen is the client imported a bunch of data that placed a series of numbers in the Title and looking at the list of post types it&#8217;s quite confusing. There is a name field I added and those were populated with the name I can use for a Title. Is it possible to call a text field as a Title in the list? </p>
+<p><strong>post type</strong></p>
+<pre><code>&lt;?php
+/*
+Title: Grants List
+Post Type: grantee
+Order: 11
+Meta Box: True
+Collapse: false
+*/
+?&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;arcus_upload&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Grantee Logo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;basic&#039; =&gt; true
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;grantee_name&#039;
+    ,&#039;label&#039; =&gt; &#039;Grantee Name&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Grantee Name&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;datepicker&#039;
+     ,&#039;field&#039; =&gt; &#039;arcus_date&#039;
+     ,&#039;label&#039; =&gt; &#039;Grantee Date&#039;
+     ,&#039;description&#039; =&gt; &#039;Grantee Date&#039;
+     ,&#039;attributes&#039; =&gt; array(
+       &#039;class&#039; =&gt; &#039;text&#039;
+     )
+    ,&#039;options&#039; =&gt; array(
+       &#039;dateFormat&#039; =&gt; &#039;M d, yy&#039;
+       ,&#039;firstDay&#039; =&gt; &#039;0&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;grantee_location&#039;
+    ,&#039;label&#039; =&gt; &#039;Location&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Location&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;grantee_amount&#039;
+    ,&#039;label&#039; =&gt; &#039;Amount Awarded&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;Amount Awarded&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;grantee_url&#039;
+    ,&#039;label&#039; =&gt; &#039;Grantee URL&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+      ,&#039;placeholder&#039; =&gt; &#039;http://&#039;
+    )
+    ,&#039;on_post_status&#039; =&gt; array(
+      &#039;value&#039; =&gt; &#039;lock&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;label&#039; =&gt; &#039;Blurb&#039;
+    ,&#039;options&#039; =&gt; array (
+      &#039;media_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; true
+      ,&#039;textarea_rows&#039; =&gt; 5
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;post-relate&#039;
+    ,&#039;scope&#039; =&gt; &#039;Partners&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;post-relate&#039;
+    ,&#039;scope&#039; =&gt; &#039;stories&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;post-relate&#039;
+    ,&#039;scope&#039; =&gt; &#039;post&#039;
+    ,&#039;template&#039; =&gt; &#039;field&#039;
+  ));</code></pre>
+<p><strong>functions.php</strong></p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;grantee_post_type&#039;);
+ function grantee_post_type($post_types)
+ {
+  $post_types[&#039;grantee&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Grants&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Grants&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;grantee&#039;
+    )
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;title&#039;
+      ,&#039;partners&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;slug&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+    ,&#039;edit_columns&#039; =&gt; array(
+       &#039;title&#039; =&gt; __(&#039;Grantee&#039;)
+       ,&#039;author&#039; =&gt; __(&#039;customer&#039;)
+       // ,&#039;partners&#039; =&gt; __(&#039;Partners&#039;)
+     )
+  );
+return $post_types;
+}</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pulling-data-from-custom-field-and-use-it-in-place-of-title-of-custom-post-type/">Pulling data from custom field and use it in place of Title of Custom Post Type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>text field: &#034;0&#034; doesn&#039;t get saved</title>
+		<link>https://piklist.com/support/topic/text-field-0-doesnt-get-saved/</link>
+		
+		<dc:creator><![CDATA[chrisben]]></dc:creator>
+		<pubDate>Fri, 30 Aug 2013 14:32:32 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/text-field-0-doesnt-get-saved/</guid>
+
+					<description><![CDATA[<p>If you enter &#8220;0&#8221; (the digit zero, without quotes) in a piklist text field, the value doesn&#8217;t get saved, as if you entered nothing. This can be reproduced with the piklist demos, in latest 0.8 betas.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-0-doesnt-get-saved/">text field: &quot;0&quot; doesn&#039;t get saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If you enter &#8220;0&#8221; (the digit zero, without quotes) in a piklist text field, the value doesn&#8217;t get saved, as if you entered nothing.</p>
+<p>This can be reproduced with the piklist demos, in latest 0.8 betas.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-0-doesnt-get-saved/">text field: &quot;0&quot; doesn&#039;t get saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Text field with taxonomy scope</title>
+		<link>https://piklist.com/support/topic/text-field-with-taxonomy-scope/</link>
+		
+		<dc:creator><![CDATA[r.cespa]]></dc:creator>
+		<pubDate>Fri, 05 Apr 2013 14:00:14 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/text-field-with-taxonomy-scope/</guid>
+
+					<description><![CDATA[<p>Hi, all! I&#8217;m starting to play with Piklist and I&#8217;m happy discovering something new every day using the forum, the docs and the source code. I&#8217;m trying to build a travel related web site with offers for holiday packages (flight + hotel + ground services, etc). I set up a couple of CPTs: hotel and [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-with-taxonomy-scope/">Text field with taxonomy scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, all!</p>
+<p>I&#8217;m starting to play with Piklist and I&#8217;m happy discovering something new every day using the forum, the docs and the source code.</p>
+<p>I&#8217;m trying to build a travel related web site with offers for holiday packages (flight + hotel + ground services, etc).</p>
+<p>I set up a couple of CPTs: hotel and offer; hotels will be related to offers as soon as I figure how to work with relationships. Offer CPT has a couple of custom taxonomies: departure-airport and arrival-airport. Everything is fine here. The idea is that an offer is built on:</p>
+<p>	one or more hotels<br />
+	a group field (add_more =&gt; true) containing:<br />
+departure-airport via text field<br />
+arrival-airport via text field<br />
+departure-date via date field<br />
+several prices (double room, single room, etc) via text fields</p>
+<p>Everything is almost working as expected but if I insert the airport three letters code in one of the text fields with &#8216;scope&#8217; =&gt; &#8216;taxonomy&#8217; (e.g. FCO for Rome Fiumicino or LHR for London Heathrow) the term is inserted in the taxonomy, the term_id is saved but:</p>
+<p>	<del>in the taxonomy page there is no CPT associated to the term (so FCO element count is zero)</del> item count is correct if I publish the CPT<br />
+	in the edit page the term_ID is shown in the text field</p>
+<p>I understand that text field is not the best choice but I want to give the user the ability to add new airports or cities without leaving the page. The idea is to set up some form of autocomplete to help the user and text field is ok for this.</p>
+<p>Here is my code: <a href="http://pastebin.com/tbHvdPU8">http://pastebin.com/tbHvdPU8</a><a href="http://pastebin.com/xLvbxW3w"><br />
+</a></p>
+<p>One more problem is due to the fact that as soon as I add more items of the same group of fields (e.g.: one with departure from Rome and one with departure from Milan), I have two text fields in each group. Probably Piklist loops through all the associated terms and prints out one field per term.</p>
+<p>Ciao,<br />
+Roberto</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-with-taxonomy-scope/">Text field with taxonomy scope</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

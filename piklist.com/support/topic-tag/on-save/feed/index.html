@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>on save &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/on-save/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 11 Mar 2015 01:06:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Duplicate Select drop downs</title>
+		<link>https://piklist.com/support/topic/duplicate-select-drop-downs/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Tue, 10 Mar 2015 20:22:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/duplicate-select-drop-downs/</guid>
+
+					<description><![CDATA[<p>When I save my custom post type, the select values get duplicated. I start with only one in each section, but after the first save, 2, second save, 4. I attached an image of what it looks like. Also when the fields get doubled, it removes the two HTML fields I have from view. &#60;?php [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/duplicate-select-drop-downs/">Duplicate Select drop downs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I save my custom post type, the select values get duplicated. I start with only one in each section, but after the first save, 2, second save, 4.</p>
+<p>I attached an image of what it looks like. Also when the fields get doubled, it removes the two HTML fields I have from view. </p>
+<pre><code>
+&lt;?php
+/*
+Title: Details
+Post Type: trip_reg
+*/
+
+global $typenow;
+if (is_edit_page(&#039;edit&#039;) &amp;&amp; &quot;trip_reg&quot; == $typenow){
+
+$postid = get_the_ID();
+//Event Details
+$trip_id = get_post_meta( $postid, &#039;reg_trip&#039;, true);
+$location_id = get_post_meta( $trip_id, &#039;trip_location&#039;, true);
+$tripbegin = get_post_meta( $trip_id, &#039;trip_begin&#039;, true);
+$tripend = get_post_meta( $trip_id, &#039;trip_end&#039;, true);
+//User Details 
+$user_id = get_post_meta( $postid, &#039;reg_user&#039;, true);
+$user_fname = get_user_meta($user_id, &#039;first_name&#039; , true);
+$user_lname = get_user_meta($user_id, &#039;last_name&#039; , true);
+$user_email = get_user_meta($user_id, &#039;user_email&#039; , true);
+$user_number = get_user_meta($user_id, &#039;user_number&#039; , true);
+//Booking Details
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;html&#039;
+  ,&#039;label&#039; =&gt; &#039;Event Details&#039;
+  ,&#039;value&#039; =&gt; &#039;Event: &#039; . get_the_title( $trip_id ) . &#039;&lt;br /&gt;Location: &#039;. get_the_title( $location_id ) . &#039;&lt;br /&gt;Dates: &#039; . $tripbegin . &#039; - &#039; . $tripend
+  ,&#039;on_post_status&#039; =&gt; array(
+    &#039;hide&#039; =&gt; &#039;draft&#039;
+   )
+));
+
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;html&#039;
+  ,&#039;label&#039; =&gt; &#039;Person Details&#039;
+  ,&#039;value&#039; =&gt; &#039;Person: &#039; . $user_fname . &#039; &#039; . $user_lname . &#039;&lt;br /&gt;Email: &#039; . $user_email . &#039;&lt;br /&gt;Phone: &#039; . $user_number
+  ,&#039;on_post_status&#039; =&gt; array(
+    &#039;hide&#039; =&gt; &#039;draft&#039;
+   )
+));
+
+$trip_price_array = get_post_meta($trip_id, &#039;trip_price_type&#039;, false);
+if(in_array(&quot;trip_custom&quot;, $trip_price_array)) {
+	$key = array_search(&quot;trip_custom&quot;, $trip_price_array);
+	$trip_custom = get_post_meta($trip_id, &#039;trip_custom_items&#039;, false);
+	unset($trip_price_array[$key]);
+	
+	foreach ($trip_custom[0][&#039;trip_custom_name&#039;] as $customkey =&gt; $customname ) {
+	$trip_price_array[]=$customname;
+	}
+}
+
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;reg_trip&#039;
+		,&#039;label&#039; =&gt; &#039;Mission Trip&#039;
+		,&#039;choices&#039; =&gt; $trip_price_array
+      ));
+	  
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;reg_notes&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; &#039;Notes&#039;
+    ,&#039;description&#039; =&gt; &#039;You can add private notes below for internal reference that only team members will see.&#039;
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;note_author&#039;
+		,&#039;value&#039; =&gt; $current_user-&gt;display_name
+        ,&#039;columns&#039; =&gt; 3
+		,&#039;on_post_status&#039; =&gt; array(
+			&#039;value&#039; =&gt; &#039;approved&#039;
+		)
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;note_date&#039;
+		,&#039;value&#039; =&gt; date(&quot;m/d/y&quot;)
+        ,&#039;columns&#039; =&gt; 2
+		,&#039;on_post_status&#039; =&gt; array(
+			&#039;value&#039; =&gt; &#039;approved&#039;
+		)
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;textarea&#039;
+        ,&#039;field&#039; =&gt; &#039;note_text&#039;
+        ,&#039;columns&#039; =&gt; 7
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;Your Notes&#039;
+        )
+      )
+    )
+  ));
+//END OF ONLY ON EDIT
+}
+
+function is_edit_page($new_edit = null){
+    global $pagenow;
+    //make sure we are on the backend
+    if (!is_admin()){ return false;}
+
+    if($new_edit == &quot;edit&quot;){
+        return in_array( $pagenow, array( &#039;post.php&#039;,  ) );
+    }elseif($new_edit == &quot;new&quot;){ //check for new post page
+        return in_array( $pagenow, array( &#039;post-new.php&#039; ) );
+    }else{ //check for either new or edit
+        return in_array( $pagenow, array( &#039;post.php&#039;, &#039;post-new.php&#039; ) );
+	}
+}
+
+?&gt;
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/duplicate-select-drop-downs/">Duplicate Select drop downs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

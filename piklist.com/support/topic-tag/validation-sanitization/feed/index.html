@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>validation sanitization &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/validation-sanitization/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 09 Jul 2020 16:42:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Convert text to uppercase</title>
+		<link>https://piklist.com/support/topic/convert-text-to-uppercase/</link>
+		
+		<dc:creator><![CDATA[bevislw]]></dc:creator>
+		<pubDate>Mon, 15 Jun 2020 12:31:55 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/convert-text-to-uppercase/</guid>
+
+					<description><![CDATA[<p>I am just getting started with Piklist and was hoping someone would be able to point me in the right direction with a particular issue. Is there anyway to convert text input to uppercase in piklist currently? I have a added it to the &#8216;description&#8217; as a workaround, although this didn&#8217;t appear if the text [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/convert-text-to-uppercase/">Convert text to uppercase</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am just getting started with Piklist and was hoping someone would be able to point me in the right direction with a particular issue.</p>
+<p>Is there anyway to convert text input to uppercase in piklist currently? I have a added it to the &#8216;description&#8217; as a workaround, although this didn&#8217;t appear if the text field was inside a group so put it at the top level. Is that correct?</p>
+<p>Also, I tried adding &#8216;pattern&#8217; =&gt; &#8216;^[A-Z]?[0-9]$&#8217; and to the field inside a group but it&#8217;s not validating the input correctly. I am still getting &#8216;please match the format requested&#8217; message.</p>
+<p>So I tried another approach using validation rule.</p>
+<p>add_filter(&#8216;piklist_validation_rules&#8217;, &#8216;check_discount_code&#8217;, 11);<br />
+function check_discount_code($validation_rules)<br />
+{<br />
+    $validation_rules[&#8216;discount_code&#8217;] = array(<br />
+        &#8216;rule&#8217; =&gt; &#8220;/[A-Z]?[0-9]/&#8221;<br />
+        ,&#8217;message&#8217; =&gt; __(&#8216;Please enter discount code with uppercase letters and numbers&#8217;)<br />
+    );</p>
+<p>    return $validation_rules;<br />
+}</p>
+<p>,&#8217;validate&#8217; =&gt; array(<br />
+                array(<br />
+                    &#8216;type&#8217; =&gt; &#8216;discount_code&#8217;<br />
+                )<br />
+            )</p>
+<p>But I am having no joy. Any advice would be greatly appreciated.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/convert-text-to-uppercase/">Convert text to uppercase</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>readonly &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/readonly/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 20 Mar 2015 15:49:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Disabled Value</title>
+		<link>https://piklist.com/support/topic/disabled-value/</link>
+		
+		<dc:creator><![CDATA[jcrist]]></dc:creator>
+		<pubDate>Thu, 19 Mar 2015 21:03:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/disabled-value/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve setup some user fields, one of which is only editable by the admin: if($role != &#039;administrator&#039;) $args[&#039;attributes&#039;][&#039;disabled&#039;] = true; However when the user updates their profile, the value gets deleted. I&#8217;ve tried adding the value field but the same thing happens. Bug?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/disabled-value/">Disabled Value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve setup some user fields, one of which is only editable by the admin:<br />
+<code>if($role != &#039;administrator&#039;) $args[&#039;attributes&#039;][&#039;disabled&#039;] = true;</code></p>
+<p>However when the user updates their profile, the value gets deleted. I&#8217;ve tried adding the value field but the same thing happens. Bug?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/disabled-value/">Disabled Value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>on_post_status and Add more</title>
+		<link>https://piklist.com/support/topic/on_post_status-and-add-more/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Mon, 09 Mar 2015 21:19:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/on_post_status-and-add-more/</guid>
+
+					<description><![CDATA[<p>I am trying to add a &#8220;notes&#8221; section to a post type that will record the current user and date of the note. So i created a &#8220;group&#8221; field type that had 2 text fields that I tried to lock on_post_status and auto insert the value, and have one textfield option. The problem is that [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/on_post_status-and-add-more/">on_post_status and Add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to add a &#8220;notes&#8221; section to a post type that will record the current user and date of the note. So i created a &#8220;group&#8221; field type that had 2 text fields that I tried to lock on_post_status and auto insert the value, and have one textfield option. The problem is that by using the on_post_status it does not work correctly Please see photo. It does not allow me to add multiple notes.</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;reg_notes&#039;
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;label&#039; =&gt; &#039;Notes&#039;
+    ,&#039;description&#039; =&gt; &#039;You can add private notes below for internal reference that only team members will see.&#039;
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;note_author&#039;
+		,&#039;value&#039; =&gt; $current_user-&gt;display_name
+        ,&#039;columns&#039; =&gt; 3
+		,&#039;on_post_status&#039; =&gt; array(
+			&#039;value&#039; =&gt; &#039;approved&#039;
+		)
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;note_date&#039;
+		,&#039;value&#039; =&gt; date(&quot;m/d/y&quot;)
+        ,&#039;columns&#039; =&gt; 2
+		,&#039;on_post_status&#039; =&gt; array(
+			&#039;value&#039; =&gt; &#039;approved&#039;
+		)
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;textarea&#039;
+        ,&#039;field&#039; =&gt; &#039;note_text&#039;
+        ,&#039;columns&#039; =&gt; 7
+        ,&#039;attributes&#039; =&gt; array(
+          &#039;placeholder&#039; =&gt; &#039;Your Notes&#039;
+        )
+      )
+    )
+  ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/on_post_status-and-add-more/">on_post_status and Add more</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>fields scope as per capability  type</title>
+		<link>https://piklist.com/support/topic/fields-scope-as-per-capability-type/</link>
+		
+		<dc:creator><![CDATA[ajayphp]]></dc:creator>
+		<pubDate>Sun, 16 Nov 2014 07:12:02 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-scope-as-per-capability-type/</guid>
+
+					<description><![CDATA[<p>Hi, few user fields, i would to read only for user (subscriber, contributor, author ) and full with admin. example: admin want to add sms credit to user fields: sms credit, in admin login fields should be normal as admin can put value to add etc. and when user login , he will see only [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-scope-as-per-capability-type/">fields scope as per capability  type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>few user fields, i would to read only for user (subscriber, contributor, author )<br />
+and full with admin.</p>
+<p>example: admin want to add sms credit to user fields: sms credit,<br />
+in admin login fields should be normal as admin can put value to add etc.</p>
+<p>and when user login , he will see only that fields as readonly, which display his credit.</p>
+<p>Regards</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-scope-as-per-capability-type/">fields scope as per capability  type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

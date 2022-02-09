@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Field values &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/field-values/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 21 Nov 2015 11:45:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Field values not showing in nested group</title>
+		<link>https://piklist.com/support/topic/field-values-not-showing-in-nested-group/</link>
+		
+		<dc:creator><![CDATA[bubdev]]></dc:creator>
+		<pubDate>Sat, 21 Nov 2015 11:45:02 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-values-not-showing-in-nested-group/</guid>
+
+					<description><![CDATA[<p>Hi, I have an Add-more group that is grouped together with a textfield, which is used for a heading. If the outer group is given a field name, the value of the text field isn&#8217;t showing. When I remove the field name, the value shows up but the whole construction somehow falls apart. Same situation [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-values-not-showing-in-nested-group/">Field values not showing in nested group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have an Add-more group that is grouped together with a textfield, which is used for a heading. If the outer group is given a field name, the value of the text field isn&#8217;t showing. When I remove the field name, the value shows up but the whole construction somehow falls apart.</p>
+<p>Same situation with another nested group (value doesn&#8217;t show if outer group is given a name). But that one doesn&#8217;t have an addmore and therefore doesn&#8217;t fall apart when I remove the field name.</p>
+<p>Below is my code for the problematic Add-more group. I&#8217;m not sure if it&#8217;s a bug or if I&#8217;m doing it wrong.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;group&#039;
+  ,&#039;field&#039; =&gt; &#039;bub_title_shoplinks_container &#039;
+  ,&#039;label&#039; =&gt; __(&#039;Shoplinks&#039;) 
+  ,&#039;description&#039; =&gt; __(&#039;Links zu den Produktseiten ausgewählter Shops.&#039;)
+  ,&#039;attributes&#039; =&gt; array(
+    &#039;class&#039; =&gt; &#039;bbe-group&#039;
+  )
+  ,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;text&#039;
+      ,&#039;field&#039; =&gt; &#039;bub_title_shoplinks_heading&#039;
+      ,&#039;label&#039; =&gt; __(&#039;Titel&#039;)
+      ,&#039;value&#039; =&gt; &#039;Kaufen&#039;
+      ,&#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;bbe-title&#039;
+        ,&#039;placeholder&#039; =&gt; &#039;Eigener Titel&#039;
+      )
+    )
+    ,array(
+      &#039;type&#039; =&gt; &#039;group&#039;
+      ,&#039;field&#039; =&gt; &#039;bub_title_shoplinks&#039;
+      ,&#039;label&#039; =&gt; __(&#039; &#039;)
+      ,&#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;bbe-group&#039;
+      )
+      ,&#039;add_more&#039; =&gt; true
+      ,&#039;fields&#039; =&gt; array(
+        array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;bub_title_shoplinks_title&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Beschriftung&#039;)
+          ,&#039;columns&#039; =&gt; 4
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;bbe-text-left&#039;
+            ,&#039;placeholder&#039; =&gt; &#039;Titel des Links&#039;
+          )
+        )
+        ,array(
+          &#039;type&#039; =&gt; &#039;text&#039;
+          ,&#039;field&#039; =&gt; &#039;bub_title_shoplinks_address&#039;
+          ,&#039;label&#039; =&gt; __(&#039;Adresse (URL)&#039;)
+          ,&#039;columns&#039; =&gt; 8
+          ,&#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;bbe-text-right&#039;
+            ,&#039;placeholder&#039; =&gt; &#039;http://...&#039;
+          )
+          // ,&#039;validate&#039; =&gt; array( // Validation errors for Links with &#039;%&#039; (e.g. Umlauts)
+          //   array(
+          //     &#039;type&#039; =&gt; &#039;url&#039;
+          //   )
+          // )
+        )
+      )
+    )
+  )
+));</code></pre>
+<p>Thank you &#8211; Stefan</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-values-not-showing-in-nested-group/">Field values not showing in nested group</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

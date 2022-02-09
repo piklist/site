@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>radio &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/radio/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 30 Jul 2016 05:36:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Embedding fields in a field&#8230;</title>
+		<link>https://piklist.com/support/topic/embedding-fields-in-a-field/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sat, 30 Jul 2016 05:36:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/embedding-fields-in-a-field/</guid>
+
+					<description><![CDATA[<p>Just wondering if the ability to embed fields, such as in the demos for checkboxes and radio inputs, is allowed for any other fields. Would love to use it in an html field: Such as: ,array ( &#039;type&#039; =&#62; &#039;html&#039; ,&#039;template&#039; =&#62; &#039;average&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;left10&#039; ) ,&#039;value&#039; =&#62; sprintf(__(&#039;Workout Length: %s&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/embedding-fields-in-a-field/">Embedding fields in a field&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just wondering if the ability to embed fields, such as in the demos for checkboxes and radio  inputs, is allowed for any other fields. </p>
+<p>Would love to use it in an html field:<br />
+Such as:</p>
+<pre><code>        ,array (
+            &#039;type&#039; =&gt; &#039;html&#039;
+            ,&#039;template&#039; =&gt; &#039;average&#039;
+            ,&#039;attributes&#039; =&gt; array(
+                &#039;class&#039; =&gt; &#039;left10&#039;
+            )
+            ,&#039;value&#039; =&gt; sprintf(__(&#039;Workout Length: %s&#039;, &#039;diet&#039;), &#039;&#039;)
+            ,&#039;fields&#039; =&gt; array(
+                array(
+                    &#039;type&#039; =&gt; &#039;text&#039;
+                    ,&#039;field&#039; =&gt; &#039;mae_pb_wl_nested&#039;
+                    ,&#039;value&#039; =&gt; &#039;1&#039;
+                    ,&#039;embed&#039; =&gt; true
+                    ,&#039;attributes&#039; =&gt; array(
+                        &#039;class&#039; =&gt; &#039;small-text&#039;
+                    )
+                )
+            )
+        )
+</code></pre>
+<p>Are there any other fields it works on, or just radios and checks?</p>
+<p>Thanks guys. </p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/embedding-fields-in-a-field/">Embedding fields in a field&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Radio inside nested groups</title>
+		<link>https://piklist.com/support/topic/radio-inside-nested-groups/</link>
+		
+		<dc:creator><![CDATA[rubenhak]]></dc:creator>
+		<pubDate>Fri, 20 May 2016 23:42:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/radio-inside-nested-groups/</guid>
+
+					<description><![CDATA[<p>Hi, I have two levels of group fields and radio buttons inside the second level group. Noticed that the radio values will be self-exclusive within top level grouping. I would expect selection to be exclusive within parent group. Am i doing something wrong or this is a bug? Thanks, Ruben piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-inside-nested-groups/">Radio inside nested groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have two levels of group fields and radio buttons inside the second level group.<br />
+Noticed that the radio values will be self-exclusive within top level grouping. I would expect selection to be exclusive within parent group. </p>
+<p>Am i doing something wrong or this is a bug? </p>
+<p>Thanks,<br />
+Ruben</p>
+<pre><code>
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;experiment&#039;
+    , &#039;columns&#039; =&gt; 12
+    , &#039;add_more&#039; =&gt; true
+    , &#039;fields&#039; =&gt; array(
+
+      array(
+        &#039;type&#039; =&gt; &#039;text&#039;
+        , &#039;field&#039; =&gt; &#039;experimentName&#039;
+        , &#039;columns&#039; =&gt; 4
+      )
+
+      , array(
+        &#039;type&#039; =&gt; &#039;group&#039;
+        , &#039;field&#039; =&gt; &#039;nestedGroup&#039;
+        , &#039;add_more&#039; =&gt; true
+        , &#039;fields&#039; =&gt; array(
+
+          array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+            , &#039;field&#039; =&gt; &#039;nestedName&#039;
+            , &#039;columns&#039; =&gt; 4
+          )
+
+          , array(
+            &#039;type&#039; =&gt; &#039;radio&#039;
+            , &#039;field&#039; =&gt; &#039;nestedChoice&#039;
+            , &#039;value&#039; =&gt; &#039;o1&#039;
+            , &#039;attributes&#039; =&gt; array(
+              &#039;class&#039; =&gt; &#039;text&#039;
+            )
+            , &#039;choices&#039; =&gt; array(
+              &#039;o1&#039; =&gt; &#039;O1&#039;,
+              &#039;o2&#039; =&gt; &#039;O2&#039;,
+              &#039;o3&#039; =&gt; &#039;O3&#039;,
+              &#039;o4&#039; =&gt; &#039;O4&#039;
+            )
+          )
+
+        )
+      )
+    )
+  ) );
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-inside-nested-groups/">Radio inside nested groups</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Checkbox with only one choice</title>
+		<link>https://piklist.com/support/topic/checkbox-with-only-one-choice/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 19:22:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checkbox-with-only-one-choice/</guid>
+
+					<description><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked? I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked?</p>
+<p>I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;checkbox&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; &#039;1&#039;,
+     &#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;text&#039;
+      ),
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       &#039;1&#039; =&gt; &#039;Enable&#039;
+     )
+   )
+)</code></pre>
+<p>In the past, I&#8217;ve used the workaround of having radio buttons, but I&#8217;d really like to just have an enable checkbox.</p>
+<p>My workaround:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;radio&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; 1,
+     &#039;list&#039; =&gt; true,
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       1 =&gt; &#039;Enable&#039;,
+       0 =&gt; &#039;Disable&#039;
+      )
+   )
+ )</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Grouped Radio Data Persistence</title>
+		<link>https://piklist.com/support/topic/grouped-radio-data-persistence/</link>
+		
+		<dc:creator><![CDATA[lycidiae]]></dc:creator>
+		<pubDate>Wed, 31 Dec 2014 21:02:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/grouped-radio-data-persistence/</guid>
+
+					<description><![CDATA[<p>Hello! Trying to use the Radio field in a repeating group has led to some finicky behavior: Even though the radio is given a default value and is required, I have a problem of the a choice from the selection being lost in the GUI on the CPT backend page load. The three choices start [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-radio-data-persistence/">Grouped Radio Data Persistence</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello!</p>
+<p>Trying to use the Radio field in a repeating group has led to some finicky behavior:</p>
+<p>Even though the radio is given a default value and is required, I have a problem of the a choice from the selection being lost in the GUI on the CPT backend page load. The three choices start out all blank even if a value for that repeater was selected during a different edit, the required field for some reason misses the dropped values, and updating deletes my meta values in the database. </p>
+<p>Please help me out, am I missing some field in the Piklist setup array that persists choices, or is this a bug in the repeating groups (I&#8217;m not running into any persistence problems when radio and datepicker fields are top level).</p>
+<pre><code>
+piklist(&#039;field&#039;,
+    array(
+        &#039;type&#039; =&gt; &#039;group&#039;,
+        &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+        &#039;field&#039; =&gt; &#039;service_relation&#039;,
+        &#039;label&#039; =&gt; __(&#039;Relate Post&#039;),
+        &#039;description&#039; =&gt; __(&#039;Link this accountant to his/her respective field(s) of practice.&#039;),
+        &#039;add_more&#039; =&gt; true,
+        &#039;columns&#039; =&gt; 12,
+        &#039;fields&#039; =&gt; array(
+            ...
+            ,array(
+                &#039;type&#039; =&gt; &#039;radio&#039;,
+                &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+                &#039;field&#039; =&gt; &#039;cpa_incharge&#039;,
+                &#039;value&#039; =&gt; &#039;member&#039;,
+                &#039;required&#039; =&gt; &#039;true&#039;,
+                &#039;label&#039; =&gt; &#039;Practice Area Level&#039;,
+                &#039;columns&#039; =&gt; 4,
+                &#039;attributes&#039; =&gt; array(
+                    &#039;class&#039; =&gt; &#039;text&#039;
+                ),
+                &#039;choices&#039; =&gt; array(
+                    &#039;member&#039; =&gt; &#039;Member&#039;,
+                    &#039;featured&#039; =&gt; &#039;Featured&#039;,
+                    &#039;charge&#039; =&gt; &#039;In Charge&#039;
+                )
+            )
+        )
+    )
+);
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-radio-data-persistence/">Grouped Radio Data Persistence</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy field not saving on CPT</title>
+		<link>https://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/</link>
+		
+		<dc:creator><![CDATA[mjenn123]]></dc:creator>
+		<pubDate>Mon, 02 Jun 2014 00:31:41 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve created a custom post type and a custom taxonomy. I&#8217;m able to see the list of terms as a radio field on the custom post type using Piklist, but when I select one and save it, it does not seem to actually associate the cpt with the term. I&#8217;ve looked over my code dozens [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/">Taxonomy field not saving on CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve created a custom post type and a custom taxonomy. I&#8217;m able to see the list of terms as a radio field on the custom post type using Piklist, but when I select one and save it, it does not seem to actually associate the cpt with the term. I&#8217;ve looked over my code dozens of times and tried several variations. I&#8217;m hoping I&#8217;m missing something obvious. </p>
+<p>Any help would be welcome.</p>
+<p><strong>Here&#8217;s my plugin code</strong> (note that it&#8217;s not a theme).</p>
+<p><strong>Taxonomy definition:</strong></p>
+<pre><code>add_filter(&#039;piklist_taxonomies&#039;, function( $taxonomies ){
+
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;sms_band&#039;
+    ,&#039;name&#039; =&gt; &#039;sms_shade&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;hide_meta_box&#039; =&gt; false
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Shade&#039;)
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; false
+    )
+  );
+  return $taxonomies;
+
+});</code></pre>
+<p><strong>Code in use to add two default terms</strong></p>
+<pre><code>// Add &#039;Dark&#039; and &#039;Light&#039; default terms
+add_action(&#039;admin_init&#039;, function(){
+
+  $taxonomy = &quot;sms_shade&quot;;
+
+  $term = &quot;Dark Background [Light Text]&quot;; 
+  $slug = &quot;dark&quot;; 
+  if ( !term_exists( $term, $taxonomy ) ){
+    wp_insert_term( $term, $taxonomy, array( &#039;slug&#039; =&gt; $slug ) );
+  }
+  $term = &quot;Light Background [Dark Text]&quot;; 
+  $slug = &quot;light&quot;; 
+  if ( !term_exists( $term, $taxonomy ) ){
+    wp_insert_term( $term, $taxonomy, array( &#039;slug&#039; =&gt; $slug ) );
+  }
+
+});</code></pre>
+<p><strong>/parts/meta-boxes/band_shade.php</strong></p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;
+  ,&#039;field&#039; =&gt; &#039;band_shade&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;label&#039; =&gt; &#039;Shades&#039;
+  ,&#039;choices&#039; =&gt; piklist(
+  get_terms(&#039;sms_shade&#039;, array(
+    &#039;hide_empty&#039; =&gt; false
+  ))
+  ,array(
+    &#039;term_id&#039;
+    ,&#039;name&#039;
+  ))
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/">Taxonomy field not saving on CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Text field in radio option</title>
+		<link>https://piklist.com/support/topic/text-field-in-radio-option/</link>
+		
+		<dc:creator><![CDATA[Jason]]></dc:creator>
+		<pubDate>Tue, 29 Apr 2014 13:41:30 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/text-field-in-radio-option/</guid>
+
+					<description><![CDATA[<p>Is it possible to display a field as an option of another field? I know you can group fields, but what about as an option? The use case is a price. The user could either select &#8220;Free&#8221; as a radio option, or otherwise enter a value into a text field.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-in-radio-option/">Text field in radio option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is it possible to display a field as an option of another field? I know you can group fields, but what about as an option?</p>
+<p>The use case is a price. The user could either select &#8220;Free&#8221; as a radio option, or otherwise enter a value into a text field.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-in-radio-option/">Text field in radio option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Radio problem.</title>
+		<link>https://piklist.com/support/topic/radio-problem/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sun, 01 Dec 2013 17:55:57 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/radio-problem/</guid>
+
+					<description><![CDATA[<p>Just wondering if anyone has brought this bug up. When I create a radio button(s), if I create it inside a group with a field, I can set the value and it is saved. ,&#039;field&#039; =&#62; &#039;fieldname&#039; ,&#039;fields&#039; =&#62; array ( array( &#039;type&#039; =&#62; &#039;radio&#039; ,&#039;field&#039; =&#62; &#039;mae_ch_gender&#039; ,&#039;label&#039; =&#62; &#039;Male or Female&#039; ,&#039;choices&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-problem/">Radio problem.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just wondering if anyone has brought this bug up.</p>
+<p>When I create a radio button(s), if I create it inside a group with a field, I can set the value and it is saved. </p>
+<pre><code>,&#039;field&#039; =&gt; &#039;fieldname&#039;
+,&#039;fields&#039; =&gt; array (
+    array(
+      &#039;type&#039; =&gt; &#039;radio&#039;
+      ,&#039;field&#039; =&gt; &#039;mae_ch_gender&#039;
+      ,&#039;label&#039; =&gt; &#039;Male or Female&#039;
+      ,&#039;choices&#039; =&gt; array(
+        &#039;m&#039; =&gt; &#039;M&#039;
+        ,&#039;f&#039; =&gt; &#039;F&#039;
+      )
+      ,&#039;columns&#039; =&gt; 4
+   )
+)
+</code></pre>
+<p>If I create a radio button outside of a group, on its own, I can set the value and its saved.</p>
+<pre><code> piklist(&#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;radio&#039;
+      ,&#039;field&#039; =&gt; &#039;mae_ch_gender&#039;
+      ,&#039;label&#039; =&gt; &#039;Male or Female&#039;
+      ,&#039;choices&#039; =&gt; array(
+        &#039;m&#039; =&gt; &#039;M&#039;
+        ,&#039;f&#039; =&gt; &#039;F&#039;
+      )
+      ,&#039;columns&#039; =&gt; 4
+));
+</code></pre>
+<p>If I create a radio button inside a group, that has no field set, when I set a value, or choose a value it will not save. Or at least will not show the saved option.</p>
+<pre><code>,&#039;fields&#039; =&gt; array(
+    array(
+      &#039;type&#039; =&gt; &#039;radio&#039;
+      ,&#039;field&#039; =&gt; &#039;mae_ch_gender&#039;
+      ,&#039;label&#039; =&gt; &#039;Male or Female&#039;
+      ,&#039;choices&#039; =&gt; array(
+        &#039;m&#039; =&gt; &#039;M&#039;
+        ,&#039;f&#039; =&gt; &#039;F&#039;
+      )
+      ,&#039;columns&#039; =&gt; 4
+    )
+)
+</code></pre>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/radio-problem/">Radio problem.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Need Help: 2 Big Bugs found</title>
+		<link>https://piklist.com/support/topic/need-help-2-big-bugs-found/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Mon, 28 Oct 2013 07:15:13 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/need-help-2-big-bugs-found/</guid>
+
+					<description><![CDATA[<p>Hi guys, I really need your help, I&#8217;ve created a very large metabox for parents to fill out (mostly for admins to fill out right now) but when I make the add-more group for their children a group (give it a field) when saved it literally creates like 20 versions of the children, and none [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-help-2-big-bugs-found/">Need Help: 2 Big Bugs found</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys, I really need your help, I&#8217;ve created a very large metabox for parents to fill out (mostly for admins to fill out right now) but when I make the add-more group for their children a group (give it a field) when saved it literally creates like 20 versions of the children, and none of them have the correct data.</p>
+<p>So I removed the field option from the group for children, but when I publish/save all of the data, the radios and checkboxes states aren&#8217;t saved. See img below:<br />
+<img src="http://www.marcusware.com/images/examplebug-1.png" alt="Radios and Checkboxes not saving states." /></p>
+<p>The selects are, but none of the radios and checkboxes, please help, as I want to use these metaboxes right away.</p>
+<p>Thanks again.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-help-2-big-bugs-found/">Need Help: 2 Big Bugs found</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

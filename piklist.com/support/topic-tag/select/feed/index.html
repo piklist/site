@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>select &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/select/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 27 Jul 2017 15:15:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Fields are auto-pupulated based on user selection</title>
+		<link>https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/</link>
+		
+		<dc:creator><![CDATA[samuelyip74]]></dc:creator>
+		<pubDate>Thu, 27 Jul 2017 15:15:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/</guid>
+
+					<description><![CDATA[<p>Hi, I have a requirement and don&#8217;t know how it can be achieved with piklist. I created a few fields for products cpt (SKU, Description, Price etc). In the order cpt, I managed to generate a dynamic choice field based on all the SKUs. When the user select the relevant SKU, I would like the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/">Fields are auto-pupulated based on user selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I have a requirement and don&#8217;t know how it can be achieved with piklist.</p>
+<p>I created a few fields for products cpt (SKU, Description, Price etc).  In the order cpt,<br />
+I managed to generate a dynamic choice field based on all the SKUs.  When the user select the relevant SKU, I would like the other fields in the order fields to be auto populated by the SKU.</p>
+<p>Example,<br />
+Product CPT<br />
+SKU1, Shampoo, $3.00<br />
+SKU2, Shampoo-go, $5.00</p>
+<p>Order CPT,<br />
+Select Field A, Field B, Field C<br />
+[SKU1, SKU2],   &#8221; &#8220;, &#8221; &#8221;</p>
+<p>When user select SKU1, I would like Field B and Field C to be auto-populated with Shampoo, and $3.00 automatically.</p>
+<p>Can this be done with piklist?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-are-auto-pupulated-based-on-user-selection/">Fields are auto-pupulated based on user selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Select fields with taxonomy in meta-box not saving.</title>
+		<link>https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/</link>
+		
+		<dc:creator><![CDATA[Rob Hust]]></dc:creator>
+		<pubDate>Fri, 19 Aug 2016 06:10:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/</guid>
+
+					<description><![CDATA[<p>The following code is not saving to the appropriate taxonomies (or anywhere). When the post-type is opened in wordpress, the fields are back to their default, and none of the taxonomy boxes are checked. It is saved in &#8220;meta-boxes&#8221; The first two fields are the issue. /* Title: Recipe Particulars Post Type: gw-recipe */ piklist( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/">Select fields with taxonomy in meta-box not saving.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The following code is not saving to the appropriate taxonomies (or anywhere). When the post-type is opened in wordpress, the fields are back to their default, and none of the taxonomy boxes are checked.</p>
+<p>It is saved in &#8220;meta-boxes&#8221;<br />
+The first two fields are the issue.</p>
+<pre><code>/*
+Title: Recipe Particulars
+Post Type: gw-recipe
+*/
+
+piklist( &#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;gw-cuisine&#039;
+      ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+      ,&#039;label&#039; =&gt; &#039;Choose Cuisine Type&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;american&#039; =&gt; &#039;American&#039;
+        ,&#039;chinese&#039; =&gt; &#039;Chinese&#039;
+        ,&#039;french&#039; =&gt; &#039;French&#039;
+        ,&#039;german&#039; =&gt; &#039;German&#039;
+        ,&#039;italian&#039; =&gt; &#039;Italian&#039;
+        ,&#039;japanese&#039; =&gt; &#039;Japanese&#039;
+        ,&#039;mexican&#039; =&gt; &#039;Mexican&#039;
+        ,&#039;spanish&#039; =&gt; &#039;Spanish&#039;
+        ,&#039;fusion&#039; =&gt; &#039;Fusion&#039;
+      	)
+      ,&#039;attributes&#039; =&gt; array(
+      	&#039;multiple&#039; =&gt; &#039;multiple&#039; // This changes a select field into a multi-select field
+      	)
+));
+
+piklist( &#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;gw-course&#039;
+      ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+      ,&#039;label&#039; =&gt; &#039;Choose Course&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;entree&#039; =&gt; &#039;Entree&#039;
+        ,&#039;side&#039; =&gt; &#039;Side&#039;
+        ,&#039;salad&#039; =&gt; &#039;Salad&#039;
+        ,&#039;appetizer&#039; =&gt; &#039;Appetizer&#039;
+        ,&#039;breakfast&#039; =&gt; &#039;Breakfast&#039;
+        ,&#039;lunch&#039; =&gt; &#039;Lunch&#039;
+        ,&#039;supper&#039; =&gt; &#039;Supper&#039;
+        ,&#039;snack&#039; =&gt; &#039;Snack&#039;
+        ,&#039;dessert&#039; =&gt; &#039;Dessert&#039;
+      	)
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;multiple&#039; =&gt; &#039;multiple&#039; // This changes a select field into a multi-select field
+      		)
+));
+
+piklist( &#039;field&#039;, array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;serves&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Serves&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 4
+    	,&#039;help&#039; =&gt; __(&#039;Number of servings in the recipe&#039;, &#039;gw-recipe&#039;)
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+    	));
+
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;ingredients-add-more&#039;
+    ,&#039;add_more&#039; =&gt; true
+    , &#039;columns&#039; =&gt; 12
+    ,&#039;fields&#039; =&gt; array(
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;quantity&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Quantity&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 2
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		),
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;measure&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Measure&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 3
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+    	),
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;ingredient&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Ingredient&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 7
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		)
+    )
+));
+
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;instruction-steps&#039;
+    ,&#039;add_more&#039; =&gt; true
+    , &#039;columns&#039; =&gt; 12
+    ,&#039;fields&#039; =&gt; array(
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;instruction_step_num&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Step #&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 2
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		),
+    	array(
+    	&#039;type&#039; =&gt; &#039;textarea&#039;,
+    	&#039;field&#039; =&gt; &#039;instruction&#039;,
+    	&#039;label&#039; =&gt; &#039;Instructions&#039;,
+    	&#039;columns&#039; =&gt; 10,
+    	&#039;attributes&#039; =&gt; array(
+      	&#039;rows&#039; =&gt; 10,
+      	&#039;class&#039; =&gt; &#039;large-text&#039;
+    		)
+  		)
+    )
+));</code></pre>
+<p>Here&#8217;s the definition of the post-type and the taxonomies.</p>
+<pre><code>/*
+Plugin Name: i824 Recipes
+Plugin URI: http://integr824.com/plugin
+Description: This adds recipes post types to WordPress
+Version: 0.1
+Author: Robert Hust
+Author URI: http://integr824.com
+Plugin Type: Piklist
+License: GPL2
+*/
+
+ if (!defined(&#039;ABSPATH&#039;))
+  {
+    exit;
+  }
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_cuisine&#039;);
+function recipe_cuisine($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-cuisine&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Cuisines&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-cuisine&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_course&#039;);
+function recipe_course($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-course&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Courses&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-course&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_tools&#039;);
+function recipe_tools($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-tools&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; false
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Tools&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-course&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_post_types&#039;, &#039;recipe_post_types&#039;);
+  function recipe_post_types($post_types)
+  {
+    $post_types[&#039;gw-recipe&#039;] = array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Recipe&#039;)
+      ,&#039;title&#039; =&gt; __(&#039;Enter Recipe Name&#039;)
+      ,&#039;menu_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-menu-icon.svg&#039;
+      ,&#039;page_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-page-icon-32.png&#039;
+      ,&#039;supports&#039; =&gt; array(
+        &#039;title&#039;
+        ,&#039;editor&#039;
+        ,&#039;excerpt&#039;
+        ,&#039;comments&#039;
+      )
+      ,&#039;public&#039; =&gt; true
+      ,&#039;admin_body_class&#039; =&gt; array(
+        &#039;custom-body-class&#039;
+      )
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-recipe&#039;
+      )
+      ,&#039;capability_type&#039; =&gt; &#039;post&#039;
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Recipe&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Assigned to&#039;)
+      )
+    );
+    return $post_types;
+  }</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/">Select fields with taxonomy in meta-box not saving.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>[possible bug] select field with scope=post</title>
+		<link>https://piklist.com/support/topic/possible-bug-select-field-with-scopepost/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2016 02:28:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/possible-bug-select-field-with-scopepost/</guid>
+
+					<description><![CDATA[<p>I have an event post type. Some events are small; others are annual events and warrant their own pages. So I have a select field for events that enables the user to choose the page associated with an event. I&#8217;ve done this before with post_meta and had no problem. But this time, because the events [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/possible-bug-select-field-with-scopepost/">[possible bug] select field with scope=post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have an event post type. Some events are small; others are annual events and warrant their own pages. So I have a select field for events that enables the user to choose the page associated with an event. </p>
+<p>I&#8217;ve done this before with post_meta and had no problem. But this time, because the events aren&#8217;t hierarchical, I decided to use post_parent to store the page ID. What I found is that I could set the post_parent to have a specific page value, but that I couldn&#8217;t set it to zero. </p>
+<p>When the value is stored in post_meta, there&#8217;s no problem setting it back to zero. </p>
+<p>Here&#8217;s the code: </p>
+<pre><code>
+&lt;?php
+/*
+Title: Page Test
+Description: select page for event
+Post Type: event
+Priority: high
+Order: 20
+*/
+
+// get an array of page titles indexed by page IDs
+$default_page = array( 0 =&gt; &#039;-- none --&#039; );
+$choices = $default_page + piklist(
+	get_posts( array(
+		&#039;post_type&#039; =&gt; &#039;page&#039;,
+		&#039;numberposts&#039; =&gt; -1,
+		&#039;orderby&#039; =&gt; &#039;title&#039;,
+		&#039;order&#039; =&gt; &#039;ASC&#039;
+	)),
+	array( &#039;ID&#039;, &#039;post_title&#039; )
+);
+
+piklist(&#039;field&#039;, array(
+	&#039;field&#039; =&gt; &#039;event_page&#039;,
+	&#039;type&#039; =&gt; &#039;select&#039;,
+	&#039;scope&#039; =&gt; &#039;post_meta&#039;,
+	&#039;label&#039; =&gt; &#039;Event Page (stored in post_meta)&#039;,
+	&#039;description&#039; =&gt; &#039;If there is a special page for this event, select it here.&#039;,
+	&#039;choices&#039; =&gt; $choices,
+));
+
+piklist(&#039;field&#039;, array(
+	&#039;field&#039; =&gt; &#039;post_parent&#039;,
+	&#039;type&#039; =&gt; &#039;select&#039;,
+	&#039;scope&#039; =&gt; &#039;post&#039;,
+	&#039;label&#039; =&gt; &#039;Event Page (stored in post_parent)&#039;,
+	&#039;description&#039; =&gt; &#039;If there is a special page for this event, select it here.&#039;,
+	&#039;choices&#039; =&gt; $choices,
+));
+</code></pre>
+<p>Not surprisingly, behavior is the same for radio buttons. </p>
+<p>HTH,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/possible-bug-select-field-with-scopepost/">[possible bug] select field with scope=post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>work with relationships</title>
+		<link>https://piklist.com/support/topic/work-with-relationships/</link>
+		
+		<dc:creator><![CDATA[martinw]]></dc:creator>
+		<pubDate>Sun, 03 Apr 2016 10:41:18 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/work-with-relationships/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying out Piklist and so far it&#8217;s really great! Currently i try to add relationships to custom-post-types as well as users. So i need to add a field to the user where administrators can select none or one entry from a custom-post-type. This is what i have/found and added to the parts/users-folder. So far [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/work-with-relationships/">work with relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying out Piklist and so far it&#8217;s really great!</p>
+<p>Currently i try to add relationships to custom-post-types as well as users.</p>
+<p>So i need to add a field to the user where administrators can select none or one entry from a custom-post-type.<br />
+This is what i have/found and added to the parts/users-folder.<br />
+So far it works, but i can not select an emtpy option, i always have to select an existing post.<br />
+Is it possible to add an emtpy option to the top of the list?<br />
+how would i do that?</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    , &#039;field&#039; =&gt; &#039;current_selection&#039;
+    , &#039;label&#039; =&gt; __(&#039;Current Selection&#039;)
+    , &#039;description&#039; =&gt; __(&#039;Currently selected Post&#039;)
+    , &#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;text&#039;
+    )
+    , &#039;choices&#039; =&gt; piklist(            
+        get_posts(array(
+            &#039;post_type&#039; =&gt; &#039;my-custom-post-type&#039;,
+            &#039;numberposts&#039; =&gt; -1,
+            &#039;orderby&#039; =&gt; &#039;title&#039;,
+            &#039;order&#039; =&gt; &#039;ASC&#039;
+        )), array(&#039;ID&#039;, &#039;post_title&#039;)
+    ),
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/work-with-relationships/">work with relationships</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Best Way to Display Select Value</title>
+		<link>https://piklist.com/support/topic/best-way-to-display-select-value/</link>
+		
+		<dc:creator><![CDATA[4michaelcoleman]]></dc:creator>
+		<pubDate>Wed, 30 Mar 2016 21:57:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/best-way-to-display-select-value/</guid>
+
+					<description><![CDATA[<p>What I am trying to do is create a list of sponsors by the type of sponsor the registered for. Having a hard time displaying each sponsor type by the level. Here is the select I am using. array( &#039;type&#039; =&#62; &#039;select&#039;, &#039;field&#039; =&#62; &#039;sponsor_level&#039;, &#039;label&#039; =&#62; &#039;Sponsor Level&#039;, &#039;required&#039; =&#62; true, &#039;attributes&#039; =&#62; array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/best-way-to-display-select-value/">Best Way to Display Select Value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>What I am trying to do is create a list of sponsors by the type of sponsor the registered for. Having a hard time displaying each sponsor type by the level.</p>
+<p>Here is the select I am using.</p>
+<pre><code>array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;sponsor_level&#039;,
+    &#039;label&#039; =&gt; &#039;Sponsor Level&#039;,
+    &#039;required&#039; =&gt; true,
+    &#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;text&#039;
+    ),
+    &#039;choices&#039; =&gt; array(
+        &#039;&#039; =&gt; &#039;-- Select --&#039;,
+        &#039;Platinum&#039; =&gt; &#039;Platinum&#039;,
+        &#039;Gold&#039; =&gt; &#039;Gold&#039;,
+        &#039;Silver&#039; =&gt; &#039;Silver&#039;,
+    ),
+    &#039;columns&#039; =&gt; 4
+),</code></pre>
+<p>What I would like to do is display the Platinum Sponsors, then the Gold Sponsors, and then the Silver Sponsors in simple HTML.</p>
+<pre><code>&lt;div class=&quot;col-xs-12 platinum&quot;&gt;
+    &lt;div class=&quot;col-xs-12 col-sm-3&quot;&gt;
+        &lt;?php $image_ids = $post[&#039;upload_basic&#039;]; ?&gt;
+	 &lt;?php foreach ($image_ids as $image): ?&gt;
+	     &lt;img class=&quot;img-responsive&quot; src=&quot;&lt;?php echo wp_get_attachment_url($image); ?&gt;&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
+	 &lt;?php endforeach; ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs-12 col-sm-9&quot;&gt;
+        &lt;p&gt;&lt;?php echo $post[&#039;sponsor_overview&#039;]; ?&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs-2 pull-right platinum-link&quot;&gt;
+        &lt;a href=&quot;http://www.tsico.com/&quot; target=&quot;_blank&quot;&gt;&lt;?php echo $post[&#039;sponsor_name&#039;]; ?&gt; &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/best-way-to-display-select-value/">Best Way to Display Select Value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist 0.9.9.7 not set default value in group field for checkbox, radio</title>
+		<link>https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</link>
+		
+		<dc:creator><![CDATA[notaname]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 11:16:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</guid>
+
+					<description><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select). I tried in Setting, Post and Page, default value in group not working, without group field it work as expected. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;checkbox_list&#039; ,&#039;label&#039; =&#62; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;) ,&#039;list&#039; =&#62; false ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select).<br />
+I tried in Setting, Post and Page, default value in group not working, without group field it work as expected.</p>
+<pre><code>  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;checkbox_list&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;)
+    ,&#039;list&#039; =&gt; false
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;radio&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_1&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #1&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;third&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_2&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #2&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;second&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;second&#039; =&gt; &#039;Second Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Creating conditional field for something not equal to &#039;none&#039;</title>
+		<link>https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Thu, 15 Oct 2015 15:17:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/</guid>
+
+					<description><![CDATA[<p>I&#8217;m trying to create a conditional field for a settings page that will display a preview of the post chosen, but couldn&#8217;t find a way to add a condition for something != none. Here&#8217;s what I have: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;featured_post_id&#039; ,&#039;label&#039; =&#62; &#039;Choose post to feature&#039; ,&#039;columns&#039; =&#62; 6 ,&#039;choices&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/">Creating conditional field for something not equal to &#039;none&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m trying to create a conditional field for a settings page that will display a preview of the post chosen, but couldn&#8217;t find a way to add a condition for something != none.</p>
+<p>Here&#8217;s what I have:</p>
+<pre><code>   piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;select&#039;
+     ,&#039;field&#039; =&gt; &#039;featured_post_id&#039;
+     ,&#039;label&#039; =&gt; &#039;Choose post to feature&#039;
+     ,&#039;columns&#039; =&gt; 6
+     ,&#039;choices&#039; =&gt; array(&#039;none&#039; =&gt; &#039;-&#039;) + piklist(
+       get_posts(
+          array(
+           &#039;post_type&#039; =&gt; &#039;post&#039;
+           ,&#039;orderby&#039; =&gt; &#039;post_date&#039;
+          )
+          ,&#039;objects&#039;
+        )
+        ,array(
+          &#039;ID&#039;
+          ,&#039;post_title&#039;
+        )
+     )
+   ));
+
+   piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;html&#039;
+     ,&#039;label&#039; =&gt; &#039;Post Selected&#039;
+     ,&#039;field&#039; =&gt; &#039;featured_post_preview&#039;
+     ,&#039;description&#039; =&gt; &#039;The selected post to be featured&#039;
+     ,&#039;value&#039; =&gt; &#039;&lt;img src=&quot;Post image&quot;/&gt;&lt;h2&gt;Post Title&lt;/h2&gt;&lt;p&gt;Excerpt&lt;/p&gt;&#039; // How do I access these fields from the get_posts for the chosen featured_post_id?
+     ,&#039;conditions&#039; =&gt; array(
+       array(
+         &#039;field&#039; =&gt; &#039;featured_post_id&#039;
+         ,&#039;value&#039; =&gt; !&#039;none&#039; // how do I conditionally display based on when the value is not equal to none?
+       )
+     )
+   ));
+</code></pre>
+<p>Thank you for any help you can provide!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/creating-conditional-field-for-something-not-equal-to-none/">Creating conditional field for something not equal to &#039;none&#039;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Get name of option from select field</title>
+		<link>https://piklist.com/support/topic/get-name-of-option-from-select-field/</link>
+		
+		<dc:creator><![CDATA[vagelis]]></dc:creator>
+		<pubDate>Tue, 18 Aug 2015 19:36:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get-name-of-option-from-select-field/</guid>
+
+					<description><![CDATA[<p>I have this select field with two options: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;yachts_fuel&#039; ,&#039;label&#039; =&#62; &#039;Καύσιμο&#039; ,&#039;value&#039; =&#62; &#039;option1&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) ,&#039;choices&#039; =&#62; array( &#039;option1&#039; =&#62; &#039;Πετρέλαιο&#039; ,&#039;option2&#039; =&#62; &#039;Βενζίνη&#039; ) )); I want to show in the front end the value of &#8216;option1&#8217; which is &#8216;Πετρέλαιο&#8217;. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-name-of-option-from-select-field/">Get name of option from select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have this select field with two options:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;select&#039;
+ ,&#039;field&#039; =&gt; &#039;yachts_fuel&#039;
+ ,&#039;label&#039; =&gt; &#039;Καύσιμο&#039;
+ ,&#039;value&#039; =&gt; &#039;option1&#039;
+ ,&#039;attributes&#039; =&gt; array(
+   &#039;class&#039; =&gt; &#039;text&#039;
+ )
+ ,&#039;choices&#039; =&gt; array(
+  &#039;option1&#039; =&gt; &#039;Πετρέλαιο&#039;
+  ,&#039;option2&#039; =&gt; &#039;Βενζίνη&#039;
+  )
+ ));</code></pre>
+<p>I want to show in the front end the value of &#8216;option1&#8217; which is &#8216;Πετρέλαιο&#8217;. Using get_post_meta is returning the &#8216;option1&#8217; and not the text &#8216;Πετρέλαιο&#8217; that I want. How can I get that?</p>
+<p><code>get_post_meta($post-&gt;ID, &#039;yachts_fuel&#039;, true );</code> is what I used.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get-name-of-option-from-select-field/">Get name of option from select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>User query select field</title>
+		<link>https://piklist.com/support/topic/user-query-select-field/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Wed, 17 Jun 2015 21:19:38 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/user-query-select-field/</guid>
+
+					<description><![CDATA[<p>I created this select field inside of the user profiles. It works as expected in my user profile. When I go to edit someone else&#8217;s profile, it has a dropped down full of empty white selections. If you inspect the select button, all of the Id&#8217;s are populating in the values, but the display name [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-query-select-field/">User query select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I created this select field inside of the user profiles. It works as expected in my user profile. When I go to edit someone else&#8217;s profile, it has a dropped down full of empty white selections. If you inspect the select button, all of the Id&#8217;s are populating in the values, but the display name does not show. If I switch it to user_login, it displays, but ideally I would like to use their display name.</p>
+<pre><code>$user_id = (int) $user_id;
+$current_user = wp_get_current_user();
+if ( ! defined( &#039;IS_PROFILE_PAGE&#039; ) )
+    define( &#039;IS_PROFILE_PAGE&#039;, ( $user_id == $current_user-&gt;ID ) );
+
+if ( ! $user_id &amp;&amp; IS_PROFILE_PAGE )
+    $user_id = $current_user-&gt;ID;
+elseif ( ! $user_id &amp;&amp; ! IS_PROFILE_PAGE )
+    wp_die(__( &#039;Invalid user ID.&#039; ) );
+elseif ( ! get_userdata( $user_id ) )
+    wp_die( __(&#039;Invalid user ID.&#039;) );
+$spouse_id = $user_id;
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;user_spouse&#039;
+		,&#039;label&#039; =&gt; &#039;Your Spouse&#039;
+		,&#039;value&#039; =&gt; &#039;0&#039; // Sets default to None
+		,&#039;description&#039; =&gt; &#039;Please select your spouse below&#039;
+		,&#039;choices&#039; =&gt; array( 0 =&gt; &quot;Not Married&quot; ) + piklist(
+						get_users(
+							array(
+								&#039;orderby&#039; =&gt; &#039;display_name&#039;
+								,&#039;order&#039; =&gt; &#039;asc&#039;
+								,&#039;exclude&#039; =&gt; $spouse_id
+								,&#039;fields&#039; =&gt; array(&#039;ID&#039;, &#039;display_name&#039;)
+							)
+							,&#039;objects&#039;
+						)
+						,array(
+							&#039;ID&#039;
+							,&#039;display_name&#039;
+						)
+						)
+      )); </code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/user-query-select-field/">User query select field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy Dropdown List &#8211; All categories option</title>
+		<link>https://piklist.com/support/topic/taxonomy-dropdown-list-all-categories-option/</link>
+		
+		<dc:creator><![CDATA[Gregg]]></dc:creator>
+		<pubDate>Wed, 08 Apr 2015 19:08:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomy-dropdown-list-all-categories-option/</guid>
+
+					<description><![CDATA[<p>Hi Steve I successfully created a taxonomy dropdown list for a CPT that&#8217;s employed on my widgets page as you can see in the attached. It lists the available taxonomies, but is there a way to have an &#8220;All categories&#8221; option in the list?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-dropdown-list-all-categories-option/">Taxonomy Dropdown List &#8211; All categories option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Steve</p>
+<p>I successfully created a taxonomy dropdown list for a CPT that&#8217;s employed on my widgets page as you can see in the attached. </p>
+<p>It lists the available taxonomies, but is there a way to have an &#8220;All categories&#8221; option in the list? </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-dropdown-list-all-categories-option/">Taxonomy Dropdown List &#8211; All categories option</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

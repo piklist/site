@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Translation &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/translation/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 19 Dec 2019 21:01:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Bug: wrong use of translate function in class-piklist.php</title>
+		<link>https://piklist.com/support/topic/bug-wrong-use-of-translate-function-in-class-piklist-php/</link>
+		
+		<dc:creator><![CDATA[scalait]]></dc:creator>
+		<pubDate>Thu, 16 Jun 2016 08:00:39 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/bug-wrong-use-of-translate-function-in-class-piklist-php/</guid>
+
+					<description><![CDATA[<p>I am talking about the function &#8220;post_type_labels&#8221; in the class &#8220;Piklist&#8221;. There is a wrong use of the WordPress translation functions. You have to use placeholders in this function. This __(self::singularize($label), &#039;piklist&#039;) does not work, because the translatable strings are parsed from special function calls in the source-code, they are not obtained at run-time. More [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-wrong-use-of-translate-function-in-class-piklist-php/">Bug: wrong use of translate function in class-piklist.php</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am talking about the function &#8220;post_type_labels&#8221; in the class &#8220;Piklist&#8221;.</p>
+<p>There is a wrong use of the WordPress translation functions. You have to use placeholders in this function.</p>
+<p>This <code>__(self::singularize($label), &#039;piklist&#039;)</code> does not work, because the translatable strings are parsed from special function calls in the source-code, they are not obtained at run-time.</p>
+<p>More information you can find in the documentation:</p>
+<p>https://codex.wordpress.org/I18n_for_WordPress_Developers</p>
+<p>Part &#8220;Placeholders&#8221;</p>
+<p>So here is the old code:</p>
+<pre><code>
+  public static function post_type_labels($label)
+  {
+    return array(
+      &#039;name&#039; =&gt; __(self::singularize($label), &#039;piklist&#039;)
+      ,&#039;singular_name&#039; =&gt; __(self::singularize($label), &#039;piklist&#039;)
+      ,&#039;all_items&#039; =&gt; __(&#039;All &#039; . self::pluralize($label), &#039;piklist&#039;)
+      ,&#039;add_new&#039; =&gt; __(&#039;Add New&#039;, &#039;piklist&#039;)
+      ,&#039;add_new_item&#039; =&gt; __(&#039;Add New &#039; . self::singularize($label), &#039;piklist&#039;)
+      ,&#039;edit_item&#039; =&gt; __(&#039;Edit &#039; . self::singularize($label), &#039;piklist&#039;)
+      ,&#039;new_item&#039; =&gt; __(&#039;Add New &#039; . self::singularize($label), &#039;piklist&#039;)
+      ,&#039;view_item&#039; =&gt; __(&#039;View &#039; . self::singularize($label), &#039;piklist&#039;)
+      ,&#039;search_items&#039; =&gt; __(&#039;Search &#039; . self::pluralize($label), &#039;piklist&#039;)
+      ,&#039;not_found&#039; =&gt; __(&#039;No &#039; . self::pluralize($label) . &#039; found&#039;, &#039;piklist&#039;)
+      ,&#039;not_found_in_trash&#039; =&gt; __(&#039;No &#039; . self::pluralize($label) . &#039; found in trash&#039;, &#039;piklist&#039;)
+      ,&#039;parent_item_colon&#039; =&gt; __(&#039;Parent &#039; . self::pluralize($label) . &#039;:&#039;, &#039;piklist&#039;)
+      ,&#039;menu_name&#039; =&gt; __(self::pluralize($label), &#039;piklist&#039;)
+    );
+  }
+</code></pre>
+<p>I think this would be a right version of a &#8220;new code&#8221;:</p>
+<pre><code>
+  public static function post_type_labels($label)
+  {
+    return array(
+      &#039;name&#039; =&gt; self::singularize($label)
+      ,&#039;singular_name&#039; =&gt; self::singularize($label)
+      ,&#039;all_items&#039; =&gt; sprintf(__(&#039;All %s&#039;, &#039;piklist&#039;), self::pluralize($label))
+      ,&#039;add_new&#039; =&gt; __(&#039;Add New&#039;, &#039;piklist&#039;)
+      ,&#039;add_new_item&#039; =&gt; sprintf(__(&#039;Add New %s&#039;, &#039;piklist&#039;), self::singularize($label))
+      ,&#039;edit_item&#039; =&gt; sprintf(__(&#039;Edit %s&#039;, &#039;piklist&#039;), self::singularize($label))
+      ,&#039;new_item&#039; =&gt; sprintf(__(&#039;Add New %s&#039;, &#039;piklist&#039;), self::singularize($label))
+      ,&#039;view_item&#039; =&gt; sprintf(__(&#039;View %s&#039;, &#039;piklist&#039;), self::singularize($label))
+      ,&#039;search_items&#039; =&gt; sprintf(__(&#039;Search %s&#039;, &#039;piklist&#039;), self::pluralize($label))
+      ,&#039;not_found&#039; =&gt; sprintf(__(&#039;No %s found&#039;, &#039;piklist&#039;), self::pluralize($label))
+      ,&#039;not_found_in_trash&#039; =&gt; sprintf(__(&#039;No %s found in trash&#039;, &#039;piklist&#039;), self::pluralize($label))
+      ,&#039;parent_item_colon&#039; =&gt; sprintf(__(&#039;Parent %s:&#039;, &#039;piklist&#039;), self::pluralize($label))
+      ,&#039;menu_name&#039; =&gt; self::pluralize($label)
+    );
+  }
+</code></pre>
+<p><strong>The same problem can be found in the function &#8220;taxonomy_labels&#8221; in the class &#8220;Piklist&#8221;.</strong></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/bug-wrong-use-of-translate-function-in-class-piklist-php/">Bug: wrong use of translate function in class-piklist.php</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to set first day in week for the date-picker?</title>
+		<link>https://piklist.com/support/topic/how-to-set-first-day-in-week-for-the-date-picker/</link>
+		
+		<dc:creator><![CDATA[Klaus]]></dc:creator>
+		<pubDate>Mon, 12 Nov 2012 13:40:47 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/how-to-set-first-day-in-week-for-the-date-picker/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m from Germany and our week starts with Monday not Sunday. Is there a way to set this for the date-picker field? Best solution might be to get this right of the wordpress settings. Same for displaying time and date. BTW: I&#8217;d like to see a search function within your forum. It&#8217;ll make it [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-set-first-day-in-week-for-the-date-picker/">How to set first day in week for the date-picker?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;m from Germany and our week starts with Monday not Sunday.<br />
+Is there a way to set this for the date-picker field?<br />
+Best solution might be to get this right of the wordpress settings.<br />
+Same for displaying time and date.</p>
+<p>BTW: I&#8217;d like to see a search function within your forum. It&#8217;ll make it a lot easier to see if a similar question is already answered.</p>
+<p>Keep up the great work!</p>
+<p>Klaus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-set-first-day-in-week-for-the-date-picker/">How to set first day in week for the date-picker?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>title translation</title>
+		<link>https://piklist.com/support/topic/title-translation/</link>
+		
+		<dc:creator><![CDATA[Miguel]]></dc:creator>
+		<pubDate>Wed, 24 Oct 2012 01:52:54 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/title-translation/</guid>
+
+					<description><![CDATA[<p>Hi all. I want to know how to manage the translation of the &#8220;title of the metabox&#8221; ( and other text in the framework) that is defined in the comments. &#60;?php /* Title: My Demo Meta Box Post Type: post */ Thanks from Spain. Miguel.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/title-translation/">title translation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi all.<br />
+I want to know how to manage the translation of the &#8220;title of the metabox&#8221; ( and other text in the framework) that is defined  in the comments.<br />
+<code><br />
+&lt;?php<br />
+/*<br />
+Title: My Demo Meta Box<br />
+Post Type: post<br />
+*/<br />
+</code></p>
+<p>Thanks from Spain.</p>
+<p>Miguel.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/title-translation/">title translation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>term &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/term/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 30 Mar 2017 15:19:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Unique Value in Term Meta</title>
+		<link>https://piklist.com/support/topic/unique-value-in-term-meta/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Wed, 29 Mar 2017 01:42:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/unique-value-in-term-meta/</guid>
+
+					<description><![CDATA[<p>Hi, I love that you have term meta options https://piklist.com/learn/doc/terms/ I searched for an answer to this but came up empty. I noticed when creating a meta field, for example: &#60;?php /* Title: Upload Fields Taxonomy: random_tax New: true */ ?&#62; &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039; ,&#039;field&#039; =&#62; &#039;featured_media&#039; ,&#039;label&#039; =&#62; __(&#039;Featured Media&#039;, &#039;piklist-demo&#039;) [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unique-value-in-term-meta/">Unique Value in Term Meta</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I love that you have term meta options https://piklist.com/learn/doc/terms/</p>
+<p>I searched for an answer to this but came up empty. </p>
+<p>I noticed when creating a meta field, for example:</p>
+<pre><code>&lt;?php
+/*
+Title: Upload Fields
+Taxonomy: random_tax
+New: true
+*/
+?&gt;
+
+&lt;?php
+  
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;featured_media&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Featured Media&#039;, &#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;, &#039;piklist-demo&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;piklist-demo&#039;)
+    )
+  ));
+ ?&gt;
+</code></pre>
+<p>And I add a couple of images, it creates a new term meta field for each image and increments the id. </p>
+<p><a href="https://developer.wordpress.org/reference/functions/update_term_meta/" target="_blank">I know that multiple values can be added to a meta field using the unique parameter on add_term_meta</a> or update_term_meta but I&#8217;m not sure how to do this just using piklist. </p>
+<p>What am I missing?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unique-value-in-term-meta/">Unique Value in Term Meta</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy in Quick edit is different than piklist field</title>
+		<link>https://piklist.com/support/topic/taxonomy-in-quick-edit-is-different-than-piklist-field/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Tue, 16 Jun 2015 22:06:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/taxonomy-in-quick-edit-is-different-than-piklist-field/</guid>
+
+					<description><![CDATA[<p>I have created a piklist field to add custom taxonomy to a custom post type piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;location_country&#039; ,&#039;label&#039; =&#62; &#039;Country&#039; ,&#039;choices&#039; =&#62; piklist( get_terms(&#039;location-country&#039;, array( &#039;hide_empty&#039; =&#62; false )) ,array( &#039;term_id&#039; ,&#039;name&#039; ) ) )); The problem is that I can update the post&#8217;s taxonomy field on the quick [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-in-quick-edit-is-different-than-piklist-field/">Taxonomy in Quick edit is different than piklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have created a piklist field to add custom taxonomy to a custom post type</p>
+<pre><code>
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;select&#039;
+        ,&#039;field&#039; =&gt; &#039;location_country&#039;
+		,&#039;label&#039; =&gt; &#039;Country&#039;
+		,&#039;choices&#039; =&gt; piklist(
+		  get_terms(&#039;location-country&#039;, array(
+			&#039;hide_empty&#039; =&gt; false
+		  ))
+		  ,array(
+			&#039;term_id&#039;
+			,&#039;name&#039;
+		  )
+		)
+      ));</code></pre>
+<p>The problem is that I can update the post&#8217;s taxonomy field on the quick edit, and that works perfectly. However when I select the taxonomy in my dropdown inside, it is not actually assigning the post to that particular term. Did I create the select field wrong that it is not saving correctly?</p>
+<p>I didn&#8217;t notice at first until I tried running a wp_query for each particular term. Only the ones that I set the taxonomy through the quick_edit appeared. All of the posts that I went into the post and select the dropdown, did not appear. The dropdowns do retain their value, so it is saving the value somewhere, just not as a term.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-in-quick-edit-is-different-than-piklist-field/">Taxonomy in Quick edit is different than piklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>show fields conditioned on taxonomy term?</title>
+		<link>https://piklist.com/support/topic/show-fields-conditioned-on-taxonomy-term/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Thu, 25 Sep 2014 04:24:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/show-fields-conditioned-on-taxonomy-term/</guid>
+
+					<description><![CDATA[<p>I want to show certain metaboxes only if a post is in a certain category. I see the info on setting a condition based on a different field but not on taxonomy. Is this supported? Thanks! Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/show-fields-conditioned-on-taxonomy-term/">show fields conditioned on taxonomy term?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to show certain metaboxes only if a post is in a certain category. I see the info on setting a condition based on a different field but not on taxonomy. Is this supported? </p>
+<p>Thanks!<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/show-fields-conditioned-on-taxonomy-term/">show fields conditioned on taxonomy term?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Taxonomy field not saving on CPT</title>
+		<link>https://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/</link>
+		
+		<dc:creator><![CDATA[mjenn123]]></dc:creator>
+		<pubDate>Mon, 02 Jun 2014 00:31:41 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/</guid>
+
+					<description><![CDATA[<p>I&#8217;ve created a custom post type and a custom taxonomy. I&#8217;m able to see the list of terms as a radio field on the custom post type using Piklist, but when I select one and save it, it does not seem to actually associate the cpt with the term. I&#8217;ve looked over my code dozens [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/">Taxonomy field not saving on CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve created a custom post type and a custom taxonomy. I&#8217;m able to see the list of terms as a radio field on the custom post type using Piklist, but when I select one and save it, it does not seem to actually associate the cpt with the term. I&#8217;ve looked over my code dozens of times and tried several variations. I&#8217;m hoping I&#8217;m missing something obvious. </p>
+<p>Any help would be welcome.</p>
+<p><strong>Here&#8217;s my plugin code</strong> (note that it&#8217;s not a theme).</p>
+<p><strong>Taxonomy definition:</strong></p>
+<pre><code>add_filter(&#039;piklist_taxonomies&#039;, function( $taxonomies ){
+
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;sms_band&#039;
+    ,&#039;name&#039; =&gt; &#039;sms_shade&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;hide_meta_box&#039; =&gt; false
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Shade&#039;)
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; false
+    )
+  );
+  return $taxonomies;
+
+});</code></pre>
+<p><strong>Code in use to add two default terms</strong></p>
+<pre><code>// Add &#039;Dark&#039; and &#039;Light&#039; default terms
+add_action(&#039;admin_init&#039;, function(){
+
+  $taxonomy = &quot;sms_shade&quot;;
+
+  $term = &quot;Dark Background [Light Text]&quot;; 
+  $slug = &quot;dark&quot;; 
+  if ( !term_exists( $term, $taxonomy ) ){
+    wp_insert_term( $term, $taxonomy, array( &#039;slug&#039; =&gt; $slug ) );
+  }
+  $term = &quot;Light Background [Dark Text]&quot;; 
+  $slug = &quot;light&quot;; 
+  if ( !term_exists( $term, $taxonomy ) ){
+    wp_insert_term( $term, $taxonomy, array( &#039;slug&#039; =&gt; $slug ) );
+  }
+
+});</code></pre>
+<p><strong>/parts/meta-boxes/band_shade.php</strong></p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;radio&#039;
+  ,&#039;field&#039; =&gt; &#039;band_shade&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;label&#039; =&gt; &#039;Shades&#039;
+  ,&#039;choices&#039; =&gt; piklist(
+  get_terms(&#039;sms_shade&#039;, array(
+    &#039;hide_empty&#039; =&gt; false
+  ))
+  ,array(
+    &#039;term_id&#039;
+    ,&#039;name&#039;
+  ))
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/taxonomy-field-not-saving-on-cpt/">Taxonomy field not saving on CPT</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

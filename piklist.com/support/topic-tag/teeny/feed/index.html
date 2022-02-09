@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>teeny &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/teeny/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 12 Oct 2020 07:11:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add TinyMCE button to editor field</title>
+		<link>https://piklist.com/support/topic/add-tinymce-button-to-editor-field/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Mon, 12 Oct 2020 07:11:01 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-tinymce-button-to-editor-field/</guid>
+
+					<description><![CDATA[<p>How can I add a button to the editor? I need the &#8220;anchor&#8221; button back in WordPress. If it is added like this: https://codex.wordpress.org/TinyMCE_Custom_Buttons it appeats fint in the normal wp-editor. Not in the Piklist field, however. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;editor&#039;, &#039;field&#039; =&#62; &#039;intro_content&#039;, &#039;label&#039; =&#62; &#039;Intro text&#039;, &#039;template&#039; =&#62; &#039;field&#039;, &#039;options&#039; =&#62; array( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-tinymce-button-to-editor-field/">Add TinyMCE button to editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How can I add a button to the editor? I need the &#8220;anchor&#8221; button back in WordPress. If it is added like this: https://codex.wordpress.org/TinyMCE_Custom_Buttons it appeats fint in the normal wp-editor. Not in the Piklist field, however.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;editor&#039;,
+	&#039;field&#039; =&gt; &#039;intro_content&#039;,
+	&#039;label&#039; =&gt; &#039;Intro text&#039;,
+	&#039;template&#039; =&gt; &#039;field&#039;,
+	&#039;options&#039; =&gt; array( // Pass any option that is accepted by wp_editor()
+		&#039;wpautop&#039; =&gt; true,
+		&#039;media_buttons&#039; =&gt; false,
+		&#039;shortcode_buttons&#039; =&gt; false,
+		&#039;teeny&#039; =&gt; true,
+		&#039;dfw&#039; =&gt; false,
+		&#039;quicktags&#039; =&gt; true,
+		&#039;drag_drop_upload&#039; =&gt; false,
+		&#039;tinymce&#039; =&gt; array(
+			&#039;resize&#039; =&gt; false,
+			&#039;wp_autoresize_on&#039; =&gt; true,
+			&#039;toolbar1&#039; =&gt; &#039;bold,italic,underline,link,unlink&#039;,
+			&#039;toolbar2&#039; =&gt; &#039;anchor&#039;,
+		),
+		&#039;textarea_rows&#039; =&gt; 10,
+	),
+	&#039;columns&#039; =&gt; 12,
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-tinymce-button-to-editor-field/">Add TinyMCE button to editor field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

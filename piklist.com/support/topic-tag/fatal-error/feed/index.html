@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Fatal error &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/fatal-error/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 21 Nov 2017 18:00:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Fatal error</title>
+		<link>https://piklist.com/support/topic/fatal-error/</link>
+		
+		<dc:creator><![CDATA[saara]]></dc:creator>
+		<pubDate>Mon, 02 Oct 2017 20:24:08 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fatal-error/</guid>
+
+					<description><![CDATA[<p>I installed Helpers and the activation page said Piklist was deactivated. I cannot access the plugins page or pretty much anywhere in the dashboard to uninstall, since I am thrown to white screen that says: Fatal error: Call to undefined function mb_strtolower() in /home/mysitename/public_html/wp-content/plugins/piklist/includes/class-piklist.php on line 1226 I am stuck, not able to uninstall and [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fatal-error/">Fatal error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I installed Helpers and the activation page said Piklist was deactivated. I cannot access the plugins page or pretty much anywhere in the dashboard to uninstall, since I am thrown to white screen that says:</p>
+<p>Fatal error: Call to undefined function mb_strtolower() in /home/mysitename/public_html/wp-content/plugins/piklist/includes/class-piklist.php on line 1226</p>
+<p>I am stuck, not able to uninstall and cant do anything really. Have no idea what to do.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fatal-error/">Fatal error</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Cannot Access empty Property?</title>
+		<link>https://piklist.com/support/topic/cannot-access-empty-property/</link>
+		
+		<dc:creator><![CDATA[achowell]]></dc:creator>
+		<pubDate>Tue, 18 Apr 2017 18:41:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cannot-access-empty-property/</guid>
+
+					<description><![CDATA[<p>For some reason, some of my Piklist post types keep crashing my websites if both the plugin that creates the post type and the piklist plugin are on. Below is a simple plugin that creates a post type that breaks the site with the FATAL error if used with Piklist. &#60;?php //ADD SPOTLIGHT POST TYPE [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cannot-access-empty-property/">Cannot Access empty Property?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>For some reason, some of my Piklist post types keep crashing my websites if both the plugin that creates the post type and the piklist plugin are on. Below is a simple plugin that creates a post type that breaks the site with the FATAL error if used with Piklist.</p>
+<pre><code>
+&lt;?php
+//ADD SPOTLIGHT POST TYPE
+add_filter(&#039;piklist_post_types&#039;, &#039;spotlight_videos_post_type&#039;);
+ function spotlight_videos_post_type($post_types)
+ {
+  $post_types[&#039;spotlight_videos&#039;] = array(
+    &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Spotlight Video&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Enter a new Spotlight Video&#039;)
+    ,&#039;public&#039; =&gt; true
+    ,&#039;menu_icon&#039; =&gt; &#039;dashicons-video-alt2&#039;
+    ,&#039;capability_type&#039; =&gt; &#039;spotlight_videos&#039;
+  ,&#039;capabilities&#039; =&gt; array(
+    &#039;publish_posts&#039; =&gt; &#039;publish_spotlight_video&#039;
+    ,&#039;edit_posts&#039; =&gt; &#039;edit_spotlight_video&#039;
+    ,&#039;edit_others_posts&#039; =&gt; &#039;edit_others_spotlight_videos&#039;
+    ,&#039;delete_posts&#039; =&gt; &#039;delete_spotlight_videos&#039;
+    ,&#039;delete_others_posts&#039; =&gt; &#039;delete_others_spotlight_videos&#039;
+    ,&#039;read_private_posts&#039; =&gt; &#039;read_private_spotlight_videos&#039;
+    ,&#039;edit_post&#039; =&gt; &#039;edit_spotlight_video&#039;
+    ,&#039;delete_post&#039; =&gt; &#039;delete_spotlight_video&#039;
+    ,&#039;read_post&#039; =&gt; &#039;read_spotlight_video&#039;
+  )
+    ,&#039;rewrite&#039; =&gt; array(
+      &#039;slug&#039; =&gt; &#039;spotlight_videos&#039;
+    )
+    ,map_meta_cap =&gt; true
+    ,&#039;supports&#039; =&gt; array(
+      &#039;title&#039;
+      ,&#039;editor&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;thumbnail&#039;
+    )
+    ,&#039;hide_meta_box&#039; =&gt; array(
+      &#039;slug&#039;
+      ,&#039;author&#039;
+      ,&#039;revisions&#039;
+      ,&#039;comments&#039;
+      ,&#039;commentstatus&#039;
+    )
+  );
+return $post_types;
+}
+?&gt;
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cannot-access-empty-property/">Cannot Access empty Property?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

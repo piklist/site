@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>warnings &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/warnings/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 26 Jul 2018 13:49:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Piklist warnings (when using workflow)</title>
+		<link>https://piklist.com/support/topic/piklist-warnings-when-using-workflow/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Wed, 25 Jul 2018 08:02:43 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-warnings-when-using-workflow/</guid>
+
+					<description><![CDATA[<p>hey there! just wondering if i can do anything about these warnings: (not turning them off, but actually fixing them) Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-warnings-when-using-workflow/">Piklist warnings (when using workflow)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hey there!<br />
+just wondering if i can do anything about these warnings:<br />
+(not turning them off, but actually fixing them)</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-warnings-when-using-workflow/">Piklist warnings (when using workflow)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Warnings when savings a user</title>
+		<link>https://piklist.com/support/topic/warnings-when-savings-a-user/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Mon, 28 Sep 2015 17:03:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/warnings-when-savings-a-user/</guid>
+
+					<description><![CDATA[<p>When I save one of the pages I have created in my profile flow I consitently get these warnings. After I save it I get a blank white page with these warnings: Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092 Warning: mysqli_real_escape_string() expects parameter 2 to be string, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/warnings-when-savings-a-user/">Warnings when savings a user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I save one of the pages I have created in my profile flow I consitently get these warnings. After I save it I get a blank white page with these warnings:</p>
+<pre><code>
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: mysqli_real_escape_string() expects parameter 2 to be string, array given in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php on line 1092
+
+Warning: Cannot modify header information - headers already sent by (output started at /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/wp-db.php:1092) in /home/micdri10/EXTREMESOUTHAMERICA.COM/wp-includes/pluggable.php on line 1207
+</code></pre>
+<p>It does successfully save the information, but it is pretty annoying.</p>
+<p>I have narrowed it down to validation rule I have created.</p>
+<p>This is the validation rule that is on my functions page</p>
+<pre><code>
+//Validation RULES
+add_filter(&#039;piklist_validation_rules&#039;, &#039;check_if_unique&#039;, 11);
+function check_if_unique($validation_rules)
+{
+  $validation_rules[&#039;custom_unique&#039;] = array(
+    &#039;callback&#039; =&gt; &#039;my_validate_unique&#039;
+  );
+ 
+  return $validation_rules;
+}
+ 
+function my_validate_unique($file, $field, $arguments)
+{
+	global $user_id;
+	$user_profile_id = $user_id;
+	$user_query = new WP_User_Query( 
+	array( 
+		&#039;meta_key&#039; =&gt; &#039;user_custom_url&#039;
+		,&#039;meta_value&#039; =&gt; $field 
+		,&#039;exclude&#039; =&gt;$user_profile_id
+		) 
+	);
+$userscount = $user_query-&gt;get_total();
+  if($userscount != 1 )
+  {
+  return true;
+  }else{
+	  return __(&#039;is not unique and or used unsupported characters. ONLY letters and numbers.&#039;, &#039;Extreme&#039;);
+  }
+ 
+}
+
+</code></pre>
+<p>This is the field that calls that validation. If I remove the validate parameter I do not receive the errors anymore.</p>
+<pre><code>
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;user_custom_url&#039;
+ ,&#039;label&#039; =&gt; &#039;URL of your profile&#039;
+ ,&#039;validate&#039; =&gt; array(
+  array(
+    &#039;type&#039; =&gt; &#039;custom_unique&#039;
+  )
+)
+ ));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/warnings-when-savings-a-user/">Warnings when savings a user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>using template file &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/using-template-file/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 14 Dec 2016 19:13:11 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>using piklist template file to easy handle multidimensional array fields</title>
+		<link>https://piklist.com/support/topic/using-piklist-template-file-to-easy-handle-multidimensional-array-fields/</link>
+		
+		<dc:creator><![CDATA[hozefasmile]]></dc:creator>
+		<pubDate>Wed, 14 Dec 2016 19:13:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/using-piklist-template-file-to-easy-handle-multidimensional-array-fields/</guid>
+
+					<description><![CDATA[<p>Hi All Piklist Experts 🙂 I am trying to find out some easy way to display values in easy way for group and repeat fields that are multidimensional array fields. For example I have created a Book custom post type where there is a group repeater field editor_info which provide editor name and his image [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-piklist-template-file-to-easy-handle-multidimensional-array-fields/">using piklist template file to easy handle multidimensional array fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All Piklist Experts <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I am trying to find out some easy way to display values in easy way for group and repeat fields that are multidimensional array fields.</p>
+<p>For example I have created a Book custom post type where there is a group repeater field editor_info which provide editor name and his image as a repeater field.</p>
+<p>So this is the code created for that field</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	,&#039;field&#039; =&gt; &#039;editor_info&#039;
+	,&#039;label&#039; =&gt; &#039;Editors Information&#039;
+	,&#039;list&#039; =&gt; false
+	,&#039;column&#039; =&gt; 2
+	,&#039;add_more&#039; =&gt; true
+	,&#039;fields&#039; =&gt; array(
+		array(
+		&#039;type&#039; =&gt; &#039;text&#039;
+		,&#039;field&#039; =&gt; &#039;editor_name&#039;
+		,&#039;label&#039; =&gt; &#039;Editor Name&#039;
+		,&#039;columns&#039; =&gt; 6
+		)
+		,array(
+		&#039;type&#039; =&gt; &#039;file&#039;
+		,&#039;field&#039; =&gt;&#039;editor_image&#039;
+		,&#039;label&#039; =&gt; &#039;Upload Image&#039;
+		,&#039;columns&#039; =&gt; 6
+		,&#039;options&#039; =&gt; array(
+			&#039;modal_title&#039; =&gt; &#039;Add file&#039;
+			,&#039;button&#039; =&gt; &#039;Upload&#039;
+			)
+		)
+	)
+));</code></pre>
+<p>Ok Now to display this complex multidimensional associative array to my theme template file for book is not an easy task.</p>
+<p>First I got the array created for the field by this code</p>
+<pre><code>$editor_info = get_post_meta($post-&gt;ID, &#039;editor_info&#039;, false); // to get array field
+print_r($editor_info); // to see its array information</code></pre>
+<p>So on frontend display I found this array information:-</p>
+<pre><code>Array ( 
+		[0] =&gt; Array ( 
+			[editor_name] =&gt; Rohit Sharma 
+			[editor_image] =&gt; Array ( 
+				[0] =&gt; 43 ) 
+			) 
+		[1] =&gt; Array ( 
+			[editor_name] =&gt; Manoj Tripathi 
+			[editor_image] =&gt; Array ( 
+				[0] =&gt; 33 ) 
+			) 
+		)</code></pre>
+<p>So above information gives how multidimensional array is creating editor name and attachement post type id for images.</p>
+<p>But Now the real hardwork start to display this array information in proper way in the frontend.</p>
+<p>So I have created this loop to show editor names</p>
+<pre><code>for ($i=0; $i &lt; count($editor_info); $i++){
+			for ($j=0; $j &lt; count($editor_info[$i]); $j++){
+				echo &quot;&lt;p&gt;&lt;strong&gt;Editor Name: &lt;/strong&gt;&quot; . $editor_info[$i][$j][&#039;editor_name&#039;] . &quot;&lt;/p&gt;&quot;;
+			}
+		}</code></pre>
+<p>But the work is still in middle, I have to do further more complex query in this array loop to get image urls for each editor to show with his name.</p>
+<p>So now my question is that I have found in forum that piklist use some template file to easily loop such array fields. But I am really unaware about how to use it? There is no separate chapter on piklist documentation about template files and how to use them. </p>
+<p>So someone who have already used it for the purpose can explain me how in my case I can use template file to make my work easy?</p>
+<p>This will be really very helpful to me like beginners of piklist <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-piklist-template-file-to-easy-handle-multidimensional-array-fields/">using piklist template file to easy handle multidimensional array fields</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

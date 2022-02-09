@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>plural &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/plural/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 17 Dec 2014 19:07:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>SIngular vs. plural name for Custom Post Type</title>
+		<link>https://piklist.com/support/topic/singular-vs-plural-name-for-custom-post-type/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Fri, 12 Dec 2014 00:10:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/singular-vs-plural-name-for-custom-post-type/</guid>
+
+					<description><![CDATA[<p>Hi guys. I created a couple of Custom Post Types, the Piklist way, but I have one (admittedly tiny) problem: the name of my CPT is displayed singularly in a couple of places where it really should be plural. Mainly, the URL slug, but also a breadcrumbs feature (which presumably is taking its info from [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/singular-vs-plural-name-for-custom-post-type/">SIngular vs. plural name for Custom Post Type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys. I created a couple of Custom Post Types, the Piklist way, but I have one (admittedly tiny) problem: the name of my CPT is displayed singularly in a couple of places where it really should be plural. Mainly, the URL slug, but also a breadcrumbs feature (which presumably is taking its info from the same place).</p>
+<p>My code was:</p>
+<pre><code>add_filter(&#039;piklist_post_types&#039;, &#039;recipe_post_type&#039;);
+function recipe_post_type($post_types)
+{
+$post_types[&#039;recipe&#039;] = array(
+ 	&#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Recipes&#039;)
+    ,&#039;title&#039; =&gt; __(&#039;Enter a new recipe title&#039;)
+	,&#039;menu_icon&#039; =&gt; &#039;dashicons-welcome-write-blog&#039;
+    ,&#039;public&#039; =&gt; true
+    ,&#039;taxonomies&#039; =&gt; array(&#039;recipe_tags&#039;)
+    ,&#039;rewrite&#039; =&gt; array(&#039;slug&#039; =&gt; &#039;recipe&#039;)
+    ,&#039;supports&#039; =&gt; array(
+      &#039;author&#039;
+      ,&#039;title&#039;
+      ,&#039;thumbnail&#039;
+      ,&#039;revisions&#039;
+    	)
+    ,&#039;hide_meta_box&#039; =&gt; array(
+    	)
+    );
+return $post_types;
+}
+</code></pre>
+<p>And the URL is now </p>
+<p>   www.website.com/category/recipe/some-recipe, </p>
+<p>when I&#8217;d prefer it to be</p>
+<p>   www.website.com/category/recipes/some-recipe</p>
+<p>As well, my breadcrumbs display reads:</p>
+<p>    Home / Recipe / Chili Con Carne</p>
+<p>I know the Piklist function uses all the parameters from the built-in WP function, but in studying the WP Codex, I&#8217;m still not sure where I went awry.</p>
+<p>I realize I may be up the creek now since I&#8217;ve already added lots of content to my CPT&#8217;s and this might mean some fancy database wrangling (or massive re-entry) to fix. But I thought I&#8217;d just mention it in case there&#8217;s some simple fix.</p>
+<p>Thanks!<br />
+adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/singular-vs-plural-name-for-custom-post-type/">SIngular vs. plural name for Custom Post Type</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

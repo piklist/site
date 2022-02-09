@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>file upload field &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/file-upload-field/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 08 Nov 2016 05:42:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Filed group containing file upload field issue: corrupted postmeta after update</title>
+		<link>https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/</link>
+		
+		<dc:creator><![CDATA[Mehdi Salem]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 05:38:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/</guid>
+
+					<description><![CDATA[<p>Hello folks, I&#8217;m experiencing the following issue with a field group meta box containing a file upload field (Piklist v 0.9.9.9): The first time I save the post, every thing goes well and data is saved correctly in the database. If I update the post without doing any modifications, no problem. HOWEVER if I add [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/">Filed group containing file upload field issue: corrupted postmeta after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello folks,</p>
+<p>I&#8217;m experiencing the following issue with a field group meta box containing a file upload field (Piklist v 0.9.9.9):<br />
+The first time I save the post, every thing goes well and data is saved correctly in the database. If I update the post without doing any modifications, no problem. HOWEVER if I add an additional photo after the post has been saved once, the postmeta gets corrupted and thus, all the meta box data disappears from the post&#8230;</p>
+<p>&#8211; Here is how looks the postmeta after first save:<br />
+a:2:{s:12:&#8221;folder_title&#8221;;s:10:&#8221;test title&#8221;;s:12:&#8221;single_photo&#8221;;a:2:{i:0;s:4:&#8221;1306&#8243;;i:1;s:4:&#8221;1305&#8243;;}}</p>
+<p>&#8211; And here is how it gets corrupted after adding one file and second save:<br />
+a:2:{i:0;s:10:&#8221;test title&#8221;;i:1;a:3:{i:0;s:4:&#8221;1306&#8243;;i:1;s:4:&#8221;1305&#8243;;i:2;s:4:&#8221;1296&#8243;;}}</p>
+<p>Did not have time to debug so not sure if it is a JS or a PHP issue.</p>
+<p>Could you have a quick look at this guys and fix? I need to get my client&#8217;s site up asap&#8230;</p>
+<p>Many thanks in advance!</p>
+<p>Her is the meta box code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+,&#039;field&#039; =&gt; &#039;folder_content_group&#039;
+,&#039;label&#039; =&gt; __(&#039;Gallery Photo&#039;,&#039;stopping-the-world-admin&#039;)
+,&#039;description&#039; =&gt; __(&#039;Add photos to this folder.&#039;, &#039;stopping-the-world-admin&#039;)
+,&#039;help&#039; =&gt; __(&#039;Adds a new photo to this gallery folder and sets its availability on the store.&#039;,&#039;stopping-the-world-admin&#039;)
+,&#039;fields&#039; =&gt; array(
+        array(
+            &#039;type&#039; =&gt; &#039;text&#039;
+        ,&#039;field&#039; =&gt; &#039;folder_title&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Title&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 12
+        )
+        ,array(
+            &#039;type&#039; =&gt; &#039;file&#039;
+        ,&#039;field&#039; =&gt; &#039;single_photo&#039;
+        ,&#039;label&#039; =&gt; __(&#039;Photo&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;options&#039; =&gt; array(
+            &#039;modal_title&#039; =&gt; __(&#039;Add photo&#039;,&#039;stopping-the-world-admin&#039;)
+        ,&#039;button&#039; =&gt; __(&#039;Add&#039;,&#039;stopping-the-world-admin&#039;)
+        )
+        ,&#039;required&#039; =&gt; true
+        ,&#039;columns&#039; =&gt; 12
+        ,&#039;validate&#039; =&gt; array(
+        array(
+                &#039;type&#039; =&gt; &#039;jpeg&#039;
+            )
+        ,array(
+                &#039;type&#039; =&gt; &#039;gallery_photo&#039;
+            )
+        )
+        )
+    )
+));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/filed-group-containing-file-upload-field-issue-corrupted-postmeta-after-update/">Filed group containing file upload field issue: corrupted postmeta after update</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>File upload fields not working in settings pages</title>
+		<link>https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 12 Jul 2016 09:49:15 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/</guid>
+
+					<description><![CDATA[<p>Well, I just noticed that all file upload fields particularly those on the settings pages are not working. You click on the button to upload the file and all it does is to scroll you up to the top of the settings page. These were working perfectly before the upgrade to version 0.9.9.9. I notice [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/">File upload fields not working in settings pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Well, I just noticed that all file upload fields particularly those on the settings pages are not working. You click on the button to upload the file and all it does is to scroll you up to the top of the settings page. These were working perfectly before the upgrade to version 0.9.9.9. I notice that the implementation of the same changed for the new version of Piklist according to the new documentation directions. However, I&#8217;ve tried both the old way and the new way of doing things but nothing works all the same. I was advised some time back to turn on Javascript validation in the Piklist settings. But the problem is that this option does not work either. When you check the option that says <em>Javascript Validation</em> in the <em>Piklist settings</em>, it never stays checked even after you click the Save button. This is also related to the problem regarding activating and deactivating Piklist demos. These demos won&#8217;t deactivate because the Disable button in the Demo settings page doesn&#8217;t work either. I guess because of the inability to turn on Javascript validation in the Piklist settings page since it&#8217;s not working. Surprisingly, file upload fields that are inside the Metaboxes files i.e., under meta-boxes folder, are working perfectly. These below are the two ways I&#8217;ve tried the file upload fields and they&#8217;re not working.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+    ,&#039;label&#039; =&gt; &#039;Add File(s)&#039;
+    ,&#039;description&#039; =&gt; &#039;This is the media uploader&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; &#039;Add File(s)&#039;
+      ,&#039;button&#039; =&gt; &#039;Add&#039;
+    )
+  ));</code></pre>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;slideimage2&#039;
+    //,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Slide-2 Image&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Add slide-2 image&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add Image&#039;,&#039;piklist&#039;)
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/file-upload-fields-not-working-in-settings-pages/">File upload fields not working in settings pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

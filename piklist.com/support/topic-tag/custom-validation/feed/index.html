@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>custom validation &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/custom-validation/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 09 Dec 2016 04:48:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Parameters in custom validation rules callback returning 0 and empty array</title>
+		<link>https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/</link>
+		
+		<dc:creator><![CDATA[stham]]></dc:creator>
+		<pubDate>Mon, 05 Dec 2016 07:47:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/</guid>
+
+					<description><![CDATA[<p>Hi there, I am trying to add my own custom validation rules (using piklist_validation_rules filter) to validate that an option selected (whether checkboxes, radio or select fields) is a valid one from the choices available. Based on the docs, there are 3 parameters in the callback &#8211; $value, $field, $arguments. $field returns the chosen option. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/">Parameters in custom validation rules callback returning 0 and empty array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>I am trying to add my own custom validation rules (using <code>piklist_validation_rules</code> filter) to validate that an option selected (whether checkboxes, radio or select fields) is a valid one from the choices available.</p>
+<p>Based on the docs, there are 3 parameters in the callback &#8211; <code>$value</code>, <code>$field</code>, <code>$arguments</code>. <code>$field</code> returns the chosen option. However, no matter what I choose or not choose, <code>$value</code> always seems to pass an int 0 and <code>$arguments</code> always seems to be an empty array.</p>
+<p>My question is, what are those two parameters (<code>$value</code> and <code>$arguments</code>) supposed to represent?</p>
+<p>I have code for this that I&#8217;ve used with earlier versions of Piklist and it worked beautifully up until 0.9.4.31. I (finally) upgraded to v0.9.9.9 and it doesn&#8217;t work anymore. I don&#8217;t have any of the in-between versions.</p>
+<p>Here&#8217;s what I used to use:</p>
+<pre><code>function smm_validate_single_choice( $value, $field ) {
+
+	if ( is_array( $value ) ) {
+		$value = $value[0];
+	}
+	return ( array_key_exists( (string) $value, $field[&#039;choices&#039;] ) ) ? true : __( &#039;does not have a valid selection.&#039;, &#039;smm&#039; );
+
+}</code></pre>
+<p>Any help is greatly appreciated. Thank you very much!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/parameters-in-custom-validation-rules-callback-returning-0-and-empty-array/">Parameters in custom validation rules callback returning 0 and empty array</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>update multiple &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/update-multiple/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 31 Mar 2017 22:09:53 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>update multiple from resulting post selection</title>
+		<link>https://piklist.com/support/topic/update-multiple-from-resulting-post-selection/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Fri, 31 Mar 2017 22:09:53 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/update-multiple-from-resulting-post-selection/</guid>
+
+					<description><![CDATA[<p>end goal: I want to copy a bunch of meta data from one post to the one I&#8217;m editing. I figured I&#8217;d start with the update multiple field. Here&#8217;s what I have so far: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;update_multiple&#039; ,&#039;label&#039; =&#62; __(&#039;Update Multiple Fields&#039;, &#039;piklist-demo&#039;) ,&#039;choices&#039; =&#62; piklist( get_posts(array( &#039;post_type&#039; =&#62; &#039;event&#039; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/update-multiple-from-resulting-post-selection/">update multiple from resulting post selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>end goal: I want to copy a bunch of meta data from one post to the one I&#8217;m editing.</p>
+<p>I figured I&#8217;d start with the update multiple field. Here&#8217;s what I have so far:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;update_multiple&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Update Multiple Fields&#039;, &#039;piklist-demo&#039;)
+     ,&#039;choices&#039; =&gt; piklist(
+                             get_posts(array(
+                                &#039;post_type&#039; =&gt; &#039;event&#039;
+                                ,&#039;numberposts&#039; =&gt; -1
+                                ,&#039;orderby&#039; =&gt; &#039;title&#039;
+                                ,&#039;order&#039; =&gt; &#039;ASC&#039;
+                            ))
+                            ,array(&#039;ID&#039;, &#039;post_title&#039;)
+                        )
+    ,&#039;conditions&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;update&#039;
+        ,&#039;value&#039; =&gt; &#039;true&#039;
+        ,&#039;field&#039; =&gt; &#039;update_multiple_1&#039;
+        ,&#039;update&#039; =&gt; __(&#039;Value 1&#039;, &#039;piklist-demo&#039;)
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;update&#039;
+        ,&#039;value&#039; =&gt; &#039;&#039;
+        ,&#039;field&#039; =&gt; &#039;update_multiple_1&#039;
+        ,&#039;update&#039; =&gt; null
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;update&#039;
+        ,&#039;value&#039; =&gt; &#039;true&#039;
+        ,&#039;field&#039; =&gt; &#039;update_multiple_2&#039;
+        ,&#039;update&#039; =&gt; __(&#039;Value 2&#039;, &#039;piklist-demo&#039;)
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;update&#039;
+        ,&#039;value&#039; =&gt; &#039;&#039;
+        ,&#039;field&#039; =&gt; &#039;update_multiple_2&#039;
+        ,&#039;update&#039; =&gt; null
+      )
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Update 1&#039;, &#039;pilist-demo&#039;)
+    ,&#039;field&#039; =&gt; &#039;update_multiple_1&#039;
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Update 2&#039;, &#039;pilist-demo&#039;)
+    ,&#039;field&#039; =&gt; &#039;update_multiple_2&#039;
+  ));</code></pre>
+<p>That&#8217;s as far as I&#8217;ve gotten. I can select a post from the select option choices but how do I get the selected post data so I can copy it to the other meta fields?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/update-multiple-from-resulting-post-selection/">update multiple from resulting post selection</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

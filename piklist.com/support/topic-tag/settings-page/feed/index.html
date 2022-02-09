@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>settings page &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/settings-page/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sun, 01 Nov 2015 11:17:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Sanitizing doesn&#039;t work for settings pages</title>
+		<link>https://piklist.com/support/topic/sanitizing-doesnt-work-for-settings-pages/</link>
+		
+		<dc:creator><![CDATA[kplaneta]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2015 14:07:28 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/sanitizing-doesnt-work-for-settings-pages/</guid>
+
+					<description><![CDATA[<p>Hi, &#62; Piklist v. 0.9.9.4 &#62; WPMU 4.3.1 &#62; Custom settings page with tabs, capability set to &#8220;edit_pages&#8221; and capability filter enabling non admins save fields (as shown at the bottom od this page &#62; https://piklist.com/user-guide/docs/settings-admin-page-parameters/) I&#8217;ve set up a settings page with a text field that should save text after sanitizing it with &#8220;html_class&#8221; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/sanitizing-doesnt-work-for-settings-pages/">Sanitizing doesn&#039;t work for settings pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>&gt; Piklist v. 0.9.9.4<br />
+&gt; WPMU 4.3.1<br />
+&gt; Custom settings page with tabs, capability set to &#8220;edit_pages&#8221; and capability filter enabling non admins save fields (as shown at the bottom od this page &gt; https://piklist.com/user-guide/docs/settings-admin-page-parameters/)</p>
+<p>I&#8217;ve set up a settings page with a text field that should save text after sanitizing it with &#8220;html_class&#8221; or &#8220;file_name&#8221;. None of those actlually work. I&#8217;ve tried entering texts like &#8220;ą_- Ssś -&#8221; and they are saved without changes.</p>
+<p>Next, I tried <code>type =&gt; &#039;text_field&#039;</code> and entered text &#8220;&lt;b&gt;nuasdkl&lt;/b&gt;&#8221;. No change. &lt; &amp; &gt; werent changed into entities thus this sanitization doesn&#8217;t work as well.</p>
+<p>EDIT.</p>
+<p>I&#8217;ve just chencked another settings page without tabs. At first I thought that everything works correctly (1 field was saved correctly) but then I tried to save a few fields and noticed a pattern. When I enter data in 1 field only (other ones are empty), than it&#8217;s sanitized correctly. However, when I enter data in many fields than they are saved without sanitization.</p>
+<p>EDIT 2.</p>
+<p>The case above isn&#8217;t always true. I&#8217;ve tried entering data into a single field again but this time it didn&#8217;t get sanitized.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/sanitizing-doesnt-work-for-settings-pages/">Sanitizing doesn&#039;t work for settings pages</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

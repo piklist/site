@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>checkbox &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/checkbox/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 27 Dec 2021 12:31:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Unexpected hidden field on checklist field</title>
+		<link>https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/</link>
+		
+		<dc:creator><![CDATA[ramzi]]></dc:creator>
+		<pubDate>Mon, 27 Dec 2021 12:31:57 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/</guid>
+
+					<description><![CDATA[<p>I tried the checlist field with the following code: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;checkbox&#039;, &#039;field&#039; =&#62; &#039;my_checkbox&#039;, &#039;label&#039; =&#62; &#039;Checkbox&#039;, &#039;value&#039; =&#62; &#039;third&#039;, // set default value &#039;choices&#039; =&#62; array( &#039;first&#039; =&#62; &#039;First Choice&#039;, &#039;second&#039; =&#62; &#039;Second Choice&#039;, &#039;third&#039; =&#62; &#039;Third Choice&#039; ) )); When I see the code from the browser, I found the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/">Unexpected hidden field on checklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I tried the checlist field with the following code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;checkbox&#039;,
+    &#039;field&#039; =&gt; &#039;my_checkbox&#039;,
+    &#039;label&#039; =&gt; &#039;Checkbox&#039;,
+    &#039;value&#039; =&gt; &#039;third&#039;, // set default value
+    &#039;choices&#039; =&gt; array(
+      &#039;first&#039; =&gt; &#039;First Choice&#039;,
+      &#039;second&#039; =&gt; &#039;Second Choice&#039;,
+      &#039;third&#039; =&gt; &#039;Third Choice&#039;
+    )
+  ));</code></pre>
+<p>When I see the code from the browser, I found the following result:</p>
+<pre><code>&lt;li&gt;    
+      &lt;label class=&quot;piklist-field-list-item&quot;&gt;  
+        &lt;input 
+          type=&quot;checkbox&quot;
+          id=&quot;my_checkbox_0&quot; 
+          name=&quot;my_checkbox[]&quot;
+          value=&quot;first&quot;
+                    class=&quot;my_checkbox piklist-field-type-checkbox piklist-field-element&quot;         /&gt;         
+          &lt;input 
+            type=&quot;hidden&quot;
+            id=&quot;my_checkbox_0&quot; 
+            name=&quot;my_checkbox[]&quot;
+            value=&quot;&quot;
+          /&gt;
+      
+                
+        &lt;span class=&quot;piklist-list-item-label&quot;&gt;
+          First Choice        &lt;/span&gt;
+    
+      &lt;/label&gt;
+  
+    &lt;/li&gt;</code></pre>
+<p>There is a hidden field come out from the code. What should I do to correct this?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unexpected-hidden-field-on-checklist-field/">Unexpected hidden field on checklist field</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Impossible to save multiple checkbox</title>
+		<link>https://piklist.com/support/topic/impossible-to-save-multiple-checkbox/</link>
+		
+		<dc:creator><![CDATA[pierre]]></dc:creator>
+		<pubDate>Tue, 06 Dec 2016 15:12:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/impossible-to-save-multiple-checkbox/</guid>
+
+					<description><![CDATA[<p>Hi, I tried to create a checkbox list with the French States : piklist('field', array( 'type' =&#62; 'checkbox' ,'field' =&#62; 'dept_distributeur' ,'label' =&#62; 'Département' ,'choices' =&#62; array( "01" =&#62; "01 - Ain" ,"02" =&#62; "02 - Aisne" ,"03" =&#62; "03 - Allier" ,"04" =&#62; "04 - Alpes-de-Haute-Provence" ) )); But when I check more than [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/impossible-to-save-multiple-checkbox/">Impossible to save multiple checkbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I tried to create a checkbox list with the French States :</p>
+<p><code><br />
+piklist('field', array(<br />
+'type' =&gt; 'checkbox'<br />
+,'field' =&gt; 'dept_distributeur'<br />
+,'label' =&gt; 'Département'<br />
+,'choices' =&gt; array(<br />
+	"01" =&gt; "01 - Ain"<br />
+	,"02" =&gt; "02 - Aisne"<br />
+	,"03" =&gt; "03 - Allier"<br />
+	,"04" =&gt; "04 - Alpes-de-Haute-Provence"<br />
+)<br />
+));<br />
+</code></p>
+<p>But when I check more than 1 checkbox, only one is saved : the highest.<br />
+For example, when I check 01, 02 and 04, only 04 is saved on my custom post.</p>
+<p>What am I doing wrong ?<br />
+Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/impossible-to-save-multiple-checkbox/">Impossible to save multiple checkbox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Embedding fields in a field&#8230;</title>
+		<link>https://piklist.com/support/topic/embedding-fields-in-a-field/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Sat, 30 Jul 2016 05:36:30 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/embedding-fields-in-a-field/</guid>
+
+					<description><![CDATA[<p>Just wondering if the ability to embed fields, such as in the demos for checkboxes and radio inputs, is allowed for any other fields. Would love to use it in an html field: Such as: ,array ( &#039;type&#039; =&#62; &#039;html&#039; ,&#039;template&#039; =&#62; &#039;average&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;left10&#039; ) ,&#039;value&#039; =&#62; sprintf(__(&#039;Workout Length: %s&#039;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/embedding-fields-in-a-field/">Embedding fields in a field&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just wondering if the ability to embed fields, such as in the demos for checkboxes and radio  inputs, is allowed for any other fields. </p>
+<p>Would love to use it in an html field:<br />
+Such as:</p>
+<pre><code>        ,array (
+            &#039;type&#039; =&gt; &#039;html&#039;
+            ,&#039;template&#039; =&gt; &#039;average&#039;
+            ,&#039;attributes&#039; =&gt; array(
+                &#039;class&#039; =&gt; &#039;left10&#039;
+            )
+            ,&#039;value&#039; =&gt; sprintf(__(&#039;Workout Length: %s&#039;, &#039;diet&#039;), &#039;&#039;)
+            ,&#039;fields&#039; =&gt; array(
+                array(
+                    &#039;type&#039; =&gt; &#039;text&#039;
+                    ,&#039;field&#039; =&gt; &#039;mae_pb_wl_nested&#039;
+                    ,&#039;value&#039; =&gt; &#039;1&#039;
+                    ,&#039;embed&#039; =&gt; true
+                    ,&#039;attributes&#039; =&gt; array(
+                        &#039;class&#039; =&gt; &#039;small-text&#039;
+                    )
+                )
+            )
+        )
+</code></pre>
+<p>Are there any other fields it works on, or just radios and checks?</p>
+<p>Thanks guys. </p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/embedding-fields-in-a-field/">Embedding fields in a field&#8230;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Checkbox with only one choice</title>
+		<link>https://piklist.com/support/topic/checkbox-with-only-one-choice/</link>
+		
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 19:22:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checkbox-with-only-one-choice/</guid>
+
+					<description><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked? I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to have a piklist checkbox field with only one choice that can be true or false based on whether it is checked?</p>
+<p>I tried the following, but send_email isn&#8217;t given a value unless it&#8217;s checked, and I&#8217;d like to have it set the value to 0 when it is not checked.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;checkbox&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; &#039;1&#039;,
+     &#039;attributes&#039; =&gt; array(
+        &#039;class&#039; =&gt; &#039;text&#039;
+      ),
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       &#039;1&#039; =&gt; &#039;Enable&#039;
+     )
+   )
+)</code></pre>
+<p>In the past, I&#8217;ve used the workaround of having radio buttons, but I&#8217;d really like to just have an enable checkbox.</p>
+<p>My workaround:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+     &#039;type&#039; =&gt; &#039;radio&#039;,
+     &#039;field&#039; =&gt; &#039;send_email&#039;,
+     &#039;label&#039; =&gt; &#039;Send Email?&#039;,
+     &#039;value&#039; =&gt; 1,
+     &#039;list&#039; =&gt; true,
+     &#039;columns&#039; =&gt; 6,
+     &#039;choices&#039; =&gt; array(
+       1 =&gt; &#039;Enable&#039;,
+       0 =&gt; &#039;Disable&#039;
+      )
+   )
+ )</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-with-only-one-choice/">Checkbox with only one choice</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist 0.9.9.7 not set default value in group field for checkbox, radio</title>
+		<link>https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</link>
+		
+		<dc:creator><![CDATA[notaname]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 11:16:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</guid>
+
+					<description><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select). I tried in Setting, Post and Page, default value in group not working, without group field it work as expected. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;checkbox_list&#039; ,&#039;label&#039; =&#62; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;) ,&#039;list&#039; =&#62; false ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select).<br />
+I tried in Setting, Post and Page, default value in group not working, without group field it work as expected.</p>
+<pre><code>  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;checkbox_list&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;)
+    ,&#039;list&#039; =&gt; false
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;radio&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_1&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #1&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;third&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_2&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #2&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;second&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;second&#039; =&gt; &#039;Second Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Simple Checkbox (True or Value)</title>
+		<link>https://piklist.com/support/topic/simple-checkbox-true-or-value/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Wed, 02 Dec 2015 22:52:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/simple-checkbox-true-or-value/</guid>
+
+					<description><![CDATA[<p>I am trying to get a simple checkbox meta attached to a post. I am using this code: &#60;?php /* Title: Publish (Clearance) Post Type: post Capability: administrator */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;checkbox&#039; ,&#039;scope&#039; =&#62; &#039;taxonomy&#039; ,&#039;field&#039; =&#62; &#039;post_clearance&#039; ,&#039;label&#039; =&#62; &#039;Cleared&#039; ,&#039;description&#039; =&#62; &#039;Administrators &#38; Editors can clear publication for edition.&#039; ,&#039;choices&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/simple-checkbox-true-or-value/">Simple Checkbox (True or Value)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to get a simple checkbox meta attached to a post. I am using this code:</p>
+<pre><code>&lt;?php 
+	
+/*
+Title: Publish (Clearance)
+Post Type: post
+Capability: administrator
+*/
+	
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;field&#039; =&gt; &#039;post_clearance&#039;
+  ,&#039;label&#039; =&gt; &#039;Cleared&#039;
+  ,&#039;description&#039; =&gt; &#039;Administrators &amp; Editors can clear publication for edition.&#039;
+  ,&#039;choices&#039; =&gt; array(
+	  &#039;cleared&#039; =&gt; &#039;Cleared&#039;
+     )
+));
+	?&gt;</code></pre>
+<p>Two things happen. One is that the meta box does successfully appear, but when I check it and hit update, it doesn&#8217;t save it. (Using version 0.9.9.6 beta)</p>
+<p>Essentially using this simple one-option check box to act as a simple boolean function for a pre_get_post call through functions.php. This is what I have, but its not yielding any results of at the moment cause of the issue above.</p>
+<pre><code>function homepage_sticky_date_normalized( $query ) {
+	
+     if (is_home() || is_archive() &amp;&amp; $query-&gt;is_main_query())  
+      	$query-&gt;set(&#039;ignore_sticky_posts&#039;, true); // don&#039;t stack sticky posts 
+        $query-&gt;set( &#039;meta_key&#039;, &#039;clearance&#039; );
+        $query-&gt;set( &#039;meta_value&#039;, true );
+	 // $query-&gt;set(&#039;post__not_in&#039;, $excludes);
+        // $query-&gt;set(&#039;post__not_in&#039;, get_option(&#039;sticky_posts&#039;)); 
+        }
+        
+add_action( &#039;pre_get_posts&#039;, &#039;homepage_sticky_date_normalized&#039; );</code></pre>
+<p>These additional <code>query-sets</code> kill the listing of my posts in the backend.</p>
+<pre><code>   $query-&gt;set( &#039;meta_key&#039;, &#039;clearance&#039; );
+        $query-&gt;set( &#039;meta_value&#039;, true );</code></pre>
+<p>So three problems. :-/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/simple-checkbox-true-or-value/">Simple Checkbox (True or Value)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>dont display value in metabox</title>
+		<link>https://piklist.com/support/topic/dont-display-value-in-metabox/</link>
+		
+		<dc:creator><![CDATA[civilz]]></dc:creator>
+		<pubDate>Tue, 10 Jun 2014 15:07:52 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/dont-display-value-in-metabox/</guid>
+
+					<description><![CDATA[<p>hi my code : piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;select&#039; ,&#039;field&#039; =&#62; &#039;j_select&#039; ,&#039;label&#039; =&#62; &#039;Select Box&#039; ,&#039;description&#039; =&#62; &#039;Choose from the drop-down.&#039; ,&#039;help&#039; =&#62; &#039;This is help text.&#039; ,&#039;attributes&#039; =&#62; array( &#039;class&#039; =&#62; &#039;text&#039; ) ,&#039;choices&#039; =&#62; array( &#039;option1&#039; =&#62; &#039;red&#039; ,&#039;option2&#039; =&#62; &#039;blue&#039; ,&#039;option3&#039; =&#62; &#039;yellow&#039; ) )); and use in loop (single.php) : [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dont-display-value-in-metabox/">dont display value in metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>hi<br />
+my code :</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;
+    ,&#039;field&#039; =&gt; &#039;j_select&#039;
+    ,&#039;label&#039; =&gt; &#039;Select Box&#039;
+    ,&#039;description&#039; =&gt; &#039;Choose from the drop-down.&#039;
+    ,&#039;help&#039; =&gt; &#039;This is help text.&#039;
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;text&#039;
+    )
+    ,&#039;choices&#039; =&gt; array(
+      &#039;option1&#039; =&gt; &#039;red&#039;
+      ,&#039;option2&#039; =&gt; &#039;blue&#039;
+      ,&#039;option3&#039; =&gt; &#039;yellow&#039;
+    )
+  ));</code></pre>
+<p>and use in loop (single.php) :</p>
+<pre><code>
+color : &lt;?php  echo get_post_meta($post-&gt;ID,&#039;j_select&#039;, true);?&gt;
+</code></pre>
+<p>but result :<br />
+<code>color : option1</code></p>
+<p>text feild is work good but select and checkbox dont work !!!</p>
+<p>please help me &#8230;</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dont-display-value-in-metabox/">dont display value in metabox</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Conditional fields removing values</title>
+		<link>https://piklist.com/support/topic/conditional-fields-removing-values/</link>
+		
+		<dc:creator><![CDATA[tripflex]]></dc:creator>
+		<pubDate>Mon, 26 May 2014 21:58:13 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/conditional-fields-removing-values/</guid>
+
+					<description><![CDATA[<p>So attempting to build a settings page and show a conditional text field to input values. Using a checkbox and example from demos and docs at http://piklist.com/user-guide/tutorials/conditionally-show-fields/ The checkbox is basically to &#8220;Enable&#8221;, but it seems like Piklist zeros out the text field whenever the checkbox is unchecked, even before the page is saved, so [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-fields-removing-values/">Conditional fields removing values</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So attempting to build a settings page and show a conditional text field to input values.  Using a checkbox and example from demos and docs at<br />
+http://piklist.com/user-guide/tutorials/conditionally-show-fields/</p>
+<p>The checkbox is basically to &#8220;Enable&#8221;, but it seems like Piklist zeros out the text field whenever the checkbox is unchecked, even before the page is saved, so if you click checkbox and input something then uncheck and check again, the value is gone.</p>
+<p>Is there no way to keep the values in the text field?  It&#8217;s not removing the element it&#8217;s just hiding it on the page (through jquery) but for some reason is removing all values.  </p>
+<p>I even tried using the &#8220;update a field&#8221; from demo, but that didn&#8217;t work either as the conditional statements are placed inside the radio/checkbox and not the text field like for showing or hiding.</p>
+<p>Would it not be better to have the conditional fields set in the checkbox just like it is for updating?</p>
+<p>Any thoughts or suggestions on this?  Guess for now I just wont hide the fields ..</p>
+<p>Thanks!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-fields-removing-values/">Conditional fields removing values</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>checkbox: select/deselect all</title>
+		<link>https://piklist.com/support/topic/checkbox-selectdeselect-all/</link>
+		
+		<dc:creator><![CDATA[kattagami]]></dc:creator>
+		<pubDate>Wed, 21 May 2014 10:53:47 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/checkbox-selectdeselect-all/</guid>
+
+					<description><![CDATA[<p>Hello, I was wondering if is it possible (or do you known a solution) to select/deselect all items in a checkbox list? If not, it could be a suggestion for a next release 😉</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-selectdeselect-all/">checkbox: select/deselect all</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I was wondering if is it possible (or do you known a solution) to select/deselect all items in a checkbox list?</p>
+<p>If not, it could be a suggestion for a next release <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checkbox-selectdeselect-all/">checkbox: select/deselect all</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Need Help: 2 Big Bugs found</title>
+		<link>https://piklist.com/support/topic/need-help-2-big-bugs-found/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Mon, 28 Oct 2013 07:15:13 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/need-help-2-big-bugs-found/</guid>
+
+					<description><![CDATA[<p>Hi guys, I really need your help, I&#8217;ve created a very large metabox for parents to fill out (mostly for admins to fill out right now) but when I make the add-more group for their children a group (give it a field) when saved it literally creates like 20 versions of the children, and none [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-help-2-big-bugs-found/">Need Help: 2 Big Bugs found</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys, I really need your help, I&#8217;ve created a very large metabox for parents to fill out (mostly for admins to fill out right now) but when I make the add-more group for their children a group (give it a field) when saved it literally creates like 20 versions of the children, and none of them have the correct data.</p>
+<p>So I removed the field option from the group for children, but when I publish/save all of the data, the radios and checkboxes states aren&#8217;t saved. See img below:<br />
+<img src="http://www.marcusware.com/images/examplebug-1.png" alt="Radios and Checkboxes not saving states." /></p>
+<p>The selects are, but none of the radios and checkboxes, please help, as I want to use these metaboxes right away.</p>
+<p>Thanks again.</p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-help-2-big-bugs-found/">Need Help: 2 Big Bugs found</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

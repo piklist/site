@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>AddMore issues in 0.9.9.9 &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/addmore-issues-in-0-9-9-9/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 06 Sep 2016 15:52:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>[0.9.9.9] Add more problem</title>
+		<link>https://piklist.com/support/topic/0-9-9-9-add-more-problem/</link>
+		
+		<dc:creator><![CDATA[tronseba]]></dc:creator>
+		<pubDate>Thu, 01 Sep 2016 13:05:46 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/0-9-9-9-add-more-problem/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m having issues with nested addmore groups. I define it properly but piklist reder it as different groups fileds of main group and not as nested fields groups. Also save it in the satabase as separate fields arrays. this is my group field code: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;objetivos&#039; ,&#039;label&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-9-add-more-problem/">[0.9.9.9] Add more problem</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I&#8217;m having issues with nested addmore groups. I define it properly but piklist reder it as different groups fileds of main group and not as nested fields groups. Also save it in the satabase as separate fields arrays.</p>
+<p>this is my group field code:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;group&#039;
+,&#039;field&#039; =&gt; &#039;objetivos&#039;
+,&#039;label&#039; =&gt; &#039;Objetivos&#039;
+,&quot;add_more&quot;=&gt;true    
+,&#039;columns&#039; =&gt; 12
+,&#039;description&#039; =&gt; __(&#039;Defina los objetivos a los que aplica esta tabla&#039;)
+,&#039;fields&#039; =&gt;array(
+                             array( &quot;type&quot;=&gt;&quot;select&quot;
+                                  ,&quot;field&quot;=&gt;&quot;obj_nutricion&quot;
+                                  ,&quot;label&quot;=&gt;&quot;Objetivos Nutricion&quot;
+                                  ,&#039;columns&#039; =&gt; 6
+                                  ,&#039;choices&#039; =&gt;$obj_nutricion)
+    
+                            ,array(&quot;type&quot;=&gt;&quot;group&quot;
+                                  ,&quot;field&quot;=&gt;&quot;comp_corp&quot;
+                                  ,&quot;label&quot;=&gt;&quot;Composicion Corporal&quot;
+                                  ,&quot;add_more&quot;=&gt;true
+                                  ,&#039;columns&#039; =&gt; 10
+                                  ,&quot;fields&quot;=&gt;array( 
+                                            array(&quot;type&quot;=&gt;&quot;group&quot;
+                                             ,&quot;field&quot;=&gt;&quot;general_cc&quot;
+                                             ,&quot;label&quot;=&gt;&quot;Obj General&quot;
+                                             ,&quot;add_more&quot;=&gt;true
+                                             ,&#039;columns&#039; =&gt; 10
+                                             ,&#039;fields&#039; =&gt;array(
+                                                                array( &quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;general_cc_obj&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Objetivo&quot;
+                                                                      ,&#039;columns&#039; =&gt; 10
+                                                                      ,&#039;choices&#039; =&gt;$obj_corp_gral
+                                                                     )
+                                                               ,array(&quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;focus_gral_cc&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Focus&quot;
+                                                                      ,&#039;columns&#039; =&gt; 2
+                                                                      ,&#039;choices&#039; =&gt;$focus)
+                                                               )
+                                                )
+
+                                           ,array(&quot;type&quot;=&gt;&quot;group&quot;
+                                             ,&quot;field&quot;=&gt;&quot;especifico_cc&quot;
+                                             ,&quot;label&quot;=&gt;&quot;Especifico&quot;
+                                             ,&quot;add_more&quot;=&gt;true
+                                             ,&#039;columns&#039; =&gt; 10
+                                             ,&quot;fields&quot;=&gt;array(
+                                                                array( &quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;zona_cc_esp&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Zona&quot;
+                                                                      ,&#039;columns&#039; =&gt; 8
+                                                                      ,&#039;choices&#039; =&gt;$obj_corp_esp_zona)
+
+                                                               ,array( &quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;objetivo_cc_esp&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Objetivo&quot;
+                                                                      ,&#039;columns&#039; =&gt; 8
+                                                                      ,&#039;choices&#039; =&gt;$obj_corp_esp_obj)
+
+                                                               ,array(&quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;focus_esp_cc&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Focus&quot;
+                                                                      ,&#039;columns&#039; =&gt; 2
+                                                                      ,&#039;choices&#039; =&gt;$focus)
+                                                             )
+                                               )
+
+                                    )
+                                
+                                )
+    
+                            ,array(&quot;type&quot;=&gt;&quot;group&quot;
+                                  ,&quot;field&quot;=&gt;&quot;rend&quot;
+                                  ,&quot;label&quot;=&gt;&quot;Rendimiento&quot;
+                                  ,&quot;add_more&quot;=&gt;true
+                                  ,&#039;columns&#039; =&gt; 12
+                                  ,&quot;fields&quot;=&gt;array( 
+                                        array(&quot;type&quot;=&gt;&quot;group&quot;
+                                             ,&quot;field&quot;=&gt;&quot;especifico_rend&quot;
+                                             ,&quot;label&quot;=&gt;&quot;Especifico&quot;
+                                             ,&quot;add_more&quot;=&gt;true
+                                             ,&#039;columns&#039; =&gt; 10
+                                             ,&quot;fields&quot;=&gt;array(
+                                                                array( &quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;zona_rend_esp&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Zona&quot;
+                                                                      ,&#039;columns&#039; =&gt; 8
+                                                                      ,&#039;choices&#039; =&gt;$zonas_esp_rend)
+
+                                                               ,array( &quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;objetivo_rend_esp&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Objetivo&quot;
+                                                                      ,&#039;columns&#039; =&gt; 8
+                                                                      ,&#039;choices&#039; =&gt;$obj_esp_rend)
+
+                                                               ,array(&quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;focus_esp_rend&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Focus&quot;
+                                                                      ,&#039;columns&#039; =&gt; 2
+                                                                      ,&#039;choices&#039; =&gt;$focus)
+                                                            )
+
+                                            )
+
+                                        ,array(&quot;type&quot;=&gt;&quot;group&quot;
+                                             ,&quot;field&quot;=&gt;&quot;general_rend&quot;
+                                             ,&quot;label&quot;=&gt;&quot;Obj General&quot;
+                                             ,&quot;add_more&quot;=&gt;true
+                                             ,&#039;columns&#039; =&gt; 10
+                                             ,&#039;fields&#039; =&gt;array(
+                                                                array( &quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;general_rend_obj&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Objetivo&quot;
+                                                                      ,&#039;columns&#039; =&gt; 10
+                                                                      ,&#039;choices&#039; =&gt;$obj_gral_rend
+                                                                     )
+                                                               ,array(&quot;type&quot;=&gt;&quot;select&quot;
+                                                                      ,&quot;field&quot;=&gt;&quot;focus_gral_rend&quot;
+                                                                      ,&quot;label&quot;=&gt;&quot;Focus&quot;
+                                                                      ,&#039;columns&#039; =&gt; 2
+                                                                      ,&#039;choices&#039; =&gt;$focus)
+                                                               )
+                                                )
+                                )
+                           
+                )
+            )
+    ));</code></pre>
+<p>It&#8217;s look complex but that is my data model.</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-9-add-more-problem/">[0.9.9.9] Add more problem</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

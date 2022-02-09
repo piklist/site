@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>get terms Issue &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/get-terms-issue/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Mon, 04 Jul 2016 19:31:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>get_terms issue</title>
+		<link>https://piklist.com/support/topic/get_terms-issue/</link>
+		
+		<dc:creator><![CDATA[cyclissmo]]></dc:creator>
+		<pubDate>Mon, 04 Jul 2016 19:31:25 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/get_terms-issue/</guid>
+
+					<description><![CDATA[<p>Hi there, Just wanted to share an issue that I resolved which turned out to be a conflict with a Piklist filter. I have a get_terms defined in my plugin code similar to the following. While troubleshooting, get_terms with any kind of meta_query parameters would trigger a database error. It should be noted that this [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get_terms-issue/">get_terms issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi there,</p>
+<p>Just wanted to share an issue that I resolved which turned out to be a conflict with a Piklist filter. </p>
+<p>I have a <code>get_terms</code> defined in my plugin code similar to the following. While troubleshooting, <code>get_terms</code> with any kind of <code>meta_query</code> parameters would trigger a database error. It should be noted that this code worked prior to the 9.9.9 update.</p>
+<pre><code>$terms = get_terms( array(
+	&#039;taxonomy&#039; =&gt; &#039;my_taxonomy&#039;,
+	&#039;hide_empty&#039; =&gt; false,
+	&#039;meta_query&#039; =&gt; array(
+		&#039;relation&#039; =&gt; &#039;OR&#039;,	
+		array(
+			&#039;key&#039; =&gt; &#039;my_term_meta&#039;,
+			&#039;compare&#039; =&gt; &#039;NOT EXISTS&#039;,
+		),
+		array(
+			&#039;key&#039; =&gt; &#039;my_term_meta&#039;,
+			&#039;value&#039; =&gt; &#039;1&#039;,
+			&#039;compare&#039; =&gt; &#039;!=&#039;,
+		)
+	)
+));</code></pre>
+<p>And the error:</p>
+<p><strong>WordPress database error: </strong>[Not unique table/alias: &#8216;wp_termmeta&#8217;]</p>
+<p>I traced the culprit to class-piklist-taxonomy.php &#8216;terms_clauses&#8217; filter. I removed the filter right before executing <code>get_terms</code> and the error went away.</p>
+<p>From cursory observation, it looks like the Piklist filter may not have been adding table aliases.</p>
+<p>Hope this info is useful.<br />
+Mike</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/get_terms-issue/">get_terms issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

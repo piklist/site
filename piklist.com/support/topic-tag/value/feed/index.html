@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>value &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/value/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 04 Aug 2017 08:38:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Conditionally Shown Fields: Saved value reset when condition changes</title>
+		<link>https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/</link>
+		
+		<dc:creator><![CDATA[riotxoa]]></dc:creator>
+		<pubDate>Fri, 04 Aug 2017 08:38:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/</guid>
+
+					<description><![CDATA[<p>Hi Piklist team, I&#8217;m implementing some conditions to show or hide fields when those conditions&#8217; values changes. The conditions are implemented through radio buttons and simple select lists. Showing and hiding works fine, but i&#8217;m having troubles when i&#8217;m consulting a saved post with conditional values saved. If I change the value of a radio [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/">Conditionally Shown Fields: Saved value reset when condition changes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Piklist team,</p>
+<p>I&#8217;m implementing some conditions to show or hide fields when those conditions&#8217; values changes. The conditions are implemented through radio buttons and simple select lists.</p>
+<p>Showing and hiding works fine, but i&#8217;m having troubles when i&#8217;m consulting a saved post with conditional values saved. If I change the value of a radio button, then the shown fields change correctly, but if I change back the radio button to its original status, then the value of the conditionally shown (and saved) field disappear (it appears blank).</p>
+<p>Here is my code. If I change de first radio status to &#8216;No&#8217;, and then go back to &#8216;Sí&#8217; (Yes), the others fields&#8217; values reset:</p>
+<pre><code>piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;radio&#039;,
+    &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+    &#039;label&#039; =&gt; &#039;¿Botón de enlace?&#039;,
+    &#039;list&#039; =&gt; false,
+    &#039;value&#039; =&gt; 0, // set default value
+    &#039;choices&#039; =&gt; array(
+        0 =&gt; &#039;No&#039;,
+        1 =&gt; &#039;Sí&#039;,
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_text&#039;,
+    &#039;label&#039; =&gt; &#039;Texto del botón de enlace&#039;,
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+    &#039;label&#039; =&gt; &#039;Tipo de enlace&#039;,
+    &#039;value&#039; =&gt; &#039;url&#039;,
+    &#039;choices&#039; =&gt; array(
+        &#039;url&#039; =&gt; &#039;URL Externa&#039;,
+        &#039;post&#039; =&gt; &#039;Entrada de Blog&#039;,
+        &#039;portfolio&#039; =&gt; &#039;Portfolio&#039;,
+        &#039;page&#039; =&gt; &#039;Página&#039;
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;url&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_url_url&#039;,
+    &#039;label&#039; =&gt; &#039;URL enlazada&#039;,
+    &#039;columns&#039; =&gt; 12,
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;url&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_post_url&#039;,
+    &#039;label&#039; =&gt; &#039;Entrada de Blog enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;post&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;post&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_portfolio_url&#039;,
+    &#039;label&#039; =&gt; &#039;Entrada de Portfolio enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;avada_portfolio&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;portfolio&#039;
+        )
+    )
+));
+
+piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;select&#039;,
+    &#039;field&#039; =&gt; &#039;section01_button_page_url&#039;,
+    &#039;label&#039; =&gt; &#039;Página enlazada&#039;,
+    &#039;choices&#039; =&gt; piklist(
+        get_posts(
+            array(
+                &#039;post_type&#039; =&gt; &#039;page&#039;,
+                &#039;numberposts&#039; =&gt; -1,
+                &#039;orderby&#039; =&gt; &#039;post_date&#039;
+            ),
+            &#039;objects&#039;
+        ),
+        array(
+            &#039;ID&#039;
+            ,&#039;post_title&#039;
+        )
+    ),
+    &#039;conditions&#039; =&gt; array(
+        array(
+            &#039;field&#039; =&gt; &#039;section01_hasbutton&#039;,
+            &#039;value&#039; =&gt; 1
+        ),
+        array(
+            &#039;field&#039; =&gt; &#039;section01_buttonurltype&#039;,
+            &#039;value&#039; =&gt; &#039;page&#039;
+        )
+    )
+));
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditionally-shown-fields-saved-value-reset-when-condition-changes/">Conditionally Shown Fields: Saved value reset when condition changes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>&#039;value&#039; in text field not showing</title>
+		<link>https://piklist.com/support/topic/value-in-text-field-not-showing/</link>
+		
+		<dc:creator><![CDATA[visualtricks]]></dc:creator>
+		<pubDate>Sun, 10 Jul 2016 14:58:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/value-in-text-field-not-showing/</guid>
+
+					<description><![CDATA[<p>Hi, after the last update the default &#8216;value&#8217; I set in text field doesn&#8217;t show up anymore (was working fine before). Here&#8217;s my code: array( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;secondo_1_ita&#039; ,&#039;columns&#039; =&#62; 8 ,&#039;label&#039; =&#62; &#039;secondo 1&#039; ,&#039;value&#039; =&#62; &#039;Bistecca alla Fiorentina con patate arrosto&#039; ,&#039;attributes&#039; =&#62; array(&#039;placeholder&#039; =&#62; &#039;secondo 1 Italiano&#039;) ) The [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/value-in-text-field-not-showing/">&#039;value&#039; in text field not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, after the last update the default &#8216;value&#8217; I set in text field doesn&#8217;t show up anymore (was working fine before). Here&#8217;s my code:</p>
+<pre><code>array( 
+	&#039;type&#039; =&gt; &#039;text&#039;
+	,&#039;field&#039; =&gt; &#039;secondo_1_ita&#039;
+	,&#039;columns&#039; =&gt; 8
+	,&#039;label&#039; =&gt; &#039;secondo 1&#039;
+	,&#039;value&#039; =&gt; &#039;Bistecca alla Fiorentina con patate arrosto&#039;
+	,&#039;attributes&#039; =&gt; array(&#039;placeholder&#039; =&gt; &#039;secondo 1 Italiano&#039;)
+	)</code></pre>
+<p>The text field is (one) part of a group field, used in the backend on a custom post type (not registered via piklist).<br />
+Am I doing something wrong?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/value-in-text-field-not-showing/">&#039;value&#039; in text field not showing</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist 0.9.9.7 not set default value in group field for checkbox, radio</title>
+		<link>https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</link>
+		
+		<dc:creator><![CDATA[notaname]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 11:16:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/</guid>
+
+					<description><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select). I tried in Setting, Post and Page, default value in group not working, without group field it work as expected. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;field&#039; =&#62; &#039;checkbox_list&#039; ,&#039;label&#039; =&#62; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;) ,&#039;list&#039; =&#62; false ,&#039;fields&#039; =&#62; array( array( &#039;type&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Code from demo page, where it work well (change first checkbox to select).<br />
+I tried in Setting, Post and Page, default value in group not working, without group field it work as expected.</p>
+<pre><code>  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;checkbox_list&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Group Lists&#039;, &#039;piklist-demo&#039;)
+    ,&#039;list&#039; =&gt; false
+    ,&#039;fields&#039; =&gt; array(
+      array(
+        &#039;type&#039; =&gt; &#039;radio&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_1&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #1&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;third&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+      ,array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;checkbox_list_2&#039;
+        ,&#039;label&#039; =&gt; __(&#039;List #2&#039;, &#039;piklist-demo&#039;)
+        ,&#039;label_position&#039; =&gt; &#039;before&#039;
+        ,&#039;value&#039; =&gt; &#039;second&#039;
+        ,&#039;choices&#039; =&gt; array(
+          &#039;first&#039; =&gt; &#039;First Choice&#039;
+          ,&#039;second&#039; =&gt; &#039;Second Choice&#039;
+          ,&#039;third&#039; =&gt; &#039;Third Choice&#039;
+        )
+        ,&#039;columns&#039; =&gt; 6
+      )
+    )
+  ));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-0-9-9-7-not-set-default-value-in-group-field-for-checkbox-radio/">Piklist 0.9.9.7 not set default value in group field for checkbox, radio</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Interesting bug&#8230; Groups that show value on_post_status</title>
+		<link>https://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/</link>
+		
+		<dc:creator><![CDATA[Marcus]]></dc:creator>
+		<pubDate>Wed, 08 Jan 2014 20:15:01 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/</guid>
+
+					<description><![CDATA[<p>I have created a group: piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;group&#039; ,&#039;add_more&#039; =&#62; false ,&#039;scope&#039; =&#62; &#039;post_meta&#039; ,&#039;label&#039; =&#62; &#039;Booking Misc.&#039; ,&#039;field&#039; =&#62; &#039;mae_sched_misc&#039; ,&#039;description&#039; =&#62; &#039;Cost, Max Students, Alerts&#039; ,&#039;columns&#039; =&#62; 12 ,&#039;attributes&#039; =&#62; array ( ) ,&#039;fields&#039; =&#62; array ( array ( &#039;type&#039; =&#62; &#039;text&#039; ,&#039;field&#039; =&#62; &#039;mae_sched_cost&#039; ,&#039;label&#039; =&#62; &#039;Cost $&#039; ,&#039;value&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/">Interesting bug&#8230; Groups that show value on_post_status</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have created a group:</p>
+<pre><code>
+
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;group&#039;
+	,&#039;add_more&#039; =&gt; false
+	,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+	,&#039;label&#039; =&gt; &#039;Booking Misc.&#039;
+	,&#039;field&#039; =&gt; &#039;mae_sched_misc&#039;
+	,&#039;description&#039; =&gt; &#039;Cost, Max Students, Alerts&#039;
+	,&#039;columns&#039; =&gt; 12
+	,&#039;attributes&#039; =&gt; array (
+	)
+	,&#039;fields&#039; =&gt; array (
+		array (
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_cost&#039;
+			,&#039;label&#039; =&gt; &#039;Cost $&#039;
+			,&#039;value&#039; =&gt; &#039;&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;cost&#039;
+				)
+				,&#039;size&#039; =&gt; 10
+			)
+			,&#039;columns&#039; =&gt; 6
+			,&#039;on_post_status&#039; =&gt; array(
+			  &#039;value&#039; =&gt; &#039;publish&#039;
+			)
+		)
+		,array (
+			&#039;type&#039; =&gt; &#039;text&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_max_students&#039;
+			,&#039;label&#039; =&gt; &#039;Max Students &#039;
+			,&#039;value&#039; =&gt; &#039;&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;maxstudents&#039;
+				)
+				,&#039;size&#039; =&gt; 10
+			)
+			,&#039;columns&#039; =&gt; 6
+			,&#039;on_post_status&#039; =&gt; array(
+			  &#039;value&#039; =&gt; &#039;publish&#039;
+			)
+		)
+		,array (
+			&#039;type&#039; =&gt; &#039;checkbox&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_allow_overbook&#039;
+			,&#039;label&#039; =&gt; &#039;Overbooking&#039;
+			,&#039;value&#039; =&gt; &#039;y&#039;
+			,&#039;label_position&#039; =&gt; &#039;after&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;allowoverbook&#039;
+				)
+			)
+			  ,&#039;choices&#039; =&gt; array(
+			    &#039;y&#039;=&gt;&#039;Allow&#039;
+			  )
+			,&#039;columns&#039; =&gt; 6
+		)
+		,array (
+			&#039;type&#039; =&gt; &#039;checkbox&#039;
+			,&#039;field&#039; =&gt; &#039;mae_sched_alert_full&#039;
+			,&#039;label&#039; =&gt; &#039;Camp is Full&#039;
+			,&#039;value&#039; =&gt; &#039;y&#039;
+			,&#039;label_position&#039; =&gt; &#039;after&#039;
+			,&#039;attributes&#039; =&gt; array (
+				&#039;class&#039; =&gt; array (
+					&#039;alertonfull&#039;
+				)
+			)
+			  ,&#039;choices&#039; =&gt; array(
+			    &#039;y&#039;=&gt;&#039;Alert&#039;
+			  )
+			,&#039;columns&#039; =&gt; 6
+		)
+	)
+));
+</code></pre>
+<p>I have some of them set to show the value on publish: (so they are not editable)</p>
+<pre><code>
+,&#039;on_post_status&#039; =&gt; array(
+  &#039;value&#039; =&gt; &#039;publish&#039;
+)
+</code></pre>
+<p>But the last two (checkboxes) can be edited. (not using on_post_status on them)</p>
+<p>Here&#8217;s the bug. If you update either of these checkboxes, it affects the first two fields values. Probably because these first two are part of a group (array in post_meta) so the whole group gets updated even though only two fields are editable. </p>
+<p>In the function that updates the array, maybe it should load the other parts of the array as a double check when it posts to the post_meta table. Otherwise, it will rewrite over the array destroying the values for the on_post_status fields. (as we&#8217;ll always need to use groups for some things)</p>
+<p>I&#8217;ll try and find it myself, but Kevin may have already fixed it for the next release. </p>
+<p>Marcus</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/interesting-bug-groups-that-show-value-on_post_status/">Interesting bug&#8230; Groups that show value on_post_status</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>select in meta-boxes</title>
+		<link>https://piklist.com/support/topic/select-in-meta-boxes/</link>
+		
+		<dc:creator><![CDATA[chrisben]]></dc:creator>
+		<pubDate>Thu, 19 Sep 2013 12:58:22 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/select-in-meta-boxes/</guid>
+
+					<description><![CDATA[<p>I want to add a choice for my CPT, I basically copy pasted the code in the &#8220;Select&#8221; documentation page into a meta-box. When I save the post, I can see in my database that the meta value get saved properly, but when the post get reloaded (after save), it doesn&#8217;t re-select the choice item [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-in-meta-boxes/">select in meta-boxes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I want to add a choice for my CPT, I basically copy pasted the code in the &#8220;Select&#8221; documentation page into a meta-box.<br />
+When I save the post, I can see in my database that the meta value get saved properly, but when the post get reloaded (after save), it doesn&#8217;t re-select the choice item I have previously saved.</p>
+<p>Are we supposed to set the &#8220;value&#8221; field parameter to the correct value by loading the current post (if any) ourselves and set it as value in the piklist definition?<br />
+Or is it a bug?</p>
+<p>Same problem with checkbox and radio types.</p>
+<p>Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-in-meta-boxes/">select in meta-boxes</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>text field: &#034;0&#034; doesn&#039;t get saved</title>
+		<link>https://piklist.com/support/topic/text-field-0-doesnt-get-saved/</link>
+		
+		<dc:creator><![CDATA[chrisben]]></dc:creator>
+		<pubDate>Fri, 30 Aug 2013 14:32:32 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/text-field-0-doesnt-get-saved/</guid>
+
+					<description><![CDATA[<p>If you enter &#8220;0&#8221; (the digit zero, without quotes) in a piklist text field, the value doesn&#8217;t get saved, as if you entered nothing. This can be reproduced with the piklist demos, in latest 0.8 betas.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-0-doesnt-get-saved/">text field: &quot;0&quot; doesn&#039;t get saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If you enter &#8220;0&#8221; (the digit zero, without quotes) in a piklist text field, the value doesn&#8217;t get saved, as if you entered nothing.</p>
+<p>This can be reproduced with the piklist demos, in latest 0.8 betas.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/text-field-0-doesnt-get-saved/">text field: &quot;0&quot; doesn&#039;t get saved</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

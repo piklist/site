@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dashboard widgets &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/dashboard-widgets/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 05 Jun 2015 19:17:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>wp_dashboard_setup filter</title>
+		<link>https://piklist.com/support/topic/wp_dashboard_setup-filter/</link>
+		
+		<dc:creator><![CDATA[poxtron]]></dc:creator>
+		<pubDate>Tue, 02 Jun 2015 04:27:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/wp_dashboard_setup-filter/</guid>
+
+					<description><![CDATA[<p>Hi, nice thing you have here. I was testing the plugin and found a bug on WP 4.2.2 apparently calling remove_meta_box() on wp_dashboard_setup filter is no longer working changed it to admin_init and it worked (line 257 wp-helpers.php), also found that you can support the removal of the Activity dashboard widget by adding this line [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wp_dashboard_setup-filter/">wp_dashboard_setup filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, nice thing you have here. </p>
+<p>I was testing the plugin and found a bug on WP 4.2.2 apparently calling <code>remove_meta_box()</code> on  <code>wp_dashboard_setup</code> filter is no longer working changed it to <code>admin_init</code> and it worked (line 257 wp-helpers.php), also found that you can support the removal of the Activity dashboard widget by adding this line <code>,&#039;dashboard_activity&#039; =&gt; &#039;Activity&#039;</code> to general-dashboard.php file.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/wp_dashboard_setup-filter/">wp_dashboard_setup filter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

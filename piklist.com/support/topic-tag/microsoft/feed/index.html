@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>microsoft &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/microsoft/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 25 Nov 2015 23:35:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>[0.9.9.6] shortcode interface not working with IIS</title>
+		<link>https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Wed, 25 Nov 2015 23:32:12 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/</guid>
+
+					<description><![CDATA[<p>Have been building a new site on LAMP; just moved it to its new home on a Microsoft-IIS/8.5 server. Took a few hours but all is working well except for the Piklist shortcodes interface (in Edit Page). When you click on the &#8220;add shortcode&#8221; button, or when you click to edit an existing shortcode, the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/">[0.9.9.6] shortcode interface not working with IIS</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Have been building a new site on LAMP; just moved it to its new home on a Microsoft-IIS/8.5 server. Took a few hours but all is working well except for the Piklist shortcodes interface (in Edit Page). </p>
+<p>When you click on the &#8220;add shortcode&#8221; button, or when you click to edit an existing shortcode, the overlay that pops up is blank except for the title (&#8220;Add Shortcode&#8221; or &#8220;Edit &lt;shortcode name&gt;&#8221;). This is not browser-related: it happened for me running Firefox on my Mac laptop, and for the IT guy running IE/Windows in his local network. </p>
+<p>I checked the PHP debug log and found this: </p>
+<pre><code>[25-Nov-2015 23:15:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\inetpub\wwwroot\TestSite\wp-admin\menu-header.php on line 62
+[25-Nov-2015 23:15:52 UTC] PHP Notice:  Undefined index: file in C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-add-on.php on line 211
+[25-Nov-2015 23:15:52 UTC] PHP Notice:  Undefined index: file in C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-add-on.php on line 211
+[25-Nov-2015 23:15:52 UTC] PHP Notice:  Undefined index: file in C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-add-on.php on line 211
+</code></pre>
+<p>I can&#8217;t tell whether the error in the function <code>_wp_menu_output()</code> in <code>/wp-admin/menu-header.php</code> is causing the Piklist errors. </p>
+<p>The Piklist error occurs in <code>Piklist_Add_On::current()</code> where it walks through a debug backtrace and some elements of the trace are missing $trace[&#8216;file&#8217;]:</p>
+<pre><code>    foreach ($backtrace as $trace)
+    {
+      if ( strstr($trace[&#039;file&#039;], &#039;/parts/&#039;))
+</code></pre>
+<p>I edited the line to read:<br />
+<code>if ( isset( $trace[&#039;file&#039;] ) &amp;&amp; strstr($trace[&#039;file&#039;], &#039;/parts/&#039;))</code><br />
+and the error messages stopped but it didn&#8217;t fix the problem. </p>
+<p>I also logged the <code>$trace</code> array: </p>
+<pre><code>Array
+(
+    [0] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-form.php
+            [line] =&gt; 2748
+            [function] =&gt; current
+            [class] =&gt; Piklist_Add_On
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                )
+
+        )
+
+    [1] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 2445
+            [function] =&gt; render_form
+            [class] =&gt; Piklist_Form
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; shortcode
+                    [1] =&gt; 
+                )
+
+        )
+
+    [2] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shortcodes\form.php
+            [line] =&gt; 9
+            [function] =&gt; piklist
+            [args] =&gt; Array
+                (
+                    [0] =&gt; form
+                    [1] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                            [add_on] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [3] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 507
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shortcodes\form.php
+                )
+
+            [function] =&gt; include
+        )
+
+    [4] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-shortcode.php
+            [line] =&gt; 256
+            [function] =&gt; render
+            [class] =&gt; Piklist
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/shortcodes/form.php
+                    [1] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                            [content] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [5] =&gt; Array
+        (
+            [function] =&gt; shortcode
+            [class] =&gt; Piklist_Shortcode
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                        )
+
+                    [1] =&gt; 
+                    [2] =&gt; piklist_form
+                )
+
+        )
+
+    [6] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-includes\shortcodes.php
+            [line] =&gt; 308
+            [function] =&gt; call_user_func
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; piklist_shortcode
+                            [1] =&gt; shortcode
+                        )
+
+                    [1] =&gt; Array
+                        (
+                            [form] =&gt; shortcode
+                        )
+
+                    [2] =&gt; 
+                    [3] =&gt; piklist_form
+                )
+
+        )
+
+    [7] =&gt; Array
+        (
+            [function] =&gt; do_shortcode_tag
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; 
+                            [1] =&gt; 
+                            [2] =&gt; piklist_form
+                            [3] =&gt;  form=&quot;shortcode&quot;
+                            [4] =&gt; 
+                            [5] =&gt; 
+                            [6] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [8] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-includes\shortcodes.php
+            [line] =&gt; 210
+            [function] =&gt; preg_replace_callback
+            [args] =&gt; Array
+                (
+                    [0] =&gt; /\[(\[?)(embed|wp_caption|caption|playlist|audio|video|simple\-sitemap|wpseo_breadcrumb|wpseo_sitemap|gallery|mcw_widget|omta_button|gravityform|gravityforms|members_login_form|login\-form|members_access|access|members_feed|feed|members_logged_in|is_user_logged_in|get_avatar|avatar|4players|alugha|archiveorg|blip|bliptv|break|collegehumor|comedycentral|dailymotion|dailymotionlist|flickr|funnyordie|gametrailers|iframe|ign|kickstarter|liveleak|metacafe|movieweb|mpora|myspace|myvideo|snotr|spike|ted|twitch|ustream|veoh|vevo|viddler|videojug|vine|vimeo|xtube|yahoo|youtube|youtubelist|arve_tests|arve_supported|field_wrapper|field_label|field|field_description_wrapper|field_description|mcw\-feature|piklist_form)(?![\w-])([^\]\/]*(?:\/(?!\])[^\]\/]*)*?)(?:(\/)\]|\](?:([^\[]*+(?:\[(?!\/\2\])[^\[]*+)*+)\[\/\2\])?)(\]?)/s
+                    [1] =&gt; do_shortcode_tag
+                    [2] =&gt; 
+                )
+
+        )
+
+    [9] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\admin-pages\shortcode-editor.php
+            [line] =&gt; 6
+            [function] =&gt; do_shortcode
+            [args] =&gt; Array
+                (
+                    [0] =&gt; 
+                )
+
+        )
+
+    [10] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 507
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\admin-pages\shortcode-editor.php
+                )
+
+            [function] =&gt; include
+        )
+
+    [11] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 2583
+            [function] =&gt; render
+            [class] =&gt; Piklist
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/admin-pages/shortcode-editor.php
+                    [1] =&gt; Array
+                        (
+                        )
+
+                    [2] =&gt; 
+                    [3] =&gt; 
+                )
+
+        )
+
+    [12] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shared\admin-page.php
+            [line] =&gt; 12
+            [function] =&gt; piklist
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/admin-pages/shortcode-editor.php
+                )
+
+        )
+
+    [13] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist.php
+            [line] =&gt; 507
+            [args] =&gt; Array
+                (
+                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\parts\shared\admin-page.php
+                )
+
+            [function] =&gt; include
+        )
+
+    [14] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist\includes\class-piklist-admin.php
+            [line] =&gt; 447
+            [function] =&gt; render
+            [class] =&gt; Piklist
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; shared/admin-page
+                    [1] =&gt; Array
+                        (
+                            [section] =&gt; shortcode_editor
+                            [notice] =&gt; 1
+                            [icon] =&gt; 
+                            [single_line] =&gt; 
+                            [title] =&gt; Shortcode Editor
+                            [setting] =&gt; 
+                            [page_sections] =&gt; Array
+                                (
+                                    [0] =&gt; Array
+                                        (
+                                            [id] =&gt; piklist_shortcode_editor
+                                            [folder] =&gt; admin-pages
+                                            [part] =&gt; shortcode-editor.php
+                                            [data] =&gt; Array
+                                                (
+                                                    [title] =&gt; 
+                                                    [page] =&gt; Array
+                                                        (
+                                                            [0] =&gt; shortcode_editor
+                                                        )
+
+                                                    [order] =&gt; 
+                                                    [position] =&gt; before
+                                                    [tab] =&gt; 
+                                                    [sub_tab] =&gt; 
+                                                    [flow] =&gt; 
+                                                    [extend] =&gt; 
+                                                    [extend_method] =&gt; 
+                                                )
+
+                                            [prefix] =&gt; 
+                                            [add_on] =&gt; piklist
+                                            [path] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist
+                                            [render] =&gt; Array
+                                                (
+                                                    [0] =&gt; C:\inetpub\wwwroot\TestSite\wp-content\plugins\piklist/parts/admin-pages/shortcode-editor.php
+                                                )
+
+                                        )
+
+                                )
+
+                            [save] =&gt; 1
+                            [save_text] =&gt; Save Changes
+                            [page] =&gt; 
+                            [layout] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [15] =&gt; Array
+        (
+            [function] =&gt; admin_page
+            [class] =&gt; Piklist_Admin
+            [type] =&gt; ::
+            [args] =&gt; Array
+                (
+                    [0] =&gt; 
+                )
+
+        )
+
+    [16] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-includes\plugin.php
+            [line] =&gt; 503
+            [function] =&gt; call_user_func_array
+            [args] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [0] =&gt; piklist_admin
+                            [1] =&gt; admin_page
+                        )
+
+                    [1] =&gt; Array
+                        (
+                            [0] =&gt; 
+                        )
+
+                )
+
+        )
+
+    [17] =&gt; Array
+        (
+            [file] =&gt; C:\inetpub\wwwroot\TestSite\wp-admin\admin.php
+            [line] =&gt; 236
+            [function] =&gt; do_action
+            [args] =&gt; Array
+                (
+                    [0] =&gt; admin_page_shortcode_editor
+                )
+
+        )
+
+)
+</code></pre>
+<p>If this doesn&#8217;t provide enough information, I can give you access to the site. Let me know. </p>
+<p>Thanks!<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-9-9-6-shortcode-interface-not-working-with-iis/">[0.9.9.6] shortcode interface not working with IIS</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

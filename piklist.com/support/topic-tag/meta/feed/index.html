@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>meta &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/meta/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 19 May 2020 15:39:07 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>field reflecting current user</title>
+		<link>https://piklist.com/support/topic/field-reflecting-current-user/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Thu, 26 Apr 2018 12:06:23 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/field-reflecting-current-user/</guid>
+
+					<description><![CDATA[<p>How would you set up a field, that reflects the current user. piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;my_filed&#039;+currentusersIDhere, .... Would it work and be safe to use the users id integer?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-reflecting-current-user/">field reflecting current user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>How would you set up a field, that reflects the current user.</p>
+<pre><code>piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;text&#039;,
+	&#039;field&#039; =&gt; &#039;my_filed&#039;+currentusersIDhere,
+	....</code></pre>
+<p>Would it work and be safe to use the users id integer?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/field-reflecting-current-user/">field reflecting current user</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Add meta to REST API response</title>
+		<link>https://piklist.com/support/topic/add-meta-to-rest-api-response/</link>
+		
+		<dc:creator><![CDATA[Ico]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2017 18:27:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-meta-to-rest-api-response/</guid>
+
+					<description><![CDATA[<p>Hi All, I searched for an easy way to display meta-box content created by Piklist in the rest_api response. For example: //Title: Custom meta to show in Rest //Post Type: post piklist( &#039;field&#039;, array( &#039;type&#039; =&#62; &#039;text&#039;, &#039;field&#039; =&#62; &#039;custom_text&#039;, &#039;label&#039; =&#62; &#039;Custom text demo&#039;, //&#039;show_in_rest&#039; =&#62; true, //not working :( ) ); I can [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi All,<br />
+I searched for an easy way to display meta-box content created by Piklist in the rest_api response.</p>
+<p>For example:</p>
+<pre><code>//Title: Custom meta to show in Rest
+ //Post Type: post
+
+piklist( &#039;field&#039;, array(
+	&#039;type&#039;       =&gt; &#039;text&#039;,
+	&#039;field&#039;      =&gt; &#039;custom_text&#039;,
+	&#039;label&#039;      =&gt; &#039;Custom text demo&#039;,
+	//&#039;show_in_rest&#039; =&gt; true, //not working :(
+) );</code></pre>
+<p>I can use register_rest_field to add the meta to the api response ( for example : )</p>
+<pre><code>
+	register_rest_field( &#039;post&#039;, &#039;cm&#039;, array(
+		&#039;get_callback&#039; =&gt; function ( $post ) {
+			return get_post_meta( $post[&#039;id&#039;], &#039;custom_text&#039;, true );
+		},
+		&#039;schema&#039;       =&gt; array(
+			&#039;description&#039; =&gt; __( &#039;Custom piklist text.&#039; ),
+			&#039;type&#039;        =&gt; &#039;string&#039;
+		),
+	) );
+</code></pre>
+<p>and it does the trick, but it would be awesome if just passing <code>&#039;show_in_rest&#039; =&gt; true</code> to the meta params make it automatically show in the response.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-meta-to-rest-api-response/">Add meta to REST API response</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Unique Value in Term Meta</title>
+		<link>https://piklist.com/support/topic/unique-value-in-term-meta/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Wed, 29 Mar 2017 01:42:40 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/unique-value-in-term-meta/</guid>
+
+					<description><![CDATA[<p>Hi, I love that you have term meta options https://piklist.com/learn/doc/terms/ I searched for an answer to this but came up empty. I noticed when creating a meta field, for example: &#60;?php /* Title: Upload Fields Taxonomy: random_tax New: true */ ?&#62; &#60;?php piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;file&#039; ,&#039;field&#039; =&#62; &#039;featured_media&#039; ,&#039;label&#039; =&#62; __(&#039;Featured Media&#039;, &#039;piklist-demo&#039;) [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unique-value-in-term-meta/">Unique Value in Term Meta</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I love that you have term meta options https://piklist.com/learn/doc/terms/</p>
+<p>I searched for an answer to this but came up empty. </p>
+<p>I noticed when creating a meta field, for example:</p>
+<pre><code>&lt;?php
+/*
+Title: Upload Fields
+Taxonomy: random_tax
+New: true
+*/
+?&gt;
+
+&lt;?php
+  
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;featured_media&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Featured Media&#039;, &#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;, &#039;piklist-demo&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;piklist-demo&#039;)
+    )
+  ));
+ ?&gt;
+</code></pre>
+<p>And I add a couple of images, it creates a new term meta field for each image and increments the id. </p>
+<p><a href="https://developer.wordpress.org/reference/functions/update_term_meta/" target="_blank">I know that multiple values can be added to a meta field using the unique parameter on add_term_meta</a> or update_term_meta but I&#8217;m not sure how to do this just using piklist. </p>
+<p>What am I missing?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/unique-value-in-term-meta/">Unique Value in Term Meta</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using Taxonomy Meta to Sort</title>
+		<link>https://piklist.com/support/topic/using-taxonomy-meta-to-sort/</link>
+		
+		<dc:creator><![CDATA[aswebdesign]]></dc:creator>
+		<pubDate>Sat, 08 Mar 2014 13:28:59 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/using-taxonomy-meta-to-sort/</guid>
+
+					<description><![CDATA[<p>Is it possible to sort the taxonomy by custom meta which has been added via Piklist? Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-taxonomy-meta-to-sort/">Using Taxonomy Meta to Sort</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is it possible to sort the taxonomy by custom meta which has been added via Piklist?</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/using-taxonomy-meta-to-sort/">Using Taxonomy Meta to Sort</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

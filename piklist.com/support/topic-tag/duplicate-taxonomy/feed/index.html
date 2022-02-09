@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>duplicate taxonomy &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/duplicate-taxonomy/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 20 May 2016 10:39:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>[Need Help] Duplicating taxonomy</title>
+		<link>https://piklist.com/support/topic/need-help-duplicating-taxonomy/</link>
+		
+		<dc:creator><![CDATA[bakaisar]]></dc:creator>
+		<pubDate>Fri, 20 May 2016 10:32:31 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/need-help-duplicating-taxonomy/</guid>
+
+					<description><![CDATA[<p>First, I want to thank to all developers for this awesome plugin. But now, I need some help. This is the original code. =&#62; http://pastebin.com/xLMf2Na4 I modified some values in Easy Digital Downloads plugin with my theme. Then, I add a new taxonomy with piklist (ref. to artist_taxonomies) But I also want the same taxonomy [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-help-duplicating-taxonomy/">[Need Help] Duplicating taxonomy</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>First, I want to thank to all developers for this awesome plugin.</p>
+<p>But now, I need some help.</p>
+<p>This is the original code. =&gt; http://pastebin.com/xLMf2Na4</p>
+<p>I modified some values in Easy Digital Downloads plugin with my theme. Then, I add a new taxonomy with piklist (ref. to artist_taxonomies)</p>
+<p>But I also want the same taxonomy with the same feature like that, so I copy and paste it and change its value to Product (product_represented). (ref. to product_represented)</p>
+<p>This is the new code. =&gt; http://pastebin.com/NBwvxTDL</p>
+<p>and got this error.</p>
+<blockquote><p>Fatal error: Cannot redeclare get_labels() (previously declared in /home/japanrec/public_html/wp-content/themes/musiks/inc/edd.php:71) in /home/japanrec/public_html/wp-content/themes/musiks/inc/edd.php on line 124</p></blockquote>
+<p>It seems that I cannot simply renaming stuffs.</p>
+<p>can someone teach me how to fix this?</p>
+<p>[update]</p>
+<p>and also what do you think about this code? (ref. to taxonomy terms: line 237 to 255)</p>
+<pre><code>			$terms1 = get_the_terms( $post-&gt;ID, &#039;download_artist&#039;, &#039;&#039;, &#039;, &#039;, &#039;&#039; );
+			if ( $terms1 &amp;&amp; ! is_wp_error( $terms1 ) ) {
+				$artist = array();
+				foreach ( $terms1 as $term1 ) {
+					$artist[] = $term1-&gt;name;
+				}
+				$obj[&#039;artist&#039;] = join( &quot;, &quot;, $artist );
+			}
+			$terms2 = get_the_terms( $post-&gt;ID, &#039;download_product_represented&#039;, &#039;&#039;, &#039;, &#039;, &#039;&#039; );
+			if ( $terms2 &amp;&amp; ! is_wp_error( $terms2 ) ) {
+				$product_represented = array();
+				foreach ( $terms2 as $term2 ) {
+					$product_represented[] = $term2-&gt;name;
+				}
+				$obj[&#039;product_represented&#039;] = join( &quot;, &quot;, $product_represented );
+			}			
+			$obj[&#039;poster&#039;] = wp_get_attachment_url( get_post_thumbnail_id( $post-&gt;ID ) );
+			$objs[] = $obj;
+		}</code></pre>
+<p>is it good enough? This is what i was struggle with first before the problem above appeared</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-help-duplicating-taxonomy/">[Need Help] Duplicating taxonomy</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

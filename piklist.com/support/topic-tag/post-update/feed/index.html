@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post update &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/post-update/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 08 Dec 2015 15:58:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Fields cannot be updated after saving post</title>
+		<link>https://piklist.com/support/topic/fields-cannot-be-updated-after-saving-post/</link>
+		
+		<dc:creator><![CDATA[shayneol]]></dc:creator>
+		<pubDate>Thu, 03 Dec 2015 00:23:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/fields-cannot-be-updated-after-saving-post/</guid>
+
+					<description><![CDATA[<p>I have a new installation of WordPress (v.4.3.1) and Piklist v.0.9.9.7. After adding values to my fields (I&#8217;ve tried editor, text, and file upload fields so far) and saving the post, the values will not update. I cannot change/delete any text or remove/uploaded images once the post has been saved. Here Is The Test Code [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-cannot-be-updated-after-saving-post/">Fields cannot be updated after saving post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a new installation of WordPress (v.4.3.1) and Piklist v.0.9.9.7.</p>
+<p>After adding values to my fields (I&#8217;ve tried editor, text, and file upload fields so far) and saving the post, the values will not update.  I cannot change/delete any text or remove/uploaded images once the post has been saved.</p>
+<p><strong>Here Is The Test Code That I Am Using (copied straight from the Piklist plugin demo folder):</strong></p>
+<pre><code>&lt;?php
+/*
+Title: Editor Examples
+Post Type: page
+Order: 100
+*/
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;editor&#039;
+    ,&#039;field&#039; =&gt; &#039;post_content&#039;
+    ,&#039;required&#039; =&gt; true
+    ,&#039;label&#039; =&gt; __(&#039;Post Content&#039;, &#039;piklist-demo&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;This is a replacement for the post_content editor&#039;, &#039;piklist-demo&#039;)
+    ,&#039;value&#039; =&gt; &#039;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#039;
+    ,&#039;options&#039; =&gt; array(
+      &#039;wpautop&#039; =&gt; true
+      ,&#039;media_buttons&#039; =&gt; true
+      ,&#039;shortcode_buttons&#039; =&gt; true
+      ,&#039;teeny&#039; =&gt; false
+      ,&#039;dfw&#039; =&gt; false
+      ,&#039;tinymce&#039; =&gt; array(
+        &#039;resize&#039; =&gt; false
+        ,&#039;wp_autoresize_on&#039; =&gt; true
+      )
+      ,&#039;quicktags&#039; =&gt; true
+      ,&#039;drag_drop_upload&#039; =&gt; true
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;text&#039;
+    ,&#039;field&#039; =&gt; &#039;text&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Text&#039;, &#039;piklist-demo&#039;)
+    ,&#039;help&#039; =&gt; __(&#039;You can easily add tooltips to your fields with the help parameter.&#039;, &#039;piklist-demo&#039;)
+    ,&#039;attributes&#039; =&gt; array(
+      &#039;class&#039; =&gt; &#039;regular-text&#039;
+    )
+  ));
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;upload_media&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Media Uploader&#039;, &#039;piklist-demo&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add File(s)&#039;, &#039;piklist-demo&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add&#039;, &#039;piklist-demo&#039;)
+    )
+  ));
+
+?&gt;
+</code></pre>
+<p>To make sure it wasn&#8217;t my theme, I&#8217;ve tried this code on the Twenty Fifteen theme and had all other plugins disabled.  Another weird thing is that everything seems to be working fine if the fields are in a Group.  I was successfully using the following code before I noticed the above mentioned issue:</p>
+<pre><code>&lt;?php
+/*
+Title: Sections
+Post Type: page
+Order: 20
+ID: 2
+*/
+  
+?&gt;
+
+&lt;div class=&quot;piklist-demo-highlight&quot;&gt;
+  &lt;?php _e(&#039;Individual Homepage Sections&#039;, &#039;piklist-demo&#039;);?&gt;
+&lt;/div&gt;
+
+&lt;?php
+
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    ,&#039;field&#039; =&gt; &#039;sections&#039;
+    ,&#039;label&#039; =&gt; &#039;Homepage Sections&#039;
+    ,&#039;columns&#039; =&gt; 12
+    ,&#039;add_more&#039; =&gt; true
+    ,&#039;fields&#039; =&gt; array(
+      array(
+		&#039;type&#039; =&gt; &#039;colorpicker&#039;
+		,&#039;field&#039; =&gt; &#039;bg_color&#039;
+		,&#039;label&#039; =&gt; &#039;Background Color&#039;
+        ,&#039;columns&#039; =&gt; 12
+      )
+	  
+      ,array(
+		&#039;type&#039; =&gt; &#039;html&#039;
+		,&#039;label&#039; =&gt; __(&#039;&lt;div style=&quot;width:100%; height:1px; background:#d1d1d1; margin-top:-10px; margin-bottom:-30px;&quot;&gt;&lt;/div&gt;&#039;, &#039;piklist-demo&#039;)
+      )
+
+      ,array(
+		&#039;type&#039; =&gt; &#039;text&#039;
+		,&#039;field&#039; =&gt; &#039;title&#039;
+		,&#039;label&#039; =&gt; &#039;Section Title&#039;
+		,&#039;help&#039; =&gt; &#039;Leave blank if no section title is needed.&#039;
+        ,&#039;columns&#039; =&gt; 12
+		,&#039;attributes&#039; =&gt; array(
+			&#039;class&#039; =&gt; &#039;regular-text&#039;
+		)
+      )
+	  
+      ,array(
+		&#039;type&#039; =&gt; &#039;html&#039;
+		,&#039;label&#039; =&gt; __(&#039;&lt;div style=&quot;width:100%; height:1px; background:#d1d1d1; margin-top:0px; margin-bottom:-30px;&quot;&gt;&lt;/div&gt;&#039;, &#039;piklist-demo&#039;)
+      )
+	  
+      ,array(
+		&#039;type&#039; =&gt; &#039;editor&#039;
+		,&#039;field&#039; =&gt; &#039;subtitle&#039;
+		,&#039;label&#039; =&gt; &#039;Subtitle&#039;
+		,&#039;help&#039; =&gt; &#039;Leave blank if no subtitle is needed. Multiple lines are allowed.&#039;
+		,&#039;options&#039; =&gt; array(
+			&#039;wpautop&#039; =&gt; true
+			,&#039;media_buttons&#039; =&gt; true
+			,&#039;shortcode_buttons&#039; =&gt; true
+			,&#039;teeny&#039; =&gt; false
+			,&#039;dfw&#039; =&gt; false
+			,&#039;tinymce&#039; =&gt; array(
+				&#039;resize&#039; =&gt; false
+				,&#039;wp_autoresize_on&#039; =&gt; true
+			)
+			,&#039;quicktags&#039; =&gt; true
+			,&#039;drag_drop_upload&#039; =&gt; true
+			)
+		)
+	  
+      ,array(
+		&#039;type&#039; =&gt; &#039;html&#039;
+		,&#039;label&#039; =&gt; __(&#039;&lt;div style=&quot;width:100%; height:1px; background:#d1d1d1; margin-top:0px; margin-bottom:-30px;&quot;&gt;&lt;/div&gt;&#039;, &#039;piklist-demo&#039;)
+      )
+
+      ,array(
+		&#039;type&#039; =&gt; &#039;select&#039;
+		,&#039;field&#039; =&gt; &#039;_&#039; . piklist::$prefix . &#039;relate_post&#039;
+		,&#039;label&#039; =&gt; &#039;Choose Page Content From&#039;
+		,&#039;choices&#039; =&gt; piklist(
+			get_posts(array(
+				&#039;post_type&#039; =&gt; &#039;page&#039;
+				,&#039;numberposts&#039; =&gt; -1
+				,&#039;orderby&#039; =&gt; &#039;title&#039;
+				,&#039;order&#039; =&gt; &#039;ASC&#039;
+			))
+			,array(&#039;ID&#039;, &#039;post_title&#039;)
+		)
+		,&#039;relate&#039; =&gt; array(
+			&#039;scope&#039; =&gt; &#039;post&#039;
+		)
+      )
+
+    )
+  ));
+
+?&gt;
+</code></pre>
+<p>I have recorded a screencast of what is happening if this helps.  I will send it to piklist support.</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/fields-cannot-be-updated-after-saving-post/">Fields cannot be updated after saving post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

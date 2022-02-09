@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>front-end-form &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/front-end-form/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Tue, 16 Apr 2019 01:32:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Dynamic Redirect on Front End Form</title>
+		<link>https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/</link>
+		
+		<dc:creator><![CDATA[mikakoo]]></dc:creator>
+		<pubDate>Thu, 28 Mar 2019 16:48:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/</guid>
+
+					<description><![CDATA[<p>Hello, To workaround an issue I am redirecting the user back to the normal view of a CPT after they submit changes to it via FEF. I have achieved this using the piklist_request_field filter, but wonder what other ways the community might suggest this could be done more efficiently. It also relies on the Redirect: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/">Dynamic Redirect on Front End Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,<br />
+To workaround an issue I am redirecting the user back to the normal view of a CPT after they submit changes to it via FEF.</p>
+<p>I have achieved this using the <strong>piklist_request_field</strong> filter, but wonder what other ways the community might suggest this could be done more efficiently.<br />
+It also relies on the <em>Redirect:</em> comment block directive &#8211; if this is removed, my code doesn&#8217;t get called.</p>
+<p>Here&#8217;s my code:</p>
+<pre><code>//
+//	Alter the Redirect link for Edit Listing form
+//
+add_filter( &#039;piklist_request_field&#039;, &#039;thearr_request_field&#039; );
+function thearr_request_field( $field )
+{
+        // only interested in the redirect field
+	if ( strcmp(&#039;redirect&#039;, $field[&#039;field&#039;]) === 0 )
+	{
+                // this is what tells the FEF which data to use
+		if ( isset( $_REQUEST[&#039;_post&#039;][&#039;ID&#039;] ) )
+		{
+			// change redirection back to the normal view after edit
+			$field[&#039;value&#039;] = get_permalink( $_REQUEST[&#039;_post&#039;][&#039;ID&#039;] );
+		}
+	}
+
+	return $field;
+}</code></pre>
+<p>Thanks for any help.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/dynamic-redirect-on-front-end-form/">Dynamic Redirect on Front End Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Front End Form &#8211; subsequent edit issue</title>
+		<link>https://piklist.com/support/topic/front-end-form-subsequent-edit-issue/</link>
+		
+		<dc:creator><![CDATA[mikakoo]]></dc:creator>
+		<pubDate>Thu, 28 Mar 2019 16:38:06 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-subsequent-edit-issue/</guid>
+
+					<description><![CDATA[<p>Hi all, I&#8217;ve got a FEF to edit a CPT, where all works fine when I make a change the first time. After submit I get the form page back with a notice to say it has saved, and sure enough the data has changed. If I then make another change and submit, it looks [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-subsequent-edit-issue/">Front End Form &#8211; subsequent edit issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi all,<br />
+I&#8217;ve got a FEF to edit a CPT, where all works fine when I make a change the first time.<br />
+After submit I get the form page back with a notice to say it has saved, and sure enough the data has changed.<br />
+If I then make another change and submit, it looks like it works from the front end, however the changes are not saved into the database.<br />
+It is not until I reload the page (not refresh) that I can make changes and have them save.</p>
+<p>The difference I can see in comparing the source of the page in &#8216;fresh&#8217; state and &#8216;after submit&#8217; state is the attributes data-piklist-field-group=&#8221;xxxxxx&#8221; &#8211; which changes every time it is rendered anyway.</p>
+<p>My current workaround is to dynamically redirect the user back to the normal view of the CPT (just about to post a question on this), but would prefer the option of staying on the page unless user indicates so (e.g. Save | Save and go back)</p>
+<p>Thanks for any help.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-subsequent-edit-issue/">Front End Form &#8211; subsequent edit issue</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>front-end form &#034;action&#034; parameter</title>
+		<link>https://piklist.com/support/topic/front-end-form-action-parameter/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Sun, 24 Jun 2018 21:41:34 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-action-parameter/</guid>
+
+					<description><![CDATA[<p>I have a page that generates reports. It has a form asking for start date and number of weeks. When input is received, it prints the report and below the report shows the form again with the h2 heading &#8220;Generate Another Report.&#8221; See example at https://pik.redpup.net/reports/. Because the reports can be very long, when I [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-action-parameter/">front-end form &quot;action&quot; parameter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a page that generates reports. It has a form asking for start date and number of weeks. When input is received, it prints the report and below the report shows the form again with the h2 heading &#8220;Generate Another Report.&#8221; See example at https://pik.redpup.net/reports/. </p>
+<p>Because the reports can be very long, when I display a report I put a button at the top that says &#8220;generate another report&#8221; and links to &#8220;#generate&#8221; which is the ID for the h2 at the bottom of the page. Saves people from scrolling all the way. </p>
+<p>But when the form is posted, it retains &#8220;#generate&#8221; as part of its action URL and so if the user posts another form, they are scrolled past the new report back to the generate form. This is the case whether method is post or get. </p>
+<p>The piklist/parts/fields/form.php file starts with: </p>
+<pre><code>&lt;form 
+  method=&quot;&lt;?php echo strtolower($data[&#039;method&#039;]); ?&gt;&quot; 
+  action=&quot;&lt;?php echo $data[&#039;filter&#039;] ? home_url() . $data[&#039;action&#039;] : null; ?&gt;&quot; </code></pre>
+<p>So I tried adding an &#8220;Action&#8221; parameter to the parts/forms file: </p>
+<pre><code>/*  
+Title: Choose Report
+Method: post
+Action: /reports/
+Message: 
+*/
+</code></pre>
+<p>But it has no effect. Is there a way to override the default action?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-action-parameter/">front-end form &quot;action&quot; parameter</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>front end form</title>
+		<link>https://piklist.com/support/topic/front-end-form/</link>
+		
+		<dc:creator><![CDATA[angelolazzari]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2016 15:09:16 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form/</guid>
+
+					<description><![CDATA[<p>Hi, we need to create a front end submission form where the admin user can load documents, give a name and description to that document, a status&#8230; and so on&#8230; then, once the document is loaded a potencial customer should be able to look for those documents and read/download them&#8230;. but not modify them&#8230;. Is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form/">front end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, we need to create a front end submission form where the admin user can load documents, give a name and description to that document, a status&#8230; and so on&#8230; then, once the document is loaded a potencial customer should be able to look for those documents and read/download them&#8230;. but not modify them&#8230;.</p>
+<p>Is that possible with PIKLIST? How hard would be develop that kind of process?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form/">front end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Hoping this is Possible with Piklist! :)</title>
+		<link>https://piklist.com/support/topic/hoping-this-is-possible-with-piklist/</link>
+		
+		<dc:creator><![CDATA[intrepidrealist]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2016 13:09:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/hoping-this-is-possible-with-piklist/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;m building a webapp where two types of users need to sign up and have access to their specific account/dashboards. One user type will be registering and listing activities &#38; camps, the other will be registering and adding their children. The registration form needs to be front end. The accounts/dashboard ideally front end but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/hoping-this-is-possible-with-piklist/">Hoping this is Possible with Piklist! :)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+I&#8217;m building a webapp where two types of users need to sign up and have access to their specific account/dashboards. One user type will be registering and listing activities &amp; camps, the other will be registering and adding their children.</p>
+<p>The registration form needs to be front end. The accounts/dashboard ideally front end but if there is a way to highly customize WP admin pages that could work too.</p>
+<p>I&#8217;m new to Piklist and have used Advanced Custom Fields and Formidable.<br />
+But never used those two in this particular manner.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/hoping-this-is-possible-with-piklist/">Hoping this is Possible with Piklist! :)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Front End Form Saving to Current Post ID</title>
+		<link>https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/</link>
+		
+		<dc:creator><![CDATA[rharrigan]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2016 20:32:27 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/</guid>
+
+					<description><![CDATA[<p>First time posting to the Piklist Community, but I am very willing to get involved. I will have other tickets, but I&#8217;ll start with this one. Thanks for your work. I want to save info from the Front End Form (FEF) on the current post. I stumbled on a comment somewhere that said there is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/">Front End Form Saving to Current Post ID</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>First time posting to the Piklist Community, but I am very willing to get involved. I will have other tickets, but I&#8217;ll start with this one. Thanks for your work. </p>
+<p>I want to save info from the Front End Form (FEF) on the current post. I stumbled on a comment somewhere that said there is no direct functionality because multiple posts can be updated in one FEF submisison, so I am looking for a way to overload that. Currently, my code only creates a new post of the same below post type.</p>
+<p>The following topics seemed most relevant:<br />
+&#8211; https://piklist.com/learn/doc/arent-fields-saving/<br />
+&#8211; https://piklist.com/support/topic/how-can-i-get-the-id-of-new-post-created-by-front-end-form/</p>
+<p>When using &#8216;ID&#8217; as in</p>
+<pre><code>
+$id = get_the_ID();
+
+// Where to save this form
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_type&#039;
+	,&#039;value&#039; =&gt; &#039;custom_post_type_1&#039;
+));
+
+// New post ID
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;ID&#039;
+	,&#039;value&#039; =&gt; ($id ? $id : &#039;&#039;)
+	,&#039;required&#039; =&gt; false,
+));
+</code></pre>
+<p>I get a &#8220;Class &#8216;Layers_Widget_Migrator&#8217; not found&#8221; conflict with my LayersWP theme. Don&#8217;t know what&#8217;s going on there yet. I do not get a conflict when the field using </p>
+<pre><code>
+$id = get_the_ID();
+// Where to save this form
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_type&#039;
+	,&#039;value&#039; =&gt; &#039;custom_post_type_1&#039;
+));
+
+// New post ID
+piklist(&#039;field&#039;, array(
+	&#039;type&#039; =&gt; &#039;hidden&#039;
+	,&#039;scope&#039; =&gt; &#039;post&#039;
+	,&#039;field&#039; =&gt; &#039;post_id_backend&#039;
+	,&#039;value&#039; =&gt; ($id ? $id : &#039;&#039;)
+	,&#039;required&#039; =&gt; false,
+));
+</code></pre>
+<p>$id successfully fills. I am using version 0.9.9.9. I tried using code from @mcmaster, but I&#8217;m not too sure.</p>
+<pre><code>
+add_action( &#039;piklist_save_field-post&#039;, &#039;my_grab_new_post_id&#039; );
+function my_grab_new_post_id ( $fields ) {
+	global $my_new_post_id;
+	$my_new_post_id = $fields[&#039;post_id_backend&#039;][&#039;object_id&#039;];
+}
+
+add_filter( &#039;wp_redirect&#039;, &#039;my_stick_new_post_id_in_redirect&#039;, 10, 2 );
+function my_stick_new_post_id_in_redirect ( $location, $status ) {
+	global $my_new_post_id;
+	return( $location.&quot;?ID=$my_new_post_id&quot; );	
+}
+</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/front-end-form-saving-to-current-post-id/">Front End Form Saving to Current Post ID</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>CPT front-end Form</title>
+		<link>https://piklist.com/support/topic/cpt-front-end-form/</link>
+		
+		<dc:creator><![CDATA[Nabil]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2016 13:23:19 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/cpt-front-end-form/</guid>
+
+					<description><![CDATA[<p>Hello, I was wondering if Piklist allows creating front-end forms for creating or updating CPT posts. Thanks, Nabil</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cpt-front-end-form/">CPT front-end Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I was wondering if Piklist allows creating front-end forms for creating or updating CPT posts.</p>
+<p>Thanks,<br />
+Nabil</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/cpt-front-end-form/">CPT front-end Form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>on_post_status when editing post with front end form</title>
+		<link>https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/</link>
+		
+		<dc:creator><![CDATA[jivedig]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2016 19:15:33 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/</guid>
+
+					<description><![CDATA[<p>I have a form to submit new posts on front end. It has a field to select post status when submitting. I&#8217;d like to hide this post when editing a published post via /?_post[ID]=1234 Using: &#039;on_post_status&#039; =&#62; array( &#039;hide&#039; =&#62; &#039;publish&#039;, ), &#8230; doesn&#8217;t work when editing a post this way. I could hack something [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/">on_post_status when editing post with front end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a form to submit new posts on front end. It has a field to select post status when submitting. I&#8217;d like to hide this post when editing a published post via /?_post[ID]=1234</p>
+<p>Using:</p>
+<pre><code>&#039;on_post_status&#039; =&gt; array(
+      &#039;hide&#039; =&gt; &#039;publish&#039;,
+ ),</code></pre>
+<p>&#8230; doesn&#8217;t work when editing a post this way. I could hack something together to work, but would love Piklist core to handle this somehow if possible. Any thoughts?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/on_post_status-when-editing-post-with-front-end-form/">on_post_status when editing post with front end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>redirect no longer works with front-end form</title>
+		<link>https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Tue, 03 Nov 2015 22:55:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/</guid>
+
+					<description><![CDATA[<p>I have a front-end form (tickets purchase) that was working fine with beta 0.9.5v but I ran into several problems with 0.9.9. I have been able to resolve all but this. I have been using a redirect field in the comment block at the top of the file. Initially this was set to &#8220;review_url&#8221; as [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/">redirect no longer works with front-end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have a front-end form (tickets purchase) that was working fine with beta 0.9.5v but I ran into several problems with 0.9.9. I have been able to resolve all but this. I have been using a redirect field in the comment block at the top of the file. Initially this was set to &#8220;review_url&#8221; as I couldn&#8217;t put a function in the Redirect field: </p>
+<p>In <code>piklist/parts/ticket-order-form.php</code>:</p>
+<pre><code>/*  
+Title: Ticket Order Form
+Method: post
+Message: Data saved as a post of type ticket.
+Redirect: review_url
+*/</code></pre>
+<p>In <code>functions.php</code>:</p>
+<pre><code>add_filter( &#039;piklist_add_part&#039;, &#039;mcw_form_redirect&#039;, 10, 2 );
+function mcw_form_redirect ( $data, $type ) {
+	// if not a form then bail
+	if ( $type != &#039;form&#039; ) {
+		return $data;
+	}
+	// check if any page template is set in the comment block
+	if ( ( $data[&#039;redirect&#039;] ) == &#039;review_url&#039; ) {
+		$data[&#039;redirect&#039;] = home_url( &#039;/tickets/order-review/&#039; );
+	}
+	return $data;
+}</code></pre>
+<p>After upgrading to 0.9.9.6, it tried to send me to <code>http://mysite.com/review_url</code> which of course was 404. I changed the Redirect field: </p>
+<pre><code>/*  
+Title: Ticket Order Form
+Method: post
+Message: Data saved as a post of type ticket.
+Redirect: /tickets/order-review/
+*/</code></pre>
+<p>Now it sends me to the correct page, but doesn&#8217;t pass the $_REQUEST parameters so I can&#8217;t process the form inputs. </p>
+<p>Is Redirect no longer supported? Is there another way to do this? </p>
+<p>Thanks,<br />
+Donna</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/redirect-no-longer-works-with-front-end-form/">redirect no longer works with front-end form</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

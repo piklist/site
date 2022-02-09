@@ -1,0 +1,928 @@
+/*
+Theme Name: Piklist.com
+Author: Piklist
+Author URI: http://piklist.com/
+Description: Child theme
+Template: piklistcom-base
+Version: 1.0
+*/
+
+
+
+.jumbotron {
+  margin-bottom: 0;
+  background-color: #f0f0f0;
+  border-radius:0;
+  background-color: #fff;
+}
+
+#product-overview {
+  background: #15061c;
+}
+
+  #product-overview h2 {
+    font-size: 22px;
+    font-weight: lighter !important;
+    margin-bottom: 0 !important;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+
+  #product-overview h2:first-letter {
+    font-size: 1.3em;
+  }
+
+  #home-navigation{
+    padding:0;
+    margin:0;
+  }
+
+    #home-navigation li a {
+      font-size:22px;
+      background-color: #15061c;
+      padding: 0;
+      border-top:5px solid #15061c;
+      color: #fff;
+      margin: 0 5px 5px 0;
+    }
+
+      #home-navigation li.active a,
+      #home-navigation li a:hover {
+        color: #fff;
+        background-color:#15061c;
+        border-top:5px solid #e32e19;
+      }
+
+    #home-navigation a small{
+        font-size:15px;
+        color:#808892;
+        font-style:oblique;
+      }
+
+    #home-navigation ul li{
+      padding:0;
+      margin:0;
+    }
+
+      #home-navigation ul li img{
+        display:none;
+      }
+
+      #home-navigation ul li.active img{
+        display:block;
+        position: absolute;
+        left: 15px;
+        z-index: 99;
+      }
+
+
+#product-info-bar {
+  background-color: #222;
+  color: #fff;
+}
+
+  #product-info-bar.beta-bar,
+  #product-info-bar.beta-bar a {
+    color: #fff;
+  }
+
+  #product-info-bar h1 {
+    color: #fff;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+  #product-content section.beta-bar h3 {
+    color: #fff !important;
+  }
+
+  #product-content section.beta-bar h4 {
+    color: #fff !important;
+    margin-bottom: 0 !important;
+    margin-top: 20px !important;
+  }
+
+
+   #product-content section.beta-bar .beta-login-register a {
+    color: yellow;
+  }
+
+  #product-info-bar. div {
+    color: #fff;
+    font-weight: 100;
+  }
+
+  #product-info-bar .plugin-meta,
+  #product-info-bar .available {
+    font-size: .8em;
+    color: #fff !important;
+  }
+
+#product-content{
+}
+
+  #product-content section {
+    padding: 30px 20px;
+  }
+
+  #product-content section h3 {
+    margin-top: 0px;
+  }
+
+    #product-content section.feature-highlight {
+      padding-bottom: 0px;
+    }
+
+    #product-content section.feature-highlight h3 {
+      margin-top: 17px;
+    }
+
+    #product-content section h3,
+    #product-content section h4 {
+      color: #4F3F67;
+    }
+
+      #product-content section .lead {
+        color: #4F3F67;
+        font-size: 21px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+    #product-content section.feature-blocks .border {
+      border: 1px solid #eee;
+    }
+
+  #product-content section:nth-child(odd){
+
+  }
+
+    #product-content section:nth-child(odd).feature-blocks .border {
+      border: 1px solid #ddd;
+    }
+
+    #product-content section:nth-child(odd) .feature-type.feature-with-image {
+      background: #fff;
+    }
+
+
+
+    #product-content .jumbotron h1{
+      font-size: 2.5em;
+      font-weight: 300;
+      color:#fff;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+  body.home #product-content .jumbotron {
+    background-image:url(../images/slider_main%402x.jpg);
+  }
+
+   body.product-toolbox #product-content .jumbotron{
+    background-image:url(../images/toolbox%402x.jpg);
+    background-color: #5E8499;
+  }
+
+   body.product-piklist #product-content .jumbotron{
+    background-image:url(../images/framework%402x.jpg);
+    background-color:#595959;
+  }
+
+  body.product-fields-forms #product-content .jumbotron {
+    background-image:url(../images/fields-forms%402x.jpg);
+    background-color:#F1F1F1;
+  }
+
+  body.product-wp-helpers #product-content .jumbotron{
+    background-image:url(../images/helpers%402x.jpg);
+    background-color: #5E8499;
+  }
+
+      body.product-fields-forms #product-content .jumbotron h1{
+        color: #000;
+      }
+
+
+  #product-content .jumbotron {
+    height:467px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    background-size: 1200px 467px;
+    background-color: #000000;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+
+
+
+    #product-content .jumbotron.message-right h1 {
+      text-align: right;
+    }
+
+    #product-content .jumbotron .btn.call-to-action{
+      background-color:#cd2c01;
+      padding:10px 40px;
+      font-size:18px;
+    }
+
+    #product-content .jumbotron .screenshot {
+      max-width:100%;
+      height: 400px;
+    }
+
+
+.download-product {
+  float: left;
+}
+
+  #product-content .jumbotron.message-right .download-product {
+    float: right;
+  }
+
+  #product-content .jumbotron .download-product.align-bottom {
+    margin-top: 235px;
+  }
+
+
+.download-product a.btn-get {
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 19px 30px;
+    float: right;
+  }
+
+    #product-content .jumbotron .download-product a.btn-get {
+      margin-bottom: 20px;
+    }
+
+  .download-product a.btn-get:hover,
+  .download-product a.btn-get:focus,
+  .download-product a.btn-get:active,
+  .download-product a.btn-get.active {
+    background-color: #F5F5F5;
+    border-color: #fff;
+    color: #000;
+    filter: alpha(opacity=100);
+    opacity: 0.90;
+  }
+
+  .download-product p {
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 19px 0 19px 20px;
+  }
+
+#choose-option {
+  font-size: 18px;
+  padding-top: 18px;
+}
+
+.single_variation_wrap {
+    display: block;
+    margin-top: 20px;
+  }
+
+
+body.single-case-study .post-content {
+	margin-left: 0;
+}
+
+.widget_case_study {
+	background-color: #f5f5f5;
+	padding: 10px 20px;
+}
+
+	.widget_case_study p,
+	.widget_case_study li {
+		line-height: 150%;
+	}
+
+	.widget_case_study ul ul li {
+		list-style-type: square;
+		list-style-position: inside;
+	}
+
+#product-content img.wp-post-image {
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+
+#product-content .feature-customize-everything .feature-item {
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+#product-content .feature-customize-everything .dashicons {
+  width: 100%;
+  font-size: 36px;
+}
+
+#product-content .feature-customize-everything .row {
+  margin-top: 20px;
+}
+
+  #product-content .feature-customize-everything .row:first-child {
+  margin-top: 0px;
+}
+
+form#contact-submit input {
+  width: 400px;
+}
+
+form#contact-submit input.btn {
+  width: 200px;
+}
+
+form#contact-submit textarea {
+  height: 100px;
+}
+
+
+body.archive article {
+  min-height: 160px;
+}
+
+
+/* =Video Modal
+-----------------------------------------------
+ */
+
+div#video-main-button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 5em;
+  line-height: 400px;
+}
+
+  body.product-fields-forms div#video-main-button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 5em;
+    margin-top: -250px;
+  }
+
+#video-main.modal {
+  z-index: 3000;
+}
+
+#video-main .modal-dialog {
+  width: 682px;
+  height: 500px;
+}
+
+#video-main .modal-content {
+  height: 100%;
+  border-radius: 0;
+}
+
+/*
+
+#video.modal .modal-dialog {
+  width: 853px;
+  height: 480px;
+}
+
+ #video.modal .modal-content {
+  text-align: center;
+  font-size: 18px;
+  box-shadow: none;
+ }
+
+  #video.modal input {
+    display: inline;
+  }
+
+ #video.modal .modal-content img {
+  width: 150px;
+  height: 40px;
+  }
+
+
+  #video.modal .modal-content .close {
+    font-size: 40px;
+  }
+
+  #video.modal .modal-content input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+  }
+
+
+ #video.modal .modal-content label {
+  width: 100%;
+ }
+
+.edd_submit,
+.edd-submit.button.blue,
+#searchsubmit,
+.button {
+    background-color: #428BCA;
+    border-color: #428BCA;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 5px 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+    .edd_submit:hover,
+    .edd-submit.button.blue:hover,
+    #searchsubmit:hover,
+    .button:hover {
+      background-color: #eee;
+      border-color: #ccc;
+      color: #000;
+    }
+
+ #video.modal .modal-content input#wp-submit {
+    background-color: #E32E19;
+    border-color: #E32E19;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 5px 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+   #video.modal .modal-content input#wp-submit:hover {
+      background-color: #ddd;
+      border-color: #ddd;
+      color: #000;
+   }
+
+*/
+
+
+
+
+#call-out{}
+
+  #call-out h3{
+    color:#24ab83;
+    font-weight:lighter;
+    text-transform:uppercase;
+    font-size:18px;
+  }
+
+
+  .get-product .lead {
+    margin-bottom: 0;
+    text-align: right;
+
+  }
+
+.testimonial-block{
+  float: left;
+}
+
+  #product-content section.testimonials h4 {
+    text-align: center;
+  }
+
+  .testimonial-block p{
+    font:16px/22px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    margin-left: 95px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .testimonial-inner{
+    margin:10px 0;
+    background-color:none;
+  }
+
+  .testimonial-avatar{
+    border: 5px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    /*border-radius:25px;*/
+  }
+
+/* =Features
+----------------------------------------------- */
+.feature-list-image h4 img {
+  height: 20px;
+}
+
+.feature-list-image .media-heading {
+  margin: 10px 0;
+}
+
+ .feature-list-image .feature-item {
+  margin-left: 10px;
+  font-size: 16px
+ }
+
+  .feature-list-image .fa {
+    margin-left: 0px;
+    margin-right: 10px;
+ }
+
+  .feature-blocks .fa,
+  .feature-blocks .fa-stack {
+    text-align:center;
+    display:block;
+    /*font-size:24px;*/
+    margin-bottom:10px;
+    width: 100%;
+  }
+
+  .feature-blocks span.feature-type {
+    text-align:center;
+    display:block;
+  }
+
+  .feature img {
+    width: 100%;
+  }
+
+  .fa-ul > li {
+    font-size: 14px;
+    list-style: none;
+    line-height: 42px;
+    padding-top: 15px;
+  }
+
+  .fa-li {
+    padding-top: 9px;
+  }
+
+  .feature-list .lead {
+    font-size: 18px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  section.feature-list .feature-name {
+    position: relative;
+    z-index : 1;
+  }
+
+  section.feature-list .feature-name:before {
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 20%;
+    position: absolute;
+    width: 60%;
+  }
+
+    section .feature-name h3 .dashicons{
+      font-size: 28px;
+      margin-right: 20px;
+    }
+
+
+
+  .feature-list .fa-ul .feature-item {
+    padding-top: 0px;
+  }
+
+    .feature-list .fa-ul .feature-item .small{
+      margin-left: 10px;
+      color: #999;
+    }
+
+    .feature-list .fa-li.dashicons {
+      font-size: 2em;
+      height: 2em;
+      width: 2em;
+    }
+
+  section .col-lg-4 {
+    padding-right: 20px;
+  }
+
+    section .col-lg-4:last-child {
+      padding-right: 0px;
+    }
+
+  .fa-ul > li .feature-item {
+    font-size: 16px;
+    line-height: 1.5em;
+    padding-top: 0px;
+  }
+
+  h4 i {
+    margin-right: 5px;
+  }
+
+.learn-framework {
+  background-image:url(../images/framework%402x.jpg);
+  background-color:#595959;
+  border-top: 1px solid #DFDFDF;
+  padding: 28px 0 !important;
+}
+
+  #product-content section.learn-framework a h3 {
+    color: #fff;
+    margin: 0;
+  }
+
+    #product-content section.learn-framework a:hover,
+    #product-content section.learn-framework a:hover h3{
+      text-decoration: none;
+      color: #f5f5f5;
+    }
+
+
+
+/* =Registration
+----------------------------------------------- */
+.mu_register {
+    margin: 0px auto 100px !important;
+    width: 100% !important;
+}
+
+.mu_register h2,
+.widecolumn h2 {
+    background: none repeat scroll 0 0 #222222!important;
+    margin: 0!important;
+    min-height: 90px!important;
+    padding: 22px 60px 15px!important;
+    color: #fff!important;
+    font-weight: 300!important;
+    line-height: 1.42857!important;
+  }
+
+  .mu_register form,
+  .mu_register p,
+  .widecolumn p {
+    margin-top: 2em!important;
+    padding: 0 60px!important;
+  }
+
+.mu_register #blog_title,
+.mu_register #user_email,
+.mu_register #blogname,
+.mu_register #user_name {
+    font-size: 20px !important;
+    height: 40px;
+    width: 50% !important;
+  }
+
+.mu_register input[type="submit"] {
+  width: 300px !important;
+  background-color: #E32E19 !important;
+  border: 1px solid #E32E19 !important;
+  color: #fff !important;
+  font-weight: normal !important;
+  height: 48px !important;
+}
+
+  .mu_register input[type="submit"]:hover {
+    background-color: #ddd !important;
+    border: 1px solid #ddd !important;
+    color: #000 !important;
+  }
+
+
+/* =Comments
+-----------------------------------------------
+ */
+#comments {
+  clear: both;
+}
+
+textarea#comment {
+  width: 100%;
+}
+
+#comments ol li {
+  list-style: none;
+  margin-left: 0;
+}
+
+#comments ol li div.comment-body {
+  border-top: 1px solid #dfdfdf;
+  display: block;
+  list-style: none outside none;
+  padding: 15px 0;
+}
+
+#comments .avatar {
+  border: 1px solid #dfdfdf;
+}
+
+#comments .comment-meta.commentmetadata,
+#comments .comment-body p,
+#comments .comment-body .reply,
+#comments .children {
+  margin-left: 100px;
+}
+
+#comments .comment-author cite {
+  margin-left: 33px;
+}
+
+#comments .comment-meta.commentmetadata {
+  font-size: 11px;
+}
+
+.dashicons.dashicons-admin-comments {
+  font-size: 52px;
+  height: 1px;
+  width: 1px;
+}
+
+.entry-date .comment-num {
+  padding: 0;
+  margin-top: -11px;
+  text-align: center;
+  color: #fff;
+}
+
+
+
+/* =Easy Digital Downloads
+-----------------------------------------------
+*/
+.edd_download_purchase_form .edd_price_options {
+  float: left;
+}
+
+.edd_download_purchase_form .edd_purchase_submit_wrapper {
+    float: left;
+    margin-left: 10px;
+    width: 150px;
+}
+
+.edd_download_purchase_form .edd-cart-added-alert {
+    color: yellow;
+    margin-top: 5px;
+}
+
+#edd_profile_editor_form label {
+  float: left;
+  clear: left;
+}
+
+#edd_profile_editor_form p {
+  margin-bottom: 26px;
+}
+
+#edd_profile_editor_form select#edd_address_country {
+  margin-bottom: 26px;
+}
+
+/* Checkbox */
+input#edd_agree_to_terms {
+  min-height: 16px;
+}
+
+
+/* =Gravity Forms
+-----------------------------------------------
+*/
+
+#choice_5_1 {
+  min-height: 18px;
+}
+
+.gform_wrapper .gform_footer {
+  margin-top: 5px !important;
+  padding: 0px !important;
+}
+
+.gfield_required {
+  color: #fff !important;
+}
+
+  .gfield_error.gfield_contains_required .gfield_required {
+    color: #790000 !important;
+  }
+
+.gfield_description.validation_message {
+  color: #790000 !important;
+}
+
+
+/* =Font Awesome
+-----------------------------------------------
+*/
+.fa-center {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* =Media: Portrait tablet to landscape and desktop
+-----------------------------------------------
+ * max-width: 979px
+ */
+@media (max-width: 979px) {
+
+  #home-navigation ul li.active img{
+    display:none;
+  }
+
+  .feature img {
+    width: 50%;
+  }
+
+  .feature-blocks span.feature-type.feature-with-image {
+    width: 50%;
+    float: left;
+  }
+
+  #product-content .jumbotron.message-right h1 {
+    text-align: center;
+  }
+
+  #product-content .jumbotron.message-right .download-product {
+    float: none;
+    text-align: center;
+  }
+
+  #product-content .jumbotron .download-product.align-bottom {
+    margin-top: 20px;
+  }
+
+  #choose-option {
+    padding-top: 0;
+  }
+
+  table.variations tr td {
+    padding: 5px 0 5px 5px;
+  }
+
+
+}
+
+
+/* =Media: Landscape phone to portrait tablet
+-----------------------------------------------
+ * max-width: 767px
+ */
+
+@media (max-width: 767px) {
+
+
+
+  #product-content .jumbotron h1,
+  #product-content .jumbotron.message-right h1 {
+    font-size: 1.5em;
+    margin-top: 0;
+    text-align: center;
+    float: none;
+  }
+
+  .download-product a.btn-get {
+    margin-top: 10px;
+  }
+
+.download-product {
+    border-top: 1px solid;
+    float: left;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+
+
+}
+
+
+/* =Media: portrait phone
+-----------------------------------------------
+ * max-width: 480px
+ */
+
+@media (max-width: 480px) {
+
+
+
+
+  .feature img {
+      width: 100%;
+  }
+
+  .feature-blocks span.feature-type.feature-with-image {
+    width: 100%;
+    float: none;
+  }
+
+
+}

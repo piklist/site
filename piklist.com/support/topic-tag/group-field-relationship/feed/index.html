@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>group field relationship &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/group-field-relationship/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 27 Jul 2016 05:25:53 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>custom post relationships do not work as expected</title>
+		<link>https://piklist.com/support/topic/custom-post-relationships-do-not-work-as-expected/</link>
+		
+		<dc:creator><![CDATA[workvista]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2016 05:22:45 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/custom-post-relationships-do-not-work-as-expected/</guid>
+
+					<description><![CDATA[<p>Hi, I have 2 CPTs &#8211; Job Advertisement and Role. Each Job advertisement (or a notice) can have multiple roles. I am trying to create a admin form for job notice which will allow me to add multiple roles (in place) to a job notice. I am using group field to do this. There is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-relationships-do-not-work-as-expected/">custom post relationships do not work as expected</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have 2 CPTs &#8211; Job Advertisement and Role. Each Job advertisement (or a notice) can have multiple roles.  </p>
+<p>I am trying to create a admin form for job notice which will allow me to add multiple roles (in place) to a job notice. I am using group field to do this. There is a demo for group related which adds multiple posts to a demo (wp-content/plugins/piklist/add-ons/piklist-demos/parts/meta-boxes/field-relationship.php). </p>
+<p>The demo works regular posts. I cannot get it working for a custom post type.</p>
+<p>here&#8217;s my code :</p>
+<pre><code>
+&lt;?php
+/*
+Title: My custom fields
+Post Type: job_notice
+*/
+?&gt;
+
+&lt;?php
+
+piklist(&#039;field&#039;, [
+	&#039;type&#039; =&gt;   &#039;group&#039;,
+	&#039;label&#039; =&gt;  &#039;Add Role&#039;,
+	&#039;relate&#039; =&gt;  array(&#039;scope&#039; =&gt; &#039;post&#039;),
+	&#039;add_more&#039; =&gt; true,
+	&#039;fields&#039; =&gt; array(
+		array(&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;field&#039; =&gt; &#039;post_type&#039;, &#039;value&#039; =&gt; &#039;role&#039;, &#039;scope&#039; =&gt; &#039;post&#039;),
+		array(&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;field&#039; =&gt; &#039;post_status&#039;, &#039;value&#039; =&gt; &#039;publish&#039;, &#039;scope&#039; =&gt; &#039;post&#039;),
+		array(&#039;type&#039; =&gt; &#039;text&#039;, &#039;field&#039; =&gt; &#039;post_title&#039;, &#039;label&#039; =&gt; &#039;Role Name&#039;, &#039;columns&#039; =&gt; 6, &#039;scope&#039; =&gt; &#039;post&#039;),
+		array(&#039;type&#039; =&gt; &#039;number&#039;,&#039;field&#039; =&gt; &#039;number_of_posts&#039; ,&#039;label&#039; =&gt; &#039;Number Of Posts&#039;, &#039;columns&#039; =&gt; 3, &#039;scope&#039; =&gt; &#039;post_meta&#039;)
+	)
+]);
+</code></pre>
+<p>I expect to create roles having fields &#8211; post_status, post_title, number_of_posts that are related to the parent job_notice.</p>
+<p>What I get &#8211; Roles get created with fields: post_status, post_title.<br />
+The field number_of_posts gets saved as a job_notice field inside its post_meta.</p>
+<p>Also the add mores do no retain the entered values and show the text boxes as empty.</p>
+<p>Is this a bug with field relationships ? Can you add some tutorial on group / relationship fields. The fields documentation page says &#8220;coming soon&#8221; at https://piklist.com/learn/doc/relationships/. It is really hard to implement CPT &#8211; CPT relationship similar to the one that demo shows.</p>
+<p>Thanks.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/custom-post-relationships-do-not-work-as-expected/">custom post relationships do not work as expected</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

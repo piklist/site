@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Custom Post Statuses Not Working Anymore &#8211; Piklist Support</title>
+		<atom:link href="https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/feed/" rel="self" type="application/rss+xml" />
+		<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 08 Feb 2022 19:57:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.6</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1938</guid>
+					<title><![CDATA[Custom Post Statuses Not Working Anymore]]></title>
+					<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1938</link>
+					<pubDate>Thu, 03 Jul 2014 17:54:18 +0000</pubDate>
+					<dc:creator>zanedickens</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi All,</p>
+<p>I was able to get my custom post statuses to work and thus all the dependant functionality fairly easily. I then did something. Now none of them are showing up and for the life of me I cannot find the issue in the CPT declaration.</p>
+<p>Is there anything wrong with the following (it&#8217;s part of a merged array of CPTs as per example in docs):</p>
+<pre><code>
+,&#039;company_community&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Community Award Entry&#039;)
+      ,&#039;supports&#039; =&gt; array(
+        &#039;revisions&#039;,
+      )
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communityaward&#039;
+      )
+     ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Community Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+        ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )           </code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1940</guid>
+					<title><![CDATA[Reply To: Custom Post Statuses Not Working Anymore]]></title>
+					<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1940</link>
+					<pubDate>Thu, 03 Jul 2014 18:52:43 +0000</pubDate>
+					<dc:creator>Steve</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This works for me. I see all post statuses in the meta box dropdown.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1943</guid>
+					<title><![CDATA[Reply To: Custom Post Statuses Not Working Anymore]]></title>
+					<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1943</link>
+					<pubDate>Fri, 04 Jul 2014 09:38:53 +0000</pubDate>
+					<dc:creator>zanedickens</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Steve &#8211; at least I can hunt elsewhere now 🙂 Is the issue most likely then in my merged array or some sort of plugin conflict?</p>
+<p>1. The posts are created and everything there works (although occasionally I have a doubling of field boxes)<br />
+2. I&#8217;ve tried disabling all but piklist and my own but no luck in isolating further</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1944</guid>
+					<title><![CDATA[Reply To: Custom Post Statuses Not Working Anymore]]></title>
+					<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1944</link>
+					<pubDate>Fri, 04 Jul 2014 10:01:44 +0000</pubDate>
+					<dc:creator>zanedickens</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi I&#8217;m going to post the full code now &#8211; apologies for the length. It has to be something in here, as all plugins off, changed themes etc none of that made a difference. It was working before but now not.</p>
+<pre><code>
+
+add_filter(&#039;piklist_post_types&#039;, &#039;awards_post_types&#039;);
+function awards_post_types($post_types)
+{
+  $post_types = array_merge($post_types, array(
+    &#039;company_skills&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Skills Development Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;companyskills&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Skills Development Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Community Award Entry
+    ,&#039;company_community&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Community Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communityaward&#039;
+      )
+     ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Community Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+        ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                                                   // Innovation Award Entry
+    ,&#039;company_innovation&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;World Design Capital 2014 Innovation Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communityinnovation&#039;
+      )
+     ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Innovation Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )         
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+        
+     ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+    )                                               // Job Creation Award Entry
+    ,&#039;company_jobs&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Job Creation Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+                            &#039;slug&#039; =&gt; &#039;communityjobs&#039;
+                            )
+      ,&#039;edit_columns&#039; =&gt; array(
+                                &#039;title&#039; =&gt; __(&#039;Job Creation Award Entry&#039;)
+                                ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+                                ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+                                &#039;quick-edit&#039;
+                                ,&#039;view&#039;
+                                ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Best Outsourced Contact Centre Award Entry
+    ,&#039;company_outsourced&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Best Outsourced Contact Centre Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communityoutsourced&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Best Outsourced Contact Centre Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Best Captive Contact Centre Award Entry
+    ,&#039;company_captive&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Best Captive Contact Centre Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communitycaptive&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Best Captive Contact Centre Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Best External Support Services
+    ,&#039;company_external&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Best External Support Services&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communityexternal&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Best External Support Services&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                                   // Wellness in the Workplace Award 9/9
+     ,&#039;company_support&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Support Services Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communitysupport&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Support Services Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                                   // Wellness in the Workplace Award 9/9
+    ,&#039;company_wellness&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Wellness in the Workplace Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;communitywellness&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Wellness in the Workplace Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Manager of the Year Entry 1/4
+    ,&#039;individual_manager&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Manager of the Year Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;individual-manager&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Manager of the Year Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Supervisor / Team Leader of the Year Entry 2/4
+    ,&#039;individualsupervisor&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Supervisor / Team Leader of the Year Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;individual-supervisor&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Supervisor / Team Leader of the Year Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Agent / Customer Service Representative Award Entry 3/4
+    ,&#039;individual_agent&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Agent / Customer Service Representative Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;individual-agent&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Agent / Customer Service Representative Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )                                               // Support Services Award Entry 4/4
+    ,&#039;individual_support&#039; =&gt; array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Support Services Individual Award Entry&#039;)
+      ,&#039;public&#039; =&gt; true
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;individual-support&#039;
+      )
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Support Services Individual Award Entry&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Entered by&#039;)
+        ,&#039;status&#039; =&gt; __(&#039;Entry Status&#039;)
+      )
+      ,&#039;post_states&#039; =&gt; true
+      ,&#039;status&#039; =&gt; array(
+        &#039;draft&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Completed&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;locked&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Locked&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;scored&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Scored&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+        ,&#039;audited&#039; =&gt; array(
+          &#039;label&#039; =&gt; &#039;Audited&#039;
+          ,&#039;public&#039; =&gt; true
+        )
+      )
+      ,&#039;hide_post_row_actions&#039; =&gt; array(
+        &#039;quick-edit&#039;
+        ,&#039;view&#039;
+        ,&#039;open-in-visual-editor&#039;
+      )
+    )
+  ));
+ 
+  return $post_types;
+}</code></pre>
+<p>Thanks in advance 🙂</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1956</guid>
+					<title><![CDATA[Reply To: Custom Post Statuses Not Working Anymore]]></title>
+					<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-1956</link>
+					<pubDate>Sat, 05 Jul 2014 01:55:38 +0000</pubDate>
+					<dc:creator>Steve</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><a href="https://piklist.com/support/users/zanedickens/" class="bbp-user-mention bbp-user-id-288"> @zanedickens</a>&#8211; You seem to have found a very odd bug. Custom Post Statuses do not work unless hide_meta_box is set. You can even pass a fake meta box and it will work.</p>
+<p>Obviously, we&#8217;ll work on a fix but for now try adding this to your post types:</p>
+<pre>
+,'hide_meta_box' => array(
+ 'notreal'
+)
+</pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-2014</guid>
+					<title><![CDATA[Reply To: Custom Post Statuses Not Working Anymore]]></title>
+					<link>https://piklist.com/support/topic/custom-post-statuses-not-working-anymorw/#post-2014</link>
+					<pubDate>Wed, 16 Jul 2014 18:39:37 +0000</pubDate>
+					<dc:creator>zanedickens</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Steve! That was driving me nuts &#8211; happy to have found a bug &#8211; that will be my first 🙂 Now if only there were badges for that kind of thing 😉</p>
+<p>&#8212;</p>
+<p>Just a note &#8211; for some reason I didn&#8217;t get an email notification of your second reply? Got the first one but not the second one. Either way thanks again.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

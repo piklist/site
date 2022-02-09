@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>not saving &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/not-saving/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 01 Dec 2016 22:49:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Default Editor content repeating on second Piklist Editor</title>
+		<link>https://piklist.com/support/topic/default-editor-content-repeating-on-second-piklist-editor/</link>
+		
+		<dc:creator><![CDATA[Juan]]></dc:creator>
+		<pubDate>Thu, 01 Dec 2016 22:49:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/default-editor-content-repeating-on-second-piklist-editor/</guid>
+
+					<description><![CDATA[<p>Hi! im new on PIKLIST. (v. 0.9.9.9) Im having a couple of issues. I created a metabox with an Field&#62;Editor and with an &#8216;Add More&#8217; button because i want to create multiple sections on my pages and posts. First, when I go to edit my page, i see the content in the wp default editor [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/default-editor-content-repeating-on-second-piklist-editor/">Default Editor content repeating on second Piklist Editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! im new on PIKLIST. (v. 0.9.9.9)<br />
+Im having a couple of issues.<br />
+I created a metabox with an Field&gt;Editor and with an &#8216;Add More&#8217; button because i want to create multiple sections on my pages and posts.</p>
+<p>First, when I go to edit my page, i see the content in the wp default editor is duplicated in the &#8216;Piklist created&#8217; editor.<br />
+<a href="https://www.dropbox.com/s/z52cpu9q26zkihv/duplicated-content.png?dl=0" target="_blank">see image</a></p>
+<p>And second, when i refill the second editor or Add_more editor and then publish, nothing is Saved. Everything is the same when i enter for the firt time to edit my page or post.</p>
+<p>I saw similar bugs on Support and tried <a href="https://piklist.com/learn/doc/arent-fields-saving/" target="_blank">this</a> for example but nothing happens.</p>
+<p>Thank you in advance !!!</p>
+<p>I also want to say that i love that PIKLIST exist. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/default-editor-content-repeating-on-second-piklist-editor/">Default Editor content repeating on second Piklist Editor</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Select fields with taxonomy in meta-box not saving.</title>
+		<link>https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/</link>
+		
+		<dc:creator><![CDATA[Rob Hust]]></dc:creator>
+		<pubDate>Fri, 19 Aug 2016 06:10:42 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/</guid>
+
+					<description><![CDATA[<p>The following code is not saving to the appropriate taxonomies (or anywhere). When the post-type is opened in wordpress, the fields are back to their default, and none of the taxonomy boxes are checked. It is saved in &#8220;meta-boxes&#8221; The first two fields are the issue. /* Title: Recipe Particulars Post Type: gw-recipe */ piklist( [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/">Select fields with taxonomy in meta-box not saving.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>The following code is not saving to the appropriate taxonomies (or anywhere). When the post-type is opened in wordpress, the fields are back to their default, and none of the taxonomy boxes are checked.</p>
+<p>It is saved in &#8220;meta-boxes&#8221;<br />
+The first two fields are the issue.</p>
+<pre><code>/*
+Title: Recipe Particulars
+Post Type: gw-recipe
+*/
+
+piklist( &#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;gw-cuisine&#039;
+      ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+      ,&#039;label&#039; =&gt; &#039;Choose Cuisine Type&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;american&#039; =&gt; &#039;American&#039;
+        ,&#039;chinese&#039; =&gt; &#039;Chinese&#039;
+        ,&#039;french&#039; =&gt; &#039;French&#039;
+        ,&#039;german&#039; =&gt; &#039;German&#039;
+        ,&#039;italian&#039; =&gt; &#039;Italian&#039;
+        ,&#039;japanese&#039; =&gt; &#039;Japanese&#039;
+        ,&#039;mexican&#039; =&gt; &#039;Mexican&#039;
+        ,&#039;spanish&#039; =&gt; &#039;Spanish&#039;
+        ,&#039;fusion&#039; =&gt; &#039;Fusion&#039;
+      	)
+      ,&#039;attributes&#039; =&gt; array(
+      	&#039;multiple&#039; =&gt; &#039;multiple&#039; // This changes a select field into a multi-select field
+      	)
+));
+
+piklist( &#039;field&#039;, array(
+      &#039;type&#039; =&gt; &#039;select&#039;
+      ,&#039;field&#039; =&gt; &#039;gw-course&#039;
+      ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+      ,&#039;label&#039; =&gt; &#039;Choose Course&#039;
+      ,&#039;columns&#039; =&gt; 4
+      ,&#039;choices&#039; =&gt; array(
+        &#039;entree&#039; =&gt; &#039;Entree&#039;
+        ,&#039;side&#039; =&gt; &#039;Side&#039;
+        ,&#039;salad&#039; =&gt; &#039;Salad&#039;
+        ,&#039;appetizer&#039; =&gt; &#039;Appetizer&#039;
+        ,&#039;breakfast&#039; =&gt; &#039;Breakfast&#039;
+        ,&#039;lunch&#039; =&gt; &#039;Lunch&#039;
+        ,&#039;supper&#039; =&gt; &#039;Supper&#039;
+        ,&#039;snack&#039; =&gt; &#039;Snack&#039;
+        ,&#039;dessert&#039; =&gt; &#039;Dessert&#039;
+      	)
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;multiple&#039; =&gt; &#039;multiple&#039; // This changes a select field into a multi-select field
+      		)
+));
+
+piklist( &#039;field&#039;, array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;serves&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Serves&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 4
+    	,&#039;help&#039; =&gt; __(&#039;Number of servings in the recipe&#039;, &#039;gw-recipe&#039;)
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+    	));
+
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;ingredients-add-more&#039;
+    ,&#039;add_more&#039; =&gt; true
+    , &#039;columns&#039; =&gt; 12
+    ,&#039;fields&#039; =&gt; array(
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;quantity&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Quantity&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 2
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		),
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;measure&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Measure&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 3
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+    	),
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;ingredient&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Ingredient&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 7
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		)
+    )
+));
+
+piklist( &#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;group&#039;
+    , &#039;field&#039; =&gt; &#039;instruction-steps&#039;
+    ,&#039;add_more&#039; =&gt; true
+    , &#039;columns&#039; =&gt; 12
+    ,&#039;fields&#039; =&gt; array(
+    	array(
+    	&#039;type&#039; =&gt; &#039;text&#039;
+    	,&#039;field&#039; =&gt; &#039;instruction_step_num&#039;
+    	,&#039;label&#039; =&gt; __(&#039;Step #&#039;, &#039;gw-recipe&#039;)
+    	,&#039;columns&#039; =&gt; 2
+    	,&#039;attributes&#039; =&gt; array(
+      		&#039;class&#039; =&gt; &#039;regular-text&#039;
+    		)
+  		),
+    	array(
+    	&#039;type&#039; =&gt; &#039;textarea&#039;,
+    	&#039;field&#039; =&gt; &#039;instruction&#039;,
+    	&#039;label&#039; =&gt; &#039;Instructions&#039;,
+    	&#039;columns&#039; =&gt; 10,
+    	&#039;attributes&#039; =&gt; array(
+      	&#039;rows&#039; =&gt; 10,
+      	&#039;class&#039; =&gt; &#039;large-text&#039;
+    		)
+  		)
+    )
+));</code></pre>
+<p>Here&#8217;s the definition of the post-type and the taxonomies.</p>
+<pre><code>/*
+Plugin Name: i824 Recipes
+Plugin URI: http://integr824.com/plugin
+Description: This adds recipes post types to WordPress
+Version: 0.1
+Author: Robert Hust
+Author URI: http://integr824.com
+Plugin Type: Piklist
+License: GPL2
+*/
+
+ if (!defined(&#039;ABSPATH&#039;))
+  {
+    exit;
+  }
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_cuisine&#039;);
+function recipe_cuisine($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-cuisine&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Cuisines&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-cuisine&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_course&#039;);
+function recipe_course($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-course&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; true
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Courses&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-course&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_taxonomies&#039;, &#039;recipe_tools&#039;);
+function recipe_tools($taxonomies){
+  $taxonomies[] = array(
+    &#039;post_type&#039; =&gt; &#039;gw-recipe&#039;
+    ,&#039;name&#039; =&gt; &#039;gw-tools&#039;
+    ,&#039;show_admin_column&#039; =&gt; true
+    ,&#039;configuration&#039; =&gt; array(
+      &#039;hierarchical&#039; =&gt; false
+      ,&#039;labels&#039; =&gt; piklist(&#039;taxonomy_labels&#039;, &#039;Tools&#039;)
+      ,&#039;hide_meta_box&#039; =&gt; false
+      ,&#039;show_ui&#039; =&gt; true
+      ,&#039;query_var&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-course&#039;
+      )
+    )
+  );
+  return $taxonomies;
+}
+
+add_filter(&#039;piklist_post_types&#039;, &#039;recipe_post_types&#039;);
+  function recipe_post_types($post_types)
+  {
+    $post_types[&#039;gw-recipe&#039;] = array(
+      &#039;labels&#039; =&gt; piklist(&#039;post_type_labels&#039;, &#039;Recipe&#039;)
+      ,&#039;title&#039; =&gt; __(&#039;Enter Recipe Name&#039;)
+      ,&#039;menu_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-menu-icon.svg&#039;
+      ,&#039;page_icon&#039; =&gt; piklist(&#039;url&#039;, &#039;piklist&#039;) . &#039;/parts/img/piklist-page-icon-32.png&#039;
+      ,&#039;supports&#039; =&gt; array(
+        &#039;title&#039;
+        ,&#039;editor&#039;
+        ,&#039;excerpt&#039;
+        ,&#039;comments&#039;
+      )
+      ,&#039;public&#039; =&gt; true
+      ,&#039;admin_body_class&#039; =&gt; array(
+        &#039;custom-body-class&#039;
+      )
+      ,&#039;has_archive&#039; =&gt; true
+      ,&#039;rewrite&#039; =&gt; array(
+        &#039;slug&#039; =&gt; &#039;gw-recipe&#039;
+      )
+      ,&#039;capability_type&#039; =&gt; &#039;post&#039;
+      ,&#039;edit_columns&#039; =&gt; array(
+        &#039;title&#039; =&gt; __(&#039;Recipe&#039;)
+        ,&#039;author&#039; =&gt; __(&#039;Assigned to&#039;)
+      )
+    );
+    return $post_types;
+  }</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/select-fields-with-taxonomy-in-meta-box-not-saving/">Select fields with taxonomy in meta-box not saving.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Meta box does not update when post is Published</title>
+		<link>https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/</link>
+		
+		<dc:creator><![CDATA[wdrescher]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2016 17:35:14 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/</guid>
+
+					<description><![CDATA[<p>I am not sure if this is a Piklist issue but I figured I would explain it and see if I have any help or suggestions as I am really stuck. I used FeedWordpress to pull an RSS feed item in and place it in a metabox inside the post. I am using a theme [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/">Meta box does not update when post is Published</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am not sure if this is a Piklist issue but I figured I would explain it and see if I have any help or suggestions as I am really stuck.</p>
+<p>I used FeedWordpress to pull an RSS feed item in and place it in a metabox inside the post. I am using a theme called &#8220;Musik&#8221; that uses Piklist and East Digital Downloads to allow music files to be bought and played in a mp3 player.</p>
+<p>Right now FeedWordpress sends the mp3 url to the correct field called &#8220;preview mp3&#8221; and then it publishes the post. When I go to the post it doesn&#8217;t find any mp3 url. If I hit update on the post it fixes it and the mp3 can be previewed. </p>
+<p>It seems that the field is not saving when it is published and only when it is updated.</p>
+<p>I am wondering if this is an issue with how the theme dev wrote the piklist field in or not. Any help would be much appreciated!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/meta-box-does-not-update-when-post-is-published/">Meta box does not update when post is Published</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>media uploads not working</title>
+		<link>https://piklist.com/support/topic/media-uploads-not-working/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 10 Jan 2016 23:04:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/media-uploads-not-working/</guid>
+
+					<description><![CDATA[<p>I had this issue back in 0.9.9.4 but seemed to have been resolved after I updated to 0.9.9.6. Again I find that I cannot really work the media upload. The symptoms are odd. Upon creating a new post it will let me upload using the media modal native to WordPress. Then its locked out for [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-uploads-not-working/">media uploads not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I had this issue back in 0.9.9.4 but seemed to have been resolved after I updated to 0.9.9.6. Again I find that I cannot really work the media upload. The symptoms are odd. Upon creating a new post it will let me upload using the media modal native to WordPress. Then its locked out for the most part. When I try to remove and update the post &#8211; it remains. I can upload more without a problem and I can remove the second onward, but never the first one that I uploaded. I am pulling my hair (*what&#8217;s left of it) at this point. </p>
+<p>This is the meta-box I setup:</p>
+<pre><code> piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;post_header_banner&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Upload Top Banner.&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Banner Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add Banner&#039;,&#039;piklist&#039;)
+    )
+    ,&#039;validate&#039; =&gt; array(
+	  array(
+	    &#039;type&#039; =&gt; &#039;limit&#039;,
+	    &#039;options&#039; =&gt; array(
+	      &#039;min&#039; =&gt; 0,
+	      &#039;max&#039; =&gt; 2
+	    )
+	  )
+	)
+  ));
+  
+  
+  	 piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;file&#039;
+    ,&#039;field&#039; =&gt; &#039;post_title_banner&#039;
+    ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+    ,&#039;label&#039; =&gt; __(&#039;Add File(s)&#039;,&#039;piklist&#039;)
+    ,&#039;description&#039; =&gt; __(&#039;Upload Title Banner.&#039;,&#039;piklist&#039;)
+    ,&#039;options&#039; =&gt; array(
+      &#039;modal_title&#039; =&gt; __(&#039;Add Title Image&#039;,&#039;piklist&#039;)
+      ,&#039;button&#039; =&gt; __(&#039;Add Title&#039;,&#039;piklist&#039;)
+    )
+    
+    ,&#039;validate&#039; =&gt; array(
+	  array(
+	    &#039;type&#039; =&gt; &#039;limit&#039;,
+	    &#039;options&#039; =&gt; array(
+	      &#039;min&#039; =&gt; 0,
+	      &#039;max&#039; =&gt; 1
+	    )
+	  )
+	)
+    
+  ));
+</code></pre>
+<p>If I go into the database I can see the postmeta section with the <code>post_header_banner</code> populated with the image ID of the first image. From here I can put in another ID and it updates nicely without a hitch. </p>
+<p>I read through the forums and found that some people were experiencing similar issues with far more complex setups than what I am doing. I even added the limits to see if setting the <code>min</code> but no dice!</p>
+<p>Then I figured it had something to do with not being explicit with setting capability on the <code>meta-box</code> file. Nope. </p>
+<p>I turned off all the plugins to make sure they weren&#8217;t conflicting. Nothing.</p>
+<p>I already went back in time to the previous releases, including the one still posted as the current release on WordPress Plugins section. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/media-uploads-not-working/">media uploads not working</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Data not savings on create [0.9.9.6]</title>
+		<link>https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/</link>
+		
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Tue, 03 Nov 2015 16:02:54 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/</guid>
+
+					<description><![CDATA[<p>When I create a new post in my custom post type, it does not save any of the data except for the post title. I have to then completely go to all of that post type, and re-enter the post in order to update any of my meta-boxes. After the 1st update, I can not [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/">Data not savings on create [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>When I create a new post in my custom post type, it does not save any of the data except for the post title. I have to then completely go to all of that post type, and re-enter the post in order to update any of my meta-boxes. After the 1st update, I can not update a second time until I have gone back to all posts and re-entered that particular post.</p>
+<p>I think it has something to do with my workflow, but I can&#8217;t figure out what. I think it is related to workflow, because the order of my meta-boxes are not working. The order it does is 20,30,10. Where my Order:10 metabox is at the bottom.</p>
+<p>This is the metafile that represents 10.</p>
+<pre><code>&lt;?php
+/*
+Title: General Trip Information
+Post Type: post_mission_trip
+Order: 10
+Flow: Trip Flow
+Tab: General
+
+*/
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_is_full&#039;
+ ,&#039;value&#039; =&gt; &#039;Open&#039;
+ ,&#039;label&#039; =&gt; &#039;Trip Status (Full or Open)&#039;
+ ,&#039;description&#039; =&gt; &#039;Uneditable based upon number of registrations&#039;
+ ,&#039;attributes&#039; =&gt; array(
+	&#039;readonly&#039; =&gt; &#039;readonly&#039;
+	)
+ ));
+ piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_reg_count&#039;
+ ,&#039;label&#039; =&gt; &#039;Trip Registration Count&#039;
+ ,&#039;attributes&#039; =&gt; array(
+	&#039;readonly&#039; =&gt; &#039;readonly&#039;
+	)
+ ));
+piklist(&#039;field&#039;, array(
+        &#039;type&#039; =&gt; &#039;checkbox&#039;
+        ,&#039;field&#039; =&gt; &#039;trip_location&#039;
+		,&#039;label&#039; =&gt; &#039;Trip Location&#039;
+		,&#039;attributes&#039; =&gt; array(
+				&#039;multiple&#039; =&gt; &#039;multiple&#039;
+			)
+		,&#039;choices&#039; =&gt; piklist(
+						get_posts(
+							array(
+								&#039;post_type&#039; =&gt; &#039;post_servicelocation&#039;
+								,&#039;orderby&#039; =&gt; &#039;title&#039;
+								,&#039;order&#039; =&gt; &#039;asc&#039;
+								,&#039;posts_per_page&#039; =&gt; -1
+							)
+							,&#039;objects&#039;
+						)
+						,array(
+							&#039;ID&#039;
+							,&#039;post_title&#039;
+						)
+						)
+      ));
+  piklist(&#039;field&#039;, array(
+    &#039;type&#039; =&gt; &#039;checkbox&#039;
+    ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+    ,&#039;field&#039; =&gt; &#039;triptype&#039;
+    ,&#039;label&#039; =&gt; &#039;Trip Type&#039;
+    ,&#039;choices&#039; =&gt; piklist(
+      get_terms(&#039;triptype&#039;, array(
+        &#039;hide_empty&#039; =&gt; false
+      ))
+      ,array(
+        &#039;term_id&#039;
+        ,&#039;name&#039;
+      )
+    )
+  ));
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;datepicker&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_begin&#039;
+ ,&#039;label&#039; =&gt; &#039;Begin Date&#039;
+,&#039;options&#039; =&gt; array(
+   &#039;dateFormat&#039; =&gt; &#039;yy-mm-dd&#039;  
+   ,&#039;firstDay&#039; =&gt; &#039;0&#039;
+)
+));
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;datepicker&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_end&#039;
+ ,&#039;label&#039; =&gt; &#039;End Date&#039;
+,&#039;options&#039; =&gt; array(
+   &#039;dateFormat&#039; =&gt; &#039;yy-mm-dd&#039; 
+   ,&#039;firstDay&#039; =&gt; &#039;0&#039;
+)
+));
+piklist(&#039;field&#039;, array(
+&#039;type&#039; =&gt; &#039;checkbox&#039;
+,&#039;field&#039; =&gt; &#039;trip_options&#039;
+,&#039;label&#039; =&gt; &#039;Trip Options&#039;
+,&#039;description&#039; =&gt; &#039;Select all that apply.&#039;
+,&#039;choices&#039; =&gt; array(
+  &#039;hide&#039; =&gt; &#039;Private Event (Hide)&#039;
+  ,&#039;hide_day&#039; =&gt; &#039;Only Display Month and Year (unsure of exact dates)&#039;
+  ,&#039;enable_reg&#039; =&gt; &#039;Enable Registration&#039;
+)
+));
+
+piklist(&#039;field&#039;, array(
+ &#039;type&#039; =&gt; &#039;text&#039;
+ ,&#039;field&#039; =&gt; &#039;trip_hide_code&#039;
+ ,&#039;label&#039; =&gt; &#039;Trip Password&#039;
+ ,&#039;description&#039; =&gt; &#039;Code to have users look up hidden event. (MUST BE UNIQUE)&#039;
+ ,&#039;conditions&#039; =&gt; array(
+			array(
+				&#039;field&#039; =&gt; &#039;trip_options&#039;
+				,&#039;value&#039; =&gt; &#039;hide&#039;
+				)
+			)
+ ));
+ 
+ $related = get_posts(array(
+    &#039;post_type&#039; =&gt; &#039;trip_reg&#039;
+    ,&#039;posts_per_page&#039; =&gt; -1
+    ,&#039;post_belongs&#039; =&gt; $post-&gt;ID
+    ,&#039;post_status&#039; =&gt; &#039;approved&#039;
+    ,&#039;suppress_filters&#039; =&gt; false
+  ));
+
+  if ($related): 
+?&gt;
+
+    &lt;h4&gt;&lt;?php _e(&#039;Registrations&#039;, &#039;Extreme&#039;);?&gt;&lt;/h4&gt;
+
+    &lt;ol&gt;
+      &lt;?php foreach ($related as $related_post){ 
+		$TheUser = get_userdata($related_post-&gt;reg_user);
+	  ?&gt;
+        &lt;li&gt;&lt;?php _e($TheUser-&gt;user_login); ?&gt;&lt;/li&gt;
+      &lt;?php }; ?&gt;
+   &lt;/ol&gt;
+
+    &lt;hr /&gt;
+
+&lt;?php 
+  endif;
+
+  ?&gt;</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/data-not-savings-on-create-0-9-9-6/">Data not savings on create [0.9.9.6]</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Groups in &#034;settings&#034;</title>
+		<link>https://piklist.com/support/topic/groups-in-settings/</link>
+		
+		<dc:creator><![CDATA[Sander Schat]]></dc:creator>
+		<pubDate>Thu, 16 Jan 2014 11:09:52 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/groups-in-settings/</guid>
+
+					<description><![CDATA[<p>Hi! got a little issue here: i configured a &#8220;Settings&#8221; page with three fields in it. One of them is a &#8216;group&#8217; (and should get &#8216;add_more&#8217; later on) Problem: i can not save this &#8216;group&#8217; field and its value(s) In the save process i got this: I see the two &#8216;other&#8217; fields and there values. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/groups-in-settings/">Groups in &quot;settings&quot;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+got a little issue here:<br />
+i configured a &#8220;Settings&#8221; page with three fields in it.<br />
+One of them is a &#8216;group&#8217; (and should get &#8216;add_more&#8217; later on)</p>
+<p>Problem:<br />
+i can not save this &#8216;group&#8217; field and its value(s)</p>
+<p>In the save process i got this:<br />
+I see the two &#8216;other&#8217; fields and there values.<br />
+But the group-field doesnt seem to get its value through.</p>
+<pre><code>oldArray
+(
+    [y_fi_last_run] =&gt; 
+    [y_fi_max_rows] =&gt; 123
+)
+newArray
+(
+    [y_fi_last_run] =&gt; 
+    [y_fi_max_rows] =&gt; 1234
+)</code></pre>
+<p>Any idea on where to look?</p>
+<p>////<br />
+here the &#8216;field&#8217; definition for reference:</p>
+<pre><code>piklist(&#039;field&#039;, array(&#039;type&#039;        =&gt; &#039;group&#039;,
+                       &#039;field&#039;       =&gt; &#039;y_fi_feeds&#039;,
+                       &#039;label&#039;       =&gt; __(&#039;Feeds&#039;),
+                       &#039;description&#039; =&gt; __(&#039;What feeds are handled currently&#039;),
+                       &#039;fields&#039;      =&gt; array(array(&#039;type&#039;    =&gt; &#039;select&#039;,
+                                                    &#039;field&#039;   =&gt; &#039;y_fi_feed_type&#039;,
+                                                    &#039;value&#039;   =&gt; &#039;&#039;,
+                                                    &#039;label&#039;   =&gt; &#039;type&#039;,
+                                                    &#039;choices&#039; =&gt; $files,
+                                                    &#039;columns&#039; =&gt; 8),
+                                              array(&#039;type&#039;    =&gt; &#039;checkbox&#039;,
+                                                    &#039;field&#039;   =&gt; &#039;y_fi_online&#039;,
+                                                    &#039;label&#039;   =&gt; &#039;online&#039;,
+                                                    &#039;value&#039;   =&gt; &#039;0&#039;,
+                                                    &#039;columns&#039; =&gt; 2),
+                                              array(&#039;type&#039;    =&gt; &#039;text&#039;,
+                                                    &#039;field&#039;   =&gt; &#039;y_fi_url&#039;,
+                                                    &#039;label&#039;   =&gt; &#039;url&#039;,
+                                                    &#039;value&#039;   =&gt; &#039;&#039;,
+                                                    &#039;columns&#039; =&gt; 12))));
+
+piklist(&#039;field&#039;, array(&#039;type&#039;        =&gt; &#039;text&#039;,
+                       &#039;field&#039;       =&gt; &#039;y_fi_last_run&#039;,
+                       &#039;label&#039;       =&gt; &#039;Last run:&#039;,
+                       &#039;attributes&#039;  =&gt; array(&#039;readonly&#039; =&gt; &#039;readonly&#039;),
+                       &#039;description&#039; =&gt; &#039;Importer last run&#039;));
+
+piklist(&#039;field&#039;, array(&#039;type&#039;        =&gt; &#039;number&#039;,
+                       &#039;field&#039;       =&gt; &#039;y_fi_max_rows&#039;,
+                       &#039;label&#039;       =&gt; &#039;Max rows&#039;,
+                       &#039;description&#039; =&gt; &#039;how many rows to import?&#039;));</code></pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/groups-in-settings/">Groups in &quot;settings&quot;</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

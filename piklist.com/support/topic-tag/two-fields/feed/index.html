@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>two fields &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/two-fields/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 26 Aug 2016 03:16:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Need to set empty title from two fields.</title>
+		<link>https://piklist.com/support/topic/need-to-set-empty-title-from-two-fields/</link>
+		
+		<dc:creator><![CDATA[intrepidrealist]]></dc:creator>
+		<pubDate>Mon, 22 Aug 2016 09:19:59 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/need-to-set-empty-title-from-two-fields/</guid>
+
+					<description><![CDATA[<p>Hi! I&#8217;ve been at this for a couple of hours. I found the code I needed to change empty title fields with Custom Post Types. I can&#8217;t get the code to work. add_filter(&#039;piklist_empty_post_title&#039;, &#039;cazooz_new_title&#039;, 10, 2); function cazooz_new_title($data, $post_array) { // Grab the new title from the custom field. Replace my_custom_field with your own $new_title [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-to-set-empty-title-from-two-fields/">Need to set empty title from two fields.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi!<br />
+I&#8217;ve been at this for a couple of hours. I found the code I needed to change empty title fields with Custom Post Types.<br />
+I can&#8217;t get the code to work.</p>
+<pre><code>add_filter(&#039;piklist_empty_post_title&#039;, &#039;cazooz_new_title&#039;, 10, 2);
+  function cazooz_new_title($data, $post_array)
+  {
+
+    // Grab the new title from the custom field. Replace my_custom_field with your own
+    $new_title = $post_array[&#039;_post_meta&#039;][&#039;child_first_name&#039;];
+	
+print_r($post_array); // output
+    die();
+	
+
+    // Only filter on your custom post type. Replace my_custom_cpt with your own.
+    return $post_array[&#039;post_type&#039;] == &#039;child&#039; ? $new_title : $post_array[&#039;post_title&#039;];
+  }</code></pre>
+<p>Registered CPT:</p>
+<pre><code>$args = array(
+        &#039;description&#039; =&gt; &#039;Child Post Type&#039;,
+        &#039;show_ui&#039; =&gt; true,
+        &#039;query_var&#039; =&gt; true,
+        &#039;menu_position&#039; =&gt; 4,
+        &#039;exclude_from_search&#039; =&gt; false,
+        &#039;labels&#039; =&gt; array(
+                          &#039;name&#039;=&gt; &#039;Children&#039;,
+                          &#039;singular_name&#039; =&gt; &#039;Child&#039;,
+                          &#039;add_new&#039; =&gt; &#039;Add New Child&#039;,
+                          &#039;add_new_item&#039; =&gt; &#039;Add New Child&#039;,
+                          &#039;edit&#039; =&gt; &#039;Edit Children&#039;,
+                          &#039;edit_item&#039; =&gt; &#039;Edit Child&#039;,
+                          &#039;new-item&#039; =&gt; &#039;New Child&#039;,
+                          &#039;view&#039; =&gt; &#039;View Child&#039;,
+                          &#039;view_item&#039; =&gt; &#039;View Child&#039;,
+                          &#039;search_items&#039; =&gt; &#039;Search Children&#039;,
+                          &#039;not_found&#039; =&gt; &#039;No Children Found&#039;,
+                          &#039;not_found_in_trash&#039; =&gt; &#039;No Children Found in Trash&#039;,
+                          &#039;parent&#039; =&gt; &#039;Parent Child&#039;
+                         ),
+       &#039;public&#039; =&gt; true,
+       &#039;publicly_queryable&#039; =&gt; true,
+       &#039;capability_type&#039; =&gt; &#039;post&#039;,
+       &#039;hierarchical&#039; =&gt; false,
+       &#039;rewrite&#039; =&gt; true,
+       &#039;has_archive&#039; =&gt; true,
+       &#039;taxonomies&#039; =&gt; array(&#039;interest_tag&#039;, &#039;activity_type&#039; ),
+       &#039;supports&#039; =&gt; array(&#039;custom-fields&#039;)
+       );
+    register_post_type( &#039;child&#039; , $args );</code></pre>
+<p>Am I doing something wrong here?<br />
+Once I eventually get it to work, I&#8217;d like to fill the title from two fields: child_first_name and child_last_name. Is that possible?</p>
+<p>Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/need-to-set-empty-title-from-two-fields/">Need to set empty title from two fields.</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>display &amp; link taxonomies on single-*.php &#8211; Piklist Support</title>
+		<atom:link href="https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/feed/" rel="self" type="application/rss+xml" />
+		<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 08 Feb 2022 20:58:48 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.6</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3188</guid>
+					<title><![CDATA[display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3188</link>
+					<pubDate>Sat, 17 Jan 2015 21:58:59 +0000</pubDate>
+					<dc:creator>Jan Gruchow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi<br />
+i set up a custom post type &#8220;product&#8221; and a custom taxonomie &#8220;product-color&#8221;.</p>
+<p>Now i want to display the active colors on the single-product.php an link to the color-archive-page. It should be like tags an categories are linked on the standard posts on most templates. </p>
+<p>Can anyone tell me, what code i have to put into my theme?</p>
+<p>Thx<br />
+Jan</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3189</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3189</link>
+					<pubDate>Sun, 18 Jan 2015 00:06:21 +0000</pubDate>
+					<dc:creator>Steve</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome to the Piklist Community!</p>
+<p>I think you want to use <a href="http://codex.wordpress.org/Function_Reference/wp_get_object_terms" rel="nofollow">wp_get_object_terms()</a></p>
+<p>The example on the codex page looks like it will do what you want. </p>
+<p>Let us know if this works for you. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3190</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3190</link>
+					<pubDate>Sun, 18 Jan 2015 11:18:40 +0000</pubDate>
+					<dc:creator>Jan Gruchow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi</p>
+<p>perfekt, that was what i was looking for.</p>
+<p>For interested readers, here is the full snipped i use:</p>
+<pre><code>$product_colors = wp_get_object_terms( $post-&gt;ID,  &#039;product_color&#039; );
+						if ( ! empty( $product_colors ) ) {
+							if ( ! is_wp_error( $product_colors ) ) {
+								echo &#039;&lt;ul&gt;&#039;;
+									foreach( $product_colors as $term ) {
+										echo &#039;&lt;li&gt;&lt;a href=&quot;&#039; . get_term_link( $term-&gt;slug, &#039;product_color&#039; ) . &#039;&quot;&gt;&#039; . $term-&gt;name . &#039;&lt;/a&gt;&lt;/li&gt;&#039;; 
+									}
+								echo &#039;&lt;/ul&gt;&#039;;
+							}
+						}</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3191</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3191</link>
+					<pubDate>Sun, 18 Jan 2015 12:25:31 +0000</pubDate>
+					<dc:creator>Steve</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad it worked for you!  One of the best parts of Piklist is that, in most cases, you can use standard WordPress functions to work with your data.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3192</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3192</link>
+					<pubDate>Sun, 18 Jan 2015 18:47:40 +0000</pubDate>
+					<dc:creator>Jan Gruchow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>that&#8217;s true.</p>
+<p>since i&#8217;am not good in programming, it is hard for me to find the right things in the WP-codex-reference, especially if i don&#8217;t even know what to look for.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3195</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3195</link>
+					<pubDate>Wed, 21 Jan 2015 07:20:59 +0000</pubDate>
+					<dc:creator>Jan Gruchow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have one mor question: As i wrote in my example, i use<br />
+<code>&lt;a href=&quot;&#039; . get_term_link( $term-&gt;slug, &#039;product_color&#039; ) . &#039;&quot;&gt;&#039; . $term-&gt;name . &#039;&lt;/a&gt;</code><br />
+to generate my links back to the archive. these links look like this:<br />
+domain.com/?color=blue</p>
+<p>My problem ist, that i want to use the product-archive-template. The links should look like domain.com/products/?color=blue</p>
+<p>is there a easy way to change the links, so the custom-post-type-slug is added? I couldn&#8217;t find anything in the wp-codex.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3198</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3198</link>
+					<pubDate>Wed, 21 Jan 2015 19:21:27 +0000</pubDate>
+					<dc:creator>Steve</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>@jan&#8211; It looks like you left off a parameter when you registered the taxonomy.  Try adding:</p>
+<pre>
+,'rewrite' => array( 
+  'slug' => 'products' 
+)
+</pre>
+<p>Look in <a href="http://plugins.svn.wordpress.org/piklist/tags/0.9.4.25/add-ons/piklist-demos/piklist-demos.php" rel="nofollow">piklist/add-ons/piklist-demos/piklist-demos.php</a> for an example of how we registered the <code>piklist_demo_type</code> taxonomy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3284</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3284</link>
+					<pubDate>Mon, 09 Feb 2015 09:15:04 +0000</pubDate>
+					<dc:creator>Jan Gruchow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi</p>
+<p>i have set the rewrite slug. But this is for the singe-product-url, not?</p>
+<p>I have set:</p>
+<pre><code>
+,&#039;has_archive&#039; =&gt; &#039;products&#039;
+		,&#039;rewrite&#039; =&gt; array(
+		  &#039;slug&#039; =&gt; &#039;product&#039;
+		)
+</code></pre>
+<p>That way, URLs like:<br />
+domain.com/products/a-product-list<br />
+domain.com/product/a-single-product<br />
+and it works fine.</p>
+<p>I only dont know, how i can get the get_term_link-function to link to the specific product-archive and not just the generic archive&#8230;<br />
+The Link:<br />
+domain.com/?color=blue<br />
+is also displaying the right product, but i uses the default archive-template. I that to use my specific archive-product-template so i need them to link to domain.com/PRODUCTS/?color=blue</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3287</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3287</link>
+					<pubDate>Mon, 09 Feb 2015 18:40:43 +0000</pubDate>
+					<dc:creator>Steve</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>@Jan– Taxonomies also use the <code>rewrite</code> parameter.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3289</guid>
+					<title><![CDATA[Reply To: display &amp; link taxonomies on single-*.php]]></title>
+					<link>https://piklist.com/support/topic/display-link-taxonomies-on-singel-php/#post-3289</link>
+					<pubDate>Mon, 09 Feb 2015 19:32:53 +0000</pubDate>
+					<dc:creator>Jan Gruchow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the hint, but i think it&#8217;s still not the right solution for me. </p>
+<p>i have set the rewrite for the taxonomies to &#8220;false&#8221;, because i want my categories with URL-Parameters.<br />
+If i use the the slug and/or with-front for the rewrite, i automatically active the pretty links (what i don&#8217;t want). And there is also no way to set the &#8220;/products/&#8221;.</p>
+<p>Or am i missing something?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

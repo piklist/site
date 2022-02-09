@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>admin &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/admin/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Thu, 21 May 2020 18:42:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>.piklist-field select &#8211; padding in admin bug</title>
+		<link>https://piklist.com/support/topic/piklist-field-select-padding-in-admin-bug/</link>
+		
+		<dc:creator><![CDATA[thor]]></dc:creator>
+		<pubDate>Sun, 10 May 2020 10:23:13 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-field-select-padding-in-admin-bug/</guid>
+
+					<description><![CDATA[<p>Just wanted to point out that the padding-right on .piklist-field select in piklist.css is making the dropdown arrow (background-image) appear behind the text (.wp-core-ui select in the latest WordPress uses padding-right of 24px)</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-field-select-padding-in-admin-bug/">.piklist-field select &#8211; padding in admin bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Just wanted to point out that the padding-right on .piklist-field select in piklist.css is making the dropdown arrow (background-image) appear behind the text (.wp-core-ui select in the latest WordPress uses padding-right of 24px)</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-field-select-padding-in-admin-bug/">.piklist-field select &#8211; padding in admin bug</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Grouped vs not grouped &#8211; Performance</title>
+		<link>https://piklist.com/support/topic/grouped-vs-not-grouped-performance/</link>
+		
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2017 23:02:22 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/grouped-vs-not-grouped-performance/</guid>
+
+					<description><![CDATA[<p>A while back I made a decision store my grouped field data as individual fields (instead of a serialized array), and now I am not sure if that decision was the right one. Can someone comment on whether adding grouped fields in the admin (ignore the front end for now) is more or less efficient [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-vs-not-grouped-performance/">Grouped vs not grouped &#8211; Performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>A while back I made a decision store my grouped field data as individual fields (instead of a serialized array), and now I am not sure if that decision was the right one. Can someone comment on whether adding grouped fields in the admin (ignore the front end for now) is more or less efficient (and faster or slower) than if they are serialized? I have an area for adding grouped fields, and there are about 15 different types of group to add, each with their own fields. I have noticed as I have added to this list that the interface has gotten quite slow when clicking on the plus button to add another group to a record. Could this be made any faster if I were to switch to storing the group as a serialized array? OR is there something else that could speed up the interface? With fewer grouped field arrays, it used to take only a second or two to add another, now the interface lags two to three seconds, which is not great. Any ideas?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/grouped-vs-not-grouped-performance/">Grouped vs not grouped &#8211; Performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Piklist add_editor_style</title>
+		<link>https://piklist.com/support/topic/piklist-add_editor_style/</link>
+		
+		<dc:creator><![CDATA[utilityla]]></dc:creator>
+		<pubDate>Wed, 04 Jan 2017 23:42:36 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/piklist-add_editor_style/</guid>
+
+					<description><![CDATA[<p>I&#8217;m looking to add some custom styles to my Piklist editor which I&#8217;m using in place of the default editor. The follow is useful when trying to add a stylesheet for the default editor but it does not seem to work with the Piklist editor. How would I go about this for the Piklist editor? [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-add_editor_style/">Piklist add_editor_style</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m looking to add some custom styles to my Piklist editor which I&#8217;m using in place of the default editor.</p>
+<p>The follow is useful when trying to add a stylesheet for the default editor but it does not seem to work with the Piklist editor. How would I go about this for the Piklist editor? Thanks!</p>
+<p>function editor_styles() {<br />
+    add_editor_style( &#8216;editor-style.css&#8217; );<br />
+}<br />
+add_action( &#8216;admin_init&#8217;, &#8216;editor_styles&#8217; );</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/piklist-add_editor_style/">Piklist add_editor_style</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>suggestion: allow 2 users to temp edit same post</title>
+		<link>https://piklist.com/support/topic/suggestion-allow-2-users-to-temp-edit-same-post/</link>
+		
+		<dc:creator><![CDATA[mcmaster]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2016 03:38:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/suggestion-allow-2-users-to-temp-edit-same-post/</guid>
+
+					<description><![CDATA[<p>If a remotely-located client is having a problem figuring out how to edit a post, it is frustrating as the post is locked and I can&#8217;t look at what they&#8217;re seeing. During training sessions, I&#8217;ve edited the code to add a clipping: add_filter( &#039;show_post_locked_dialog&#039;, &#039;__return_false&#039; ); which gives a warning but allows us both to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/suggestion-allow-2-users-to-temp-edit-same-post/">suggestion: allow 2 users to temp edit same post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If a remotely-located client is having a problem figuring out how to edit a post, it is frustrating as the post is locked and I can&#8217;t look at what they&#8217;re seeing. During training sessions, I&#8217;ve edited the code to add a clipping: </p>
+<p><code>add_filter( &#039;show_post_locked_dialog&#039;, &#039;__return_false&#039; );</code></p>
+<p>which gives a warning but allows us both to view the same post. But I don&#8217;t want it to be a permanent change and sometimes forget to disable the filter when we&#8217;re done. It would be nice to have an option to set/unset the filter, and to have an admin banner warning whenever it&#8217;s set. </p>
+<p>I&#8217;m going to write something like this for myself but figured it might also be a useful addition to WP Helpers. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/suggestion-allow-2-users-to-temp-edit-same-post/">suggestion: allow 2 users to temp edit same post</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>infinite loop outputting widgets.php in admin</title>
+		<link>https://piklist.com/support/topic/infinite-loop-outputting-widgets-php-in-admin/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Thu, 28 Jul 2016 04:32:17 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/infinite-loop-outputting-widgets-php-in-admin/</guid>
+
+					<description><![CDATA[<p>Hi, just patched to 0.9.9.9 on a dev site, and now the widgets.php admin doesn&#8217;t load&#8230; the footer scripts are being output in an infinite loop. Kill the page load and the js never activates the editor, so widget editing is broken. Commenting out the single line below, from lines 292-309 of includes/class-piklist-form.php allows the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/infinite-loop-outputting-widgets-php-in-admin/">infinite loop outputting widgets.php in admin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+just patched to 0.9.9.9 on a dev site, and now the widgets.php admin doesn&#8217;t load&#8230; the footer scripts are being output in an infinite loop. Kill the page load and the js never activates the editor, so widget editing is broken. Commenting out the single line below, from lines 292-309 of  <code>includes/class-piklist-form.php</code> allows the page to load properly.</p>
+<pre><code>
+       if (in_array($pagenow, array(&#039;widgets.php&#039;, &#039;customize.php&#039;)))
+    {
+      if (!class_exists(&#039;_WP_Editors&#039;))
+      {
+        require(ABSPATH . WPINC . &#039;/class-wp-editor.php&#039;);
+      }
+
+      if ($pagenow == &#039;widgets.php&#039;)
+      {
+        add_action(&#039;admin_print_footer_scripts&#039;, array(&#039;_WP_Editors&#039;, &#039;editor_js&#039;), 50);
+  //     add_action(&#039;admin_footer&#039;, array(&#039;piklist_form&#039;, &#039;editor_proxy&#039;));
+      }
+      else
+      {
+        add_action(&#039;customize_controls_print_footer_scripts&#039;, array(&#039;_WP_Editors&#039;, &#039;editor_js&#039;), 50);
+        add_action(&#039;customize_controls_print_footer_scripts&#039;, array(&#039;piklist_form&#039;, &#039;editor_proxy&#039;));
+      }
+    }
+</code></pre>
+<p>Any ideas?<br />
+cheers,<br />
+Hugh</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/infinite-loop-outputting-widgets-php-in-admin/">infinite loop outputting widgets.php in admin</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Order of Help Tabs</title>
+		<link>https://piklist.com/support/topic/order-of-help-tabs/</link>
+		
+		<dc:creator><![CDATA[michaellautman]]></dc:creator>
+		<pubDate>Tue, 03 May 2016 19:56:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/order-of-help-tabs/</guid>
+
+					<description><![CDATA[<p>Is there a way to order the help tabs? Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/order-of-help-tabs/">Order of Help Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Is there a way to order the help tabs?<br />
+Thanks</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/order-of-help-tabs/">Order of Help Tabs</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to order Tab content output from multiple settings files</title>
+		<link>https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/</link>
+		
+		<dc:creator><![CDATA[semwangajoshua]]></dc:creator>
+		<pubDate>Tue, 26 Apr 2016 13:02:56 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/</guid>
+
+					<description><![CDATA[<p>This is my challenge. When you look at Piklist&#8217;s demo settings page under the lists&#8217; tab, it has controls well organized with the title field you describe in the comment block beautifully introducing and categorizing the controls. Refer to the attached image. These titles seem to be separate individual settings files fully populated with the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/">How to order Tab content output from multiple settings files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>This is my challenge.  When you look at Piklist&#8217;s demo settings page under the lists&#8217; tab, it has controls well organized with the title field you describe in the comment block beautifully introducing and categorizing the controls. Refer to the attached image. These titles seem to be separate individual settings files fully populated with the desired fields, that are all called on one page by simply assigning them to that particular tab in the comment block. At least that is how I&#8217;ve been able to replicate that behavior on my side.  The challenge here, at least in my case is that the last created settings file is the one that shows up at the top of all other settings on that particular tab. Is there a way to determine the order in which the output of these settings files shows up on their respective tab? Take for example in the attached image, suppose I wanted to make the  <em>Checkbox Fields</em> section show first at the top, then <em>Select Fields</em> section next and lastly the <em>Multiselect Fields</em> section. How would I go about that? I don&#8217;t seem to find it anywhere in the Piklist documentation.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/how-to-order-tab-content-output-from-multiple-settings-files/">How to order Tab content output from multiple settings files</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>admin custom table crud</title>
+		<link>https://piklist.com/support/topic/admin-custom-table-crud/</link>
+		
+		<dc:creator><![CDATA[fr3dxel]]></dc:creator>
+		<pubDate>Tue, 09 Feb 2016 14:08:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/admin-custom-table-crud/</guid>
+
+					<description><![CDATA[<p>First of all best compliments for the great code you provided. Piklist is a great time saver and looks as an awesome promising software! I searched the posts archive and found a 2014 post on this topic. It seems that at that time those features wasnt still present I&#8217;d like to know if there is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/admin-custom-table-crud/">admin custom table crud</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>First of all best compliments for the great code you provided.<br />
+Piklist is a great time saver and looks as an awesome promising software!</p>
+<p>I searched the posts archive and found a 2014 post on this topic.<br />
+It seems that at that time those features wasnt still present </p>
+<p>I&#8217;d like to know if there is a piklist way to show an admin page with CRUD features for a custom wp table</p>
+<p>thankyou for your committment</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/admin-custom-table-crud/">admin custom table crud</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>admin.css rendering it footer</title>
+		<link>https://piklist.com/support/topic/admin-css-rendering-it-footer/</link>
+		
+		<dc:creator><![CDATA[Gabe Shackle]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 14:27:09 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/admin-css-rendering-it-footer/</guid>
+
+					<description><![CDATA[<p>It looks like the Piklist admin.css is being output in the footer along with the scripts. This causes issues with styles for the admin notices as they will overwrite the existing styles within the main WP admin styles. It looks like the &#8216;piklist_assets_footer&#8217; runs after the head is rendered which then causes any wp_enqueue_styles to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/admin-css-rendering-it-footer/">admin.css rendering it footer</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>It looks like the Piklist admin.css is being output in the footer along with the scripts. This causes issues with styles for the admin notices as they will overwrite the existing styles within the main WP admin styles.</p>
+<p>It looks like the &#8216;piklist_assets_footer&#8217; runs after the head is rendered which then causes any wp_enqueue_styles to put the css links in the footer, rather than in the header.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/admin-css-rendering-it-footer/">admin.css rendering it footer</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Pre use question on using Piklist for a custom admin frontend</title>
+		<link>https://piklist.com/support/topic/pre-use-question-on-using-piklist-for-a-custom-admin-frontend/</link>
+		
+		<dc:creator><![CDATA[friendlyfire3]]></dc:creator>
+		<pubDate>Fri, 17 Jul 2015 02:24:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/pre-use-question-on-using-piklist-for-a-custom-admin-frontend/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;ve been doing a lot of research and have narrowed it down to you and wp-types toolset. I&#8217;m experimenting on a a multi tenancy project similar to squarespace or wix but for a niche market. The idea being that someone can login, pick from our design templates, edit settings, create pages, products (and other [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pre-use-question-on-using-piklist-for-a-custom-admin-frontend/">Pre use question on using Piklist for a custom admin frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, I&#8217;ve been doing a lot of research and have narrowed it down to you and wp-types toolset. </p>
+<p>I&#8217;m experimenting on a a multi tenancy project similar to squarespace or wix but for a niche market. </p>
+<p>The idea being that someone can login, pick from our design templates, edit settings, create pages, products (and other custom post types we make) manage their account with us and interact with other members on the platform. Then, the frontend of their site uses whatever theme they selected and shows all the content they created. </p>
+<p>The kicker is, this all happens on their same domain. In fact, it&#8217;s just how wordpress works with /wp-admin but we don&#8217;t anyone going into the wp-admin. We need to build our own.</p>
+<p>Right now, I&#8217;m working with Multisite for the multi-tenancy aspect of the app. </p>
+<p>However, I&#8217;m still not sure what to do about the custom admin. I was thinking of just doing some sort of theme switching based on role where if they&#8217;re login to their domain, we show them our custom theme and if they&#8217;re logged out, they see the front-end theme. </p>
+<p>Can picklist help with building out the admin pages to manage all the settings, pages, media, comments etc as well as managing visibility so I can keep people out of the wp-admin?</p>
+<p>If so, how would we handle admin navigation in a central place so we don&#8217;t have to manage on every single subsite?</p>
+<p>Also, is there any way to share a global set of taxonomies amongst different post types and user profiles? If I have the term &#8220;awesome&#8221; on my profile (which I am) and another post has the term &#8220;awesome&#8221;, can I search by &#8220;awesome&#8221; and return all results?</p>
+<p>Lot&#8217;s of questions, I know. But I&#8217;m awesome and so are you. </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pre-use-question-on-using-piklist-for-a-custom-admin-frontend/">Pre use question on using Piklist for a custom admin frontend</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

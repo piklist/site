@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>javascript &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Wed, 20 Apr 2016 23:24:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Add More with conditonals &#8211; JS performance</title>
+		<link>https://piklist.com/support/topic/add-more-with-conditonals-js-performance/</link>
+		
+		<dc:creator><![CDATA[hughc]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 23:24:10 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/add-more-with-conditonals-js-performance/</guid>
+
+					<description><![CDATA[<p>Hi, I&#8217;m running the 0.9.9.7 beta; I&#8217;ve got an Add More, each unit of which includes a conditional tied to a radio button. All functions fine, but I need about 20 Add More units to give the layout on the front end I&#8217;m looking for. Front-end JS performance slows as the number of units grows, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-with-conditonals-js-performance/">Add More with conditonals &#8211; JS performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi,<br />
+I&#8217;m running the 0.9.9.7 beta; I&#8217;ve got an Add More, each unit of which includes a conditional tied to a radio button. All functions fine, but I need about 20 Add More units to give the layout on the front end I&#8217;m looking for.</p>
+<p>Front-end JS performance slows as the number of units grows, to the point where the page is locked up for &gt; 1 minute, with a CPU core pegged, when I either add a new unit, or attempt to re-order the existing ones. </p>
+<p>I can try disabling the conditionals, but wondered if there was anything else I can do to improve the performance.</p>
+<p>I&#8217;ve read this post:</p>
+<blockquote data-secret="78T1QzkVT2" class="wp-embedded-content"><p><a href="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/">performance drop with lots of conditional statements</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="display:none;" src="https://piklist.com/support/topic/performance-drop-with-lots-of-conditional-statements/embed/#?secret=78T1QzkVT2" data-secret="78T1QzkVT2" width="500" height="282" title="Embedded WordPress Post" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>but I&#8217;m not sure if it&#8217;s relevant.<br />
+Here&#8217;s my code:</p>
+<pre><code>
+
+ piklist(&#039;field&#039;, array(
+   &#039;type&#039; =&gt; &#039;group&#039;
+   ,&#039;scope&#039; =&gt; &#039;post_meta&#039;
+   ,&#039;field&#039; =&gt; &#039;ap_link_list&#039;
+   ,&#039;add_more&#039; =&gt; true
+   ,&#039;label&#039; =&gt; __(&#039;Link Icons&#039;)
+   ,&#039;description&#039; =&gt; __(&#039;These link to individual Service Types (or flat pages)&#039;)
+   ,&#039;attributes&#039; =&gt; array(
+     &#039;class&#039; =&gt; &#039;&#039;
+   )
+   ,&#039;fields&#039; =&gt; array(
+   	array(
+	 &#039;type&#039; =&gt; &#039;radio&#039;
+	 ,&#039;field&#039; =&gt; &#039;link_type&#039;
+	 ,&#039;label&#039; =&gt; &#039;Links To&#039;
+	 ,&#039;attributes&#039; =&gt; array(
+	 &#039;class&#039; =&gt; &#039;text&#039;
+	 )
+	 ,&#039;choices&#039; =&gt; array(
+	   &#039;page&#039; =&gt; &#039;Page&#039;
+	   ,&#039;categories&#039; =&gt; &#039;Service Type&#039;
+	   ,&#039;path&#039; =&gt; &#039;Full Path&#039;
+	 )
+	)
+   	, array(
+	  &#039;type&#039; =&gt; &#039;select&#039;
+	  ,&#039;field&#039; =&gt; &#039;ap_category_id&#039;
+	  ,&#039;label&#039; =&gt; &#039;Service Type&#039;
+	  ,&#039;description&#039; =&gt; &#039;&#039;
+	  , &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;categories&#039;
+	  		)
+	  	)
+	  ,&#039;choices&#039; =&gt; array(
+	      &#039;&#039; =&gt; &#039;-- Choose Service Type --&#039;
+	    )
+	    + piklist(get_terms(&#039;dl_type&#039;, array(
+	      &#039;hide_empty&#039; =&gt; false
+	    ))
+	    ,array(
+	      &#039;term_id&#039;
+	      ,&#039;name&#039;
+	    )
+	  )
+	)
+    , array(
+	   &#039;type&#039; =&gt; &#039;text&#039;
+	   ,&#039;field&#039; =&gt; &#039;ap_icon_text&#039;
+	   ,&#039;label&#039; =&gt; __(&#039;Link Text (blank gives Service Type)&#039;)
+	   ,&#039;description&#039; =&gt; &#039;(blank gives Service Type)&#039;
+	   ,&#039;attributes&#039; =&gt; array(
+	     &#039;class&#039; =&gt; &#039;&#039;
+	   )
+	 )
+    , array(
+        &#039;type&#039; =&gt; &#039;select&#039;,
+        &#039;scope&#039; =&gt; &#039;post_meta&#039;,
+        &#039;field&#039; =&gt; &#039;ap_page_link&#039;,
+        &#039;label&#039; =&gt; &#039;Choose a Page&#039;,
+	  	
+	   &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;page&#039;
+	  		)
+	  	),
+        &#039;attributes&#039; =&gt; array(
+            &#039;class&#039; =&gt; &#039;text&#039;,
+        ),
+        &#039;choices&#039; =&gt; array(
+	      &#039;&#039; =&gt; &#039;-- Choose Page --&#039;
+	    )
+	    + piklist(
+            get_posts(
+                array(
+                    &#039;post_type&#039; =&gt; &#039;page&#039;,
+                    &#039;hide_empty&#039; =&gt; false
+                )
+            ),
+            array(
+                &#039;ID&#039;,
+                &#039;post_title&#039;
+            )
+        )
+    )
+   	 
+
+   	,array(
+	   &#039;type&#039; =&gt; &#039;text&#039;
+	   ,&#039;field&#039; =&gt; &#039;ap_link_url&#039;
+	   ,&#039;label&#039; =&gt; __(&#039;Link URL&#039;)
+	   ,&#039;description&#039; =&gt; &#039;relative to root, ie /audience/parents-and-carers/category/education&#039;
+	   ,&#039;attributes&#039; =&gt; array(
+	     &#039;class&#039; =&gt; &#039;text&#039;
+	   )
+	  , &#039;conditions&#039; =&gt; array(
+	  	array(
+	  		&#039;field&#039; =&gt; &#039;ap_link_list:link_type&#039;,
+	  		&#039;value&#039; =&gt; &#039;path&#039;
+	  		)
+	  	)
+	 )
+   	)
+
+ ));
+</code></pre>
+<p>Attached is how a single Add More unit is rendering.<br />
+cheers,<br />
+Hugh</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/add-more-with-conditonals-js-performance/">Add More with conditonals &#8211; JS performance</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Server-side Validation</title>
+		<link>https://piklist.com/support/topic/server-side-validation/</link>
+		
+		<dc:creator><![CDATA[diegoliv]]></dc:creator>
+		<pubDate>Fri, 08 Aug 2014 18:21:48 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/server-side-validation/</guid>
+
+					<description><![CDATA[<p>Hi, Folks! I&#8217;m starting to use Piklist and it&#8217;s awesome, but I have a question: is there any plans for integrating some sort of client-side validation to the fields created using the framework? As far as I know, there is server-side validation, which works ok, but I think that it would be most practical add [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/server-side-validation/">Server-side Validation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi, Folks!</p>
+<p>I&#8217;m starting to use Piklist and it&#8217;s awesome, but I have a question: is there any plans for integrating some sort of client-side validation to the fields created using the framework? As far as I know, there is server-side validation, which works ok, but I think that it would be most practical add to a client-side one too. This way, you don&#8217;t need to save/update a post and wait for a page reload to check if it&#8217;s everything ok.</p>
+<p>Or there is at least a way to add a custom client-side validation?</p>
+<p>Thanks for any answer or help!</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/server-side-validation/">Server-side Validation</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Error in piklist.js on version 0.9.3.5</title>
+		<link>https://piklist.com/support/topic/error-in-piklist-js-on-version-0-9-3-5/</link>
+		
+		<dc:creator><![CDATA[Darlan ten Caten]]></dc:creator>
+		<pubDate>Thu, 03 Jul 2014 16:52:09 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/error-in-piklist-js-on-version-0-9-3-5/</guid>
+
+					<description><![CDATA[<p>Sorry guys, another problem here 🙁 I updated piklist to last version on two sites and got this problem in both. see: https://dl.dropboxusercontent.com/u/9487976/error%20piklist.png I deactivated all plugins but Piklist and the error continue. So I installed back the version 0.9.3.4 and the error is gone (but the big icon is back).</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-in-piklist-js-on-version-0-9-3-5/">Error in piklist.js on version 0.9.3.5</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Sorry guys, another problem here <img src="https://s.w.org/images/core/emoji/13.0.0/72x72/1f641.png" alt="🙁" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I updated piklist to last version on two sites and got this problem in both.</p>
+<p>see: https://dl.dropboxusercontent.com/u/9487976/error%20piklist.png</p>
+<p>I deactivated all plugins but Piklist and the error continue. So I installed back the version 0.9.3.4 and the error is gone (but the big icon is back).</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/error-in-piklist-js-on-version-0-9-3-5/">Error in piklist.js on version 0.9.3.5</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>0.8.0 B3 Help Tabs not fixed?</title>
+		<link>https://piklist.com/support/topic/0-8-0-b3-help-tabs-not-fixed/</link>
+		
+		<dc:creator><![CDATA[stefan didak]]></dc:creator>
+		<pubDate>Tue, 13 Aug 2013 21:15:03 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/0-8-0-b3-help-tabs-not-fixed/</guid>
+
+					<description><![CDATA[<p>Hi guys. Just dropped the new 0.8.0b3 in there, fresh install of WP 3.6, etc. but still having the same problem with the help tabs not responding. And like with b2, if I comment out the 7 lines in class-piklist-admin.php (starting at line 110), help tab, screen options, and the expand/collapse of metabox areas will [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-8-0-b3-help-tabs-not-fixed/">0.8.0 B3 Help Tabs not fixed?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi guys. Just dropped the new 0.8.0b3 in there, fresh install of WP 3.6, etc. but still having the same problem with the help tabs not responding. And like with b2, if I comment out the 7 lines in class-piklist-admin.php (starting at line 110), help tab, screen options, and the expand/collapse of metabox areas will function again.</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-8-0-b3-help-tabs-not-fixed/">0.8.0 B3 Help Tabs not fixed?</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>0.8 beta 2 &#8211; wordpress 3.6 &#8211; javascript errors</title>
+		<link>https://piklist.com/support/topic/0-8-beta-2-wordpress-3-6-javascript-errors/</link>
+		
+		<dc:creator><![CDATA[chrisben]]></dc:creator>
+		<pubDate>Mon, 05 Aug 2013 08:34:53 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/0-8-beta-2-wordpress-3-6-javascript-errors/</guid>
+
+					<description><![CDATA[<p>Using wordpress 3.6, when piklist plugin is activated I can see javascript errors in my console when browing admin pages: Uncaught TypeError: Cannot read property 'id' of undefined load-scripts.php?c=0&#38;load%5B%5D=underscore,shortcode,backbone,wp-util,wp-ba…log,wpdialogs,wplink,wpdialogs-popup,wp-fullscreen,media-upload&#38;ver=3.6:36 This breaks javascript in wordpress preventing me from even using tabs within the admin part. For instance on Add a new Page, switching the editor tab [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-8-beta-2-wordpress-3-6-javascript-errors/">0.8 beta 2 &#8211; wordpress 3.6 &#8211; javascript errors</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Using wordpress 3.6, when piklist plugin is activated I can see javascript errors in my console when browing admin pages:</p>
+<pre>
+Uncaught TypeError: Cannot read property 'id' of undefined load-scripts.php?c=0&amp;load%5B%5D=underscore,shortcode,backbone,wp-util,wp-ba…log,wpdialogs,wplink,wpdialogs-popup,wp-fullscreen,media-upload&amp;ver=3.6:36
+</pre>
+<p>This breaks javascript in wordpress preventing me from even using tabs within the admin part.<br />
+For instance on Add a new Page, switching the editor tab from Visual to text is not possible:</p>
+<pre>
+Uncaught TypeError: Cannot call method 'switchto' of undefined post-new.php?post_type=page:246
+</pre>
+<p>This problem disappears when piklist is disabled, hinting me that this might well be a problem with piklist.<br />
+Reproduced with Chrome, and Firefox but with a different error reported:</p>
+<pre>
+Error: TypeError: wp.media.view.settings.post is undefined
+Source File: http://www.harold.fr.local/wp-admin/load-scripts.php?c=0&amp;load%5B%5D=underscore,shortcode,backbone,wp-util,wp-backbone,media-models,wp-plupload,jquery-ui-core,jquery-ui-widget,jquery-ui-mouse,jquer&amp;load%5B%5D=y-ui-sortable,media-views,media-editor,thickbox,theme-preview,jquery-ui-draggable,jquery-ui-slider,jquery-touch-punch,iris,wp-co&amp;load%5B%5D=lor-picker,jquery-ui-position,wp-pointer,hoverIntent,common,admin-bar,schedule,wp-ajax-response,autosave,suggest,jquery-color,wp&amp;load%5B%5D=-lists,postbox,heartbeat,post,wp-auth-check,jquery-ui-datepicker,word-count,editor,quicktags,jquery-ui-resizable,jquery-ui-butto&amp;load%5B%5D=n,jquery-ui-dialog,wpdialogs,wplink,wpdialogs-popup,wp-fullscreen,media-upload&amp;ver=3.6
+</pre>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/0-8-beta-2-wordpress-3-6-javascript-errors/">0.8 beta 2 &#8211; wordpress 3.6 &#8211; javascript errors</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Javascript and css added to frontend by piklist</title>
+		<link>https://piklist.com/support/topic/javascript-and-css-added-to-frontend-by-piklist/</link>
+		
+		<dc:creator><![CDATA[alex poslavsky]]></dc:creator>
+		<pubDate>Wed, 03 Apr 2013 18:13:46 +0000</pubDate>
+				<guid isPermaLink="false">http://piklist.com/support/topic/javascript-and-css-added-to-frontend-by-piklist/</guid>
+
+					<description><![CDATA[<p>Hi! I was wondering why the following two files are added to the frontend of my site: plugins/piklist/parts/js/pik.js?ver=3.5.1 plugins/piklist/parts/css/jquery-ui/jquery-ui.smoothness.css?ver=1.9.2 As far as I can see I don&#8217;t use them, nor need them. Or did I do something wrong somewhere?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-and-css-added-to-frontend-by-piklist/">Javascript and css added to frontend by piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! I was wondering why the following two files are added to the frontend of my site:</p>
+<p>	plugins/piklist/parts/js/pik.js?ver=3.5.1<br />
+	plugins/piklist/parts/css/jquery-ui/jquery-ui.smoothness.css?ver=1.9.2</p>
+<p>As far as I can see I don&#8217;t use them, nor need them. Or did I do something wrong somewhere?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/javascript-and-css-added-to-frontend-by-piklist/">Javascript and css added to frontend by piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

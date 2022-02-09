@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>pre_get_posts &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/pre_get_posts/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 18 Nov 2016 04:56:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Conditional if post_belongs = false</title>
+		<link>https://piklist.com/support/topic/conditional-if-post_belongs-false/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Wed, 16 Nov 2016 14:34:07 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/conditional-if-post_belongs-false/</guid>
+
+					<description><![CDATA[<p>I am trying to create a sidebar with its conditional being to activate only if the post_belongs has a null value. In other words show the sidebar only posts that have a &#8216;sponsor&#8217; post_belong relationship. I have started with this: &#60;?php $args = array( &#039;post_type&#039; =&#62; &#039;sponsor&#039; ,&#039;posts_per_page&#039; =&#62; -1 ,&#039;post_belongs&#039; =&#62; $post-&#62;ID ,&#039;post_status&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-if-post_belongs-false/">Conditional if post_belongs = false</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to create a sidebar with its conditional being to activate only if the post_belongs has a null value. In other words show the sidebar only posts that have a &#8216;sponsor&#8217; post_belong relationship. </p>
+<p>I have started with this:</p>
+<pre><code>&lt;?php
+	
+	$args = array(
+    &#039;post_type&#039; =&gt; &#039;sponsor&#039;
+    ,&#039;posts_per_page&#039; =&gt; -1
+    ,&#039;post_belongs&#039; =&gt; $post-&gt;ID
+    ,&#039;post_status&#039; =&gt; &#039;publish&#039;
+    ,&#039;suppress_filters&#039; =&gt; false
+    ,&#039;exclude&#039; =&gt; $post-&gt;ID
+  );
+  $the_query = null;
+  $the_query = new WP_Query( $args );
+	
+  
+	 if ( $the_query-&gt;have_posts() ) {</code></pre>
+<p>I know that isn&#8217;t proper syntax but essentially just want to create a conditional wrapper that won&#8217;t initiate the sidebar if the post doesn&#8217;t have &#8216;sponsor&#8217; belonging to it.</p>
+<p><code>&#039;if ( $the_query-&gt;post_belongs = null ) {</code></p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/conditional-if-post_belongs-false/">Conditional if post_belongs = false</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>pre_get_posts for is_author( ) main query</title>
+		<link>https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 06 Dec 2015 04:40:11 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/</guid>
+
+					<description><![CDATA[<p>I am trying to alter the main_query for is_author() in a pre_get_posts() function. Essentially I want to grab the posts it normally would grab (posts by the author) but also grab posts with that author id which is the value for meta custom value. In this case `user_mediaographer&#8217; Here is my stab at it, but [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/">pre_get_posts for is_author( ) main query</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to alter the <code>main_query</code> for <code>is_author()</code> in a <code>pre_get_posts()</code> function. Essentially I want to grab the posts it normally would grab (posts by the author) but also grab posts with that author id which is the value for meta custom value. In this case `user_mediaographer&#8217;</p>
+<p>Here is my stab at it, but its still not yielding any posts:</p>
+<pre><code>function author_and_mediaographers_loop( $query ) {
+	
+	if ( is_admin() || ! $query-&gt;is_main_query() )
+    return;
+
+	
+     if ( $query-&gt;is_author() &amp;&amp; $query-&gt;is_main_query() ) { 
+      	// $query-&gt;set(&#039;ignore_sticky_posts&#039;, true);
+      	// $query-&gt;set(  );
+      	$query-&gt;set( array(
+      		&#039;meta_key&#039; =&gt; &#039;user_mediaographer&#039;,
+      		&#039;meta_value&#039; =&gt; true,
+      		// &#039;meta_compare&#039; =&gt; &#039;&gt;=&#039; 
+      		));
+        // $query-&gt;set( &#039;meta_key&#039;, &#039;user_mediaographer&#039; );
+        // $query-&gt;set( &#039;meta_value&#039;, true );
+        }
+     }
+        
+add_action( &#039;pre_get_posts&#039;, &#039;author_and_mediaographers_loop&#039; );</code></pre>
+<p>As it is written, it doesn&#8217;t function but I can see if I did, it would only grab the posts that had the <code>meta_value</code> with the author ID. But I don&#8217;t see how what I have is adding to the main_query. Can anyone shed a little light here?</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/pre_get_posts-for-is_author-main-query/">pre_get_posts for is_author( ) main query</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Simple Checkbox (True or Value)</title>
+		<link>https://piklist.com/support/topic/simple-checkbox-true-or-value/</link>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Wed, 02 Dec 2015 22:52:00 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/simple-checkbox-true-or-value/</guid>
+
+					<description><![CDATA[<p>I am trying to get a simple checkbox meta attached to a post. I am using this code: &#60;?php /* Title: Publish (Clearance) Post Type: post Capability: administrator */ piklist(&#039;field&#039;, array( &#039;type&#039; =&#62; &#039;checkbox&#039; ,&#039;scope&#039; =&#62; &#039;taxonomy&#039; ,&#039;field&#039; =&#62; &#039;post_clearance&#039; ,&#039;label&#039; =&#62; &#039;Cleared&#039; ,&#039;description&#039; =&#62; &#039;Administrators &#38; Editors can clear publication for edition.&#039; ,&#039;choices&#039; =&#62; [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/simple-checkbox-true-or-value/">Simple Checkbox (True or Value)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I am trying to get a simple checkbox meta attached to a post. I am using this code:</p>
+<pre><code>&lt;?php 
+	
+/*
+Title: Publish (Clearance)
+Post Type: post
+Capability: administrator
+*/
+	
+piklist(&#039;field&#039;, array(
+  &#039;type&#039; =&gt; &#039;checkbox&#039;
+  ,&#039;scope&#039; =&gt; &#039;taxonomy&#039;
+  ,&#039;field&#039; =&gt; &#039;post_clearance&#039;
+  ,&#039;label&#039; =&gt; &#039;Cleared&#039;
+  ,&#039;description&#039; =&gt; &#039;Administrators &amp; Editors can clear publication for edition.&#039;
+  ,&#039;choices&#039; =&gt; array(
+	  &#039;cleared&#039; =&gt; &#039;Cleared&#039;
+     )
+));
+	?&gt;</code></pre>
+<p>Two things happen. One is that the meta box does successfully appear, but when I check it and hit update, it doesn&#8217;t save it. (Using version 0.9.9.6 beta)</p>
+<p>Essentially using this simple one-option check box to act as a simple boolean function for a pre_get_post call through functions.php. This is what I have, but its not yielding any results of at the moment cause of the issue above.</p>
+<pre><code>function homepage_sticky_date_normalized( $query ) {
+	
+     if (is_home() || is_archive() &amp;&amp; $query-&gt;is_main_query())  
+      	$query-&gt;set(&#039;ignore_sticky_posts&#039;, true); // don&#039;t stack sticky posts 
+        $query-&gt;set( &#039;meta_key&#039;, &#039;clearance&#039; );
+        $query-&gt;set( &#039;meta_value&#039;, true );
+	 // $query-&gt;set(&#039;post__not_in&#039;, $excludes);
+        // $query-&gt;set(&#039;post__not_in&#039;, get_option(&#039;sticky_posts&#039;)); 
+        }
+        
+add_action( &#039;pre_get_posts&#039;, &#039;homepage_sticky_date_normalized&#039; );</code></pre>
+<p>These additional <code>query-sets</code> kill the listing of my posts in the backend.</p>
+<pre><code>   $query-&gt;set( &#039;meta_key&#039;, &#039;clearance&#039; );
+        $query-&gt;set( &#039;meta_value&#039;, true );</code></pre>
+<p>So three problems. :-/</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/simple-checkbox-true-or-value/">Simple Checkbox (True or Value)</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

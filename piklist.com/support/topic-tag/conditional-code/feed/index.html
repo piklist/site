@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>conditional code &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/conditional-code/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Fri, 19 Dec 2014 11:27:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>Checking if a field/array has a value</title>
+		<link>https://piklist.com/support/topic/checking-if-a-fieldarray-has-a-value/</link>
+		
+		<dc:creator><![CDATA[cosmocanuck]]></dc:creator>
+		<pubDate>Wed, 10 Dec 2014 22:02:44 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/checking-if-a-fieldarray-has-a-value/</guid>
+
+					<description><![CDATA[<p>Hi! How do I confirm that a field even has a value before I show it on the front end? If it&#8217;s empty, I&#8217;d like to avoid running that code. For example, I&#8217;m currently attempting this: // Grab the claims $productClaims = get_post_meta($post-&#62;ID, &#039;claims&#039;, false); if ( !empty($productClaims) ) { // Display the claims echo [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checking-if-a-fieldarray-has-a-value/">Checking if a field/array has a value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi! How do I confirm that a field even has a value before I show it on the front end? If it&#8217;s empty, I&#8217;d like to avoid running that code. For example, I&#8217;m currently attempting this:</p>
+<pre><code>// Grab the claims 
+$productClaims = get_post_meta($post-&gt;ID, &#039;claims&#039;, false);
+
+if ( !empty($productClaims) ) {
+	// Display the claims
+	echo &#039;&lt;ul&gt;&#039;;
+		piklist(get_stylesheet_directory() . &#039;/product-claims-template&#039;, array(&#039;data&#039; =&gt; $productClaims, &#039;loop&#039; =&gt; &#039;data&#039;) );
+	echo &#039;&lt;/ul&gt;&#039;;
+}
+</code></pre>
+<p>But even if $productClaims is an empty array (confirmed with a print_r command), the empty() check doesn&#8217;t work, it still runs the code. This results in a single bullet from an empty &#8220;ul&#8221;.</p>
+<p>This is how I did it earlier in the year on my first Piklist site, I know it&#8217;s not optimal code but it did work:</p>
+<pre><code>	&lt;?php if ($resortData [weather_conditions_url][0] &gt; &#039;&#039;) { ?&gt;
+	&lt;p&gt;&lt;strong&gt;&lt;a class=&quot;external&quot; href=&quot;&lt;?php echo $resortData [weather_conditions_url][0];?&gt;&quot; target=&quot;_new&quot; rel=&quot;bookmark&quot;&gt;Weather Conditions&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+	&lt;?php } ?&gt;
+</code></pre>
+<p>But now I&#8217;m dealing with an array, not a single value so I presume that also makes it different (as well as the fact that this syntax is not recommended).</p>
+<p>Thanks!<br />
+adam</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/checking-if-a-fieldarray-has-a-value/">Checking if a field/array has a value</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

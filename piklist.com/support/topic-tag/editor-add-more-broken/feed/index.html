@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>editor add-more broken &#8211; Piklist Support</title>
+	<atom:link href="https://piklist.com/support/topic-tag/editor-add-more-broken/feed/" rel="self" type="application/rss+xml" />
+	<link>https://piklist.com/support</link>
+	<description>Get help with Piklist products</description>
+	<lastBuildDate>Sat, 20 Feb 2021 00:38:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.8</generator>
+	<item>
+		<title>editor field broken in add more fields on latest piklist</title>
+		<link>https://piklist.com/support/topic/editor-field-broken-in-add-more-fields-on-latest-piklist/</link>
+		
+		<dc:creator><![CDATA[alexd]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 00:38:58 +0000</pubDate>
+				<guid isPermaLink="false">https://piklist.com/support/topic/editor-field-broken-in-add-more-fields-on-latest-piklist/</guid>
+
+					<description><![CDATA[<p>Hi Steve and team, I&#8217;ve upgraded a site to wordpress 5.6, and updated piklist to 1.0.11 The editor field (tinymce) is quite broken now if added to a page (page post type) dynamically (i.e. with add more). I have recreated the issue on a vanilla wordpress install, with theme 2021, and plugins enabled only being: [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-field-broken-in-add-more-fields-on-latest-piklist/">editor field broken in add more fields on latest piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Hi Steve and team,<br />
+ I&#8217;ve upgraded a site to wordpress 5.6, and updated piklist to 1.0.11<br />
+The editor field (tinymce) is quite broken now if added to a page (page post type) dynamically (i.e. with add more).<br />
+I have recreated the issue on a vanilla wordpress install, with theme 2021, and plugins enabled only being:<br />
+piklist<br />
+classic editor.   </p>
+<p>I&#8217;ve reduced the sample field-set down to just the editor field, nested in a group add more. The editors which are rendered to the page by default (on page load), initialize fine. But any new editor fields added to the page fail to work properly.<br />
+seems like such a basic use case i missed by missing something&#8230;</p>
+<pre><code>
+// Page builder
+piklist(
+	&#039;field&#039;,
+	[
+		&#039;type&#039;       =&gt; &#039;group&#039;,
+		&#039;field&#039;      =&gt; &#039;page_builder&#039;,
+		&#039;scope&#039;      =&gt; &#039;post_meta&#039;,
+		&#039;add_more&#039;   =&gt; true,
+		&#039;label&#039;      =&gt; __( &#039;Ajouter des contenus&#039;, &#039;mac-theme&#039; ),
+		&#039;template&#039;   =&gt; &#039;field&#039;,
+		&#039;attributes&#039; =&gt; [
+			&#039;wrapper_class&#039; =&gt; &#039;wrapper-accordion&#039;,
+		],
+		&#039;fields&#039;     =&gt; [
+			[
+				&#039;type&#039;     =&gt; &#039;editor&#039;,
+				&#039;field&#039;    =&gt; &#039;post_content_guess&#039;, // This is the field name of the WordPress default editor
+				&#039;scope&#039;    =&gt; &#039;post&#039;, // Save to the wp_post table
+				&#039;label&#039;    =&gt; &#039;Post Content&#039;,
+				&#039;template&#039; =&gt; &#039;field&#039;, // Only display the field not the label
+				&#039;options&#039;  =&gt; array( // Pass any option that is accepted by wp_editor()
+					&#039;wpautop&#039;           =&gt; true,
+					&#039;media_buttons&#039;     =&gt; true,
+					&#039;shortcode_buttons&#039; =&gt; true,
+					&#039;teeny&#039;             =&gt; false,
+					&#039;dfw&#039;               =&gt; false,
+					&#039;quicktags&#039;         =&gt; true,
+					&#039;drag_drop_upload&#039;  =&gt; true,
+					&#039;tinymce&#039;           =&gt; array(
+						&#039;resize&#039;           =&gt; false,
+						&#039;wp_autoresize_on&#039; =&gt; true
+					)
+				)
+			],
+		],
+	]
+);
+
+</code></pre>
+<p>if you check the attached screenshot, you&#8217;ll see a series of network requests to tinymce plugin paths which do not exist. </p>
+<p>A user can interact with the editor (i.e. type in it) but none of the shortcode buttons work at all.<br />
+While the editor is waiting for these failed network requests it is not responsive (although i&#8217;m sure that&#8217;s normal behaviour) </p>
+<p>I&#8217;ve tried downgrading wordpress all the way down by major version to 5.0 and still getting the same behaviour.<br />
+A user on a tangential issue suggested that the plugin must be loading old tinyMCE code, that was changed around 4.9</p>
+<p>But i&#8217;m seeing plenty of posts by you and the team saying latest piklist works fine with WP 5x </p>
+<p>Do you have any idea what is happening in this case?<br />
+thanks so much for taking the time! </p>
+<p>The post <a rel="nofollow" href="https://piklist.com/support/topic/editor-field-broken-in-add-more-fields-on-latest-piklist/">editor field broken in add more fields on latest piklist</a> appeared first on <a rel="nofollow" href="https://piklist.com/support">Piklist Support</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
