@@ -1,0 +1,12 @@
+Index: tinymce-advanced/trunk/mce/anchor/plugin.js
+===================================================================
+--- tinymce-advanced/trunk/mce/anchor/plugin.js	(revision 978363)
++++ tinymce-advanced/trunk/mce/anchor/plugin.js	(revision 1223999)
+@@ -2,6 +2,6 @@
+  * plugin.js
+  *
+- * Copyright, Moxiecode Systems AB
+  * Released under LGPL License.
++ * Copyright (c) 1999-2015 Ephox Corp. All rights reserved
+  *
+  * License: http://www.tinymce.com/license

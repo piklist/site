@@ -1,0 +1,859 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+
+
+
+
+  
+<!-- Mirrored from plugins.trac.wordpress.org/changeset/2036480/tinymce-advanced/trunk/mce/anchor/plugin.js by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Feb 2022 16:03:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      Changeset 2036480 for tinymce-advanced/trunk/mce/anchor/plugin.js – WordPress Plugin Repository
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+          <link rel="search" href="../../../../../../search.html" />
+          <link rel="help" href="../../../../../../wiki/TracGuide.html" />
+          <link rel="alternate" href="changeset_tinymce-advanced_trunk_mce_anchor_plugin.js_2036480a429.diff?format=diff&amp;new=2036480" type="text/plain" class="diff" title="Unified Diff" />
+          <link rel="alternate" href="changeset_tinymce-advanced_trunk_mce_anchor_plugin.js_20364808f35.zip?format=zip&amp;new=2036480" type="application/zip" class="zip" title="Zip Archive" />
+          <link rel="next" href="../../../../../2083026/tinymce-advanced/trunk/mce/anchor/plugin.html" title="Changeset 2083026 for tinymce-advanced/trunk/mce/anchor/plugin.js" />
+          <link rel="start" href="../../../../../../wiki.html" />
+          <link rel="stylesheet" href="../../../../../../../s.w.org/style/trac/common/css/trac.css" type="text/css" />
+          <link rel="stylesheet" href="../../../../../../../s.w.org/style/trac/common/css/changeset.css" type="text/css" />
+          <link rel="stylesheet" href="../../../../../../../s.w.org/style/trac/common/css/diff.css" type="text/css" />
+          <link rel="stylesheet" href="../../../../../../../s.w.org/style/trac/common/css/code.css" type="text/css" />
+          <link rel="prev" href="../../../../../1919233/tinymce-advanced/trunk/mce/anchor/plugin.html" title="Changeset 1919233 for tinymce-advanced/trunk/mce/anchor/plugin.js" />
+          <link rel="icon" href="../../../../../../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../../search/opensearch" title="Search WordPress Plugin Repository" />
+	
+	<script>
+		// <![CDATA[
+		window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s.w.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=20160722"}};
+		!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode9":return g.fillText(h(55358,56631),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		// ]]>
+	</script>
+	<style>
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link href="../../../../../../../fonts.googleapis.com/css8bce.css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../../../../../../../s.w.org/style/wp47cbb.css?70" />
+	<!--[if lte IE 8]>
+	<style type="text/css">
+	@import url("https://s.w.org/style/ie.css?1");
+	</style>
+	<![endif]-->
+	<script type="text/javascript">
+		var toggleMenu = function() {
+			var menu    = document.getElementById( 'wporg-header-menu' ),
+				toggle  = document.getElementById( 'mobile-menu-button' ),
+				classes = menu.className,
+				toggled = classes.match( ' active' );
+			menu.className = toggled ? classes.replace( ' active', '' ) : classes + ' active';
+			toggle.setAttribute( 'aria-expanded', ! toggled );
+		};
+	</script>
+
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="../../../../../../../s.w.org/wp-includes/css/dashicons.min0bd5.css?20150710" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../../../../../../s.w.org/style/trac/wp-tracf4b9.css?94" />
+	<script type="text/javascript" charset="utf-8" src="../../../../../../../s.w.org/style/trac/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../../s.w.org/style/trac/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../../s.w.org/style/trac/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../../s.w.org/style/trac/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../../s.w.org/style/trac/common/js/diff.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])").prop("autocomplete", "off").datepicker();
+          $(".trac-datetimepicker:not([readonly])").prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-toggledeleted").show().click(function() {
+                  $(this).siblings().find(".trac-deleted").toggle();
+                  return false;
+        }).click();
+        $("#content").find("li.entry h2 a").parent().addAnchor(_("Link to this diff"));
+      });
+    </script>
+  </head>
+  <body id="wordpress-org" class="plugins trac wporg-make make-plugins">
+	
+<div id="wporg-header">
+    <div class="wrapper">
+        <button id="mobile-menu-button" onclick="toggleMenu();" aria-expanded="false"><span class="screen-reader-text">Toggle Menu</span></button>
+        <h1><a href="https://wordpress.org/">WordPress.org</a></h1>
+        <div id="head-search">
+            <form action="https://wordpress.org/search/do-search.php" method="get">
+                <label for="global-search" class="screen-reader-text">Search WordPress.org for:</label>
+                <input id="global-search" class="text" name="search" type="text" value="" maxlength="150" placeholder="Search WordPress.org" />
+                <button type="submit" class="button"><span class="screen-reader-text">Submit</span></button>
+            </form>
+        </div>
+        <div style="clear:both"></div>
+        <ul id="wporg-header-menu">
+            <li><a href="https://wordpress.org/showcase/" title="See some of the sites built on WordPress.">Showcase</a></li>
+            <li><a href="https://wordpress.org/themes/" title="Find just the right look for your website.">Themes</a></li>
+            <li><a href="https://wordpress.org/plugins/" title="Plugins can extend WordPress to do almost anything you can imagine." class="current">Plugins</a>
+                <div class="uparrow"></div>
+            </li>
+            <li><a href="https://wordpress.org/mobile/" title="Take your website on the go!">Mobile</a></li>
+            <li><a href="https://wordpress.org/support/" title="Forums, documentation, help.">Support</a>
+                <ul class="nav-submenu">
+                    <li><a href="https://wordpress.org/support/" title="Support and discussion forums.">Forums</a></li>
+                    <li><a href="https://codex.wordpress.org/Main_Page" title="Documentation, tutorials, best practices.">Documentation</a></li>
+                </ul>
+                <div class="uparrow"></div>
+            </li>
+            <li><a href="https://make.wordpress.org/" title="Contribute your knowledge.">Get Involved</a>
+                <div class="uparrow"></div>
+            </li>
+            <li><a href="https://wordpress.org/about/" title="About the WordPress Organization, and where we're going.">About</a></li>
+            <li><a href="https://wordpress.org/news/" title="Come here for the latest scoop.">Blog</a></li>
+            <li><a href="https://wordpress.org/hosting/" title="Find a home for your blog.">Hosting</a></li>
+            <li id="download" class="button download-button"><a href="https://wordpress.org/download/" title="Get it. Got it? Good.">Download WordPress</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+	
+	<div id="headline" class="no-menu">
+		<div class="wrapper">
+			<h2><a href="http://wordpress.org/plugins/">Plugin Directory</a></h2>
+		</div>
+	</div>
+
+    <div id="banner">
+      <form id="search" action="https://plugins.trac.wordpress.org/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="last first"><a href="https://plugins.trac.wordpress.org/login">Login</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="https://plugins.trac.wordpress.org/timeline">Timeline</a></li><li><a href="https://plugins.trac.wordpress.org/report">View Tickets</a></li><li class="last active"><a href="https://plugins.trac.wordpress.org/browser">Browse Source</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="../../../../../1919233/tinymce-advanced/trunk/mce/anchor/plugin.html" title="Changeset 1919233 for tinymce-advanced/trunk/mce/anchor/plugin.js">Previous Change</a></span></li><li class="last"><span><a class="next" href="../../../../../2083026/tinymce-advanced/trunk/mce/anchor/plugin.html" title="Changeset 2083026 for tinymce-advanced/trunk/mce/anchor/plugin.js">Next Change</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+            <h1>Changeset <a title="Show full changeset" href="https://plugins.trac.wordpress.org/changeset/2036480">2036480</a>
+              for <a title="Show entry in browser" href="../../../../../../browser/tinymce-advanced/trunk/mce/anchor/pluginb862.html?rev=2036480">tinymce-advanced/trunk/mce/anchor/plugin.js</a></h1>
+      </div>
+      <form id="prefs" action="#">
+        <div>
+          
+  <label for="style">View differences</label>
+  <select id="style" name="style">
+    <option selected="selected" value="inline">inline</option>
+    <option value="sidebyside">side by side</option>
+  </select>
+  <div class="field">
+    <label><input type="radio" name="contextall" value="0" checked="checked" />
+             Show</label>
+      <label><input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+             lines around each change</label><br />
+    <label><input type="radio" name="contextall" value="1" />
+           Show the changes in full context</label>
+  </div>
+  <fieldset id="ignore">
+    <legend>Ignore:</legend>
+    <div class="field">
+      <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+      <label for="ignoreblanklines">Blank lines</label>
+    </div>
+    <div class="field">
+      <input type="checkbox" id="ignorecase" name="ignorecase" />
+      <label for="ignorecase">Case changes</label>
+    </div>
+    <div class="field">
+      <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+      <label for="ignorewhitespace">White space changes</label>
+    </div>
+  </fieldset>
+  <div style="display:none;"><input type="text" name="sfp_email" value="" /><input type="hidden" name="sfph_mail" value="" /></div><div class="buttons">
+    <input type="submit" name="update" value="Update" />
+  </div>
+
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">
+             02/22/2019 03:34:29 AM
+             (<a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2019-02-22T03%3A34%3A29Z&amp;precision=second" title="See timeline at 02/22/2019 03:34:29 AM">3 years</a> ago)
+          </dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author"><span class="trac-author">azaozz</span></dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+TMA update to 5.1<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">
+          File:
+        </dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 edited</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../../../browser/tinymce-advanced/trunk/mce/anchor/pluginb862.html?rev=2036480">
+              tinymce-advanced/trunk/mce/anchor/plugin.js
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="#file0">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a href="plugin.html" title="Show the changeset 2036480 restricted to tinymce-advanced/trunk/mce/anchor/plugin.js">tinymce-advanced/trunk/mce/anchor/plugin.js</a>
+        </h2>
+        <table class="trac-diff inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1919233">
+                    <a title="Show revision 1919233 of this file in browser" href="../../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin2718.html?rev=1919233#L1">
+                      r1919233</a>
+                  </th>
+                  <th title="Revision 2036480">
+                    <a title="Show revision 2036480 of this file in browser" href="../../../../../../browser/tinymce-advanced/trunk/mce/anchor/pluginb862.html?rev=2036480#L1">
+                      r2036480</a>
+                  </th>
+                  <td> </td>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1</th><th>1</th><td class="l"><span>(function () {</span></td>
+                  </tr><tr>
+                          <th>2</th><th>2</th><td class="l"><span>var anchor = (function () {</span></td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3</th><th> </th><td class="l"><span>&nbsp; <del></del>'use strict';</span></td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3</th><td class="r"><span>&nbsp; <ins>&nbsp; </ins>'use strict';</span></td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4</th><th>4</th><td class="l"><span></span></td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5</th><th> </th><td class="l"><span>&nbsp; <del></del>var global = tinymce.util.Tools.resolve('tinymce.PluginManager');</span></td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5</th><td class="r"><span>&nbsp; <ins>&nbsp; </ins>var global = tinymce.util.Tools.resolve('tinymce.PluginManager');</span></td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>6</th><th>6</th><td class="l"><span></span></td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>7</th><th> </th><td class="l"><span>&nbsp; var isValidId = function (id) {</span></td>
+                      </tr><tr>
+                        <th>8</th><th> </th><td class="l"><span>&nbsp; &nbsp; return /^[A-Za-z][A-Za-z0-9\-:._]*$/.test(id);</span></td>
+                      </tr><tr>
+                        <th>9</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>10</th><th> </th><td class="l"><span>&nbsp; var getId = function (editor) {</span></td>
+                      </tr><tr>
+                        <th>11</th><th> </th><td class="l"><span>&nbsp; &nbsp; var selectedNode = editor.selection.getNode();</span></td>
+                      </tr><tr>
+                        <th>12</th><th> </th><td class="l"><span>&nbsp; &nbsp; var isAnchor = selectedNode.tagName === 'A' &amp;&amp; editor.dom.getAttrib(selectedNode, 'href') === '';</span></td>
+                      </tr><tr>
+                        <th>13</th><th> </th><td class="l"><span>&nbsp; &nbsp; return isAnchor ? selectedNode.id || selectedNode.name : '';</span></td>
+                      </tr><tr>
+                        <th>14</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>15</th><th> </th><td class="l"><span>&nbsp; var insert = function (editor, id) {</span></td>
+                      </tr><tr>
+                        <th>16</th><th> </th><td class="l"><span>&nbsp; &nbsp; var selectedNode = editor.selection.getNode();</span></td>
+                      </tr><tr>
+                        <th>17</th><th> </th><td class="l"><span>&nbsp; &nbsp; var isAnchor = selectedNode.tagName === 'A' &amp;&amp; editor.dom.getAttrib(selectedNode, 'href') === '';</span></td>
+                      </tr><tr>
+                        <th>18</th><th> </th><td class="l"><span>&nbsp; &nbsp; if (isAnchor) {</span></td>
+                      </tr><tr>
+                        <th>19</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; selectedNode.removeAttribute('name');</span></td>
+                      </tr><tr>
+                        <th>20</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; selectedNode.id = id;</span></td>
+                      </tr><tr>
+                        <th>21</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.undoManager.add();</span></td>
+                      </tr><tr>
+                        <th>22</th><th> </th><td class="l"><span>&nbsp; &nbsp; } else {</span></td>
+                      </tr><tr>
+                        <th>23</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.focus();</span></td>
+                      </tr><tr>
+                        <th>24</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.selection.collapse(true);</span></td>
+                      </tr><tr>
+                        <th>25</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.execCommand('mceInsertContent', false, editor.dom.createHTML('a', { id: id }));</span></td>
+                      </tr><tr>
+                        <th>26</th><th> </th><td class="l"><span>&nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th>27</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>28</th><th> </th><td class="l"><span>&nbsp; var $_30p5pl8ojjgwebcv = {</span></td>
+                      </tr><tr>
+                        <th>29</th><th> </th><td class="l"><span>&nbsp; &nbsp; isValidId: isValidId,</span></td>
+                      </tr><tr>
+                        <th>30</th><th> </th><td class="l"><span>&nbsp; &nbsp; getId: getId,</span></td>
+                      </tr><tr>
+                        <th>31</th><th> </th><td class="l"><span>&nbsp; &nbsp; insert: insert</span></td>
+                      </tr><tr>
+                        <th>32</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>33</th><th> </th><td class="l"><span></span></td>
+                      </tr><tr>
+                        <th>34</th><th> </th><td class="l"><span>&nbsp; var insertAnchor = function (editor, newId) {</span></td>
+                      </tr><tr>
+                        <th>35</th><th> </th><td class="l"><span>&nbsp; &nbsp; if (!$_30p5pl8ojjgwebcv.isValidId(newId)) {</span></td>
+                      </tr><tr>
+                        <th>36</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.windowManager.alert('Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores.');</span></td>
+                      </tr><tr>
+                        <th>37</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; return true;</span></td>
+                      </tr><tr>
+                        <th>38</th><th> </th><td class="l"><span>&nbsp; &nbsp; } else {</span></td>
+                      </tr><tr>
+                        <th>39</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; $_30p5pl8ojjgwebcv.insert(editor, newId);</span></td>
+                      </tr><tr>
+                        <th>40</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; return false;</span></td>
+                      </tr><tr>
+                        <th>41</th><th> </th><td class="l"><span>&nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th>42</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>43</th><th> </th><td class="l"><span>&nbsp; var open = function (editor) {</span></td>
+                      </tr><tr>
+                        <th>44</th><th> </th><td class="l"><span>&nbsp; &nbsp; var currentId = $_30p5pl8ojjgwebcv.getId(editor);</span></td>
+                      </tr><tr>
+                        <th>45</th><th> </th><td class="l"><span>&nbsp; &nbsp; editor.windowManager.open({</span></td>
+                      </tr><tr>
+                        <th>46</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; title: 'Anchor',</span></td>
+                      </tr><tr>
+                        <th>47</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; body: {</span></td>
+                      </tr><tr>
+                        <th>48</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; type: 'textbox',</span></td>
+                      </tr><tr>
+                        <th>49</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; name: 'id',</span></td>
+                      </tr><tr>
+                        <th>50</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; size: 40,</span></td>
+                      </tr><tr>
+                        <th>51</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; label: 'Id',</span></td>
+                      </tr><tr>
+                        <th>52</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; value: currentId</span></td>
+                      </tr><tr>
+                        <th>53</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; },</span></td>
+                      </tr><tr>
+                        <th>54</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; onsubmit: function (e) {</span></td>
+                      </tr><tr>
+                        <th>55</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var newId = e.data.id;</span></td>
+                      </tr><tr>
+                        <th>56</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (insertAnchor(editor, newId)) {</span></td>
+                      </tr><tr>
+                        <th>57</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.preventDefault();</span></td>
+                      </tr><tr>
+                        <th>58</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th>59</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th>60</th><th> </th><td class="l"><span>&nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th>61</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; var $_ctaozd8njjgwebct = { open: open };</span></td>
+                      </tr><tr>
+                        <th>63</th><th> </th><td class="l"><span></span></td>
+                      </tr><tr>
+                        <th>64</th><th> </th><td class="l"><span>&nbsp; var register = function (editor) {</span></td>
+                      </tr><tr>
+                        <th>65</th><th> </th><td class="l"><span>&nbsp; &nbsp; editor.addCommand('mceAnchor', function () {</span></td>
+                      </tr><tr>
+                        <th>66</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; $_ctaozd8njjgwebct.open(editor);</span></td>
+                      </tr><tr>
+                        <th>67</th><th> </th><td class="l"><span>&nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th>68</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>69</th><th> </th><td class="l"><span>&nbsp; var $_7z79du8mjjgwebcr = { register: register };</span></td>
+                      </tr><tr>
+                        <th>70</th><th> </th><td class="l"><span></span></td>
+                      </tr><tr>
+                        <th>71</th><th> </th><td class="l"><span>&nbsp; var isAnchorNode = function (node) {</span></td>
+                      </tr><tr>
+                        <th>72</th><th> </th><td class="l"><span>&nbsp; &nbsp; return !node.attr('href') &amp;&amp; (node.attr('id') || node.attr('name')) &amp;&amp; !node.firstChild;</span></td>
+                      </tr><tr>
+                        <th>73</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>74</th><th> </th><td class="l"><span>&nbsp; var setContentEditable = function (state) {</span></td>
+                      </tr><tr>
+                        <th>75</th><th> </th><td class="l"><span>&nbsp; &nbsp; return function (nodes) {</span></td>
+                      </tr><tr>
+                        <th>76</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; nodes.length; i++) {</span></td>
+                      </tr><tr>
+                        <th>77</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (isAnchorNode(nodes[i])) {</span></td>
+                      </tr><tr>
+                        <th>78</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nodes[i].attr('contenteditable', state);</span></td>
+                      </tr><tr>
+                        <th>79</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>7</th><td class="r"><span>&nbsp; &nbsp; var isValidId = function (id) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>8</th><td class="r"><span>&nbsp; &nbsp; &nbsp; return /^[A-Za-z][A-Za-z0-9\-:._]*$/.test(id);</span></td>
+                      </tr><tr>
+                        <th> </th><th>9</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>10</th><td class="r"><span>&nbsp; &nbsp; var getId = function (editor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>11</th><td class="r"><span>&nbsp; &nbsp; &nbsp; var selectedNode = editor.selection.getNode();</span></td>
+                      </tr><tr>
+                        <th> </th><th>12</th><td class="r"><span>&nbsp; &nbsp; &nbsp; var isAnchor = selectedNode.tagName === 'A' &amp;&amp; editor.dom.getAttrib(selectedNode, 'href') === '';</span></td>
+                      </tr><tr>
+                        <th> </th><th>13</th><td class="r"><span>&nbsp; &nbsp; &nbsp; return isAnchor ? selectedNode.id || selectedNode.name : '';</span></td>
+                      </tr><tr>
+                        <th> </th><th>14</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>15</th><td class="r"><span>&nbsp; &nbsp; var insert = function (editor, id) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>16</th><td class="r"><span>&nbsp; &nbsp; &nbsp; var selectedNode = editor.selection.getNode();</span></td>
+                      </tr><tr>
+                        <th> </th><th>17</th><td class="r"><span>&nbsp; &nbsp; &nbsp; var isAnchor = selectedNode.tagName === 'A' &amp;&amp; editor.dom.getAttrib(selectedNode, 'href') === '';</span></td>
+                      </tr><tr>
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; if (isAnchor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>19</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; selectedNode.removeAttribute('name');</span></td>
+                      </tr><tr>
+                        <th> </th><th>20</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; selectedNode.id = id;</span></td>
+                      </tr><tr>
+                        <th> </th><th>21</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.undoManager.add();</span></td>
+                      </tr><tr>
+                        <th> </th><th>22</th><td class="r"><span>&nbsp; &nbsp; &nbsp; } else {</span></td>
+                      </tr><tr>
+                        <th> </th><th>23</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.focus();</span></td>
+                      </tr><tr>
+                        <th> </th><th>24</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.selection.collapse(true);</span></td>
+                      </tr><tr class="last">
+                        <th> </th><th>25</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.execCommand('mceInsertContent', false, editor.dom.createHTML('a', { id: id }));</span></td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>80</th><th>26</th><td class="l"><span>&nbsp; &nbsp; &nbsp; }</span></td>
+                  </tr><tr>
+                          <th>81</th><th>27</th><td class="l"><span>&nbsp; &nbsp; };</span></td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>82</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>83</th><th> </th><td class="l"><span>&nbsp; var setup = function (editor) {</span></td>
+                      </tr><tr>
+                        <th>84</th><th> </th><td class="l"><span>&nbsp; &nbsp; editor.on('PreInit', function () {</span></td>
+                      </tr><tr>
+                        <th>85</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.parser.addNodeFilter('a', setContentEditable('false'));</span></td>
+                      </tr><tr>
+                        <th>86</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; editor.serializer.addNodeFilter('a', setContentEditable(null));</span></td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>28</th><td class="r"><span>&nbsp; &nbsp; var Anchor = {</span></td>
+                      </tr><tr>
+                        <th> </th><th>29</th><td class="r"><span>&nbsp; &nbsp; &nbsp; isValidId: isValidId,</span></td>
+                      </tr><tr>
+                        <th> </th><th>30</th><td class="r"><span>&nbsp; &nbsp; &nbsp; getId: getId,</span></td>
+                      </tr><tr>
+                        <th> </th><th>31</th><td class="r"><span>&nbsp; &nbsp; &nbsp; insert: insert</span></td>
+                      </tr><tr>
+                        <th> </th><th>32</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>33</th><td class="r"><span></span></td>
+                      </tr><tr>
+                        <th> </th><th>34</th><td class="r"><span>&nbsp; &nbsp; var insertAnchor = function (editor, newId) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>35</th><td class="r"><span>&nbsp; &nbsp; &nbsp; if (!Anchor.isValidId(newId)) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>36</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.windowManager.alert('Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores.');</span></td>
+                      </tr><tr>
+                        <th> </th><th>37</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; return true;</span></td>
+                      </tr><tr>
+                        <th> </th><th>38</th><td class="r"><span>&nbsp; &nbsp; &nbsp; } else {</span></td>
+                      </tr><tr>
+                        <th> </th><th>39</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; Anchor.insert(editor, newId);</span></td>
+                      </tr><tr>
+                        <th> </th><th>40</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; return false;</span></td>
+                      </tr><tr>
+                        <th> </th><th>41</th><td class="r"><span>&nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th> </th><th>42</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>43</th><td class="r"><span>&nbsp; &nbsp; var open = function (editor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>44</th><td class="r"><span>&nbsp; &nbsp; &nbsp; var currentId = Anchor.getId(editor);</span></td>
+                      </tr><tr>
+                        <th> </th><th>45</th><td class="r"><span>&nbsp; &nbsp; &nbsp; editor.windowManager.open({</span></td>
+                      </tr><tr>
+                        <th> </th><th>46</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; title: 'Anchor',</span></td>
+                      </tr><tr>
+                        <th> </th><th>47</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; body: {</span></td>
+                      </tr><tr>
+                        <th> </th><th>48</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: 'textbox',</span></td>
+                      </tr><tr>
+                        <th> </th><th>49</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: 'id',</span></td>
+                      </tr><tr>
+                        <th> </th><th>50</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; size: 40,</span></td>
+                      </tr><tr>
+                        <th> </th><th>51</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: 'Id',</span></td>
+                      </tr><tr>
+                        <th> </th><th>52</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: currentId</span></td>
+                      </tr><tr>
+                        <th> </th><th>53</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; },</span></td>
+                      </tr><tr>
+                        <th> </th><th>54</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; onsubmit: function (e) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var newId = e.data.id;</span></td>
+                      </tr><tr>
+                        <th> </th><th>56</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (insertAnchor(editor, newId)) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>57</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.preventDefault();</span></td>
+                      </tr><tr>
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th> </th><th>59</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th> </th><th>60</th><td class="r"><span>&nbsp; &nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th> </th><th>61</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>62</th><td class="r"><span>&nbsp; &nbsp; var Dialog = { open: open };</span></td>
+                      </tr><tr>
+                        <th> </th><th>63</th><td class="r"><span></span></td>
+                      </tr><tr>
+                        <th> </th><th>64</th><td class="r"><span>&nbsp; &nbsp; var register = function (editor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>65</th><td class="r"><span>&nbsp; &nbsp; &nbsp; editor.addCommand('mceAnchor', function () {</span></td>
+                      </tr><tr>
+                        <th> </th><th>66</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; Dialog.open(editor);</span></td>
+                      </tr><tr>
+                        <th> </th><th>67</th><td class="r"><span>&nbsp; &nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th> </th><th>68</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>69</th><td class="r"><span>&nbsp; &nbsp; var Commands = { register: register };</span></td>
+                      </tr><tr>
+                        <th> </th><th>70</th><td class="r"><span></span></td>
+                      </tr><tr>
+                        <th> </th><th>71</th><td class="r"><span>&nbsp; &nbsp; var isAnchorNode = function (node) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>72</th><td class="r"><span>&nbsp; &nbsp; &nbsp; return !node.attr('href') &amp;&amp; (node.attr('id') || node.attr('name')) &amp;&amp; !node.firstChild;</span></td>
+                      </tr><tr>
+                        <th> </th><th>73</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>74</th><td class="r"><span>&nbsp; &nbsp; var setContentEditable = function (state) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>75</th><td class="r"><span>&nbsp; &nbsp; &nbsp; return function (nodes) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>76</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; nodes.length; i++) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>77</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isAnchorNode(nodes[i])) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>78</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nodes[i].attr('contenteditable', state);</span></td>
+                      </tr><tr>
+                        <th> </th><th>79</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span></td>
+                      </tr><tr>
+                        <th> </th><th>81</th><td class="r"><span>&nbsp; &nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>82</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>83</th><td class="r"><span>&nbsp; &nbsp; var setup = function (editor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>84</th><td class="r"><span>&nbsp; &nbsp; &nbsp; editor.on('PreInit', function () {</span></td>
+                      </tr><tr>
+                        <th> </th><th>85</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.parser.addNodeFilter('a', setContentEditable('false'));</span></td>
+                      </tr><tr>
+                        <th> </th><th>86</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; editor.serializer.addNodeFilter('a', setContentEditable(null));</span></td>
+                      </tr><tr>
+                        <th> </th><th>87</th><td class="r"><span>&nbsp; &nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th> </th><th>88</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>89</th><td class="r"><span>&nbsp; &nbsp; var FilterContent = { setup: setup };</span></td>
+                      </tr><tr>
+                        <th> </th><th>90</th><td class="r"><span></span></td>
+                      </tr><tr>
+                        <th> </th><th>91</th><td class="r"><span>&nbsp; &nbsp; var register$1 = function (editor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>92</th><td class="r"><span>&nbsp; &nbsp; &nbsp; editor.addButton('anchor', {</span></td>
+                      </tr><tr>
+                        <th> </th><th>93</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; icon: 'anchor',</span></td>
+                      </tr><tr>
+                        <th> </th><th>94</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; tooltip: 'Anchor',</span></td>
+                      </tr><tr>
+                        <th> </th><th>95</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; cmd: 'mceAnchor',</span></td>
+                      </tr><tr>
+                        <th> </th><th>96</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; stateSelector: 'a:not([href])'</span></td>
+                      </tr><tr>
+                        <th> </th><th>97</th><td class="r"><span>&nbsp; &nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th> </th><th>98</th><td class="r"><span>&nbsp; &nbsp; &nbsp; editor.addMenuItem('anchor', {</span></td>
+                      </tr><tr>
+                        <th> </th><th>99</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; icon: 'anchor',</span></td>
+                      </tr><tr>
+                        <th> </th><th>100</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; text: 'Anchor',</span></td>
+                      </tr><tr>
+                        <th> </th><th>101</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; context: 'insert',</span></td>
+                      </tr><tr>
+                        <th> </th><th>102</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; cmd: 'mceAnchor'</span></td>
+                      </tr><tr>
+                        <th> </th><th>103</th><td class="r"><span>&nbsp; &nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th> </th><th>104</th><td class="r"><span>&nbsp; &nbsp; };</span></td>
+                      </tr><tr>
+                        <th> </th><th>105</th><td class="r"><span>&nbsp; &nbsp; var Buttons = { register: register$1 };</span></td>
+                      </tr><tr>
+                        <th> </th><th>106</th><td class="r"><span></span></td>
+                      </tr><tr>
+                        <th> </th><th>107</th><td class="r"><span>&nbsp; &nbsp; global.add('anchor', function (editor) {</span></td>
+                      </tr><tr>
+                        <th> </th><th>108</th><td class="r"><span>&nbsp; &nbsp; &nbsp; FilterContent.setup(editor);</span></td>
+                      </tr><tr>
+                        <th> </th><th>109</th><td class="r"><span>&nbsp; &nbsp; &nbsp; Commands.register(editor);</span></td>
+                      </tr><tr class="last">
+                        <th> </th><th>110</th><td class="r"><span>&nbsp; &nbsp; &nbsp; Buttons.register(editor);</span></td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>87</th><th>111</th><td class="l"><span>&nbsp; &nbsp; });</span></td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>88</th><th> </th><td class="l"><span>&nbsp; <del>};</del></span></td>
+                      </tr><tr>
+                        <th>89</th><th> </th><td class="l"><span>&nbsp; <del>var $_fm0e98pjjgwebcx = { setup: setup };</del></span></td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>112</th><td class="r"><span>&nbsp; <ins>&nbsp; function Plugin () {</ins></span></td>
+                      </tr><tr class="last">
+                        <th> </th><th>113</th><td class="r"><span>&nbsp; <ins>&nbsp; }</ins></span></td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>90</th><th>114</th><td class="l"><span></span></td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>91</th><th> </th><td class="l"><span>&nbsp; var register$1 = function (editor) {</span></td>
+                      </tr><tr>
+                        <th>92</th><th> </th><td class="l"><span>&nbsp; &nbsp; editor.addButton('anchor', {</span></td>
+                      </tr><tr>
+                        <th>93</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; icon: 'anchor',</span></td>
+                      </tr><tr>
+                        <th>94</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; tooltip: 'Anchor',</span></td>
+                      </tr><tr>
+                        <th>95</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; cmd: 'mceAnchor',</span></td>
+                      </tr><tr>
+                        <th>96</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; stateSelector: 'a:not([href])'</span></td>
+                      </tr><tr>
+                        <th>97</th><th> </th><td class="l"><span>&nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th>98</th><th> </th><td class="l"><span>&nbsp; &nbsp; editor.addMenuItem('anchor', {</span></td>
+                      </tr><tr>
+                        <th>99</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; icon: 'anchor',</span></td>
+                      </tr><tr>
+                        <th>100</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; text: 'Anchor',</span></td>
+                      </tr><tr>
+                        <th>101</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; context: 'insert',</span></td>
+                      </tr><tr>
+                        <th>102</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; cmd: 'mceAnchor'</span></td>
+                      </tr><tr>
+                        <th>103</th><th> </th><td class="l"><span>&nbsp; &nbsp; });</span></td>
+                      </tr><tr>
+                        <th>104</th><th> </th><td class="l"><span>&nbsp; };</span></td>
+                      </tr><tr>
+                        <th>105</th><th> </th><td class="l"><span>&nbsp; var $_fq1n8m8qjjgwebcz = { register: register$1 };</span></td>
+                      </tr><tr>
+                        <th>106</th><th> </th><td class="l"><span></span></td>
+                      </tr><tr>
+                        <th>107</th><th> </th><td class="l"><span>&nbsp; global.add('anchor', function (editor) {</span></td>
+                      </tr><tr>
+                        <th>108</th><th> </th><td class="l"><span>&nbsp; &nbsp; $_fm0e98pjjgwebcx.setup(editor);</span></td>
+                      </tr><tr>
+                        <th>109</th><th> </th><td class="l"><span>&nbsp; &nbsp; $_7z79du8mjjgwebcr.register(editor);</span></td>
+                      </tr><tr>
+                        <th>110</th><th> </th><td class="l"><span>&nbsp; &nbsp; $_fq1n8m8qjjgwebcz.register(editor);</span></td>
+                      </tr><tr>
+                        <th>111</th><th> </th><td class="l"><span>&nbsp; });</span></td>
+                      </tr><tr>
+                        <th>112</th><th> </th><td class="l"><span>&nbsp; function Plugin () {</span></td>
+                      </tr><tr>
+                        <th>113</th><th> </th><td class="l"><span>&nbsp; }</span></td>
+                      </tr><tr>
+                        <th>114</th><th> </th><td class="l"><span></span></td>
+                      </tr><tr>
+                        <th>115</th><th> </th><td class="l"><span>&nbsp; return Plugin;</span></td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>115</th><td class="r"><span>&nbsp; &nbsp; return Plugin;</span></td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>116</th><th>116</th><td class="l"><span></span></td>
+                  </tr><tr>
+                          <th>117</th><th>117</th><td class="l"><span>}());</span></td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+        <div id="help"><strong>Note:</strong> See <a href="https://plugins.trac.wordpress.org/wiki/TracChangeset">TracChangeset</a>
+          for help on using the changeset viewer.</div>
+      </div>
+    </div>
+    <div id="altlinks">
+    <a class="preferences-link" href="https://plugins.trac.wordpress.org/prefs">Trac UI Preferences</a>
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="changeset_tinymce-advanced_trunk_mce_anchor_plugin.js_2036480a429.diff?format=diff&amp;new=2036480" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="changeset_tinymce-advanced_trunk_mce_anchor_plugin.js_20364808f35.zip?format=zip&amp;new=2036480" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+</div>
+    </div>
+	
+<div id="wporg-footer">
+	<div class="wrapper">
+		<ul>
+			<li><a href="https://wordpress.org/about/" title="An introduction to the WordPress project">About</a></li>
+			<li><a href="https://wordpress.org/news/" title="News and Updates">Blog</a></li>
+			<li><a href="https://wordpress.org/hosting/" title="Recommended web hosting providers">Hosting</a></li>
+			<li><a href="https://wordpressfoundation.org/donate/" title="Donate to the WordPress Foundation">Donate</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://wordpress.org/support/" title="Forums, documentation, and other resources">Support</a></li>
+			<li><a href="https://developer.wordpress.org/" title="Resources for WordPress developers">Developers</a></li>
+			<li><a href="https://make.wordpress.org/" title="Give back to WordPress through code, support, translation and more">Get Involved</a></li>
+			<li><a href="https://learn.wordpress.org/" title="Workshops and training materials">Learn</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://wordpress.org/showcase/" title="Some of the best WordPress sites on the Web">Showcase</a></li>
+			<li><a href="https://wordpress.org/plugins/" title="Add extra functionality to WordPress">Plugins</a></li>
+			<li><a href="https://wordpress.org/themes/" title="Make your WordPress pretty">Themes</a></li>
+			<li><a href="https://wordpress.org/ideas/" title="Share your ideas for improving WordPress">Ideas</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://central.wordcamp.org/" title="Find a WordPress event near you">WordCamp</a></li>
+			<li><a href="https://wordpress.tv/" title="Videos, tutorials, and WordCamp sessions">WordPress.TV</a></li>
+			<li><a href="https://buddypress.org/" title="A set of plugins to transform your WordPress into a social network">BuddyPress</a></li>
+			<li><a href="https://bbpress.org/" title="Fast, slick forums built on WordPress">bbPress</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://wordpress.com/?ref=wporg-footer" title="Hassle-free WordPress hosting">WordPress.com</a></li>
+			<li><a href="https://ma.tt/" title="Co-founder of WordPress, an example of what WordPress can do">Matt</a></li>
+			<li><a href="https://wordpress.org/about/privacy/" title="WordPress.org Privacy Policy">Privacy</a></li>
+			<li><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></li>
+		</ul>
+	</div>
+	<p class="cip cip-image">Code is Poetry</p>
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+   var elem = document.createElement('script');
+   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge")
+               + ".quantserve.com/quant.js";
+   elem.async = true;
+   elem.type = "text/javascript";
+   var scpt = document.getElementsByTagName('script')[0];
+   scpt.parentNode.insertBefore(elem, scpt);
+  })();
+</script>
+<script type="text/javascript">_qevents.push( { qacct:"p-18-mFEk4J448M"} );</script>
+<noscript><img src="../../../../../../../pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif" style="display: none;" border="0" height="1" width="1" alt="" /></noscript>
+
+	<script>
+	var wpTracCurrentUser = "anonymous";
+	</script>
+	<script src="../../../../../../../s.w.org/style/trac/jquery.caret.min6789.js?ver=2015-02-01"></script>
+	<script src="../../../../../../../s.w.org/style/trac/jquery.atwho.minf269.js?ver=1.0.1"></script>
+	<script src="../../../../../../../s.w.org/style/trac/wp-tracf4b9.js?94"></script>
+</body>
+
+<!-- Mirrored from plugins.trac.wordpress.org/changeset/2036480/tinymce-advanced/trunk/mce/anchor/plugin.js by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Feb 2022 16:03:15 GMT -->
+</html>

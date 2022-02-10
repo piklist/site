@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+
+
+
+
+  
+<!-- Mirrored from plugins.trac.wordpress.org/log/tinymce-advanced/trunk/mce/anchor/plugin.js?rev=2091071 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Feb 2022 13:19:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      tinymce-advanced/trunk/mce/anchor/plugin.js (log) – WordPress Plugin Repository
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+          <link rel="search" href="../../../../../search.html" />
+          <link rel="help" href="../../../../../wiki/TracGuide.html" />
+          <link rel="alternate" href="plugine837.js?format=rss&amp;rev=2091071&amp;limit=100&amp;mode=stop_on_copy" type="application/rss+xml" class="rss" title="RSS Feed" />
+          <link rel="alternate" href="plugin1d16.js?format=changelog&amp;rev=2091071&amp;limit=100&amp;mode=stop_on_copy" type="text/plain" title="ChangeLog" />
+          <link rel="up" href="../../../../../browser/tinymce-advanced/trunk/mce/anchor3f03.html?rev=2091071" title="Parent directory" />
+          <link rel="start" href="../../../../../wiki.html" />
+          <link rel="stylesheet" href="../../../../../../s.w.org/style/trac/common/css/trac.css" type="text/css" />
+          <link rel="stylesheet" href="../../../../../../s.w.org/style/trac/common/css/diff.css" type="text/css" />
+          <link rel="stylesheet" href="../../../../../../s.w.org/style/trac/common/css/browser.css" type="text/css" />
+          <link rel="icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../search/opensearch" title="Search WordPress Plugin Repository" />
+	
+	<script>
+		// <![CDATA[
+		window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s.w.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=20160722"}};
+		!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode9":return g.fillText(h(55358,56631),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		// ]]>
+	</script>
+	<style>
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link href="../../../../../../fonts.googleapis.com/css8bce.css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../../../../../../s.w.org/style/wp47cbb.css?70" />
+	<!--[if lte IE 8]>
+	<style type="text/css">
+	@import url("https://s.w.org/style/ie.css?1");
+	</style>
+	<![endif]-->
+	<script type="text/javascript">
+		var toggleMenu = function() {
+			var menu    = document.getElementById( 'wporg-header-menu' ),
+				toggle  = document.getElementById( 'mobile-menu-button' ),
+				classes = menu.className,
+				toggled = classes.match( ' active' );
+			menu.className = toggled ? classes.replace( ' active', '' ) : classes + ' active';
+			toggle.setAttribute( 'aria-expanded', ! toggled );
+		};
+	</script>
+
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="../../../../../../s.w.org/wp-includes/css/dashicons.min0bd5.css?20150710" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../../../../../s.w.org/style/trac/wp-tracf4b9.css?94" />
+	<script type="text/javascript" charset="utf-8" src="../../../../../../s.w.org/style/trac/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../s.w.org/style/trac/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../s.w.org/style/trac/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../../../../../../s.w.org/style/trac/common/js/search.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])").prop("autocomplete", "off").datepicker();
+          $(".trac-datetimepicker:not([readonly])").prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+  </head>
+  <body id="wordpress-org" class="plugins trac wporg-make make-plugins">
+	
+<div id="wporg-header">
+    <div class="wrapper">
+        <button id="mobile-menu-button" onclick="toggleMenu();" aria-expanded="false"><span class="screen-reader-text">Toggle Menu</span></button>
+        <h1><a href="https://wordpress.org/">WordPress.org</a></h1>
+        <div id="head-search">
+            <form action="https://wordpress.org/search/do-search.php" method="get">
+                <label for="global-search" class="screen-reader-text">Search WordPress.org for:</label>
+                <input id="global-search" class="text" name="search" type="text" value="" maxlength="150" placeholder="Search WordPress.org" />
+                <button type="submit" class="button"><span class="screen-reader-text">Submit</span></button>
+            </form>
+        </div>
+        <div style="clear:both"></div>
+        <ul id="wporg-header-menu">
+            <li><a href="https://wordpress.org/showcase/" title="See some of the sites built on WordPress.">Showcase</a></li>
+            <li><a href="https://wordpress.org/themes/" title="Find just the right look for your website.">Themes</a></li>
+            <li><a href="https://wordpress.org/plugins/" title="Plugins can extend WordPress to do almost anything you can imagine." class="current">Plugins</a>
+                <div class="uparrow"></div>
+            </li>
+            <li><a href="https://wordpress.org/mobile/" title="Take your website on the go!">Mobile</a></li>
+            <li><a href="https://wordpress.org/support/" title="Forums, documentation, help.">Support</a>
+                <ul class="nav-submenu">
+                    <li><a href="https://wordpress.org/support/" title="Support and discussion forums.">Forums</a></li>
+                    <li><a href="https://codex.wordpress.org/Main_Page" title="Documentation, tutorials, best practices.">Documentation</a></li>
+                </ul>
+                <div class="uparrow"></div>
+            </li>
+            <li><a href="https://make.wordpress.org/" title="Contribute your knowledge.">Get Involved</a>
+                <div class="uparrow"></div>
+            </li>
+            <li><a href="https://wordpress.org/about/" title="About the WordPress Organization, and where we're going.">About</a></li>
+            <li><a href="https://wordpress.org/news/" title="Come here for the latest scoop.">Blog</a></li>
+            <li><a href="https://wordpress.org/hosting/" title="Find a home for your blog.">Hosting</a></li>
+            <li id="download" class="button download-button"><a href="https://wordpress.org/download/" title="Get it. Got it? Good.">Download WordPress</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+	
+	<div id="headline" class="no-menu">
+		<div class="wrapper">
+			<h2><a href="http://wordpress.org/plugins/">Plugin Directory</a></h2>
+		</div>
+	</div>
+
+    <div id="banner">
+      <form id="search" action="https://plugins.trac.wordpress.org/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="last first"><a href="https://plugins.trac.wordpress.org/login">Login</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="https://plugins.trac.wordpress.org/timeline">Timeline</a></li><li><a href="https://plugins.trac.wordpress.org/report">View Tickets</a></li><li class="last active"><a href="https://plugins.trac.wordpress.org/browser">Browse Source</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="last first"><a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin.html">View Latest Revision</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="log">
+      <h1>
+<a class="pathentry first" href="https://plugins.trac.wordpress.org/browser?rev=2091071" title="Go to repository root">source:</a>
+<a class="pathentry" href="https://plugins.trac.wordpress.org/browser/tinymce-advanced?rev=2091071" title="View tinymce-advanced">tinymce-advanced</a><span class="pathentry sep">/</span><a class="pathentry" href="https://plugins.trac.wordpress.org/browser/tinymce-advanced/trunk?rev=2091071" title="View trunk">trunk</a><span class="pathentry sep">/</span><a class="pathentry" href="https://plugins.trac.wordpress.org/browser/tinymce-advanced/trunk/mce?rev=2091071" title="View mce">mce</a><span class="pathentry sep">/</span><a class="pathentry" href="../../../../../browser/tinymce-advanced/trunk/mce/anchor3f03.html?rev=2091071" title="View anchor">anchor</a><span class="pathentry sep">/</span><a class="pathentry" href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin3f03.html?rev=2091071" title="View plugin.js">plugin.js</a>
+<br style="clear: both" />
+</h1>
+      <form id="prefs" action="#" method="get">
+        <div>
+          <input type="hidden" name="action" value="stop_on_copy" />
+          <div class="choice">
+            <fieldset>
+              <legend>Revision Log Mode:</legend>
+              <label>
+                <input type="radio" id="stop_on_copy" name="mode" value="stop_on_copy" checked="checked" />
+                Stop on copy
+              </label>
+              <label>
+                <input type="radio" id="follow_copy" name="mode" value="follow_copy" />
+                Follow copies
+              </label>
+              <label>
+                <input type="radio" id="path_history" name="mode" value="path_history" />
+                Show only adds and deletes
+              </label>
+            </fieldset>
+          </div>
+          <label>
+              View log starting at
+              <input type="text" id="rev" name="rev" value="2091071" size="5" />
+            </label>
+            <label>
+              and back to
+              <input type="text" id="stop_rev" name="stop_rev" size="5" />
+            </label><br />
+          <label>
+              Show at most
+              <input type="text" id="limit" name="limit" value="100" size="3" maxlength="3" />
+              revisions per page.
+            </label><br />
+          <label>
+            <input type="checkbox" id="verbose" name="verbose" />
+            Show full log messages
+          </label>
+        </div>
+        <div style="display:none;"><input type="text" name="sfp_email" value="" /><input type="hidden" name="sfph_mail" value="" /></div><div class="buttons">
+          <input type="submit" value="Update" />
+        </div>
+      </form>
+      <div class="diff">
+        <div class="legend" id="file-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="mod"></dt><dd>Modified</dd>
+            <dt class="cp"></dt><dd>Copied or renamed</dd>
+          </dl>
+        </div>
+      </div>
+      <form class="printableform" action="https://plugins.trac.wordpress.org/changeset" method="get">
+        <div style="display:none;"><input type="text" name="sfp_email" value="" /><input type="hidden" name="sfph_mail" value="" /></div><div class="buttons">
+          <input type="hidden" name="reponame" />
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (as selected in the Diff column)" />
+        </div>
+        <table class="listing chglist">
+          <thead>
+            <tr>
+              <th class="diff" title="Old / New">Diff</th>
+              <th class="change"></th>
+              <th class="rev">Rev</th>
+              <th class="age">Age</th>
+              <th class="author">Author</th>
+              <th class="summary">Log Message</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="2091071@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [2091071]" />
+                    <input type="radio" name="new" value="2091071@tinymce-advanced/trunk/mce/anchor/plugin.js" checked="checked" title="To [2091071]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin3f03.html?rev=2091071" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin3f03.html?rev=2091071" title="Browse at revision 2091071">
+                        @2091071</a>
+                        <a class="chgset" href="../../../../../changeset/2091071/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [2091071] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2019-05-20T04%3A08%3A53Z&amp;precision=second" title="See timeline at 05/20/2019 04:08:53 AM">3 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        TMA: update for WP 5.2.1
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="2083026@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [2083026]" />
+                    <input type="radio" name="new" value="2083026@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [2083026]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin59ba.html?rev=2083026" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin59ba.html?rev=2083026" title="Browse at revision 2083026">
+                        @2083026</a>
+                        <a class="chgset" href="../../../../../changeset/2083026/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [2083026] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2019-05-08T04%3A26%3A40Z&amp;precision=second" title="See timeline at 05/08/2019 04:26:40 AM">3 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        TMA 5.2
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="2036480@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [2036480]" />
+                    <input type="radio" name="new" value="2036480@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [2036480]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="pluginb862.html?rev=2036480" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/pluginb862.html?rev=2036480" title="Browse at revision 2036480">
+                        @2036480</a>
+                        <a class="chgset" href="../../../../../changeset/2036480/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [2036480] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2019-02-22T03%3A34%3A29Z&amp;precision=second" title="See timeline at 02/22/2019 03:34:29 AM">3 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        TMA update to 5.1
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1919233@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1919233]" />
+                    <input type="radio" name="new" value="1919233@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1919233]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin2718.html?rev=1919233" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin2718.html?rev=1919233" title="Browse at revision 1919233">
+                        @1919233</a>
+                        <a class="chgset" href="../../../../../changeset/1919233/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1919233] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2018-08-03T08%3A26%3A26Z&amp;precision=second" title="See timeline at 08/03/2018 08:26:26 AM">4 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        TinyMCE Advanced: update to 4.8.0.
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1878362@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1878362]" />
+                    <input type="radio" name="new" value="1878362@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1878362]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin604c.html?rev=1878362" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin604c.html?rev=1878362" title="Browse at revision 1878362">
+                        @1878362</a>
+                        <a class="chgset" href="../../../../../changeset/1878362/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1878362] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2018-05-21T11%3A39%3A54Z&amp;precision=second" title="See timeline at 05/21/2018 11:39:54 AM">4 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Update plugins to 4.7.13.
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1876961@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1876961]" />
+                    <input type="radio" name="new" value="1876961@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1876961]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin9274.html?rev=1876961" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin9274.html?rev=1876961" title="Browse at revision 1876961">
+                        @1876961</a>
+                        <a class="chgset" href="../../../../../changeset/1876961/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1876961] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2018-05-18T07%3A42%3A27Z&amp;precision=second" title="See timeline at 05/18/2018 07:42:27 AM">4 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Update for <a class="wiki" href="https://plugins.trac.wordpress.org/wiki/WordPress">WordPress</a> 4.9.6 and TinyMCE 4.7.11.
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1673659@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1673659]" />
+                    <input type="radio" name="new" value="1673659@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1673659]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin56c5.html?rev=1673659" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin56c5.html?rev=1673659" title="Browse at revision 1673659">
+                        @1673659</a>
+                        <a class="chgset" href="../../../../../changeset/1673659/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1673659] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2017-06-08T18%3A18%3A12Z&amp;precision=second" title="See timeline at 06/08/2017 06:18:12 PM">5 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Update for <a class="wiki" href="https://plugins.trac.wordpress.org/wiki/WordPress">WordPress</a> 4.8.
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1643101@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1643101]" />
+                    <input type="radio" name="new" value="1643101@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1643101]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugincaf1.html?rev=1643101" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugincaf1.html?rev=1643101" title="Browse at revision 1643101">
+                        @1643101</a>
+                        <a class="chgset" href="../../../../../changeset/1643101/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1643101] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2017-04-22T23%3A20%3A35Z&amp;precision=second" title="See timeline at 04/22/2017 11:20:35 PM">5 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Update for MCE 4.5.6
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1303419@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1303419]" />
+                    <input type="radio" name="new" value="1303419@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1303419]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin03e0.html?rev=1303419" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin03e0.html?rev=1303419" title="Browse at revision 1303419">
+                        @1303419</a>
+                        <a class="chgset" href="../../../../../changeset/1303419/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1303419] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2015-12-09T00%3A35%3A40Z&amp;precision=second" title="See timeline at 12/09/2015 12:35:40 AM">6 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Updated for <a class="wiki" href="https://plugins.trac.wordpress.org/wiki/WordPress">WordPress</a> 4.4 and TinyMCE 4.2.8
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1232698@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1232698]" />
+                    <input type="radio" name="new" value="1232698@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1232698]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin0089.html?rev=1232698" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin0089.html?rev=1232698" title="Browse at revision 1232698">
+                        @1232698</a>
+                        <a class="chgset" href="../../../../../changeset/1232698/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1232698] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2015-08-27T23%3A36%3A02Z&amp;precision=second" title="See timeline at 08/27/2015 11:36:02 PM">6 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Set SVN EOL type to LF.
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1223999@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [1223999]" />
+                    <input type="radio" name="new" value="1223999@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [1223999]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin906e.html?rev=1223999" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin906e.html?rev=1223999" title="Browse at revision 1223999">
+                        @1223999</a>
+                        <a class="chgset" href="../../../../../changeset/1223999/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [1223999] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2015-08-18T19%3A17%3A08Z&amp;precision=second" title="See timeline at 08/18/2015 07:17:08 PM">6 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        4.2.3
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="978363@tinymce-advanced/trunk/mce/anchor/plugin.js" title="From [978363]" />
+                    <input type="radio" name="new" value="978363@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [978363]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin61e2.html?rev=978363" title="View log starting at this revision">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin61e2.html?rev=978363" title="Browse at revision 978363">
+                        @978363</a>
+                        <a class="chgset" href="../../../../../changeset/978363/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [978363] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2014-09-04T04%3A36%3A20Z&amp;precision=second" title="See timeline at 09/04/2014 04:36:20 AM">7 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Update to 4.1
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="894068@tinymce-advanced/trunk/mce/anchor/plugin.js" checked="checked" title="From [894068]" />
+                    <input type="radio" name="new" value="894068@tinymce-advanced/trunk/mce/anchor/plugin.js" title="To [894068]" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a href="plugin90a2.html?rev=894068" title="View log starting at this revision">
+                        <span class="add"></span>
+                        <span class="comment">(add)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a href="../../../../../browser/tinymce-advanced/trunk/mce/anchor/plugin90a2.html?rev=894068" title="Browse at revision 894068">
+                        @894068</a>
+                        <a class="chgset" href="../../../../../changeset/894068/tinymce-advanced/trunk/mce/anchor/plugin.html" title="View changeset [894068] restricted to tinymce-advanced/trunk/mce/anchor/plugin.js"> </a>
+                    </td>
+                    <td class="age"><a class="timeline" href="https://plugins.trac.wordpress.org/timeline?from=2014-04-16T05%3A17%3A42Z&amp;precision=second" title="See timeline at 04/16/2014 05:17:42 AM">8 years</a></td>
+                    <td class="author"><span class="trac-author">azaozz</span></td>
+                    <td class="summary">
+                        Version 4.0
+                    </td>
+                </tr>
+          </tbody>
+        </table>
+        <div style="display:none;"><input type="text" name="sfp_email" value="" /><input type="hidden" name="sfph_mail" value="" /></div><div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (as selected in the Diff column)" />
+        </div>
+      </form>
+      <div id="help"><strong>Note:</strong> See <a href="https://plugins.trac.wordpress.org/wiki/TracRevisionLog">TracRevisionLog</a>
+        for help on using the revision log.</div>
+    </div>
+    <div id="altlinks">
+    <a class="preferences-link" href="https://plugins.trac.wordpress.org/prefs">Trac UI Preferences</a>
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="plugine837.js?format=rss&amp;rev=2091071&amp;limit=100&amp;mode=stop_on_copy" class="rss">RSS Feed</a>
+        </li><li class="last">
+          <a rel="nofollow" href="plugin1d16.js?format=changelog&amp;rev=2091071&amp;limit=100&amp;mode=stop_on_copy">ChangeLog</a>
+        </li>
+      </ul>
+</div>
+    </div>
+	
+<div id="wporg-footer">
+	<div class="wrapper">
+		<ul>
+			<li><a href="https://wordpress.org/about/" title="An introduction to the WordPress project">About</a></li>
+			<li><a href="https://wordpress.org/news/" title="News and Updates">Blog</a></li>
+			<li><a href="https://wordpress.org/hosting/" title="Recommended web hosting providers">Hosting</a></li>
+			<li><a href="https://wordpressfoundation.org/donate/" title="Donate to the WordPress Foundation">Donate</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://wordpress.org/support/" title="Forums, documentation, and other resources">Support</a></li>
+			<li><a href="https://developer.wordpress.org/" title="Resources for WordPress developers">Developers</a></li>
+			<li><a href="https://make.wordpress.org/" title="Give back to WordPress through code, support, translation and more">Get Involved</a></li>
+			<li><a href="https://learn.wordpress.org/" title="Workshops and training materials">Learn</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://wordpress.org/showcase/" title="Some of the best WordPress sites on the Web">Showcase</a></li>
+			<li><a href="https://wordpress.org/plugins/" title="Add extra functionality to WordPress">Plugins</a></li>
+			<li><a href="https://wordpress.org/themes/" title="Make your WordPress pretty">Themes</a></li>
+			<li><a href="https://wordpress.org/ideas/" title="Share your ideas for improving WordPress">Ideas</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://central.wordcamp.org/" title="Find a WordPress event near you">WordCamp</a></li>
+			<li><a href="https://wordpress.tv/" title="Videos, tutorials, and WordCamp sessions">WordPress.TV</a></li>
+			<li><a href="https://buddypress.org/" title="A set of plugins to transform your WordPress into a social network">BuddyPress</a></li>
+			<li><a href="https://bbpress.org/" title="Fast, slick forums built on WordPress">bbPress</a></li>
+		</ul>
+		<ul>
+			<li><a href="https://wordpress.com/?ref=wporg-footer" title="Hassle-free WordPress hosting">WordPress.com</a></li>
+			<li><a href="https://ma.tt/" title="Co-founder of WordPress, an example of what WordPress can do">Matt</a></li>
+			<li><a href="https://wordpress.org/about/privacy/" title="WordPress.org Privacy Policy">Privacy</a></li>
+			<li><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></li>
+		</ul>
+	</div>
+	<p class="cip cip-image">Code is Poetry</p>
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+   var elem = document.createElement('script');
+   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge")
+               + ".quantserve.com/quant.js";
+   elem.async = true;
+   elem.type = "text/javascript";
+   var scpt = document.getElementsByTagName('script')[0];
+   scpt.parentNode.insertBefore(elem, scpt);
+  })();
+</script>
+<script type="text/javascript">_qevents.push( { qacct:"p-18-mFEk4J448M"} );</script>
+<noscript><img src="../../../../../../pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif" style="display: none;" border="0" height="1" width="1" alt="" /></noscript>
+
+	<script>
+	var wpTracCurrentUser = "anonymous";
+	</script>
+	<script src="../../../../../../s.w.org/style/trac/jquery.caret.min6789.js?ver=2015-02-01"></script>
+	<script src="../../../../../../s.w.org/style/trac/jquery.atwho.minf269.js?ver=1.0.1"></script>
+	<script src="../../../../../../s.w.org/style/trac/wp-tracf4b9.js?94"></script>
+</body>
+
+<!-- Mirrored from plugins.trac.wordpress.org/log/tinymce-advanced/trunk/mce/anchor/plugin.js?rev=2091071 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Feb 2022 13:19:55 GMT -->
+</html>

@@ -1,0 +1,36 @@
+Index: tinymce-advanced/trunk/mce/anchor/plugin.js
+===================================================================
+--- tinymce-advanced/trunk/mce/anchor/plugin.js	(revision 1232698)
++++ tinymce-advanced/trunk/mce/anchor/plugin.js	(revision 1303419)
+@@ -14,6 +14,7 @@
+ 	function showDialog() {
+ 		var selectedNode = editor.selection.getNode(), name = '';
++		var isAnchor = selectedNode.tagName == 'A' && editor.dom.getAttrib(selectedNode, 'href') === '';
+ 
+-		if (selectedNode.tagName == 'A') {
++		if (isAnchor) {
+ 			name = selectedNode.name || selectedNode.id || '';
+ 		}
+@@ -23,10 +24,19 @@
+ 			body: {type: 'textbox', name: 'name', size: 40, label: 'Name', value: name},
+ 			onsubmit: function(e) {
+-				editor.execCommand('mceInsertContent', false, editor.dom.createHTML('a', {
+-					id: e.data.name
+-				}));
++				var id = e.data.name;
++
++				if (isAnchor) {
++					selectedNode.id = id;
++				} else {
++					editor.selection.collapse(true);
++					editor.execCommand('mceInsertContent', false, editor.dom.createHTML('a', {
++						id: id
++					}));
++				}
+ 			}
+ 		});
+ 	}
++
++	editor.addCommand('mceAnchor', showDialog);
+ 
+ 	editor.addButton('anchor', {

@@ -1,0 +1,28 @@
+= WordPress Plugin Repository = 
+
+The idea behind this repository is to provide a rich environment for '''developers''' to create and share their work on WordPress-related plugin development. The [http://wordpress.org/ WordPress] plugins repository is a high-availability set of development tools -- a [wiki:TracWiki wiki], [wiki:VersionControl version control using Subversion], and [wiki:TracTickets bug tracker] -- that aims to nurture the active !WordPress development community. WP-Plugins.org is '''completely free''' to use.
+
+All files and content here are licensed under the [http://www.gnu.org/copyleft/gpl.html GPL] unless otherwise noted in the source.
+
+
+== Get Hosted ==
+
+All the action is now on the extend section of WordPress.org:
+
+http://wordpress.org/plugins/
+
+You can apply to be hosted there:
+
+http://wordpress.org/plugins/add/
+
+Read about using Subversion:
+
+http://wordpress.org/plugins/about/svn/
+
+Read the FAQ:
+
+http://wordpress.org/plugins/about/faq/
+
+And finally a sample readme file:
+
+http://wordpress.org/plugins/about/readme.txt
