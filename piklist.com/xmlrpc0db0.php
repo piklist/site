@@ -2,13 +2,13 @@
 	<service>
 		<engineName>WordPress</engineName>
 		<engineLink>https://wordpress.org/</engineLink>
-		<homePageLink>https://piklist.github.io/site/piklist.com</homePageLink>
+		<homePageLink>https://piklist.com</homePageLink>
 		<apis>
-			<api name="WordPress" blogID="1" preferred="true" apiLink="https://piklist.github.io/site/piklist.com/xmlrpc.php" />
-			<api name="Movable Type" blogID="1" preferred="false" apiLink="https://piklist.github.io/site/piklist.com/xmlrpc.php" />
-			<api name="MetaWeblog" blogID="1" preferred="false" apiLink="https://piklist.github.io/site/piklist.com/xmlrpc.php" />
-			<api name="Blogger" blogID="1" preferred="false" apiLink="https://piklist.github.io/site/piklist.com/xmlrpc.php" />
-				<api name="WP-API" blogID="1" preferred="false" apiLink="https://piklist.github.io/site/piklist.com/wp-json/" />
+			<api name="WordPress" blogID="1" preferred="true" apiLink="https://piklist.com/xmlrpc.php" />
+			<api name="Movable Type" blogID="1" preferred="false" apiLink="https://piklist.com/xmlrpc.php" />
+			<api name="MetaWeblog" blogID="1" preferred="false" apiLink="https://piklist.com/xmlrpc.php" />
+			<api name="Blogger" blogID="1" preferred="false" apiLink="https://piklist.com/xmlrpc.php" />
+				<api name="WP-API" blogID="1" preferred="false" apiLink="https://piklist.com/wp-json/" />
 			</apis>
 	</service>
 </rsd>
