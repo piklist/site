@@ -45,7 +45,7 @@ note:	the hts-log.txt file, and hts-cache folder, may contain sensitive informat
 13:22:33	Warning: 	Moved Permanently for https://piklist.com/?p=61
 13:22:33	Warning: 	File has moved from https://piklist.com/?p=61 to https://piklist.com/contact/
 13:22:34	Warning: 	Moved Permanently for https://piklist.com/learn/section/piklist/
-13:22:34	Warning: 	File has moved from https://piklist.com/learn/section/piklist/ to https://piklist.github.io/docs//
+13:22:34	Warning: 	File has moved from https://piklist.com/learn/section/piklist/ to https://piklist.github.io/docs/
 13:22:35	Warning: 	Moved Permanently for https://piklist.com/?p=1343
 13:22:35	Warning: 	File has moved from https://piklist.com/?p=1343 to https://piklist.com/get-involved/
 13:22:36	Warning: 	Moved Permanently for https://piklist.com/?p=4838
@@ -106,9 +106,9 @@ note:	the hts-log.txt file, and hts-cache folder, may contain sensitive informat
 13:36:00	Warning: 	Moved Permanently for https://piklist.com/?p=4863
 13:36:00	Warning: 	File has moved from https://piklist.com/?p=4863 to https://piklist.com/2016/06/16/piklist-v0-9-9-8-new-documentation/
 13:36:00	Warning: 	Moved Permanently for https://piklist.com/learn/
-13:36:00	Warning: 	File has moved from https://piklist.com/learn/ to https://piklist.github.io/docs//
+13:36:00	Warning: 	File has moved from https://piklist.com/learn/ to https://piklist.github.io/docs/
 13:36:00	Warning: 	Moved Permanently for https://piklist.com/learn/doc/registering-post-types/
-13:36:00	Warning: 	File has moved from https://piklist.com/learn/doc/registering-post-types/ to https://piklist.github.io/docs//
+13:36:00	Warning: 	File has moved from https://piklist.com/learn/doc/registering-post-types/ to https://piklist.github.io/docs/
 13:37:53	Error: 	"Not Found" (404) at link https://piklist.com/support/wp-login.php?redirect_to=%2Fsupport%2Fforum%2Fpiklist%2Fpage%2F2%2F (from https://piklist.com/support/forum/piklist/page/2/)
 13:39:29	Error: 	"Not Found" (404) at link https://piklist.com/support/wp-login.php?redirect_to=%2Fsupport%2Fforum%2Fpiklist%2Fpage%2F3%2F (from https://piklist.com/support/forum/piklist/page/3/)
 13:41:02	Error: 	"Not Found" (404) at link https://piklist.com/support/wp-login.php?redirect_to=%2Fsupport%2Fforum%2Fpiklist%2Fpage%2F119%2F (from https://piklist.com/support/forum/piklist/page/119/)
@@ -148,7 +148,7 @@ note:	the hts-log.txt file, and hts-cache folder, may contain sensitive informat
 13:43:07	Warning: 	File has moved from https://piklist.com/support/?p=7000 to https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/
 13:43:09	Error: 	"Not Found" (404) at link https://piklist.com/support/wp-login.php?redirect_to=https%3A%2F%2Fpiklist.com%2Fsupport%2Ftopic%2Fcustom-taxonomy-count-always-shows-0-items-in-admin%2F (from https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/)
 13:43:10	Warning: 	Moved Permanently for https://piklist.com/learn/doc/display-taxonomies-radio-checkboxes-select-list/
-13:43:10	Warning: 	File has moved from https://piklist.com/learn/doc/display-taxonomies-radio-checkboxes-select-list/ to https://piklist.github.io/docs//
+13:43:10	Warning: 	File has moved from https://piklist.com/learn/doc/display-taxonomies-radio-checkboxes-select-list/ to https://piklist.github.io/docs/
 13:43:12	Error: 	"Not Found" (404) at link https://piklist.com/support/wp-login.php?redirect_to=%2Fsupport%2Ftopic%2Fcustom-taxonomy-count-always-shows-0-items-in-admin%2F (from https://piklist.com/support/topic/custom-taxonomy-count-always-shows-0-items-in-admin/)
 13:43:13	Warning: 	Moved Permanently for https://piklist.com/support/?p=11279
 13:43:13	Warning: 	File has moved from https://piklist.com/support/?p=11279 to https://piklist.com/support/topic/php-fatal-error-uncaught-error/
