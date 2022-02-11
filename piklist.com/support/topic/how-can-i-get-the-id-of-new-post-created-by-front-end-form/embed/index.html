@@ -174,7 +174,7 @@ img.emoji {
 </div>
 <nav id="main-navigation" class="collapse navbar-collapse" role="navigation">
 <ul class="nav navbar-nav pull-right">
-<li class="navbutton "><a href="https://docs.piklist.com/">Documentation</a></li>
+<li class="navbutton "><a href="https://piklist.github.io/docs/">Documentation</a></li>
 <li class="navbutton active"><a href="../../../index.html">Support / Community</a></li>
 <li class="navbutton dropdown">
 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Products <span class="caret"></span></a>
@@ -555,7 +555,7 @@ function my_stick_new_post_id_in_redirect ( $location, $status ) {
 </div>
 <div class="bbp-reply-content">
 <p>Greetings fellow Piklisters! Perhaps I&#8217;m being dense, but I&#8217;m still not seeing how to redirect a user to a new post they&#8217;ve made via a Piklist front-end form.</p>
-<p>I see <a href="../../../users/sbruner/index.html" class="bbp-user-mention bbp-user-id-1"> @sbruner</a> has suggested <a href="https://docs.piklist.com/comment-block-parameters/#redirect" rel="nofollow">the Redirect parameter</a> in the form comment block, but while I can see Redirects to static URLs working, I don&#8217;t see any hints on how to use the Redirect parameter to redirect to the new post created by a front-end form.</p>
+<p>I see <a href="../../../users/sbruner/index.html" class="bbp-user-mention bbp-user-id-1"> @sbruner</a> has suggested <a href="https://piklist.github.io/docs/comment-block-parameters/#redirect" rel="nofollow">the Redirect parameter</a> in the form comment block, but while I can see Redirects to static URLs working, I don&#8217;t see any hints on how to use the Redirect parameter to redirect to the new post created by a front-end form.</p>
 <p>I&#8217;ve also tried <a href="../../../users/mcmaster/index.html" class="bbp-user-mention bbp-user-id-249"> @mcmaster</a>&#8217;s solution above, but have not been able to use it to generate the actual ID of the new post. Though this doesn&#8217;t solve the issue, I wonder if there are some typos in that code.</p>
 <p>Shouldn&#8217;t <code>global $mcw_new_post_id;</code> be <code>global $my_new_post_id;</code>?</p>
 <p>Shouldn&#8217;t <code>return( $location.&quot;?ID=$my_new_post_id&quot; );</code> be <code>return( $location.&quot;?ID=&quot;.$my_new_post_id&quot; );</code>?</p>
