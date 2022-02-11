@@ -1,2 +1,0 @@
-date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
-13:15:30	69/69	---MCZ	200	added ('OK')	text/plain	date:Tue,%2008%20Feb%202022%2017:25:53%20GMT	https://piklist.github.io/site/piklist.com/robots.txt		(from )
